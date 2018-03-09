@@ -9,6 +9,7 @@ using System.Linq;
 using System.Management;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,6 +44,7 @@ namespace SerialChartDrawer
         private ObservableDataSource<Point> dataSource24 = new ObservableDataSource<Point>();
         private DispatcherTimer timer = new DispatcherTimer();
         private int i = 0;
+        
         SerialPort com;
         private bool[] chartIsinit = new bool[12];
 
@@ -179,9 +181,38 @@ namespace SerialChartDrawer
             btSettingApply.Content = "开始测试";
         }
 
-        private void serial_OptionSend(int voltage,int cl,int gnv)
+
+        /// <summary>
+        /// Send user option to lower machine
+        /// </summary>
+        /// <param name="voltage">Action voltage</param>
+        /// <param name="cl">Current limited value</param>
+        /// <param name="gnv">GridNagVoltage</param>
+        /// <param name="com">Serial port </param>
+        /// <returns></returns>
+        private int serial_OptionSend(int voltage,int cl,int gnv,SerialPort com)
         {
-            
+            List<string> initData=new List<string>();
+            string endData = "/ES";//EMERGENCY STOP
+            if (voltage > 300 || cl > 200 || gnv > 45) return -1;
+            if (voltage <= 0 || cl <= 0 || gnv <= 0) return -1;
+            initData.Add( "/V" + voltage);
+            initData.Add( "/C" + cl);
+            initData.Add( "/G" + gnv);
+            try
+            {
+                com.WriteLine(endData);
+                com.WriteLine(initData[0]);
+                com.WriteLine(initData[1]);
+                com.WriteLine(initData[2]);
+            }
+            catch(Exception e)
+            {
+               System.Console.WriteLine( e.Message);
+                MessageBox.Show("错误，" + e.Message);
+            }
+           
+            return 0;
         }
 
         /// <summary>
@@ -196,7 +227,9 @@ namespace SerialChartDrawer
                 MessageBoxResult result = MessageBox.Show("是否应用当前配置并启动？", "确认", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    //  machineStart();
+                    serial_OptionSend(Convert.ToInt16( rbV90.Content.ToString().TrimEnd('V')),
+                        Convert.ToInt16(tbCurrentLimited.Text), Convert.ToInt16(tbGridNagVoltage.Text), com);
+                    
                     return;
                 }
                 else
@@ -270,9 +303,50 @@ namespace SerialChartDrawer
             {
                 e.Cancel = true;
             }
+            
+        }
+        private int scanVoltage
+        {
+            get{
+              if(rbV90.IsChecked == true)
+                {
+                    return 90;
+                }
+                if (rbV150.IsChecked == true)
+                {
+                    return 150;
+                }
+                if (rbV250.IsChecked == true)
+                {
+                    return 250;
+                }
+                if (rbV300.IsChecked == true)
+                {
+                    return 300;
+                }
 
-
-
+                return 90;  //default
+            }
+            set
+            {
+                switch(value)
+                {
+                    case 90:
+                        rbV90.IsChecked = true;
+                        break;
+                    case 150:
+                        rbV150.IsChecked = true;
+                        break;
+                    case 250:
+                        rbV250.IsChecked = true;
+                        break;
+                    case 300:
+                        rbV300.IsChecked = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
         private void readUserOption()
         {
@@ -280,16 +354,20 @@ namespace SerialChartDrawer
             char[] charData = new char[256];
             try
             {
-                FileStream fs = new FileStream("serialOption.ini", FileMode.Open);
+                FileStream fs = new FileStream(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"serialOption.ini", FileMode.Open);
                 StreamReader sw = new StreamReader(fs);
-                tbDefautlDevice.Text = sw.ReadLine();
+                tbDefautlDevice.Text = sw.ReadLine();  //Default device
+                scanVoltage =  Convert.ToInt32( sw.ReadLine());
+                tbCurrentLimited.Text = sw.ReadLine();
+                tbGridNagVoltage.Text = sw.ReadLine();
+                cbBaud.SelectedIndex = Convert.ToInt32(sw.ReadLine());
                 sw.Close();
                 fs.Close();
             }
             catch
             {
-                MessageBox.Show("读取配置文件错误,重新建立配置文件");
-                FileStream fs = new FileStream("serialOption.ini", FileMode.Create);
+                MessageBox.Show("配置文件错误或不存在,重新建立配置文件");
+                FileStream fs = new FileStream(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"serialOption.ini", FileMode.Create);
                 StreamWriter sw = new StreamWriter(fs);
                 sw.WriteLine(tbDefautlDevice.Text);
                 sw.Close();
@@ -300,9 +378,13 @@ namespace SerialChartDrawer
         {
             try
             {
-                FileStream fs = new FileStream("serialOption.ini", FileMode.OpenOrCreate);
+                FileStream fs = new FileStream(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"serialOption.ini", FileMode.OpenOrCreate);
                 StreamWriter sw = new StreamWriter(fs);
                 sw.WriteLine(tbDefautlDevice.Text);
+                sw.WriteLine(scanVoltage);
+                sw.WriteLine(tbCurrentLimited.Text);
+                sw.WriteLine(tbGridNagVoltage.Text);
+                sw.WriteLine(cbBaud.SelectedIndex);
                 sw.Close();
                 fs.Close();
             }
@@ -311,30 +393,79 @@ namespace SerialChartDrawer
                 MessageBox.Show("写入配置文件错误");
             }
         }
-        
 
+        private void serial_ReceiveData_start()
+        {
+            ThreadStart serialThreadStart = new ThreadStart(serial_ReceiveData_ready);
+            Thread serialThread = new Thread(serialThreadStart);
+            if (serialThread.IsAlive)
+            {
+                serialThread.Abort();
+            }
+            else
+            {
+                serialThread.Start();
+            }
+        }
+        private void serial_ReceiveData_ready()
+        {
+            com.DataReceived += new SerialDataReceivedEventHandler(serial_ReceiveData);
+        }
+        private void serial_ReceiveData(object sender, SerialDataReceivedEventArgs e)
+        {
+            string s = "";
+            if(com.IsOpen == false)
+            {
+                return;
+            }
+            int count = com.BytesToRead;//缓冲数据区数据的字节数  
+
+            byte[] data = new byte[count];//用于保存缓冲数据区的数据  
+            com.Read(data, 0, count);
+
+            foreach (byte item in data)
+            {
+                s += Convert.ToChar(item);
+            }
+
+
+            this.Dispatcher.Invoke(new Action(() => {//委托操作GUI控件的部分  
+
+                tbReceivedData.Text += s;   //textbox文字加上字符串s  
+                tbReceivedData.ScrollToEnd();
+            }));
+        }
+
+        private bool serialportOpen = false;
         private void btConnect_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (serialportOpen == false)
             {
-
-                com = new SerialPort(GetPort(cbCommunicatePort.Text), (Convert.ToInt16(cbBaud.Text)));
-                if (com.IsOpen == false)
+                com = new SerialPort();
+                string port = GetPort(cbCommunicatePort.Text);
+                com.PortName = port;
+                com.BaudRate = (Convert.ToInt32(cbBaud.Text));
+                try
                 {
+                    serial_ReceiveData_start();
                     com.Open();
                     btConnect.Content = "关闭连接";
+                    serialportOpen = true;
                 }
-                else
+                catch
                 {
-                    com.Close();
-                    btConnect.Content = "连接";
-                    
+                    MessageBox.Show("打开失败，检查串口是否被占用");
                 }
             }
-            catch
+            else if(serialportOpen == true)
             {
-                MessageBox.Show("打开失败，检查串口是否被占用");
+                serial_ReceiveData_start();
+                com.Close();
+                btConnect.Content = "连接";
+                serialportOpen = false;
             }
+            
+            
         }
         /// <summary>
         /// 枚举win32 api
@@ -510,6 +641,26 @@ namespace SerialChartDrawer
             }
         }
 
+        private void btSerialSend_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                com.WriteLine(tbSendData.Text);
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message + "，请检查是否已打开串口？下位机是否连接良好？串口是否被占用？");
+            }
+        }
 
+        private void btClearSerialSend_Click(object sender, RoutedEventArgs e)
+        {
+            tbSendData.Text = "";
+        }
+
+        private void btClearSerialReceived_Click(object sender, RoutedEventArgs e)
+        {
+            tbReceivedData.Clear();
+        }
     }
 }

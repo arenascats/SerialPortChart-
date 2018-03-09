@@ -16,12 +16,9 @@ c:\users\alexfarell\documents\visual studio 2015\Projects\SerialChartDrawer\Seri
 c:\users\alexfarell\documents\visual studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialOption.g.cs
 c:\users\alexfarell\documents\visual studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialOption.baml
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\bin\Debug\SerialChartDrawer.exe.config
-C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.exe
-C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.pdb
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\bin\Debug\SerialChartDrawer.exe
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\bin\Debug\SerialChartDrawer.pdb
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\bin\Debug\DynamicDataDisplay.dll
-C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.csprojResolveAssemblyReference.cache
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\MainWindow.g.cs
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\App.g.cs
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer_MarkupCompile.cache
@@ -30,3 +27,6 @@ C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialCha
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.g.resources
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.Properties.Resources.resources
 C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.csproj.GenerateResource.Cache
+C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.exe
+C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.pdb
+C:\Users\sinzo\Documents\Visual Studio 2015\Projects\SerialChartDrawer\SerialChartDrawer\obj\Debug\SerialChartDrawer.csprojResolveAssemblyReference.cache
