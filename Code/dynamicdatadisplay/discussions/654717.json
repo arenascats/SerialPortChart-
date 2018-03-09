@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1473612",
+    "ThreadId": "654717",
+    "Html": "I'm using a Dynamic Data Display (v0.4) plot and I want <strong>add a circle marker at a specific data point</strong> of series to highlight the position of the maximum value of the line plot.<br />\n<br />\nTaking into account the very small amount of documentation and examples provided by the developers of Dynamic Data Display, <strong>does anybody know how to add a marker at a specific point?</strong><br />\n",
+    "PostedDate": "2016-05-16T07:26:20.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

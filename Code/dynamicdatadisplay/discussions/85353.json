@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "290749",
+    "ThreadId": "85353",
+    "Html": "<p><span style=\"font-size:11pt;color:black\">Hi, </span></p>\r\n<p><span style=\"font-size:11pt;color:black\">I tried to give LineGraph.Name = &quot;311BI200N01L01&quot; &nbsp;but chart control is not accepting. Please suggest the solution for this. Since name property is string it should accept every thing.</span></p>\r\n<p><span style=\"font-size:11pt;color:black\">Regards</span></p>\r\n<p><span style=\"font-size:11pt;color:black\">Ravi.Battula</span></p>",
+    "PostedDate": "2010-02-15T00:57:37.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291155",
+    "ThreadId": "85353",
+    "Html": "<p>Hi,</p>\r\n<p>any hints? This is same even for Vertical Axis(Other controls)&nbsp;also, If Name start with numeric, then these controls are not accepting.</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2010-02-16T02:52:08.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291206",
+    "ThreadId": "85353",
+    "Html": "<p>Hi,</p>\r\n<p>I shouldn't have used name property.</p>\r\n<p>Tag property helped me.</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2010-02-16T05:27:59.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

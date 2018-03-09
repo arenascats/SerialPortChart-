@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "478689",
+    "ThreadId": "223091",
+    "Html": "<p>I have a environment where I have multiple plotters on the window and I need to align their X-Axis so I can just present one X-Axis for both the plotters. The default&nbsp;behavior&nbsp;does not let the two plotters align their vertical Axis</p>\r\n<p><img src=\"http://lh3.ggpht.com/_kJaXpVpql30/TGGHGThIjBI/AAAAAAAAG30/3_TKZBoSwr0/s640/default.gif\" alt=\"\"></p>\r\n<p>I was able to align them as shown below, but now the Axis reading scale does not align right. It aligns left. How do I fix this?</p>\r\n<p><br> <img src=\"http://lh3.ggpht.com/_kJaXpVpql30/TGGHCjTf4BI/AAAAAAAAG3s/-_NxvbzA5P8/s640/alignedLeft.gif\" alt=\"\"></p>\r\n<p>Thanks</p>\r\n<p>Kishore Vanapalli</p>",
+    "PostedDate": "2010-08-10T10:10:54.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478798",
+    "ThreadId": "223091",
+    "Html": "<p>Have a look at&nbsp;<a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=75944\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=75944</a></p>",
+    "PostedDate": "2010-08-10T13:26:40.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

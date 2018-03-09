@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1046985",
+    "ThreadId": "444562",
+    "Html": "Good Morning,\r<br />\n<br />\nI am currently working with d3, and I would like to make clickable bar charts.\r<br />\nI am able to create custom circle element markers. Each marker is clickable and binded with an item.\r<br />\nI would like to do the same thing using bar charts (each bar would be clickable and binded with an item). Can somebody give me a way to do so ?\r<br />\n<br />\nThanks in advance,\r<br />\nGuillaume<br />\n",
+    "PostedDate": "2013-05-22T02:50:07.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

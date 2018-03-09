@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "261182",
+    "ThreadId": "76417",
+    "Html": "<p>Hi everybody,</p>\r\n<p>How could i do a real time chart?<br><br>I have a source with data from past to future, and i would like to have just a small window in time, like 3 hours before now and 3 hours after now. Until here i've done, but the problem is the display...<br><br>How could i, instead show the date time axis that data(datetime,value) are associate, show it in a fixed now timespanaxis, like this -2H -1H NOW +1H ...<br><br>I've tried to create two X axis, one datetimeaxis and the other timespanaxis. With the next features: datetimeaxis collapsed (to don't appear), dispatchertimer to cicle, plotter.Viewport.Visible to change the window in time, but this break with a outofboundsexception in timeperiodticksprovider ticks.Add(tick); , if i remove the timespanaxis it go on correctly... :(</p>\r\n<p>1 - Is it possible?</p>\r\n<p>2 - If yes, any sugestions?</p>\r\n<p>3 - If any, thanks. :D</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-27T08:57:03.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

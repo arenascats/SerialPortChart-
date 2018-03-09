@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI'm using D3 to visualize the efficiency of electromotors. The isoline graph looked like the best solution, as it supports everything I'm planning to do. It currently looks like the attached image.\n \nThere are no values for the upper-right corner, yet it is still filled. I'm assuming this is the work of the Stretch property.\n \nI'd like to alter this line of code:\n<Image Name=\"image\" d3:ViewportPanel.ViewportBounds=\"0,0,2,1.5\" Stretch=\"Fill\"/>\n \nWhat other options are there for this?\n \nThank you in advance,\n \nCX",
+    "LastUpdatedDate": "2013-02-21T17:36:49.79-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2012-02-02T00:46:35.65-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Stretch property of Image for IsolineGraph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 17333
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6170,
+      "FileName": "tmp.png",
+      "DownloadUrl": ".\\6170"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I use Chart (D3 library for Silverlight) to draw a graph and I want to change some properties of X axis (for example, Range). In documentation the Axis class is described in details. But how can I set Range of the Chart axis in XAML (or in code-behind)? Is it real?",
+    "LastUpdatedDate": "2014-07-19T00:38:06.46-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2014-07-19T00:38:06.46-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How can I change properties of Chart axis in Dynamic Data Display (D3) for Silverlight?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21159
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

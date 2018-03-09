@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello ! \n\nI would like to create a vertilcal line with DraggablePoint to show the the value of Y Axis for an chart. \n\nI search everywhere to try to find method who return Y value for an X Value...\n\nIf you have an solution... help me :)\n\nRegards,\nElite182",
+    "LastUpdatedDate": "2013-02-21T17:36:48.703-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2013-01-24T02:35:41.44-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LineCursor Vertical",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19237
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

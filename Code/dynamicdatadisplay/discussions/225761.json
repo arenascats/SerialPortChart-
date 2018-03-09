@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "488126",
+    "ThreadId": "225761",
+    "Html": "<p>I have a line graph plotted using GraphPlotter and RawDataSource. I would like to add some overlays on top of it (to indicate points of interest) based on metadata associated with plotted data. Is there a way to do it? If yes what is the best approach? I want to mark some areas on my graph (with a colorful and transparent overlay) and/or &nbsp;add dashed vertical lines to it... is it possible?</p>",
+    "PostedDate": "2010-09-02T03:29:05.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488407",
+    "ThreadId": "225761",
+    "Html": "<p>Have you looked at the LineSample example - it shows how to add various things to a chart. While it adds them using XAML you could just as easily do it using code</p>",
+    "PostedDate": "2010-09-02T11:34:31.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488707",
+    "ThreadId": "225761",
+    "Html": "<p>Thanks that sample actually shows how to implement overlays as I want them!</p>",
+    "PostedDate": "2010-09-03T01:31:24.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

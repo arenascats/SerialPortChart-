@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "217552",
+    "ThreadId": "63986",
+    "Html": "<p>Hi D3 guys,<br><br>I need to have a chart with multiple lines and update them every 100ms (like AnimationSample), each line have it own vertical axis (with different yMin and yMax, like TwoAxisSample).<br><br>I have used a chart with many InjectedPlotter(with a vertical axis) and I have added one line for each InjectedPlotter. Every 100ms I call RaiseDataChanged() on associated data source.</p>\r\n<p>All work fine! Thanks!.</p>\r\n<p>Note: All lines have the same x values</p>\r\n<p>My questions are:<br><br>Which is the best way to have my chart? Is my approach correct?<br>Is it possible to have a CursoCoordinate for all lines?<br><br><br>thanks a lot!<br><br>Giancarlo.</p>",
+    "PostedDate": "2009-07-30T04:51:37.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217903",
+    "ThreadId": "63986",
+    "Html": "<p>Hi Giancarlo,</p>\r\n<p>Your approach is right, InjectedPlotter class and TwoAxisSample were create certaily for such cases.</p>\r\n<p>What do you mean asking if it is possible to have a CursorCoordinateGraph for all lines? A picture cal help me)</p>\r\n<p>Maybe you are speaking about something like you can see in <strong>Source Code page/Latest Changeset/Nightly/.../DynamicDataDisplay.sln/LineTestSample </strong>(try to press a button on the top)?</p>\r\n<p>&nbsp;</p>\r\n<p>By the way, if you created something interesting using D3, you can share a screenshot of this, for example, mailing me to <em>thecentury+d3@gmail.com</em></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-31T01:41:00.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217967",
+    "ThreadId": "63986",
+    "Html": "<p>Hi Mikhail,<br><br>Thanks for your answers.....<br><br>I'll send to you some screenshots of my application (as you can see on the images, I have 8 Lines on 3 Charts that are updated every 30ms!!!! Note: this application runs perfectly on a notebook Pentium M 1.73 GHz, 1.5GB Ram and 128MB GPU).</p>\r\n<p>About the second question, in the LineTestSample all lines are on the same Viewport.Visible, in my chart every lines are on its InjectedPlotter (i.e: if I have 3 lines I have 3 InjectedPlotter also). To solve my problem I have added for each&nbsp; InjectedPlotter a CursoCoordinate, but to show the y value for all Y-Axis I have modified the source file &quot;CursorCoordinateGraph.xaml.cs&quot; and I have added a public property to change de Vector object, so I can change the position for each box. (see the screenshot).</p>\r\n<p><br>Thanks again for your work.<br><br>BR.<br><br>Giancarlo.</p>",
+    "PostedDate": "2009-07-31T05:15:27.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1136779",
+    "ThreadId": "474289",
+    "Html": "Hello,<br />\n<br />\nI am attempting to plot trends of data within a graph that shows nominal, upper tolerance, and lower tolerance values. The graphs are created in WPF by a UniformGrid layout.<br />\n<br />\nOne issue I keep running into is the axes tick marks, both inside of the graph and the numbers on the axes themselves, display garbled and are clearly incorrect--but only for a couple of the graphs:<br />\n<img src=\"http://i.imgur.com/BSqtGlh.png\" alt=\"Image\" /><br />\n<br />\nNote that for Graph 5 and Graph 6, the red, blue, and black lines are actually plotted correctly. If I resize the window or zoom in on the graph, everything snaps into place and the garbled numbers and lines go away.<br />\n<br />\nI've tried numerous things--InvalidateVisual, ForceUpdate, InvalidateArrange, etc.--on the chart, MainVerticalAxis, MainHorizontalAxis...but nothing seems to fix this problem.<br />\n<br />\nAny ideas on how to fix this?<br />\n<br />\nEDIT: Here's the full-sized image--<a href=\"http://i.imgur.com/BSqtGlh.png\" rel=\"nofollow\">http://i.imgur.com/BSqtGlh.png</a><br />\n",
+    "PostedDate": "2013-12-16T09:45:28.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1229350",
+    "ThreadId": "474289",
+    "Html": "I've had similar problem. In my case axis was not showing up when chart was rendered for the first time. I've also tried UpdateLayout() and it didn't help. It depends when you call it. In my case problem was fixed by calling UpdateLayout() on ChartPlotter before adding a chart to the plotter. \r<br />\n<br />\nLet me know if that helped in your case :).\r<br />\n<br />\nRegards,\r<br />\nvirious<br />\n",
+    "PostedDate": "2014-04-02T02:09:46.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1229541",
+    "ThreadId": "474289",
+    "Html": "I did end up fixing this recently thanks to some timely placed UpdateLayout() calls--added one to mainGrid_SizeChanged in AxisControl just before UpdateUI(), and another one in UpdateUI:<br />\n<pre><code>        if (!IsMeasureValid)\n        {\n            InvalidateMeasure();\n            UpdateLayout();\n        }\n</code></pre>\n\nand had to remove this line from AxisBase:\r<br />\naxisControl.MakeDependent();\r<br />\n<br />\nIt didn't quite seem that the logic was quite correct--the InitTransform was only being called once but not after there was some guarantee of when a render actually happened. Just guessing. It's certainly more expensive to force these, but at least it's working properly :)<br />\n",
+    "PostedDate": "2014-04-02T09:18:07.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

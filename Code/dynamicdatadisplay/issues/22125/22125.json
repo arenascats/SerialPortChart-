@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\nI am looking for D3 (Dynamic Data Display) Heat Chart in WPF. However I got the D3 Heat Chart in Silverlight but it is not full filling my requirement. Please help me to get the Heat Chart in WPF.\nI appreciate your help.\n\nBest Regards,\nRavi Singh",
+    "LastUpdatedDate": "2015-12-28T00:41:12.273-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2015-12-28T00:41:12.273-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "D3 Heat Chart For WPF",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 22125
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

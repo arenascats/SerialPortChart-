@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "626822",
+    "ThreadId": "261164",
+    "Html": "\r\n<p>I am using chart plotter with horizontal date time axis &amp; vertical numeric axis. When zooming the chartplotter,horizontal datetime axis changes its content from hours to minute, to seconds, to microseconds.At every change ,i want to change the horizontal\r\n axis title. Is there any way to do that?</p>\r\n<p>its urgent.plz reply.</p>\r\n<p>thanks.</p>\r\n",
+    "PostedDate": "2011-06-13T03:40:17.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

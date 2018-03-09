@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1117126",
+    "ThreadId": "465282",
+    "Html": "Hello,\r<br />\nDynamic Data Display works really good in my project. There is only one problem: On top right there is a box which contains the description. How can I remove this Box?\r<br />\nMy Code for the plotter:<br />\n<pre><code>                        // adding graph to plotter\n                        shorttermplotter.Children.RemoveAll(typeof(LineGraph));\n                        shorttermplotter.AddLineGraph(compositeDataSource, Colors.Blue, 2, &quot;Shortterm&quot;);\n                        // Force evertyhing plotted to be visible\n                        shorttermplotter.FitToView();</code></pre>\n\nI use LineGraphPlotter2D.AddLineGraph(PointDataSource pointSource,Color lineColor, double lineThickness, string description ) and it shows in the Box I want to remove the string description, i.e. &quot;Shortterm&quot;. If I assign an empty string, there will be shown an empty box. I want to show no box, or in case that isn't possible it should be shown at the bottom.\r<br />\nRegards \r<br />\nOttilie<br />\n",
+    "PostedDate": "2013-11-04T03:29:29.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1118699",
+    "ThreadId": "465282",
+    "Html": "Hi,<br />\n<pre><code>shorttermplotter.LegendVisibility = Visibility.Hidden;\nshorttermplotter.NewLegendVisible = false;\n\n//or try this\nshorttermplotter.Children.Remove(shorttermplotter.Legend);\nshorttermplotter.Children.Remove(shorttermplotter.NewLegend); </code></pre>\n\nFor adding legends at bottom, Add the lines manually in your own panel.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-11-05T21:48:05.17-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-11-11T02:53:11.57-08:00"
+  },
+  {
+    "Id": "1121724",
+    "ThreadId": "465282",
+    "Html": "Hi Ravi,\r<br />\n<br />\nThanks for your tip. That was it.\r<br />\nI testet it both<br />\n<pre><code>shorttermplotter.LegendVisible = false;\nshorttermplotter.Children.Remove(shorttermplotter.Legend);</code></pre>\n\nIn any rate it works fine.\r<br />\n<br />\nRegards\r<br />\n<br />\nOttilie<br />\n",
+    "PostedDate": "2013-11-11T02:53:06.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

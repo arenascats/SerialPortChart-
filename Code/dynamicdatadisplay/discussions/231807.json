@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "510501",
+    "ThreadId": "231807",
+    "Html": "<p>Hi Guys,</p>\r\n<p>&nbsp;</p>\r\n<p>nice work I've seen so far but like many others I am struggling with the poor documentation.</p>\r\n<p>&nbsp;</p>\r\n<p>I am trying to use a queue as LineSeries data source and I am am somehow not able to get the mapping right,</p>\r\n<p><span style=\"color:#000000\">-----------------------------------------------------------------------------------------------------------------</span></p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\"><pre><pre><pre>public Stack data = new Stack(1000);\r\n\r\n// Let's say data is already filled with 1000 Point objects\r\ndouble count = 0;\r\n            for (int i = 0; i &lt; 1000 - 1; i++)\r\n            {\r\n                data.Push(new Point(count, count));\r\n                count++;\r\n            }\r\n\r\n// Do some spcific graph formatting\r\nLineGraph line = axes.createComplexGraph(plotter, &quot;Example&quot;);\r\n\r\n// Let's get to the point\r\nEnumerableDataSource&gt; dataSource = new EnumerableDataSource&gt;(data);\r\ndataSource.SetXYMapping(?);</pre>\r\n<br></pre>\r\n<span style=\"color:#000000\">---------------------------------------------------------------------------</span><br><br><span style=\"color:#000000\">The idea behind this is to have be able to update the chart data on the fly by pushing new values in and let the oldest ones pop out.</span><br><br><span style=\"color:#000000\">Thx in advance for help!</span></pre>\r\n<br></span></pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-21T07:03:00.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

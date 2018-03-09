@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "518532",
+    "ThreadId": "233821",
+    "Html": "\r\n<p>Unfortunately, I'm having an issue when trying to scroll a ChartPlotter (or any charts included in the samples). &nbsp;When I position my mouse on the control and scroll, all the lines disappear and everything is frozen (ie I cannot pan or anything) until\r\n I right click and click Fit To View. &nbsp;Does anyone know how to fix this issue? &nbsp;I tried handling the mousewheel event, but this will not remove the current attached delegate that is causing the trouble. &nbsp;Is there a way to find out the delegate\r\n to manually remove it, so I can add my own delegate in. &nbsp;</p>\r\n",
+    "PostedDate": "2010-11-07T19:47:29.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

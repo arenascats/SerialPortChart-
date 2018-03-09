@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "546925",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>I am using a line graph and would like to turn smoothing on. Is there a way to do this or do I have to perform my own smoothing method on the data source, then populate the graph?</p>\r\n<p>I could not find any reference to smoothing in the library or samples. Thanks.</p>\r\n",
+    "PostedDate": "2011-01-10T12:48:57.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547428",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>You can add filters to a line graph, to preprocess the points, perhaps you could write a custom filter that smooths the points.</p>\r\n<p>By the way, latest source and discussions are now at http://d3future.codeplex.com.</p>\r\n<p>Jim</p>\r\n",
+    "PostedDate": "2011-01-11T10:39:19.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547516",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>Thanks Jim. Is there a sample of this anywhere? I have looked all over in the nightlies and all sample folders and can't seem to find one. Thanks.</p>\r\n",
+    "PostedDate": "2011-01-11T12:11:05.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547984",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>You want a sample of a filter?</p>\r\n",
+    "PostedDate": "2011-01-12T05:38:12.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548411",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>Yes, that would be great. I don't know how to create/use/apply a filter. Thanks</p>\r\n",
+    "PostedDate": "2011-01-12T19:15:04.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548652",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>Search the source for FrequencyFilter. I would just use that as an example.</p>\r\n",
+    "PostedDate": "2011-01-13T05:33:19.043-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549859",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>I am using MVVM and have my line graph source bound in xaml like so:</p>\r\n<pre style=\"font-family:consolas\"><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">LineGraph</span><span style=\"color:red\">&nbsp;x</span><span style=\"color:blue\">:</span><span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;lineGraphCandela&quot;</span><span style=\"color:red\">&nbsp;DataSource</span><span style=\"color:blue\">=&quot;{</span><span style=\"color:#a31515\">Binding</span><span style=\"color:red\">&nbsp;Path</span><span style=\"color:blue\">=</span><span style=\"color:blue\">IntensityData</span><span style=\"color:blue\">}</span><span style=\"color:blue\">&quot;</span><span style=\"color:red\">&nbsp;Stroke</span><span style=\"color:blue\">=</span><span style=\"color:blue\">&quot;Red&quot;</span><span style=\"color:blue\">/&gt;</span><br><br><br>How can I apply a filter if I am not adding line graphs like they do in the sample here:<br><pre style=\"font-family:consolas\">plotter.AddLineGraph(CreateCurrencyDataSource(dj65),&nbsp;colors[0],&nbsp;1,&nbsp;<span style=\"color:#a31515\">&quot;Dow&nbsp;Jones&nbsp;65&nbsp;Composite&quot;</span>);<br><br>Inside the AddLineGraph method is where the filter is applied. since I am using binding, I never get inside that method and my filter won't be applied. <br><br>Any suggestions? Thanks.<br></pre>\r\n<br></pre>\r\n",
+    "PostedDate": "2011-01-15T07:27:33.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551218",
+    "ThreadId": "241196",
+    "Html": "\r\n<p>You just need to add it to the filters collection (Filters property), I'm doing it in code but you should be able to do it in XAML.</p>\r\n",
+    "PostedDate": "2011-01-18T06:04:50.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

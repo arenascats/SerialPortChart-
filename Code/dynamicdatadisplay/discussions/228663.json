@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "498730",
+    "ThreadId": "228663",
+    "Html": "<p>I haven't found much about hit testing. I am greating a scatter plot:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eventsGraph = plotter.AddLineGraph(ds, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Pen(Brushes.Transparent, 0), <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new CirclePointMarker { Size = 15.0, Fill = Brushes.Green }, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new PenDescription(&quot;Events&quot;));</p>\r\n<p>When I hit test, I can get the graph itself, but I need to get the exact visual that was clicked on, AND from there back to the original item in the data source. Using another charting package, I was able to do this, but I had to derive my own class from Visual and then make the chart use that.</p>\r\n<p>Any suggestions? This is for a critical requirement. I am evaluating the package. So far, I am pretty impressed!</p>\r\n<p>Jim</p>",
+    "PostedDate": "2010-09-26T20:50:15.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

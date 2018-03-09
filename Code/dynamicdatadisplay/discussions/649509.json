@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1457724",
+    "ThreadId": "649509",
+    "Html": "I need to show my line graph on a grid that's like graph paper, meaning that the horizontal and vertical tick lines are fixed, and if I were to zoom the display, no new tick lines will appear, and the ones that are present are in the same place relative to the zoom.  In other words, I need to show the chart pieces relative to a set of grid lines that reflect the size of the chart at all zoom levels (e.g. 10x10 units per box).<br />\n<br />\nUsing DrawHorizontalMinorTicks and DrawVerticalMinorTicks gets me something resembling what I want.  All I need now is to learn how to set the tick frequency to a specific, fixed value.  As-is, when I zoom my chart, I get more ticks, which I don't want.  I would think that if there's a way to set the tick frequency that will also solve my zoom problem.  I mention it here just in case it doesn't.<br />\n<br />\nI'm using the WPF library.<br />\n<br />\nAny input would be appreciated, thanks.<br />\n<br />\nHappy New Year.<br />\n<br />\np.s. &quot;Graphy&quot;... oops<br />\n",
+    "PostedDate": "2016-01-01T20:05:51.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

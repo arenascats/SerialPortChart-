@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "683388",
+    "ThreadId": "275658",
+    "Html": "\r\n<p>Hello,<br>\r\n<br>\r\nFirst of all, thanks for the great job with this library.<br>\r\n<br>\r\nI'm a beginner using it and I&acute;m trying to generate a plot with an auto scrolled x-axis as the first step for generating a real time plot that automatically advance in the x-axis as the new data comes in.<br>\r\n<br>\r\nI&acute;ve tried setting the Viewport.Visible property of the ChartPlotter every time I need to move on the axis but, as I&acute;m going to have 300 new points per second, it gets the CPU usage to 100% instantaneously and keep it up untill I stop the auto scrolling.<br>\r\n<br>\r\nCan anybody help me with this?<br>\r\n<br>\r\nThanks</p>\r\n",
+    "PostedDate": "2011-10-12T14:19:51.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683488",
+    "ThreadId": "275658",
+    "Html": "<p>Hi,</p>\r\n<p>Seperate History points and current points, Make as two lines one for history and one for current values. DDD updates the lines and points&nbsp;seperately, use \"RaiseDataChanged();\"&nbsp;&nbsp;this updated only the current points and this will not load CPU(This is not like treditional chart, this will update only the new points)</p>\r\n<p>Draw x axis( viewport) with 1 or 2 minutes buffer. Every time when the buffer is over remove the lines from chartarea( do not try to clear and add data again to the same line, this will cause some perforamce degrade, this I observed).</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>\r\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; width: 1px; height: 1px; overflow: hidden; top: 0px; left: -10000px;\">﻿</div>",
+    "PostedDate": "2011-10-12T19:54:35.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683651",
+    "ThreadId": "275658",
+    "Html": "<p>Ravi,<br /><br />Thank you for your almost immediate help. I&acute;m not sure if this will work for me because I need an x axis range of about 3 seconds so I wont be able to draw the axis with 1 or 2 min buffer, anyway I'm going to try it. Nevertheless I think I can use the separate history points and current points thing.<br /><br />Thanks again <br /><br />Regards</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-10-13T06:01:16.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683802",
+    "ThreadId": "275658",
+    "Html": "<p>Unfortunately, this library and WPF don't work well with real-time drawing updates. There are a couple of reasons you are seeing 100% CPU usage.</p>\r\n<p>First, the collections used to update the data create Enumerators for the points each time you change the dataset, which in turn, cause a lot of garbage collection.</p>\r\n<p>Secondly, WPF uses retained graphics to render. This means that when there is the slightest graphical change in the UI, it has to compsite the changes with the rest of the graphical area and then send it back to the GPU for rendering. This is the reason that it cannot handle rapid geometry updates, such as drawing thousands of polylines, very well.</p>\r\n<p>Fortunately, I have done a lot of work to address this problem using a DirectX solution to merge immediate mode drawing of geometry with WPF. You can download the project here:&nbsp;<a href=\"http://d3commdev.codeplex.com/discussions\">http://d3commdev.codeplex.com/discussions</a>.</p>\r\n<p>It is not well documented, so let me know if you need any help with it.</p>",
+    "PostedDate": "2011-10-13T09:25:17.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683846",
+    "ThreadId": "275658",
+    "Html": "<p>Jason,</p>\r\n<p>Thanks for your advice. I've checked the project web site (<a href=\"http://d3commdev.codeplex.com/discussions\">http://d3commdev.codeplex.com/discussions</a>.) and I'm going to try it but I'm not sure if it will work for me since my proyect involve desktop and web versions of the aplication and I would like to use the same plotter in both.</p>\r\n<p>Thanks again <br /> <br /> Regards</p>",
+    "PostedDate": "2011-10-13T10:58:21.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683858",
+    "ThreadId": "275658",
+    "Html": "<p>It currently only works for WPF and I am not sure if it could be ported to Silverlight easily, but it might be worth looking at.</p>",
+    "PostedDate": "2011-10-13T11:14:18.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

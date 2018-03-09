@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "433546",
+    "ThreadId": "210023",
+    "Html": "<p>Hi there,</p>\r\n<p>I want to add several children to a Plotter, but want to delay any updates until I have added all the children. Is this possible, and will this improve performance by preventing too many CollectionChanged events to the Plotter.Children collection? Is 'BlockEvent' the way to achieve this, and if so how?</p>\r\n<p>Thank in advance for any help.</p>\r\n<p>Pete</p>",
+    "PostedDate": "2010-04-21T02:50:23.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "433597",
+    "ThreadId": "210023",
+    "Html": "<p>Hi Pete,</p>\r\n<p>unfortunately <strong>Plotter</strong>.<strong>Children </strong>doesn't have such functionality, I have found it only in <strong>ObservableCollectionWrapper</strong>, which is not connected to <strong>Children </strong>collection. Please add this issue to our <strong>'Issue Tracker'</strong>&nbsp;tab, if it is necessary.</p>\r\n<p>But why do you want to delay updates of plotter's children?</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-21T05:52:03.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "167833",
+    "ThreadId": "50137",
+    "Html": "<p style=\"margin:0cm 0cm 10pt\"><span style=\"font-family:calibri\">Another question from a new user...  How do I control an axis’s extent?  Specifically, I want to be able to make the x axis be a fixed number of units long but have the maximum value always equal to the data maximum so that as new data comes in from a dynamic simulation the x-axis (the time axis) scrolls.  I also want to be able to plot all data from some non-zero starting time, rather from t = 0.<br>\r\n<br>\r\nThanks, Rich</span></p>\r\n",
+    "PostedDate": "2009-03-13T10:51:41.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172680",
+    "ThreadId": "50137",
+    "Html": "Hi Rich,<div><br></div><div>Maybe you should use Plotter.Viewport.Visible property. It's type is Rect, you can set its value to any rectangle you want.</div><div>If you are using non-double axes, you may need to convert your border values (for example, DateTime or TimeSpan - depending on what axis you are using) to double. You should do it manually, and specific conversion can be similar to conversion that is used in axis you are using. Examples of those conversions you can see in constructors of &lt;T&gt;Axis and &lt;T&gt;AxisControl, where &lt;T&gt; is type of axis you are using.</div><div><br></div><div>Mikhail.<br><div><br></div><div><br></div></div>",
+    "PostedDate": "2009-03-27T02:30:16.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172798",
+    "ThreadId": "50137",
+    "Html": "2 Thecentury:<div><br></div><div>Can I change settings of axis independently?</div><div>E.g. I need Y axes to scale (autofit), and X to scroll atomatically.</div><div>Now I have to set points to be plotted programatically. Y axes stands for value and X - for time.</div><div>X axes &quot;width&quot; set to 30 seconds, afer this period graph starts to slide.</div>",
+    "PostedDate": "2009-03-27T08:13:58.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173799",
+    "ThreadId": "50137",
+    "Html": "Hi, vpv!<div><br></div><div>Yes, you can change 'settings of axes' independently - you can pass to plotter.Viewport.Visible any Rect you want, specifying neccesary for you position or size.</div><div><br></div><div>Currently it is not so easy to reach your second requirement - having one axis to be autofit, and another to slide. In future we'll provide convenient means for doing it, and now you should implement scenario you've descrived by yourself - you can compute bounding box for you data, and according to its value create Visible rect, taking all data height and only latest 30 seconds for width.</div><div><br></div><div>As Rect type accepts only double values of its properties, you'll have to convert DateTime or TimeSpan to double. This can be done by calling ConvertToDouble (or ConvertFromDouble, if you need) method of appropriate axis.</div><div><br></div><div>Mikhail.<br><div><br></div><div><br></div></div>",
+    "PostedDate": "2009-03-31T01:47:03.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173900",
+    "ThreadId": "50137",
+    "Html": "Hi Rich and Mikhail,<br>\r\n<br>\r\nI just want to make a comment about the features you are talking about. They are necessary for applying DDD for financial application:<br>\r\n- if you work with 1 minute data for example, you need to see only a window with a fixed amount of data that scroll automatically when new data update. But you still need this ability to zoom out (and still maintain the autofit on the y axis) to see general trends.<br>\r\nCool feature would be, if you drag the x-axis (compress or decompress the data), the amount of data in the new dragged window would remain the same when the window is going to scroll.<br>\r\n<br>\r\nIf you want more information about financial application with nice graphical features have a look to:<br>\r\n- http://www.modulusfe.com/stockchartxwpf/<br>\r\n- http://www.tssupport.com/multicharts/<br>\r\n<br>\r\nKamel.<br>\r\n",
+    "PostedDate": "2009-03-31T07:19:54.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173921",
+    "ThreadId": "50137",
+    "Html": "Hi<br>\r\n<br>\r\nIs there any method to retrieve the number of points plotted in the window?<br>\r\n<br>\r\nThanks,<br>\r\nKamel \r\n",
+    "PostedDate": "2009-03-31T08:48:17.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174216",
+    "ThreadId": "50137",
+    "Html": "Hi Kamel,<div><br></div><div>Thank you for examples of financial components and application, we will definetely use them as an example when working closer on financial part of DDD.</div><div><br></div><div>In next release of DynamicDataDisplay we'll include nice extension of Viewport - something which will allow you to have better control of behavior of Plotter's Viewport.</div><div><br></div><div>What do you mean saying 'to retrieve the number of points plotted in the window'? Do you mean number of points that builds up line chart or marker chart?</div><div>If it is so, currently there is no straightforward way to get this count.</div><div>Why do you need this number and how are you going to use it?</div><div><br></div><div>Yours faithfully,</div><div>Mikhail.</div><div><br></div>",
+    "PostedDate": "2009-04-01T01:48:17.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174368",
+    "ThreadId": "50137",
+    "Html": "As to the number of points:<br>\r\n<br>\r\nWhy doesn't the polyline representing the linegraph contain all the points of the enumerable source?<br>\r\n<br>\r\nIn the described above scenario data is plotted for last 30 seconds. When the data flow is stopped the graph is replotted (and FitToView is called) with all the points - e.g 4000 of points with the step of 0.1s.( I preffrred to programatically set points to be plotted during data registration rather rhan change viewport cause this affects performance in long time measurements.)<br>\r\nBut zooming gives lines with thepproximate step of 0.5-1s, not 0.1s.<br>\r\nWhat am I doing wrong?\r\n",
+    "PostedDate": "2009-04-01T08:20:51.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

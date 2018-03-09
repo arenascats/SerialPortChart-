@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "587497",
+    "ThreadId": "251462",
+    "Html": "\r\n<p>Hello</p>\r\n<p>&nbsp;</p>\r\n<p>When i'm in the XAML editor, i create an event for mousewheel in the plotter. But it's never launched</p>\r\n<p>But on a button it works. Any idea how to trigger the wheel event on the plotter?</p>\r\n<p>Or more generally, a trigger when the plotter.Visible data has changed?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot !!!</p>\r\n",
+    "PostedDate": "2011-03-28T04:03:06.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "746385",
+    "ThreadId": "298184",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>As per the sample Bing Maps(crop density) given, we tried to plot 200000 points. Its trying to plot point. but after certain amount of time its getting refresh back and reloading again. This is happening for 3 to 4 times, &#65279;after that out of memory exception\r\n is raised making the application to crash.</p>\r\n<p>Is there any limit for the points to be plotted?</p>\r\n<p>Any Solution wil be good apreciated........</p>\r\n",
+    "PostedDate": "2012-02-07T20:34:48.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

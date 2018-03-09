@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "527343",
+    "ThreadId": "236129",
+    "Html": "\r\n<p>Hi everyone,</p>\r\n<p>I'm reading a lot about D3, but i don't find how to plot a line chart with multi vertical axis. I've been reading &nbsp;some discussions here, but it doesn't work for me.</p>\r\n<p>Please, could someone explain me how to do this simply (because I'm a beginner in dev).</p>\r\n<p>I'm french so sorry for my english.</p>\r\n<p>Any help is very welcome.</p>\r\n<p>Have a nice week end,</p>\r\n<p>Benoit</p>\r\n",
+    "PostedDate": "2010-11-26T05:17:09.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "527344",
+    "ThreadId": "236129",
+    "Html": "Hi Benoit,\r\n<div>First I ask you to move your further discussions to <a href=\"http://d3future.codeplex.com/discussions\">\r\nhttp://d3future.codeplex.com/discussions</a>, as all development and support will be there.</div>\r\n<div>Second: what kind of additional vertical axes do you need? Can you please explain or provide a drawing?<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><font size=\"1\"><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a></font></div>\r\n<br>\r\n<br>\r\n<br>\r\n<div>On Fri, Nov 26, 2010 at 4:17 PM, redkine <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: redkine</p>\r\n<div>\r\n<p>Hi everyone,</p>\r\n<p>I'm reading a lot about D3, but i don't find how to plot a line chart with multi vertical axis. I've been reading some discussions here, but it doesn't work for me.</p>\r\n<p>Please, could someone explain me how to do this simply (because I'm a beginner in dev).</p>\r\n<p>I'm french so sorry for my english.</p>\r\n<p>Any help is very welcome.</p>\r\n<p>Have a nice week end,</p>\r\n<p>Benoit</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=236129&ANCHOR#Post527343\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com@discussions.codeplex.com?subject=[dynamicdatadisplay:236129]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2010-11-26T05:20:50.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "527345",
+    "ThreadId": "236129",
+    "Html": "\r\n<p>Thanks, I'm moving the discussion.</p>\r\n",
+    "PostedDate": "2010-11-26T05:26:32.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "527346",
+    "ThreadId": "236129",
+    "Html": "\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial; font-size:x-small\"><span><span style=\"color:#000000; font-size:large\"><span><span><span style=\"color:#6d8d34; font-size:large\"><span><span style=\"color:#000000\">See if these help:</span></span></span></span></span></span></span></span>\r\n<div><span style=\"font-family:Arial; font-size:x-small\">&nbsp;</span></div>\r\n<div><span style=\"font-family:Arial; font-size:x-small\"><a href=\"mhtml:{296E0C2C-058C-4D5C-8550-3492F52F6D2C}mid://00000488/!x-usc:http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=219939&ANCHOR\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=219939&amp;ANCHOR</a></span></div>\r\n<div><span><span style=\"color:#6d8d34; font-size:large\"><strong>D3 - Independent Y-Axis on ChartPlotter\r\n</strong><span id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl38_Timestamp\"><span style=\"color:#000000\">Jul 28&nbsp;</span></span><strong>&nbsp;</strong><span style=\"color:#000000\">2009</span></span></span></div>\r\n<div>&nbsp;</div>\r\n<div><span><span><span style=\"color:#6d8d34; font-size:large\"><strong>D3 - TwoIndependent Y-Axis does not respond appropriately to X-Axis zoom\r\n</strong><span id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl08_Timestamp\"><span style=\"color:#000000\">Jul 20&nbsp;</span></span><strong>&nbsp;</strong><span style=\"color:#000000\">2009</span></span></span>&nbsp;&nbsp;<br>\r\n</span><br>\r\n<span><span style=\"color:#6d8d34; font-size:large\"><strong>D3 - How can we set initial reason graph range&nbsp;</strong><span id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_Timestamp\"><span style=\"color:#000000\">Sep 2 2009&nbsp;</span></span></span></span></div>\r\n<div><span><span style=\"color:#000000; font-size:large\">&nbsp;</span></span>&nbsp;</div>\r\n<div><span><span style=\"color:#000000; font-size:large\"><span><span><span style=\"color:#6d8d34; font-size:large\"><strong>D3 - Independent Y-Axis on ChartPlotter\r\n</strong><span id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl38_Timestamp\"><span style=\"color:#000000\">Jul 28&nbsp;2009</span></span></span></span></span></span></span></div>\r\n<div><span><span style=\"color:#000000; font-size:large\"><span><span><span style=\"color:#6d8d34; font-size:large\"><span></span></span></span></span></span></span></div>\r\n<div><span><span style=\"color:#000000; font-size:large\"><span><span><span style=\"color:#6d8d34; font-size:large\"><span><span style=\"color:#000000\">David</span></span></span></span></span></span></span></div>\r\n</div>\r\n",
+    "PostedDate": "2010-11-26T05:26:38.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "527347",
+    "ThreadId": "236129",
+    "Html": "Also please take a look at AxisColoringSample in DynamicDataDisplay.Samples, which is in 'Nightly' version of D3 in 'Source code' tab.<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n",
+    "PostedDate": "2010-11-26T05:32:40.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "527349",
+    "ThreadId": "236129",
+    "Html": "\r\n<p>This sample looks like this:</p>\r\n<div><img title=\"AxisColoringSample.JPG\" src=\"cid:ii_12c886ded7f7665d\" alt=\"AxisColoringSample.JPG\"></div>\r\n<div></div>\r\n<div>or like this -&nbsp;<a href=\"http://www.dropmocks.com/mKgtH\">http://www.dropmocks.com/mKgtH</a><br>\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-11-26T05:45:20.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "527379",
+    "ThreadId": "236129",
+    "Html": "\r\n<p>I was speaking about source code of this DynamicDataDisplay, not that))) &lt;- saying about location of AxisColoringSample.</p>\r\n<p>But soon will be speaking entirely about that.</p>\r\n",
+    "PostedDate": "2010-11-26T06:45:47.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "528099",
+    "ThreadId": "236129",
+    "Html": "\r\n<p>In fact, i want to have 2 vertical axis (or more) because I have to plot two line graphs. Both of them are in function of the position x, and vertical axes are in range :</p>\r\n<p>- first one from 1.0E00 to 1.0E01</p>\r\n<p>- and the second one from 8.0E-08 to 1.0E-06</p>\r\n<p>So that with the second graph, I see a line...</p>\r\n<p>That is why I want to dissociate each Y axis</p>\r\n",
+    "PostedDate": "2010-11-29T01:43:28.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "538218",
+    "ThreadId": "236129",
+    "Html": "Hi!\r\n<div><br>\r\n</div>\r\n<div>Please take a look at TwoIndependentAxes sample in D3.Current solution in <a href=\"http://d3future.codeplex.com/SourceControl/list/changesets\">\r\nhttp://d3future.codeplex.com/SourceControl/list/changesets</a></div>\r\n<div>Maybe this sample will fit your needs.</div>\r\n<div><a href=\"http://d3future.codeplex.com/SourceControl/list/changesets\"></a><br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-12-20T04:25:30.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

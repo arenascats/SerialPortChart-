@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "125566",
+    "ThreadId": "37859",
+    "Html": "Hi!<br>\r\n<br>\r\nIs&nbsp;it possible to use Time on axis e.g. 10-10-2007, 10:45:36?<br>\r\n<br>\r\nI have only seen possibility to use double values.<br>\r\n<br>\r\nThx\r\n",
+    "PostedDate": "2008-10-16T05:50:22.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "125663",
+    "ThreadId": "37859",
+    "Html": "Hi!<br>\r\n<br>\r\nThis feature will be added soon - our team is currently developing and testing it.<br>\r\n",
+    "PostedDate": "2008-10-16T11:10:55.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131538",
+    "ThreadId": "37859",
+    "Html": "Awesome :)<br>\r\n<br>\r\nI would kill for this feature!<br>\r\n<br>\r\nIf I might give a gentle cajole, but no pressure!, do you have any thoughts on when this might be ready?<br>\r\n<br>\r\nCheers,<br>\r\n<br>\r\nNick\r\n",
+    "PostedDate": "2008-11-10T17:54:57.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131718",
+    "ThreadId": "37859",
+    "Html": "Hello!<br>\r\n<br>\r\nI hope, we will release an updated version of D3 (as we call Dynamic Data Display) in this week, or (as a latest date) in the beginning of next week.<br>\r\nAnd you will be able to enjoy time axis, too!<br>\r\n",
+    "PostedDate": "2008-11-11T09:43:15.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "131944",
+    "ThreadId": "37859",
+    "Html": "This sounds great, I am also very interested in date and time on x axis. <br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-12T02:00:36.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "133346",
+    "ThreadId": "37859",
+    "Html": "Hello!<br>\r\n<br>\r\nDoes this feature already available now??<br>\r\n<br>\r\nThx \r\n",
+    "PostedDate": "2008-11-18T02:59:36.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135447",
+    "ThreadId": "37859",
+    "Html": "Hi,<br>\r\nAny news on the update? \r\n",
+    "PostedDate": "2008-11-26T02:11:44.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135458",
+    "ThreadId": "37859",
+    "Html": "Hi,<br>\r\nSorry for making you wait for this update, it will be ready by the end of this week.\r\n",
+    "PostedDate": "2008-11-26T02:34:09.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135460",
+    "ThreadId": "37859",
+    "Html": "Great! Thank you very much.<br>\r\n",
+    "PostedDate": "2008-11-26T02:36:16.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "137884",
+    "ThreadId": "37859",
+    "Html": "Hi,<br>\r\n<br>\r\nAny further update on this? :):)<br>\r\n<br>\r\nRgrds,<br>\r\n<br>\r\nNick \r\n",
+    "PostedDate": "2008-12-04T19:52:35.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138191",
+    "ThreadId": "37859",
+    "Html": "Hi!<br>\r\n<br>\r\nI hope, you'll be able to work with DateTime axes in Monday or Tuesday (nearly December 8 or 9).<br>\r\n<br>\r\nThank you! \r\n",
+    "PostedDate": "2008-12-05T19:42:11.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138672",
+    "ThreadId": "37859",
+    "Html": "Hi!<br>\r\n<br>\r\nI'm very glad to inform you that we've released next version of DynamicDataDisplay,<br>\r\nit's mayor new feature is DateTime axis. \r\n",
+    "PostedDate": "2008-12-08T10:30:55.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138804",
+    "ThreadId": "37859",
+    "Html": "Thank you!",
+    "PostedDate": "2008-12-08T16:59:59.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139154",
+    "ThreadId": "37859",
+    "Html": "Hi!<br>\r\n<br>\r\nFinally i can use this...thank you very much!!<br>\r\n",
+    "PostedDate": "2008-12-09T16:28:40.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

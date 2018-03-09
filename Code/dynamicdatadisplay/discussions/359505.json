@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "848617",
+    "ThreadId": "359505",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>I currently am manually setting the chart range using Viewport.Visible attribute. However, I would also like to only allow user to drag the graph along the horizontal axis and not the vertical axis, primarily because the vertical axis values are restricted\r\n to a certain bound, so there's really no reason to allow users to drag the graph vertically.</p>\r\n<p>On a side note, when I try scrolling up in the graph, the graph essentially freezes and I have no idea why. Any clues?</p>\r\n<p>Thanks,</p>\r\n<p>Jin</p>\r\n<p>Edit: Also scrolling down doesn't seem to zoom out. It instead scroll down along both vertical and horizontal axis. Am I missing something to use the zooming property correctly?</p>\r\n<p>Edit2: Actually the scrolling to zoom functionality seems to be broken altogether in the WPF version.</p>\r\n",
+    "PostedDate": "2012-06-13T13:16:34.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1104897",
+    "ThreadId": "359505",
+    "Html": "To achieve that funcionality I copied MouseNavigation class, named it MyMouseNavigation and modified this code:<br />\n<pre><code>private void OnMouseMove( object sender, MouseEventArgs e )\n{\n    ....\n    Point loc = Viewport.Visible.Location;\n    Vector shift = panningStartPointInViewport - endPoint;\n    shift.Y = 0; // this is the line which I've added to remove vertical panning\n    loc += shift;\n    ....\n}</code></pre>\n\nThen you have to remove original MouseNavigation which is in use:<br />\n<pre><code>    plotter.Children.Remove( plotter.MouseNavigation );</code></pre>\n\nThe last thing you need to do is use our custom mouse navigation:<br />\n<pre><code>    plotter.Children.Add( new MyMouseNavigation() );</code></pre>\n\nI hope it will help you :).\r<br />\n<br />\nRegards,\r<br />\nvirious<br />\n",
+    "PostedDate": "2013-10-08T01:21:20.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "234969",
+    "ThreadId": "69055",
+    "Html": "<p>I am thinking of adding additional functionality to reduce the CPU load of charting real-time data. &nbsp;The plan is to add an leading area ahead of latest data point so that the new points do not cause all the other points to be redrawn in the x axis.</p>\r\n<p>Once the new points fill the leading zone, a new leading zone is created and the entire graph will need to be re-drawn.</p>\r\n<p>So if we have say 30minutes of data, the x axis could show 45minutes, only new points are drawn. Once an additional 15minutes of data is obtained the x axis is set to 60minutes to maintain a 15 minute leading zone, at this point all the data will need to be re-sampled and displayed.</p>\r\n<p>This will cause CPU spikes but should reduce the overall CPU load.</p>\r\n<p>Just thinking about this approach, the entire graph would have to be re-drawn if the latest data point y value is outside the current range.</p>\r\n<p>What do you think?</p>\r\n<p>&nbsp;</p>\r\n<p>Additionally. &nbsp;I am not sure if you are doing this or not.</p>\r\n<p>There is no need to draw all the points, just the number of pixels within the current graph width, so the plan would be to re-sample all the points when the latest data value exceeds the current graph bounds. &nbsp;The plan would to take the highest and lowest within each pixel x data segment and plot those.</p>\r\n<p>Does that sounds feasible within the current framework?</p>",
+    "PostedDate": "2009-09-15T19:02:12.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235657",
+    "ThreadId": "69055",
+    "Html": "<p>Hi,</p>\r\n<p>your approach is right. The first idea is going to appear in a new version of LineChart, on which i'm working now, and the second method is already implemented in our FrequencyFilter, which (as other filters, too) can be added to a LineGraph's property Filters.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-17T09:43:45.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235860",
+    "ThreadId": "69055",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>great! &nbsp;Looking forward to the new version of LineChart, what sort of time scale are you thinking. &nbsp;I would be happy to help out, or review it once you have added the functionality.</p>\r\n<p>Cheers,</p>\r\n<p>Jon Middleton</p>",
+    "PostedDate": "2009-09-17T19:36:24.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

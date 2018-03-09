@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "430374",
+    "ThreadId": "209159",
+    "Html": "<p>I would like to use ChartPlotter and using a personal ContextMenu without the default context menu items.</p>\r\n<p>I cannot set the DefaultContextMenu or defaultContextMenu, if I use a DefaultContextMenu.StaticItems.Clear() does not work, trying to set to null or to an empty contextmenu does not work either.</p>\r\n<p>Is that possible?</p>\r\n<p>I find strange to have an application where Send feedback goes to the library creator instead of me (and I would prefer to not have a report feedback in that menu anyway).</p>\r\n<p>Thank you.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-13T03:15:23.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430377",
+    "ThreadId": "209159",
+    "Html": "<p>Hi!</p>\r\n<p>&nbsp;</p>\r\n<p>You can change StaticMenuItems collection of DefaultContextMenu class, instance of which you can get in plotter's DefaultContextMenu property.</p>\r\n<p>And also we'll remove 'Send feedback' menu item in the next changeset.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-13T03:22:45.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430415",
+    "ThreadId": "209159",
+    "Html": "<p>I tried to clear them (as I said with DefaultContextMenu.StaticItems.Clear()), but it didn't work (I found another discussion claiming the same thing). The items are still there.</p>\r\n<p>Is this the expected behaviour? Is this a known problem that has been solved? (I've a nightly build from some time ago).</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-13T05:10:57.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430537",
+    "ThreadId": "209159",
+    "Html": "<p>I discovered that I was doing the Clear() at the wrong moment. It should be done when the plotter is loaded (handling the Loaded event of the plotter). Then everything works as expected.</p>",
+    "PostedDate": "2010-04-13T09:28:10.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430863",
+    "ThreadId": "209159",
+    "Html": "<p>I'm glad that &quot;everything works as expected&quot; :)</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-14T04:33:00.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

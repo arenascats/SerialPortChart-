@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1493812",
+    "ThreadId": "661811",
+    "Html": "As is known to all, DynamicDataDisplay component has a great feature AutoFitToView which makes your chart move left automatically and adjust the horizontal and vertical axis to your custom data. But after I have done a drag and drop or mousewheel operation, this feature seems disappeared. The whole plotter area freezes. How do I retrieve the AutoFitToView property in this situation?<br />\nThanks a lot for all your kindly helps.<br />\n",
+    "PostedDate": "2017-03-09T07:20:01.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

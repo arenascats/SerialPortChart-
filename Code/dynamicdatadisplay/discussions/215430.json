@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "453405",
+    "ThreadId": "215430",
+    "Html": "Hi Guys,\r\n\r\nExcelent Library! This was just what I was looking for!\r\n\r\nI'm currently using the v0.3 stable release to draw realtime data in multiple graphs in multiple charts. I get an fps of ~ 1Hz.\r\nAs many others I would like to boost the fps by using DirectX. So I tried the latest Nightly and tried the D3-Line-in-3D Line3DSample, which looks very promising.\r\n\r\nHowever, upon startup it throws a FileNotFoundException in Plotter.cs:68\r\n  genericResources = (ResourceDictionary)Application.LoadComponent(new Uri(&quot;/DynamicDataDisplay;component/Themes/Generic.xaml&quot;, UriKind.Relative));\r\n\r\nAny solutions?\r\nAny forecast for when the DirectX support will be available in a stable release?\r\n\r\nBest Regards, \r\nelJorro\r\n",
+    "PostedDate": "2010-06-09T01:34:07.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

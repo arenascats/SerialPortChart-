@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "627080",
+    "ThreadId": "261233",
+    "Html": "\r\n<p>Dear all,</p>\r\n<p>I draw the graph with Log Y Axis. However, for the graph with value of Y axis so close (10 point with range [0 2]), the label almost disappears. When I pull up and down the graph, the label appears clearly again. Could any one help me to fix that.</p>\r\n<p>I don't know how to upload the picture here, so this is the link:<br>\r\nhttp://www.flickr.com/photos/16914125@N02/5829538611/in/photostream</p>\r\n<p>Thanks very much.</p>\r\n<p>DTT.</p>\r\n",
+    "PostedDate": "2011-06-13T12:45:11.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "627609",
+    "ThreadId": "261233",
+    "Html": "<p>I got it. Thanks.</p>",
+    "PostedDate": "2011-06-14T09:25:51.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

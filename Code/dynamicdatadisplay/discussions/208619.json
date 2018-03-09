@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "428516",
+    "ThreadId": "208619",
+    "Html": "<p>I've been using D3 linegraphs successfully with moderately large data sources (20K points) but now have an application that needs to display around 1M data points (3hours of 100Hz data).</p>\r\n<p>Initially plotting the chart &amp; redrawing in response to changes in the plot size takes around 5 seconds on an i7 based PC with a GeForce GT 330M graphics card.</p>\r\n<p>There isn't much point displaying 1M data points when all data is displayed but when the user zooms in to a smaller region of the plot the high sample frequency data becomes useful.</p>\r\n<p>I've considered showing the overview at 1Hz (approx 10K points) and then changing to higher frequency data (e.g. 100Hz) as the user zooms in.</p>\r\n<p>Has anyone else faced a similar problem and what solution (if any) did you come up with?</p>",
+    "PostedDate": "2010-04-07T14:33:47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429678",
+    "ThreadId": "208619",
+    "Html": "Hi there,&nbsp; I just found D3 by googling for high performance charting libraries and it looks good - yes I have a requirement similar to the above - 1m data points. When I was a student I wrote a charting control in Windows Forms that could handle around 1m datapoints for a real-time data acquisition system using resampling. Hope it helps and good luck to you! &nbsp;<br />\n",
+    "PostedDate": "2010-04-11T01:14:35.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429760",
+    "ThreadId": "208619",
+    "Html": "... On inspection D3 might already be doing this. I just had a look at LineGraph/FrequencyFilter classes in the D3 source. In the UpdateCore method, the points in the dataseries are first filtered using a class FrequencyFilter (resampled?) and then cropped using class FakePointList to render only what is in the viewable area, prior to being rendered in OnRender. The FrequencyFilter appears to be doing some sort of sampling to reduce the dataset when large points sets are being rendered (correct me if Im wrong!). <br />\n",
+    "PostedDate": "2010-04-11T11:00:52.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429861",
+    "ThreadId": "208619",
+    "Html": "<p>Andy,</p>\r\n<p>Thanks for your input. &nbsp;I'll work through your suggestions and post my findings.</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-04-11T20:22:31.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429924",
+    "ThreadId": "208619",
+    "Html": "Great, I'd be interested to see them!<br />\n",
+    "PostedDate": "2010-04-12T01:21:53.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430270",
+    "ThreadId": "208619",
+    "Html": "<p>not sure if this addresses the above problem, but below is a filter I use to reduce the number of points to display, by specifying the number of data points to skip. &nbsp;hope it helps someone.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>    <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">class</span> GraphPointFilter : PointsFilterBase {\r\n        <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">int</span> skipNumber = 0;\r\n\r\n        <span style=\"color:Blue\">public</span> GraphPointFilter(<span style=\"color:Blue\">int</span> _skipNumber) {\r\n            skipNumber = _skipNumber;\r\n        }\r\n\r\n        <span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;summary&gt;</span>\r\n        <span style=\"color:Gray\">///</span><span style=\"color:Green\"> The number of points to skip from the original set</span>\r\n        <span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;/summary&gt;</span>\r\n        <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">int</span> SkipNumber {\r\n            <span style=\"color:Blue\">get</span> { <span style=\"color:Blue\">return</span> skipNumber; }\r\n            <span style=\"color:Blue\">set</span> { skipNumber = value; }\r\n        }\r\n\r\n        <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">override</span> List&lt;Point&gt; Filter(List&lt;Point&gt; points) {\r\n            <span style=\"color:Blue\">if</span> (skipNumber == 0) {\r\n                <span style=\"color:Blue\">return</span> points;\r\n            }\r\n\r\n            List&lt;Point&gt; resultPoints = <span style=\"color:Blue\">new</span> List&lt;Point&gt;();\r\n\r\n            <span style=\"color:Blue\">int</span> i = 0;\r\n\r\n            <span style=\"color:Blue\">foreach</span> (<span style=\"color:Blue\">var</span> element <span style=\"color:Blue\">in</span> points) {\r\n                <span style=\"color:Blue\">if</span> (i % (skipNumber+1) == 0) {\r\n                    resultPoints.Add(element);\r\n                }\r\n\r\n                i++;\r\n            }\r\n\r\n            <span style=\"color:Blue\">return</span> resultPoints;\r\n        }\r\n\r\n        <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">void</span> Notify() {\r\n            RaiseChanged();\r\n        }\r\n    }\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>e.</p>",
+    "PostedDate": "2010-04-12T19:17:02.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

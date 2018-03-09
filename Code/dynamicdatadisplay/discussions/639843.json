@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1430094",
+    "ThreadId": "639843",
+    "Html": "Hi, \r<br />\n<br />\nLets suppose Y-values of data are {0, 1, 2} which correspond to {Low, Medium, High}. \r<br />\nHow would it be possible to set Y-axis to show {Low, Medium, High} instead of {0, 1, 2}. \r<br />\n<br />\nFollowing is a code example on how I create my plot with {0, 1, 2}: <br />\n<pre><code>List&lt;Point&gt; points = new List&lt;Point&gt;();\npoints.Add(new Point() { X = 1, Y = 0 }); // 0 to Low\npoints.Add(new Point() { X = 2, Y = 2 }); // 2 to High\npoints.Add(new Point() { X = 3, Y =1 });  // 1 to Medium\npoints.Add(new Point() { X = 4, Y = 0 }); // 0 to Low\nvar pointsDS = new EnumerableDataSource&lt;Point&gt;(points);\n                pointsDS.SetXMapping(x =&gt; x.X);\n                pointsDS.SetYMapping(y =&gt; y.Y);\n_chartPlotter.AddLineGraph(pointsDS, pen, penDescription);</code></pre>\n\n",
+    "PostedDate": "2015-06-11T07:16:26.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437153",
+    "ThreadId": "639843",
+    "Html": "Hi\r<br />\n<br />\nSearch in the discussions you will get the answer.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2015-08-04T04:17:14.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

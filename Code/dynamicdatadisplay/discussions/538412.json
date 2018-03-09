@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1220662",
+    "ThreadId": "538412",
+    "Html": "I am using a D3 ChartPlotter in my WPF application. Unlike the default behaviour, I'd need the ChartPlotter to:\r<br />\n<br />\nHide the Z &amp; X Axis<br />\n<ul>\n<li>Resize / Scale the graph to fully fill the horizontal space allocated to the control (I don't want the margin that it has by default</li>\n<li>\nI tried searching on the net, but the documentation on the D3 is really scarce and scattered (does someone have a comprehensive resource for learning how to use it?)<br />\n</li>\n</ul>\nThanks<br />\n",
+    "PostedDate": "2014-03-08T14:50:49.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

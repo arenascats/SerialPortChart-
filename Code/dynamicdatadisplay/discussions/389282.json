@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "892172",
+    "ThreadId": "389282",
+    "Html": "\r\n<p>Можно ли как-нибудь сделать, что бы рядо&#1084; с точкой на графике показывалось значение функции в этой точке?? В MS Exel это называется &quot;добавить подписи данных&quot;</p>\r\n",
+    "PostedDate": "2012-07-27T02:38:05.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "905358",
+    "ThreadId": "389282",
+    "Html": "\r\n<p>I needed a very simple graph with only a few data points. &nbsp;In order to display the value of each point I used a CustomMarker:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre style=\"color:black\"><span style=\"color:blue\">Public</span> <span style=\"color:blue\">Class</span> PointMarkerWithText : <span style=\"color:blue\">Inherits</span> ShapeElementPointMarker\n    <span style=\"color:blue\">Private</span> _markerSize <span style=\"color:blue\">As</span> <span style=\"color:blue\">Double</span> = 10.0#\n    <span style=\"color:blue\">Public</span> <span style=\"color:blue\">Overrides</span> <span style=\"color:blue\">Function</span> CreateMarker() <span style=\"color:blue\">As</span> UIElement\n        <span style=\"color:blue\">Dim</span> result <span style=\"color:blue\">As</span> <span style=\"color:blue\">New</span> StackPanel() <span style=\"color:blue\">With</span> {.Background = <span style=\"color:blue\">New</span> SolidColorBrush(Colors.Transparent)}\n\n        <span style=\"color:blue\">Dim</span> el <span style=\"color:blue\">As</span> <span style=\"color:blue\">New</span> Ellipse <span style=\"color:blue\">With</span> {.Width = _markerSize, .Height = _markerSize, .Fill = Brushes.Black}\n\n        <span style=\"color:green\">'Add the Ellipse to the StackPanel</span>\n        result.Children.Add(el)\n\n        <span style=\"color:blue\">If</span> <span style=\"color:blue\">Not</span> <span style=\"color:blue\">String</span>.IsNullOrEmpty(ToolTipText) <span style=\"color:blue\">Then</span>\n            <span style=\"color:blue\">Dim</span> txtPos <span style=\"color:blue\">As</span> <span style=\"color:blue\">New</span> TextBlock <span style=\"color:blue\">With</span> {.Text = ToolTipText, .Margin = <span style=\"color:blue\">New</span> Thickness(0, 6, 0, 0)}\n            <span style=\"color:green\">'Add the position text to the StackPanel</span>\n            result.Children.Add(txtPos)\n        <span style=\"color:blue\">End</span> <span style=\"color:blue\">If</span>\n\n        <span style=\"color:blue\">Return</span> result\n    <span style=\"color:blue\">End</span> <span style=\"color:blue\">Function</span>\n\n    <span style=\"color:blue\">Public</span> <span style=\"color:blue\">Overrides</span> <span style=\"color:blue\">Sub</span> SetPosition(marker <span style=\"color:blue\">As</span> UIElement, screenPoint <span style=\"color:blue\">As</span> Point)\n        Canvas.SetLeft(marker, screenPoint.X - _markerSize / 2)\n        Canvas.SetTop(marker, screenPoint.Y - _markerSize / 2)\n    <span style=\"color:blue\">End</span> <span style=\"color:blue\">Sub</span>\n<span style=\"color:blue\">End</span> <span style=\"color:blue\">Class</span>\n</pre>\r\n<pre style=\"color:black\"><span style=\"color:blue\"><br></span></pre>\r\n<pre><span style=\"color:#0000ff\">I then used the marker like this:</span></pre>\r\n<pre><span style=\"color:#0000ff\"><br></span></pre>\r\n<pre><span style=\"color:#0000ff\"><pre>  \n            plotter.AddLineGraph(compositeDataSource, <span>New</span> Pen(<span>New</span> SolidColorBrush(Colors.Lime), 3),\n                                 <span>New</span> PointMarkerWithText(), <span>New</span> PenDescription(<span>&quot;Meas&quot;</span>))</pre>\n<br></span></pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-08-28T14:35:07.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "909488",
+    "ThreadId": "389282",
+    "Html": "<p>Thank you for this example, rewrite in C #, all works.</p>\r\n<p>private double _markerSize = 10.0;<br /> public override UIElement CreateMarker()<br /> {<br /> var result = new StackPanel() {Background = new SolidColorBrush(Colors.Transparent)};<br /> var el = new Ellipse() { Width = _markerSize , Height = _markerSize, Fill = Brushes.Black};<br /> result.Children.Add(el);<br /><br /> if (!String.IsNullOrEmpty(ToolTipText))<br /> {<br /> var txtPos = new TextBlock() {Text = ToolTipText, Margin = new Thickness(0,6,0,0)};<br /> result.Children.Add(txtPos);<br /> }<br /> return result;<br /> }<br /><br /> public override void SetPosition(UIElement marker, Point screenPoint)<br /> {<br /> Canvas.SetLeft(marker, screenPoint.X - _markerSize /2);<br /> Canvas.SetTop(marker, screenPoint.Y - _markerSize / 2);<br /> }</p>",
+    "PostedDate": "2012-09-07T00:48:10.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105308",
+    "ThreadId": "389282",
+    "Html": "Could you please tell me how to label data points with their ids/names (Not x or Y values). If any sample code , please post it. It will be great help.\r<br />\nThanks <br />\n",
+    "PostedDate": "2013-10-08T22:16:15.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

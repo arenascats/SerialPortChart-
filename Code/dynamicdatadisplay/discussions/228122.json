@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "496904",
+    "ThreadId": "228122",
+    "Html": "<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\"><div style=\"color:black;background-color:white\"><pre> In my View.Xaml I have:</pre>\r\n<pre style=\"color:black;background-color:white\"><pre>&nbsp;</pre>\r\n<pre><div style=\"color:black;background-color:white\"><pre>&lt;xmlns:d3=&quot;http://research.microsoft.com/DynamicDataDisplay/1.0&quot; /&gt; \r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">x:Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">chWLP</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">LineGraphs</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding SomeGraphList}</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n<pre>But I have such error-message: </pre>\r\n<pre><strong>The property 'LineGraphs' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.</strong></pre>\r\n<pre>Why I have such error?&nbsp;</pre>\r\n</div>\r\n</pre>\r\n</pre>\r\n<pre style=\"color:black;background-color:white\">DynamicDataDisplay.dll 0.3.4703.0</pre>\r\n</div>\r\n</span></pre>\r\n</div>\r\n<div id=\"_mcePaste\" style=\"width:1px;height:1px;overflow:hidden;top:0px;left:-10000px\">﻿</div>",
+    "PostedDate": "2010-09-22T02:06:53.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497028",
+    "ThreadId": "228122",
+    "Html": "<p>I have generally added my LineGraphs to the plotter in code but have had no issues doing it that way.&nbsp;</p>\r\n<p>i.e. plotter.AddLineGraph(dataSource);</p>\r\n<p>but you should also be able to do this:</p>\r\n<p><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span></p>\r\n<p><span style=\"color:blue\"><span style=\"color:#000000\">&nbsp;&nbsp;&nbsp;&nbsp; <a></a></span>&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">LineGraph</span> <span style=\"color:red\">DataSource</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=MyDataSource}</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span><br><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span></p>",
+    "PostedDate": "2010-09-22T07:59:09.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497033",
+    "ThreadId": "228122",
+    "Html": "<p>There is no &quot;LineGraphs&quot; property. Only a &quot;Children&quot; property where you can add&nbsp;any type of object that implements the&nbsp;IPlotterElement interface, including LineGraphs. You will have to add the LineGraphs the way gorter described.</p>\r\n<p>If you want to&nbsp;bind to &quot;Children&quot;,&nbsp;you will have to change the code to make it a&nbsp;DependencyProperty.</p>",
+    "PostedDate": "2010-09-22T08:11:35.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497214",
+    "ThreadId": "228122",
+    "Html": "<p>Have a look at&nbsp;<a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=63633\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=63633</a></p>\r\n<p>Ravi has written a class that adds a LineGraphs property that should help.</p>\r\n<p>You can download Ravi's code from&nbsp;<a href=\"http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/.Documents/LineGraph.zip\">http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/.Documents/LineGraph.zip</a></p>",
+    "PostedDate": "2010-09-22T13:59:34.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497372",
+    "ThreadId": "228122",
+    "Html": "<p>I sow this example. Is very good.</p>\r\n<p>But my problem it the other thing.</p>\r\n<p>I can't use this code (in LineGraph example application)</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">chart</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">x:Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotter</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Grid.Row</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">1</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Height</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Auto</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Width</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Auto</span><span style=\"color:black\">&quot;</span>\r\n         <span style=\"color:red\">LineGraphs</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=LineGraphs}</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">&gt;</span>\r\n            <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">chart</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter.MainHorizontalAxis</span><span style=\"color:blue\">&gt;</span>\r\n                <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">HorizontalDateTimeAxis</span> <span style=\"color:red\">x:Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">dateAxis</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n            <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">chart</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter.MainHorizontalAxis</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">chart</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\nbecause in string </pre>\r\n<pre><span style=\"color:red\">LineGraphs</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=LineGraphs}</span><span style=\"color:black\">&quot;</span></pre>\r\n<pre><span style=\"color:black\">I have an error message which was described above.</span></pre>\r\n</div>",
+    "PostedDate": "2010-09-22T22:14:57.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497375",
+    "ThreadId": "228122",
+    "Html": "<p>I don't really understand your question.</p>\r\n<p>As @Foxman13 says, there is no LineGraphs property on the standard dynamic data display ChartPlotter class. &nbsp;If there is no property on the class, you wont be able to bind to it!!</p>\r\n<p>Why do you still expect to bind to a property (i.e. LineGraphs) that doesn't exist?</p>",
+    "PostedDate": "2010-09-22T22:28:42.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "845558",
+    "ThreadId": "228122",
+    "Html": "<p>Dont you get it, he wants to bind a collection of line graphs instead of only statically binded one via Xaml as in gorters code:</p>\r\n<p><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">d3</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">ChartPlotter</span><span style=\"color: blue;\">&gt;</span></p>\r\n<p><span style=\"color: blue;\"><span style=\"color: #000000;\">&nbsp;&nbsp;&nbsp;&nbsp; <a> </a></span>&lt;</span><span style=\"color: #a31515;\">d3</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">LineGraph</span> <span style=\"color: red;\">DataSource</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">{Binding Path=MyDataSource}</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">/&gt; <br /></span></p>\r\n<p><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">d3</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">ChartPlotter</span><span style=\"color: blue;\">&gt;</span></p>",
+    "PostedDate": "2012-06-06T07:54:24.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073761",
+    "ThreadId": "228122",
+    "Html": "Hi, <br />\n<br />\nI am trying to use d3 chart plotter in MVVM. I am trying to use the code given by Ravi in my project, but not quite sure how to use it properly. It says &quot;the property Linegraphs is not found in type ChartPlotter&quot;. What I did is add the LinegraphViewModel.cs to my project and make it the same namespace as my new project. Similarly ChartPlotter.cs was added as well.<br />\n<br />\n Anyone can advice me on what else need to be done in order to use the plotter successfully in my MVVM application?<br />\n <br />\nThank you so much!<br />\n",
+    "PostedDate": "2013-07-26T22:35:54.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1305456",
+    "ThreadId": "228122",
+    "Html": "The download .dll need to be unlocked. \r<br />\nSolution here: <a href=\"http://stackoverflow.com/questions/3432624/wpf-assembly-reference-missing-project-still-building\" rel=\"nofollow\">http://stackoverflow.com/questions/3432624/wpf-assembly-reference-missing-project-still-building</a><br />\n",
+    "PostedDate": "2014-09-16T23:27:00.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

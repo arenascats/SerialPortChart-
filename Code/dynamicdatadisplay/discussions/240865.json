@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "545482",
+    "ThreadId": "240865",
+    "Html": "\r\n<p>Is there a simple way to set the Y Axis Min and Max? I have an application where I want to display a range of -2000 to 2000</p>\r\n<p>Thanks</p>\r\n<p>Mark.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-07T09:03:21.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "547592",
+    "ThreadId": "240865",
+    "Html": "\r\n<p>Mark,</p>\r\n<p>You can set the chart display range&nbsp;</p>\r\n<pre><div style=\"color:black; background-color:white\"><pre>Chart.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(Chart.Viewport.Visible.XMin, -2000, Chart.Viewport.Visible.Width, 4000);</pre>\r\n<pre><br></pre>\r\n</div>\r\n</pre>\r\n<p>or you can set the viewport domain</p>\r\n<pre>Chart.Viewport.Domain = <span>DataRect</span>.Create(Double.MinValue,&nbsp;-2000,&nbsp;Double.MaxValue, 2000);<br><br></pre>\r\n<p>BTW, most activity related to D3 is now at&nbsp;<a href=\"http://d3future.codeplex.com/\">http://d3future.codeplex.com/</a></p>\r\n<p>&nbsp;</p>\r\n<p>Grant.</p>\r\n",
+    "PostedDate": "2011-01-11T13:50:18.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1098433",
+    "ThreadId": "458887",
+    "Html": "Hello,\r<br />\n<br />\nin my project I created a linegraph, which works very fine. But the window, where  I am showing it, is very small. So I want to remove the footer, because there is only shown the months and I want to remove the description right up. The description is set by using the AddLineGraph-method : <br />\n<pre><code> longtermplotter.AddLineGraph(compositeDataSource,Colors.Blue, 3,&quot;Longterm&quot;);</code></pre>\n\nFor the footer I set the format of the horizontal Axis as <br />\n<pre><code>\n &lt;d3:ChartPlotter.HorizontalAxis&gt;\n    &lt;d3:HorizontalDateTimeAxis Name=&quot;longtermdateAxis&quot;/&gt;\n   &lt;/d3:ChartPlotter.HorizontalAxis&gt;</code></pre>\n\nand the scale is OK, but below the month are shown again, an that I want to remove.\r<br />\n<br />\nExcuse my bad English and fell free to ask if the description is not understandable.\r<br />\n<br />\nThanks\r<br />\n<br />\nOttilie<br />\n",
+    "PostedDate": "2013-09-24T02:12:38.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

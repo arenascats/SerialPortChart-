@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "158949",
+    "ThreadId": "47475",
+    "Html": "Is it possible to set the titles of the axis in code? And if this is possible how do you do this?\r\n",
+    "PostedDate": "2009-02-18T05:20:22.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172689",
+    "ThreadId": "47475",
+    "Html": "Hi!<div><br></div><div>What do you mean saying 'titles of the axis'? Do you mean the very title of axis, which is situated near (down or left, for example) to axis and describes what does the axis show (1)? Or you mean custom string labels near ticks of axis (2)?</div><div><br></div><div>If (1), you can add to Plotter.Children an instance of special class - HorizontalAxisTitle or VerticalAxisTitle from C# or from XAML. These classes are successors of ContentControl, so you can assign anything to want to their Content property - both descriptive string or ant WPF control with such description.</div><div>If you want to change title of AxisTitle which has already been added to plotter, you should firstly get an instance of this AxisTitle - this can be done in several ways - you can assing to your AxisTitle a name, when creating it in Xaml, and then call it by name, or you can perform a search for instances of class you want to find in Plotter.Children collection using LINQ methods, such as Plotter.Children.OfType&lt;HorizontalAxisTitle&gt;().FirstOrDefault() (do not forget to check whether this method returned not null).</div><div><br></div><div>If (2), you should wait for some time, as we are only developing this feature, and it will be included in one of next D3's releases.</div><div><br></div><div>Mikhail.</div><div><br></div><div><br></div>",
+    "PostedDate": "2009-03-27T02:46:23.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

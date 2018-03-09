@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "228829",
+    "ThreadId": "67334",
+    "Html": "<p>Can the axis of the charting package be restricted so that it's not possible to scroll beyond a certain boundary.&nbsp; Basically panning shouldn't be possible unless zoomed in.&nbsp; and once zoomed in it shouldn't allow panning beyond the axis shown. Also for zooming and panning is it possible to display a navigator window like photoshop for the plotter.</p>",
+    "PostedDate": "2009-08-28T13:05:15.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229346",
+    "ThreadId": "67334",
+    "Html": "<p>Hi,</p>\r\n<p>Of course, 'navigator window like [in] photoshop' is a nice feature, but now it doesn't belong to our roadmap, so you can create it yourself, it is not very difficult - if you'll have questions in this part, do not hesitate to ask them.</p>\r\n<p>About the first part of your question - please take a look at ViewportRestrictions collection of ChartPlotter.Viewport and at Domain property of Viewport, too.</p>\r\n<p>The first allows you to add pieces of your functionality into process of determining actual Visible rectangle, and the second is a rectangle that works like a boundary for visible rectangle.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-31T07:55:44.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

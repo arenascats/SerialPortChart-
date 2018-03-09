@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "577097",
+    "ThreadId": "248842",
+    "Html": "<p>In my chart application I store <strong>Times </strong>and <strong>values </strong> in a <strong>param </strong>variable where contents of this params ( both <strong> time </strong>and <strong>values </strong>gets ) added dynamically by a separate thread.</p>\n<p><br /> My code look like this.....<br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void AddParameter(<strong>Param </strong>paramr)<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //param.GetTimes() returns List&lt;DateTime&gt;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnumerableDataSource&lt;DateTime&gt; xSource = param.GetTimes().AsDataSource();<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xSource .SetXMapping(x =&gt; dateAxis.ConvertToDouble(x));<br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //param.GetValues() returns List&lt;double&gt;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnumerableDataSource&lt;double&gt;&nbsp; ySource&nbsp; = param.GetValues().AsDataSource();<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ySource.SetYMapping(y =&gt; y);<br /> <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CompositeDataSource ds = new CompositeDataSource(xSource , ySource);<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.AddLineGraph(ds, 2, param.Name);<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br /> <br /> Data (both <strong>time </strong>and <strong>value</strong>) are getting added to the '<strong>param</strong>' from outside this class dynamically.<br /> The problem I am facing is I get an error \"<strong>InvalidOperationException</strong>\" which states that \"<strong>Enumeration has either not started or has already finished</strong>.\" <br /> <br /> Can anyone please suggest me where it went wrong? Thanks for your time.</p>",
+    "PostedDate": "2011-03-08T02:48:11.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577558",
+    "ThreadId": "248842",
+    "Html": "<p>If possible Debug the plotter.<span style=\"color: #0000ff;\"><strong>AddLineGraph</strong></span>(ds, 2, param.Name);</p>\r\n<p>There must be some out of range operation done on the Enumerable data type.</p>",
+    "PostedDate": "2011-03-08T23:28:15.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578206",
+    "ThreadId": "248842",
+    "Html": "<p>Thanks Parvez for your comment. Yes, it was crashing from 'DynamicDataDisplay.dll'. It was crashing from the method 'public void GetCurrent(ref Point p)' inside 'EnumerablePointEnumerator'.</p>\r\n<p>The method look like this....</p>\r\n<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; public void GetCurrent(ref Point p) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong>&nbsp;&nbsp; if (enumerator.MoveNext())</strong></em>&nbsp;&nbsp; // I have added this condition to avoid the crash. <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong> {</strong></em><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dataSource.FillPoint((T)enumerator.Current, ref p);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em><strong>}</strong></em><br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>Now its not crashing, but not bringing me the correct result....</p>",
+    "PostedDate": "2011-03-09T21:33:03.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

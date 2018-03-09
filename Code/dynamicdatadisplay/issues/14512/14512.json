@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I miss the ability to export/save the generated graph as an image (jpg/png/etc.).",
+    "LastUpdatedDate": "2013-02-21T17:36:52.66-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-10-22T01:25:29.38-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Export graph as jpg",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 14512
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We already have this feature. First of all, there is a menuItem in plotter's context menu, and also Plotter has method CreateScreenshot and SaveScrenshot.",
+      "PostedDate": "2010-11-22T07:24:48.98-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, i must have missed it, thanks\r\n\r\nyou can close this",
+      "PostedDate": "2010-11-22T20:23:07.717-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:52.66-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

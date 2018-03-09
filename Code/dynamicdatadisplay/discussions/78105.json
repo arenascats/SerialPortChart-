@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "267116",
+    "ThreadId": "78105",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I've some problems with tooltips, the VisualTreeHelper.GetParent can't get the parent.</p>\r\n<p>My&nbsp;app has&nbsp;a TabControl &gt; MyUserControl &gt; Grid &gt; ChartPlotter</p>\r\n<p>I think the problem is to get parent of Grid (which is a UserControl)</p>\r\n<p>My code:</p>\r\n<p>LiveToolTipService.SetToolTip(element, &quot;Some tooltip&quot;);&nbsp;</p>\r\n<p>element is a&nbsp;ViewportPolyline.</p>\r\n<p>The&nbsp;exception occurs in &nbsp;</p>\r\n<p>var nameScope = NameScope.GetNameScope(parent); // LiveToolTipService - Line 185</p>\r\n<p>Any idea to solve this?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-12-14T09:15:27.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

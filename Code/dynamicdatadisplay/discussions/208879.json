@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "429444",
+    "ThreadId": "208879",
+    "Html": "<p>Mikhail and other developers,</p>\r\n<p>I have logged several critical crashing issues with chart controls with the log axis but never received any resolution. I don't see you posting answers to many of the questions in this forum. Please honestly reply if this library is going to be supported going forward so that I can continue using it. It is a library with some cool features but it is still unstable. If you are still supporting it please tell me when is the next stable version going to be released that will address the crashing issues with zooming and&nbsp;panning chart controls with mutiple curves on logarithmic axes. There are also issues with markers/cursors with these charts.</p>\r\n<p>I will appreciate your reply.</p>\r\n<p>Thanks,</p>\r\n<p>Faisal</p>",
+    "PostedDate": "2010-04-09T17:17:57.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429453",
+    "ThreadId": "208879",
+    "Html": "<p>Hi Faisal,</p>\r\n<p>currently there are three persons working on DynamicDataDisplay, their parts of D3 are simply still not ready for publishing them.</p>\r\n<p>I have posted here - <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay April^410.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay%20April^410.zip</a>&nbsp;our current version of D3, where I was unable to reproduce your bug. If it still there please notify me.</p>\r\n<p>Sorry for making you wait and worry.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-09T18:38:55.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429846",
+    "ThreadId": "208879",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>This makes me feel much better. Thanks for providing the new library. If I keep zooming out or zooming in using the middle mouse scroll wheel, I get the following exception (which is same as before). This is when I use the x-axis as log10 axis. Is there a way to specify a max zoom in or zoom out level? I think the values get so small that something is getting divided by a 0. If I can just limit the zoom levels, I will be fine:</p>\r\n<p>System.OverflowException was unhandled by user code<br>&nbsp; Message=&quot;Arithmetic operation resulted in an overflow.&quot;<br>&nbsp; Source=&quot;DynamicDataDisplay&quot;<br>&nbsp; StackTrace:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Charts.Axes.Numeric.LogarithmNumericTicksProvider.CreateTicks(Range`1 range)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Charts.Axes.Numeric.LogarithmNumericTicksProvider.GetTicks(Range`1 range, Int32 ticksCount)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Charts.AxisControl`1.CreateTicks()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Charts.AxisControl`1.UpdateUI()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Charts.AxisControl`1.UpdateRegionHolder`1.Dispose()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Charts.AxisBase`1.OnViewportPropertyChanged(Object sender, ExtendedPropertyChangedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.EventHandler`1.Invoke(Object sender, TEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.EventExtensions.Raise[T](EventHandler`1 event, Object sender, T args)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Viewport2D.RaisePropertyChanged(ExtendedPropertyChangedEventArgs args)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Viewport2D.RaisePropertyChangedEvent(DependencyPropertyChangedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Viewport2D.OnPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry&amp; newEntry, Boolean coerceWithDeferredReference, OperationType operationType)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, OperationType operationType, Boolean isInternal)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Viewport2D.set_Visible(DataRect value)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Navigation.MouseNavigation.MouseWheelZoom(Point mousePos, Double wheelRotationDelta)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at Microsoft.Research.DynamicDataDisplay.Navigation.MouseNavigation.OnMouseWheel(Object sender, MouseWheelEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Input.MouseWheelEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Input.InputManager.ProcessStagingArea()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)<br>&nbsp; InnerException:</p>",
+    "PostedDate": "2010-04-11T18:37:53.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429847",
+    "ThreadId": "208879",
+    "Html": "<p>Hi Faisal,</p>\r\n<p>Can you please sendd me a repro for you case?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-11T18:41:53.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429853",
+    "ThreadId": "208879",
+    "Html": "<p>Mikhail,</p>\r\n<p>Thank you, please check out the screenshot here:</p>\r\n<p><a href=\"http://cid-a6b36fa5d25ad1e3.skydrive.live.com/self.aspx/.Public/D3/D3^_error.png\">http://cid-a6b36fa5d25ad1e3.skydrive.live.com/self.aspx/.Public/D3/D3^_error.png</a></p>\r\n<p>To reproduce the problem:</p>\r\n<p>Use the line chart sample that comes with D3 code (LogarithmicAxesSample).</p>\r\n<p>Once plot is displayed, keep zooming out (make smaller) until the grid lines move really close together and then keep zooming out.&nbsp;</p>\r\n<p>Repeat a few times and eventually you will see the crash.</p>\r\n<p>&nbsp;</p>\r\n<p>Please let me know if you need anything else.</p>\r\n<p>Thanks,<br>Faisal&nbsp;</p>",
+    "PostedDate": "2010-04-11T19:33:53.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498870",
+    "ThreadId": "208879",
+    "Html": "<p>Any word on this bug?&nbsp; You do not have to have a log10 axis for the chart to crash when middle mouse wheel zooming.&nbsp; In my situation any chart that has series will crash if you zoom in or out too far.&nbsp;</p>",
+    "PostedDate": "2010-09-27T04:19:41.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

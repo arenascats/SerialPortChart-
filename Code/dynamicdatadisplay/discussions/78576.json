@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "268993",
+    "ThreadId": "78576",
+    "Html": "<p>Hi,</p>\r\n<p>I am looking into charting/graphing packages and have some questions about D3 and whether it would be a good choice for me. &nbsp;Basically, I am drawing spectra- pretty simple x,y line chart, with a data size of about 75,000 points per spectra. &nbsp;So would someone be so kind as to tell me whether D3 can do these things:</p>\r\n<p>1. &nbsp;Restrict the zoom out and pan- if my data starts at x=5000, and ends at x=75,000, I dont want users to pan or zoom out to see 0 or 100,000 on the X axis (same for Y).&nbsp;</p>\r\n<p>2. Add multiple datasources. &nbsp;I need to draw the spectra, say in black, and then draw curves over some of the peaks in different colors to highlight them.</p>\r\n<p>3. Switch data sources. &nbsp;Since the data can be smoothed (for example), a user can click a checkbox that would switch the view between raw and smoothed data.</p>\r\n<p>4. Remove the grid background</p>\r\n<p>5. Enable/disable the crosshairs</p>\r\n<p>6. Autoscale on the Y axis</p>\r\n<p>Can D3 do all of these things? &nbsp;If so, awesome! &nbsp;Are there examples for any of these? &nbsp;(Im sure there are, but there are so many samples! &nbsp;Hard to tell where to find stuff)</p>\r\n<p>I am doing all of this with MVVM as well, so as part of exploring I have been trying to figure out how to add multiple data sources to a simple ChartPlotter via a binding in xaml but as yet I havent found it. &nbsp;Also, since I cannot draw 75,000 data points, I would definately need to filter the data- it seems there is some nice filtering stuff here, but Im not sure how to use it yet.</p>\r\n<p>I would most appreciate any help or suggestions!</p>",
+    "PostedDate": "2009-12-18T09:27:49.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "269038",
+    "ThreadId": "78576",
+    "Html": "<div><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\"><div><div><p>I am looking into charting/graphing packages and have some questions about D3 and whether it would be a good choice for me.  Basically, I am drawing spectra- pretty simple x,y line chart, with a data size of about 75,000 points per spectra.  So would someone be so kind as to tell me whether D3 can do these things:</p>\r\n\r\n<p>1.  Restrict the zoom out and pan- if my data starts at x=5000, and ends at x=75,000, I dont want users to pan or zoom out to see 0 or 100,000 on the X axis (same for Y). </p></div></div></blockquote><div><br><span style=\"color:rgb(0, 0, 153)\">use something like  plotter.Viewport.FitToViewRestrictions . See </span><span style=\"font-size:0.9em\" title=\"Paste this into a wiki page to link to this discussion\"><span style=\"color:rgb(0, 0, 153)\">discussion:71063.</span><br>\r\n<br></span></div><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\"><div><div>\r\n<p>2. Add multiple datasources.  I need to draw the spectra, say in black, and then draw curves over some of the peaks.</p></div></div></blockquote><div> </div><div><span style=\"color:rgb(0, 0, 153)\">use plotter.AddLineGraph(yourNewDataSource,...) to add a new graph to the same plot.</span><br>\r\n<br></div><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\"><div><div>\r\n<p>3. Switch data sources.  Since the data can be smoothed, a user can click a checkbox that would switch the view between raw and smoothed data.<br></p></div></div></blockquote><div><br><span style=\"color:rgb(0, 0, 153)\">I think that plotter.children.Remove should do the trick</span><br>\r\n </div><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\"><div><div>\r\n<p>4. Remove the grid background</p></div></div></blockquote><div><span style=\"color:rgb(0, 0, 153)\">I don't know  :)</span><br> </div><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\">\r\n<div><div>\r\n<p>5. Enable/disable the crosshairs</p></div></div></blockquote><div><span style=\"color:rgb(0, 0, 153)\">see an example in the samples of v0.3</span><br> </div><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\">\r\n<div><div>\r\n<p>Can D3 do all of these things?  If so, awesome!  Are there examples for any of these?  (Im sure there are, but there are so many samples!  Hard to tell where to find stuff)</p></div></div></blockquote><div><br style=\"color:rgb(0, 0, 153)\">\r\n<span style=\"color:rgb(0, 0, 153)\">begin by the samples of v0.2 (basics). </span><br style=\"color:rgb(0, 0, 153)\"><br style=\"color:rgb(0, 0, 153)\"><br style=\"color:rgb(0, 0, 153)\"><span style=\"color:rgb(0, 0, 153)\">Cheers!</span><br>\r\n</div></div>",
+    "PostedDate": "2009-12-18T11:36:18.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "269104",
+    "ThreadId": "78576",
+    "Html": "<p>Excellent, thanks so much for the info!</p>\r\n<p>Since I am using MVVM, I found an example here with multiple linecharts added to a chartplotter- seems very cool. &nbsp;Is there a way to do the Autoscale Y thing?</p>\r\n<p>Also what is the best example of data filtering? &nbsp;The million points on a plot?</p>\r\n<p>Excellent packages, thanks!</p>",
+    "PostedDate": "2009-12-18T14:24:14.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

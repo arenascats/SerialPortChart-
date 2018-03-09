@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "934217",
+    "ThreadId": "401246",
+    "Html": "\r\n<p>I'm developing a stock market candle graph application, and I need to remove the time in between trading days on the x axis. (4:00 PM to 9:30 AM) I want the data to flow continuously without awkward spaces for that time period. Has anyone come up with a\r\n solution or something similar to this? Any point in the right direction would be greatly appreciated. Thanks!<br>\r\n<br>\r\nI can use either HorizontalDateTimeAxis, or NumericAxis as x. &nbsp;</p>\r\n",
+    "PostedDate": "2012-10-30T06:51:53.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "938544",
+    "ThreadId": "401246",
+    "Html": "<p>I figured this out and posted my answer here:<br /><a href=\"http://stackoverflow.com/questions/12937164/dynamic-data-display-scattered-datetime-axis\">http://stackoverflow.com/questions/12937164/dynamic-data-display-scattered-datetime-axis</a>&nbsp;</p>",
+    "PostedDate": "2012-11-08T06:47:59.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

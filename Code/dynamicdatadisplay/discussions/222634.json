@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "477111",
+    "ThreadId": "222634",
+    "Html": "<p>D3 works correctly; however I have a specific requirement that I am looking to achieve. When I zoom in on the X-Axis using a mouse scroll the the Line Graph zooms on the X-Axis (pretty standard with D3). If you look at the images below you see that the zoom on the X-Axis expands the Line graph horizontally and eventually pushes the line graph to the top of the plot area.</p>\r\n<p><img src=\"http://lh5.ggpht.com/_kJaXpVpql30/TFsHQ6da3DI/AAAAAAAAG3I/IVDZ8jIuoAI/s576/D3ZoomOnXAxis.gif\" alt=\"\"></p>\r\n<p>In my application the zoom happens because of the use interaction with the application and not because of the user interaction with the graphs. The plotter Viewport is set from within the application depending upon the user activity in the application.</p>\r\n<p>To zoom on a particular graph area, I set the plotter.Viewport.Visible to a new Rect. I provide the rect with new XMin and Width but re-use the Ymin and width from the plotter itself and hence the range nevers gets updated. I really need the graph to show up as below&nbsp;</p>\r\n<p><img src=\"http://lh3.ggpht.com/_kJaXpVpql30/TFsl4G8HruI/AAAAAAAAG3g/G-0-rvLD8Lo/YAxisRange.gif\" alt=\"\"></p>\r\n<p>How do I get the YAxis range for the X-Axis range I am interacting with?</p>\r\n<p>Thanks</p>\r\n<p>Kishore Vanapalli</p>",
+    "PostedDate": "2010-08-05T14:09:06.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477140",
+    "ThreadId": "222634",
+    "Html": "<p>You can get the data from</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>graph.DataSource.GetPoints()\r\n</pre>\r\n</div>\r\n</p>\r\n<p>and then find the points that match the displayed frequency range and find their phase.</p>\r\n<p>The code could be called from within a PropertyChanged callback on the plotters viewport that is monitoring the Visible property.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-05T15:01:03.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477203",
+    "ThreadId": "222634",
+    "Html": "<p>Awesome i think that is working</p>\r\n<p>&nbsp;</p>\r\n<p>Kishore Vanapalli</p>",
+    "PostedDate": "2010-08-05T19:35:23.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "247090",
+    "ThreadId": "72366",
+    "Html": "<p>It seems like I may have missed something very simple... but is it possible to generate a scatter plot? If so, could you explain how?</p>",
+    "PostedDate": "2009-10-18T15:07:18.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247171",
+    "ThreadId": "72366",
+    "Html": "<p>Yes, it is possible to generate a scatter plot - actually, we do not provide some special control for doing this, because it can be done by DevMarkerChart (Dev mean it is in development now, and at some time this prefix will dissapear). Just take a look into NewMarkerSamples in DevSamples solution folder - some of samples in this project may be helpfull for:</p>\r\n<ul>\r\n<li>&nbsp;Point[1.000.000] is simply a scatter chart (if you like this name) with binding of color of marker to its position</li>\r\n<li>DifferentBuiltInMarkers shows what built-in markers do we provide (thought it seems that markers are ordered by x coordinates, it is not important and if you pass data for scatter chart, it will draw it)</li>\r\n</ul>\r\n<p>Some other charts shows some additional details of available bindings for markers.</p>\r\n<p>So, to draw a scatter chart, you need to perform the following steps:</p>\r\n<ol>\r\n<li>Create a plotter and a DevMarkerChart inside of it</li>\r\n<li>Tune the look of marker you would like to have</li>\r\n<li>Assign a collection of values to DevMarkerChart's ItemsSource</li>\r\n<li>Probably use DependentValuePath and IndependentValuePath properties to choose a property to bind to as a source of x or y values.</li>\r\n</ol>\r\n<p>P.S. When building NewMarkerSamples assure that its Window.xaml.cs file has uncommented the most part of AddPage methods calls, it can probably look like this:</p>\r\n<p><span style=\"font-family:Consolas;font-size:12px\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">BigPointArrayPage</span>());</span></p>\r\n<div style=\"font-family:Consolas;font-size:9pt;color:black;background:white\">\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">BarChartPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">LiveTooltipPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">ColumnChartSample</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">AcceptableValuePage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">PieChartPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">StockMarkersPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">CompositeDSPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">DifferentBuildInMarkersPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style=\"color:green\">//AddPage(new VectorFieldPage());</span></p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">EndlessRandomValuesPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">ConditionalBindingPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">LetterFrequencyPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">PieChartAPIPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">DateTimeRectanglesPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">PointSetPage</span>());</p>\r\n<p style=\"margin:0px\">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; AddPage(<span style=\"color:blue\">new</span> <span style=\"color:#2b91af\">RotatedEllipsesPage</span>());</p>\r\n</div>\r\n<p>Hope this will help)</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-19T00:10:06.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256379",
+    "ThreadId": "72366",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Do you think Quiver plots (e.g. <a href=\"http://code.google.com/p/scitools/wiki/EasyvizDocumentation#Quiver_Plots\">http://code.google.com/p/scitools/wiki/EasyvizDocumentation#Quiver_Plots</a>) could be simulated using a scatter chart mechanism in D3, where, instead of a round marker, the marker is an arrow with size and direction?</p>\r\n<p>Thanks,</p>\r\n<p>E.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-12T08:31:49.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256403",
+    "ThreadId": "72366",
+    "Html": "<p>Looking through the library, I came across the VectorFieldChart, which, I assume would fit the bill for Quiver plots... &nbsp; &nbsp;But the VectorFieldPage is commented out in the NewMarkersSamples project. &nbsp; When I uncommented it, the samples project encountered a runtime NotImplementedException&nbsp;in GenericPointSource2D.</p>\r\n<p>I suppose I must be patient! &nbsp;:)</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-12T09:35:45.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256832",
+    "ThreadId": "72366",
+    "Html": "<p>Hi,</p>\r\n<p>you are partially right - I suppose markers can work as vector chart, but I can't predict their performance.</p>\r\n<p>We'll create a separate VectorChart, but you are right again - you should be patient :)</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-13T09:20:17.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

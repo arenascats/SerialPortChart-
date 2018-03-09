@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "574795",
+    "ThreadId": "248244",
+    "Html": "\r\n<p>I wanted to know whether I will be able to use WPF Dynamic Data Display to plot Electrocardiograms in real-time with a very good performance?</p>\r\n<p>I am researching the feasibility of WPF as a technology for this purpose.</p>\r\n<p>Your prompt response will be highly appreciated.</p>\r\n",
+    "PostedDate": "2011-03-02T22:19:30.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577752",
+    "ThreadId": "248244",
+    "Html": "<p>Probably it will be ok, you just have to try it.</p>\r\n<p>If you have a healthy budget and require formal support, and don't mind using a library written in DirectX (so, the performance will be faster), check out http://arction.com/.</p>",
+    "PostedDate": "2011-03-09T06:45:56.533-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

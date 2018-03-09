@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "144436",
+    "ThreadId": "43468",
+    "Html": "Hello<div><br></div><div>Your <span style=\"font-weight:bold\">PerfCounterSample</span> adds new (performance) data to the chart on a timer. For my test, I made sure the time was ticking at a known interval of 50ms, because by default it is 0ms which probably means it spins as fast as it can. Anyway...<div><br><div><ul id=false>    <li>Starting <span style=\"font-weight:bold\">PerfCounterSample</span>  launches a relatively small window and  <span style=\"font-weight:bold\">CPU is typically 0%</span> on Task Manager under these conditions - what I expect.</li>    <li>Resizing the application window larger increases <span style=\"font-weight:bold\">CPU to around 5-10%</span></li>    <li>Maximizing the window it goes up to <span style=\"font-weight:bold\">25-30% CPU.</span></li></ul><div>It does also seem to be affected by how complicated the performance trace is (i.e. lots of spikes/steps is worse than  flat line).</div><div><br></div><div>My understanding of WPF is that the rendered size of the plot window should not affect the main CPU performance (just the GPU).</div><div><br></div><div>So why is this happening?</div><div><br></div><div>(BTW. I need a solution that can plot potentially 16 traces of real time data, each running at 20 Hz. I thought that by choosing a WPF oriented solution, the bandwidth for the rendering process would all be offloaded to the GPU, and hence window size would not affect main CPU performance.)</div><div><br></div><div><br></div><div><br></div></div></div></div>",
+    "PostedDate": "2009-01-05T09:20:36.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145718",
+    "ThreadId": "43468",
+    "Html": "Hello<br>\r\n<br>\r\nWPF does a lot of computations both on CPU and GPU; GPU is used more when graphics card is modern - you can read about WPF's Render Tiers (<a href=\"http://msdn.microsoft.com/en-us/library/ms742196.aspx\">http://msdn.microsoft.com/en-us/library/ms742196.aspx</a>).<br>\r\n<br>\r\nOur <strong>PerfCounterSample</strong> does not perform as many optimizations for plotted data as it could:<br>\r\nPerformance data is added into collection neary 20 times per second, and only data for latest 30 seconds is drawn by taking only latest points from this collection, but all collection is being processed each time when data changes.<br>\r\nYou can store only latest %number% of points in special collection, limiting total number of point.<br>\r\n<br>\r\nThis sample does not measure performance of the very plotting, but it measures simply your system's CPU usage. And it is natural that this usage also consists of CPU usage made by <strong>ChartPlotter </strong>itself, that's why when <strong>ChartPlotter </strong>does more computations, CPU usage grows respectively.<br>\r\n<br>\r\nAlso performance of DynamicDataDisplay really depends on number of points in line, and when you are maximizing window, points are filtered less than in case of small window, to reliably represent source data. To increase performance, you can use more aggressive filtering in <strong>LineChart</strong>.<br>\r\n<br>\r\nWe'll continue work to increase overall performance of <strong>DynamicDataDisplay</strong>. And I think that in case of making proper optimizations and filtering, you'll be able to plot 16 real-time charts.<br>\r\n<br>\r\nBest regards,<br>\r\nMikhail, DynamicDataDisplay Dev Team.\r\n",
+    "PostedDate": "2009-01-09T08:05:43.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

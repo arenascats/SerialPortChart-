@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "111279",
+    "ThreadId": "33582",
+    "Html": "Hi there!<br>\r\n<br>\r\ni liked you aproach to charts here...<br>\r\n<br>\r\nis it possible to change the charts x/y titles?\r\n",
+    "PostedDate": "2008-08-14T21:51:40.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "113699",
+    "ThreadId": "33582",
+    "Html": "<p>Hi,<br>\r\n<br>\r\n<strong>1. How to add the chart as a control to the toolbox.</strong></p>\r\n<ol>\r\n    <li>Open any XAML designer window and its toolbox panel.\r\n    <li>In the context menu of the toolbox&nbsp;click command <em>Choose items...</em>\r\n    <li>In the&nbsp;appeared&nbsp;<em>Choose Toolbox Items</em> window go to <em>WPF Components</em> tab.\r\n    <li>Use <em>Browse...</em> button to find the DynamicDataDisplay.dll assembly.\r\n    <li>All available components from the specified assembly are added to the list and selected by default. If the first thing you do is click&nbsp;on a&nbsp;check box of any of selected items in the list, you will deselect them all. That is the thing you should do, because you really need&nbsp;only one control in the toolbox: it is the&nbsp;<em>ChartPlotter</em>.&nbsp;So, now find it and check.\r\n    <li>Click OK and the control is in the toolbox. </li>\r\n</ol>\r\n<p><strong>2. How to change x/y title?</strong></p>\r\n<p>In the XAML designer window, drag the control ChartPlotter to the form and then use&nbsp;attached properties VerticalAxisTitle and HorizontalAxisTitle:&nbsp;</p>\r\n<p>&lt;d3:ChartPlotter Name=&quot;plotter&quot;&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3:Header&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextBlock HorizontalAlignment=&quot;Center&quot; FontSize=&quot;20&quot;&gt;Very simple cosine plot&lt;/TextBlock&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;/d3:Header&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;d3:VerticalAxisTitle&gt;Cosine value&lt;/d3:VerticalAxisTitle&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3:HorizontalAxisTitle&gt;Cosine argument&lt;/d3:HorizontalAxisTitle&gt;<br>\r\n</strong>&lt;/d3:ChartPlotter&gt;&nbsp;<br>\r\n<br>\r\n(This code is from the sample <em>HelloWorldSample</em>, which is a part of the release)</p>\r\n",
+    "PostedDate": "2008-08-26T00:52:31.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

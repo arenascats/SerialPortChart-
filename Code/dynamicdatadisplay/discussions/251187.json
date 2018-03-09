@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "586348",
+    "ThreadId": "251187",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>My Goal is to create an &quot;infinite&quot; plot.</p>\r\n<p>For examples, let's take the Hello World Sample. I want to get the values of the X axis as it is show to the user, so i can set an xmin and xmax for the user and plot the sinus.</p>\r\n<p>And anytime he will change the x axis, i will get theses datas and plot again (the missing points) so the user see the plot everywhere.</p>\r\n<p>Same thing if he zoom in or out</p>\r\n<p>&nbsp;</p>\r\n<p>Is there a function to retrieve the max et the min value of Axis?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot, i really need it :)</p>\r\n",
+    "PostedDate": "2011-03-25T05:11:42.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "587496",
+    "ThreadId": "251187",
+    "Html": "<p>Found the Solution</p>\r\n<p>It's in plotter.Visible.X etc...</p>\r\n<p>&nbsp;</p>\r\n<p>now i've a new problem, so new thread (improving the research of the forum)</p>",
+    "PostedDate": "2011-03-28T04:01:28.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "509895",
+    "ThreadId": "231624",
+    "Html": "<p>I am trying to create a chart with X and Y axis that are both measured in feet but are disproportionate to each other.&nbsp; I apply a factor to the X for DataToViewport and ViewportToData functions and the data presents correctly but the X axis is reduced by the same factor.&nbsp; Is there a way to customize the appearance of the ticks on the X axis?&nbsp; Here is what I have.</p>\r\n<p><span style=\"font-size:x-small;font-family:Consolas\"><span style=\"font-size:x-small;font-family:Consolas\">\r\n<div style=\"color:black;background-color:white\">\r\n<pre>\r\n<div style=\"color:black;background-color:white\"><pre>ObservableDataSource&lt;Point&gt; surveyPoints = <span style=\"color:blue\">new</span> ObservableDataSource&lt;Point&gt;(\r\n                interpolatedSurveys.Select(s =&gt; <span style=\"color:blue\">new</span> Point\r\n                {\r\n                    X = (<span style=\"color:blue\">double</span>)s.VerticalSection,\r\n                    Y = (<span style=\"color:blue\">double</span>)s.TotalVerticalDepth\r\n                }).ToList());            \r\n\r\n            <span style=\"color:blue\">double</span> M, B; <span style=\"color:green\">// y = M * x + B</span>\r\n\r\n            Get_M_and_B(yMin, yMax, <span style=\"color:blue\">out</span> M, <span style=\"color:blue\">out</span> B);\r\n\r\n            <span style=\"color:blue\">double</span> xScaleFactor = xMax / yMax;\r\n\r\n            Func&lt;<span style=\"color:blue\">double</span>, <span style=\"color:blue\">double</span>&gt; ConvertToDouble = s =&gt; -(M * s + B);\r\n            Func&lt;<span style=\"color:blue\">double</span>, <span style=\"color:blue\">double</span>&gt; ConvertFromDouble = t =&gt; -((t - B) / M);       \r\n            \r\n            Func&lt;Point, Point&gt; DataToViewport = s =&gt; <span style=\"color:blue\">new</span> Point((s.X * xScaleFactor), ConvertToDouble(s.Y));\r\n            Func&lt;Point, Point&gt; ViewportToData = t =&gt; <span style=\"color:blue\">new</span> Point((t.X * xScaleFactor), ConvertFromDouble(t.Y));\r\n\r\n            LineGraph graph = plotter.AddLineGraph(surveyPoints, Colors.Blue);\r\n            graph.DataTransform = <span style=\"color:blue\">new</span> LambdaDataTransform(DataToViewport, ViewportToData);            \r\n\r\n            ((VerticalAxis)plotter.MainVerticalAxis).ConvertFromDouble = ConvertFromDouble;\r\n            ((VerticalAxis)plotter.MainVerticalAxis).ConvertToDouble = ConvertToDouble;    \r\n</pre>\r\n<pre><span style=\"font-size:x-small;font-family:Consolas\"></span>Thanks, </pre>\r\n<pre><span style=\"font-size:x-small;font-family:Consolas\"></span></pre>\r\n<pre><span style=\"font-size:x-small;font-family:Consolas\"></span></pre>\r\n</div>\r\n</pre>\r\n</div>\r\n</span></span></p>",
+    "PostedDate": "2010-10-20T05:46:55.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510090",
+    "ThreadId": "231624",
+    "Html": "<p>I have discovered what I really need is to show all of the X axis regardless of how much data will be presented along X.&nbsp; Is there a way to show say 10,000 on the X even though the data may only reach 130?</p>",
+    "PostedDate": "2010-10-20T11:48:21.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510765",
+    "ThreadId": "231624",
+    "Html": "<p>What range do you want the X-Axis to display? &nbsp; 0 -&gt; 10,000?</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>Chart.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(0, Chart.Viewport.Visible.YMin, 10000, Chart.Viewport.Visible.Height );\r\n</pre>\r\n</div>\r\n</p>\r\n<pre><br><span style=\"font-family:'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif\"><span style=\"white-space:normal\"><span style=\"font-family:Consolas, 'Courier New', Courier, monospace\"><span style=\"white-space:pre\"><br></span></span></span></span></pre>",
+    "PostedDate": "2010-10-21T14:03:59.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510796",
+    "ThreadId": "231624",
+    "Html": "<p>Thanks.&nbsp; That solves a problem we have been trying to figure out for a while.&nbsp; I wouldn't have thought to look at the Visible property.&nbsp; That made me think more in terms of hide or show, not a viewable area.&nbsp; Thanks again.</p>",
+    "PostedDate": "2010-10-21T15:15:25.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518318",
+    "ThreadId": "231624",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-07T01:17:42.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

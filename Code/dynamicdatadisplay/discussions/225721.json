@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "487952",
+    "ThreadId": "225721",
+    "Html": "<p>I need the event which gets fired when doing zooming or panning. I want to fetch the x-axis (like, x-axis is dateaxis; so the date value) and y-axis value. Any idea?</p>\r\n<p>Thanks in advance</p>",
+    "PostedDate": "2010-09-01T19:26:58.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487992",
+    "ThreadId": "225721",
+    "Html": "<p>The viewport implement INotifyPropertyChanged and you can just listen for changes to the Visible property</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>\r\n<span style=\"color:green\">// Add handler</span>\r\n            SpeedChart.Viewport.PropertyChanged += <span style=\"color:blue\">new</span> EventHandler&lt;ExtendedPropertyChangedEventArgs&gt;(Viewport_PropertyChanged);\r\n\r\n.....\r\n\r\n<span style=\"color:green\">// Respond to changes</span>\r\n        <span style=\"color:blue\">void</span> Viewport_PropertyChanged(<span style=\"color:blue\">object</span> sender, ExtendedPropertyChangedEventArgs e)\r\n        {\r\n            <span style=\"color:blue\">if</span> (e.PropertyName == <span style=\"color:#a31515\">&quot;Visible&quot;</span>)\r\n            {\r\n                StrokeChart.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(SpeedChart.Viewport.Visible.XMin, StrokeChart.Viewport.Visible.YMin, SpeedChart.Viewport.Visible.Width, StrokeChart.Viewport.Visible.Height);\r\n            }\r\n        }\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-01T22:23:44.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488006",
+    "ThreadId": "225721",
+    "Html": "<p>My x-axis is datetimeaxis. How to get value in datetime for SpeedChart.Viewport.Visible.XMin ?</p>",
+    "PostedDate": "2010-09-01T22:53:58.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

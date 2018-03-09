@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed in release 0.3 - [release:26761]",
+    "ClosedDate": "2009-05-19T02:09:26.6-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n \nI am trying to use Dynamic Data Display in a financial application that can test automated trading systems.\nSometimes I need to plot\n \n    *  millions of points as I am working with tick data (each transaction)\n    * some Markers to visualize my entry and exit points on the market.\n \n \nHowever if you just plot 1000 points, the chart appears to be completely random!!! For example, if I add some markers, they should always be on the curve, which is not the case (see code). The problem is not coming from the markers but from the line plot. The problem is still the same if you try to use other data sources (composite, enumerable...).\nAlso, if you try to drag the chart, the markers does not follow!\nIt should be noticed that these bugs was not present in the previous release of dynamic data display. But I need datetime support!\n \nPlease can anyone help me on this?\n \nThanks,\nKamel\n \nTo test the bug, add a chart named \"plotter\" and copy the following code:\n \nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Navigation;\nusing System.Windows.Shapes;\nusing Microsoft.Research.DynamicDataDisplay;\nusing Microsoft.Research.DynamicDataDisplay.DataSources;\nusing Microsoft.Research.DynamicDataDisplay.PointMarkers;\n \n \nnamespace ddd_test1\n{\n    /// <summary>\n    /// Interaction logic for Window1.xaml\n    /// </summary>\n    public partial class Window1 : Window\n    {\n        private List<Trade> _listOfTrade;\n        private List<Trade> _listMarker;\n \n \n        public Window1()\n        {\n            InitializeComponent();\n            _listOfTrade = new List<Trade>();\n            _listMarker = new List<Trade>();\n            BeginSimulation();\n            EditGraph();\n        }\n \n        public void BeginSimulation()\n        {\n            Random random = new Random();\n \n            for (int counter = 1; counter < 1000; counter++)\n            {\n                Trade trade = new Trade(counter, random.NextDouble());\n \n                _listOfTrade.Add(trade);\n \n                if (counter % 10 == 0)\n                {\n                    _listMarker.Add(trade);\n                }\n            }\n        }\n \n        public void EditGraph()\n        {\n            ObservableDataSource<Trade> source = new ObservableDataSource<Trade>(_listOfTrade);\n            source.SetXMapping(c => c.Counter);\n            source.SetYMapping(d => d.Price);\n \n            ObservableDataSource<Trade> sourceMarker = new ObservableDataSource<Trade>(_listMarker);\n            sourceMarker.SetXMapping(c => c.Counter);\n            sourceMarker.SetYMapping(d => d.Price);\n \n            plotter.AddLineGraph(source, new Pen(Brushes.Gold, 3), new PenDescription(\"chart\"));\n \n            LineAndMarker<MarkerPointsGraph> chartMarkerBuy = plotter.AddLineGraph(\n                sourceMarker,\n                new Pen(Brushes.Red, 3),\n                new TrianglePointMarker { Size = 5, Brush = Brushes.Blue },\n                new PenDescription(\"marker\"));\n            chartMarkerBuy.LineGraph.DataSource = null;\n \n            plotter.Viewport.FitToView();\n        }\n    }\n \n    public class Trade\n    {\n        public double Price { get; set; }\n        public double Counter { get; set; }\n \n        public Trade(double counter, double price)\n        {\n            Price = price;\n            Counter = counter;\n        }\n    }\n}",
+    "LastUpdatedDate": "2013-05-16T04:53:49.077-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-03-21T10:20:30.5-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "MAJOR BUG",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9571
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

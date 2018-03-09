@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "906827",
+    "ThreadId": "393906",
+    "Html": "\r\n<p>From Example, I am trying to use like as follows:</p>\r\n<p>&nbsp;</p>\r\n<pre>as you can see, I have added &quot;AddMapping&quot; method for both axis data source. Problem is the later on is only being displayed. I need to show both x and y axis data. How can I do this please?</pre>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">var</span> datesDataSource = <span style=\"color:blue\">new</span> EnumerableDataSource&lt;DateTime&gt;(dates);\n                datesDataSource.SetXMapping(x =&gt; dateAxis.ConvertToDouble(x));\n                datesDataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, getFormattedDate);\n                \n                <span style=\"color:blue\">var</span> tempDataSource = <span style=\"color:blue\">new</span>  EnumerableDataSource&lt;<span style=\"color:blue\">float</span>&gt;(tempPoints);\n                tempDataSource.SetYMapping(y =&gt; y);\n                tempDataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty, y =&gt; <span style=\"color:blue\">string</span>.Format(<span style=\"color:#a31515\">&quot;Temp: {0}&quot;</span>, y));\n                \n                CompositeDataSource compositeDataSource1 = <span style=\"color:blue\">new</span>\n                  CompositeDataSource(datesDataSource, tempDataSource);\n\n                          \n                Pen pen = <span style=\"color:blue\">new</span> Pen(Brushes.Blue, 1);\n              \n                CircleElementPointMarker cpMarker = <span style=\"color:blue\">new</span> CircleElementPointMarker { Size = 10.0, Fill = Brushes.Red };\n                PenDescription pDescription = <span style=\"color:blue\">new</span> PenDescription(<span style=\"color:#a31515\">&quot;Data Points&quot;</span>);\n                <span style=\"color:blue\">var</span> lineGraph = chartDownload.AddLineGraph(compositeDataSource1, pen, cpMarker, pDescription);\n\n                chartDownload.Viewport.FitToView();<br><br><br><br><br><br></pre>\r\n</div>\r\n",
+    "PostedDate": "2012-08-31T05:43:00.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "908146",
+    "ThreadId": "393906",
+    "Html": "<p>I was having the same problem, and then I found this post:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/discussions/55291\">http://dynamicdatadisplay.codeplex.com/discussions/55291</a></p>\r\n<p>if you use an enumerabledatasource instead of a compositedatasource it should solve your problem.</p>",
+    "PostedDate": "2012-09-04T03:56:17.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

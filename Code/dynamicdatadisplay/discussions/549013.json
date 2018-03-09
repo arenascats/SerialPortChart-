@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1257421",
+    "ThreadId": "549013",
+    "Html": "Hi, can any one help me please ?\r<br />\n<br />\nI have defined a ChartPlotter and an InjectedChartPlotter. The first one for displaying voltage data and the second one for displaying current data. This data is measured dynamically. My two types of data must share only the X Axis (Time axis). But now, they are sharing all axes (X and Y). I want to define a specific Y axis for every type of data. how can I do that ?\r<br />\n<br />\nMy ChartPlotter and my InjectedChartPloatter :<br />\n<pre><code>&lt;d3:ChartPlotter  x:Name=&quot;graphUI&quot; Margin=&quot;10,140,10,130&quot;&gt;                    \n        &lt;d3:InjectedPlotter Name=&quot;injGraphUI&quot; &gt;\n              &lt;d3:Header Content=&quot;Battery data&quot;/&gt;\n              &lt;d3:VerticalAxisTitle Content=&quot;Voltage&quot;/&gt;\n              &lt;d3:HorizontalAxisTitle Content=&quot;Time&quot;/&gt;\n        &lt;/d3:InjectedPlotter&gt;  \n&lt;/d3:ChartPlotter&gt;</code></pre>\n\nI use ObservableDataSource objects to create and update my LineGraphs\r<br />\n<br />\nThank you :)<br />\n",
+    "PostedDate": "2014-06-18T05:29:57.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

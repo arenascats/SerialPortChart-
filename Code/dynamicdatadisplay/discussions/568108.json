@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1307204",
+    "ThreadId": "568108",
+    "Html": "Hello, I've been tinkering around with Dynamic Data Display lately, and it's been tremendously helpful. First of all I wanted to thank the developers and mantainers for a great job.<br />\n<br />\nNow, I've been looking at the possibilities of click-interactions inside the ChartPlotter. I know about using the CursorCoordinateGraph, and the Viewport transforms, which are great. I'm also aware that the nightly build introduces the ViewportHostPanel which is again great, for controls inside the graph.<br />\n<br />\nWhat I'm trying to do, is to have mouse interaction possible with the LineGraph(s) elements inside a ChartPlotter. Say, I want the line to change color when the mouse is over it, and to provide click events and feedback. How would someone go about to get this done? Would you overlay a control with the shape of the linegraph behind it? If so, how? Would you extend the LineGraph element itself to support these events? I didn't have luck doing so with markers before, as the MouseNavigation element prevented direct interaction with them.<br />\n<br />\nAny help would be greatly appreciated. Keep up the good job with the software.<br />\n",
+    "PostedDate": "2014-09-22T17:28:24.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

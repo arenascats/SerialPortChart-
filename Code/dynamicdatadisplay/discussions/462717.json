@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1109206",
+    "ThreadId": "462717",
+    "Html": "I am new to D3, Can any one suggest me how to create a BarChart in Wpf using D3. I am working with VS 2012.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-10-18T07:07:33.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109207",
+    "ThreadId": "462717",
+    "Html": "Hi\r<br />\n<br />\nAs per my knowledge D3 will not support Bar Charts.\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2013-10-18T07:09:55.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109475",
+    "ThreadId": "462717",
+    "Html": "hello thanks Ravi, ah what about bubble and all? only plenty of &quot;LineGraph&quot;s here.<br />\n",
+    "PostedDate": "2013-10-19T02:19:14.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109811",
+    "ThreadId": "462717",
+    "Html": "Hi\r<br />\n<br />\nDDD works very good for line graphs. Works very well(outperformed) than most of the paid controls.\r<br />\n<br />\nSince DDD is wpf char controls you can draw bubbles or markers very easily (you can very easily customize and can draw any shape)\r<br />\n<br />\nBut, If your requirement is more bubbles or custom markers (more than 5000) then you may get performance issues. Because here in DDD every control/ shape is children to parent control. (If you add 5000 children to parent panel/grid think what will happen).\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-10-20T22:01:15.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109839",
+    "ThreadId": "462717",
+    "Html": "Hi Ravi, Can you plz guide me how to draw  markers on a line? i tried but unable to fix it.<br />\n",
+    "PostedDate": "2013-10-21T00:47:02.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

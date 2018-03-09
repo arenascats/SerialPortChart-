@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "701954",
+    "ThreadId": "280459",
+    "Html": "\r\n<p>I have created two vertical axes: one has numeric labels, the other has text labels. By default the text labels are nicely on the left side of the Y axis, but i would like to display the numeric labels on the inside / right side of the Y axis. I.e. both\r\n the numeric and text labels are basically for the same primary vertical axis, not a secondary vertical axis.</p>\r\n<p>I cannot use Placement = Right because that moves the numeric axis to the right side of the graph, even though it has the desired effect of moving the labels to the right side of the axis line.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Is there any way to do it?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-11-22T11:34:49.53-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "713889",
+    "ThreadId": "280459",
+    "Html": "<p>any thoughts?</p>",
+    "PostedDate": "2011-12-18T10:38:01.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "713891",
+    "ThreadId": "280459",
+    "Html": "<p>I think you might have to modify the source to get that to happen.</p>",
+    "PostedDate": "2011-12-18T10:43:18.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

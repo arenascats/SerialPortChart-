@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "224632",
+    "ThreadId": "66143",
+    "Html": "<p>Is it possible to show the axis unit in a specific culture on-the-fly?</p>\r\n<p>for an example, in English, x-axis may show scale unit as &quot;1,000 2,000 3,000 4,000&quot; (digit group symbol is ',')</p>\r\n<p>in German, x-scale may show scale unit as &quot;1.000 2.000 3.000 4.000&quot; (digit group symbol is '.')</p>\r\n<p>We notice that x-axis scale unit may show correct unit when&nbsp;graph still keep update itself (real time plot)</p>\r\n<p>However, if the plot&nbsp;is finish update, then&nbsp;change the culture will not update&nbsp;axis scale unit, how&nbsp;to fix it?&nbsp;</p>\r\n<p>thx!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-17T13:33:18.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227087",
+    "ThreadId": "66143",
+    "Html": "<p>Hi, Jane,</p>\r\n<p>Yes, it is possible to show axis labels in the culture you prefer more)</p>\r\n<p>The following code does this:</p>\r\n<pre><span style=\"font-family:'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif\"><span style=\"white-space:normal\"><span style=\"font-family:Consolas, 'Courier New', Courier, monospace\"><span style=\"white-space:pre\"><div style=\"color:Black;background-color:White\"><pre>axis.LabelProvider.SetCustomFormatter(info=&gt;\r\n<span style=\"color:Blue\">return</span> info.Tick.ToString(<span style=\"color:Blue\">new</span> CultureInfo(<span style=\"color:#A31515\">&quot;de-De&quot;</span>)));\r\n\r\n</pre>\r\n</div>\r\nHope this will help.</span></span></span></span></pre>\r\n<pre>Best regards,</pre>\r\n<pre>Mikhail.</pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T08:55:55.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227101",
+    "ThreadId": "66143",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thanks for your info. We are waiting for this solution.</p>\r\n<p>Where we can get &quot;axis&quot; object? Through &quot;this&quot; or &quot;Plotter&quot; we did not found this object.</p>\r\n<p>thanks,</p>\r\n<p>Jane</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T09:16:54.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227102",
+    "ThreadId": "66143",
+    "Html": "<p>Jane,</p>\r\n<p>You can get at the axis by using Plotter.MainVerticalAxis (if you are using a Plot with one Vertical and one Horizontal axis) or if you have more than one, you can loop through the children until you find it...</p>\r\n<p>Something like:</p>\r\n<p>for (int i = 0; i &lt; plotter.Children.Count; i++)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (plotter.Children[i] is VerticalAxis)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ........<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>}</p>",
+    "PostedDate": "2009-08-24T09:19:15.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227113",
+    "ThreadId": "66143",
+    "Html": "<p>Thank you, quinlivan, for you right explanations!</p>\r\n<p>Jane, please, take a look into <strong>AxisColoringSample </strong>in, for example, latest changset of DynamicDataDisplay at 'Source code' page. You can find this sample in <strong>Changeset</strong>/<strong>Nightly</strong>/<strong>sln</strong>/<strong>DynamicDataDisplay.</strong><strong>sln</strong>/<strong>Samples</strong>/<strong>v0.3.1/AxisColoringSample.csproj. </strong>Maybe it will give you more info about axes&nbsp;customization&nbsp;in DynamicDataDisplay.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T09:43:29.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

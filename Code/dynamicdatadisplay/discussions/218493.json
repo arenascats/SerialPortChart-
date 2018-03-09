@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "463880",
+    "ThreadId": "218493",
+    "Html": "<p>I have loaded an intensity sample I was working with Mikhail on before he left. I was able to get the x &amp; y axis to reflect real data (rather than the data point number), as well as getting a few other things working with the help of Mikhail. However, now that he has left I have three open issues. Anyone with good knowledge of D3 should be able to help as the sample is fairly small and concise. I am having trouble binding to Viewport2D.ContentBounds, ViewportPanel.ViewportBounds, and cannot get the proper z value for my x,y position in a tooltip.</p>\r\n<p>Please have a look at the sample, my comments are in the areas that need work and are prefaced by &quot;QUESTION &gt;&gt;&quot;</p>\r\n<p>http://cid-be559ac3cb2dc573.office.live.com/self.aspx/.Public/Intensity%5E_Sample.rar</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks to anyone who can resolve this and thanks to Mikhail for all of his help thus far.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-06T11:27:41.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463955",
+    "ThreadId": "218493",
+    "Html": "<p>Adding&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>gridContainer.DataContext = this;</p>\r\n<p>to&nbsp;Window1_Loaded enables the&nbsp;ViewportBounds binding.</p>",
+    "PostedDate": "2010-07-06T14:29:24.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "464278",
+    "ThreadId": "218493",
+    "Html": "<p>Thanks grantz, setting the DataContext of the container resolved both of my binding issues (the ContentBounds and ViewportBounds).</p>\r\n<p>I was also able to get the z value working as a tooltip to the draggable point. I used the weighted nearest neighbor interpolation approach and it worked very well. If anyone is interested in that info, let me know.</p>",
+    "PostedDate": "2010-07-07T07:13:45.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

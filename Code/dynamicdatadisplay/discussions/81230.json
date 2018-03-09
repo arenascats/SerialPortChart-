@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "278697",
+    "ThreadId": "81230",
+    "Html": "<p>I am working on a custom data filter- basically took the DataHeightRistriction.cs file from the nightly build as a starting point.</p>\r\n<p>One thing I noticed is that PointsGraphBase.GetVisiblePoints(visual) always returns the entire dataset for the plot, no matter what the zoom level. &nbsp;So for every scroll and zoom it has to manually see which data points are within the new DataRect. &nbsp;With (in my case) 75,000 data points this is expensive and slows things down considerably.</p>\r\n<p>So, is 'GetVisiblePoints' really supposed to be the entire data set or, as the method name implies, just the visible ones? &nbsp;Maybe I screwed something up somewhere else?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-01-18T17:32:21.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292792",
+    "ThreadId": "81230",
+    "Html": "<p>Just wanted to bump this guy- this is still a major performance issue for me....</p>\r\n<p>Anyone?</p>",
+    "PostedDate": "2010-02-19T11:33:05.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

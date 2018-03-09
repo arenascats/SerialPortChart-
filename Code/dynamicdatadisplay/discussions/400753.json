@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "932240",
+    "ThreadId": "400753",
+    "Html": "\r\n<p>Hi D3,</p>\r\n<p>I have created a dynamic context menu item according to this discussion:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/discussions/61969\"></a><a href=\"http://dynamicdatadisplay.codeplex.com/discussions/61969\">http://dynamicdatadisplay.codeplex.com/discussions/61969</a></p>\r\n<p>&nbsp;</p>\r\n<p>I have a Line Graph with a Integer vertical axis and a DateTime horizontal axis.</p>\r\n<p>Unfortunately I do not receive the horizontal and vertical axis in the MenuItem_Click event. The best I can achieve is getting the X, Y of the mouse click relevant to the ChartPlotter.</p>\r\n<p>&nbsp;</p>\r\n<p>For example, if the user would right click on a point in the line graph then I want to get the combination of the DateTime right below the mouse click and the Integer value to the left of the mouse click.</p>\r\n<p>&nbsp;</p>\r\n<p>Does anyone know how to achieve this?</p>\r\n",
+    "PostedDate": "2012-10-25T02:04:48.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

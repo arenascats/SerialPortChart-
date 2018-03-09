@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "255442",
+    "ThreadId": "74638",
+    "Html": "<p>What support is there for custom navigation options? For example, removing the ability to for the user to navigate vertically using the mouse/keyboard/axis while still allowing him to navigate horizontally.</p>\r\n<p>An alternative I suppose is just to be able to fix the vertical axis if this is possible?</p>",
+    "PostedDate": "2009-11-10T03:48:16.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255591",
+    "ThreadId": "74638",
+    "Html": "<p>Creating a custom ViewportRestriction based class, as discussed <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=71882\">here</a>, was the solution.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-10T09:41:59.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255610",
+    "ThreadId": "74638",
+    "Html": "<p>Hi,</p>\r\n<p>you are right, and ViewportRestrictions are certainly the very thing that does what you want.</p>\r\n<p>Glad that you've found a solution.</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-10T10:09:04.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

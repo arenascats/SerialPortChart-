@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "204271",
+    "ThreadId": "60322",
+    "Html": "<p>Is it possible for there to be some clarificaiton on how this fits/differs to the silverlight toolkit charts that seem to be moving to WPF?</p>\r\n<p>I understand this chart toolkit is also going to move to silverlight. They seem to both be very similar on what they do.</p>\r\n<p>From what I see&nbsp;The Dynamic Data Display seems to be more focused on scientific visulisation and larger datasets while the silverlight toolkit charts seem to me to be more focused on the visual side. The licence of this toolkit seems more restrictive for use in comercial applications as well. Where do you see the best fit for the differing chart toolkits?</p>",
+    "PostedDate": "2009-06-22T17:06:46.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204505",
+    "ThreadId": "60322",
+    "Html": "<p>I have been working with this code for a couple of months.&nbsp; Quite simply, this is brilliant work.&nbsp; The use of design patterns, event routing, control templates is impressive and admirable.&nbsp; The product is focused on cartesian xy display (as a technical chart should be).&nbsp; For business graphics like bars and pies you will be better served by other options.</p>\r\n<p>The performance is amazing.</p>\r\n<p>It is my sincere hope that the next generation of this product targets both silverlight and wpf.</p>\r\n<p>There was a bit of a learning curve and there is currently not much architectural overview material - you will have to discover from the excellent sample code, forum discussions, and chart source what you need there.</p>\r\n<p>The authors of this project should be proud of this accomplishment.&nbsp; It is a truly elegant achievement :)</p>",
+    "PostedDate": "2009-06-23T07:23:14.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205974",
+    "ThreadId": "60322",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Mike is right - we are focusing on visualization of large amounts of data and scientific visualization, that's why we also have some more scientific controls like isolines and similar. Also we are planning to have color maps and vector fields, and 3d visualization, too.</p>\r\n<p>Mike's hope about Silverlight will come true - now we already have a working prototype of Silverlight port (with some minor restrictions, but with compatibilty of APIs), which will be published soon.</p>\r\n<p>&nbsp;</p>\r\n<p>Mike, that you for your compliments!)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-06-26T10:12:13.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213215",
+    "ThreadId": "60322",
+    "Html": "<p>Hi</p>\r\n<p>I was wondering if you had any timetable on a beta for the Silverlight version of D3.&nbsp; We are working with the WPF version and think it is great.&nbsp; It would be nice to experiment and hopefully use the Silverlight version as well.</p>\r\n<p>Thanks</p>\r\n<p>PS - very nice work!</p>",
+    "PostedDate": "2009-07-17T15:00:24.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214371",
+    "ThreadId": "60322",
+    "Html": "<p>Hi Darcy,</p>\r\n<p>&nbsp;</p>\r\n<p>Currently our Silverlight professional is polishing samples, so you'll see our Silverlight part very sonn - in one-two weeks.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-21T08:23:59.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

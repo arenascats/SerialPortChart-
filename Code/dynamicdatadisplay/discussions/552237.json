@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1274539",
+    "ThreadId": "552237",
+    "Html": "<h2>Hi, I'm using ChartPlotter to display line graphs. I need to modify the legend: it should contain a button (when it is clicked, the appropriate LineGraph is removed from chart plotter) and a check box (if not checked, the graph is hidden). Is there a way to do this?</h2>\nBest regards\r<br />\nVolodymyr<br />\n",
+    "PostedDate": "2014-07-20T11:03:55.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

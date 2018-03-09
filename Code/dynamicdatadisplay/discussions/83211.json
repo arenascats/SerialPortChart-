@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "286040",
+    "ThreadId": "83211",
+    "Html": "<p>I need to set a zoom on my chart, based on some external event from a user. &nbsp;For example if my X axis range is from 0-1000 and the user selects 200 (in a separate ViewModel) &nbsp;I would like to set the visible x range to display 150-250- 'zooming' in.</p>\r\n<p>I think this is already possible, but I havent found out how- can anyone help?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-02-04T17:26:22.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287010",
+    "ThreadId": "83211",
+    "Html": "<p>Hi,</p>\r\n<p>as far as i understand, you can use ViewportRestriction - define a dependency property in it, set a binding to this dependency property from your property and then use the value you've got in Apply method of ViewportRestriction.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-02-08T00:14:27.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

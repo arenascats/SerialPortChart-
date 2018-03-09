@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "824213",
+    "ThreadId": "352396",
+    "Html": "\r\n<p>Dear All,</p>\r\n<p>I'm New to D3 chart. I need an info.</p>\r\n<p>I'm using wpf.&nbsp;</p>\r\n<p>My requirement need to add a checkbox in a line series chart. when the user click the checkbox the line must be visible/ not visible mode.</p>\r\n<p>how can i achieve this?</p>\r\n<p>please give me code sample.</p>\r\n<p>thanks,</p>\r\n<p>thenndral</p>\r\n",
+    "PostedDate": "2012-04-15T23:42:22.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "825251",
+    "ThreadId": "352396",
+    "Html": "<p>Hai,</p>\r\n<p>Any one help to solve my issue?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks,</p>\r\n<p>thenndral.</p>",
+    "PostedDate": "2012-04-17T22:11:14.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "825659",
+    "ThreadId": "352396",
+    "Html": "<p>Hello Thendral,</p>\r\n<p>What you need is very simple.</p>\r\n<p>First of all, the checkbox should be places in the wpf window grid, not inside the ddd control.</p>\r\n<p>Then, set to true or false thethe visibility property of the linegraph in the check/uncheck event of the checkbox.&nbsp; Something like this:</p>\r\n<p><br />\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">private</span> <span style=\"color: blue;\">void</span> checkbox1_Checked(<span style=\"color: blue;\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n           plot1.LineGraph.Visibility = Visibility.Visible;         \r\n        }\r\n<span style=\"color: blue;\">private</span> <span style=\"color: blue;\">void</span> checkbox1_Unchecked(<span style=\"color: blue;\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            plot1.LineGraph.Visibility = Visibility.Hidden;                        \r\n        }<br /><br />If you need me to be more explicit on how to get to the property let me know. <br /></pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-04-18T14:31:01.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1461674",
+    "ThreadId": "650816",
+    "Html": "Hi All,\r<br />\n<br />\nWith help of other posts on this site (thanks all) I managed to extent the d3 library so it could be used in a MVVM environment. It works great, but I am still missing some functionality.<br />\n<ul>\n<li>Most important for me is to be able to enable/disable line graphs with a checkbox in the legend.</li>\n<li>\nAnd a small bug: line graphs are only showed when dataset is changed and not on creation.<br />\n</li>\n</ul>\n<a href=\"https://www.dropbox.com/s/q9yl6fgim2nwsbc/MVVM%20D3.zip?dl=0a\" rel=\"nofollow\">https://www.dropbox.com/s/q9yl6fgim2nwsbc/MVVM%20D3.zip?dl=0a</a>\r<br />\n<br />\nUse my implementation if you like and please help me adding functionality for enable/disable line graphs.<br />\n",
+    "PostedDate": "2016-02-02T02:44:36.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1467860",
+    "ThreadId": "650816",
+    "Html": "Is there no one who can help me?<br />\n",
+    "PostedDate": "2016-03-24T01:18:00.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1488019",
+    "ThreadId": "650816",
+    "Html": "Still no one???<br />\n",
+    "PostedDate": "2016-11-16T02:47:55.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

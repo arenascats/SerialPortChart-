@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1170265",
+    "ThreadId": "501377",
+    "Html": "Hello, <br />\nplease tell me how to get the coordinates of points from plotter<br />\n<img src=\"http://pikucha.ru/icvv3/%D0%B3%D1%80%D0%B0%D1%84.jpeg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2014-01-15T22:45:54.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1202126",
+    "ThreadId": "501377",
+    "Html": "I've created an extention class for ChartPlotter<br />\n<ul>\n<li>Get data points by LineGrapgh Description</li>\n</ul>\n<pre><code> public static EnumerableDataSource&lt;Point&gt; GetPoints(this ChartPlotter plotter, string LineName)\n        {\n            PlotterChildrenCollection PlotterChildren = plotter.Children;\n\n            foreach (var child in PlotterChildren.Where(lineGraph =&gt; lineGraph is LineGraph \n                &amp;&amp; ((LineGraph)lineGraph).Description.ToString().Equals(LineName)))\n            {\n                return (EnumerableDataSource&lt;Point&gt;)((LineGraph)child).DataSource.GetPoints();\n            }\n            return null;\n        }</code></pre>\n\n<ul>\n<li>Get data points from the first LineGraph on the ChartPlotter</li>\n</ul>\n<pre><code>\n        public static EnumerableDataSource&lt;Point&gt; GetPoints(this ChartPlotter plotter)\n        {\n\n            PlotterChildrenCollection PlotterChildren = plotter.Children;\n\n            foreach (var child in PlotterChildren)\n            {\n                if (child is LineGraph)\n                {\n                    LineGraph lineGraph = child as LineGraph;\n                    return (EnumerableDataSource&lt;Point&gt;)lineGraph.DataSource;\n                }\n            }\n            return null;\n        }</code></pre>\n\n<ul>\n<li>Get data points by LineGraph</li>\n</ul>\n<pre><code>\n        public static EnumerableDataSource&lt;Point&gt; GetPoints(this ChartPlotter plotter, LineGraph graph)\n\n        {\n            return (EnumerableDataSource&lt;Point&gt;)graph.DataSource;\n        }</code></pre>\n\n```<br />\n",
+    "PostedDate": "2014-02-03T09:29:51.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

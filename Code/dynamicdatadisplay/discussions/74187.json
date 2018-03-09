@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "253778",
+    "ThreadId": "74187",
+    "Html": "<p>Hello,</p>\r\n<p>I have a ChartPlotter with a transparent background.&nbsp; When I copy it to the clipboard and paste into another application the background just looks black.&nbsp; (The same thing happens when saving to a bitmap...image formats that support transparency are ok.)</p>\r\n<p>Has anybody else come across this problem?&nbsp; Is there a way around it?</p>\r\n<p>Cheers, IanR</p>",
+    "PostedDate": "2009-11-05T07:04:32.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253799",
+    "ThreadId": "74187",
+    "Html": "<p>Hi,</p>\r\n<p>Do you really need ChartPlotter with transparent background? Maybe it would look better with white one? I think I can not change the described behavior.</p>\r\n<p>The only thing I can suggest is that I will develop some workaround for the plotter with transparent background, and its image will be processed in some special way.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-05T07:37:36.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253805",
+    "ThreadId": "74187",
+    "Html": "<p>Well, I've changed screeshot saving a little and now plotter with transparent background will look the same way as plotter with white background.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-11-05T07:44:17.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253812",
+    "ThreadId": "74187",
+    "Html": "<p>Great - thanks.</p>",
+    "PostedDate": "2009-11-05T08:02:54.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255491",
+    "ThreadId": "74187",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I can see the change you made for this &amp; it should do what I need.</p>\r\n<p>However, when copying my graph to the clipboard it goes through the 'ScreenshotHelper.CreateElementScreenshot' branch of the code...(I'm not sure why - it may be because my graph is hosted in a WinForms control using System.Windows.Forms.Integration.ElementHost).</p>\r\n<p>But, should both branches of the screenshot code white out the background?</p>\r\n<p>Thanks, IanR</p>",
+    "PostedDate": "2009-11-10T05:49:41.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257241",
+    "ThreadId": "74187",
+    "Html": "<p>Hi IanR,</p>\r\n<p>I've made this fix in second branch of code, so now it should work in WinForms version, too.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-15T06:27:45.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268051",
+    "ThreadId": "74187",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Just got the latest nightly build (31108) and the problem with the black background has indeed been fixed now.</p>\r\n<p>Thanks,<br>IanR</p>",
+    "PostedDate": "2009-12-16T07:57:48.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

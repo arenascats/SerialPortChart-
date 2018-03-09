@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "140318",
+    "ThreadId": "42244",
+    "Html": "Hi,<br>\r\n<br>\r\nAnother cool feature would be to have a &quot;value ball&quot; that follows the graph in either the x or y plane:<br>\r\n<br>\r\n<a href=\"http://docs.google.com/View?docid=dfbww44_23hqtnm9dc\">http://docs.google.com/View?docid=dfbww44_23hqtnm9dc</a><br>\r\n<br>\r\nThis could then be displayed with a tooltop or retrieved to be shown in a textbox elsewhere.<br>\r\n<br>\r\nNick\r\n",
+    "PostedDate": "2008-12-13T15:39:05.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140694",
+    "ThreadId": "42244",
+    "Html": "Good idea, we've thought about it, too.<br>\r\n<br>\r\nDefinitely we'll have it in D3, but now I can't say something certain about dates.<br>\r\n",
+    "PostedDate": "2008-12-15T11:50:25.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "225148",
+    "ThreadId": "42244",
+    "Html": "<p>Has this been added?</p>",
+    "PostedDate": "2009-08-18T14:27:19.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227187",
+    "ThreadId": "42244",
+    "Html": "<p>Hi,</p>\r\n<p>We've added some part of the feature we've spoken about.</p>\r\n<p>I've recorded two videos about something that you are possibly speaking about:&nbsp;</p>\r\n<p><a href=\"http://www.youtube.com/watch?v=p0RTpIPPi0o\">http://www.youtube.com/watch?v=p0RTpIPPi0o</a>&nbsp;and</p>\r\n<p><a href=\"http://www.youtube.com/watch?v=FynTxBbocXY\">http://www.youtube.com/watch?v=FynTxBbocXY</a></p>\r\n<p>These projects are available in 'Source code' page, in the latest Changeset, in DynamicDataDisplay.sln/DevSamples/ projects <strong>LineTestSample </strong>and <strong>AxisControlSample.</strong></p>\r\n<p>If you have&nbsp;more questions, I'll willingly answer them.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T12:07:05.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "994643",
+    "ThreadId": "42244",
+    "Html": "Hi all !\r<br />\n<br />\nI'm sorry to open again this post....\r<br />\n<br />\nBut i'm very interesting about thecentury's project &quot;LimeTestSample&quot; and &quot;AxisControlSample&quot;. It's exactly just I want ! But I don't find these project ... \r<br />\n<br />\nCan you tell me where i can find it ?\r<br />\n<br />\nThanks a lot,\r<br />\n<br />\nElite<br />\n",
+    "PostedDate": "2013-01-31T04:42:41.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1104888",
+    "ThreadId": "42244",
+    "Html": "I found <strong>LineTestSample</strong> and <strong>AxisControlSample</strong> in this changeset: <a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/28519\" rel=\"nofollow\">http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/28519</a>.\r<br />\n<br />\nMany things changed in D3 code since then. Are there any examples how to achieve that functionality on current (latest) code?\r<br />\n<br />\nRegards,\r<br />\nvirious<br />\n",
+    "PostedDate": "2013-10-08T00:57:05.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

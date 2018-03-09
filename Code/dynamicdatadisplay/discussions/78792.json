@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "269733",
+    "ThreadId": "78792",
+    "Html": "<p>I have a ChartPlotter where I need to do a couple things:</p>\r\n<p>First, limit the zoom out and pan- I do not want the user to grab the graph and have the option to drag it off the screen, or zoom out beyond what is normally seen for 'Fit to View'.</p>\r\n<p>I also want the data to fix with the X axis locked at the bottom of the graph- if the user tries to grab and drag up or down it should not do anything- but pan and zoom (in) should still work.</p>\r\n<p>In this thread:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=78576\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=78576</a></p>\r\n<p>Kawone kindly suggested that I use something like FitToViewRestrictions. &nbsp;I got the example from the nightly build, but I cannot get this to really do anything.</p>\r\n<p>My data starts at about 28,000 and goes to 45,000, on the x axis, and consists of about 72,000 data points (which I hope are being filtered?). &nbsp;If I use the following code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">c</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DynamicPlotter</span> <span style=\"color:Red\">x:Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">spectraPlot</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">ItemsSource</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding Path=LineGraphs}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\"><span style=\"white-space:pre\"><span style=\"color:#000000\">\t</span></span>&lt;</span><span style=\"color:#A31515\">c</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DynamicPlotter.FitToViewRestrictions</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\"><span style=\"white-space:pre\"><span style=\"color:#000000\">\t<span style=\"white-space:pre\">\t</span></span></span>&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">MaximalSizeRestriction</span> <span style=\"color:Red\">MaxSize</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">17000</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\"><span style=\"white-space:pre\"><span style=\"color:#000000\">\t</span></span>&lt;/</span><span style=\"color:#A31515\">c</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DynamicPlotter.FitToViewRestrictions</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">c</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DynamicPlotter</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>DynamicPlotter is derived from ChartPlotter, implementing a dependency property for ItemSource (this was from example code posted by Ravi). &nbsp;This seems to have no effect whatsoever, other than using the nightly build version of the dll attaches 2 labels to my chart, one upper left, one upper right. &nbsp;There is no restriction on the viewing area at all.</p>\r\n<p>There are also several other things of interest under FitToViewRestriction, like DataHeightRestriction where I was hoping to autoscale my Y axis data depending on the zoom level.</p>\r\n<p>Am I headed down the right path? &nbsp;Again, I really need to disable zooming out, moving the x-axis, and enabling some autoscale on the y axis.</p>\r\n<p>Any clues as to what I should do? &nbsp;Example code or links are very very appreciated!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-21T15:54:23.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270841",
+    "ThreadId": "78792",
+    "Html": "<p>Hi!&nbsp;</p>\r\n<p>Can you please upload somewhere the repro for this case?</p>\r\n<p>Best regards, Mikhail.</p>",
+    "PostedDate": "2009-12-26T08:43:32.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271055",
+    "ThreadId": "78792",
+    "Html": "<p>Thanks Mikhail,</p>\r\n<p>Is it possible to email it directly to you or is there somewhere you recommend I post?</p>\r\n<p>Also for the other requests (disable zoom out, enable autoscale on y axis, and fixing x axis location) any thoughts, or is is simpler to show in the project I send?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-12-27T20:08:22.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272629",
+    "ThreadId": "78792",
+    "Html": "<p>Just a little bump here- I guess everyone's still on vacation but I hope to hear a response soon!</p>\r\n<p>Cheers!</p>",
+    "PostedDate": "2010-01-03T14:32:28.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "277487",
+    "ThreadId": "78792",
+    "Html": "<p>Hi,</p>\r\n<p>I am not using FitToViewRestrictions, but try the following snippet.</p>\r\n<p>&nbsp;<span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\"><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DynamicLineChartPlotter</span> <span style=\"color:Red\">ItemsSource</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding SeriesData}</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">plotter</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">cp</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter.Restrictions</span><span style=\"color:Blue\">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">MinSizeRestriction</span><span style=\"color:Blue\">/&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">cp</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter.Restrictions</span><span style=\"color:Blue\">&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">controls</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">DynamicLineChartPlotter</span><span style=\"color:Blue\">&gt;</span></span></span></p>\r\n<p><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\"><br></span></span><span style=\"color:#0000ff\"><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\"><span style=\"color:#888888\"><span style=\"color:#000000\"><span style=\"color:#800080\">MinSizeRestriction </span>is extended from&nbsp;</span><span style=\"font-size:x-small;color:#2b91af\"><span style=\"font-size:x-small;color:#2b91af\"><span style=\"color:#000000\"><span style=\"color:#800080\">ViewportRestriction </span>and in&nbsp;</span><span style=\"font-size:x-small\"><span style=\"color:#000000\">Apply() use <span style=\"color:#800000\">viewport.</span></span><span style=\"font-size:x-small\"><span style=\"color:#800000\">UnitedContentBounds <span style=\"color:#000000\">to check for intersection and intersect the proposed rectangle.</span></span></span></span></span></span></span></span></span></span></p>\r\n<p>&nbsp;Cheers</p>\r\n<p>Naveen</p>",
+    "PostedDate": "2010-01-15T00:39:47.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066604",
+    "ThreadId": "78792",
+    "Html": "Hi,\r<br />\n<br />\n<br />\nHow to restrict the zoom in control from Dynamic Data Display.Other wise How to set the constant Y axis with integer or floating point value?<br />\n",
+    "PostedDate": "2013-07-10T07:20:04.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066911",
+    "ThreadId": "78792",
+    "Html": "Hi\r<br />\n<br />\nRemove Mouse and keyboardNavigation.\r<br />\nlike this<br />\n<pre><code>this.plotter.Children.Remove(this.plotter.MouseNavigation);\nthis.plotter.Children.Remove(this.plotter.KeyboardNavigation);</code></pre>\n\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-07-11T00:47:26.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068831",
+    "ThreadId": "78792",
+    "Html": "hi Ravi,\r<br />\n<br />\n   Is there is possible to use Y axis  always with 10 interval like(100 to 110).or(90 to 100).etc...\r<br />\n<br />\nFor example : My graph is plotting the values in between 100 to 110 means,Y axis range should be 100 to 110.If it exceed more than 110 means It also show that  value in Graph.But  the interval must be 10.<br />\n",
+    "PostedDate": "2013-07-16T00:04:51.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068882",
+    "ThreadId": "78792",
+    "Html": "Hi,\r<br />\n<br />\nIf you are looking for formatting Y axis label use can use this.<br />\n<pre><code>VerticalAxis yAxis = (VerticalAxis)this.plotter.VerticalAxis;\nyAxis.LabelProvider.CustomFormatter = this.SetCustomFormat;\n\nprivate string SetCustomFormat(Microsoft.Research.DynamicDataDisplay.Charts.Axes.LabelTickInfo&lt;double&gt; labelTickinfo)\n{\n        return labelTickinfo.Tick.ToString(&quot;0.00&quot;);\n}</code></pre>\n\nIf you want your own labels and if you want complete control on those labels, like how many number of labels and gap between labels, then derive your own class from NumericYAxis or IAxis.\r<br />\n<br />\nbefore doing this check &quot;yAxis.LabelProvider.CustomView = Action delegate&quot;;\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-07-16T01:27:35.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068968",
+    "ThreadId": "78792",
+    "Html": "Hi Ravi,\r<br />\n<br />\nThanks for your reply,\r<br />\n<br />\n<br />\n <img src=\"http://lh5.ggpht.com/_sZQr7K5nN3k/St2KGaLKEYI/AAAAAAAAeSo/_FZetaaT0A8/s800/clip.jpg\" alt=\"Image\" />\r<br />\n <br />\n\r<br />\n Actually My question is, In the Y axis (0 to 8000) having 8 values also corresponding 8 Horizontal lines available. I am using <strong>autofittoview</strong> in my application . In the Zoom in and Zoom out time it showing only 3 or 5 values also corresponding horizontal lines. But I need In all the time it must be show 10 values and also corresponding horizontal lines.\r<br />\n<br />\nRegards,\r<br />\n  Sujith<br />\n",
+    "PostedDate": "2013-07-16T05:04:29.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

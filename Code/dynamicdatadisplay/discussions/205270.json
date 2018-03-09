@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "419303",
+    "ThreadId": "205270",
+    "Html": "<p>Hello,</p>\r\n<p>Can you explain how this class works with the ChartPlotter class?</p>\r\n<p>I am trying to figure out how to keep 3 ChartPlotters synchronized along the X-axis, each of which has a different Y-axis domain.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-03-17T09:45:43.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

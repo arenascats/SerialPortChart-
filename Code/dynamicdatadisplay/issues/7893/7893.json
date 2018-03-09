@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When analyzed with Visua Studio Team Suite's Source Analysis or FXCop, WPF Dynamic Data Display has a number of outstanding conformance issues that ought to be corrected/suppressed in code, as appropriate.",
+    "LastUpdatedDate": "2013-02-21T17:36:58.36-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2008-10-27T16:25:02.95-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Dynamic Data Display needs running through VSTS Code Analysis/FXCop",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 7893
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2220,
+      "FileName": "DynamicDataDisplay.dll.CodeAnalysisLog.xml",
+      "DownloadUrl": ".\\2220"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thank you for your remark.\r\n\r\nWe've used FXCop to analyze the source code of DynamicDataDisplay, and a big number of its suggestions were taken into account.\r\nBefore releasing next version of DynamicDataDisplay we will analyze it again.\r\n\r\nMikhail Brinchuk, DynamicDataDisplay Dev Team",
+      "PostedDate": "2008-11-08T13:11:36.72-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-04T02:19:16.923-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-10T07:13:25.857-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-08-10T11:40:59.033-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:58.36-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

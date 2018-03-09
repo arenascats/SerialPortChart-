@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This is done.",
+    "ClosedDate": "2009-07-13T00:09:41.33-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This is request of TimBurnett",
+    "LastUpdatedDate": "2013-05-16T04:53:48.933-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-07-10T10:10:34.9-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Create a sample with two log axes - horiz and vert ones",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10297
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3189,
+      "FileName": "TwoLogAxes.zip",
+      "DownloadUrl": ".\\3189"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This archive contains a solution.",
+      "PostedDate": "2009-07-10T10:12:48.183-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-10T10:12:51.37-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-07-13T00:09:41.33-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:56.913-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:48.933-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

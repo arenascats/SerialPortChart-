@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "813937",
+    "ThreadId": "349593",
+    "Html": "\r\n<p>Hello All,</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; I just downloaded the D3 today and wanted to build a simple chart,so following is my line of code in XAML.This is a WPF application</p>\r\n<p>&lt;Window x:Class=&quot;LineSample.Window1&quot;&nbsp; &nbsp; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&nbsp; &nbsp; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:c=&quot;http://research.microsoft.com/DynamicDataDisplay/1.0&quot;&nbsp;\r\n &nbsp; Title=&quot;Line sample&quot; Height=&quot;300&quot; Width=&quot;300&quot;&gt;&nbsp;</p>\r\n<p>&nbsp; &lt;Grid&gt;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;c:ChartPlotter Name=&quot;plotter&quot; &gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;\r\n &nbsp; &nbsp; &lt;/c:ChartPlotter&gt;&nbsp; &nbsp; &lt;/Grid&gt;&lt;/Window&gt;</p>\r\n<p>I can see the chart after running with x-axis and y-axis all set with a difference of 0.2. I want to change the range. Also in future I want the range to be set&nbsp;pro grammatically&nbsp;behind the code.I cannot find in documentation to know how to do\r\n it.If anyone knows please help.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2012-03-22T02:32:14.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

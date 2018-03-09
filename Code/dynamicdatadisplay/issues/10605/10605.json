@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Implemented in changeset 28750.",
+    "ClosedDate": "2009-09-16T10:40:11.227-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Firstly, I would like to say thanks for a great product. I am just starting off with DDD and WPF, and the samples are a real help.\n \nAnyway, I am wondering what is the best way to display elliptical markers?\n \nI have a data set of (x,y) points. At each point I would like to add a marker (say a small cross), and surrounding each point I would also like to draw an ellipse. The ellipse for each point will have a different shape (height/width/rotation), which is a function of the (x,y) coordinates.\n \nI would also like to specify the ellipses in \"drawing units\" so that they rescale appropriately. So the question really is: Can I use an elliptical marker? If so how? Do I have to create an elliptical marker or ellipse shape sub class from an existing class.\n \nJust really looking for your thoughts / places to start. Any advice would be appreciated.\n \nI have attached a picture showing (sort of what I would like).\n \nKeep up the good work.\n \nCheers,\nBrian",
+    "LastUpdatedDate": "2013-05-16T04:53:48.64-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-09-08T14:44:04.693-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Using ellipses as markers.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10605
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3359,
+      "FileName": "Picture.png",
+      "DownloadUrl": ".\\3359"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi Brian,\r\nin the closest time I'll try to create a sample for you.\r\nThe only thing I wanted to add is that it is better to post such posts to Discussions page, because there I will be notified about new messages.\r\nBest regards,\r\nMikhail.",
+      "PostedDate": "2009-09-11T01:28:45.643-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for the reply Mikhail, and for your help.\r\n\r\nAnd I will put similar posts in the discussions page: I realised as soon as I posted this message that it was on the wrong forum. Oops.\r\n",
+      "PostedDate": "2009-09-12T04:39:31.707-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Brian,\r\nI've created a sample for you.\r\nIt is located in 'Source code' page, in the changeset 28750 (http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28750), in Nightly/DynamicDataDisplay.sln/DevSamples solution folder/NewMarkersSample project/RotatedEllipsePage.\r\nScreenshot of this sample is added to our screenshot gallery - http://dynamicdatadisplay.codeplex.com/Wiki/View.aspx?title=Development-time%20screens.\r\nHope this is what you need.\r\n\r\nBest regards,\r\nMikhail.\r\n",
+      "PostedDate": "2009-09-16T10:39:50.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-16T10:40:11.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:56.24-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:48.64-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

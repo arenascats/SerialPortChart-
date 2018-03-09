@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "230880",
+    "ThreadId": "67918",
+    "Html": "<p>We're&nbsp;using VerticalAxis and HorizontalAxis on our plot and have specified the .LabelProvider.SetCustomFormatter() to allow the tick formatting to be localized (I.e., use the correct '.' or ',' character as the decimal &quot;point&quot;).&nbsp; The formatter we use is itself aware of the culture issue:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>    <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">static</span> <span style=\"color:Blue\">string</span> TickFormatter(LabelTickInfo&lt;<span style=\"color:Blue\">double</span>&gt; info)\r\n    {\r\n      <span style=\"color:Blue\">return</span> info.Tick.ToString(CultureInfo.CurrentCulture);\r\n    }\r\n\r\n\r\n</pre>\r\n</div>\r\n<p>Setting this as the Custom Formatter:&nbsp;</p>\r\n<p>axis.LabelProvider.SetCustomFormatter(TickFormatter);</p>\r\n<p>works except that on&nbsp;a change of language/culture, there's no way to force it to refresh the tick labels.&nbsp; We cannot force the axes to redraw the ticks unless we change the formatter delegate passed to SetCustomFormatter(), by using a lambda that creates a new delegate whenever it is passed:</p>\r\n<p><span style=\"font-size:x-small\">axis.LabelProvider.SetCustomFormatter(info =&gt; TickFormatter(info));</span></p>\r\n<p><span style=\"font-size:x-small\">This is inelegant (and inefficient) to create the new delegate just so the side effect can be forced.&nbsp; Having a Refresh() on the LabelProvider would simplify this.</span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-03T14:06:52.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232115",
+    "ThreadId": "67918",
+    "Html": "<p>Hi,</p>\r\n<p>I've added a ForceUpdate method to all axes.</p>\r\n<p>It should solve your problem.</p>\r\n<p>&nbsp;</p>\r\n<p>By the way, why do you override tick formatting in this way? By default this is done by calling .ToString() method of each tick, which formats tick certainly in CultureInfo.CurrentCulture.</p>\r\n<p>You only need to some how update axis, and now I'm giving you means to perform it.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-08T02:40:30.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232322",
+    "ThreadId": "67918",
+    "Html": "<p>The example I used was simplified from the actual formatting being done.</p>",
+    "PostedDate": "2009-09-08T10:51:31.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

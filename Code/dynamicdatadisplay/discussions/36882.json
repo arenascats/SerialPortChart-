@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "122361",
+    "ThreadId": "36882",
+    "Html": "Hello! I've downloaded DynamicDataDisplay.dll and created a wpf application. After i added DynamicDataDisplay.dll as a reference to my project, but in window.xaml file when i want to write smth like xmlns:d=&quot;researh.windows.com/DynamicDataDisplay/1.0&quot; where is no such reference. Why is it so?<br>\r\n",
+    "PostedDate": "2008-10-02T05:59:39.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123233",
+    "ThreadId": "36882",
+    "Html": "&nbsp;it's ok now<br>\r\n",
+    "PostedDate": "2008-10-06T10:44:35.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

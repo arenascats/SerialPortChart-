@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "868982",
+    "ThreadId": "370098",
+    "Html": "\r\n<div>\r\n<p>Hello World,</p>\r\n<p>&nbsp;</p>\r\n<p>Having <strong>independent multiple</strong> axes for each series in scientific graphs is very common condition.</p>\r\n<p>The requirement is,</p>\r\n<p>The graph can have more than one series. and each series is associated with separate Y axes and one X axis (Time).</p>\r\n<p>E.g. Y1 axis shows temperature and Y2 axis shows pressure against Time on X axis.</p>\r\n<p>Both axes may show different scales (range min - max) like temperature from 0 to 100 Degree kelvin &amp; pressure from 300 to 900 kPa and accordingly the series will be plotted.</p>\r\nI am trying to use WPF for plotting graphs and studying&nbsp;Dynamic Data Display for that.\r\n<p>But I am not able to find feature of <strong>independent</strong> multiple axes in these controls.</p>\r\n<p>Please help otherwise I have to drop the idea of using WPF.</p>\r\n<p>Thanks in advance.</p>\r\n</div>\r\n",
+    "PostedDate": "2012-07-15T22:30:00.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "891539",
+    "ThreadId": "370098",
+    "Html": "<p>Maybe this can help:</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>            source2 = <span style=\"color: blue;\">new</span> ObservableDataSource&lt;DatePoint&gt;();\r\n\r\n            source2.SetXMapping(p =&gt; dateAxis.ConvertToDouble(p.Date));\r\n            source2.SetYMapping(p =&gt; p.Value0);\r\n            \r\n            CultureInfo culture = CultureInfo.InvariantCulture;\r\n            Assembly executingAssembly = Assembly.GetExecutingAssembly();\r\n\r\n            CursorCoordinateGraph ccg = <span style=\"color: blue;\">new</span> CursorCoordinateGraph();\r\n            ccg.XTextMapping = x =&gt; dateAxis.ConvertFromDouble(x).ToString(CultureInfo.CurrentCulture);\r\n            chartPlotter1.Children.Add(ccg);\r\n\r\n            ccg.YTextMapping = y =&gt; valueAxis.ConvertFromDouble(y).ToString();\r\n</pre>\r\n</div>\r\n</p>\r\n<p>---------------------------------------------------------</p>\r\n<p>different graphs</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>chartPlotter1.AddLineGraph(source2, <span style=\"color: blue;\">new</span> Pen(Brushes.Red, 2),\r\n                <span style=\"color: blue;\">new</span> TrianglePointMarker {Size = 1.0,\r\n                        Pen = <span style=\"color: blue;\">new</span> Pen(Brushes.Black, 2.0),\r\n                        <span style=\"color: green;\">&nbsp;</span>\r\n                                       },\r\n                <span style=\"color: blue;\">new</span> PenDescription(<span style=\"color: #a31515;\">\"Data 1\"</span>));\r\n            \r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-07-26T01:56:10.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "929182",
+    "ThreadId": "370098",
+    "Html": "<p>Hi guyys....</p>\r\n<p>yeah with this i am bble to plot graphs...but i m unable to see 2 y axis ......</p>",
+    "PostedDate": "2012-10-18T22:17:54.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

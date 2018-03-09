@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI want draw large amounts of points (over 10k) in ChartPlotter,and the application runs slower and slower.\nI think it might relate to the method of update.\nDoes the ChartPlotter update by redrawing all points?\nIf that so,how can I update points by other method?\nIf not,plz figure out the problem.\nMany thanks.",
+    "LastUpdatedDate": "2015-06-22T17:49:48.167-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2015-06-22T17:49:31.83-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Display big data in ChartPlotter",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21915
+  },
+  "FileAttachments": [
+    {
+      "FileId": 8866,
+      "FileName": "D3Chart.rar",
+      "DownloadUrl": ".\\8866"
+    }
+  ],
+  "Comments": []
+}

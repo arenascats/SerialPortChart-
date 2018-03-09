@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "140320",
+    "ThreadId": "42245",
+    "Html": "Hi,<br>\r\n<br>\r\nHow would I go about controlling what methods of interaction are available with a graph/chart?<br>\r\n<br>\r\nFor example, if I wanted to disable the right click menu, how would I go about doing this?<br>\r\n<br>\r\nCheers,<br>\r\n<br>\r\nNick\r\n",
+    "PostedDate": "2008-12-13T15:59:50.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140522",
+    "ThreadId": "42245",
+    "Html": "Hi, Nick!<br>\r\n<br>\r\nAny instance of Plotter (and ChartPlotter, of course, too, as it is a descendant of Plotter) has collection of its children, called Children. This is ObservableCollection&lt;IPlotterElement&gt;, and you can do with it everything you want and need - add new elements (eventually, AddLineGraph extension method of ChartPlotter uses certainly chartPlotter.Children.Add method to add LineGraph to plotter),<br>\r\nremove those elements you don't need, even clear.<br>\r\nAs this collection implements ICollectionChangedNotify interface, you can subscribe on its CollectionChanged event, being notified about any changes made in it.<br>\r\n<br>\r\nTo remove context menu from plotter, you can, for example, call our extension method:<br>\r\n<br>\r\nplotter.Children.RemoveAll&lt;IPlotterElement, DefaultContextMenu&gt;();<br>\r\n<br>\r\nTo use this extension method, you may need to add namespace reference into your code:<br>\r\nusing using Microsoft.Research.DynamicDataDisplay.Common.Auxiliary;<br>\r\n",
+    "PostedDate": "2008-12-15T02:56:10.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141566",
+    "ThreadId": "42245",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a question similar to Nick's. How would you go about dynamically adding/removing LineGraphs from the plotter?<br>\r\n<br>\r\nI just downloaded the source of changeset 18031, but can't seem to find the above mentioned extension method. When will the described functionality become available?<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-18T05:35:37.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141812",
+    "ThreadId": "42245",
+    "Html": "Hi!<br>\r\n<br>\r\nAs I've already said, you can use methods of Plotter.Chidren, which is a usual ObservableCollection&lt;IPlotterElement&gt;, and so it has all Collection's methods, such as Add(...), Remove(...), Clear, and similar. You can use these methods to operate Plotter.Children as you want.<br>\r\n<br>\r\nAs you have probably noticed, changeset 18031 was added at <span id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_SmartDateTimeLiteral\">Oct 6. But now we are speaking about more recent version of DynamicDataDisplay - 0.2.0, which you can download here - <a href=\"http://www.codeplex.com/dynamicdatadisplay/Release/ProjectReleases.aspx?ReleaseId=20298\">http://www.codeplex.com/dynamicdatadisplay/Release/ProjectReleases.aspx?ReleaseId=20298</a><br>\r\n<br>\r\nCurrently we will not update source code in &quot;Source</span> Code&quot; tab, we will upload new releases into &quot;Releases&quot; tab.<br>\r\n",
+    "PostedDate": "2008-12-19T04:40:23.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

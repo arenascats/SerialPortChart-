@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1022436",
+    "ThreadId": "438335",
+    "Html": "Hi,\r<br />\nI would like to know, whether there is a way how to add some markers specified by me (a mark of an arrow for example) and lines in the chart to highlight some aspects.\r<br />\n<br />\nI added this simple image to illustrate what I mean - the red line with some text and the red arrow pointing somewhere.\r<br />\n<br />\n<a href=\"http://magic-wand.wz.cz/example.png\" rel=\"nofollow\">Image</a>\r<br />\n<br />\nThanks for any tips.<br />\n",
+    "PostedDate": "2013-03-28T07:48:25.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022446",
+    "ThreadId": "438335",
+    "Html": "I will try to make it with plotting the Silverlight elements, but if there is a better way, I would be interesting in it.<br />\n",
+    "PostedDate": "2013-03-28T07:55:57.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

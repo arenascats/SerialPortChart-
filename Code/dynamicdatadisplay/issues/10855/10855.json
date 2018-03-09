@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Will be fixed in next changeset.Thanks for reporting this bug&#33;",
+    "ClosedDate": "2009-10-30T20:52:28.88-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The frequency filter is always filtering out the last point of a series. Looking at the code this point is added to the currentChain, but then the last currentChain is not added to the set of plotted points.",
+    "LastUpdatedDate": "2013-05-16T04:53:48.33-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-10-30T03:01:41.407-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Last point is always filtered out by FrequencyFilter",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10855
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

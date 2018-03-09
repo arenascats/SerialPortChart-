@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed this summer&#41;",
+    "ClosedDate": "2009-09-11T01:26:47.43-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When displaying a chartplotter the labels of x-axis 0 and y-axis 0 are clipped. See attached cropped screenshot.",
+    "LastUpdatedDate": "2013-05-16T04:53:49.36-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2008-12-19T06:10:55.18-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Zero axes labels unreadable",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 8592
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2453,
+      "FileName": "d3AxesZeroLabelUnreadable.png",
+      "DownloadUrl": ".\\2453"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This artifact comes from dynamic nature of DynamicDataDisplay - chart is not static and immovable, you can move it at any time. While you pan charts, axis labels are also moving correspondingly to Viewport's changes. And you can pan charts so that these labels will become not clipped.\r\n\r\nBut now DynamicDataDisplay has no features to provide nice static layout (for example, when first and last labels in axis are moved from sides of axis to its center to prevent clipping them).",
+      "PostedDate": "2008-12-21T04:43:27.97-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-06-02T01:19:39.59-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Now DynamicDataDisplay can offer you an option to swithc axes to static look, it's done by the following code:\r\n(double as generic parameter of AxisBase is a sample value, you should provide actual parameter, which can be double, or DateTime, or something else)\r\nAxisBase<double> axis = (AxisBase<double>)plotter.MainHorizontalAxis;\r\naxis.LabelProvider.AxisControl.IsStaticAxis = true;\r\n\r\nThis will cause axis to shift its start and finish tick labels, so that they will become not cropped.",
+      "PostedDate": "2009-09-11T01:26:24.67-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-09-11T01:26:47.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:57.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:49.36-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

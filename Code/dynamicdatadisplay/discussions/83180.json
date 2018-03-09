@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "285884",
+    "ThreadId": "83180",
+    "Html": "<p>Hi all,</p>\r\n<p>i am overriding the GenericLocationalLabelProvider class to create a axis with my textblock, these textblocks represents my coordinate Y label in the plotter but when i Zoom In the ticks update wrong and draw a label from another coord.</p>\r\n<p>There is something wrong with my implementation?</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>\t\t<span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;summary&gt;</span>\r\n\t\t<span style=\"color:Gray\">///</span><span style=\"color:Green\"> Cria texts para representar as restri&ccedil;&otilde;es</span>\r\n\t\t<span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;/summary&gt;</span>\r\n\t\t<span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;param name=&quot;ticksInfo&quot;&gt;</span><span style=\"color:Green\">Informa&ccedil;&otilde;es do Tick&lt;/param&gt;</span>\r\n\t\t<span style=\"color:Gray\">///</span> <span style=\"color:Gray\">&lt;returns&gt;</span><span style=\"color:Green\">Lista de &lt;see cref=&quot;UIElement&quot;/&gt;&lt;/returns&gt;</span>\r\n\t\t<span style=\"color:Blue\">public</span> <span style=\"color:Blue\">override</span> UIElement[] CreateLabels(ITicksInfo&lt;<span style=\"color:Blue\">double</span>&gt; ticksInfo)\r\n\t\t{\r\n\t\t\t<span style=\"color:Blue\">var</span> restricoes = <span style=\"color:Blue\">new</span> UIElement[ticksInfo.Ticks.Length];\r\n\r\n\t\t\t<span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> i = 0; i &lt; restricoes.Length; i++)\r\n\t\t\t{\r\n\t\t\t\tRestricao restricao = _collection[i];\r\n\t\t\t\trestricoes[i] = <span style=\"color:Blue\">new</span> TextBlock { Text = restricao.Nome, DataContext = restricao };\r\n\t\t\t\t\r\n\t\t\t\tTooltipService.ConfigurarTooltip(restricoes[i] <span style=\"color:Blue\">as</span> TextBlock);\r\n\t\t\t}\r\n\r\n\t\t\t<span style=\"color:Blue\">return</span> restricoes;\r\n\t\t}\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Jefferson Soares</p>",
+    "PostedDate": "2010-02-04T10:51:25.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287035",
+    "ThreadId": "83180",
+    "Html": "<p>Hi Jefferson,</p>\r\n<p>can you please upload somewhere a project that will illustrate tre problem you're describing?</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-02-08T00:58:22.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "731829",
+    "ThreadId": "83180",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>pixeljef wrote:</strong><br />\n<p>Hi all,</p>\n<p>i am overriding the GenericLocationalLabelProvider class to create a axis with my textblock, these textblocks represents my coordinate Y label in the plotter but when i Zoom In the ticks update wrong and draw a label from another coord.</p>\n<p>There is something wrong with my implementation?</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;summary&gt;</span>\n\t\t<span style=\"color: gray;\">///</span><span style=\"color: green;\"> Cria texts para representar as restri&ccedil;&otilde;es</span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;/summary&gt;</span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;param name=\"ticksInfo\"&gt;</span><span style=\"color: green;\">Informa&ccedil;&otilde;es do Tick&lt;/param&gt;</span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;returns&gt;</span><span style=\"color: green;\">Lista de &lt;see cref=\"UIElement\"/&gt;&lt;/returns&gt;</span>\n\t\t<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">override</span> UIElement[] CreateLabels(ITicksInfo&lt;<span style=\"color: blue;\">double</span>&gt; ticksInfo)\n\t\t{\n\t\t\t<span style=\"color: blue;\">var</span> restricoes = <span style=\"color: blue;\">new</span> UIElement[ticksInfo.Ticks.Length];\n\n\t\t\t<span style=\"color: blue;\">for</span> (<span style=\"color: blue;\">int</span> i = 0; i &lt; restricoes.Length; i++)\n\t\t\t{\n\t\t\t\tRestricao restricao = _collection[i];\n\t\t\t\trestricoes[i] = <span style=\"color: blue;\">new</span> TextBlock { Text = restricao.Nome, DataContext = restricao };\n\t\t\t\t\n\t\t\t\tTooltipService.ConfigurarTooltip(restricoes[i] <span style=\"color: blue;\">as</span> TextBlock);\n\t\t\t}\n\n\t\t\t<span style=\"color: blue;\">return</span> restricoes;\n\t\t}\n\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>Thanks,</p>\n<p>Jefferson Soares</p>\n</blockquote>\n<p>Hi<br /> I tried to do the same things with this chart. Can you explane, please, what is&nbsp;</p>\n<pre>Restricao type?</pre>\n<p>Any luck with this project?&nbsp;<br /> If you can provide me some code it would be great.</p>\n<p><br /> Many thanks!!!</p>",
+    "PostedDate": "2012-01-27T13:41:41.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

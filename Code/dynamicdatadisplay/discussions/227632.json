@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "495010",
+    "ThreadId": "227632",
+    "Html": "<p>Hello,<br>How can I make the vertical axis non-pannable and constant range?<br>There will be values only in a known range [0-100] so when there are only values in say [10-20], ChartPlotter fits to that area. But when comparing different charts, perception of the values is wrong.<br><br></p>\r\n<p>Example:<br>In Chart A, there are only values between 10-20.<br> In Chart B, there are only values between 0-80.<br> If both charts are zoomed to fit, they will look similar. If they would fit to 0-100 vertical axis, then their values would be visually comparable.<br><br>Regards,<br>Kerem.<br><br></p>",
+    "PostedDate": "2010-09-17T07:41:10.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495509",
+    "ThreadId": "227632",
+    "Html": "<p>Hello Kerem,</p>\r\n<p>You might want to check my answers in:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=225274\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=225274</a></p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=225444\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=225444</a></p>\r\n<p>that cover how to specify the x and y axes and how to prevent zooming/panning</p>\r\n<p>Regards</p>\r\n<p><br><br></p>",
+    "PostedDate": "2010-09-18T17:06:05.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1416117",
+    "ThreadId": "631846",
+    "Html": "First of all: \r<br />\n<br />\nCheck out the <a href=\"http://stackoverflow.com/questions/29761841/dynamic-data-display-linegraph-not-updating\" rel=\"nofollow\">Original Question on StackExchange</a>\r<br />\n<br />\nIt's quite a nightmare finding any decent documentation or tutorials. The samples are already compiled, so there's no way to check the code. So I can only really go based on how VS tries to auto-fill things.\r<br />\n<br />\n<br />\nAnyway, I'm able to create a graph, set the axes, and plot a graph on it. However, this graph cannot auto-update. It only refreshes when I zoom in or out, or press the home key.\r<br />\n<br />\nCheck out bits of the code in the link.<br />\n",
+    "PostedDate": "2015-04-20T21:10:27.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437171",
+    "ThreadId": "631846",
+    "Html": "Hi\r<br />\n<br />\nSorry for the late reply.\r<br />\nCall the below metod in to update the graph automatically after feeding the new data to the dataSource (EnumerableDataSource Object)<br />\n<pre><code>dataSource.RaiseDataChanged();</code></pre>\n\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2015-08-04T05:31:22.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "435397",
+    "ThreadId": "210531",
+    "Html": "<div><span style=\"font-family:Arial\">Hi,</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">First, I would like to thank the D3 Team and Microsoft for this great free library.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">I also have a serious need for two independent axes capability in being able to compare two (or more!)&nbsp;plots.</span></div>\r\n<div>&nbsp;</div>\r\n<div>\r\n<div><span style=\"font-family:Arial\">The major issue that I have is the lack of any serious code&nbsp;documentation.&nbsp; I am spending a lot of hours going through the code building an understanding of how&nbsp;D3 works.&nbsp; </span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">I realize that for a Russian team English documentation can be challenging; however, the&nbsp;most important thing needed to turn D3 into an awesome library is really&nbsp;good documentation.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">If the Russian team does not have the band width to create English documentation, maybe there is someway for the interested users to contribute to a documentation wiki.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">Anyway, a&nbsp;high level - functional explanation of the D3 library would be extremely helpful from my viewpoint.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">David Roh</span></div>\r\n</div>",
+    "PostedDate": "2010-04-26T01:53:42.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "435751",
+    "ThreadId": "210531",
+    "Html": "<p>Hi David,</p>\r\n<p>Sorry, but now I'm in very serious and important part of my life, I'm writing and soon I'll be defending my degree work, so I'm unable now to spend much time on improvement of D3. If you can offer some help. it will be very highly appreciated)</p>\r\n<p>I understand an importance of good documentation, and some part of it consists of our samples. In the future I;m going to develop these two parts of documentation - help itself and samples.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-26T19:24:04.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

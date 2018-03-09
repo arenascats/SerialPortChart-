@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "467778",
+    "ThreadId": "219577",
+    "Html": "<p>Hi,</p>\r\n<p>this is an easy question. How do I create a black dashed line in a ChartPlotter?</p>\r\n<p>Thank you!</p>\r\n<p>G</p>",
+    "PostedDate": "2010-07-15T06:43:19.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467965",
+    "ThreadId": "219577",
+    "Html": "<p>The wpf Pen (as used by ChartPlotter) has a DashStyle property. You just need to set this to an appropriately constructed DashStyle object.</p>\r\n<p>The sample &quot;MarkersSample&quot; in the D3 solution includes a dotted line but this could easily&nbsp;be changed to a Dashed line.</p>",
+    "PostedDate": "2010-07-15T13:47:45.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "826947",
+    "ThreadId": "353099",
+    "Html": "<p>I am a newbie to C# and programming in general.&nbsp; I've downloaded the \"official\" v0.3 release of D3 from the Downloads page of this site (http://dynamicdatadisplay.codeplex.com/releases/view/26761), and I've been able to create some simple charts by referencing  the D3 assembly in my project.&nbsp; But from what I've read, it would be a better idea to work with the most current build of D3, located here: http://dynamicdatadisplay.codeplex.com/SourceControl/list/changesets.&nbsp;</p>\n<p>My problem is that when I download and unzip the most current zip file from that page, I have a bunch of .proj, .sln, and .cs files, but no .dll to reference in my project.&nbsp; I'm guessing there's something obvious that I'm supposed to do with these files...maybe  somehow build them into a .dll file?&nbsp; Any suggestions as to what I'm supposed to do with all these files in order to be able to use this new build of D3 in my project would be much appreciated.</p>\n<p>&nbsp;</p>\n<p>I should add that I'm using VS2010 Express, if that makes any difference.</p>",
+    "PostedDate": "2012-04-21T20:08:31.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

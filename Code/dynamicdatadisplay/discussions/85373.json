@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "290792",
+    "ThreadId": "85373",
+    "Html": "<p>Are there any plans on supporting management of context menus from code? &nbsp;Right now it's not trivial to manage context menus on objects that are dynamically added to the plotter. &nbsp;Also, weird behavior ensues when changing StaticMenuItems.</p>\r\n<p>For example:</p>\r\n<p>Chart_Composite.MainPlotter.DefaultContextMenu.StaticMenuItems.Clear(); //Doesn't do anything</p>\r\n<p>Chart_Composite.MainPlotter.DefaultContextMenu.StaticMenuItems.Add(NewMenuItem) //Item shows up, but the context menu disappears on mouseover</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for all of the great work, so far this has turned out to be a truly amazing component. &nbsp;The possibilities are nearly limitless, but it'd really help to be able to manipulate objects through a context menu.</p>",
+    "PostedDate": "2010-02-15T04:02:16.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

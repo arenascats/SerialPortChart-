@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "531739",
+    "ThreadId": "237298",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I read and downloaded the code from this thread</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=63633\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=63633</a></p>\r\n<p>And also read this thread, though it doesn't really provide an answer:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=78607\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=78607</a></p>\r\n<p>I'm working on a WPF project using MVVM and am trying to draw a line graph through the calling of a method in the constructor, opposed to having to click a button to populate the graph, For example:</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> ChartViewModel()\r\n{\r\n  LoadData();\r\n}\r\n\r\n<span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> LoadData()\r\n{\r\n\t<span style=\"color:green\">// Create LineGraphViewModels and add them to ObservableCollection list</span>\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p>Strangely, the Line Chart remains blank : / &nbsp;Very Confusing. &nbsp;Would any one know how to rectify this?</p>\r\n<p>Cheers,<br>\r\nMark&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-06T06:41:01.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532126",
+    "ThreadId": "237298",
+    "Html": "\r\n<p>Hi Mark,</p>\r\n<p>&nbsp;</p>\r\n<p>Sorry but this part of functionality is not a inherent part of D3, as I have not merged it with D3's trunk.</p>\r\n<p>I will try to do it in the closest time ( I hope 2-3 weeks, as I have more urgent tasks now).</p>\r\n<p>Can you please add request for this functionality here -&nbsp;<a href=\"http://d3future.codeplex.com/workitem/list/basic\">http://d3future.codeplex.com/workitem/list/basic</a></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-12-06T22:46:17.977-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532186",
+    "ThreadId": "237298",
+    "Html": "\r\n<p>Cheers Mikhail, &nbsp;Done:&nbsp;<a href=\"http://d3future.codeplex.com/workitem/4\">http://d3future.codeplex.com/workitem/4</a></p>\r\n",
+    "PostedDate": "2010-12-07T02:21:31.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

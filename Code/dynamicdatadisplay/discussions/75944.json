@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "259794",
+    "ThreadId": "75944",
+    "Html": "<p>Hard to explain so I've linked to a picture. I have two charts that have matching horizontal axis. They are stacked on top of each other in the view so that you can compare them vertically.</p>\r\n<p>My problem is that the vertical axis ticks are dynamically sized and so they can differ between the two charts - this means that they no longer line up vertically.</p>\r\n<p>How do you suggest that I solve this and have the vertical axis width matched so that they are the same on both charts regardless of the calculated tick size?</p>\r\n<p><a href=\"http://i906.photobucket.com/albums/ac266/McBainUK/Syncthewidthofthepinklinedareaonthe.png\">http://i906.photobucket.com/albums/ac266/McBainUK/Syncthewidthofthepinklinedareaonthe.png</a></p>",
+    "PostedDate": "2009-11-23T04:57:16.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "260330",
+    "ThreadId": "75944",
+    "Html": "<p>Hi,</p>\r\n<p>In the next uploaded to Source Code version of DynamicDataDisplay there will be a class named &quot;WidthSpring&quot; which will help you to have equal widths of two chart plotters' LeftPanels. Here is a sample of usage:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span> <span style=\"color:Red\">Visible</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">-25000,-14000,50000,28000</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">plotter1</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span> <span style=\"color:Red\">Visible</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">-25000,-2,50000,4</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">plotter2</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n\t<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">WidthSpring</span> <span style=\"color:Red\">SourcePanel</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">{Binding LeftPanel, ElementName=plotter1}</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-24T12:03:56.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "260524",
+    "ThreadId": "75944",
+    "Html": "<p>Great. Will keep any eye out for the next check-in.</p>",
+    "PostedDate": "2009-11-25T01:35:38.483-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432700",
+    "ThreadId": "75944",
+    "Html": "I need to create a Chart exactly like the image posted above.  Has the WidthSpring been introduced in any of the releases yet?  I'm pretty sure I have the latest and do not see it.\r\n\r\n\r\n\r\nEDIT: My apologies its here:  http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/changes/31108\r\n",
+    "PostedDate": "2010-04-19T06:40:35.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432704",
+    "ThreadId": "75944",
+    "Html": "<p>Take a look at change set 31108 on the source code tab.</p>",
+    "PostedDate": "2010-04-19T06:46:51.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432731",
+    "ThreadId": "75944",
+    "Html": "<p>Thanks, This seems to be working pretty good from some simple testing.&nbsp; I used the viewport restrictions example to lock the x-axis navigations together.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp;&nbsp; Dim V As New ViewportRestrictionCallback(AddressOf Callback)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter2.Viewport.Restrictions.Add(New InjectionDelegateRestriction(plotter.Viewport, V))<br><br><br><br>&nbsp;&nbsp;&nbsp; Public Function Callback(ByVal rect As DataRect) As DataRect<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rect.XMin = plotter.Viewport.Visible.XMin<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rect.Width = plotter.Viewport.Visible.Width<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return rect<br><br>&nbsp;&nbsp;&nbsp; End Function</p>",
+    "PostedDate": "2010-04-19T08:00:15.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510439",
+    "ThreadId": "75944",
+    "Html": "<p>Has anyone used the WidthSpring approach for more than 2 charts?</p>\r\n<p>The&nbsp;SyncedWidthSample works well for 2 charts, but I am unsure how to make it work for more. &nbsp;We can have at least 5 or 6 together, which I want to keep&nbsp;synced. &nbsp;</p>\r\n<p>I've tried adding a WidthSpring as children for each (so they all have WidthSprings for each other), but it doesn't work too well, especially when you add new charts. &nbsp;Can it be done?</p>",
+    "PostedDate": "2010-10-21T04:11:13.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

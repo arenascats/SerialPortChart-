@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "748284",
+    "ThreadId": "299532",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>In the samples for&nbsp; plotting cropdensity, the color coding takes Red as Max and Green as Min. we would like to change the inbuilt RGB Colour functionality to reverse as Red to have minimum value and Green to have maximum value. But the markers.plotcolor()\r\n doesnt specify how to overwrite this. Can you help us regarding this. If any code sample is sent it would be really helpful.</p>\r\n",
+    "PostedDate": "2012-02-09T03:39:57.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

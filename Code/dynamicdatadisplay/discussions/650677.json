@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1461286",
+    "ThreadId": "650677",
+    "Html": "Hello,\r<br />\n<br />\nI'm using a polyline in the plotter.\r<br />\nI could see that points can be dragged from one place to another place.But I want to move the complete polyline with all the points at same time.\r<br />\nMaybe by providing a small marker just below the first draggable point.\r<br />\nDoes the control already have this feature? If not let me know how I can it be implemented.<br />\n",
+    "PostedDate": "2016-01-29T05:32:43.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

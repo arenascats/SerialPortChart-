@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "984839",
+    "ThreadId": "429130",
+    "Html": "\r\n<p>Hello</p>\r\n<p>Will really appreciate for some feedback how to use D3 componentns for WPF - drawing and manipulating a display. Documentation is very poor or none ...</p>\r\n<p>I need to have a static 2D display ( static axis X and Y ) on which i'm showing a position of the point(s)&nbsp; and drawing a rectangles (shapes). How to use those markers, how to add them to display, what is a design here ...</p>\r\n<p>&nbsp;</p>\r\n<p>Thank You for help!</p>\r\n<p>&nbsp;</p>\r\n<p>edit: ok I found examples in solution which indeed are a feedback here ... my question now could be reduced to:</p>\r\n<p>how to add RectangleHiglight in code ?</p>\r\n<p>how to limit ChartPlotter to show strict area only?</p>\r\n<p>&nbsp;</p>\r\n<p>edit1:</p>\r\n<p>questions limits to one:</p>\r\n<p>how to add RectangleHiglight in code ?</p>\r\n<p>Best</p>\r\n<p>&nbsp;</p>\r\n<p>edit2:</p>\r\n<p>questions limits to none: thank you! :)</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Best</p>\r\n",
+    "PostedDate": "2013-01-10T01:03:22.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

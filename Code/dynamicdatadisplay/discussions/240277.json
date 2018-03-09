@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "543217",
+    "ThreadId": "240277",
+    "Html": "\r\n<p>this <a href=\"http://r4pymw.bay.livefilestore.com/y1pDV-UkN2Awl9cua7G9tCdWzP1H3RtYy1gs78JKP0fxnOw_FnOiHulkglp4vGidHcDqFLYBC3o6elcb5PpbsDzk6rAc7GOI9l8/type%20or%20namespace%20Point%20could%20not%20be%20found.jpg?psid=1\">\r\nillustration</a>&nbsp;hopefully conveys my challenge to someone who might also be trying to use the Dynamic Display code within a\r\n<a href=\"http://www.microsoft.com/downloads/en/details.aspx?FamilyID=3453ab2b-2067-41e4-b087-312d8385cf1b&displaylang=en\">\r\nMicrosoft Patterns and Practices Prism modular architecture</a>?</p>\r\n<p>When I try to include code and assembly references within a Prism module, I just can't get things to work.&nbsp; With the System.Windows 'Point' struct as per the illustration, is it because DD3 is using System&nbsp;assembly<strong>&nbsp;v2.0.50727\r\n</strong>and the Prism Quickstarts use <strong>v4.0.30319 ?&nbsp; </strong>Or am I completely in the wrong namespace?</p>\r\n<p>For the PRISM quickstarts I'm using <strong>ModularityWithUnity.Desktop</strong>&nbsp; and for the DD3 sample I'm using\r\n<strong>SimulationSample</strong></p>\r\n<p>Thank you,</p>\r\n<p>Greg</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-03T07:49:09.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

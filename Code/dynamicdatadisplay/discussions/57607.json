@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "194752",
+    "ThreadId": "57607",
+    "Html": "<p>I am using the horizontaldatetimeaixs in my code and it works fine now.</p>\r\n<p>by default, the date and time(hour) is showed in one line below the plotter with yellow background.&nbsp; is that possiable i remove it?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-27T05:18:35.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205379",
+    "ThreadId": "57607",
+    "Html": "<p>Hi,</p>\r\n<p>I also need the solution for this.</p>\r\n<p>set maximum height for bottom panel. This may solve your purpose temporarly.</p>\r\n<p>BottomPanel.MaxHeight = 24;</p>\r\n<p>But this is not proper solution.</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2009-06-25T05:09:46.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206600",
+    "ThreadId": "57607",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Can you give&nbsp; the proper solution for this.</p>\r\n<p>I checked&nbsp; with different properties, But I didn't get.</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2009-06-29T07:12:04.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208925",
+    "ThreadId": "57607",
+    "Html": "<p>Hi!</p>\r\n<p>&nbsp;</p>\r\n<p>What do you want to remove? A yellow background? Or this second line entirely?</p>\r\n<p>If 1st, it is not easy do it because this bcakground and stuff around it are hardcoded into DateTimeLabelProvider. If you need, I can change it so it would be easy to change the view of this mayor labels from outside.</p>\r\n<p>If 2nd, you should simply set axis.MayorLabelProvider to null, where axis is an axis for which you want to remove these mayor labels.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-06T06:37:03.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209337",
+    "ThreadId": "57607",
+    "Html": "<p>Hi,</p>\r\n<p>Better if the second line is configurable just like legend.</p>\r\n<p>I mean the second line should be removable, It should allow <em><strong>.Remove()</strong></em></p>\r\n<p>I know it is difficult to modify code, I think It is added to bottom panel, If&nbsp;we remove bottom panel, it is removing entire date time axis.</p>\r\n<p>Setting MayorLabelProvider to null =&gt;&nbsp;but this is&nbsp;resetting the valeues of yellow line to January&nbsp;001.&nbsp;&nbsp;&nbsp;</p>\r\n<p>Regards</p>\r\n<p>Ravi&nbsp;</p>",
+    "PostedDate": "2009-07-07T00:54:15.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209370",
+    "ThreadId": "57607",
+    "Html": "<p>Hi, Ravi,</p>\r\n<p>&nbsp;</p>\r\n<p>I was unable to reproduce bug you've described when setting axis.MayorLabelProvider to null causes resetting values of mayor label ticks, so please test the recent version of D3 - <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/D3 for VPV.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/D3%20for%20VPV.zip</a></p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-07T02:36:13.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1104912",
+    "ThreadId": "57607",
+    "Html": "In latest version you can remove it by setting:<br />\n<pre><code>    dateAxis.ShowMayorLabels = false;</code></pre>\n\nThis will make that panel disappear.\r<br />\n<br />\nRegards,\r<br />\nvirious<br />\n",
+    "PostedDate": "2013-10-08T02:02:53.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

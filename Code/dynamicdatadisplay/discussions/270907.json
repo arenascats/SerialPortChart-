@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "665363",
+    "ThreadId": "270907",
+    "Html": "\r\n<p>Hi guys, I'm working on a scope chart that graph data in real time, but my problem is that I need to</p>\r\n<p>setup the intervals, max,min, and grid properties of the chart, does anybody know how can I do this??</p>\r\n<p>&nbsp;</p>\r\n<p>thx</p>\r\n<p>skabo</p>\r\n",
+    "PostedDate": "2011-08-30T08:39:12.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681142",
+    "ThreadId": "270907",
+    "Html": "<p>Hi Skabo,</p>\r\n<p>use SetConverion(...),&nbsp;plotter.ViewPort.Visible to fix max and min limits.</p>\r\n<p>Grid properties(you mean major grid lines, If I am right) are by default auto in any of the chart. If you want to control the grid properties, then you have to override the ticks.</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2011-10-06T22:10:22.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

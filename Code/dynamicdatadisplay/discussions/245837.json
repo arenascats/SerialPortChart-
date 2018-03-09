@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "565391",
+    "ThreadId": "245837",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>we have a requirement to show x-aixs like HH:MM:SS format.</p>\r\n<p>Even if Hour crosses &gt;24(greater than 24) it should display like &quot;25:00:00&quot;&nbsp;.... &quot;26:00:00&quot; ... &quot;27:00:00&quot;</p>\r\n<p>Example:</p>\r\n<p>00:00:00 ........ 24:00:00 Hour is exceed greater than 24 then it should display &quot;25:00:00&quot;&nbsp;.... &quot;26:00:00&quot; ... &quot;27:00:00&quot;</p>\r\n<p>Could you pls provide the sample for providing x axis display format as explained above.</p>\r\n<p>Thanks,</p>\r\n<p>Regards</p>\r\n<p>Subash</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:10pt\">The time display format is hh:mm:ss. For eg: 01:35:56 or 25:32:45</span></p>\r\n",
+    "PostedDate": "2011-02-13T06:10:17.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1459491",
+    "ThreadId": "650118",
+    "Html": "Hello,<br />\nI'm trying to achieve a discontinuous graph  (i.e for one Y there will be few lines (ranges from to, empty space, from to, ...) - something along like on this image:<br />\n<br />\n<img src=\"http://s29.postimg.org/56h25wjiv/W_Czasie.png\" alt=\"Image\" /><br />\n<br />\nAs you can see (hopefully) there is a small break between 18:00 and 19:00<br />\n<br />\nfor now, i create one new &quot;AddLineGraph&quot; for each range (with the same Pen color)<br />\nHow should i approach this?<br />\n(as you can see i have 3 times the same item on legend - i want legend to be distinct),<br />\n<pre><code>foreach (var item in Something)\n{\n    var dateSpan = new List&lt;DateTime&gt;();\n    dateSpan.Add(item.from_date);\n    dateSpan.Add(item.to_date);\n\n    var datesDataSource = new EnumerableDataSource&lt;DateTime&gt;(dateSpan);\n    datesDataSource.SetXMapping(x =&gt; dateAxis.ConvertToDouble(x));\n\n    var itemDataSource = new EnumerableDataSource&lt;int&gt;(dateSpan.Select(a =&gt; device.Id));\n    itemDataSource.SetYMapping(y =&gt; y);\n    CompositeDataSource compositeDataSource1 = new CompositeDataSource(datesDataSource, itemDataSource);\n\n    plotterMain.AddLineGraph(compositeDataSource1,\n        new Pen(brush, 2),\n        new CirclePointMarker { Size = 2.0, Fill = Brushes.Red },\n        new PenDescription(device.Name));\n                    \n}\n</code></pre>\n\n",
+    "PostedDate": "2016-01-16T05:36:37.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1459592",
+    "ThreadId": "650118",
+    "Html": "Hi,\r<br />\n<br />\n(I can not see the image) any way Your approach is correct. This is the only way for DDD line graph. You have to add separate lines with same pen colour.\r<br />\nSince you added 3 separate lines, you will have 3 items in legend.  Remove the legend from the chart and add your own legend, since this is wpf you can add your own legend very easily.(One grid and line and label inside grid and place this grid where ever you like, may be out side of the chart)\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2016-01-17T21:32:16.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

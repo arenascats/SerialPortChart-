@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\n \nWhen applying a PointsFilter, the filter is called on every zoom change. This is done by setting the filteredPoints list to null in LineGraph.OnVisiblileChange and generating a new list in UpdateCore. \n \nThat is not done on panning, because in LineGraph.OnVisibleChange a if checks for Size of rect has changed. But size hasnt changed on pan. \n \nI found this bug when using a steplinefilter and setting the last point to screen width. That worked with zoomin but not when panning.\n \nA workaround for me was changing the size a little bit.",
+    "LastUpdatedDate": "2013-10-17T02:13:35.953-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-04-19T06:11:30.163-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Filter is not updated on pan",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 15716
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

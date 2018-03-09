@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1287324",
+    "ThreadId": "560335",
+    "Html": "Dear Folks:<br />\nThe following function is receiving the new data from external about every 30 miliseconds:<br />\n<pre><code>\npublic void RedrawLinePlot(int nColorChannels)\n        {\n            int startIndex = _initialChildrenCount;\n\n            _nColorChannels = nColorChannels;\n\n            if ((_nColorChannels &gt; 0) &amp;&amp; (_dataX != null) &amp;&amp; (_dataY != null))\n            {\n                CompositeDataSource[] dsCh = new CompositeDataSource[_nColorChannels];\n\n                for (int i = 0; i &lt; _maxChannels; i++)    // color reset\n                {\n                    ((LineGraph)plotter.Children.ElementAt(startIndex + i)).LinePen = new Pen(new SolidColorBrush(Colors.Transparent), 1);\n                }\n\n                LineProfileColorSetup();    // color setup\n\n                for (int i = 0; i &lt; _nColorChannels; i++)\n                {\n                    if (_dataX[i].Length == _dataY[i].Length)\n                    {\n                        EnumerableDataSource&lt;double&gt; xOneCh = new EnumerableDataSource&lt;double&gt;(_dataX[i]);\n                        xOneCh.SetXMapping(xVal =&gt; xVal);\n                        EnumerableDataSource&lt;double&gt; yOneCh = new EnumerableDataSource&lt;double&gt;(_dataY[i]);\n                        yOneCh.SetYMapping(yVal =&gt; yVal);\n                        CompositeDataSource ds = new CompositeDataSource(xOneCh, yOneCh);\n\n                        ((LineGraph)plotter.Children.ElementAt(startIndex+i)).DataSource = ds;\n\n                        ((LineGraph)plotter.Children.ElementAt(startIndex+i)).LinePen = new Pen(new SolidColorBrush(_lineprofileColor[i]), 1);\n                    }\n                }\n\n                plotter.FitToView();\n            }\n        }</code></pre>\n\nThe x and y data are updated every time when this function got input from external. The x data never change, simple same array kept being sent to this function. The y data changes but within a fixed range.<br />\n<br />\nHowever, the axis of the plot is really flickering. I commented out the FitToView(), the flickering stops, but also the line profile stops updating. <br />\n<br />\nI am wondering how I can get rid of the flickering? Thanks a million! Best regards.<br />\n",
+    "PostedDate": "2014-08-06T14:00:17.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1287406",
+    "ThreadId": "560335",
+    "Html": "Hi<br />\n<br />\nWhen ever you get the new data call <br />\n<pre><code>yOneCh.RaiseDataChanged();</code></pre>\n\nFor x axis fix the start and end time use xais.SetConversion(....) to fix the x axis, here endtime = DateTime.Now + some buffer time. When ever DateTime.Now crosses the end time again change the end time and call the SetConverion again.<br />\n<br />\nsearch around the ddd discussions. some where code is available.<br />\n<br />\nRegards<br />\nRavi<br />\n",
+    "PostedDate": "2014-08-06T22:14:49.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1287586",
+    "ThreadId": "560335",
+    "Html": "Thanks Ravi. How ever I don't quite understand why the axis flickering should have anything to do with DateTime.Now and endtime? Care to explain a little more? Thanks.<br />\n",
+    "PostedDate": "2014-08-07T07:07:48.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

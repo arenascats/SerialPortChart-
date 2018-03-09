@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "158624",
+    "ThreadId": "47391",
+    "Html": "After reading <a href=\"http://\">http://blogs.msdn.com/jaimer/archive/2008/11/16/microsoft-client-continuum-in-action-the-silverlight-toolkit-charts-running-in-wpf.aspx</a> article I tried to use this solution&nbsp; but it was made for November Silverlight toolkit release. I tried to port December silverlight toolkit for WPF but when I updated all needed files (for my opinion) chart was not showed. No errors ae displayed, only empty chart without title and line series. Does anybode know what the cause is?<br>\r\n",
+    "PostedDate": "2009-02-17T12:07:53.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163539",
+    "ThreadId": "47391",
+    "Html": "Hi!<br>\r\n<br>\r\nSorry, but it seems to me that you are asking wrong people. Our project has no relationship to Silverlight Toolkit Charts. <br>\r\nIf I am wrong, and I've understood you question wrongly, correct me, please.<br>\r\n<br>\r\nMikhail. \r\n",
+    "PostedDate": "2009-03-02T10:30:21.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

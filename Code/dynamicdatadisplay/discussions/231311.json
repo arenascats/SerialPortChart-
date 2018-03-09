@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "508745",
+    "ThreadId": "231311",
+    "Html": "<p>Hi,</p>\r\n<p>I have several isolinegraphs in a collection, and I am looking to synchronize the viewport state of each of these graphs (i.e. panning, zooming, etc.), since I am comparing between these graphs. For example, if I zoom into one graph, I'd like to keep the same zoom&nbsp; (transform) for all the graphs.</p>\r\n<p>Anyone done anything like this before?</p>\r\n<p>thanks....</p>",
+    "PostedDate": "2010-10-18T04:44:29.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508897",
+    "ThreadId": "231311",
+    "Html": "<p>You will need to TwoWay bind to the ViewBoundary. Then add a PropertyChanged event to the Viewport of the Chart plotter to catch d3 mouse events.</p>\r\n<p>ViewBoundary = new DataRect(Viewport.Visible.XMin, Viewport.Visible.YMin, Viewport.Visible.Width, Viewport.Visible.Height);</p>",
+    "PostedDate": "2010-10-18T10:20:25.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509769",
+    "ThreadId": "231311",
+    "Html": "<p>Hi,</p>\r\n<p>Is there a property ViewBoundary? I couldn't find it.</p>\r\n<p>It seems to me that if I could TwoWay bind to the Visible property on the Viewport2D , that would do the trick. Then I don't even need to catch mouse events- I can just check whenever the &quot;ViewBoundary&quot; (bound) changes.</p>\r\n<p>But Visible isn't a dependency property....</p>\r\n<p>can you elaborate a bit on which object you think I should bind to?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-20T00:02:21.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509810",
+    "ThreadId": "231311",
+    "Html": "<p>Have you seen the discussion &quot;<span>IS there any evnt which gets fired when zooming or panning?&quot; (</span><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=225721\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=225721</a>).</p>\r\n<p>You can just use the viewports propertychanged event and set Chart1.Viewport.Visible = Chart2.Viewport.Visible (and&nbsp;Chart2.Viewport.Visible = Chart1.Viewport.Visible in another handler).</p>",
+    "PostedDate": "2010-10-20T01:41:33.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509815",
+    "ThreadId": "231311",
+    "Html": "<p>Hi,</p>\r\n<p>Because I&acute;m using the&nbsp; MVVM pattern ( :( ) I need to expose Viewport.Visible in the XAML somehow and bind it. Otherwise I have no access to it from code.</p>\r\n<p>Any ideas ? (other than abandoning MVVM?)</p>",
+    "PostedDate": "2010-10-20T01:56:12.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509833",
+    "ThreadId": "231311",
+    "Html": "<p>You could create a class the inherits from ChartPlotter and implements the dependency property you are after. &nbsp;This class could monitor propertychanged on the Visible property and update its dependency property as appropriate.</p>",
+    "PostedDate": "2010-10-20T02:44:26.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509887",
+    "ThreadId": "231311",
+    "Html": "<p>I took your suggestion to inherit from ChartPlotter. I exposed a dependency property of type DataRect. I caught changes from the plotter by adding a handler for the ViewportPropertychanged event, which sets the dependency property.</p>\r\n<p>Then I bind TwoWay to this property, and catch the property changed events to propagate the change to the other graphs.</p>\r\n<p>thanks for your help....</p>",
+    "PostedDate": "2010-10-20T05:34:53.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

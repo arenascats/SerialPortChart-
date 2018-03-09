@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1497703",
+    "ThreadId": "663589",
+    "Html": "Hi everyone. What is the best way to achieve axis synchronization on multiple plotters?\r<br />\n<br />\nI have a stack of plotters where i can add parameters, all parameter share the same timebase so their X axis need to be synchronized between the graphs (i.e. if a parameter on any plotter is updated with a new point, I'd like all parameters on any plotter to shift). Right now a i created myself a synchronized CursorCoordinateGraph so that the cursors between the graphs are coordinated no matter on which plotter i move the mouse on. \r<br />\n<br />\nDo I need something similar for the axis (maybe with some synchronized Restriction) or I am following the wrong approach here and there is an easy, predefine way of achieving something similar? <br />\n",
+    "PostedDate": "2017-08-10T23:31:44.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

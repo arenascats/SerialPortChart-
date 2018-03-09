@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "719836",
+    "ThreadId": "284832",
+    "Html": "\r\n<p>I have a fixed size to the plotter, I have some draggable points that you can drag to change the chart points. When a point is changed I redatabind the LineGraph, but to get it refreshj the plotter I need to do FitToView, but this will change the size of\r\n the plotter to the size of the graph, I do not want this..</p>\r\n<p>&nbsp;</p>\r\n<p>Is it possible to update the Plotter after databind without using FitToView? Thanks</p>\r\n",
+    "PostedDate": "2012-01-03T07:14:47.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

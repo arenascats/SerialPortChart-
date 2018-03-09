@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "423755",
+    "ThreadId": "207339",
+    "Html": "<p>I just started looking at DDD and OpenStreetMap today.&nbsp; I think that a combination of both might suit my needs for embedding maps into a C#/WPF application I am working on.&nbsp; My needs are:</p>\r\n<ul>\r\n<li>Display of free map data</li>\r\n<li>Ability to position map display based on lat/long coordinates</li>\r\n<li>Ability to add notations (e.g. pins, names, lines, etc.) to map locations and save/restore these notations</li>\r\n<li>Ability to work entirely offline for all world locations</li>\r\n</ul>\r\n<p>Looking at the OpenStreetMap web site, I can download a &quot;planet.osm&quot; file to my local computer and use that as a data source instead of the tile server from OpenStreetMap.&nbsp; If I understand how mapping servers work, in particular OpenStreetMap, they store data as vector graphics in XML formatted fashion, then employ use of renderers to serve up PNG files that are &quot;tiles&quot; for display.&nbsp;&nbsp;So, if I downloaded the &quot;planet.osm&quot; file, I guess that I would have to do this rendering as well.</p>\r\n<p>Has anyone tried to do this?&nbsp; Can the Dynamic Data Display's Map control work from a tile server that is local instead of over the Internet?&nbsp; Any suggestions on how I could make this work?&nbsp; I have seen the class FileSystemTileServer.cs in the DDD solution.&nbsp; Is this something that I could use to create my own file based server?</p>\r\n<p>There is obviously much I need to know about this topic and any help, suggestions or background information is appreciated greatly.<br><br>Thanks very much in advance!</p>",
+    "PostedDate": "2010-03-25T13:25:53.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423941",
+    "ThreadId": "207339",
+    "Html": "<p>Hi!</p>\r\n<p>&nbsp;</p>\r\n<p>D3's maps are capable to work in three modes - purely online, online with usage of &nbsp;previously downloaded tiles without downloading them again, and purely offline mode, when tiles are taken from, for example, a number of png-files from special folder or from archive.</p>\r\n<p>If I have properly understood you, you should create your own FileSystemTileServer, which will render tiles relying on data from planet.osm file.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-03-26T00:10:36.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

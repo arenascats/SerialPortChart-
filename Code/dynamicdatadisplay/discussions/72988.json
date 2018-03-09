@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "249361",
+    "ThreadId": "72988",
+    "Html": "<p>Hi,</p>\r\n<p>I was wondering if at any point there will be a 2D graph that does what the IntensityPlot sample project does but without using a bitmap to display the data, but instead using a &quot;real&quot; graph to display data of the format X,Y, Value...</p>\r\n<p>I ask because I learned that in IntensitySample the axes will always go from 0 to 1 and it is not easy to update this.</p>\r\n<p>In my application I have some data where I have an intensity value for each X Y coordinate in a square area. This data represents an image of a physical sample that is recorded by my application. The images can be 64 by 64 pixels or 256 by 256 or whatever... I would like to be able to choose to display either the pixels on the axes of the IntensityPlot or the actual physical dimensions of the sample (for example 1000 nm by 1000 nm).</p>\r\n<p>I cannot figure out how to do this... I tried a few things, but the axes always shows a 0 to 1 scale...</p>\r\n<p>See this screenshot for an example of my current UI based on my own GDI control...</p>\r\n<table style=\"width:auto\" border=0>\r\n<tbody>\r\n<tr>\r\n<td><a href=\"http://picasaweb.google.com/lh/photo/-ld1FWtqvwOTChjastGLLg?feat=embedwebsite\"><img src=\"http://lh3.ggpht.com/_UAVoT5ULIp4/Si2Uuc84fgI/AAAAAAAATC8/wNwer44IxrI/s144/RIS.jpg\" alt=\"\"></a></td>\r\n</tr>\r\n<tr>\r\n<td style=\"font-family:arial,sans-serif;font-size:11px;text-align:right\">From <a href=\"http://picasaweb.google.com/Kris.Janssen/RIS?feat=embedwebsite\">RIS</a></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p>It would be great if I could switch to Dynamic data display for all my graphing inside my app! Including maybe the colorbars you can see in the screencap.</p>\r\n<p>Cheers,</p>\r\n<p>Kris</p>",
+    "PostedDate": "2009-10-24T16:39:47.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249444",
+    "ThreadId": "72988",
+    "Html": "<p>Hi Kris,</p>\r\n<p>'Real' color maps are in development now, and will be ready soon. I hope I will have something to show you in approximately one month.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-25T05:02:42.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249449",
+    "ThreadId": "72988",
+    "Html": "<p>I've uploaded screenshots of first version of color maps to our 'Development-time screens' (<a href=\"http://dynamicdatadisplay.codeplex.com/wikipage?title=Development-time screens\">http://dynamicdatadisplay.codeplex.com/wikipage?title=Development-time%20screens</a>)</p>",
+    "PostedDate": "2009-10-25T05:14:55.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249506",
+    "ThreadId": "72988",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thanks for the speedy reply. This new stuff is not in the nightly sources yet, right?</p>\r\n<p>Cheers,</p>\r\n<p>Kris</p>",
+    "PostedDate": "2009-10-25T11:05:43.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249507",
+    "ThreadId": "72988",
+    "Html": "<p>Hi Kris,</p>\r\n<p>partially not - the first screenshot can be reproduced by nightly (or by next nightly, I'm not absolutely sure).</p>\r\n<p>Second screenshot is a little other thing, it is connected to one our own tool, which is not going to be published yet, but don't be upset - we are really working on colormaps now!</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-25T11:11:20.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249540",
+    "ThreadId": "72988",
+    "Html": "<p>No problem! I am already working on a few other tough problems at the moment, so I can keep busy :D</p>\r\n<p>I'm very pleased to hear that the colormaps are coming!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-25T14:07:08.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252233",
+    "ThreadId": "72988",
+    "Html": "<p>Hi Kris,</p>\r\n<p>Here is a video - screencast about color maps that are in development now - <a href=\"http://www.youtube.com/watch?v=yy0FO8UGOyE\">http://www.youtube.com/watch?v=yy0FO8UGOyE</a>&nbsp;or&nbsp;&nbsp;<a href=\"http://vimeo.com/7378563\">http://vimeo.com/7378563</a></p>\r\n<p>It contains information about how to run demo colormap (really deno, not actual release colormaps).</p>\r\n<p>Regards,</p>\r\n<p>Mikhail</p>",
+    "PostedDate": "2009-11-01T17:31:34.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "221606",
+    "ThreadId": "65083",
+    "Html": "<p>Hello,</p>\r\n<p>I am trying to do an application where I load the data to display in a line chart from&nbsp;different files, one file a the time, then save the screenshot of each genenrated&nbsp;chart automatically as a new png file for each of the input files.</p>\r\n<p>The problem that I am having is that my screenshots only shows the empty chart even when I am waiting for 100 milliseconds before change the chart content with the content of the next file, I could not find how to know when the chart finished to draw.</p>\r\n<p>Basically in my program I got the list a files that are&nbsp;read one at the time, I update&nbsp;a ObservableDataSource with the data and set the X and Y mapping accordingly and add this as a linegraph to the chart, then I call Viewport.FitToView method to redraw the chart (as some of&nbsp;your samples)</p>\r\n<p>When I do this process one file at the time the chart display properly and I can save the correct screenshot, but if I do it automatically the screenshot always has a empty chart.</p>\r\n<p>Is there&nbsp;a way to know when the chart finished to draw?</p>\r\n<p>&nbsp;or there is a better way to do this?</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-10T10:36:23.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221607",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Pedro,</p>\r\n<p>this is interesting question, can you please send me source code of an application that can reproduce this bug?</p>\r\n<p>I'll try to do it myself, too.</p>\r\n<p>My e-mail is thecentury+d3@gmail.com</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-10T10:44:53.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221619",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Pedro,</p>\r\n<p>solution is rather simple - subscribe to Loaded event of added <strong>LineGraph</strong>&nbsp;being added each time, and in handler of this event you are able to get right screenshot.</p>\r\n<p>A little bit later I'll upload to *Source code* next changeset with repro of your case - it would be in <strong>Nightly</strong>, in <strong>DynamicDataDisplay.sln</strong>, solution folder <strong>Repros</strong>, and it is named <strong>MultipleScreenshotsRepro</strong>.</p>\r\n<p>Simply - it tries to make a screenshot just after adding a chart and after it has loaded, and saves this two screenshots to &quot;C:\\&quot; with different names. Screenshot after <strong>Loaded</strong>&nbsp;event is right, and other isn't.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-10T11:00:16.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221632",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thank you for your quick response. I actually solve&nbsp;my problem calling UpdateLayout() method before calling &nbsp;SaveScreenshot() method. I think this is not a good solution because problable decrease the performance but it actually allows me to save the correct screenshot each time that I loop with a different file.</p>\r\n<p><span style=\"color:black;font-size:10pt\">I definitely will try your solution which I think is a better way to do it.</span></p>\r\n<p>I will be looking forward to checkout your sample <strong>MultipleScreenshotsRepro</strong></p>\r\n<p>Thank you very much,</p>\r\n<p>Pedro</p>\r\n<p><strong>&nbsp;</strong></p>",
+    "PostedDate": "2009-08-10T11:09:05.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221644",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Pedro</p>\r\n<p>I've uploaded the version of code with your repro.</p>\r\n<p>It is changeset <strong>28419.</strong></p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-10T11:27:54.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221686",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thank you for your sample, It is a much better way to implement the functionality to save the screenshot once that the chart finishid to load.</p>\r\n<p>In another topic, I tried to replace the DynamicDataDisplay.dll I was using with the once that I got compiling the solution that I just download (<strong>28419</strong>) and I got an error in my xaml.</p>\r\n<p>I was working with a previous version 0.3.2 which I got&nbsp;when I downloaded the TwoAxesSample. The error is that with the new dll it does not find a definition of NewAxisNavigation, I am using a second axis with an inner plotter pretty much in the same way that I found in the TwoAxesSample, I check the new download and I found that the same sample implement a different xaml and it does not have the reference to the NewAxisNavigation, which I remove from my xaml but if I tried to zoom using the mouse I got an error saying that it has a null reference.</p>\r\n<p>This is the xaml for the old TwoAxesSample</p>\r\n<p>&lt;Window x:Class=&quot;TwoIndependentAxes.Window1&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</a>&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns:x=&quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml\">http://schemas.microsoft.com/winfx/2006/xaml</a>&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xmlns:d3=&quot;<a href=\"http://research.microsoft.com/DynamicDataDisplay/1.0\">http://research.microsoft.com/DynamicDataDisplay/1.0</a>&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Title=&quot;DynamicDataDisplay Sample&quot; WindowState=&quot;Maximized&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Icon=&quot;{x:Static d3:D3IconHelper.DynamicDataDisplayWhiteIcon}&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;Grid&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter Name=&quot;plotter&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&lt;d3:InjectedPlotter Name=&quot;innerPlotter&quot; Background=&quot;Aqua&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3:VerticalAxis Placement=&quot;Left&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3:VerticalAxis Placement=&quot;Right&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3:RectangleHighlight Bounds=&quot;0.3,0.3,0.1,0.1&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&lt;/d3:InjectedPlotter&gt;<br>&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&lt;d3:NewAxisNavigation Placement=&quot;Left&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&lt;d3:NewAxisNavigation Placement=&quot;Bottom&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&lt;d3:NewAxisNavigation Placement=&quot;Right&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&lt;d3:RectangleHighlight Bounds=&quot;0.7,0.7,0.1,0.1&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/Grid&gt;<br>&lt;/Window&gt;</p>\r\n<p><strong>The error I got is</strong></p>\r\n<p>{&quot;Object reference not set to an instance of an object.&quot;}</p>\r\n<p><span style=\"font-size:x-small\">On&nbsp;AxisNavigation in&nbsp;the method:&nbsp;OnMouseWheel event, line: Point zoomTo = mousePos.ScreenToViewport(activePlotter.Transform);</span></p>\r\n<p>&nbsp;&nbsp;private void OnMouseWheel(object sender, MouseWheelEventArgs e)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;Point mousePos = e.GetPosition(listeningPanel);</p>\r\n<p>&nbsp;&nbsp;&nbsp;UpdateActivePlotter(e);</p>\r\n<p>&nbsp;&nbsp;&nbsp;int delta = -e.Delta;</p>\r\n<p>&nbsp;&nbsp;&nbsp;Point zoomTo = mousePos.ScreenToViewport(activePlotter.Transform);</p>\r\n<p>&nbsp;&nbsp;&nbsp;double zoomSpeed = Math.Abs(delta / Mouse.MouseWheelDeltaForOneLine);<br>&nbsp;&nbsp;&nbsp;zoomSpeed *= wheelZoomSpeed;<br>&nbsp;&nbsp;&nbsp;if (delta &lt; 0)<br>&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;zoomSpeed = 1 / zoomSpeed;<br>&nbsp;&nbsp;&nbsp;}</p>\r\n<p>&nbsp;&nbsp;&nbsp;DataRect visible = activePlotter.Viewport.Visible.Zoom(zoomTo, zoomSpeed);<br>&nbsp;&nbsp;&nbsp;DataRect oldVisible = activePlotter.Viewport.Visible;<br>&nbsp;&nbsp;&nbsp;if (Placement.IsBottomOrTop())<br>&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;visible.YMin = oldVisible.YMin;<br>&nbsp;&nbsp;&nbsp;&nbsp;visible.Height = oldVisible.Height;<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;visible.XMin = oldVisible.XMin;<br>&nbsp;&nbsp;&nbsp;&nbsp;visible.Width = oldVisible.Width;<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;activePlotter.Viewport.Visible = visible;</p>\r\n<p>&nbsp;&nbsp;&nbsp;e.Handled = true;<br>&nbsp;&nbsp;}</p>\r\n<p>Is this a bug with the new dll or do I have to set something different?</p>\r\n<p>If I use the old dll and the old xaml it works fine.</p>\r\n<p>Thank you,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-10T13:07:21.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221812",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Pedro,&nbsp;</p>\r\n<p>I think you should try to use the new <strong>DynamicDataDisplay.dll</strong>&nbsp;and the new <strong>TwoAxesSample</strong>, where I have successfully migrated from old axis navigation to new axis navigation, so such a rename was performed { AxisNavigation, NewAxisNavigation } -&gt; { OldAxisNavigation, AxisNavigation }.</p>\r\n<p>I don't remember but I have even maybe deleted OldAxisNavigation. So Simply change <strong>NewAxisNavigation </strong>to <strong>AxisNavigation </strong>and everything should work ok.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-10T18:34:50.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221909",
+    "ThreadId": "65083",
+    "Html": "<p>By the way, if you do not need <strong>Legend </strong>or some of axes on your screenshots, you can hide them, setting</p>\r\n<p><strong>plotter.LegendVisibility </strong>to <strong>Visibility.Hidden</strong>, and</p>\r\n<p><strong>plotter.Main{Horizontal|Vertical}Axis </strong>to <strong>Visibility.Collapsed</strong>.</p>\r\n<p>&nbsp;</p>\r\n<p>(I will upload a little bit later a small fix for Legend, that enables manual hiding of legend).</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-11T00:57:57.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222000",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thank you for the update, I will switch to use the new dll.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you for your help.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-11T05:55:12.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222009",
+    "ThreadId": "65083",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Sorry for keep buging you with this.</p>\r\n<p>I test your new sample TwoAxesSample again today, I actually get the same exception there that in my program.</p>\r\n<p>In order to reproduce the exception you could do this.</p>\r\n<p>1) Run the TwoAxesSample</p>\r\n<p>2) click in the horizontal axis with the mouase left click, then roll the mouse wheel to zoom it. This have to be done in that order without doing anything else with the mouse.</p>\r\n<p>You should get an exception on OnMouseWheel event on AxisNavigation, it seems that it does not find the position on the axis then UpdateActivePlotter returns false and when the method try to call activePlotter.Transform active plotter it is null and you get the exception there.</p>\r\n<p>regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-11T06:31:59.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222297",
+    "ThreadId": "65083",
+    "Html": "<p>Hi, Pedro,</p>\r\n<p>Thanks for submitting this bug - its is (I hope) fixed now.</p>\r\n<p>All these fixes and a little bit changed&nbsp;<strong>TwoIndependentAxes </strong>sample are available in <strong>SourceCode/LatestChangeset (28446)/Nightly</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-11T19:38:11.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "807308",
+    "ThreadId": "347784",
+    "Html": "\r\n<p>If I use PhysicalProportionsRestriction in ChartPlotter, the endless cycle often occurs on zooming or window resizing. It is hard to define some critical point on which it always occur, but the simpliest way to simulate it is to create small window (243x416)\r\n with an empty ChartPlotter and then resize it by dragging the right side of the window to the left. During this action in some point window starts to jump between two states endlessly. Using DDD v0.3.4703.0. Any ideas to solve it? Thank you very much</p>\r\n<p>Peter</p>\r\n",
+    "PostedDate": "2012-03-08T00:07:53.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1489558",
+    "ThreadId": "347784",
+    "Html": "Hi,\r<br />\nDid find out how to fix by any chance? Here I am a few years later having the exact same issue.\r<br />\nThanks.\r<br />\n<br />\nCarlos.<br />\n",
+    "PostedDate": "2016-12-09T12:35:29.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

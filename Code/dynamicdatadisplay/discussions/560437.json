@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1287610",
+    "ThreadId": "560437",
+    "Html": "Hi guys, I downloaded the latest version of D3 sources (07/2013) and i builded all the DLL. I'm trying to use a ColorMap in a WPF C# project.<br />\n<br />\nIn XAML i created an empty ChartPlotte with name &quot;plotter&quot; and i need to insert a ColorMap.<br />\nHere it is my C# code:<br />\n<pre><code>            ColorMap cm = new ColorMap();\n            int N = 5;\n\n            double[,] altezza = new double[N, N];\n            Point[,] punti = new Point[N, N];\n\n            Random random = new Random();\n            \n            for (int i = 0; i &lt; N; i++)\n            {\n                for (int j = 0; j &lt; N; j++)\n                {\n                    altezza[i, j] = 10 * random.Next(0, 10);\n                    Point p = new Point(i, j);\n                    punti[i, j] = p;\n                }\n            }\n\n            WarpedDataSource2D&lt;double&gt; dataSource = new WarpedDataSource2D&lt;double&gt;(altezza, punti);\n\n            cm.DataSource = dataSource;\n\n            plotter.Children.Add(cm);</code></pre>\n\nIn Debugging I can see the ColorMap object into the plotter object with the right datasource but the graph the comes out in the window is empty. Am i missing something?<br />\n<br />\nThe plotter is good becuse if I try to insert another type of chart everything function as expected.<br />\n<br />\nP.S: The ColorMap example distributed with the sources also stay empty.<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-08-07T08:11:59.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

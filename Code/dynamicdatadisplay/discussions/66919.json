@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "227486",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I downloaded the latest nightly build and I found a problem with the injected plotter. If you run the DevSample TwoIndependentAxes you could see that the innerplotter does not draw in the screen, it does not show in the legend and the axis on the right side does not show neither.</p>\r\n<p>I will revert back to my previous version 28448 where this demo was working ok, but I though that it would me nice to have this working again.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-25T07:47:12.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227610",
+    "ThreadId": "66919",
+    "Html": "<p>Thanks, Pedro, this bug will be fixed in next changeset (tomorrow, probably).</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-25T12:41:52.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228001",
+    "ThreadId": "66919",
+    "Html": "<p>Hi,</p>\r\n<p>fixed in changeset&nbsp;<a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28560\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28560\">28560</a>.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-26T08:46:23.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228079",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I downloaded the latest build 28560. It fix the problem with the two axes sample but I found another problem with this build.</p>\r\n<p>In my application I am drawing some LineGraph in the ChartPlotter and others LineGraph in the injectedPlotter as you do in the sample application. Sometimes I need to remove all the LineGraph from both the injectedPlotter and the ChartPlotter in order to redraw then with new values or different set of graphs.</p>\r\n<p>The problem that I found is that when I tried to remove all the LineGraph from the ChartPlotter I got an exception <strong>&quot;Invalid value of child's parent plotter - it should be equal to plotter that child is being removed from.&quot;</strong> in the <em><strong>Plotter.cs</strong></em>, method <em>protected virtual void <strong>OnChildRemoving(IPlotterElement child)</strong></em>.</p>\r\n<p>I found that the problem is that after the new LineGraph are added to the injectedPlotter and these same LineGraph are added to the ChartPlotter but the parent still apears as the injectedPlotter, the function gets the exception when it tries to remove from the ChartPlotter&nbsp;one of the LineGraph that were added to the injectedPlotter.</p>\r\n<p>I modified your TwoAxesSample demo to test if the problem was in my code. Basically I added a button and I put the following code in the click event.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void button1_Click(object sender, RoutedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; innerPlotter.Children.RemoveAll&lt;LineGraph&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.Children.RemoveAll&lt;LineGraph&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>With this code I got the exception on the line <em>plotter.Children.RemoveAll&lt;LineGraph&gt;();</em></p>\r\n<p>I tried a different way to delete the LineGraph that avoid the exception but one LineGraph remains in the ChartPlotter even when I delete both from the from their actual parent. Please check the following code.</p>\r\n<p><em>&nbsp;&nbsp;List&lt;LineGraph&gt; graphList = new List&lt;LineGraph&gt;();</em></p>\r\n<p><em>&nbsp;&nbsp;private void Window1_Loaded(object sender, RoutedEventArgs e)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;innerPlotter.SetVerticalTransform(0, 0, 124, 58);</em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;var rpms = Enumerable.Range(0, 9).Select(i =&gt; i * 1000.0).AsXDataSource();<br>&nbsp;&nbsp;&nbsp;var hps = new double[] { 0, 24, 52, 74, 98, 112, 124, 122, 116 }.AsYDataSource();</em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;var horsePowersDS = rpms.Join(hps);</em></p>\r\n<p><em>&nbsp;&nbsp; LineGraph graph;<br>&nbsp;&nbsp;</em></p>\r\n<p><em>&nbsp;graph = plotter.AddLineGraph(horsePowersDS, Colors.Red, 2, &quot;HP per RPM&quot;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graphList.Add(graph);</em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;var torque = new double[] { 0, 22, 45, 54, 58, 55, 50, 47, 45 }.AsYDataSource();<br>&nbsp;&nbsp;&nbsp;var torqueDS = rpms.Join(torque);</em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;graph = innerPlotter.AddLineGraph(torqueDS, Colors.Blue, 2, &quot;Torque per RPM&quot;);<br></em></p>\r\n<p><em>&nbsp;&nbsp; graphList.Add(graph);</em></p>\r\n<p><em>&nbsp;}</em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private void button1_Click(object sender, RoutedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; graphList.Count; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (graphList[i].Plotter == innerPlotter)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; innerPlotter.Children.Remove(graphList[i]);<br></em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (graphList[i].Plotter == plotter)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.Children.Remove(graphList[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</em></p>\r\n<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graphList.Clear();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;}</em></p>\r\n<p>I hope this help you to find the problem.</p>\r\n<p>Thank you for your support.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-26T11:56:41.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228474",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Pedro, this is strange, but I was unable to reproduce exception you are talking about, though for me at first glance it looked reasonable and I thought that I'll have it, too.</p>\r\n<p>So please try to use the latest version (there is one newer than 28560), or contact me in Skype - my id is <strong>mikhail.brinchuk</strong></p>\r\n<p>We'll try to reproduce this bug in interactive mode)</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-27T10:24:25.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228532",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Mihkail,</p>\r\n<p>Actualy the error I found it on the latest Nightly build the 28560, I saw that you publish a new one today and I also tried with that one.</p>\r\n<p>I got the same error, if I tried to delete all the LineGraph from the plotter and the injected plotter I got an exception.</p>\r\n<p>private void button1_Click(object sender, RoutedEventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; innerPlotter.Children.RemoveAll&lt;LineGraph&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.Children.RemoveAll&lt;LineGraph&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>The innerPlotter.Children.RemoveAll does not fail, but it does not remove the LineGraph from the plotter, In release 28448 it works fine. When the plotter tries to remove those LineGraph it fails because he is not the parent.</p>\r\n<p>I added you to my skype, looking forward to check this issue together.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-27T14:22:21.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229105",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Pedro,</p>\r\n<p>I hope I've fixed this bug in the latest changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#ce8b10;font-weight:bold\" title=\"Browse change set 28606\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28606\">28606</a>.</p>\r\n<p>Please answer here if I am wrong and this bug is not actually fixed.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-30T08:35:20.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229426",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I download the latest change set 28606.</p>\r\n<p>I was not able to compile that package due to missing files.</p>\r\n<p>I used the dll that I found in Nightly build bin folder and with that one I seams that the bug it is fixed.</p>\r\n<p>I would like to be able to compile from the source again, the new set it is missing files that do not allow to compile it properly.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-31T11:08:11.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229442",
+    "ThreadId": "66919",
+    "Html": "<p>Sorry for this unbuildable changeset - there were some errors while uploading files.</p>\r\n<p>Please check newly uploaded build - <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28615\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28615\">28615</a></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-31T11:57:02.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229742",
+    "ThreadId": "66919",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thank you for the update. The Two Axes sample is working OK with the latest nightly build 28615 and it compiles OK.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-01T08:19:44.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

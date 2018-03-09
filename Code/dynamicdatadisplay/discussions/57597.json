@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "194710",
+    "ThreadId": "57597",
+    "Html": "<p>I have an application with D3 embedded in it.&nbsp; I tried to reproduce my problem in a simple app, but in there, it works fine.</p>\r\n<p>Problem: the y-axis in my charts comes up initially with no labels and 10 tick marks.&nbsp; if i zoom in or our, then i get the desired tick marks and time labels.</p>\r\n<p>Is there a method I can call on the chart or the axis to force it to regenerate the ticks and labels?</p>\r\n<p>I appreciate any ideas or suggestions...</p>",
+    "PostedDate": "2009-05-27T02:59:23.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205944",
+    "ThreadId": "57597",
+    "Html": "<p>Hi, Michael,</p>\r\n<p>&nbsp;</p>\r\n<p>Can you please send me a screenshot of this bug?</p>\r\n<p>Also you can try new version of DynamicDataDisplay - maybe this bug is fixed in it, - it is here:&nbsp;<a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay June 26.rar\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay%20June%2026.rar</a></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-06-26T09:02:21.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

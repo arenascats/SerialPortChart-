@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "713274",
+    "ThreadId": "283229",
+    "Html": "\r\n<p>Just read D3 web site, seems a great charting tool, would anyone tell me that D3 will work&nbsp;&nbsp;with Microsoft .NET Framework version 4.0 ?</p>\r\n<p>All documents I read indicate .Net 3.5</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-12-16T08:35:52.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "713275",
+    "ThreadId": "283229",
+    "Html": "<p>We are using it with 4.0.&nbsp; Works fine.</p>",
+    "PostedDate": "2011-12-16T08:41:33.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "713278",
+    "ThreadId": "283229",
+    "Html": "<p>Thanks for prompt reply, I feel safe to go for D3 now</p>",
+    "PostedDate": "2011-12-16T08:47:10.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

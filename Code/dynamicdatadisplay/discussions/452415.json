@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1076690",
+    "ThreadId": "452415",
+    "Html": "How do i decrease the scale of it? I need to see nanoseconds, but it is only available to see miliseconds.\r<br />\n<img src=\"http://s020.radikal.ru/i714/1308/7d/cdffd0f7d54b.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-08-05T01:47:07.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087524",
+    "ThreadId": "452415",
+    "Html": "I think it has to do with the fact that DateTime only counts miliseconds and not nanoseconds, if you want nano you'll need to define your own DateTime and then create an Axis for it.<br />\n",
+    "PostedDate": "2013-09-02T23:06:42.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092073",
+    "ThreadId": "452415",
+    "Html": "Hi Nihau,\r<br />\n<br />\nDid you got solution on this as I also want to do same thing.\r<br />\n<br />\nBTW how you added time direct on x-axis.\r<br />\n<br />\nVishal N<br />\n",
+    "PostedDate": "2013-09-12T20:53:05.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "212095",
+    "ThreadId": "62491",
+    "Html": "<p>I am building an application using Map component from the D3 library. I like it very much - great job guys!</p>\r\n<p>What I need to do is to draw custom shapes, with corners (anchor points) hooked to the specific Geographic Coordinates (as shown in the pictures).&nbsp;</p>\r\n<p><a href=\"http://img382.imageshack.us/i/mapu.png/\"><img src=\"http://img382.imageshack.us/img382/493/mapu.th.png\" border=0 alt=\"Free Image Hosting at www.ImageShack.us\"></a></p>\r\n<p>After I zoom in or zoom out, the anchor points should stay exactly in the same coordinates and the symbol should rebuild itself accordingly. Additionaly, it should be possible to edit the symbols visible in the map (grab the anchor point and move it to change the shape of the symbol).&nbsp;You have an example of DraggablePoint object in the solution, but you move the whole component across the map. Im my case I need to move just one end/corner of the shape that I draw.</p>\r\n<p>So, just to summarize: I need to be able to put custom symbols (consiting on many shapes) on the map in the specific coordinates and I need an ability to edit the shape (or just some parts of the shape). The shape should stick to the given coordinates while panning/zooming map.</p>\r\n<p>Any ideas on how to implement this? Any help will be appreciated.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-15T05:32:08.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212278",
+    "ThreadId": "62491",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>That's what I've wrote for you - <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/EditableShapes.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/EditableShapes.zip</a></p>\r\n<p>This simple app enables you to display and edit interactively polygons and polylines.</p>\r\n<p>I'm leaving the other part of you application to you)</p>\r\n<p>&nbsp;</p>\r\n<p>If you have some questions, do not hesitate to ask them here.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-15T12:45:23.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212457",
+    "ThreadId": "62491",
+    "Html": "<p>Thanks Mikhail!</p>\r\n<p>That's a very good example. This is almost what I need ;). Just additional question. Is it very difficult to make this example work for shapes built of WPF components like Rectangles, Lines, Ellipses (from the System.Windows.Shapes namespace) or it only works for Path based objects?. Bascally, I already have my own library with number of different symbols built using WPF components and I want to make them work with the map, just the way ViewportPolygon or ViewportPolyline do.</p>\r\n<p>Regards,</p>\r\n<p>Pawel</p>",
+    "PostedDate": "2009-07-16T00:33:52.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214863",
+    "ThreadId": "62491",
+    "Html": "<p>Hi Pawel,</p>\r\n<p>&nbsp;</p>\r\n<p>You should write your own editor in adorner layer (as if I have done this).</p>\r\n<p>Ellipse's ViewportX and Y coordinates (center on viewport) can be easily bound to draggable point. So it is just a question of your's work, nothing more, there is no magic in it)</p>\r\n<p>Rectangle can be edited if you have two draggablePoints in its opposite corners, which'll adjust its position and size with special case.</p>\r\n<p>&nbsp;</p>\r\n<p>This can be done easily, but it's work not for me, but for a creator of such a GIS application.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-22T10:12:38.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

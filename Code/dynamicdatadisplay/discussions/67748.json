@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "230220",
+    "ThreadId": "67748",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I would like to implement a feature using the cursor coordinate on the chart to get the X axes value of the current position of the cursor when the mouse left button is down.</p>\r\n<p>The cursor actually displays the correct value, but I would not find how to get the same value through his properties.</p>\r\n<p>Lets says that when I click the first time the cursor is on postion 20 (value of&nbsp;the x axes)</p>\r\n<p>The second time I click the cursor is on position 60 (value of the x axes)</p>\r\n<p>Once that I have capture these two values I could use it to display the difference between this two points e.g.&nbsp;&nbsp;60 &ndash;&nbsp;20 = 40 and dispaly this value in another label in my form.</p>\r\n<p>I Implemented the MouseLeftButtonDown event on the Chart Plotter then I access my cursor coordinate position but the X and Y values are screen coordinates and I need to have the X axes value, the same value the cursor already display in the box. (e.g. cursorCoordiante.Position.X is a screen coordinate)</p>\r\n<p>I check your sample Line Test Sample where you implemented the DataFollowChart but the problem I got is that I plot all my LineGraph at run time, I could have one or more line graphs and they all share the same x values.</p>\r\n<p>The cursor coordinate shows always a box with the current value on the X axes and the Y axes, if I can access the value on that box I think I will be ok but I could not find how.</p>\r\n<p>I will appreciate if you can point me how I can achieve this.</p>\r\n<p>Regards,</p>\r\n<p>Pedro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-02T07:38:45.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245642",
+    "ThreadId": "67748",
+    "Html": "<p>Hi Pedro,</p>\r\n<p>Sorry for being late with the answer,</p>\r\n<p>So, the solution is:</p>\r\n<p>1) subscribe for MouseDown (for example) event of plotter.CentralGrid or plotter.MainCanvas or Plotter2D.ViewportPanel - these are panels that are situated right in the visible area, so mouse coordinates you got from them, will be correct.</p>\r\n<p>2) once you have a point where user clicked by the mouse, translate it into viewport coordinate system by using plotter.Viewport.Transform class, which has methods to translate points from one coordinate system to another (you can read a little bit more about it in our wiki at <a href=\"http://microsoft.cs.msu.su/personal/thecentury/Public Documents/Wiki/D3.html#Viewport2D\">http://microsoft.cs.msu.su/personal/thecentury/Public%20Documents/Wiki/D3.html#Viewport2D</a></p>\r\n<p>&nbsp;</p>\r\n<p>That's all.</p>\r\n<p>Hope this helps,</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T08:36:01.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

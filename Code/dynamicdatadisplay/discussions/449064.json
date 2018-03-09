@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1064528",
+    "ThreadId": "449064",
+    "Html": "I'm using a dynamic (flowing) chart with realtime-data as input. When the x-axis (time in seconds) is flowing to the right, the gridline-intervals are changing constantly. For example:\r<br />\n<br />\n7 ... 7.5 .... 8 .... and so on (0.5s interval)\r<br />\nchanges to\r<br />\n7 .... .... 8 (and so on) (1.0s interval)\r<br />\nthen it switches back to the first interval.\r<br />\n<br />\nHow can I define static gridline-intervals for the x-axis?\r<br />\n<br />\nThank you :-)<br />\n",
+    "PostedDate": "2013-07-04T05:27:29.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1489877",
+    "ThreadId": "449064",
+    "Html": "can you help me ?\r<br />\n i met the question as you ?<br />\n",
+    "PostedDate": "2016-12-14T20:44:05.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

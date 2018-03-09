@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Please let me know can D3 draw 1000000 points in a second?",
+    "LastUpdatedDate": "2013-02-21T17:36:51.81-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-03-31T22:28:56.823-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "can D3 draw 1000000 points in a second?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 15625
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Really?  1 million points?  What on earth would you need to be plotting?  Every pixel on a 1024x768 screen is only 786,432 points.  Surely you could run it through a routine to trim them down.  Would you even have enough IO to be able to process that amount of data that quickly?\r\n\r\nWhat kind of data are you trying to display?  Chart type etc?",
+      "PostedDate": "2011-05-31T06:39:09.78-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:51.81-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

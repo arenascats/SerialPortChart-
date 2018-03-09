@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "905736",
+    "ThreadId": "393537",
+    "Html": "\r\n<p>I'd like to use this control for an application that plots voltages for certain electronic devices. The application will be used for commercial purposes.</p>\r\n<p>I am not familiar with the MS-RL license, so I'd like to ask if I understood the license correctly and if I have full permission to use D3 under the following conditions:<br>\r\n<br>\r\n</p>\r\n<ul>\r\n<li>DLL of D3 will be dynamically linked </li><li>(If necessary) The source code of D3 (of all related .cs files) will be included with my application. No source code pertaining to my application will be released.The application is entirely my own work and do not contain code from D3.\r\n</li><li>Copyright notifications &amp; License will be provided as is in the documentation of the application.\r\n</li></ul>\r\n<p><br>\r\nPlease let me know if you need more information. Thank you.</p>\r\n",
+    "PostedDate": "2012-08-29T09:06:16.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

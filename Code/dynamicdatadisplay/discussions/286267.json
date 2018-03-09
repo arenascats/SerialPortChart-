@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "725652",
+    "ThreadId": "286267",
+    "Html": "\r\n<p>Creating a DraggablePoint at 0,0 by any method, xaml or on c# means that the Draggable point is not visible.</p>\r\n<p>e.g. &lt;d3:DraggablePoint Position=&quot;0,0&quot;/&gt;</p>\r\n<p>Anyone know a work around for this issue.</p>\r\n",
+    "PostedDate": "2012-01-16T02:21:17.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

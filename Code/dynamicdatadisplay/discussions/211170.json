@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "437652",
+    "ThreadId": "211170",
+    "Html": "<p>Is there anything like IsZoomed to tell if the ChartPlotter's Viewport is zoomed in or out from it's default state?</p>",
+    "PostedDate": "2010-04-30T12:03:27.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438096",
+    "ThreadId": "211170",
+    "Html": "<p>The viewport has a property&nbsp;IsFittedToView that may be what you are after.</p>",
+    "PostedDate": "2010-05-02T13:45:16.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438140",
+    "ThreadId": "211170",
+    "Html": "<p>Currently there is no such a property, but you can save two states of Viewport.Visible property and then compare it.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-05-02T18:14:05.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438162",
+    "ThreadId": "211170",
+    "Html": "<p>Would it be to wrong to use something like this?</p>\r\n<p>&nbsp;</p>\r\n<p>public Boolean isZoomedInOrOut<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NumericAxis horizAxis = plotter.MainHorizontalAxis as NumericAxis; // Choose your axis type<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(horizAxis == null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw new NullReferenceException(&quot;X Axis is not of type Numeric Axis&quot;);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Double zoomRange = horizAxis.AxisControl.Range.Max - horizAxis.AxisControl.Range.Min;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (zoomRange == 1.0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false;<br><br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return true;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>[Edited] removed dead code</p>",
+    "PostedDate": "2010-05-02T20:10:30.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438591",
+    "ThreadId": "211170",
+    "Html": "<p>Hi, for the same goal you can use <strong>plotter.Viewport.Visible</strong> property, which was designed specially for such kind of things.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-05-03T19:03:22.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

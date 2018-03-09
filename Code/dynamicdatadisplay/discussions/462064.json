@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1107015",
+    "ThreadId": "462064",
+    "Html": "Hi,\r<br />\n<br />\nhow can I restrict panning on X Axis, so user can't scroll beyond minimal and maximal chart values? I looked at BorderRestriction class to see how to do that but I need to get minimal and maximal X values from my chart. Any ideas?\r<br />\n<br />\nRegards,\r<br />\nvirious<br />\n",
+    "PostedDate": "2013-10-14T00:39:00.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

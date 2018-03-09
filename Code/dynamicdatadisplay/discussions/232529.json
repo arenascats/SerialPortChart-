@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "513429",
+    "ThreadId": "232529",
+    "Html": "\r\n<p>My x and y axes are both measured in feet.&nbsp; I need a way to match the distance between tick marks on&nbsp;both axes regardless of how much data is there.</p>\r\n<p>For example:</p>\r\n<p>I have a line that runs 5000 feet down the y axis, but only 100 feet of x axis distance.&nbsp; The default behavior is for the x axis to stretch that 100 feet into the entire viewable area.&nbsp; This makes for a very distorted view of the data as the x\r\n axis shows as much variance as the y axis, when really it should show nearly a straight&nbsp;line.&nbsp; What I need is a way to make x axis match the number of feet displayed in the y axis.&nbsp; So if there is 5000 feet on the Y axis, x shows 5000 feet as\r\n well, and vice versa.</p>\r\n",
+    "PostedDate": "2010-10-27T08:26:27.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513449",
+    "ThreadId": "232529",
+    "Html": "\r\n<p>You want to set you ViewPort on the plotter in the Viewport property changed method</p>\r\n<pre><div style=\"color:black; background-color:white\"><pre><span style=\"color:blue\">void</span> window_load()\r\n{\r\n.\r\n.\r\n.\r\n.\r\nplotter.Viewport.PropertyChanged &#43;= Viewport_PropertyChanged;\r\n\r\n}\r\n\r\n</pre>\r\n</div>\r\n<br></pre>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>  <span style=\"color:blue\">void</span> Viewport_PropertyChanged(<span style=\"color:blue\">object</span> sender, Microsoft.Research.DynamicDataDisplay.ExtendedPropertyChangedEventArgs e)\r\n  {\r\n      \r\n          <span style=\"color:blue\">if</span> (((Microsoft.Research.DynamicDataDisplay.Viewport2D)sender).Visible.Height != 1.0)\r\n            {\r\n                plotter.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(0,0,5000,5000);\r\n            }\r\n }\r\n</pre>\r\n<pre><br></pre>\r\n<pre>Kishore Vanapalli</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-10-27T08:48:22.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513986",
+    "ThreadId": "232529",
+    "Html": "\r\n<div style=\"color:black; background-color:white\">That works if&nbsp;you know that the content bounds will always be the same and if you know that the viewable area you want will always be the same.&nbsp; For example, zoom doesn't work with this code.&nbsp;\r\n The visible rectangle just gets adjusted to <span style=\"color:blue\">new</span> DataRect(0,0,5000,5000).&nbsp; I don't think this is the solution.&nbsp; I tried something that almost works:</div>\r\n<pre>crossSectionChart.Viewport.Domain = new DataRect(new Point(xMin - 1000, -10000), new Point((xMin - 1000) &#43; 10000, 10000));\r\ncrossSectionChart.Viewport.FitToViewRestrictions.Add(new HWZoomRestriction(10000, -10000));\r\n\r\n\r\n    public class HWZoomRestriction : ViewportRestriction\r\n    {\r\n        private double? _minW = null;\r\n        private double? _minH = null;\r\n\r\n        public HWZoomRestriction(double? width, double? height)\r\n            : base()\r\n        {\r\n            _minW = width;\r\n            _minH = height;\r\n        }\r\n\r\n        public double? MinWidth\r\n        {\r\n            get { return _minW; }\r\n            set\r\n            {\r\n                if (_minW != value)\r\n                {\r\n                    _minW = value;\r\n                    RaiseChanged();\r\n                }\r\n            }\r\n        }\r\n\r\n        public double? MinHeight\r\n        {\r\n            get { return _minH; }\r\n            set\r\n            {\r\n                if (_minH != value)\r\n                {\r\n                    _minH = value;\r\n                    RaiseChanged();\r\n                }\r\n            }\r\n        }\r\n\r\n        public override DataRect Apply(DataRect previousDataRect, DataRect proposedDataRect, Viewport2D viewport)\r\n        {\r\n            DataRect newRect = new DataRect();\r\n            if (MinWidth.HasValue &amp;&amp; proposedDataRect.Width &lt; MinWidth.Value)\r\n            {\r\n                newRect.XMin = previousDataRect.XMin;\r\n                newRect.Width = MinWidth.Value;\r\n            }\r\n            else\r\n            {\r\n                newRect.XMin = proposedDataRect.XMin;\r\n                newRect.Width = proposedDataRect.Width;\r\n            }\r\n            if (MinHeight.HasValue &amp;&amp; proposedDataRect.Height &lt; MinHeight.Value)\r\n            {\r\n                newRect.YMin = previousDataRect.YMin;\r\n                newRect.Height = MinHeight.Value;\r\n            }\r\n            else\r\n            {\r\n                newRect.YMin = proposedDataRect.YMin;\r\n                newRect.Height = proposedDataRect.Height;\r\n            }\r\n            return newRect;\r\n        }\r\n    }</pre>\r\n<p>If you do a fit to view with this code, the LineGraph isn't fully displayed. I got the HWZoomRestriction class from this message board.\r\n<a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=210225\">\r\nHow to restrict zoom on the graph</a> The reason for the negative value on the Height is that my Y axis is inverted.</p>\r\n",
+    "PostedDate": "2010-10-28T07:40:09.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518313",
+    "ThreadId": "232529",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-07T01:14:02.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

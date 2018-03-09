@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "650451",
+    "ThreadId": "267274",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>When loading the graph sometimes the X-axis won't appear unless I zoom in/out (after which I can fit to view and everything's displayed fine). Following is a screenshot:</p>\r\n<p><a href=\"http://img809.imageshack.us/img809/4580/d3axisvanish.png\">http://img809.imageshack.us/img809/4580/d3axisvanish.png</a></p>\r\n<p>If anyone could give me an idea of why this is happening or how to fix it, that would be great.</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-08-01T02:42:03.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "651993",
+    "ThreadId": "267274",
+    "Html": "<p>I would recommend switching to the future library (http://d3future.codeplex.com/)&nbsp; I've had much better results with it.</p>\r\n<p>There may be some work converting between the two however.</p>",
+    "PostedDate": "2011-08-03T13:25:47.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

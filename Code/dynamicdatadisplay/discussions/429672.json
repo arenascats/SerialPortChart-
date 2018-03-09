@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "987053",
+    "ThreadId": "429672",
+    "Html": "\r\n<p>Hello there, hope this site is alive :-)</p>\r\n<p>I downloaded the Silverlight DDD 2.0 and am trial-and-error'ing.</p>\r\n<p>I am working on&nbsp;<span style=\"font-size:10pt\">a web page (aspx), which has the feature to generate PDF reports and display them to the user. My goal with DDD is to add graphs to these reports.</span></p>\r\n<p><span style=\"font-size:10pt\">This means that I won't have any screen to render to, I just want to construct a simple LineGraph and have it rendered to e.g. a bitmap, that I can include in the report.</span></p>\r\n<p><span style=\"font-size:10pt\">Does anybody have a clue how to get started ?</span></p>\r\n<p><span style=\"font-size:10pt\">Thanks a lot in advance,</span></p>\r\n<p><span style=\"font-size:10pt\">Lars Klitgaard, Denmark</span></p>\r\n",
+    "PostedDate": "2013-01-15T06:12:27.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

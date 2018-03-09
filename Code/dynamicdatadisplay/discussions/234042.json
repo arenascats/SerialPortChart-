@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "519431",
+    "ThreadId": "234042",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp; Thank you for creating such excellent graphing package.&nbsp; However, in the Silverlight version, it has a major issue, that prevents me from using it.</p>\r\n<p>&nbsp; The issue is that, when panning, or zooming, or resizing the chart, the curves and the axis are not updated on the same scale!&nbsp; So after panning or zooming, or resizing, the chart becomes incorrect!</p>\r\n<p>&nbsp; You can even observe this behavior in the Silverlight sample page:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/wikipage?title=DynamicDataDisplay%20Silverlight\">http://dynamicdatadisplay.codeplex.com/wikipage?title=DynamicDataDisplay%20Silverlight</a></p>\r\n<p>&nbsp; For example, if&nbsp; you pan the Allergology sample vertically, you can see the&nbsp;green curve will be changing from above 600 to below 600.&nbsp; It is a major issue for me.&nbsp; It appears that WPF version is okay.&nbsp; Is there a fix for this\r\n issue?&nbsp; Do other people have the same problem?</p>\r\n<p>--Peter</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-09T09:20:16.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

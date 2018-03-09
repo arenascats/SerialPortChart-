@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "256159",
+    "ThreadId": "74845",
+    "Html": "<p><br>Hi Mikhail, first of all,thanks for the excellent work!<br><br>I have some questions regarding the Plotter layout, for your best understanding, I have sent to you some screenshots. As you can see, I have three ChartPlotter on a GridView with GridSplitter, when I add vertical axis the labels are not properly drawn, also the HorizontalMinorTicks, but if you move the gridsplitter all charplotter are redraw correctly.<br><br>Another problem happens when I resize the ChartPlotter with GridSplitter (second image.)<br><br>The last problem regard the &quot;rolling window&quot; type graph, like the Simulation sample.<br>I get data points from CAN-BUS every 2 ms., I would like to show, for example, the last 1000 data points. To do this I have used the replacing array of doubles for all datasources(the number of datasources are about 10-15). The problem is the update of the vieport that is not so fast as the received points and with more than 1000 datapoints the linegraph isn't refreshed. The same scenario works perfectly when I get datapoints every 30 ms.<br><br>I have read the discussion &quot;Rolling window graph&quot; about the same problem, but if I call FitToView() method when I add the new point also the Vertical Axis changes, in my three ChartPlotter I have different VerticalAxis with fixed scale.<br><br>I don't know if the replacing array of doubles is the best solution when getting data with high frequency.<br><br>Do you have some tips about the last problem?<br><br>Best regards,<br><br>Giancarlo.</p>",
+    "PostedDate": "2009-11-11T15:48:52.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256856",
+    "ThreadId": "74845",
+    "Html": "<p>Hi Giancarlo,</p>\r\n<p>Are you using the latest version of DynamicDataDisplay from 'Source code' page? If not, try to use that version, because in the latest changesets this bug with axes was (I hope) fixed.</p>\r\n<p>&nbsp;</p>\r\n<p>I've created sample application with 2 gridSplitters and 3 chartPlotters, and everything worked normally. Probably the bug is in one of older versions of D3.</p>\r\n<p>&nbsp;</p>\r\n<p>Currently there is not much difference between complete replacement of data and adding some data to it, because both of them causes complete update of the chart.</p>\r\n<p>&nbsp;</p>\r\n<p>About &quot;Rolling window graph&quot;: please follow the advice I've given there, and add following lines into you code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Green\">// switching off approximate content bounds' comparison, as this can cause improper behavior.</span>\r\nplotter.Viewport.UseApproximateContentBoundsComparison = <span style=\"color:Blue\">false</span>;\r\n<span style=\"color:Green\">// adding line chart to plotter</span>\r\n<span style=\"color:Blue\">var</span> line = plotter.AddLineGraph(data.AsDataSource());\r\n<span style=\"color:Green\">// again switching off approximate content bounds' comparison - now in coercion method of Viewport2D.ContentBounds attached dependency property.</span>\r\nViewport2D.SetUsesApproximateContentBoundsComparison(line, <span style=\"color:Blue\">false</span>);\r\n</pre>\r\n</div>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-13T10:21:29.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257438",
+    "ThreadId": "74845",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>many thanks for your tips, now the refresh is a little improved, (I'll wait your draft with DirectX...).</p>\r\n<p>About the first problem, seems that was my problem with the reference of D3 library, now i'm sure that I'm using the latest version of D3 library, but the second problem (see image n. 2) is still present,<br>If you move the grid splitter all the vertical lines will appeare like second image.</p>\r\n<p>Best regards,</p>\r\n<p>Giancarlo.</p>",
+    "PostedDate": "2009-11-16T02:44:01.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266773",
+    "ThreadId": "74845",
+    "Html": "<p>Hi Giancarlo,</p>\r\n<p>this issue was probably fixed in the latest version of D3 in Source code.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-13T08:28:47.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

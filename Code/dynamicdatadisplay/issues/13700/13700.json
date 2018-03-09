@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This method: public SearchResult1d SearchXBetween(double x, SearchResult1d result)\n \nShould have this if statement: \nif (collection[startIndex].X == x)\n\treturn new SearchResult1d { Index = startIndex };\n \n..before \"// searching ascending\". Otherwise, you'll get to the InvalidOperationException when collection[startIndex].X == x. \n \nI have tested the fix with my dataset and it works. Please respond so I know this has been reviewed.",
+    "LastUpdatedDate": "2013-02-21T17:36:53.243-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-07-08T10:28:08.783-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bug in SortedXSearcher1d.cs",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13700
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

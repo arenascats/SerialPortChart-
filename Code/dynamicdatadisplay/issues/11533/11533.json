@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using D3 in a wpf xbap application. So far I think its great thank you.\n \nMy xbap crashed when I tried to right click to open my context menu. I found a solution here:\n \nhttp://khason.net/blog/quick-tip-how-to-open-popup-or-contextmenu-in-xbap-application/\n \nI put a single-line fix in the  plotter_PreviewMouseRightButtonUp method inside the DefaultContextMenu.cs class as follows:\n \n        plotter.ContextMenu.PlacementTarget = sender as UIElement; // new line\n\t    plotter.ContextMenu.IsOpen = true;                         // existing line\n \n \nWould it be appropriate for you to include that in your builds?",
+    "LastUpdatedDate": "2013-02-21T17:36:54.837-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-01-17T16:48:35.357-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Context Menu crashing in xbap application",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11533
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

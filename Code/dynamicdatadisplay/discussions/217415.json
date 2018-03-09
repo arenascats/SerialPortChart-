@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "460175",
+    "ThreadId": "217415",
+    "Html": "<p>Good day to all D3 community!</p>\r\n<p>Nevertheless the lead developer of the D3 project has left our team, the project continues. We plan now to add two new features into D3 in coming release:</p>\r\n<ul>\r\n<li>High-perfomance visualization, based on DirectX. Experiments look very promising; for example, interactive line graph visualization can be built for millions of points on an ordinary machine.</li>\r\n<li>New 2d-visualization - color map.</li>\r\n</ul>\r\n<p>But generally instead of intensive adding of new features, we will focus on following directions:</p>\r\n<ul>\r\n<li>Code refactoring to make it more stable and comprehensible.</li>\r\n<li>The library documentation.</li>\r\n<li>Performance increasing.</li>\r\n<li>Convergence with Silverlight.</li>\r\n</ul>\r\n<p>We schedule next D3 release at early Autumn 2010. &nbsp;Thank you for your intereset to our project! You might also be interested in our main project <a title=SDS href=\"http://sds.codeplex.com\">SDS</a>, using D3 as a data visualization control.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,&nbsp;</p>\r\n<p>Voytsekhovskiy Dmitry.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-26T02:07:47.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460757",
+    "ThreadId": "217415",
+    "Html": "<p>Hello.</p>\r\n<p>This is good to hear.</p>\r\n<p>I just recently discovered D3 and am intersted in using it for a data visualization UI written in Silverlight. I'm finding that the charting classes in the Toolkit are incapable of plotting thousands of data points efficiently.</p>\r\n<p>However, it would seem that the current release of the Silverlight library does not support any chart types except for line, and this project requires a scatter plot. Perhaps I'm missing something, though. Is there a way of creating a scatter plot in the current Silverlight version of D3?</p>\r\n<p>When you say &quot;convergence with Silverlight&quot;, should I take this to mean that in the next release the WPF and Silverlight products will have equivalent functionality?</p>\r\n<p>Thanks.</p>\r\n<p>Tobias.</p>",
+    "PostedDate": "2010-06-28T10:39:11.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460787",
+    "ThreadId": "217415",
+    "Html": "<p>Voytsekhovskiy,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; I was going back and forth with Mikhail last week concerning some issues with the intensity plot. I have not received a response to my last email sent Friday. Mikhail created a sample project for me, which I updated showing the problems I am having. Should I send this directly to you? Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>Brian</p>",
+    "PostedDate": "2010-06-28T12:14:44.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461441",
+    "ThreadId": "217415",
+    "Html": "<p>Hi Brian,</p>\r\n<p>Voytsekhovskiy is a second name, the first name is Dmitry.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-29T19:36:31.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461546",
+    "ThreadId": "217415",
+    "Html": "<p>Hi Tobias,</p>\r\n<p>Thank you for the interest to D3!</p>\r\n<p>Unfortunately, current release of Silverlight D3 supports only line graph visualization. In next release list of available visualizations will be extended. Now you can download sources and create the required visualization itself by analogy with the LineGraph class.&nbsp;</p>\r\n<p>Second, convergence of WPF D3 with Silverlight D3 means that we will try to make two&nbsp;fa&ccedil;ades (WPF and Silverlight 4) for a single core.&nbsp;&nbsp;Thus, functionality of both versions will be rather equivalent, but most probably WPF version will have greater performance. Obviously, this requires a great revision of architecture and will not be accomplished up to the coming release.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Dmitry.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-30T01:16:49.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461552",
+    "ThreadId": "217415",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>BBauer42 wrote:</strong><br>\r\n<p>Voytsekhovskiy,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; I was going back and forth with Mikhail last week concerning some issues with the intensity plot. I have not received a response to my last email sent Friday. Mikhail created a sample project for me, which I updated showing the problems I am having. Should I send this directly to you? Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>Brian</p>\r\n</blockquote>\r\n<p>Hi Brian,</p>\r\n<p>IntensityPlot is a sample project, created by Mikhail, and it is not a part of the D3 core library. If you think that working with the intensity plot&nbsp;you've discovered bugs in the D3 library, please do send the sample to me with the description how to reproduce the bugs. If you need to extend the sample, unfortunately, I cannot provide additional support on that.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Dmitry.</p>",
+    "PostedDate": "2010-06-30T01:34:21.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

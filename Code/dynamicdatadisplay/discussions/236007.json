@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "526895",
+    "ThreadId": "236007",
+    "Html": "\r\n<p>Hello,</p>\r\n<p><span id=\"x_x_result_box\" lang=\"en\"><span>Before I create a new issue post I want to know your opinion about the following.</span></span></p>\r\n<p>I made a sample project. The application has an tab control with 2 tab items.<br>\r\nA ChartPlotter with an InjectedPlotter and two axes is created in the constructor of the window.<br>\r\nThe window is interested in the loaded event of the ChartPlotter. If the event occured then tabcontrol index will set to the second tab item.</p>\r\n<p>Now the issue. Selecting the first tab item releases following exception.<br>\r\n&quot;Cannot add item to Plotter - first it should be removed from another Plotter.&quot; in Microsoft.Research.DynamicDataDisplay.Plotter.OnChildAdded(IPlotterElement child)</p>\r\n<p>In my opinion the issue is related to &quot;Dispatcher.BeginInvoke((Action)(() =&gt; ExecuteWaitingChildrenAdditions()), DispatcherPriority.Background);&quot; in<br>\r\nthe &quot;void IPlotterElement.OnPlotterAttached(Plotter plotter)&quot; method of the InjectedPlotter class.</p>\r\n<p>Please try it out and give me response what I can do or what you will do to solve the problem.</p>\r\n<p>(I used the nightly build 0.3.4703.0)</p>\r\n<p><a href=\"http://dl.dropbox.com/u/15682053/GraphLoadBug.zip\">http://dl.dropbox.com/u/15682053/GraphLoadBug.zip</a></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Bj&ouml;rn</p>\r\n",
+    "PostedDate": "2010-11-25T03:29:51.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526913",
+    "ThreadId": "236007",
+    "Html": "\r\n<p>Hello,&nbsp;Bj&ouml;rn,</p>\r\n<p>You know, i have forgotten why did I create InjectedPlotter. If you (or somebody else) can explain me what behavior should be in TwoIndependentAxes sample, I will be very much grateful to you!</p>\r\n<p>My mail is thecentury@gmail.com,</p>\r\n<p>Skype- mikhail.brinchuk</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-25T04:54:57.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526914",
+    "ThreadId": "236007",
+    "Html": "\r\n<p>Hi Mikhail,</p>\r\n<p>One of the things that you can do with the InjectedPlotter and Plotter&nbsp;is to plot two charts with different verticle axis but the same horizontal axis and be able to move the charts so that they overlay each other.</p>\r\n<p>David</p>\r\n",
+    "PostedDate": "2010-11-25T05:00:29.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526915",
+    "ThreadId": "236007",
+    "Html": "\r\n<p>David,</p>\r\n<p>Am I right that two charts should both pan while panning horizontal axis?</p>\r\n<p>And only one chart should move when panning any vertical axes?</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>\r\n<p>P.S. I have started a new D3 branch here -&nbsp;<a href=\"http://d3future.codeplex.com/\">http://d3future.codeplex.com/</a>, so you are welcome to move all discussions there.</p>\r\n<p>It doesn't contain any stable yet, but I'm working hard)</p>\r\n",
+    "PostedDate": "2010-11-25T05:03:55.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526916",
+    "ThreadId": "236007",
+    "Html": "\r\n<p><span><span style=\"color:#6d8d34; font-size:large\"><strong>D3 - Independent Y-Axis on ChartPlotter\r\n</strong><span id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl38_Timestamp\"><span style=\"color:#000000\">Jul 28&nbsp;</span></span><strong>&nbsp;- david</strong></span></span></p>\r\n",
+    "PostedDate": "2010-11-25T05:04:01.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526917",
+    "ThreadId": "236007",
+    "Html": "\r\n<p>Yes, you are correct; however, they should zoom together.&nbsp; - david</p>\r\n",
+    "PostedDate": "2010-11-25T05:05:50.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532172",
+    "ThreadId": "236007",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I played a little bit with the source code of InjectedPlotter.<br>\r\n<span id=\"x_result_box\" lang=\"en\"><span>Result was that when you delete the following code, the problem was fixed.</span></span></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        <span style=\"color:blue\">protected</span> <span style=\"color:blue\">override</span> <span style=\"color:blue\">void</span> OnChildAdded(IPlotterElement child)\r\n        {\r\n            <span style=\"color:blue\">base</span>.OnChildAdded(child);\r\n\r\n            <span style=\"color:blue\">if</span> (plotter != <span style=\"color:blue\">null</span>)\r\n            {\r\n                plotter.PerformChildChecks = <span style=\"color:blue\">false</span>;\r\n                <span style=\"color:blue\">try</span>\r\n                {\r\n                    plotter.Children.Add(child);\r\n                }\r\n                <span style=\"color:blue\">finally</span>\r\n                {\r\n                    plotter.PerformChildChecks = <span style=\"color:blue\">true</span>;\r\n                }\r\n            }\r\n        }\r\n<br>I also deleted<span style=\"color:blue\"> protected</span> <span style=\"color:blue\">override</span> <span style=\"color:blue\">void</span> OnChildRemoving(IPlotterElement child)\r\n<br>The plotter in the method is the ChartPlotter object.<br>Know the question. Can someone tell me why a child is explicitly added to a ChartPlotter.<br>What problems could happen if i decide to remove the overridden method.<br><br>Here are the sample projects. One is working with the described changes.<br><br><a href=\"http://dl.dropbox.com/u/15682053/GraphLoadBug_fixed.zip\">http://dl.dropbox.com/u/15682053/GraphLoadBug_fixed.zip</a><br><br><a href=\"http://dl.dropbox.com/u/15682053/GraphLoadBug.zip\">http://dl.dropbox.com/u/15682053/GraphLoadBug.zip</a><br><br></pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-07T01:46:56.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "538223",
+    "ThreadId": "236007",
+    "Html": "Hi David,\r\n<div>can you please take a look at <b>TwoIndependentAxes</b> sample in <b>D3.Current</b> solution in\r\n<a href=\"http://d3future.codeplex.com/SourceControl/list/changesets\">http://d3future.codeplex.com/SourceControl/list/changesets</a></div>\r\n<div><a href=\"http://d3future.codeplex.com/SourceControl/list/changesets\"></a>Seems like I have implemented what you want.<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-12-20T04:30:50.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "731064",
+    "ThreadId": "236007",
+    "Html": "<p>This was exactly what I was looking for! The conjunction works also now for the y-axis!</p>\r\n<p>Great job!</p>",
+    "PostedDate": "2012-01-26T06:12:50.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

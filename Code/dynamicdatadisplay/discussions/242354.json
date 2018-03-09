@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "551728",
+    "ThreadId": "242354",
+    "Html": "\r\n<p>How to draw Ellipse with XY coordinates on chart plotter?</p>\r\n",
+    "PostedDate": "2011-01-18T23:32:08.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "666342",
+    "ThreadId": "242354",
+    "Html": "<p>&nbsp; I know this is an old post but it might be helpful to someone else.</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>ChartPlotter Plot = <span style=\"color: blue;\">new</span> ChartPlotter;\r\n</pre>\r\n</div>\r\n</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>Ellipse e = <span style=\"color: blue;\">new</span> Ellipse();\r\ne.Fill = Brushes.LightGray;\r\nellipseContainer = <span style=\"color: blue;\">new</span> PositionalViewportUIContainer();\r\nellipseContainer.Position = <span style=\"color: blue;\">new</span> Point(1, 1);\r\n\r\nellipseContainer.Content = e;\r\nellipseContainer.MinWidth = totalwidth;\r\nellipseContainer.MinHeight = totalheight;\r\n\r\nPlot.Children.Add(ellipseContainer);\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-09-01T09:25:51.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

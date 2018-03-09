@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "438414",
+    "ThreadId": "211411",
+    "Html": "<p>I am wondering what type of interpolation is being used by this application. I have looked through the source code and it seems to me it is linear or nearest-neighbor interpolation. Have you experimented with other interpolation methods?</p>\r\n<p>I am interested in applying Bicubic Spline interpolation to the Isoline charts, has this been done or are there other interpolation options available?</p>\r\n<p>Also, if I wanted to fill the gaps between contour lines with a color, how would I go about doing that?</p>\r\n<p>Thanks in advance!</p>",
+    "PostedDate": "2010-05-03T09:11:49.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439672",
+    "ThreadId": "211411",
+    "Html": "<p>You are right, lines in line chart and isolines are using only linear interpolation, built-in into WPF. We have some results in bicubic splines interpolation, though they are not uploaded to codeplex.</p>\r\n<p>To fill a gap between contour lines with a color, you should (as I would do if I have to) create a geometry (path) using points of two adjacent lines and then use this geometry to draw a drawing filled with color you've selected.</p>\r\n<p>This problem is not developed in D3 yet.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-05-05T23:52:26.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441042",
+    "ThreadId": "211411",
+    "Html": "<p>Would you be able to load your bicubic spline trials to codeplex? I believe I only need the code that is inside the interpolate method of IsolineTrackingGraph.xaml.cs so you could post that method here if it is easier? Thanks in advance.</p>",
+    "PostedDate": "2010-05-10T05:39:23.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447585",
+    "ThreadId": "211411",
+    "Html": "<p>Hello?</p>\r\n<p>Could you include the bicubic-spline methodology in the nightlies or just post some the code so I do not have to duplicate your efforts? I would appreciate it very much. Thanks.</p>",
+    "PostedDate": "2010-05-26T05:24:51.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456649",
+    "ThreadId": "211411",
+    "Html": "<p>Is there bicubic spline sample somewhere?</p>",
+    "PostedDate": "2010-06-17T05:43:20.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456652",
+    "ThreadId": "211411",
+    "Html": "<p>Hi,</p>\r\n<p>I'm no longer working on this project, so I suppose that there will be some time (several days) during which there will be nobody to answer at this forum.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-17T05:46:00.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

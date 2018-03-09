@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "274919",
+    "ThreadId": "80214",
+    "Html": "<p>I'm just starting to dig into D3 and have run into the following build issues:</p>\r\n<p>(1) AxisControl sample</p>\r\n<p>in Window4.xaml</p>\r\n<p>&lt;d3:VerticalDateTimeAxis Name=&quot;dateAxis&quot;/&gt;</p>\r\n<p>causes negative height problem, changing it to</p>\r\n<p>&nbsp;&lt;d3:VerticalTimeSpanAxis Name=&quot;dateAxis&quot; Placement=&quot;Right&quot;/&gt;</p>\r\n<p>resolved the issue</p>\r\n<p>in Window4.cs</p>\r\n<p>/*<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dateAxis.AxisControl.MajorLabelProvider.SetCustomFormatter(i =&gt;<br>&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // MP! was:<br>&nbsp;&nbsp;&nbsp;&nbsp;return i.Tick.ToString(&quot;MMMM yyyy&quot;, new CultureInfo(&quot;es-es&quot;));</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;return null;<br>&nbsp;&nbsp;&nbsp;});<br>*/</p>\r\n<p>This code does not compile, so I commented it out.&nbsp; Not sure what the issue is.</p>\r\n<p>(2) The XBAP project faults when you select any of samples</p>\r\n<p>(3) The MapSample will occassionally go into a throttling loop once you are zoomed into street level, issue seems to be with feedback on axis updates</p>\r\n<p>(4) ValueSelectionSample has a problem when sizing window smaller, controls begin to grow</p>\r\n<p>(5) MultiplePointsSample breaks in OnPlotterAttached</p>\r\n<p>(6) Zooming in/out is inconsistent at a given cursor position, that is, the graph shifts to center around the cursor position (not sure this is really a problem)</p>\r\n<p>(7) TrafficLightsSample breaks in OnPlotterAttached</p>\r\n<p>(8) BarChartSample breaks in OnPlotterAttached</p>\r\n<p>(9) WeatherSample breaks in OnPlotterAttached</p>\r\n<p>(10) In ChartBringToFrontSample the Swap button doesn't seem to do anything</p>\r\n<p>(11) ForestDisplaySample jumps unexpectadly when zooming in/out and changing window size</p>\r\n<p>(12) RectSelectorSample is confusing in the way it handles scrolling and mouse down events</p>\r\n<p>(13) TiledRenderingSample breaks in window1.xaml markup</p>\r\n<p>That's as far as I've gotting so far.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-08T11:58:03.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517654",
+    "ThreadId": "80214",
+    "Html": "\r\n<p>I tried to have a look at the bar chart and have the same problem. Does anyone know how this needs to be fixed?</p>\r\n",
+    "PostedDate": "2010-11-05T05:20:55.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518309",
+    "ThreadId": "80214",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-07T01:12:55.973-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520973",
+    "ThreadId": "80214",
+    "Html": "\r\n<p>Mikhail,</p>\r\n<p>Do you have a fix for the bar chart?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Kam</p>\r\n",
+    "PostedDate": "2010-11-12T02:04:48.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "525347",
+    "ThreadId": "80214",
+    "Html": "\r\n<p>Hi noemata,</p>\r\n<p>you have mentioned some errors mainly in <strong>DevSamples </strong>folder. These are samples which I use to test some new functionality being developed. And they are published 'as is', as there are a lot of them which a old and non-relevant.</p>\r\n<p>But samples in '<strong>Samples</strong>' folder are supposed to be working, so I'll fix errors in them.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-22T08:21:31.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "525348",
+    "ThreadId": "80214",
+    "Html": "\r\n<p>Hi Kam,</p>\r\n<p>I will fix all errors and bugs in <strong>Samples</strong>&nbsp;in short time, lets say, in a week.</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-22T08:22:27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

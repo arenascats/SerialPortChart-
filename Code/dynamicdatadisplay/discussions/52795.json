@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "177613",
+    "ThreadId": "52795",
+    "Html": "<strong>Here is an extract of a previous discussion:<br>\r\n<br>\r\n1. How to add the chart as a control to the toolbox.</strong>\r\n<ol>\r\n    <li>Open any XAML designer window and its toolbox panel.\r\n    </li>\r\n    <li>In the context menu of the toolbox&nbsp;click command <em>Choose items...</em>\r\n    </li>\r\n    <li>In the&nbsp;appeared&nbsp;<em>Choose Toolbox Items</em> window go to <em>WPF Components</em> tab.\r\n    </li>\r\n    <li>Use <em>Browse...</em> button to find the DynamicDataDisplay.dll assembly.\r\n    </li>\r\n    <li>All\r\n    available components from the specified assembly are added to the list\r\n    and selected by default. If the first thing you do is click&nbsp;on a&nbsp;check\r\n    box of any of selected items in the list, you will deselect them all.\r\n    That is the thing you should do, because you really need&nbsp;only one\r\n    control in the toolbox: it is the&nbsp;<em>ChartPlotter</em>.&nbsp;So, now find it and check.\r\n    </li>\r\n    <li>Click OK and the control is in the toolbox. </li>\r\n</ol>\r\n<br>\r\nIf I follow these steps, here is the namespace that appears on the xaml editor when I drag a chartPlotter from the toolbox: &quot;&lt;tt&gt;xmlns:my=&quot;clr-namespace:<wbr>Microsoft.Research.<wbr>DynamicDataDisplay;assembly=<wbr>DynamicDataDisplay&quot;&lt;/tt&gt;<br>\r\n<br>\r\nHowever to have date-time support, the namespace should be &quot;&lt;tt&gt;xmlns:my=<a href=\"http://research.microsoft.com/DynamicDataDisplay/1.0\">&quot;http://research.<wbr>microsoft.com/<wbr>DynamicDataDisplay/1.0&quot;</a>&lt;/tt&gt;&quot;.<br>\r\n<br>\r\nThis is not a huge problem but I just wanted to let you know.<br>\r\n<br>\r\nKamel \r\n",
+    "PostedDate": "2009-04-09T07:20:33.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177878",
+    "ThreadId": "52795",
+    "Html": "Hi Kamel,<div><br></div><div>Thank you, your remark is true, it is indeed necessary to use <span style=\"color:rgb(48, 51, 45);font-family:'segoe ui';font-size:13px\">xmlns:d3=<a href=\"http://research.microsoft.com/DynamicDataDisplay/1.0\" style=\"text-decoration:underline;color:rgb(62, 98, 166)\">&quot;http://research.<wbr>microsoft.com/<wbr>DynamicDataDisplay/1.0&quot;</a> namespace to use all DynamicDataDisplay controls.</span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:13px\">We've done this so by analogy with WPF's libraries.</span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:13px\"><br></span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:13px\">Mikhail</span></div>",
+    "PostedDate": "2009-04-10T01:19:14.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "473265",
+    "ThreadId": "52795",
+    "Html": "<p>just been having similar problems, solution was to follow steps on <a href=\"http://msdn.microsoft.com/en-us/library/bb514540.aspx\">http://msdn.microsoft.com/en-us/library/bb514540.aspx</a>&nbsp;and also to ensure that the dll's were not just within the project directory but also showing up on the solution explorer</p>\r\n<p>look forward to digging into all this :)</p>",
+    "PostedDate": "2010-07-27T09:31:05.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "620616",
+    "ThreadId": "259608",
+    "Html": "\r\n<p>Hi All,</p>\r\n<p>I have just start to use the dynamic data dislay. I am using the SimulationSample in v3.0 folder.</p>\r\n<p>But how can I display each point with &#65279;different color? How can I do a random on a color in the thread routine?</p>\r\n<p>The &#65279;AppendAsync function does not have color.</p>\r\n<p>Thank you</p>\r\n",
+    "PostedDate": "2011-05-31T01:36:04.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622953",
+    "ThreadId": "259608",
+    "Html": "<p>I also want to know this. Is it possible to have dynamic markers based on the data?&nbsp;</p>",
+    "PostedDate": "2011-06-04T07:44:06.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

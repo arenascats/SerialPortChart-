@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "252748",
+    "ThreadId": "73905",
+    "Html": "<p>Is there support for digital graphs? I did wonder if it could be implemented with a custom marker - would be grateful for any hints.</p>\r\n<p>Examples to explain what I mean by 'digital graph':</p>\r\n<p><a href=\"http://s906.photobucket.com/albums/ac266/McBainUK/?action=view&current=DigitalGraph2.png\">http://s906.photobucket.com/albums/ac266/McBainUK/?action=view&amp;current=DigitalGraph2.png</a></p>\r\n<p><a href=\"http://zone.ni.com/cms/images/devzone/tut/a/a19b8d1a867.gif\">http://zone.ni.com/cms/images/devzone/tut/a/a19b8d1a867.gif</a></p>",
+    "PostedDate": "2009-11-03T03:34:33.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252767",
+    "ThreadId": "73905",
+    "Html": "<p>Hi!</p>\r\n<p>As I have understod from the pictures you've posted, you need some specific processing of input data for line chart. You can yourself write such a processing, and add to linechart already processed sequence of points. In the future I'll add such kind of filter to D3, if I not forget to do it)</p>\r\n<p>If you mentioned something else, please correct me.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-03T04:21:31.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252774",
+    "ThreadId": "73905",
+    "Html": "<p>Just to make things clear;</p>\r\n<p>The source data for the first picture is: (x,y) (0,0), (1,1), (2,1), (3,0), (4,1), (5,0). There is no extra point drawn where the blue arrows are, it just only draws the lines at right-angles. With that in mind would the method still be to add an input filter to create a data list something like: (x,y) (0,0), (1,0), (1,1), (2,1), (2,0), (3,0), (3,1), (4,1), (4,0), (5,0) ?</p>\r\n<p>And an explanation from the documentation for the product shown in the second picture: <em>If the current point is represented as (x0, y0) and the next point is represented as (x1, y1), then a line from (x0, y0) to (x1, y0) and (x1, y0) to (x1, y1) represents an XY step.</em></p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-11-03T04:34:02.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252779",
+    "ThreadId": "73905",
+    "Html": "<p>I think you are right, this follows from pictures you've sent.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-03T04:56:53.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578939",
+    "ThreadId": "73905",
+    "Html": "<p>Hi,</p>\n<p>for others who have this problem: You could use a Filter.</p>\n<div style=\"background-color: white; color: black;\">\n<pre>   <span style=\"color: blue;\">class</span> StepLineFilter : PointsFilterBase\r\n   {\r\n      <span style=\"color: blue;\">double</span> lastX;\r\n\r\n      <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">override</span> List&lt;Point&gt; Filter(List&lt;Point&gt; points)\r\n      {\r\n         <span style=\"color: blue;\">int</span> pointsCount = points.Count;\r\n         List&lt;Point&gt; res = <span style=\"color: blue;\">new</span> List&lt;Point&gt;(pointsCount * 2);\r\n         <span style=\"color: blue;\">for</span> (<span style=\"color: blue;\">int</span> i = 0; i &lt; pointsCount; i++)\r\n         {\r\n            res.Add(points[i]);\r\n            <span style=\"color: blue;\">if</span> (i &lt; pointsCount - 1)\r\n            {\r\n               res.Add(<span style=\"color: blue;\">new</span> Point(points[i + 1].X, points[i].Y));\r\n            }\r\n            <span style=\"color: blue;\">else</span>\r\n            {\r\n               res.Add(<span style=\"color: blue;\">new</span> Point(lastX, points[i].Y));\r\n            }\r\n         }\r\n\r\n         <span style=\"color: blue;\">return</span> res;\r\n      }\r\n\r\n      <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">override </span><span style=\"color: blue;\">void</span> SetScreenRect(Rect screenRect)\r\n      {\r\n         lastX = screenRect.X + screenRect.Width;\r\n      }\r\n   }</pre>\n</div>\n<div style=\"background-color: white; color: black;\">\n<pre>LineGraph.Filters.Add(<span style=\"color: blue;\">new</span> StepLineFilter());\r\n</pre>\n</div>\n<p>Best regards, Torsten</p>",
+    "PostedDate": "2011-03-11T03:11:21.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "833580",
+    "ThreadId": "73905",
+    "Html": "<p>Hey Torsten,&nbsp;</p>\r\n<p>very usefull and it was exactly what I &nbsp;needed!</p>\r\n<p>&nbsp;</p>\r\n<p>I will just need to adapt the SetScreenRect() to stopping drawing a giant plotter in my chart ;)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards, Marcus!</p>",
+    "PostedDate": "2012-05-08T11:16:18.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1495887",
+    "ThreadId": "73905",
+    "Html": "Thank you Torsten. you solved my problem.<br />\nBut your solution has a little problem. When I zoomed the chart applied your solution, the postion of last x point is wrong.<br />\nSo I modified your source a little.<br />\n<pre><code>class StepLineFilter : PointsFilterBase\n{\n    public override List&lt;Point&gt; Filter(List&lt;Point&gt; points)\n    {\n        List&lt;Point&gt; ret = new List&lt;Point&gt;();\n        Point prevPoint = new Point();\n        bool bFirst = true;\n\n        foreach(Point p in points)\n        {\n            if (bFirst)\n            {\n                bFirst = false;\n            }\n            else\n            {\n                if (prevPoint.Y != p.Y)\n                    ret.Add(new Point(p.X, prevPoint.Y));\n            }\n\n            ret.Add(p);\n            prevPoint = p;\n        }\n\n        return ret;\n    }\n}</code></pre>\n\nBest regards, Leeky<br />\n",
+    "PostedDate": "2017-04-27T17:31:22.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

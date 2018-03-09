@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Request to make this library has capability to set axis in central position instead of on Bottom, Top, Left, Right.\nAnother work around to do this is on discussions : \n \nhttp://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=209737",
+    "LastUpdatedDate": "2013-02-21T17:36:54.01-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-04-21T20:30:27.437-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Has capability to set axis in central position instead of on Bottom, Top, Left, Right.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 12829
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

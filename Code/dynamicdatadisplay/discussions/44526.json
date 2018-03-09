@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "148198",
+    "ThreadId": "44526",
+    "Html": "I'm interested in applying a ControlTemplate to a PointMarker, I'm pretty sure this doesn't work 'out of the box' so I have a couple of options.<br>\r\n<br>\r\n1) Use the DelegatePointMarker and in the callback create a control with the relevant ControlTemplate, and place it at the coordinates provided<br>\r\n2) Implement a ControlPointsGraph : PointsGraphBase class that will place a control at each point<br>\r\n<br>\r\nI'm liking option two, but option 1 is less code, and I don't want to crash with any of your enhancements. Thoughts?<br>\r\n<br>\r\nIan\r\n",
+    "PostedDate": "2009-01-18T20:48:52.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "148457",
+    "ThreadId": "44526",
+    "Html": "Hi, Ian!<br>\r\n<br>\r\nYou are right, currently DynamicDataDisplay cannot create markers from their template. This will be definitely added in one of next releases.<br>\r\nIt seems to me that it is not very comfortable to use DelegatePointMarker because it draws marker contents by using low-level GraphicsContext, which is not very compatible with templates. Maybe you should create a subclass of ElementPointMarker and use it on MarkerElementPointGraph (the difference between <strong>ElementPointMarker</strong> and <strong>PointMarker</strong> is that <strong>PointMarker </strong>uses DrawingContext to draw a marker and ElementPointMarker uses a UIElement as marker).<br>\r\n<br>\r\nThis part of DynamicDataDisplay will be improved in near future.<br>\r\n<br>\r\nYours,<br>\r\nMikhail Brinchuk,<br>\r\nDynamic Data Display Dev Team.<br>\r\n",
+    "PostedDate": "2009-01-19T11:37:03.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

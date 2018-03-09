@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "447819",
+    "ThreadId": "213967",
+    "Html": "<p>I would expect it to restore the charts original view but it erratically zooms in with no relevance to the cursor position. Has anyone else had this problem?</p>",
+    "PostedDate": "2010-05-26T12:49:06.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "448330",
+    "ThreadId": "213967",
+    "Html": "<p>Well it seems to work with 0.3.4703.0 from the nightlies, but not 0.3.0.0</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-27T12:10:05.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

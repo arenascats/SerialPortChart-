@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "230155",
+    "ThreadId": "67727",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I found one issue with adding verical range.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre> <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> Button_Click(<span style=\"color:Blue\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            VerticalRange verticalRange = <span style=\"color:Blue\">new</span> VerticalRange();\r\n            verticalRange.Value1 = dateAxis.ConvertToDouble(<span style=\"color:Blue\">this</span>.date1); // some data \r\n            verticalRange.Value2 = dateAxis.ConvertToDouble(<span style=\"color:Blue\">this</span>.date2); // some data\r\n            verticalRange.Fill = Brushes.Red;\r\n            <span style=\"color:Blue\">this</span>.plotter.Children.Add(verticalRange);\r\n\r\n            verticalRange = <span style=\"color:Blue\">new</span> VerticalRange();\r\n            verticalRange.Value1 = dateAxis.ConvertToDouble(<span style=\"color:Blue\">this</span>.date3); // some data\r\n            verticalRange.Value2 = dateAxis.ConvertToDouble(<span style=\"color:Blue\">this</span>.date4); // some data\r\n            verticalRange.Fill = Brushes.Red;\r\n            <span style=\"color:Blue\">this</span>.plotter.Children.Add(verticalRange);\r\n        }</pre>\r\n<pre>But this vertical range visible only when I resize the chart or when I change view  port. </pre>\r\n<pre>This issue may be repainting or refreshing issue.</pre>\r\n<pre>Thanks and Regards</pre>\r\n<pre>Ravi.</pre>\r\n<pre>\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-02T05:08:59.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230792",
+    "ThreadId": "67727",
+    "Html": "<p>Thanks, Ravi, I've fixed this bug and next changeset will not contain it.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-03T11:07:39.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232108",
+    "ThreadId": "67727",
+    "Html": "<p>Hi Ravi,</p>\r\n<p>this bug is fixed in changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28688\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28688\">28688</a>.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-08T02:33:23.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695748",
+    "ThreadId": "67727",
+    "Html": "<p>This bug is back in the latest source code (31108).</p>\n<p>How can I force a chart refresh?</p>\n<p>RESOLVED: I was using the stable release, not the nightly build! Thanks.</p>",
+    "PostedDate": "2011-11-09T02:39:20.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "261049",
+    "ThreadId": "76369",
+    "Html": "<p>I want to plot multiple lines, actually the data series have very different scales. so, in order not to&nbsp;compress&nbsp;the smaller series data to a thinner window, I need to set&nbsp;multiple&nbsp;axises with&nbsp;different&nbsp;value scale.</p>\r\n<p>Is this possible?</p>",
+    "PostedDate": "2009-11-26T22:12:58.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261076",
+    "ThreadId": "76369",
+    "Html": "<p>Take a look at \\src\\DevSamples\\TwoIndependentAxes in the nightly.</p>",
+    "PostedDate": "2009-11-27T01:09:22.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

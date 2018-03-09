@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "I&#39;ve already gave an answer at this question, so I can see no reasons for this issue being opened.",
+    "ClosedDate": "2009-12-13T08:27:25.53-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nI have a list of lines and circular arcs that I want to plot. But I couldn't manage to plot ArcSegment (for circular arcs) successfully. I've looked at the samples and found that whenever a System.Window.Shapes element is plotted a ViewportHostPanel or ViewportPanel is used. I don't know what they are used for but I've tried the same for my Path object which holds the arcSegment but it didn't work. The thing is the lines are are fit to ChartPlotter and the size and position is correct according to axes but for arcSegment neither the size nor the position is correct.\n \nI've attached the picture of a sample geometry that I want to plot. I've used the below code to dynamically do this but as I said it doesn't work (here I didn't use ViewportPanel or ViewportHostPanel since I couldn't make them work):\n \n    private void tbtnLoad_Click(object sender, RoutedEventArgs e) {\n      AddLineGraph(new Point(0, 0), new Point(0, 50));\n      AddCircularArcGraph(new Point(0, 0), new Point(50, 50), new Size(30, 30));\n      AddLineGraph(new Point(50, 50), new Point(0, 50));\n    }\n \n    private void AddLineGraph(Point startPoint, Point endPoint) {\n      var ds = new EnumerableDataSource<Point>(new List<Point> {\n            new Point { X = startPoint.X, Y = startPoint.Y }, \n            new Point { X = endPoint.X, Y = endPoint.Y } \n          });\n      ds.SetXYMapping(pt => pt);\n \n      cpGeometries.AddLineGraph(ds);\n    }\n \n    private void AddCircularArcGraph(Point startPoint, Point endPoint, Size size) {\n      PathFigure pf = new PathFigure();\n      pf.StartPoint = new Point(startPoint.X, startPoint.Y);\n \n      ArcSegment arcSegment = new ArcSegment();\n      arcSegment.Point = new Point(endPoint.X, endPoint.Y);\n      arcSegment.Size = size;\n      arcSegment.SweepDirection = SweepDirection.Clockwise;\n \n      PathSegmentCollection psc = new PathSegmentCollection();\n      psc.Add(arcSegment);\n \n      pf.Segments = psc;\n \n      PathFigureCollection pfc = new PathFigureCollection();\n      pfc.Add(pf);\n \n      PathGeometry pg = new PathGeometry();\n      pg.Figures = pfc;\n \n      var path = new Path();\n      path.Stroke = Brushes.Black;\n      path.StrokeThickness = 1;\n      path.Data = pg;\n \n      cpGeometries.Children.Add(path);\n    }\n \nCan anybody point me in the right direction?\n \nThanks in advance",
+    "LastUpdatedDate": "2013-05-16T04:53:47.7-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-12-01T14:36:28.61-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Confusion while plotting PathGeometry (edited: not an issue, actually question)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11019
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3579,
+      "FileName": "geometry.jpg",
+      "DownloadUrl": ".\\3579"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "278397",
+    "ThreadId": "81142",
+    "Html": "<p>Plot contains extremly large set of points.</p>\r\n<p>I want to filter out most of points but filtering should be performed in other (not GUI) thread. So I want to decide which points should be plotted every time ViewPort is going to change.</p>\r\n<p>Let me explain, why I need this feature.</p>\r\n<p>We have signals with the sampling rates of about 100kHz. And the measurements can last up to an hour. If I push all the&nbsp;points to the plotter it just hangs. Otherwise (few points)&nbsp;signal details are lost when user zooms the plot. So I need the way to know when user wants to see the details and plot the appropriate points.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-18T00:43:54.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "279300",
+    "ThreadId": "81142",
+    "Html": "<p>Does listening to the PropertyChanged event on the Viewport not give you what you want?</p>\r\n<p><span style=\"white-space:pre\"> </span>plotter.Viewport.PropertyChanged += new EventHandler&lt;ExtendedPropertyChangedEventArgs&gt;(Viewport_PropertyChanged);</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;void Viewport_PropertyChanged(object sender, ExtendedPropertyChangedEventArgs e) {</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Console.WriteLine(&quot;Viewport_PropertyChanged: &quot; + e.PropertyName + &quot; old value=&quot; + e.OldValue + &quot;new value=&quot; + e.NewValue);</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<p>&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>void Viewport_PropertyChanged(object sender, ExtendedPropertyChangedEventArgs e) {<br>&nbsp;&nbsp; &nbsp;<span style=\"white-space:pre\"> </span>Console.WriteLine(&quot;Viewport_PropertyChanged: &quot; + e.PropertyName + &quot; old value=&quot; + e.OldValue + &quot;new value=&quot; + e.NewValue);<br><span style=\"white-space:pre\"> </span>}</p>\r\n<div>Anytime the Visible rectangle changes, the PropertyChanged event is fired. &nbsp;Perhaps then you can only display the points within the Visible DataRect?</div>\r\n<div></div>\r\n<div>Similarly, you can listen to&nbsp;plotter.Viewport.BeginPanning and&nbsp;plotter.Viewport.EndPanning, if the user is dragging the plot...</div>\r\n<div></div>\r\n<div>Sorry if this is not sufficient for your needs.</div>\r\n<div></div>\r\n<div>E.</div>\r\n<div></div>",
+    "PostedDate": "2010-01-19T21:21:22.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "279322",
+    "ThreadId": "81142",
+    "Html": "<p>Not entirely, I guess.</p>\r\n<p>&gt;.Anytime the Visible rectangle changes, the PropertyChanged event is fired.</p>\r\n<p>The event is fired and Plotter will redraw old points, then I add&nbsp;new points&nbsp;and Plotter will redraw again. Not a criminal of course, but this differs a little from desirable behavior. I want to change points before rendering.</p>",
+    "PostedDate": "2010-01-19T22:46:32.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "252414",
+    "ThreadId": "73812",
+    "Html": "<p>I have a need to synchronise the visible plot area of 2 charts where if you, for example, pan on one chart the other chart will also be panned. In it's simple form it means that the visible range on the X and Y axis are matched. Is there something built-in for this or do you have any tips on how to add this functionality?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-11-02T06:28:52.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252645",
+    "ThreadId": "73812",
+    "Html": "<p>Hi!</p>\r\n<p>The easiest way to do this - is to use two-way binding.</p>\r\n<p>Supposing you have two chartPlotters named plotter1 and plotter2:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>plotter1.Viewport.SetBinding(Viewport2D.VisibleProperty, <span style=\"color:Blue\">new</span> Binding(&quot;Visible&quot;){Source=plotter2.Viewport, Mode=BindingMode.TwoWay});\r\n</pre>\r\n</div>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-02T20:08:52.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253210",
+    "ThreadId": "73812",
+    "Html": "<p>Thanks, that works great!</p>\r\n<p>It seems that Cursors like <em>CursorCoordinateGraph</em> are assigned to individual plotters. Is it possible to also synchronise the position of 2 cursors? So in the screenshot linked below, if I move the mouse on the top graph the cursor moves with it, what I'd like is for the bottom graph's cursor to also move and so be kept in line.</p>\r\n<p><a href=\"http://s906.photobucket.com/albums/ac266/McBainUK/?action=view&current=SyncCursor.jpg\">http://s906.photobucket.com/albums/ac266/McBainUK/?action=view&amp;current=SyncCursor.jpg</a></p>",
+    "PostedDate": "2009-11-04T04:21:50.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "254773",
+    "ThreadId": "73812",
+    "Html": "<p>Hi,</p>\r\n<p>To archive syncronisation of two <em>CursorCoordinateGraphs (CCG further)</em>, you need:</p>\r\n<p>1) Set AutoHide property of each CCGs. This will prevent elements from hiding when mouse leaves associated plotter.</p>\r\n<p>2) Set a binding on Position property:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>leftCursor.SetBinding(CursorCoordinateGraph.PositionProperty, <span style=\"color:Blue\">new</span> Binding\r\n{\r\n\tSource = rightCursor,\r\n\tPath = <span style=\"color:Blue\">new</span> PropertyPath(<span style=\"color:#A31515\">&quot;Position&quot;</span>),\r\n\tMode = BindingMode.TwoWay\r\n});\r\n\r\n</pre>\r\n</div>\r\n<p>where <em>leftCursor </em>and <em>rightCursor </em>are CCGs.</p>\r\n<p>This should work.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-08T09:54:52.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255085",
+    "ThreadId": "73812",
+    "Html": "<p>Perfect. Thanks!</p>",
+    "PostedDate": "2009-11-09T07:42:14.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

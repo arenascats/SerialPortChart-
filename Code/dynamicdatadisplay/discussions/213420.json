@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "445861",
+    "ThreadId": "213420",
+    "Html": "<p>I am attempting to extend this control in order to allow for an Enumeration to be used as an axis, I checked on the forum here, and apparently there were plans to create this functionality, but I'm not seeing it as of yet.</p>\r\n<p>&nbsp;</p>\r\n<p>What I am trying to figure out is what classes I need to create, I'm sure a LabelProvider and a TicksProvider and the Axis itself, and probably a string to double converter that will just return the enumeration index.</p>\r\n<p>&nbsp;</p>\r\n<p>Is there anything else that will be necessary to implement? and I assume these should all implement the interfaces currently present in the solution</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Brian</p>",
+    "PostedDate": "2010-05-21T06:48:08.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

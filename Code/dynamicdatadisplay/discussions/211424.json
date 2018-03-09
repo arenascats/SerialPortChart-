@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "438466",
+    "ThreadId": "211424",
+    "Html": "Hello,\r\n\r\nI have very large DataSources that I am working with (250,000 points).  I having an issue on the initial load of the chart when setting the DataSource.  I was using a test case of a mere 25,000 points and still the load time is VERY(not practical) slow.  In my testing I noticed that if i added the points to the DataSource using a timer the graph would dynamically update as it should and the speed never seemed to be impacted much...I added over 40,000 points this way just adding a point every millisecond.  If i just try to load 25,000 points at one time (since the data is static) i run into the loading issue.\r\n\r\nAnyone work around this issue?\r\n\r\nThanks!\r\n\r\nKP",
+    "PostedDate": "2010-05-03T11:26:45.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438589",
+    "ThreadId": "211424",
+    "Html": "<p>Hi,</p>\r\n<p>Sorry I'm unable to answer at all you message entirely as I have very little free time which I can spend on Codeplex, but want to inform you that the version of LineChart that is based on DirectX is almost ready, and (as I think) we'll soon upload a СЕЗ version of it. This kind of chart has smaller initial load time and greater performance.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-05-03T19:01:28.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438763",
+    "ThreadId": "211424",
+    "Html": "Thanks for the response, actually the problem was with my data.  I was trying to plot 2 random channels just to get the graph going, but the x channel was not sorted in ascending order (aka y was not a function of x).  When i changed the x channel data to something similar to the HelloWord example the speed seems to be acceptable.  Looking forward to the new chart.",
+    "PostedDate": "2010-05-04T05:11:06.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438806",
+    "ThreadId": "211424",
+    "Html": "I did notice however that when trying to create a scatter chart with 250,000 points the chart does not load.  I'm assuming it is because it's trying to create 250,000 UIElements to represent the points and WPF has a hard time rendering that.  ",
+    "PostedDate": "2010-05-04T06:42:07.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439670",
+    "ThreadId": "211424",
+    "Html": "<p>You are right, it is pretty hard for WPF to draw quarter of million primitives at a moment. You should develop and apply some spacial filtering of these elements. As follows from my experience, WPF can draw without any lags and delays only some few thousands of UIElements.</p>\r\n<p>Also I have noticed that when you have added to some panel some hundred thousands of elements, but only 10,000 or less of them are currently visible, WPF will allow to you to pan among these elements with nice performance.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-05-05T23:46:37.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439705",
+    "ThreadId": "211424",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>Thecentury wrote:</strong><br>\r\n<p>You are right, it is pretty hard for WPF to draw quarter of million primitives at a moment. You should develop and apply some spacial filtering of these elements.</p>\r\n</blockquote>\r\n<p>Is there an example or do you have any tips regarding 'spacial filtering' of data points drawn on a D3 line chart?</p>",
+    "PostedDate": "2010-05-06T01:04:53.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455362",
+    "ThreadId": "211424",
+    "Html": "is there any update on when the DirectX version will be ready? ",
+    "PostedDate": "2010-06-14T12:56:36.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457715",
+    "ThreadId": "211424",
+    "Html": "<p>I'm sorry, but developer that is working on DirectX line chart is very busy now, so development is moving forward with small steps. He is now working on DirectX version of marker chart. As soon as he decide that quality of DirectX charts is ready for publishing, he will&nbsp;definitely&nbsp;publish these charts on codeplex.</p>\r\n<p>I cannot name certain date.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-20T05:18:59.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471271",
+    "ThreadId": "211424",
+    "Html": "<p>Even without the DirectX version, anyone can shed some light on how to best filter 250K points on the D3 line chart?</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-22T17:06:56.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

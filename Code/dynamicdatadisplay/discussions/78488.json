@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "268636",
+    "ThreadId": "78488",
+    "Html": "<p>I am trying to install the D3 XBAB example located at http://mstlab.org/xbap/d3/DynamicDataDisplay.Xbap.Samples.xbap. I receive the following error in IE v7.0.6001.18000 under Vista Business 32 SP1:</p>\r\n<p>Following errors were detected during this operation.<br>&nbsp;&nbsp; &nbsp;* [12/17/2009 3:15:20 PM] System.Deployment.Application.DependentPlatformMissingException (Unknown subtype)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;- Unable to install or run the application. The application requires that assembly System.Threading Version 1.0.3058.34407 be installed in the Global Assembly Cache (GAC) first. <br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;- Source: System.Deployment<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;- Stack trace:<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.PlatformDetector.VerifyPlatformDependencies(AssemblyManifest appManifest, Uri deploySupportUri, String tempDir)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.DeploymentManager.DeterminePlatformRequirementsCore(Boolean blocking)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.DeploymentManager.DeterminePlatformRequirements()<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements(Boolean grantApplicationTrust)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.InPlaceHostingManager.AssertApplicationRequirements()<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at MS.Internal.AppModel.XappLauncherApp.AssertApplicationRequirementsAsync(Object unused)<br>&nbsp;&nbsp; &nbsp;* [12/17/2009 3:15:40 PM] System.Deployment.Application.DeploymentException (Unknown subtype)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;- The DeterminePlatformRequirements method failed. The application cannot be committed.<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;- Source: System.Deployment<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;- Stack trace:<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.DeploymentManager.WaitForAssertApplicationRequirements()<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.DeploymentManager.SynchronizeCore(Boolean blocking)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;at System.Deployment.Application.DeploymentManager.SynchronizeAsyncWorker()</p>",
+    "PostedDate": "2009-12-17T13:39:49.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270622",
+    "ThreadId": "78488",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>this error says that you should have assembly System.Threading from Thread Parallel Extensions installed in GAC. Currently the version that is used by D3 is unavailable, because it is representing very early state of Thread Parallel Library, and will be available avain for .NET 4.0, so this sample is our of work now.</p>\r\n<p>You can run DynamicDataDisplay.Samples project from our source code.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-24T09:51:13.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

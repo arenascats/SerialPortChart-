@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "227112",
+    "ThreadId": "66819",
+    "Html": "<p>Say I have a Header whos content is just text (GetGraphTitle returns a string):</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Header thisHeader = <span style=\"color:Blue\">new</span> Header()\r\n{\r\n   Content = GetGraphTitle(),\r\n};</pre>\r\n</div>\r\n<p>Is there any way/Event to know when the Content has changed?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T09:43:06.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227162",
+    "ThreadId": "66819",
+    "Html": "<p>Hi,</p>\r\n<p>This question seems a little bit strange to me - first of all, in <em>header </em>of topic you are mentioning Plotter.Children, but in body of your question there are no words about it.&nbsp;</p>\r\n<p>So I'll answer at all possible questions, that might be in your mind when you we asking it:</p>\r\n<p>1) plotter.Children has a <strong>CollectionChanged </strong>event, which is raise when smth is added or removed in or to plotter.Children.</p>\r\n<p>2) As <strong>Header</strong> is a simple ancestor of WPF's ContentControl, so Content property is a ContentControl.Content DependencyProperty. We can or cannot be notified about its change only if or if not developers of WPF's ContentControl created necessary means. They don't. But don't be sad - there is a workaround of it:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>DependencyPropertyDescriptor descr = DependencyPropertyDescriptor.FromProperty(ContentControl.ContentProperty, <span style=\"color:Blue\">typeof</span>(ContentControl));\r\ndescr.AddValueChanged(actualHeaderInstance, your_event_handler);\r\n\r\n</pre>\r\n</div>\r\n<p>This is a general way to be notified about change of every DependencyProperty.</p>\r\n<p>3) Why do you need to be notified when the Content property has changed? You are setting it from your code, so every place in your code where you are changing its value can be a source of event. You might be in need of such an event if you are using Binding or smth like that.</p>\r\n<p>&nbsp;</p>\r\n<p>Have I answered on your question?</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T11:27:29.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229652",
+    "ThreadId": "66819",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>&nbsp;</p>\r\n<p>Sorry for the disambiguity in the original question.</p>\r\n<p>&nbsp;</p>\r\n<p>What I was looking for was a way to know when the content of say the Header or an Axis Title had changed from the GUI.</p>\r\n<p>My Axis Titles and Header Content are always Text - so if a user right clicks on one, I create an adorner layer text box to recieve new input. The DependencypropertyDescriptor works as you described above. Thank you very much.</p>\r\n<p>&nbsp;</p>\r\n<p>John</p>",
+    "PostedDate": "2009-09-01T04:19:03.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

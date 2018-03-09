@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "251797",
+    "ThreadId": "73652",
+    "Html": "<p>Hi guys,</p>\r\n<p>I just got a taste of this project 3 days ago. I am using it for showing timeline activity for a one minute rolling timeline just something like Windows TaskManager CPU Usage History. It works great, BUT the MayorDateTimeLabelProvider sets the above Brushes to Brushes.Beige and Brushes.Peru and it is hard coded. I had to insert two properties there and that way I can set the background on it as:</p>\r\n<p>HorizontalDateTimeAxis axis = TimelineChart.HorizontalAxis as HorizontalDateTimeAxis;<br>DateTimeAxisControl axisContent = axis.Content as DateTimeAxisControl;<br>MayorDateTimeLabelProvider horizontalAxisLabelProvider = axisContent.MayorLabelProvider as MayorDateTimeLabelProvider;<br>horizontalAxisLabelProvider.GridBackground = Brushes.AliceBlue;<br>horizontalAxisLabelProvider.RectangleBorder = Brushes.CornflowerBlue;</p>\r\n<p>If there is an easier way, can someone fill me in on it? And if not, can this be added?</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>I just have to add: Great stuff here. Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-30T15:22:26.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251854",
+    "ThreadId": "73652",
+    "Html": "<p>Hi,</p>\r\n<p>Thanks for your opinion about our project)</p>\r\n<p>&nbsp;</p>\r\n<p>Next changeset in 'Source code' page will contain such properties:</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;d3:ChartPlotter Name=&quot;plotter&quot;&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;d3:ChartPlotter.MainHorizontalAxis&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;d3:HorizontalDateTimeAxis MayorLabelBackgroundBrush=&quot;AliceBlue&quot; MayorLabelRectangleBorderProperty=&quot;DarkBlue&quot;/&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;/d3:ChartPlotter.MainHorizontalAxis&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;/d3:ChartPlotter&gt;</div>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">plotter</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n\t<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter.MainHorizontalAxis</span><span style=\"color:Blue\">&gt;</span>\r\n\t\t<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">HorizontalDateTimeAxis</span> <span style=\"color:Red\">MayorLabelBackgroundBrush</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">AliceBlue</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">MayorLabelRectangleBorderProperty</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">DarkBlue</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n\t<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter.MainHorizontalAxis</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>A little more at&nbsp;<span style=\"background-color:#ffffff\"><a href=\"http://microsoft.cs.msu.su/personal/thecentury/Public Documents/Wiki/D3.html#[[31 October 2009]]\">http://microsoft.cs.msu.su/personal/thecentury/Public%20Documents/Wiki/D3.html#%5B%5B31%20October%202009%5D%5D</a></span></p>\r\n<p><span style=\"background-color:#ffffff\">Best regards,</span></p>\r\n<p><span style=\"background-color:#ffffff\">Mikhail.</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-30T20:33:40.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252156",
+    "ThreadId": "73652",
+    "Html": "<p>Now these properties are available in 'Source code' page, in changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 29226\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29226\">29226</a>.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-01T09:54:50.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252456",
+    "ThreadId": "73652",
+    "Html": "<p>Thank you Mikhail, very fast response and great implementation as DependencyProperty.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again.</p>\r\n<p>&nbsp;</p>\r\n<p>noorbakhsh</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-02T08:22:29.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

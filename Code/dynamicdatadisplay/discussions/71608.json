@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "244236",
+    "ThreadId": "71608",
+    "Html": "<p>Instead of having axes on the left/right/top/bottom of the graph, I'd like to have X and Y axes that go through the Origin of a LineGraph. &nbsp;</p>\r\n<p>These axes should move when the graph is moved -- however, if the origin moves outside the visible area of the graph, I would then want to turn on the left/right/top/or bottom axes.</p>\r\n<p>any thoughts on how to do this?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-10T12:14:46.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245600",
+    "ThreadId": "71608",
+    "Html": "<p>Hi, currently this is not possible with DynamicDataDisplay out-of-the-box, thought we have such feature in long-term plans. To create such an axis you'll need to override default position of axis so that it is inside the viewport and change self position according to its changes.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T07:35:44.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245637",
+    "ThreadId": "71608",
+    "Html": "great, thanks for the reply.<br><br>I did find a way to get this to work cleanly that involved modifying<br>only a couple internal library functions and adding a couple of member<br>variables to turn the feature on and off.<br><br>Cheers,<br>-Bob<br><br>On Wed, Oct 14, 2009 at 10:35 AM, thecentury &lt;notifications@codeplex.com&gt; wrote:<br>&gt; From: thecentury<br>&gt;<br>&gt; Hi, currently this is not possible with DynamicDataDisplay out-of-the-box,<br>&gt; thought we have such feature in long-term plans. To create such an axis<br>&gt; you'll need to override default position of axis so that it is inside the<br>&gt; viewport and change self position according to its changes.<br>&gt;<br>&gt; Regards,<br>&gt;<br>&gt; Mikhail.<br>&gt;<br>&gt; Read the full discussion online.<br>&gt;<br>&gt; To add a post to this discussion, reply to this email<br>&gt; ([email removed])<br>&gt;<br>&gt; To start a new discussion for this project, email<br>&gt; [email removed]<br>&gt;<br>&gt; You are receiving this email because you subscribed to this discussion on<br>&gt; CodePlex. You can unsubscribe on codePlex.com.<br>&gt;<br>&gt; Please note: Images and attachments will be removed from emails. Any posts<br>&gt; to this discussion will also be available online at codeplex.com",
+    "PostedDate": "2009-10-14T08:30:07.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245646",
+    "ThreadId": "71608",
+    "Html": "<p>Hi Bob,</p>\r\n<p>can I take a look at what you've done? It is very interesting fro me)</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T08:38:01.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245693",
+    "ThreadId": "71608",
+    "Html": "Sure thing ... the changes were mostly to OnViewportPropertyChanged in<br>AxisBase.cs which is appended below. This function now references two<br>new properties, AxisTiedToOrigin and ShowZeros, which I added to<br>AxisControl.cs.   Finally, in AxisControl.cs, I added two lines to the<br>loop inside DrawTicks(...):<br><br>                if (labels[i] is TextBlock && (labels[i] as<br>TextBlock).Text == &quot;0&quot; && !ShowZeros) // bcz: don't show '0' labels on<br>floating axes<br>                    continue;<br><br>I believe those are all the changes I made -- let me know if you add a<br>better way to do this, and I'll grab your source again.<br><br>Thanks,<br>-Bob<br><br><br>private void OnViewportPropertyChanged(object sender,<br>ExtendedPropertyChangedEventArgs e)<br>{<br>    Viewport2D viewport = (Viewport2D)sender;<br>    Rect visible = viewport.Visible;<br>    Range&lt;T&gt; range =<br>CreateRangeFromRect(visible.ViewportToData(viewport.Transform));<br><br>    using (axisControl.OpenUpdateRegion())<br>    {<br>        axisControl.Range = range;<br>        axisControl.Transform = viewport.Transform;<br>        if (axisControl.AxisTiedToOrigin) {  //bcz: allow the axes<br>anchored to the left and right to float with the Origin<br>                   if (axisControl.Placement == AxisPlacement.Left) {<br>                        double min = visible.Left;<br>                        double max = visible.Right;<br>                        if (max &gt; 0 && min &lt; 0) {<br>                            double xorigin = (0 - min) / (max - min) *<br>viewport.Output.Width;<br>                            axisControl.RenderTransform = new<br>TranslateTransform(xorigin, 0);<br>                            axisControl.ShowZeros = false;<br>                        }<br>                        else<br>                            axisControl.ShowZeros = true;<br>                        if (min &gt; 0)<br>                            axisControl.RenderTransform = new<br>TranslateTransform(0, 0);<br>                        if (max &lt; 0)<br>                            axisControl.RenderTransform = new<br>TranslateTransform(viewport.Output.Width, 0);<br>                    }<br>                    if (axisControl.Placement == AxisPlacement.Bottom) {<br>                        double min = visible.Bottom;<br>                        double max = visible.Top;<br>                        if (max &lt; 0 && min &gt; 0) {<br>                            double yorigin = (0 - min) / (max - min) *<br>viewport.Output.Height;<br>                            axisControl.RenderTransform = new<br>TranslateTransform(0, -viewport.Output.Height + yorigin);<br>                            axisControl.ShowZeros = false;<br>                        }<br>                        else<br>                            axisControl.ShowZeros = true;<br>                        if (max &gt; 0)<br>                            axisControl.RenderTransform = new<br>TranslateTransform(0, 0);<br>                        if (min &lt; 0)<br>                            axisControl.RenderTransform = new<br>TranslateTransform(0, -viewport.Output.Height);<br>                    }<br>                }<br>    }<br>}<br><br><br><br>On Wed, Oct 14, 2009 at 11:41 AM, thecentury &lt;notifications@codeplex.com&gt; wrote:<br>&gt; From: thecentury<br>&gt;<br>&gt; Hi Bob,<br>&gt;<br>&gt; can I take a look at what you've done? It is very interesting fro me)<br>&gt;<br>&gt; Mikhail.<br>&gt;<br>&gt; Read the full discussion online.<br>&gt;<br>&gt; To add a post to this discussion, reply to this email<br>&gt; ([email removed])<br>&gt;<br>&gt; To start a new discussion for this project, email<br>&gt; [email removed]<br>&gt;<br>&gt; You are receiving this email because you subscribed to this discussion on<br>&gt; CodePlex. You can unsubscribe on codePlex.com.<br>&gt;<br>&gt; Please note: Images and attachments will be removed from emails. Any posts<br>&gt; to this discussion will also be available online at codeplex.com",
+    "PostedDate": "2009-10-14T11:16:07.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

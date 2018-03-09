@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "282532",
+    "ThreadId": "82245",
+    "Html": "<p>I have been struggling to set the domain on my plotter. &nbsp;I load many different datasets, and they have different values so I cannot use a fixed Domain.</p>\r\n<p>Ideally, since with FitToView the Visible rect size is already calculated it would be wonderful to have a 'LockAtMax' property- which basically sets the Domain to the fitted to view rect. &nbsp;This would prevent scrolling out and panning out to where there is no data.</p>\r\n<p>But short of this, if I have to calculate my own Domain rect based on my data, can Domain be made a dependency property so I can bind it? &nbsp;As it stands, it is only useful if you hardcode the values in.</p>\r\n<p>Or, if there is another way to lock the scrolling and zoom out please let me know!</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-01-27T15:45:41.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "285885",
+    "ThreadId": "82245",
+    "Html": "<p>Hi,</p>\r\n<p>you can inherit MouseNavigation class and override ShouldStartPanning and ShouldStartZoom to check your conditions. You must remove default MouseNavigation and Add your implementation of this class.</p>\r\n<p>&nbsp;</p>\r\n<p>Jefferson Soares</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-04T10:57:46.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456302",
+    "ThreadId": "82245",
+    "Html": "<p>I would like to make Viewport2D.Domain a dependency property so I can bind my DataRect to it in Xaml with something like this:</p>\r\n<p>&lt;d3:ChartPlotter x:Name=&quot;chartPlotterCandela&quot; Margin=&quot;5,15,5,5&quot; MinWidth=&quot;600&quot; MinHeight=&quot;600&quot; Domain=&quot;{Binding MyViewportDomain, UpdateSourceTrigger=PropertyChanged}&quot;&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>How can I make this happen?</p>",
+    "PostedDate": "2010-06-16T11:02:10.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457731",
+    "ThreadId": "82245",
+    "Html": "<p>Domain property of <strong>ChartPlotter</strong>.<strong>Viewport </strong>is now a dependency property.</p>\r\n<p>&nbsp;</p>\r\n<p>Code is uploaded here:&nbsp;<a href=\"http://cid-eaf0a921258b5980.office.live.com/self.aspx/.Public/D3/DynamicDataDisplay for Brian Bauer.zip\">http://cid-eaf0a921258b5980.office.live.com/self.aspx/.Public/D3/DynamicDataDisplay%20for%20Brian%20Bauer.zip</a></p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-20T06:18:46.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459007",
+    "ThreadId": "82245",
+    "Html": "<p>This works great, however you can only set the binding in the code behind. I have yet to find a way to set the binding in xaml. How can you access the Domain in xaml? Here is my xaml snippet. I would like to say this somewhere: Domain=&quot;{Binding MyCustomDomain}&quot;, however I cannot figure out where to do so.</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>&lt;!-- CandelaColorChart --&gt;\r\n&lt;d3:ChartPlotter x:Name=<span style=\"color:#a31515\">&quot;chartPlotterCandela&quot;</span> Margin=<span style=\"color:#a31515\">&quot;5,15,5,5&quot;</span> MinWidth=<span style=\"color:#a31515\">&quot;600&quot;</span> MaxWidth=<span style=\"color:#a31515\">&quot;750&quot;</span> MinHeight=<span style=\"color:#a31515\">&quot;600&quot;</span>&gt;\r\n    &lt;d3:Header TextBlock.FontSize=<span style=\"color:#a31515\">&quot;18&quot;</span> Content=<span style=\"color:#a31515\">&quot;{Binding ChartHeader}&quot;</span> VerticalAlignment=<span style=\"color:#a31515\">&quot;Top&quot;</span> Margin=<span style=\"color:#a31515\">&quot;5&quot;</span>  FontFamily=<span style=\"color:#a31515\">&quot;Arial&quot;</span> FontSize=<span style=\"color:#a31515\">&quot;16&quot;</span>/&gt;\r\n    &lt;d3:HorizontalAxisTitle x:Name=<span style=\"color:#a31515\">&quot;horizontalAxisTitleCandela&quot;</span> Content=<span style=\"color:#a31515\">&quot;Horizontal Angle&quot;</span> FontSize=<span style=\"color:#a31515\">&quot;11&quot;</span> Margin=<span style=\"color:#a31515\">&quot;5&quot;</span>/&gt;\r\n    &lt;d3:VerticalAxisTitle x:Name=<span style=\"color:#a31515\">&quot;verticalAxisTitleCandela&quot;</span> Content=<span style=\"color:#a31515\">&quot;Vertical Angle&quot;</span> FontSize=<span style=\"color:#a31515\">&quot;11&quot;</span> Margin=<span style=\"color:#a31515\">&quot;5&quot;</span>/&gt;\r\n    &lt;d3:ViewportHostPanel&gt;\r\n        &lt;Image x:Name=<span style=\"color:#a31515\">&quot;imageCandela&quot;</span> Stretch=<span style=\"color:#a31515\">&quot;Fill&quot;</span> Source=<span style=\"color:#a31515\">&quot;{Binding CandelaBitmapSource}&quot;</span>/&gt;\r\n    &lt;/d3:ViewportHostPanel&gt;\r\n    &lt;d3:DraggablePoint x:Name=<span style=\"color:#a31515\">&quot;draggablePointCandela&quot;</span> Position=<span style=\"color:#a31515\">&quot;0.5,0.5&quot;</span> PositionChanged=<span style=\"color:#a31515\">&quot;draggablePointCandela_PositionChanged&quot;</span>/&gt;\r\n    &lt;d3:VerticalLine x:Name=<span style=\"color:#a31515\">&quot;verticalLineCandela&quot;</span> Value=<span style=\"color:#a31515\">&quot;{Binding DraggablePointX}&quot;</span> Stroke=<span style=\"color:#a31515\">&quot;Red&quot;</span>/&gt;\r\n    &lt;d3:HorizontalLine x:Name=<span style=\"color:#a31515\">&quot;horizontalLineCandela&quot;</span> Value=<span style=\"color:#a31515\">&quot;{Binding DraggablePointY}&quot;</span> Stroke=<span style=\"color:#a31515\">&quot;Red&quot;</span>/&gt;\r\n    &lt;d3:CursorCoordinateGraph /&gt;\r\n    &lt;d3:AxisCursorGraph/&gt;\r\n&lt;/d3:ChartPlotter&gt;\r\n&lt;!-- END CandelaColorChart --&gt;\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-23T08:37:46.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463620",
+    "ThreadId": "82245",
+    "Html": "<p>Add a new DependencyProperty of &quot;Domain&quot; to Plotter2D to facilitate the binding:</p>\r\n<p>\r\n<pre>/// Gets or sets the domain - rectangle in viewport coordinates that limits maximal size of  rectangle.\r\n/// The domain.\r\n[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]\r\npublic DataRect Domain\r\n{\r\n    get { return (DataRect)GetValue(DomainProperty); }\r\n    set { SetValue(DomainProperty, value); }\r\n}\r\n\r\n/// The Domain dependency property\r\npublic static readonly DependencyProperty DomainProperty = DependencyProperty.Register(\r\n  &quot;Domain&quot;,\r\n  typeof(DataRect),\r\n  typeof(Plotter2D),\r\n  new FrameworkPropertyMetadata(DataRect.Empty, OnDomainReplaced));\r\n\r\nprivate static void OnDomainReplaced(DependencyObject d, DependencyPropertyChangedEventArgs e)\r\n{\r\n    Plotter2D owner = (Plotter2D)d;\r\n    if (owner != null)\r\n        owner.OnDomainChanged((DataRect)e.NewValue);\r\n}\r\n\r\nprivate void OnDomainChanged(DataRect rect)\r\n{\r\n    viewport.Domain = rect;                        \r\n}</pre>\r\n</p>",
+    "PostedDate": "2010-07-05T23:07:45.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

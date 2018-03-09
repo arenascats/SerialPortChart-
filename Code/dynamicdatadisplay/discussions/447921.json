@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1060006",
+    "ThreadId": "447921",
+    "Html": "I need something to display on the chart (a cursor) with position being set in the code (not by user interaction). \r<br />\n<br />\nI found this discussion and implements Line Cursor suggested by grantnz\r<br />\n<a href=\"http://dynamicdatadisplay.codeplex.com/discussions/79287\" rel=\"nofollow\">http://dynamicdatadisplay.codeplex.com/discussions/79287</a>\r<br />\n<br />\nHowever it doesn't show on the chart. Could anyone please help.<br />\n",
+    "PostedDate": "2013-06-23T03:23:40.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060018",
+    "ThreadId": "447921",
+    "Html": "If I am not wrong, below discussion would help you out.\r<br />\n<br />\n<a href=\"http://dynamicdatadisplay.codeplex.com/discussions/285624\" rel=\"nofollow\">http://dynamicdatadisplay.codeplex.com/discussions/285624</a>\r<br />\n<br />\nLet me know your thoughts !!!\r<br />\n<br />\nRegards,\r<br />\nKumar<br />\n",
+    "PostedDate": "2013-06-23T04:28:57.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060021",
+    "ThreadId": "447921",
+    "Html": "No Kumar. That discussion is about mouse cursor - it moves by users mouse. I need a cursor moved by the code.<br />\n",
+    "PostedDate": "2013-06-23T04:39:17.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

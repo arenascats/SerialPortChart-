@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "273520",
+    "ThreadId": "79840",
+    "Html": "<p>Hello,</p>\r\n<p>I'm developing an application that use fuzzy logic inference. I'd like to employ D3 to display the inference results, where certain area under a line chart has to be filled with a brush.</p>\r\n<p>An example: http://virtual.cvut.cz/dynlabmodules/ihtml/dynlabmodules/syscontrol/img2387.gif</p>\r\n<p>What would be the best approach to achieve this?</p>\r\n<p>Best regards,</p>\r\n<p><strong>BB</strong></p>",
+    "PostedDate": "2010-01-05T14:56:30.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

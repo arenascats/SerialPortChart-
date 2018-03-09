@@ -1,0 +1,234 @@
+[
+  {
+    "Id": "232833",
+    "ThreadId": "68453",
+    "Html": "<p>I was wondering if the D3 components could be used to generate a colored map, kind of a filled contour map.&nbsp; Where the data is specified as a list of (x,y,z) values and z is mapped in a color scale like the HSB palette.&nbsp; This is a sample image of what I am trying to do:</p>\r\n<p><img src=\"http://lh4.ggpht.com/_nXqlwxfq5mo/SqgWFU3y3RI/AAAAAAAADSU/2E70kr8zLFw/s144/maps.JPG\" alt=\"\"></p>\r\n<p><a href=\"http://picasaweb.google.com/lh/photo/G-Du48W6O2VCSimnPe_vpA?feat=directlink\">photo link</a></p>\r\n<p>Thank you in advance.</p>",
+    "PostedDate": "2009-09-09T14:04:53.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232858",
+    "ThreadId": "68453",
+    "Html": "<p>You could propbably use IsoPlot for this purpose since it accepts data in that format easily...</p>\r\n<p>You'll probably have to modify IsoPlot itself a bit.</p>\r\n<p>I need this for a project of mine also so if I find something I'll post here...</p>",
+    "PostedDate": "2009-09-09T15:47:38.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232875",
+    "ThreadId": "68453",
+    "Html": "<p>I gave things a try: I have an app that collects 2D intensity data for a sample. I want to plot this data exactly in the way you describe. The data is originally collected as a double[] (so a 1D array) with the X and Y dimensions of the image known. Therefore it is easy to construct a 2D array of the data. Use this crude code as an example:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> <span style=\"color:Blue\">void</span> Plot()\r\n        {\r\n            <span style=\"color:Blue\">double</span>[,] data = <span style=\"color:Blue\">new</span> <span style=\"color:Blue\">double</span>[<span style=\"color:Blue\">this</span>.m_iWidth, <span style=\"color:Blue\">this</span>.m_iHeight];\r\n            <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> row = 0; row &lt; <span style=\"color:Blue\">this</span>.m_iHeight; row++)\r\n            {\r\n\r\n                <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> column = 0; column &lt; <span style=\"color:Blue\">this</span>.m_iWidth; column++)\r\n                {\r\n                    data[column, row] = <span style=\"color:Blue\">this</span>.m_dData[row * <span style=\"color:Blue\">this</span>.m_iWidth + column];\r\n                }\r\n            }\r\n\r\n            Point[,] gridData = <span style=\"color:Blue\">new</span> Point[<span style=\"color:Blue\">this</span>.m_iWidth, <span style=\"color:Blue\">this</span>.m_iHeight];\r\n            <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> row = 0; row &lt; <span style=\"color:Blue\">this</span>.m_iHeight; row++)\r\n            {\r\n                <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> column = 0; column &lt; <span style=\"color:Blue\">this</span>.m_iWidth; column++)\r\n                {\r\n                    gridData[column, row] = <span style=\"color:Blue\">new</span> Point(row, column);\r\n                }\r\n            }\r\n\r\n            WarpedDataSource2D&lt;<span style=\"color:Blue\">double</span>&gt; dataSource = <span style=\"color:Blue\">new</span> WarpedDataSource2D&lt;<span style=\"color:Blue\">double</span>&gt;(data, gridData);\r\n            isolineGraph.DataSource = dataSource;\r\n            trackingGraph.DataSource = dataSource;\r\n\r\n            Rect visible = dataSource.GetGridBounds();\r\n            plotter.Viewport.Visible = visible;\r\n        }\r\n</pre>\r\n</div>\r\n</p>\r\n<p>This is backing code for the following XAML:</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">plotter</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">IsolineGraph</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">isolineGraph</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">IsolineTrackingGraph</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">trackingGraph</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">CursorCoordinateGraph</span><span style=\"color:Blue\">/&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span><span style=\"color:Blue\">&gt;</span>\r\n<br></pre>\r\n</div>\r\n</p>\r\n<p>Taken directly from the IsoPlot example.</p>\r\n<p>&nbsp;</p>\r\n<p>This actually works and I can clearly see a 2D plot of my data. However, for a 400 by 400 point dataset the performance when scrolling is horrible. Probably because the IsoPlot tries to do some interpolation/coloring on the points. This control is probably not meant for this kind of use...</p>\r\n<p>&nbsp;</p>\r\n<p>Maybe this helps but indeed it would be nice to have the kind of &quot;heatmap&quot; functionality you describe...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-09T16:31:53.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232878",
+    "ThreadId": "68453",
+    "Html": "<p>Just checked the nightlies... There is apparently an IntensityPlot now that seems to do what you want...</p>\r\n<p>Question to the developer: Will the cross section be available for both axes?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-09T16:58:30.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232898",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Kris,</p>\r\n<p>&nbsp;</p>\r\n<p>I just saw your posts. I went and checked the nightlies.&nbsp; You are absolutly right.&nbsp; It looks like that would do.&nbsp; I will be trying tomorrow and will let you know how it goes.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-09-09T18:38:24.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233223",
+    "ThreadId": "68453",
+    "Html": "<p>No problem!</p>\r\n<p>I checked out this control and it is absolutely awesome! I have been tinkering with it a bit and was able to implement a cross section graph for the other dimension as well. If you want, I also implemented some extra colormaps...</p>\r\n<p>&nbsp;</p>\r\n<p>Good luck!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-10T10:47:58.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233245",
+    "ThreadId": "68453",
+    "Html": "<p>Hello gentlemen, sorry for interrupting your discussion)</p>\r\n<p>I'm developer of DynamicDataDisplay. I'm not sure tha I have understood your requirements right, so can you please&nbsp;describe&nbsp;them in more details? Or you have already got what you wanted from D3?</p>\r\n<p>&nbsp;</p>\r\n<p>By the way - IntensitySample is just a sample, it doesn't belong to our library, so there is no infrastructure around it. We are now creating a fully-functional color map.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-09-10T11:30:29.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233256",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thanks for stepping in and letting us know there is a color map in the making.</p>\r\n<p>The data I showed previously represents Iron concentration on the surface of a solar cell.&nbsp; This data is stored as a set of (X,Y,Z), where X,Y are a point on the surface of the cell and Z is the corresponding iron concentration.&nbsp; I was looking to have a colored map this data, and the NativeColorMap seems to be a basic but efficient way to display it.</p>\r\n<p>I understand that what we talked about in this thread is not a &quot;real&quot; solution to displaying this kind of data, but at least it helps me to get out of the hole where I was.&nbsp; It allows me to display some data.&nbsp; Although it is based on generating a bitmap and just showing the image as part of the plot, it lets you do basic things as zooming and panning.&nbsp; So, it is not that bad.</p>\r\n<p>I would love to try the color map once it is out.</p>\r\n<p>Thanks.</p>\r\n<p>Carlos Almeida.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-10T11:47:58.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233282",
+    "ThreadId": "68453",
+    "Html": "<p>Privet Mikhail :)</p>\r\n<p>Personally I am developing a software package for the purpose of my phD project that would allow me to do 2D imaging of samples under a microscope.</p>\r\n<p>My data are being stored by my software as an array of Int32. This array is 1D. Each Int32 represents the amount of photons emitted for a pixel in a set timeframe. Because I also know imagewidth and height I can convert this to double[,] easily.</p>\r\n<p>What I needed was to have this XY color map plotted and also to have &quot;cross section&quot; views for both axes. The IntensitySample offers all these things.</p>\r\n<p>The only two things I would need to solve is to somehow get both axes to display the physical measurements of my sample instead of the pixel value -&gt; Suppose the image I record is 512 by 512 px than this can correspond to an area of 1000 by 1000 nm or some other values. I think this is easy by just manipulating the axisdata a bit.</p>\r\n<p>The second thing that would be really good to have is some kind of ROI or POI selection on the plot so that I could mark a certain area and/or a list of points and be able to retrieve these points from the graph control do measure at these coordinates...</p>\r\n<p>You talk about a more specialized color map... in what way would it be different from the IntensitySample (which uses bitmaps, which suits my purposes just fine).</p>\r\n<p>Thanks already for creating these wonderful bits of code!</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-10T12:55:43.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233601",
+    "ThreadId": "68453",
+    "Html": "<p>Hello Mikhail,</p>\r\n<p>I have a quick question about the IntensityPlot sample...</p>\r\n<p>How do I align the &quot;cross section&quot; plots perfectly with the 2D plot? As you can see in the screenshot they are not really aligned. I tried setting a Height=&quot;(Binding Elementname=plotter, Path=Height}&quot; on the cross section plotter, but this has no effect...</p>\r\n<table style=\"width:auto\" border=0>\r\n<tbody>\r\n<tr>\r\n<td><a href=\"http://picasaweb.google.com/lh/photo/nXpJYiQYcOCee9bTGv-OOQ?feat=embedwebsite\"><img src=\"http://lh4.ggpht.com/_UAVoT5ULIp4/SqpeaVP8EbI/AAAAAAAATF0/1pVM9NBFXow/s144/Alignment.png\" alt=\"\"></a></td>\r\n</tr>\r\n<tr>\r\n<td style=\"font-family:arial,sans-serif;font-size:11px;text-align:right\">From <a href=\"http://picasaweb.google.com/Kris.Janssen/RIS?feat=embedwebsite\">RIS</a></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p>Cheers,</p>\r\n<p>Kris</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-11T07:28:51.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233661",
+    "ThreadId": "68453",
+    "Html": "<p>Hello Kris,</p>\r\n<p>a quick answer for a quick question - I've uploaded new version of source code, it is changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28717\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28717\">28717</a>, where I've used the following binding in IntensitySample:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Height=&quot;{Binding ElementName=plotter, Path=CentralGrid.ActualHeight}&quot;\r\n</pre>\r\n</div>\r\n<p>This is a binding to a layout part of Plotter, which is a host for all charts, so it is the very element which size should be useв in such bindings.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-11T09:15:36.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233697",
+    "ThreadId": "68453",
+    "Html": "<p>By the way, Kris, you wrote:</p>\r\n<p style=\"padding-left:30px\">This actually works and I can clearly see a 2D plot of my data. However, for a 400 by 400 point dataset the performance when scrolling is horrible. Probably because the IsoPlot tries to do some interpolation/coloring on the points. This control is probably not meant for this kind of use...</p>\r\n<p>Though you've mentioned some <em>IsoPlot</em>, which is not known to me, it seems to me that you were speaking our IsolineGraph. Actually, it should be not very slow on such dataset you've mentioned. The slowest part of isoline drawing is a drawing of labels, so if you don't need them, you can switch them off by assigning <em>false</em>&nbsp;to isolineGraph.DrawLabels. This greatly improves pan and zoom performance.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.&nbsp;</p>",
+    "PostedDate": "2009-09-11T11:02:58.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233725",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>The modification you did to the IntensityPlot example indeed gives better results. It seems this was the binding I needed. I also had some succes by modifying the viewport directly (by assigning a new DataRect to the View property).</p>\r\n<p>This actually brings me to a new question. By setting the binding to CentralGrid.ActualHeight somehow the viewport of the SectionGraph coinsides directly with the ends of the data (there is no &quot;gap&quot; beteween the graphed data and the border of the sectiongraph. In the prevous version the viewport was slightly bigger than the displayed data. Why is this? I have been looking a bit at the code but some subtle interactions between the different poperties are not always clear to me...</p>\r\n<p>To answer you last question: Before I found out about the IntensityPlot in the nightly I initially tried the IsoPlot to display my data by just changing the datasource for the supplied IsoPlot example by my data. This dataset was 400*400 points but for some reason it was really slow. I will have a look again to see if the DrawLabels have something to do with this.</p>\r\n<p>Your library is really an amazing set of controls. I will surely be looking at it more closely the coming days. Do you think it might be useful for your product if people would assist in documenting the functionality some more? (Things like the problem I had, etc...) Maybe writing a more detailed manual about the different features?</p>\r\n<p>Cheers,</p>\r\n<p>KrisJ</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-11T12:18:37.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233780",
+    "ThreadId": "68453",
+    "Html": "<p>&nbsp;</p>\r\n<p>Me Again,</p>\r\n<p>Playing with IntensityPlot I think I discoverd some minor bugs;</p>\r\n<p>If you change the dataset that is plotted in this way;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">private</span> <span style=\"color:Blue\">double</span>[,] BuildSampleData(<span style=\"color:Blue\">int</span> size)\r\n{\r\n    <span style=\"color:Blue\">double</span>[,] data = <span style=\"color:Blue\">new</span> <span style=\"color:Blue\">double</span>[size, size];\r\n\r\n    <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> ix = 0; ix &lt; size; ix++)\r\n   {\r\n\t<span style=\"color:Green\">//double coeff = 0.0005 * ix;</span>\r\n\t<span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> iy = 0; iy &lt; size; iy++)\r\n\t    {\r\n\t\t<span style=\"color:Green\">//double value = Math.Sin(coeff * iy);</span>\r\n                <span style=\"color:Blue\">double</span> value = Math.Sin(0.01 * iy);\r\n\t\tdata[ix, iy] = value;\r\n\t     }\r\n    }\r\n\r\n    <span style=\"color:Blue\">return</span> data;\r\n}\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>You will now have a simpler sine that is variable only in the Y dimension and constant in X (for all values of X, the values of Y are the same). The sine is also a bit asymmetric in relation to the viewport.</p>\r\n<p>When I run Intensityplot like this you will see that:</p>\r\n<p>a) The displayed image is oriented &quot;the wrong way&quot;, the variation in intensity is displayed in the X dimension and not in Y as expected.</p>\r\n<p>b) If the displayed image was correct then the SectionGraph should be a flat line at all times, yet it is not.</p>\r\n<p>You can see both these things in the screenshot;</p>\r\n<table style=\"width:auto\" border=0>\r\n<tbody>\r\n<tr>\r\n<td><a href=\"http://picasaweb.google.com/lh/photo/f8G-p_6qTsKyfa4-QlXPJA?feat=embedwebsite\"><img src=\"http://lh6.ggpht.com/_UAVoT5ULIp4/SqrR7TMuFYI/AAAAAAAATGo/tWJIKnnEkkY/s144/Wrong.JPG\" alt=\"\"></a></td>\r\n</tr>\r\n<tr>\r\n<td style=\"font-family:arial,sans-serif;font-size:11px;text-align:right\">\r\n<p>From <a href=\"http://picasaweb.google.com/Kris.Janssen/RIS?feat=embedwebsite\">RIS</a></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>When I look at the data array then I think that indeed the Sectiongraph is ALMOST correct since the data array holds a range of Y values for each value of X</p>\r\n<table style=\"width:auto\" border=0>\r\n<tbody>\r\n<tr>\r\n<td><a href=\"http://picasaweb.google.com/lh/photo/o4XtNFUVx8F82jNO-inNTA?feat=embedwebsite\"><img src=\"http://lh6.ggpht.com/_UAVoT5ULIp4/SqrTG4pAtEI/AAAAAAAATHE/JCFSriteBQA/s144/Array.jpg\" alt=\"\"></a></td>\r\n</tr>\r\n<tr>\r\n<td style=\"font-family:arial,sans-serif;font-size:11px;text-align:right\">From <a href=\"http://picasaweb.google.com/Kris.Janssen/RIS?feat=embedwebsite\">RIS</a></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>So I think that the NaiveColorMap BuildImage() method has an implementation error. The data[,] array holds X data in dimension 0 and Y in dim 1. It is not specified in the MSDN documentation but I suspect the WritableBitmap.WritePixels(...)&nbsp; method will write an array of pixels to the BMP line per line (with lines being &quot;horizontal&quot; lines or lines of constant Y. However, in the NaiveColorMap implementation the data[,] is read in vertical lines that are being stuck after each other in the 1D array of pixels. This would actually mean that the image is flipped 90 degrees.</p>\r\n<p>When I change the code in NaiveColorMap.BuildImage like this;</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">int</span> pointer = 0;\r\n<span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> iy = 0; iy &lt; height; iy++) <span style=\"color:Green\">// Read line per line in Y!!!!</span>\r\n{\r\n      <span style=\"color:Blue\">for</span> (<span style=\"color:Blue\">int</span> ix = 0; ix &lt; width; ix++)\r\n\t{\r\n           <span style=\"color:Blue\">double</span> value = Data[ix, iy];\r\n           <span style=\"color:Blue\">double</span> ratio = (value - min) / rangeDelta;\r\n           Color color = Palette.GetColor(ratio);\r\n           <span style=\"color:Blue\">int</span> argb = color.ToArgb();\r\n           pixels[pointer++] = argb;\r\n        }\r\n}<br></pre>\r\n<br>Then the image looks a bit better already;<br><br></div>\r\n</pre>\r\n<table style=\"width:auto\" border=0>\r\n<tbody>\r\n<tr>\r\n<td><a href=\"http://picasaweb.google.com/lh/photo/HsqmRRq2e1T4rl1QxMvFyQ?feat=embedwebsite\"><img src=\"http://lh6.ggpht.com/_UAVoT5ULIp4/SqrYuxcw9II/AAAAAAAATHs/YkOCwRnuPMM/s144/SemiCorrect.JPG\" alt=\"\"></a></td>\r\n</tr>\r\n<tr>\r\n<td style=\"font-family:arial,sans-serif;font-size:11px;text-align:right\">From <a href=\"http://picasaweb.google.com/Kris.Janssen/RIS?feat=embedwebsite\">RIS</a></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>However, the sectiongraph is also flipped the wrong way in relation to the image! The black area in the image is the lowest intensity, which is not the lowest point in the SectionGraph!</p>\r\n<table style=\"width:auto\" border=0>\r\n<tbody>\r\n<tr>\r\n<td><a href=\"http://picasaweb.google.com/lh/photo/l-m8LtWwoY0jrrWfrZs8Kg?feat=embedwebsite\"><img src=\"http://lh5.ggpht.com/_UAVoT5ULIp4/SqrYEvu49sI/AAAAAAAATHk/2qjFa8vBzw0/s144/Correct.JPG\" alt=\"\"></a></td>\r\n</tr>\r\n<tr>\r\n<td style=\"font-family:arial,sans-serif;font-size:11px;text-align:right\">From <a href=\"http://picasaweb.google.com/Kris.Janssen/RIS?feat=embedwebsite\">RIS</a></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>In the second image this is also solved by changing CreateSection() in Window1.xaml.cs with this;</p>\r\n<p>section[iy] = interpolatedValue; should become section[imageSize - 1 - iy] = interpolatedValue;</p>\r\n<p>Could you confirm this (or tell me where I am wrong?).</p>\r\n<p>Cheers,</p>\r\n<p>KrisJ</p>",
+    "PostedDate": "2009-09-11T16:17:16.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236568",
+    "ThreadId": "68453",
+    "Html": "<p>Hi guys,</p>\r\n<p>&nbsp;</p>\r\n<p>Could anyone confirm my assumptions regarding NaiveColorMap BuildImage()?</p>\r\n<p>&nbsp;</p>\r\n<p>Cheers,</p>\r\n<p>&nbsp;</p>\r\n<p>Kris</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-20T03:12:49.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238836",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Kris,</p>\r\n<p>you are right, there were some bugs in this class, sorry for long waiting for answer.</p>\r\n<p>Version of DynamicDataDisplay with fixes in this class will be uploaded to source code page in the nearest time.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T08:22:46.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238917",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Kris,</p>\r\n<p>I've uploaded fixed NaiveColorMap in changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28841\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28841\">28841</a>.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T11:43:23.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238918",
+    "ThreadId": "68453",
+    "Html": "<p>By the way, Kris, you've mentioned that you need control to select POIs - the latest changeset contains a first version of such control. It is PointSelector, you can find a sample with it DevSamples/PointSelectorSample.csproj</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T11:47:06.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238920",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot, I'll check it out right now :)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-25T11:50:41.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265814",
+    "ThreadId": "68453",
+    "Html": "<p>Hi,</p>\r\n<p>Are there any news about colormap? I'd like to use it to plot a polar graphic with data defined by an triangular mesh. Is it possible to use NaiveColormap to do it (polar coordinate)?</p>\r\n<p><img src=\"http://web3.twitpic.com/img/48626343-49d12fc7c81f275b17e229029b22e34b.4b214549-full.jpg\" alt=\"\" width=301 height=239></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Rafael Albuquerque</p>",
+    "PostedDate": "2009-12-10T11:03:16.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266326",
+    "ThreadId": "68453",
+    "Html": "<p>Hi,</p>\r\n<p>I added this code to IsolineGraph to generate the graph that I wished.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void DoPaintAll()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DrawLabels = false;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double step = (Collection.Max - Collection.Min) / 100000;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (double level = Collection.Min; level &lt; Collection.Max; level += step)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Collection.AddCollection(IsolineBuilder.BuildIsoline(level));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>It' s ok, but quite slow. Any suggestions?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-11T09:37:59.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266771",
+    "ThreadId": "68453",
+    "Html": "<p>Hi Rafael,</p>\r\n<p>your code with isoline is slow because you are making WPF to draw hundreds thousand lines, which is over the WPF's abilities.</p>\r\n<p>Our color map is almost ready and will be released soon.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-13T08:25:34.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441464",
+    "ThreadId": "68453",
+    "Html": "<p>Mikhail,</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; Have the color maps been released? If so, are there specific examples in the nightlies that you could refer me to? Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-11T06:21:28.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450231",
+    "ThreadId": "68453",
+    "Html": "<p>KrisJ, were you ever able to find a solution to your question earlier in this thread?</p>\r\n<p>&quot;The only two things I would need to solve is to somehow get both axes to  display the physical measurements of my sample instead of the pixel  value -&gt; Suppose the image I record is 512 by 512 px than this can  correspond to an area of 1000 by 1000 nm or some other values. I think  this is easy by just manipulating the axisdata a bit.&quot;</p>\r\n<p>I am looking for a combination of the IsolineGraph example and the IntensityGraph. I would like the look of the IntensityGraph, with the synchronized sections. However, I want my x,y axis to be displayed in feet, not pixels. I would also like the value displayed to be my true z value, not the ratio. Thanks in advance.</p>\r\n<p>&nbsp;</p>\r\n<p>PS. Does anyone ever check these boards? I've posted numerous questions with not much of a response. Thanks again.</p>",
+    "PostedDate": "2010-06-01T12:45:58.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "451711",
+    "ThreadId": "68453",
+    "Html": "<p>Please wait for June 20 or like that. Now I simply have important exams, so I have no time to spend for D3)</p>",
+    "PostedDate": "2010-06-04T06:44:58.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457732",
+    "ThreadId": "68453",
+    "Html": "<p>Answering to Brian Bauer:</p>\r\n<p>to change bounds rectangle of <strong>NaiveColorMap</strong>, please set you own value to&nbsp;<strong>d3:ViewportPanel.ViewportBounds</strong> in the following code region</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotter</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Grid.Row</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Grid.Column</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">1</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ViewportHostPanel</span><span style=\"color:blue\">&gt;</span>\r\n\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Image</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">image</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">d3:ViewportPanel.ViewportBounds</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">0,0,1,1</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Stretch</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Fill</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ViewportHostPanel</span><span style=\"color:blue\">&gt;</span>\r\n...\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>in <strong>IntensityChart</strong> sample.</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-20T06:26:32.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459003",
+    "ThreadId": "68453",
+    "Html": "<p>This does not work as expected. I have tried various ViewportBounds and the visible area displayed after the chart is populated does not match the ViewportBounds DataRect. The displayed visible area is inconsistent. Also, by changing the ViewportBounds, the two additional plots associated with the chartPlotter no longer update correctly. When you drag the cursor around it still picks up underlying data as if the image ViewportBounds are still &quot;0,0,1,1&quot;. I believe this is a bug.</p>",
+    "PostedDate": "2010-06-23T08:34:42.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459011",
+    "ThreadId": "68453",
+    "Html": "<p>Also, when changing the bounds of the image, the bounds of the two synchronized X &amp; Y slices do not change. I have yet to figure out how to get the XY axis of the intensity plot to show my data range, as well as the X plot and Y plot to show the actual data range. Right now the intensity plot shows a pixel value or ratio (0,0,1,1) and the associated X &amp; Y plots have data point numbers as their x axis.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-23T08:40:50.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819277",
+    "ThreadId": "68453",
+    "Html": "<p>I am confused by this thread!&nbsp; I too would like a version of IsolineGraph that can \"shade\" inbetween the lines.&nbsp; However, I cannot locate the sample \"IntensityChart\" anywhere.</p>\r\n<p>Can somebody point me in the right direction?&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Craig</p>",
+    "PostedDate": "2012-04-03T07:58:44.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

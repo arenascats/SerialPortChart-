@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "140371",
+    "ThreadId": "42262",
+    "Html": "<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_BodyDiv\">\r\n<p>I would also love to be able to place constraints on the zoom/pan, limiting the range it can operate on in a graph/chart.<br>\r\n<br>\r\nWould there be any chance of considering this for a future release?<br>\r\n<br>\r\nSure you're sick of me already :)<br>\r\n<br>\r\nCheers,<br>\r\n<br>\r\nNick</p>\r\n</div>\r\n",
+    "PostedDate": "2008-12-14T05:33:03.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140692",
+    "ThreadId": "42262",
+    "Html": "Hi again!<br>\r\n<br>\r\nWe've planned these constraints, but you'll have to wait a little bit for them - they'll be ready approximately in D3 v0.2.3 or even a bit later.<br>\r\n",
+    "PostedDate": "2008-12-15T11:47:27.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

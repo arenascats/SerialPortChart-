@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "270632",
+    "ThreadId": "79040",
+    "Html": "<p>I am plotting some data that starts on the x axis at around 20000 and ends around40000. &nbsp;I need to be able to on MouseDown get the X and Y -data- positions, not just the mouse position on the ChartPlotter. I noticed in an example that the CursorCoordinateGraph generates the mouse current position for the x and y. &nbsp;The X coordinate is exactly what I need, because it shows the mouse current position on the x axis, but the y is not- because I need to get the data's y position at a given x, not the y position of the mouse.</p>\r\n<p>How can I get the x and y data points representing my actual data at a given mouse x on mouse down or mouse over?</p>\r\n<p>Thanks and happy holidays!</p>",
+    "PostedDate": "2009-12-24T10:51:41.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "270842",
+    "ThreadId": "79040",
+    "Html": "<p>Hi!&nbsp;</p>\r\n<p>To get the position of mouse in you data, you should use something like this:</p>\r\n<p>var transform = plotter.Transform;</p>\r\n<p>var mouseScreenPosition = Mouse.GetPosition(plotter.CentralGrid);</p>\r\n<p>var mousePositionInData = mouseScreenPosition.ScreenToViewport(transform);</p>\r\n<p>and then you should somehow implement searching of proper y value by x value found by method I've described in your data.</p>\r\n<p>&nbsp;</p>\r\n<p>Also you might be interested in AxisControlSamples in DevSamples.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.&nbsp;</p>",
+    "PostedDate": "2009-12-26T08:51:34.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271054",
+    "ThreadId": "79040",
+    "Html": "<p>That sounds perfect, thanks Mikhail!</p>",
+    "PostedDate": "2009-12-27T20:05:13.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271453",
+    "ThreadId": "79040",
+    "Html": "<p>Thank you. This is very useful for me as well.</p>\r\n<p>Faisal</p>",
+    "PostedDate": "2009-12-29T08:12:22.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In my app I have a grid and a plotter bound to the same data table when deleting rows via the grid the following exception occurs:\nSystem.Data.DeletedRowInaccessibleException occurred\n  Message=\"Deleted row information cannot be accessed through the row.\"\n  Source=\"System.Data\"\n \nIt appears that the datasource does not take into account that deleting a row leads to a RowChanged which causes an RaiseDataChanged to be invoked while the TableDataSource does not provide an enumerator over the 'non-deleted' rows only.",
+    "LastUpdatedDate": "2013-02-21T17:36:57.483-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2008-12-22T02:44:52.097-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Deleting rows in table used as TableDataSource causes DeletedRowInaccessibleException",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8599
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2457,
+      "FileName": "WpfApplication3.zip",
+      "DownloadUrl": ".\\2457"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi!\r\n\r\nThan you very much for your bug reports, they are very important for us!\r\n\r\nCan you please upload here the smallest code that can reproduce the case you're speaking about?",
+      "PostedDate": "2008-12-22T10:01:04.92-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi,\r\n\r\nThe reproduction scenario is essentially performing consecutive delete operations on the table interspersed with calls to DataTable.AcceptChanges.\r\nAttached you find a small app to reproduce the problem. The Delete rows twice button causes the exception to be thrown in the lambda expression supplied as the YMapping for the line graph with the TableDataSource attached to the given table. I hope this helps. \r\n\r\nI also found a possible fix, which is add the following override to the TableDataSource class\r\n        public override IPointEnumerator GetEnumerator()\r\n        {\r\n            IEnumerable<DataRow> actives =\r\n                from DataRow row in Data\r\n                where row.RowState != DataRowState.Deleted\r\n                select row;\r\n            return new EnumerablePointEnumerator<DataRow>(this, actives.GetEnumerator());\r\n        }\r\nBut you can probably come up with a better solution.\r\nI hope this helps.\r\n",
+      "PostedDate": "2008-12-23T00:58:40.1-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-23T00:58:41.053-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:57.483-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

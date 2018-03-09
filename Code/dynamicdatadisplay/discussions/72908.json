@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "249034",
+    "ThreadId": "72908",
+    "Html": "<p>Hi,</p>\r\n<p>I&nbsp;want to change the label and ticks when I zoomIn to a certain level. And change back when I make the zoom out.</p>\r\n<p>I already made this with restrictions but it have some drawbacks.</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-10-23T08:52:53.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251986",
+    "ThreadId": "72908",
+    "Html": "<p>Hi Rafael,</p>\r\n<p>Sorry, but I don't understand what do you want. Can you please give some more explanations, or post a screenshot, or post a repro.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-31T10:42:38.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252020",
+    "ThreadId": "72908",
+    "Html": "<p>I have a GenericLocationalLabelProvider and GenericLocationalTicksProvider with Units as labels, when I zoomIn I want to show my sub-units.</p>\r\n<p>Like the dateTimeAxis, when I zoomIn it changes from day to hour for example.</p>\r\n<p>But I dont have several LabelProviders like in DateTime. There is a way to do this?</p>",
+    "PostedDate": "2009-10-31T13:30:09.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

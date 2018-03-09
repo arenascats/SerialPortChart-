@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello !\n\nI would to creat an Vertical Line and a DraggablePoint to show an Y Value for an X Value of an chart...\n\nI search everywhere but i don't find a methode who return Y Value for an X Value...\n\nCan you help me ? \n\nRegards",
+    "LastUpdatedDate": "2015-05-19T10:21:05.683-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2013-01-24T02:43:53.757-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "LineCursor Vertical Line",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19238
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I can try to show you for the vertical line.\r\n\r\nSuppose you have a chartplotter, named plotter, declared in your xaml file, with an event for the mouse:\n```\n<c:ChartPlotter Name=\"plotter\"  MouseLeftButtonDown=\"plotter_MouseLeftButtonDown\">\n```\r\n\r\nIn your code, you can enter this :\n```\npublic partial class Window1 : Window\n\t{\n       public CursorCoordinateGraph mouseTrack { get;set;}\n       public Point mouseTrackX { get; set; }\n       public int d { get; set; }\n\t\tpublic Window1()\n\t\t{\n\t\t\tInitializeComponent();\n                       CursorCoordinateGraph mouseTrack = new CursorCoordinateGraph();\n                      mouseTrackX = mouseTrack.Position;\n                      plotter.Children.Add(mouseTrack);\n                      d = plotter.Children.Count;\n                     mouseTrack. .ShowHorizontalLine = false;\n                     mouseTrack.ShowVerticalLine = true;\n\t\t}\n```\r\n\r\nThen you can add this for the mouse event\r\n\r\n```\n public void plotter_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)\n        {\n            \n            var s = sender as ChartPlotter;\n            var sc = s.Children[d-1] as CursorCoordinateGraph;\n           mouseTrackX = sc.Position;\n           var transform = plotter.Viewport.Transform;\n           Point mousePosInData = mouseTrackX.ScreenToData(transform);\n           // textBlock1.Text = Convert.ToString(mousePosInData);\n            var line = new VerticalLine();\n            line.Value= mousePosInData.X;\n            plotter.Children.Add(line);\n        }\n```\nIt should add a vertical line at the position of the mouse click.\nX and Y positions are given by the Point mousePosInData (mousePosInDat.X and mousePosInDat.Y)\n",
+      "PostedDate": "2015-05-19T10:21:05.683-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

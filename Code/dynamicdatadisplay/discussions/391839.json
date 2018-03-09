@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "899839",
+    "ThreadId": "391839",
+    "Html": "\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">class</span> Myclass{\r\n\r\n     <span style=\"color:blue\">private</span> ObservableDataSource&lt;Point&gt; dataSource = <span style=\"color:blue\">new</span> ObservableDataSource&lt;Point&gt;();\r\n     <span style=\"color:blue\">private</span> System.Timers.Timer graphicalSpeedUpdater;\r\n\r\n     <span style=\"color:blue\">public</span> Myclass()\r\n     {\r\n           graphicalSpeedUpdater = <span style=\"color:blue\">new</span> System.Timers.Timer();\r\n           graphicalSpeedUpdater.Elapsed &#43;= <span style=\"color:blue\">new</span> ElapsedEventHandler(graphicalSpeedUpdaterOnTimedEvent);\r\n           graphicalSpeedUpdater.Interval = 1000;\r\n           graphicalSpeedUpdater.Enabled = <span style=\"color:blue\">true</span>;\r\n           plotter.AddLineGraph(dataSource, Colors.Green, 2, <span style=\"color:#a31515\">&quot;Speed&quot;</span>);\r\n     }\r\n\r\n     <span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> graphicalSpeedUpdaterOnTimedEvent(<span style=\"color:blue\">object</span> source, ElapsedEventArgs e)\r\n\r\n     {\r\n         <span style=\"color:blue\">double</span> x = graph_x&#43;&#43;;\r\n         <span style=\"color:blue\">double</span> y = fileItemList[0].curSpeed_l;\r\n         Point point = <span style=\"color:blue\">new</span> Point(x, y);\r\n         dataSource.AppendAsync(<span style=\"color:blue\">base</span>.Dispatcher, point);\r\n     }\r\n\r\n     <span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> resetChartButton_Click(<span style=\"color:blue\">object</span> sender, RoutedEventArgs e)\r\n     {\r\n          <span style=\"color:green\">/*\r\n         Here i want the current graph line shows absolute new data.... \r\n         To achieve this, one way i came up with is to clear all the points in dataSource and add new points into it so that the old graph shows the new information. but i was stuck since i can not find proper methods in dataSource, and i also tried :\r\n         dataSource  = new ObservableDataSource&lt;Point&gt;();\r\nBut it doesn't work :(\r\n         Anyone would be so kind to help me? THANKS!!!\r\n        */</span>\r\n     }\r\n}\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2012-08-16T02:45:59.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "920463",
+    "ThreadId": "391839",
+    "Html": "<pre><span style=\"color: #0000ff;\">plotter.AddLineGraph</span> returns a <span style=\"color: #0000ff;\">LineGraph</span> hold to that (say data member g) then when you want to reset first remove the graph from the plotter <br />like so: plotter.Children.Remove(g); now you can start new dataSource with <span style=\"color: #0000ff;\">dataSource  = new ObservableDataSource&lt;Point&gt;();</span><br /><pre><span style=\"color: green;\"><br /></span></pre>\r\n</pre>",
+    "PostedDate": "2012-10-02T02:44:58.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "213440",
+    "ThreadId": "62863",
+    "Html": "<p>Hi everyone,</p>\r\n<p>Can we expect the same performance (mainly working with a large amount of data) between dynamic data display and the chart control of the new release of WPF toolkit hosted on codeplex (http://wpf.codeplex.com/)???</p>\r\n<p>&nbsp;</p>\r\n<p>Kamel</p>",
+    "PostedDate": "2009-07-18T14:27:50.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213442",
+    "ThreadId": "62863",
+    "Html": "<p>...</p>\r\n<p>I think I had part of my answer with this discussion (mainly.. NO!):</p>\r\n<p>http://wpf.codeplex.com/Thread/View.aspx?ThreadId=61399</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail, please fell free to make any comment!</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Kamel</p>",
+    "PostedDate": "2009-07-18T14:34:31.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

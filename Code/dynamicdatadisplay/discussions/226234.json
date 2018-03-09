@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "489782",
+    "ThreadId": "226234",
+    "Html": "<div id=\"_mcePaste\" style=\"width:1px;height:1px;overflow:hidden;top:0px;left:-10000px\">﻿</div>\r\n<p>The FakePointList class calls its Calc() method in its constructor to set up some internal variables.</p>\r\n<p>I noticed that the private variable&nbsp;count, used to back the public Count variable is calculated from:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>\tcount = last - first;\r\n\r\n</pre>\r\n</div>\r\n<p>where last is the index of the last point and first is the index of the first point.</p>\r\n<p>Shouldn't it be</p>\r\n<pre>\tcount = last - first + 1;</pre>\r\n<pre>\r\n</pre>",
+    "PostedDate": "2010-09-06T09:26:35.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

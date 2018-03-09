@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "138805",
+    "ThreadId": "41826",
+    "Html": "Hi,<div><br></div><div>It would be immensely useful to me to be able to highlight ranges within a graph with a block background change, either horizontally or vertically.</div><div><br></div><div>Is this something you might consider adding in a future release? Is there some way I might achieve this at the moment?</div><div><br></div><div>Regards,</div><div><br></div><div>Nick :)</div><div><br></div><div>PS: Thanks for this most excellent library!</div>",
+    "PostedDate": "2008-12-08T17:05:14.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138939",
+    "ThreadId": "41826",
+    "Html": "Second that. Nice graph, but the ability to somehow show that a value is within limit would be welcomed. For me I am showing a height measurement over time and would like to show the tolerances<br>\r\n",
+    "PostedDate": "2008-12-09T06:55:05.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139401",
+    "ThreadId": "41826",
+    "Html": "Hi!<br>\r\n<br>\r\nAre you speaking about something like this:<br>\r\n<a href=\"http://thecentury.googlepages.com/D3-CurrencyExchangeSample-Highlightr.png\">http://thecentury.googlepages.com/D3-CurrencyExchangeSample-Highlightr.png</a><br>\r\nDo you need only horizontal or vertical lines, or you need background filling between lines, too?<br>\r\n<br>\r\nIf I've understood you wrongly, please explain me, maybe also in sketch, what do you mean. <br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-10T11:09:31.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139413",
+    "ThreadId": "41826",
+    "Html": "Yes, exactly like that :)<div><br></div><div>The background would need filling between the lines to be of use.</div><div><br></div><div>Hypothetically, I might want to highlight, in one plane, ranges that meet certain criteria with an orange background and others that meet another set of criteria in blue (and so on...)</div><div><br></div><div>Thanks,</div><div><br></div><div>Nick</div>",
+    "PostedDate": "2008-12-10T11:54:22.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139414",
+    "ThreadId": "41826",
+    "Html": "Can you, please, create a picture of this:<br>\r\n<blockquote>Hypothetically, I might want to highlight, in one plane, ranges that\r\nmeet certain criteria with an orange background and other that meet\r\nanother set of criteria in blue (and so on...)<br>\r\n</blockquote>I suppose, we'll include functionality to create such lines in the next release.<br>\r\nMaybe, these lines will be ready earlier than next release, - then I'll simply send them to you. <br>\r\n<br>\r\n\r\n",
+    "PostedDate": "2008-12-10T11:59:20.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139417",
+    "ThreadId": "41826",
+    "Html": "Ok, will do :)<div><br></div><div>In abstract, all I want to achieve is the ability to highlight areas (ranges) that are algorithmically determined to be &quot;of interest&quot; to the viewer.</div><div><br></div><div>Just thinking on my feet, rather than only being in one plane (off the x axis or y axis),  it would be highly desirable to be able to specify ranges that can run to positive and/or negative infinity in both x and y, the graph control then just rendering to the bounds to the viewable area appropriately.</div>",
+    "PostedDate": "2008-12-10T12:06:49.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140312",
+    "ThreadId": "41826",
+    "Html": "Hi,<br>\r\n<br>\r\nAs, promised, link to an example of what I would like to see/achieve:<a href=\"http://docs.google.com/Doc?id=dfbww44_21jsxgqmhj\"><br>\r\n<br>\r\nHighlight Ranges Example</a><br>\r\n<br>\r\nBest regards,<br>\r\n<br>\r\nNick\r\n",
+    "PostedDate": "2008-12-13T14:46:56.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140688",
+    "ThreadId": "41826",
+    "Html": "Hi, Nick!<br>\r\n<br>\r\nYour nice picture proved, that I understood your needs right.<br>\r\nLines and range highlights are ready now, and after some code clean-up and improvement we'll release D3 v0.2.1.<br>\r\n<br>\r\nStay tuned)\r\n",
+    "PostedDate": "2008-12-15T11:44:20.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144233",
+    "ThreadId": "41826",
+    "Html": "Horizontal and vertical lines, segments, rectangles are now part of <a href=\"http://www.codeplex.com/dynamicdatadisplay/Release/ProjectReleases.aspx?ReleaseId=21346\">DynamicDataDisplay v 0.2.1</a>, so you can use them.<br>\r\n",
+    "PostedDate": "2009-01-04T10:32:18.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145875",
+    "ThreadId": "41826",
+    "Html": "Hey,<br>\r\n<br>\r\nI've only just noticed that you've released a new version with this in.<br>\r\n<br>\r\nAwesome!!! :)<br>\r\n<br>\r\nI'll have a play tomorrow. Exciting!<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-09T19:14:49.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145917",
+    "ThreadId": "41826",
+    "Html": "Sorry for not notifying you :)<br>\r\nThanks for your good reference!<br>\r\n<br>\r\nMikhail.<br>\r\n",
+    "PostedDate": "2009-01-10T05:01:36.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

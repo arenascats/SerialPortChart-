@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "211506",
+    "ThreadId": "62313",
+    "Html": "<p>Hi D3 friends</p>\r\n<p>I find the project Dynamic Data Display is a very interesting one. Since I am new in WPF, I would like to ask you if we can use D3 to develop a intensity chart. In an intensity chart the value pair (X,Y) is represented as a pixel (or a small rectangle) with the value Y converted to a color at the position X.</p>\r\n<p>I have uploaded a pdf file illustrating the intensity chart at http://cid-7d30e9f415751779.skydrive.live.com/self.aspx/DynamicDataDisplay/IntensityGraph.pdf</p>\r\n<p>Regards</p>\r\n<p>HDN</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><img alt=\"\"></p>\r\n<p><img alt=\"\"><img alt=\"\"></p>",
+    "PostedDate": "2009-07-13T14:59:02.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211793",
+    "ThreadId": "62313",
+    "Html": "<p>Hi,</p>\r\n<p>Seems like the right side of that picture is a projection of 3D surface build on some grid. Currently DynamicDataDisplay doesnot support three-dimensions graphics, and time when this support will come is indefinite.</p>\r\n<p>You can try to write your own control for displying such a surface on a WPF - there are rather many tutorials about how to do it.</p>\r\n<p>The left part, where (as I understood) section of 2d surface is drawn, is easier to do - you should only implement a logic which will build 1D data series by interpolating x and y values of surface.</p>\r\n<p>&nbsp;</p>\r\n<p>I wish you luck in doing this, if you need some help on how to do it using D3 - you are welcome)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-14T10:47:01.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211855",
+    "ThreadId": "62313",
+    "Html": "<p>Hi</p>\r\n<p>It seems that the document IntensityGraph.pdf, that I made, has caused some misunderstandings.</p>\r\n<p>Assume that we have the array with n pairs: (x1,y1), (x2,y2), (x3,y3), (x4,y4), (x5,y5),..., (xn,yn)</p>\r\n<p>What CharPlotter does is it makes DrawLine() gets called to draw line from (x1,y1) to (x2,y2) and then from (x2,y2) to (x3,y3), ...</p>\r\n<p>What I want to do is to extend CharPlotter so that</p>\r\n<p>for (x1,y1): a small rectangle at (x1,1*PixelHeight,PixelWidth, PixelHeight) gets filled with the color calculated from y1</p>\r\n<p>for (x2,y2): a small rectangle at (x2,2*PixelHeight,PixelWidth, PixelHeight) gets filled with the color calculated from y2</p>\r\n<p>for (x3,y3): a small rectangle at (x3,3*PixelHeight,PixelWidth, PixelHeight) gets filled with the color calculated from y3</p>\r\n<p>With</p>\r\n<p>PixelWidth = LenghtOfAxisX/n</p>\r\n<p>PixelHeight = LenghtOfAxisY/n</p>\r\n<p>and x1,..,xn must be &lt;= LenghtOfAxisX</p>\r\n<p>I think it is 2d drawing but using color to interpret the value of y along the x axis.</p>\r\n<p>Long long time ago under MFC I can call SetPixel()&nbsp; to get the job done but under WPF, I have a lot to study :-)</p>\r\n<p>I am studying DrawingVisual with DrawRectangle() and try to integrate them into D3 but am only a novice !</p>\r\n<p>Could you help me to answer some questions:</p>\r\n<p>1. Where does CharPlotter call DrawLine() to draw the line ? in which class ?</p>\r\n<p>HDN</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-14T14:16:21.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212416",
+    "ThreadId": "62313",
+    "Html": "<p>Hi,</p>\r\n<p>There is what I've created for you - <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/IntensitySample.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/IntensitySample.zip</a></p>\r\n<p><a href=\"http://picasaweb.google.com/lh/photo/lyXuxFALLb8mVbnLqe4urA?feat=embedwebsite\"><img src=\"http://lh5.ggpht.com/_eku9Tmpgsbc/Sl60mdhNg7I/AAAAAAAAA38/LeFhe48ZNuY/s800/IntensitySample for Codeplex.png\" alt=\"\"></a></p>\r\n<p>Try to drag the small black circle in the middle of color surface.</p>\r\n<p>I hope this is a good start application for building you own one)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-15T21:50:47.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212749",
+    "ThreadId": "62313",
+    "Html": "<p>Thank so much TheCentury.</p>\r\n<p>It is that what I want to do with D3.&nbsp; I will study the code that you give me and tell you about my success with D3.</p>\r\n<p>I have another question: how to get the latest code of the library D3. There is a lot of changes of the version that you just give me and the released version v0.3. Some samples from version v0.3 can not be compiled with the version that you give me. e.g. &quot;DynamicDataDisplay.Maps&quot;, &quot;DynamicDataDisplay.Coastline&quot;, &quot;MercatorShaderMapSampleApp&quot;.</p>\r\n<p>Regards</p>\r\n<p>&nbsp;</p>\r\n<p>HDNguyen</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-16T13:28:10.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214378",
+    "ThreadId": "62313",
+    "Html": "<p>Hi,</p>\r\n<p>I'll try to upload our current development version into Sources here at codeplex. When it's done, I' notify you.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-21T08:40:48.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214666",
+    "ThreadId": "62313",
+    "Html": "<p>Hi,</p>\r\n<p>As I have promised, I've uploaded the latest development source code to <a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx\">http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx</a>&nbsp;- it is in the latest change set, in 'Nightly' folder.</p>\r\n<p>I'm going to continue uploading such development versions in the future, too.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-22T01:02:26.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

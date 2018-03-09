@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "897214",
+    "ThreadId": "390781",
+    "Html": "\r\n<p>Hello all!</p>\r\n<p>I am working on a project that leverages D3 to display some plots based upon items containing many pieces of data.</p>\r\n<p>When we increase the number of items, from say, 5 -&gt; 200, slowing our app down quite a bit, Plotter.CreateVisualProxy throws the InvalidOperationException, saying &quot;Wrong state of visual bindings&quot;.</p>\r\n<p>&nbsp;</p>\r\n<p>I was hoping someone could shed some light on this exception as to</p>\r\n<p>1. Why its thrown</p>\r\n<p>2. Possible reasons for how it could be thrown when working with a large enough data set to slow down the application</p>\r\n<p>3. Tips to approach this debugging, as I am currently looking around the documentation for more information as I know very little of D3.</p>\r\n<p>Thank you!</p>\r\n",
+    "PostedDate": "2012-08-08T13:46:42.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

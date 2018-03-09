@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "551186",
+    "ThreadId": "242229",
+    "Html": "\r\n<p>I am using D3 v0.3. I&nbsp; am drawing a <em>LineGraph </em>inside a WPF window using\r\n<em>ChartPlotter</em>. <strong>When I close this window how should I clean up&nbsp;the resources used by ChartPlotter?\r\n</strong>If I look at the heap, I see collections of <span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\">\r\n<span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\"><span style=\"font-family:Consolas; color:#2b91af; font-size:x-small\">CircleElementPointMarker &amp; Context&nbsp;</span></span></span>on the heap and&nbsp;they keep on growing as and when\r\n I open/close window. Please let me know an exact way to clean up D3 ChartPlotter so that GC will be able to collect it.</p>\r\n<p>FYI, I am using following lines of code in <em>Window_closing :-</em></p>\r\n<p><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\">chartPlotter.Children.RemoveAll(<span style=\"color:blue\">typeof</span>(Object));\r\n<br>\r\nchartPlotter.Content = <span style=\"color:blue\">null</span>;<br>\r\n</span></span></span></p>\r\n<p><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></p>\r\n<p>&nbsp;</p>\r\n</span></span></span>\r\n<p>&nbsp;</p>\r\n</span></span></span></span></span></span>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n",
+    "PostedDate": "2011-01-18T04:54:13.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

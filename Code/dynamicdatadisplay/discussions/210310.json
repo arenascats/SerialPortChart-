@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "434623",
+    "ThreadId": "210310",
+    "Html": "<p>I like the D3 project a lot, and wish to reference the dll and call the classes in my code. However I get confused by the license term 3a.</p>\r\n<p>(A) Reciprocal Grants- For any file you distribute that contains code from the software (in source code or binary format), you must provide recipients the source code to that file along with a copy of this license, which license will govern that file. You may license other files that are entirely your own work and do not contain code from the software under any terms you choose.</p>\r\n<p>Does the binary call constitute &quot;contain&quot; and requires me to open source, if I need to distribute my compiled code?</p>\r\n<p>I know people here are not lawyers, but I wish to hear what other people thinks.</p>\r\n<p>Thank you all !</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-23T07:20:14.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434696",
+    "ThreadId": "210310",
+    "Html": "<p>Hi!</p>\r\n<p>Well, as for me (i'm a programmer, not lawyer:) ), you should distribute source code not for yours file, but for our file. But better you should consult your lawyers or lawyers of Microsoft.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-23T09:25:25.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

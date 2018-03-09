@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "532228",
+    "ThreadId": "237419",
+    "Html": "\r\n<p>Hi,&nbsp;</p>\r\n<p>&nbsp;I need to keep the width and height of my plotter equal. I am plotting an IsolineGraph, where the units and max/min values on the x and y axes are equal. So far, to solve this problem, I have been using a Viewbox with a Uniform Stretch, but a lot of\r\n font sizing issues come along with this.</p>\r\n<p>I have tried binding the Width/ actual width to the height /actual height of the graph with no success.</p>\r\n<p>Any suggestions?</p>\r\n<p>thanks......</p>\r\n",
+    "PostedDate": "2010-12-07T04:46:22.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

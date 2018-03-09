@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "163987",
+    "ThreadId": "49088",
+    "Html": "Hi,<br>\r\n<br>\r\n   Thanks for the great component. I am trying to extend the existing StockMarket Example to show the complete OHLC values. For this I am hoping to develop a custom Marker to represent the stock info as a OHLC bar or as a candlestick. Can someone please point me in the right direction? I am reading the code now. <br>\r\n<br>\r\nThanks<br>\r\nSrikanth<br>\r\n",
+    "PostedDate": "2009-03-03T10:59:56.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166744",
+    "ThreadId": "49088",
+    "Html": "I've been hacking around with DDD and created my own ControlPointMarker class<br>\r\n<br>\r\n<p>using System.Windows;<br>\r\nusing System;<br>\r\nusing System.Windows.Controls;</p>\r\n<p>namespace Microsoft.Research.DynamicDataDisplay.PointMarkers<br>\r\n{<br>\r\n /// &lt;summary&gt;Provides elements that represent markers along the graph&lt;/summary&gt;<br>\r\n    public abstract class ControlPointMarker : ElementPointMarker<br>\r\n    {<br>\r\n        /// &lt;summary&gt;Creates marker element at specified point&lt;/summary&gt;<br>\r\n        /// &lt;returns&gt;UIElement representing marker&lt;/returns&gt;<br>\r\n        public abstract override UIElement CreateMarker();<br>\r\n        public abstract Control CreateControlMarker();</p>\r\n<p>        /// &lt;summary&gt;Moves specified marker so its center is located at specified screen point&lt;/summary&gt;<br>\r\n        /// &lt;param name=&quot;marker&quot;&gt;UIElement created using CreateMarker&lt;/param&gt;<br>\r\n        /// &lt;param name=&quot;screenPoint&quot;&gt;Point to center element around&lt;/param&gt;<br>\r\n        public abstract void SetPosition(Control marker, Point screenPoint);</p>\r\n<p>        public override void SetPosition(UIElement marker, Point screenPoint)<br>\r\n        {<br>\r\n            Control controlMarker = marker as Control;</p>\r\n<p>            if (marker == null) throw new ArgumentException(&quot;Expected a Control&quot;);<br>\r\n            this.SetPosition(controlMarker, screenPoint);<br>\r\n        }<br>\r\n    }<br>\r\n}<br>\r\n<br>\r\nI've then subclassed from that to give me a Template that I can use</p>\r\n<p>using System;<br>\r\nusing System.Windows;<br>\r\nusing System.Windows.Media;<br>\r\nusing System.Windows.Controls;<br>\r\nusing System.Windows.Input;</p>\r\n<p>namespace Microsoft.Research.DynamicDataDisplay.PointMarkers<br>\r\n{<br>\r\n    //TODO re-write from ground up as proper control based marker<br>\r\n    /// &lt;summary&gt;Abstract class that extends ElementPointMarker and contains<br>\r\n    /// marker property as Pen, Brush and Size&lt;/summary&gt;<br>\r\n public abstract class VisualControlPointMarker : ControlPointMarker {</p>\r\n<p>        public EventHandler&lt;MouseEventArgs&gt; MouseEnter;<br>\r\n        public EventHandler&lt;MouseEventArgs&gt; MouseLeave;<br>\r\n        <br>\r\n        public ControlTemplate Template<br>\r\n        {<br>\r\n            get { return (ControlTemplate)GetValue(TemplateProperty); }<br>\r\n            set { SetValue(TemplateProperty, value); }<br>\r\n        }</p>\r\n<p>        public static readonly DependencyProperty TemplateProperty =<br>\r\n            DependencyProperty.Register(<br>\r\n              &quot;Template&quot;,<br>\r\n              typeof(ControlTemplate),<br>\r\n              typeof(VisualControlPointMarker));</p>\r\n<p>        public override Control CreateControlMarker()<br>\r\n        {<br>\r\n            Control newMarker = (Control)CreateMarker();</p>\r\n<p>            if (this.Template != null)<br>\r\n                newMarker.Template = this.Template;<br>\r\n            return (newMarker);<br>\r\n        }<br>\r\n }<br>\r\n}<br>\r\n<br>\r\nBy applying the template, when you create the marker you can get it to look exactly how you want, and leverage the power of WPF. I'm not sure if this is the best approach, but it does work.</p>\r\n",
+    "PostedDate": "2009-03-10T22:09:05.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167061",
+    "ThreadId": "49088",
+    "Html": "Hmm.... That is interesting. What I actually wanted was to display something line the Open-High-Low-Close graphs that are shown for stock makets. In that case, the Marker shown for each point in time changes shape based on the OHLC prices. I will give this a shot.<br>\r\n<br>\r\nThank\r\n",
+    "PostedDate": "2009-03-11T13:26:13.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167123",
+    "ThreadId": "49088",
+    "Html": "<span id=UniqueID1236812493304>To acheive the OHLC garph marker, there are a number of steps beyond what I've posted<br>\r\n <br>\r\n1) Create a DataTemplate to display the data how you want<br>\r\n2) Create an underlying data class for the OHLC data, and bind that to the template<br>\r\n3) Integrate that Template inot DDD<br>\r\n4) Within DDD set the DataContext of each marker appropriately<br>\r\n <br>\r\nI'd be interested in input from the DDD team as to whether this feature is going into the build?</span>\r\n",
+    "PostedDate": "2009-03-11T16:03:27.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172683",
+    "ThreadId": "49088",
+    "Html": "Hi, MrTelly!<div><br></div><div>You've described method of creating markers, we are going to develop, and you'll probably get it in next release of DynamicDataDisplay.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-03-27T02:33:27.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172955",
+    "ThreadId": "49088",
+    "Html": "awsome!!<br><br>\r\n<div>On Fri, Mar 27, 2009 at 4:33 AM, Thecentury <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"padding-left:1ex;margin:0px 0px 0px 0.8ex;border-left:#ccc 1px solid\">\r\n<div>\r\n<p>From: Thecentury</p>\r\n<div>Hi, MrTelly! \r\n<div><br></div>\r\n<div>You've described method of creating markers, we are going to develop, and you'll probably get it in next release of DynamicDataDisplay.</div>\r\n<div><br></div>\r\n<div>Mikhail.</div></div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=49088&ANCHOR#Post172683\">full discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:49088]\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/49088\">unsubscribe</a> on codePlex.com.</p>\r\n\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com/\">codeplex.com</a></p></div></div></blockquote>\r\n</div><br><br clear=all><br>-- <br>There are only 10 types of people in this world. Those who can read binary and those who can't.<br>",
+    "PostedDate": "2009-03-27T15:45:29.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209262",
+    "ThreadId": "49088",
+    "Html": "<p>When will the next version of DDD come out? Will it have candlestick diagrams built in or will we need to extend DDD ourselves?</p>\r\n<p>Thanks,</p>\r\n<p>Fredrik</p>",
+    "PostedDate": "2009-07-06T20:02:47.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

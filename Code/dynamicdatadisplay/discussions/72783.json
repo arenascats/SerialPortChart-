@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "248573",
+    "ThreadId": "72783",
+    "Html": "<p>Hello,</p>\r\n<p>Is it possible to draw a Line Graph to the Plotter where the Data is not connected but <strong>belong to the same Line</strong> like as shown below:</p>\r\n<p><a href=\"http://s1014.photobucket.com/albums/af262/quinlivan/?action=view&current=disconnected.jpg\"><img src=\"http://i1014.photobucket.com/albums/af262/quinlivan/disconnected.jpg\" border=0 alt=\"Disconnected Graph\"></a></p>\r\n<p>What I am getting is - because all points are needed in the plotter. Is there any way to &quot;turn off&quot; the connection between points?</p>\r\n<p>&nbsp;</p>\r\n<p><a href=\"http://s1014.photobucket.com/albums/af262/quinlivan/?action=view&current=disconnected2.jpg\"><img src=\"http://i1014.photobucket.com/albums/af262/quinlivan/disconnected2.jpg\" border=0 alt=\"Disconnected 2\"></a></p>",
+    "PostedDate": "2009-10-22T07:07:42.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248619",
+    "ThreadId": "72783",
+    "Html": "<p>Hi,</p>\r\n<p>currently it is not possible, we have not implemented yet support for missing value in line charts, it is only in long-term plans.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-22T08:37:05.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248627",
+    "ThreadId": "72783",
+    "Html": "<p>You can reach this visual display manually - filter your data and split it into portions that will be each a dataSource for one lineGraph, so you will have as many lineGraphs as you need.</p>",
+    "PostedDate": "2009-10-22T08:47:28.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252348",
+    "ThreadId": "72783",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>thecentury wrote:</strong><br>\r\n<p>You can reach this visual display manually - filter your data and split it into portions that will be each a dataSource for one lineGraph, so you will have as many lineGraphs as you need.</p>\r\n</blockquote>\r\n<p>&nbsp;How do I&nbsp;do that? I have the following - and want to add ds2?</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>      xs = Enumerable.Range(0, count).Select(i =&gt; (<span style=\"color:Blue\">double</span>)i).ToArray();\r\n\r\n      y1 = Enumerable.Range(0, count).Select(i =&gt; 1 + rnd.NextDouble()).ToArray();\r\n      y2 = Enumerable.Range(0, count).Select(i =&gt; 2 + rnd.NextDouble()).ToArray();\r\n\r\n      <span style=\"color:Blue\">var</span> xds = xs.AsXDataSource();\r\n      <span style=\"color:Blue\">var</span> ds1 = xds.Join(y1.AsYDataSource());\r\n      <span style=\"color:Blue\">var</span> ds2 = xds.Join(y2.AsYDataSource());\r\n\r\n      LineGraph thisLine = <span style=\"color:Blue\">new</span> LineGraph { DataSource = ds1, Stroke = ColorHelper.RandomBrush };\r\n      plotter.Children.Add(thisLine);\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;Can I add another DataSource to the Line?</p>",
+    "PostedDate": "2009-11-02T03:04:13.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252647",
+    "ThreadId": "72783",
+    "Html": "<p>Hi!</p>\r\n<p>You have to create one LineChart for one non-breaking piece of line, so if there is one line break, you should create two line charts with different dataSources.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-02T20:10:55.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252755",
+    "ThreadId": "72783",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>thecentury wrote:</strong><br>\r\n<p>Hi!</p>\r\n<p>You have to create one LineChart for one non-breaking piece of line, so if there is one line break, you should create two line charts with different dataSources.</p>\r\n<p>Mikhail.</p>\r\n</blockquote>\r\n<p>&nbsp;Thanks Mikhail, but my issue is that both lines belong to the same set - if I create two lines, I get two 'Legend' entries.</p>",
+    "PostedDate": "2009-11-03T03:58:50.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252762",
+    "ThreadId": "72783",
+    "Html": "<p>Hi,</p>\r\n<p>I have made some changes into the source code of Legend class, which will be available in the next changset, that enables you to write</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Legend.SetVisibleInLegend(line, false);</div>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Legend.SetVisibleInLegend(line, <span style=\"color:Blue\">false</span>);\r\n\r\n</pre>\r\n</div>\r\n<p>to disable chart being shown in the Legend.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-03T04:17:19.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

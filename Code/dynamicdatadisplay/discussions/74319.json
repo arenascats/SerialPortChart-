@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "254242",
+    "ThreadId": "74319",
+    "Html": "<p>Hello,</p>\r\n<p>I am trying to decide whether to replace my wpf toolkit charts with the D3 ChartPlotter since I need the extra performance.&nbsp; In my application I have 43 datasources that I am plotting.&nbsp; The problem is, with so many datasources on 1 graph the legend becomes quite large.&nbsp; In the WPF Toolkit chart the legend is beside the actual charting area which works nice for me, and it is also scrollable.&nbsp; My question is how can I do something similar with this type of chart?&nbsp; I would like the legend to be beside the chart are, not on top of it.</p>\r\n<p>Another question (sorry):</p>\r\n<p>My current DataSource is an 'ObservableCollection' which is updated asyncronously.&nbsp; Does the datasource of the graph have to be of type 'ObservableDataSource'?&nbsp; In order to do that I would have to maintain to different sources or is there a way to use a converter?</p>\r\n<p>So far this seems like a great option, hopefully It will work for me.</p>\r\n<p>Kevin</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-06T06:31:49.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "254788",
+    "ThreadId": "74319",
+    "Html": "<p>Hi Kevin,</p>\r\n<p>I've created a sample for you with making legend be beside chartPlotter and become scrollable. It is a little bit ugly, but it works - we are developing new legend now, which will support such functionality out-of-box. Sample is called <strong>CustomLegendPosition,</strong>&nbsp;and will be in Source code page, in the latest (not uploaded yet) changeset, in Nigtly/DynamicDataDisplay.sln/DevSamples solution folder.</p>\r\n<p>&nbsp;</p>\r\n<p>The answer for the second question - currently we do not provide a set of converters for making creating dataSource easier. You can use a set of extension methods .AsDataSource(), which becomes available when you have included Microsoft.Reseach.DynamicDataDisplay.DataSources.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-08T10:36:55.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255068",
+    "ThreadId": "74319",
+    "Html": "<p>Mikhail,</p>\r\n<p>Thanks For your sample and response.&nbsp; Approximately when will this new version of d3 be released with the new legend?&nbsp; Also, your sample worked just fine and was what I was looking for, however I couldn't seem to change the Background, Border, or Foreground of the legend.&nbsp; I read in another discussion you can modify Legend.ContentPanel, but it seems to have no effect.</p>\r\n<p>Side Note:</p>\r\n<p>My company does quite a bit of graphing for engineering data, so I will try to keep you informed on what we think makes a great graphing package (hopefully it will be usefull).&nbsp; We have wrote our own in the past, but have not yet done so in WPF.&nbsp; Perhaps we never will need to!&nbsp;</p>\r\n<p>Kevin</p>",
+    "PostedDate": "2009-11-09T07:09:50.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256775",
+    "ThreadId": "74319",
+    "Html": "<p>Anyone?</p>",
+    "PostedDate": "2009-11-13T07:21:33.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256858",
+    "ThreadId": "74319",
+    "Html": "<p>Hi Kevin,</p>\r\n<p>I'i is difficult to me to name precise date, but maybe release can happen in January-February of the next year - I don't want to give unrealizable promises)</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-13T10:24:36.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

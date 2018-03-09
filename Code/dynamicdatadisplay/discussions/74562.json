@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "255159",
+    "ThreadId": "74562",
+    "Html": "<p>Hi, is it possible to create a linechart with a fill color, and a opacity?&nbsp;</p>\r\n<p>If this is not supported out of the box, will the architecture all this to be implimented?</p>\r\n<p>Thanks</p>\r\n<p>Craig.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-09T10:27:28.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255350",
+    "ThreadId": "74562",
+    "Html": "<p>Hi Craig,</p>\r\n<p>if you mean area chart, when some area below or between some line charts is filled with color, than currently we do not provide such chart out-of-box, though there are plans for its development.</p>\r\n<p>By now you can archive such chart by drawing a lot of line charts vertically so that their stroke color make fill, but this solution is not efficient at all.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-11-09T22:18:21.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "255351",
+    "ThreadId": "74562",
+    "Html": "<p>But if you meant line chart with transparent stroke color, this is supported - simply create a transparent color, than a SolidColorBrush of it, and assign this brush to Stroke property of LineChart.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-09T22:19:45.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "230354",
+    "ThreadId": "67781",
+    "Html": "<p>We will plat real data during running instrument.</p>\r\n<p>If run has not start yet, there is no data to plat. Open chart the Y-axis and X-axis range is set as 1</p>\r\n<p>How can we set the initial reasonable graph range even though we do not provide real data to plat yet?</p>\r\n<p>Such as Y-axis range is 1000 and X-axis range is 40.</p>\r\n<p>we set&nbsp; <span style=\"font-size:medium\">innerPlotter.SetVerticalTransform(0, 0, 1000, 40) in TwoIndependAxis example;</span></p>\r\n<p><span style=\"font-size:medium\">it does not work.</span></p>\r\n<p>Thx!</p>",
+    "PostedDate": "2009-09-02T11:56:39.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230453",
+    "ThreadId": "67781",
+    "Html": "<p>I think Jane is asking how can the initial axis ranges be specified to match, for example, the values used in the SetVerticalTransform, instead of starting out as [0, 1].&nbsp; That way the plotted data will not scale-to-fit as points are added.&nbsp; There are many contexts where the ranges are known <em>a priori</em> and should not change as the data is added.</p>",
+    "PostedDate": "2009-09-02T17:10:32.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233449",
+    "ThreadId": "67781",
+    "Html": "<p>Hi!</p>\r\n<p>You can set initial visible rectangle by the following code: plotter.Visible = new DataRect(xMin, yMin, width, height);</p>\r\n<p>You can also create DataRect by its other constructor overloads or by static method DataRect.Create(xMin, yMin, xMax. yMax);</p>\r\n<p>Since you've set a value to plotter.Visible (which is just a shortcut of plotter.Viewport.Visible), it is no longer in <em>FitToView&nbsp;</em>&nbsp;mode. To move Viewport back to FitToView mode, call plotter.Viewport.FitToView() method.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-11T00:49:11.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "186451",
+    "ThreadId": "55230",
+    "Html": "Hi,<br>\r\n<br>\r\nThank you very much for the support. DDD is providing all the basic needs fro my application and also I observerd the performance is good.<br>\r\nI need some more clarifications.<br>\r\n<br>\r\nWill this support <strong>BAR chart and Pie Chart<br>\r\n<br>\r\n</strong>Regards<br>\r\nRavi.\r\n",
+    "PostedDate": "2009-05-04T01:49:17.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186471",
+    "ThreadId": "55230",
+    "Html": "Hi Ravi,<div><br></div><div>Yes, DynamicDataDisplay will have bar and pie charts in future, though this does not correlate well with its main purpose - to visualize large amount of scientific data.</div><div><br></div><div>This feature will be available nearly in June or July.</div><div><br></div><div>Regards,</div><div>Mikhail.</div>",
+    "PostedDate": "2009-05-04T03:02:50.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "140317",
+    "ThreadId": "42243",
+    "Html": "<p>Hi,</p>\r\n<p>I would like to be able to place constraints on the plotter such that I can limit the minimum and/or maximum size of the value range that auto fit will operate on.<br>\r\n<br>\r\nFor example, in the following:<br>\r\n<br>\r\n<a href=\"http://docs.google.com/Doc?id=dfbww44_19dvf3cvgw\">http://docs.google.com/Doc?id=dfbww44_19dvf3cvgw</a><br>\r\n<br>\r\nOn the top graph, I would like to be able to constrain:<br>\r\n<br>\r\nThe maximum x range to be -60 to 0.<br>\r\nThe minimum y range to be 0 to 50.<br>\r\n<br>\r\nOn the bottom graph, I would like to be able to constrain:<br>\r\n<br>\r\nThe maximum x range to be -60 to 0.<br>\r\nThe maximum y range to be 0 to positive infinity.<br>\r\n<br>\r\nIf one or more data point values exceed a minimum for an axis, the graph would scale appropriately in that plane.<br>\r\nIf a data point exceeds the maximum for an axis, the graph would not scale past the maximum for that plane.<br>\r\n<br>\r\nCheers,<br>\r\n<br>\r\nNick</p>\r\n",
+    "PostedDate": "2008-12-13T15:32:26.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

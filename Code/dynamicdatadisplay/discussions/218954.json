@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "465553",
+    "ThreadId": "218954",
+    "Html": "<p>In the DevSamples &gt;&gt; Intensity Sample, is there a way to restrict the movement of the draggable point so it stays inside of the color map image? I have a similar application where the domain is set to the image size, so you can't pan outside of it. However, you can still drag the point outside and when you let go of the cursor it is lost there forever. How can I make sure it stays inside my bounds?</p>",
+    "PostedDate": "2010-07-09T11:29:26.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

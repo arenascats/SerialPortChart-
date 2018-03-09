@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "696084",
+    "ThreadId": "278910",
+    "Html": "<p>I'm attempting to graph live data. From everything I read, it seemed like D3 would be a good choice. I believe that I'm using the \"recommended\" version of D3.</p>\n<p>However, it lags terribly when it graphs the data. So much so that it freezes up the application very quickly. I'm only receiving 10 bytes of data at 1200 baud over serial. The data is converted to Int32s, and only three of those are being graphed (against  time, on three separate graphs).</p>\n<p>Entirely possible that my code is really, really slow. But I've also seen discussion posts where people have mentioned slowness as an issue.</p>\n<p>&nbsp;</p>\n<p>Thanks for any help.</p>\n<p>&nbsp;</p>\n<p>Edit:</p>\n<p>Second question, so I can use the nightly build. When I try to build the solution in the nightly, it gets errors:</p>\n<p>\n<pre>The type 'System.Threading.Tasks.Task' exists in both 'c:\\Program Files\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\mscorlib.dll' and<br />&nbsp;'c:\\Users\\Leah\\Downloads\\D3\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\lib\\System.Threading\\System.Threading.dll'    <br />C:\\Users\\Leah\\Downloads\\D3\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Common\\Auxiliary\\TaskExtensions.cs    18    48    DynamicDataDisplay</pre>\n</p>\n<p>I tried removing the reference in the nightly folder, but then a new error crops up (no definition for TaskContinuationKind). I have no idea what to do to fix this.</p>",
+    "PostedDate": "2011-11-09T12:11:05.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "698415",
+    "ThreadId": "278910",
+    "Html": "<p>Hi,<br /><br />I've tried D3 for real time plotting in several ways and it always get laggy...after some research, I have found many posts in several forums saying it can be one</p>\r\n<p>of the D3 weaknesses or even one from WPF...maybe you should try other plotting solutions like MSChart or ZedGraph (you can encapsulate it in a WPF aplication)...</p>\r\n<p>in any case you shoud keep your graphing code as clean and optimised as posible and try to use different data sources for history and new points...good luck!</p>\r\n<div id=\"gt-res-content\" class=\"almost_half_cell\"></div>",
+    "PostedDate": "2011-11-15T06:42:46.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "698472",
+    "ThreadId": "278910",
+    "Html": "<p>Turns out the majority of my code was fine. It was mostly just how I was storing the data points to be displayed (the MSDN magazine article about D3 - not the way to do things for live data). For the most part, I only need to record/display live data for about ~1 minute at a time. In one of the D3 examples I found a way of storing the data points that allows me to get the performance I need. Or, well, most of the performance.</p>\r\n<p>To my great pleasure, this code will only be needed for another 3 weeks or so, and then I can forget I ever wrote it. ;p</p>",
+    "PostedDate": "2011-11-15T08:20:40.77-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "701785",
+    "ThreadId": "278910",
+    "Html": "<p>lmworster, &nbsp;could you please tell me which example did you use? &nbsp;also, is there a link to MSDN article?</p>",
+    "PostedDate": "2011-11-22T06:59:34.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "701812",
+    "ThreadId": "278910",
+    "Html": "<p>Never mind about the link, i&nbsp;believe&nbsp;you you meant this one&nbsp;<a href=\"http://msdn.microsoft.com/en-us/magazine/ff714591.aspx\">http://msdn.microsoft.com/en-us/magazine/ff714591.aspx</a></p>\r\n<p>But if you could point to the example that would be great!</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2011-11-22T07:47:10.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "702078",
+    "ThreadId": "278910",
+    "Html": "<p>Yeah, that's the article.</p>\n<p>The example I mentioned is called \"DynamicPointAddSample.\" Its location is:&nbsp;dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\Samples\\Simple\\DynamicPointAddSample</p>\n<p><a href=\"http://pastebin.com/Tn9RHY2b\">http://pastebin.com/Tn9RHY2b</a> - pastebin of the relevant lines from my own code.</p>\n<p>&nbsp;</p>\n<p>Edit: Forgot to say, the pastebin code will be live for a month.</p>",
+    "PostedDate": "2011-11-22T16:54:38.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

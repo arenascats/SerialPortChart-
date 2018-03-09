@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "702001",
+    "ThreadId": "280472",
+    "Html": "\r\n<p>This is an awesome plotting control. Unfortunately, the lack of documentation makes it a challenge to use.</p>\r\n<p>I am plotting lines with data points in the range of 1.5E-8 to 1.9E-14. The &quot;larger&quot; values (around 1.5E-8) plot beautifully. However, the plots with values around 1.9E-14 are a straight line. I can zoom the axis down to 5E-12, but no further. Is there a\r\n limit on the scale the plots can zoom down to? Is there a way to overcome this restriction?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-11-22T13:41:02.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705000",
+    "ThreadId": "280472",
+    "Html": "<p>Since there has been no response, I've started looking at the code. With a lot of digging, I stumbled upon a RestrictionCollection object on the Viewport (Viewport2D.cs) that sets what appears to be a MinimalSizeRestriction of 1E-11. (Close to what I'm seeing. :) ) Since I am very new to this and really want to be a user not a developer, does anyone know why the restriction? It doesn't really seem necessary. Also, when the restriction is hit, the scaling/zooming gets all screwed up, especially with the&nbsp;FitToView method. Without changing the code and creating a new assembly, can I overwrite or modify this minimal restricition, assuming this is the culprit? Is there a property on the Viewport that I have not been able to find or named in a way that I don't understand that is what it does? Or, do I have access to the RestrictionCollection of the Viewport and can delete that minimal restrictrion? I feel I am on the right track, but if someone with more experience and can shead some light for me. I'd appreciate it. Just hoping to get some quick insights and to try to keep this thread visible until it is solved.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2011-11-29T14:24:42.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705419",
+    "ThreadId": "280472",
+    "Html": "<p>Here to report success! As reported previously, my huntch that the ﻿RestrictionCollection contained a item that limited the zoom was correct. And that RestrictionCollection is exposed in the Viewport. When removed, I can zoom very deep down. So, my problem is solved! The following is the code to remove it:</p>\r\n<p>﻿﻿﻿foreach (var item in plotter.Viewport.Restrictions)</p>\r\n<p>{</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; if (item.GetType().Name == \"MinimalSizeRestriction\")</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; {</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.ViewPort.Restrictions.Remove(item);</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>}</p>\r\n<p>Finally, the reason for the restriction (the only one applied by default) is that the scale on the axis is not defined at that fine a granularity (beyond the 1E-11). So, the scale just disappears.</p>",
+    "PostedDate": "2011-11-30T10:43:17.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

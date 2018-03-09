@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "234041",
+    "ThreadId": "68780",
+    "Html": "<p>Hello,</p>\r\n<p>I have been looking through the source code and samples and am very impressed by this control. However, getting a hold on how the control works and how I should start implementing it is fairly overwhelming.</p>\r\n<p>Just wondering if any of the more experienced users have any pointers for learning the ins and outs of the control (other than just going through the samples). Perhaps there is some extra documentation or a how to write up that I have overlooked?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2009-09-13T09:01:34.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234048",
+    "ThreadId": "68780",
+    "Html": "<p>Hi,</p>\r\n<p>To my knowledge the only documentation available explains you all the controls of d3, class by class (<a id=\"ctl00_ctl00_MasterContent_Content_ReleasePanelOrderingContainer_ReleaseFilesCtrl_FileList_ctl02_FileNameHyperLink\" tabindex=9 href=\"../Release/ProjectReleases.aspx?ReleaseId=26761#DownloadId=66891\">DynamicDataDisplay v0.3 Documentation</a>).</p>\r\n<p>However, for a beginner, the samples of the v0.2 (HelloWorld...) are well commented and get you started quickly...</p>\r\n<p>Kamel</p>",
+    "PostedDate": "2009-09-13T09:39:55.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234435",
+    "ThreadId": "68780",
+    "Html": "<p>Hi,</p>\r\n<p>thanks, Kamel, for your quick and useful response - you've said the same as I was going to say.</p>\r\n<p>The only addition - now I'm writing some material about DynamicDataDisplay in a wiki form, and when first results are available, I'll post a link here. I'm going to go in that wiki a little bit deeper that simple xml comments or based on them chm file.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-14T12:16:37.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234573",
+    "ThreadId": "68780",
+    "Html": "<p>Thanks Kamel,</p>\r\n<p>I have been going through the samples and the class by class documentation is a good reference.</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail,</p>\r\n<p>I think a wiki document would be a great addition! I would recommend adding a brief overview that explains all of the basic classes used in D3 and how they interact with each other, as it is sometimes tedious to look through the chm/samples to figure things out (if you are not very familiar with the code).</p>\r\n<p>Also I wanted to say thank you for providing such a flexible and powerful library! I am fairly new to WPF and before finding D3 I thought that charting in WPF was rather terrible, due to poor performance. Keep up the good work!</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again,</p>\r\n<p>Steven</p>",
+    "PostedDate": "2009-09-14T21:20:19.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234819",
+    "ThreadId": "68780",
+    "Html": "<p>Hi Steven,</p>\r\n<p>I began writing DynamicDataDisplay's wiki and that is what I've wrote so far: <a href=\"http://microsoft.cs.msu.su/personal/thecentury/Public Documents/Wiki/D3.html\">http://microsoft.cs.msu.su/personal/thecentury/Public%20Documents/Wiki/D3.html</a></p>\r\n<p>Note: location of this file can change, but I'll за course notify you about such change.</p>\r\n<p>I will continue filling this wiki with new info, and hope something useful will appear.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-15T10:44:30.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235150",
+    "ThreadId": "68780",
+    "Html": "<p>Hello again,</p>\r\n<p>The wiki is off to a great start. Thanks again for all of your hardwork!</p>\r\n<p>Best,</p>\r\n<p>Steven</p>",
+    "PostedDate": "2009-09-16T07:21:15.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

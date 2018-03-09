@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "529876",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>Hi there</p>\r\n<p>&nbsp;I'm a beginner of D3,and tring to build the Intensity Chart sample.&nbsp;</p>\r\n<p>&nbsp;Just like BBauer42 pointed out, I got an error as followed.</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;'ViewportHostPanel' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'. Line 18 Position 5. &nbsp;&nbsp;</p>\r\n<p>&nbsp;&nbsp;I checked the Microsoft.Research.DynamicDataDisplay.Charts namespace and could not find the ViewportHostPanel class declaration in there.</p>\r\n<p>&nbsp;&nbsp;So,Could anyone tell me what should i do to be able to build Intensity Chart with no error.</p>\r\n<p>&nbsp;&nbsp;I am using VS2010,and got the sample from DynamicDataDisplay Sources v0.3.4703.0\\src\\DevSamples\\IntensityChart.</p>\r\n<p>&nbsp;&nbsp;I think the reference setting to DynamicDataDisplay is good.</p>\r\n<p><br>\r\n&nbsp;&nbsp;Thanks!</p>\r\n",
+    "PostedDate": "2010-12-01T23:15:59.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529880",
+    "ThreadId": "236820",
+    "Html": "<p>Hi,</p>\n<div>This is a core sample - only two projects. It should build without any problems.</div>\n<div><a href=\"http://cid-eaf0a921258b5980.office.live.com/self.aspx/.Public/D3/DynamicDataDisplay%20Sources%20v0.3.4703.0%20for%20JiveAtFive.zip\">http://cid-eaf0a921258b5980.office.live.com/self.aspx/.Public/D3/DynamicDataDisplay%20Sources%20v0.3.4703.0%20for%20JiveAtFive.zip</a><br /> --<br /> Best regards,<br /> Mikhail Brinchuk</div>",
+    "PostedDate": "2010-12-01T23:30:39.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529899",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>&nbsp;Thank you,Mikhail,your prompt reply!</p>\r\n<p>&nbsp;I downloaded the new one that should be build without any problems,you supplied.</p>\r\n<p>But,I got same result. So,I think I have something wrong&nbsp;environment setting of VS2010 or wrong dll of the DynamicDataDisplay.</p>\r\n<p>I think the error would occur because that ViewportHostPanel class declaration is not exist in the&nbsp;Microsoft.Research.DynamicDataDisplay.Charts namespace.</p>\r\n<p>It means that I have wrong DynamicDataDisplay.dll? Can you see it in your dll?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-02T00:14:35.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529902",
+    "ThreadId": "236820",
+    "Html": "I have opened D3's assembly with Reflector, and found ViewportHostPanel <br>\r\nthere.<br>\r\nI don't have more ideas as I don't have all necessary information.<br>\r\nCall me at skype - mikhail.brinchuk.<br>\r\n<br>\r\nMikhail.",
+    "PostedDate": "2010-12-02T00:19:00.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529918",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>Hi,Mikhail</p>\r\n<p>&nbsp;I don't have skype account,but&nbsp;I appreciate your help.</p>\r\n<p>I checked DynamicDataDisplay.dll and found no ViewportHostPanel there.&nbsp;</p>\r\n<p>I will search the latest one.&nbsp;</p>\r\n<p>Do you know when ViewportHostPanel was bind to D3's assembly? recent? or couple years ago?</p>\r\n",
+    "PostedDate": "2010-12-02T00:54:25.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529919",
+    "ThreadId": "236820",
+    "Html": "<p>ViewportHostPanel appeared in D3 in the May of 2009.<br /> --<br /> Best regards,<br /> Mikhail Brinchuk</p>",
+    "PostedDate": "2010-12-02T00:56:09.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529920",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>Do you use 'Nightly' source code version?</p>\r\n",
+    "PostedDate": "2010-12-02T00:56:36.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529937",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>Hi,Mikhail</p>\r\n<p>Worked!</p>\r\n<p>I overlooked the latest dll in the project you supplied.</p>\r\n<p>I found ViewportHostPanel in the dll and &nbsp;Intensity Chart project has been build.</p>\r\n<p>the App work fine!</p>\r\n<p>thank you very much!</p>\r\n<p>&nbsp;</p>\r\n<p>you can call me zoot, you know?</p>\r\n",
+    "PostedDate": "2010-12-02T01:28:02.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529975",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>I'm happy that this sample began to work.</p>\r\n<p>By the way, Zoot, where are you from?</p>\r\n",
+    "PostedDate": "2010-12-02T02:58:07.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530383",
+    "ThreadId": "236820",
+    "Html": "\r\n<p>Hi,Mikhail</p>\r\n<p>As you may have already noticed, I'm from Japan, I am Japanese.</p>\r\n<p>I will count on you the next time!</p>\r\n<p>thanks a lot!</p>\r\n",
+    "PostedDate": "2010-12-02T15:45:23.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

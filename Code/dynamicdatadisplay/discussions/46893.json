@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "156879",
+    "ThreadId": "46893",
+    "Html": "I've been hacking around in the code base of DynamicDataDisplay for a little while and I'm coming up against one of your design decisions, and I was looking for some clarity. The underlying 'drawing surface' for the MarkerElementPointGraph  is a canvas created in OnPlotterAttached of the Chart. You then add markers and lines to that canvas as required. I'm also making use of your ObservableDataSource, taking those two together I'm on the verge of re-creating all the stuff that an ItemsControl already does - had you considered using that approach and discarded it? If not have you plans of supporting that approach?<br>\r\n<br>\r\nIan\r\n",
+    "PostedDate": "2009-02-11T20:37:52.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157679",
+    "ThreadId": "46893",
+    "Html": "Hi, Ian!<br>\r\n<br>\r\nAbout using ItemsControl - we've thought about it, and we didn't discard this idea, we simple suspended it. In future all infrastructure around MarkerGraph should be revised, simply because it is not very efficient, also it does not allow to use templates to generate markers.<br>\r\nBut there is at least one objection about using ItemsControl - it allows generating markers, but does it allow to control markers' position? But this can probably done, too, changing ItemsControl's template.<br>\r\n<br>\r\nRegards,<br>\r\nMikhail Brinchuk.<br>\r\n",
+    "PostedDate": "2009-02-14T08:19:08.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

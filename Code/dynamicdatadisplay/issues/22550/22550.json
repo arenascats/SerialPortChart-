@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have created the Graph control using the DynamicDataDisplay dll with AssemblyVersion 0.3.4703.0.\n\nKindly find the uploaded images from the link below.\n[Graph image](https://photos.app.goo.gl/YLT25rlQ1HB86lKD2)\n\nThe left image (graph) is what I am currently getting using DynamicDataDisplay dll. I have requirement to plot the graph as shown in the right image.(Attached Graph1.png is what I am currently getting and Graph2.png What I need)\n\nAny help would be really appreciated.\n\nThanks in advance",
+    "LastUpdatedDate": "2017-08-31T08:22:08.177-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2017-08-31T08:18:34.297-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Graph line with Custome Design",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 22550
+  },
+  "FileAttachments": [
+    {
+      "FileId": 9995,
+      "FileName": "Graph1.png",
+      "DownloadUrl": ".\\9995"
+    },
+    {
+      "FileId": 9996,
+      "FileName": "Graph2.png",
+      "DownloadUrl": ".\\9996"
+    }
+  ],
+  "Comments": []
+}

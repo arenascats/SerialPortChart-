@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "649584",
+    "ThreadId": "267071",
+    "Html": "\r\n<p>Hi there!</p>\r\n<p>First question:</p>\r\n<p>Is there a possibility to set the vertical range equal to the horizontal range when the Chartplotter is set to FitToView? Background: I have created a phasor class to show some rotating phasors and the according locusts in the ChartPlotter.</p>\r\n<p>Example: I have one phasor which is only changing its angle (rotating), so the according locust would be a circle. If another phasor would be longer on the x-axis, the locust would become elliptic.</p>\r\n<p>Second question:</p>\r\n<p>Is it possible to put the x- and y-axis in the middle of the plotter and not just on the sides?</p>\r\n<p>Sorry I searched a lot and could not find anything on these topics and i'm quite new to C# and WPF... :(</p>\r\n<p>Thanks in advance and greetings!</p>\r\n",
+    "PostedDate": "2011-07-29T08:53:50.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

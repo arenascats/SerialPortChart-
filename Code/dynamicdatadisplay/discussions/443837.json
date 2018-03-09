@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "1044259",
+    "ThreadId": "443837",
+    "Html": "Hi All.<br />\n<br />\nPlease tell me how to select a piece on ChartPlotter I can not understand..<br />\n<img src=\"http://s2.ipicture.ru/uploads/20130515/m2TmAi47.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-05-15T21:27:40.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1044401",
+    "ThreadId": "443837",
+    "Html": "<pre><code>var v = plotter.Visible;\nv.XMin = 4;\nv.Width = 4;\nplotter.Visible = v;</code></pre>\n\n",
+    "PostedDate": "2013-05-16T03:51:54.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1044423",
+    "ThreadId": "443837",
+    "Html": "thank you WarFollowsMe, but that's not what I need, I need to select any part of the mouse.\r<br />\n<br />\ni need like this<img src=\"http://s2.ipicture.ru/uploads/20130516/m6RJ9744.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-05-16T04:29:13.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046880",
+    "ThreadId": "443837",
+    "Html": "Please help me, I do not understand.<br />\n",
+    "PostedDate": "2013-05-21T23:42:43.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061784",
+    "ThreadId": "443837",
+    "Html": "How to do <a href=\"http://leeontech.wordpress.com/2009/03/02/interacting-with-charts/\" rel=\"nofollow\">like this</a> for WPF<br />\n",
+    "PostedDate": "2013-06-26T22:13:41.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1062262",
+    "ThreadId": "443837",
+    "Html": "Have you looked at the mousenavigation zoom functionality?  It is similar to what you describe in the link.<br />\n",
+    "PostedDate": "2013-06-27T19:46:12.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1062267",
+    "ThreadId": "443837",
+    "Html": "Hi\r<br />\n<br />\nUser Vertical Range for showing vertical rectangle Zone.\r<br />\nuse mouse down, mouse move and mouse up events to construct Vertical range. Use Plotter Visible to zoom.\r<br />\n<br />\nSearch around  the discussions, you will find the answer\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-06-27T20:15:22.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063036",
+    "ThreadId": "443837",
+    "Html": "Thank you very much for your help, but I need not zoom, I need to select a piece of chart.<br />\n",
+    "PostedDate": "2013-06-30T22:51:52.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064394",
+    "ThreadId": "443837",
+    "Html": "how to use this in WPF<br />\n<br />\n<a href=\"https://skydrive.live.com/?cid=9FC67F5BA8EA9FDE&amp;id=9FC67F5BA8EA9FDE!105\" rel=\"nofollow\">InteractWithCharts</a><br />\n",
+    "PostedDate": "2013-07-03T23:30:16.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068339",
+    "ThreadId": "443837",
+    "Html": "MainWindow.xaml<br />\n<pre><code>&lt;Window x:Class=&quot;WpfApplication1.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:d3=&quot;http://research.microsoft.com/DynamicDataDisplay/1.0&quot;\n        Title=&quot;MainWindow&quot; Height=&quot;350&quot; Width=&quot;525&quot;&gt;\n    &lt;Grid&gt;\n        &lt;d3:ChartPlotter Name=&quot;plotter&quot;/&gt;\n    &lt;/Grid&gt;\n&lt;/Window&gt;</code></pre>\n\nMainWindow.xaml.cs<br />\n<pre><code>using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Navigation;\nusing System.Windows.Shapes;\nusing Microsoft.Research.DynamicDataDisplay.Charts;\nusing Microsoft.Research.DynamicDataDisplay;\n\nnamespace WpfApplication1\n{\n    /// &lt;summary&gt;\n    /// Interaction logic for MainWindow.xaml\n    /// &lt;/summary&gt;\n    public partial class MainWindow : Window\n    {\n        VerticalRange vRange = new VerticalRange();\n        bool isMouseDown = false;\n        double psX = 0.0d;\n        public MainWindow()\n        {\n            InitializeComponent();\n            this.plotter.MouseDown += new MouseButtonEventHandler(plotter_MouseDown);\n            this.plotter.MouseUp += new MouseButtonEventHandler(plotter_MouseUp);\n            this.plotter.MouseMove += new MouseEventHandler(plotter_MouseMove);\n            this.plotter.Children.Remove(this.plotter.MouseNavigation);\n            this.plotter.Children.Remove(this.plotter.KeyboardNavigation);\n            this.plotter.Children.Add(this.vRange);\n        }\n\n        void plotter_MouseMove(object sender, MouseEventArgs e)\n        {\n            if (!this.isMouseDown)\n            {\n                return;\n            }\n\n            Point pt = e.GetPosition(this.plotter.CentralGrid);\n            Point ps = this.plotter.Viewport.Transform.ScreenToViewport(pt);\n            if (ps.X &gt; this.vRange.Value1)\n            {\n                this.vRange.Value2 = ps.X;\n            }\n            else\n            {\n                this.vRange.Value2 = this.psX;\n                this.vRange.Value1 = ps.X;\n            }\n        }\n\n        void plotter_MouseUp(object sender, MouseButtonEventArgs e)\n        {\n            this.isMouseDown = false;\n            //this.vRange.Visibility = Visibility.Collapsed;\n        }\n\n        void plotter_MouseDown(object sender, MouseButtonEventArgs e)\n        {\n            this.isMouseDown = true;\n            this.vRange.Visibility = Visibility.Visible;\n            Point pt = e.GetPosition(this.plotter.CentralGrid);\n            Point ps = this.plotter.Viewport.Transform.ScreenToViewport(pt);\n           this.vRange.Value1 = ps.X;\n         this.psX = ps.X;\n            this.vRange.Value2 = ps.X + (ps.X * 1) / 100;\n        }\n    }\n}\n</code></pre>\n\nthank you very much for your help battula32<br />\n",
+    "PostedDate": "2013-07-15T04:54:06.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "241556",
+    "ThreadId": "70874",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Is possible to have some property to set position, fonts, colors of the <span>Horizontal and Vertical </span>TextBlock in the CursorCoordinateGraph class?</p>\r\n<p>This is useful if you have multiple InjectedPlotter and if you want show the cursor coordinate for each y-axis.</p>\r\n<p>I have tried to change the source code in &quot;CursorCoordinateGraph.xaml.cs&quot; and I have added the following code:</p>\r\n<p>public void SetBoxPosition(int nX, int nY, Brush oForeground, int nFontsize, FontWeight oWeight)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blockShift = new Vector(nX, nY);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.vertTextBlock.FontSize = nFontsize;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.vertTextBlock.Foreground = oForeground;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.vertTextBlock.FontWeight = oWeight;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>this code works fine if you want set position and other properties for vertTextBlock .</p>\r\n<p>If you want I can send to you some screenshot to show you my idea.<br><br>Thanks for you great work.</p>\r\n<p>Giancarlo.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-02T18:27:59.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245610",
+    "ThreadId": "70874",
+    "Html": "<p>Hi Giancarlo,</p>\r\n<p>I've almost got your idea, but a screenshot can really be helpful.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T07:45:42.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

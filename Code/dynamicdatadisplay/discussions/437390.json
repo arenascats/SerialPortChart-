@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1018448",
+    "ThreadId": "437390",
+    "Html": "I would like to try and port SL version to WPF (not everything of course).\r<br />\n<br />\nIs there a source code for the Silverlight DDD ?<br />\n",
+    "PostedDate": "2013-03-20T11:32:55.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018731",
+    "ThreadId": "437390",
+    "Html": "The Silverlight source is included in the D3 source code download.\r<br />\n<br />\n<br />\nDavid<br />\n",
+    "PostedDate": "2013-03-21T02:19:40.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018733",
+    "ThreadId": "437390",
+    "Html": "Actually the confusion here is because the 'real' D3 now is on MS website : <a href=\"http://research.microsoft.com/en-us/um/cambridge/groups/science/tools/d3/dynamicdatadisplay.htm\" rel=\"nofollow\">http://research.microsoft.com/en-us/um/cambridge/groups/science/tools/d3/dynamicdatadisplay.htm</a><br />\n<br />\nThe latest version on the codeplex is 0.2 2010, and on the ms.research : 2.0 2011.<br />\n<br />\nI tried 0.2 in WPF and it works fine. I want 2.0 as well<br />\n",
+    "PostedDate": "2013-03-21T02:25:26.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019618",
+    "ThreadId": "437390",
+    "Html": "Unfortunately the version that is on the research website is not available for commercial use and has other restrictions.<br />\n",
+    "PostedDate": "2013-03-22T08:49:05.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

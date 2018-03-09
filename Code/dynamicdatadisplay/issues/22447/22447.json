@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, please tell me whether it is possible to implement 2 or more graphics with independent axes Y (each with its own scale, its minimum and maximum). All graphs shall be displayed and not to scale relative to each other.  Or how to tie each graph to its axis? Help me please.\n\nЕсли по-русски, можно ли в D3 реализовать вывод нескольких графиков с независимыми осями Y, т.е. чтобы каждый график имел свою ось со своим минимумом и максимумом. И чтобы все графики отображались вместе, в масштабе, независимом от других графиков, как на прикрепленном рисунке?",
+    "LastUpdatedDate": "2017-01-09T17:40:04.403-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2017-01-09T17:37:13.527-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Independent axis Dynamic Data Display",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 22447
+  },
+  "FileAttachments": [
+    {
+      "FileId": 9970,
+      "FileName": "graph.png",
+      "DownloadUrl": ".\\9970"
+    }
+  ],
+  "Comments": []
+}

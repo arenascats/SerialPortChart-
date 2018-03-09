@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "218847",
+    "ThreadId": "64319",
+    "Html": "<p>We need to implement 2D-Chart which can display <span style=\"font-size:x-small;font-family:Helv\">dual y-axis (with different y scale values) with one&nbsp;x-axis scale value.<br>You may think to combine two graph plots with different y-axis scale and the same x-axis scale into one graph plot.<br>The first y-axis is left side and the second y-axis is in the right side.</span></p>\r\n<p><span style=\"font-size:x-small;font-family:Helv\">Thx!</span></p>",
+    "PostedDate": "2009-08-03T09:30:15.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218966",
+    "ThreadId": "64319",
+    "Html": "<p>I think you may find your answer here.</p>\r\n<p>&nbsp;</p>\r\n<p>http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=62284</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T14:52:30.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218988",
+    "ThreadId": "64319",
+    "Html": "<p>I can confirm that&nbsp;- you will need the latest nightly build, not the stable. I got it working, with an arbitrary number of series, plotted visually on the same scale, with one x-axis to rule them all.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T16:18:54.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218990",
+    "ThreadId": "64319",
+    "Html": "<p>thanks for the replying Michela44 and Talisman.</p>\r\n<p>There are&nbsp;three features we need:</p>\r\n<p>1) We need to scale the y-axis differently. One y-axis is in the left&nbsp; (for example, 0-100) and another y-axis in right (for example, 500-1000).</p>\r\n<p>2) We need to display y-axis title one in left (speed) and another one in right (Temperature).</p>\r\n<p>3) One&nbsp;plot with speed vs time base on left y-axis scale and another ploat with Temperature vs time base on right y-axis scale&nbsp;</p>\r\n<p>I download the example code in &quot;TwoIndependentAxis&quot;.</p>\r\n<p>It display two y-axis on the left side and one&nbsp;y-axis on the right side.&nbsp;&nbsp;How can I only show one on the left side and keep right side Y-axis?</p>\r\n<p>When you talk about latest nightly build, where to get it?</p>\r\n<p>thx!</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T16:32:38.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218998",
+    "ThreadId": "64319",
+    "Html": "<p>In the two-independent axis example the InjectedPlotter (named innerPlotter) has been given two VerticalAxis objects in its definition. Simply remove the one you do not want.</p>\r\n<p>The latest nightly build is available under &quot;Source Code&quot; in the menu above here on Codeplex: <a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx\">http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx</a></p>\r\n<p>Just click on the latest version&nbsp;(change set)&nbsp;available, and Download.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T17:04:42.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219003",
+    "ThreadId": "64319",
+    "Html": "<p>Hi talisman,</p>\r\n<p>Thanks for your replying!</p>\r\n<p>I remove the left axis, it works! However, the axis title still show on the left side,</p>\r\n<p>Is there a way we can put the axis title on the right side of y-axis?</p>\r\n<p>thx!</p>\r\n<p>\r\n<p><span style=\"font-size:medium;color:#0000ff\">&lt;font size=&quot;4&quot; color=&quot;#0000ff&quot;&gt;\r\n<p>&lt;</p>\r\n&lt;/font&gt;</span>\r\n<p>&nbsp;</p>\r\n<span style=\"font-size:medium;color:#a31515\">d3</span><span style=\"font-size:medium;color:#0000ff\">:</span><span style=\"font-size:medium;color:#a31515\">ChartPlotter</span><span style=\"font-size:medium;color:#ff0000\"> Name</span><span style=\"font-size:medium;color:#0000ff\">=&quot;plotter&quot;&gt;</span><span style=\"font-size:medium;color:#a31515\">&nbsp;&nbsp;</span></p>\r\n</p>\r\n<p><span style=\"font-size:medium\"><span style=\"color:#a31515\">&nbsp; </span><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">InjectedPlotter</span><span style=\"color:#ff0000\"> Name</span><span style=\"color:#0000ff\">=&quot;innerPlotter&quot;</span><span style=\"color:#ff0000\"> Background</span><span style=\"color:#0000ff\">=&quot;Red&quot;&gt;</span></span><span style=\"color:#a31515\"><span style=\"font-size:medium\">&nbsp;&nbsp;</span></span></p>\r\n<p><span style=\"font-size:medium\"><span style=\"color:#a31515\">&nbsp; </span><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">VerticalAxis</span><span style=\"color:#ff0000\"> Placement</span><span style=\"color:#0000ff\">=&quot;Right&quot;/&gt;</span></span><span style=\"color:#a31515\"><span style=\"font-size:medium\">&nbsp;&nbsp;</span>&lt;font color=&quot;#a31515&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span></p>\r\n<p><span style=\"font-size:medium\"><span style=\"color:#0000ff\">&nbsp;&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">VerticalAxisTitle</span> <span style=\"color:#ff0000\">Content</span><span style=\"color:#0000ff\">=&quot;Speed (100 RPM)&quot; /&gt;</span></span><span style=\"color:#a31515\"><span style=\"font-size:medium\">&nbsp;</span></span></p>\r\n<p><span style=\"color:#a31515\"><span style=\"font-size:medium\">&nbsp;</span></span><span style=\"font-size:medium\"><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">RectangleHighlight</span><span style=\"color:#ff0000\"> Bounds</span><span style=\"color:#0000ff\">=&quot;0.3,0.3,0.1,0.1&quot;/&gt;</span></span><span style=\"color:#a31515\"><span style=\"font-size:medium\"> </span>&lt;font color=&quot;#a31515&quot;&gt;\r\n<p><span style=\"font-size:medium\">&nbsp;</span></p>\r\n&lt;/font&gt;</span></p>\r\n<p><span style=\"font-size:medium\"><span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:#0000ff\">:</span><span style=\"color:#a31515\">InjectedPlotter</span><span style=\"color:#0000ff\">&gt;</span></span></p>",
+    "PostedDate": "2009-08-03T17:18:06.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219041",
+    "ThreadId": "64319",
+    "Html": "<p>Hi,</p>\r\n<p>Currentrly there no means to move axis title to the right, but you can easily do it yourself - find in VerticalAxisTitle method PlotterAttached and fix to to add not to the LeftPael, but to the right one. I'll do smth with this later.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-03T19:40:43.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219986",
+    "ThreadId": "64319",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I follow your suggestion to add the class and use RightPanel make the AxisTitle show on the right side.</p>\r\n<p>I add the class in the DynamicDataDisplay project under TwoIndependentAxis solution.</p>\r\n<pre>public class VerticalAxisTitleRight : ContentControl, IPlotterElement</pre>\r\n<pre>public void OnPlotterAttached(Plotter plotter)\r\n    {\r\n      this.plotter = plotter;\r\n      plotter.RightPanel.Children.Insert(1, this);\r\n    }\r\n</pre>\r\n<pre>What is the reason to use <span style=\"font-size:medium;color:#a31515\">InjectedPlotter?</span></pre>\r\n<pre><span style=\"font-size:medium;color:#a31515\">Is it possible that we can plot two lines: one line is base on left y-axis scale </span></pre>\r\n<pre><span style=\"font-size:medium;color:#a31515\">and another line is base on right y-axis scale?</span></pre>\r\n<pre><span style=\"font-size:medium;color:#a31515\">thx!</span></pre>",
+    "PostedDate": "2009-08-05T13:38:35.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "220176",
+    "ThreadId": "64319",
+    "Html": "<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">Is it possible that we can plot two lines: one line is base on left y-axis scale </span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">and another line is base on right y-axis scale?</span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">Yes, I can use Plotter and InnerPlotter to achieve it.</span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">Plotter.AddLineGraph (source1, colors.Goldenrod, 2, &quot;speed&quot;);</span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">innerPlotter.AddLineGraph(source2, Colors.Blue, 2, &quot;Temperature&quot;);</span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">The problem with this implementation is that &quot;Temperature&quot; Description in innerPlotter does not show up.</span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">Is there a way that letting the innerPlottter Description also display?</span></span></pre>\r\n<pre><span style=\"font-size:medium\"><span style=\"color:#000000\">thx!</span></span></pre>",
+    "PostedDate": "2009-08-05T23:44:48.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221209",
+    "ThreadId": "64319",
+    "Html": "<p>Hi,</p>\r\n<p>Please take a look at a <strong>TwoLinesSamples </strong>in source code from&nbsp;<strong>Source Code </strong>page - I've changed it a little, maybe those changes will help you.</p>\r\n<p>This sample now looks this:</p>\r\n<p><img src=\"http://i3.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=dynamicdatadisplay&DownloadId=78569\" alt=\"\"></p>\r\n<p>&nbsp;</p>\r\n<p>This and more pics are available at&nbsp;<a href=\"http://dynamicdatadisplay.codeplex.com/Wiki/View.aspx?title=Development-time screens\">http://dynamicdatadisplay.codeplex.com/Wiki/View.aspx?title=Development-time%20screens</a></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-09T00:25:17.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475799",
+    "ThreadId": "64319",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>&nbsp;</p>\r\n<p>where do I find the TwoLinesSample that you mention above?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Robin</p>\r\n<p>&nbsp;</p>\r\n<p>//Edit</p>\r\n<p>Alright, I already found it :-)</p>",
+    "PostedDate": "2010-08-03T00:34:27.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475840",
+    "ThreadId": "64319",
+    "Html": "<div><span style=\"font-family:Arial;font-size:medium\">I believe the basic sample is at change set 31108\\src\\DevSamples\\TwoIndependentAxes</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial;font-size:medium\">Search through the threads to find how to bind the two&nbsp;lines together for zooming and scrolling</span></div>",
+    "PostedDate": "2010-08-03T02:32:18.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1226888",
+    "ThreadId": "64319",
+    "Html": "Hi \r<br />\n<br />\nI am in analyzing the D3 chart controls to draw 3rd y axis. I saw this thread with <strong>Mikhail</strong>  response which was exactly matching my requirement. I tried to refer the code from the path <strong>&quot;31108\\src\\DevSamples\\TwoIndependentAxes&quot;</strong> for plotting TwoLine Sample across the two vertical axis. After i download the code, both the DynamicDataDisplay.dll and DynamicDataDisplay.Maps.dll was showing reference error. Once i gave the reference to both then i got build errors.<br />\n<ul>\n<li>The type 'd3:InjectedPlotter' was not found. Verify that you are not missing an assembly reference and that all referenced assemblies have been built.\t</li>\n<li>The property 'Placement' was not found in type 'VerticalAxisTitle'.\t</li>\n<li>The property 'Placement' was not found in type 'AxisNavigation'.</li>\n<li>The property 'Placement' was not found in type 'AxisNavigation'.\t</li>\n<li>\nA value of type 'Button' cannot be added to a collection or dictionary of type 'ChildrenCollection'.\t<br />\n</li>\n</ul>\nCan Anyone of you give me some working sample with the latest dll updates. <br />\n",
+    "PostedDate": "2014-03-26T05:45:45.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1239059",
+    "ThreadId": "64319",
+    "Html": "I am also trying to set up a dual y-axis chart, in this case with a TimeData x-axis. I am using the latest &quot;nightly&quot; release (94877).\r<br />\n<br />\nI am able to get the plotter working but cannot put a label on the &quot;Main&quot; y axis. The XAML I try to use includes:<br />\n<pre><code>         &lt;d3:InjectedPlotter Name=&quot;innerPlotter&quot; Background=&quot;Aqua&quot; SetViewportBinding=&quot;False&quot; &gt;\n            &lt;d3:VerticalAxis Placement=&quot;Right&quot;/&gt;\n            &lt;d3:VerticalAxisTitle Content=&quot;kWh&quot; Placement=&quot;Right&quot;/&gt;\n        &lt;/d3:InjectedPlotter&gt;\n        &lt;d3:ChartPlotter.MainHorizontalAxis&gt;\n            &lt;d3:HorizontalDateTimeAxis Name=&quot;dateAxis&quot;/&gt;\n        &lt;/d3:ChartPlotter.MainHorizontalAxis&gt;\n\n        &lt;d3:VerticalAxisTitle FontFamily=&quot;Arial&quot; Content=&quot;Power (W)&quot; Placement=&quot;Left&quot;/&gt;\n        &lt;d3:HorizontalAxisTitle FontFamily=&quot;Arial&quot; Content=&quot;Date&quot;/&gt;\n</code></pre>\n\nThe statement setting the VerticalAxisTitle raises an error, to the effect that &quot;This property has already been set&quot;\r<br />\n<br />\nAny thoughts on what I am doing wrong, or is this a bug?<br />\n",
+    "PostedDate": "2014-04-28T16:08:37.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1241452",
+    "ThreadId": "64319",
+    "Html": "Hi \r<br />\n<br />\nI think adding the MainHorizontalAxis is the problem.\r<br />\n<br />\nTry this <br />\n<pre><code>&lt;d3:ChartPlotter&gt;\n    &lt;d3:InjectedPlotter Name=&quot;innerPlotter&quot; Background=&quot;Aqua&quot; SetViewportBinding=&quot;False&quot; &gt;\n        &lt;d3:VerticalAxis Placement=&quot;Right&quot;/&gt;\n        &lt;d3:VerticalAxisTitle Content=&quot;kWh&quot; Placement=&quot;Right&quot;/&gt;\n        &lt;d3:HorizontalDateTimeAxis Name=&quot;dateAxis&quot;&gt;&lt;/d3:HorizontalDateTimeAxis&gt;\n    &lt;/d3:InjectedPlotter&gt;\n    &lt;!--&lt;d3:ChartPlotter.MainHorizontalAxis&gt;\n        &lt;d3:HorizontalDateTimeAxis Name=&quot;dateAxis&quot;/&gt;\n    &lt;/d3:ChartPlotter.MainHorizontalAxis&gt;--&gt;\n\n    &lt;d3:VerticalAxisTitle FontFamily=&quot;Arial&quot; Content=&quot;Power (W)&quot; Placement=&quot;Left&quot;/&gt;\n    &lt;d3:HorizontalAxisTitle FontFamily=&quot;Arial&quot; Content=&quot;Date&quot;/&gt;\n&lt;/d3:ChartPlotter&gt;\n</code></pre>\n\nIt's working for me.<br />\n",
+    "PostedDate": "2014-05-05T02:34:58.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "665195",
+    "ThreadId": "270857",
+    "Html": "\r\n<p>I would like to have only the chart without any grid map or numbering on the X and Y axis.</p>\r\n<p>Please help.</p>\r\n",
+    "PostedDate": "2011-08-30T00:56:20.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681144",
+    "ThreadId": "270857",
+    "Html": "<p>Hi</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">this</span>.plotter.BottomPanel.Visibility = System.Windows.Visibility.Collapsed; </pre>\r\n<pre><span style=\"color: blue;\">this</span>.plotter.LeftPanel.Visibility = System.Windows.Visibility.Collapsed;</pre>\r\n<pre>Regards</pre>\r\n<pre>Ravi.</pre>\r\n</div>",
+    "PostedDate": "2011-10-06T22:17:37.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681162",
+    "ThreadId": "270857",
+    "Html": "<p>10x!</p>",
+    "PostedDate": "2011-10-07T00:01:21.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

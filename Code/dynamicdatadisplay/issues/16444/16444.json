@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Legend has only one column and hide items that falls below the graph.\n \nLegend should resize itself to ensure to show all items. The number of columns should be dynamics to ensure to fit/show all items.",
+    "LastUpdatedDate": "2013-02-21T17:36:50.8-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-08-23T14:40:15.7-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Legend has only one column and hide items that falls below the graph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 16444
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I also face the same problem.I have one plotter which is drawing graph nicely.But i have two issues with it.\r\n1.)when items count is greater than graph height then it hide the items.Is there any way to add scroll to legend box?\r\n2.)I want to show x-axies with datetime and subgrouped by time. But currently it shows the only date subgrouped by hours.\r\n ",
+      "PostedDate": "2012-05-05T02:35:24.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:50.8-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "236804",
+    "ThreadId": "69577",
+    "Html": "<p>Hello,</p>\r\n<p>I have very large sets of data which are impractical to keep entirely in memory.&nbsp; It would be better to load them as required when the chart is panned or zoomed.&nbsp; Has anyone here implemented a virtualized data source for the D3 line chart?&nbsp; I am thinking of something similar to the techniques described here: http://bea.stollnitz.com/blog/?p=344</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Dan</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-21T02:32:37.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236852",
+    "ThreadId": "69577",
+    "Html": "<div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">\r\n<div><span style=\"font-size:x-small;font-family:Arial\"><span style=\"font-size:small\">I am also very interested in the answer to this question.</span></span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:small\">I am using SQL Server 2008 FileStreaming.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\"><span style=\"font-size:small\">I am working with Forex real-time tick data - which means there is a lot of data and the chart must be updated on a tick-by-tick basis.</span></span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\"><span style=\"font-size:small\">David Roh</span></span></div>\r\n</span></div>\r\n</div>",
+    "PostedDate": "2009-09-21T05:31:07.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238766",
+    "ThreadId": "69577",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>currently there is no such a data source, but it will definitely be implemented as it belongs to our internal roadmap. If you are going to try to implement is yourself, I advise you to take a look at datasource used in new markers, which are available in D3.markers project at 'source code' page.</p>\r\n<p>Ready to answer at your particular questions.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T06:07:42.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238894",
+    "ThreadId": "69577",
+    "Html": "<p>New datasources in DynamicDataDisplay.Markers.dll were designed (and continues to be designed, as they are not of final quality) with thought about such cases.</p>\r\n<p>They has access to information about current visible area and properties like this, so some descendants of this data source can take this info into account and load only&nbsp;necessary&nbsp;items. For example, if data is stored as a sequence of typed records in large file, such data source can seek file to begin reading only those records that will be displayed.</p>\r\n<p>I'm not familiar with SQL Server in general and FileStreaming&nbsp;particularly, but I can suggest using, for example, LINQ-to-SQL requests like sqlDataSequence.Skip(some amout of records to skip).Take(some number to load).</p>\r\n<p>When I have some extra time, I'll try to implement some of these data sources.</p>\r\n<p>If you share some additional information about the way you are storing your large data, I can use it in designing such data sources.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T10:49:56.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "240077",
+    "ThreadId": "69577",
+    "Html": "<p>My bulk points data will be stored in binary format in a file.&nbsp; Each time a new page of data is requested, the source will need to asynchronously seek to the correct file location and read back the data points.&nbsp; I am intending to implement a caching system which predicts and fetches pages of data points from file in advance of them being requested in order to prevent delays in the GUI during graph scrolling.</p>\r\n<p>A possible problem I can forsee is working out how to allow someone to zoom fully out on a very large set of data points.&nbsp; Ideally, a decimated subset of the full collection will be shown to save memory and processing time.&nbsp; Working out a system to deal with caching in this data from file during zoom-in and zoom-out will be very hard I think.</p>\r\n<p>Many thanks for the excellent library!</p>\r\n<p>Dan</p>",
+    "PostedDate": "2009-09-29T09:29:58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

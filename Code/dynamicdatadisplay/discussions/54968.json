@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "185549",
+    "ThreadId": "54968",
+    "Html": "Hi,<br>\r\n<br>\r\nFirst I want to thank Mikhail (TheCentury) for his amazing work!!!<br>\r\nSeriously I have seen the project growing since the first release and you have been awesome in the forum!<br>\r\n<br>\r\nI had a look to the new release. It looks very nice! Thanks for the new samples and the documentation!!!<br>\r\n<br>\r\nBy the way what are you doing? I mean do you have a life or you have been dedicated to the D3 project ;) ?<br>\r\nHow many are you on this project? Present yourselves guys!<br>\r\n<br>\r\nThanks again and, please, keep on doing this great job...<br>\r\n<br>\r\nSincerly,<br>\r\nKamel<br>\r\n",
+    "PostedDate": "2009-04-30T07:47:14.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186463",
+    "ThreadId": "54968",
+    "Html": "Hi Kamel,<div><br></div><div>Thank you very much for you kind words!</div><div><br></div><div>About us: I'm Mikhail Brinchuk, I'm working in Microsoft Technologies Laboratory at the Faculty of Computational Mathematics and Cybernetics at Moscow State University in Moscow, Russia. I'm also a student of 5th grade, 22 years old. I think I've written about 85% of DynamicDataDisplay that is published here, but in our lab there are other people working on DynamicDataDisplay, for example Silverlight version is now in production, and soon it'll be released. Head of our lab is Sergey Berezin (codeplex nick 'sberezin'), and he is that person with whom we are discussing DynamicDataDisplay's design and architecture.</div><div>DynamicDataDisplay is a project managed by Microsoft Research.</div><div><br></div><div>Such replies are giving us energy and desire to move further)</div><div><br></div><div>Thanks again,</div><div>Mikhail.</div>",
+    "PostedDate": "2009-05-04T02:33:11.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186914",
+    "ThreadId": "54968",
+    "Html": "By the way, Kamel, it is interesting for us to know who are you, too.<div>We have a poll - <a href=\"http://microsoft.cs.msu.su/Projects/Pages/D3Poll.aspx\">http://microsoft.cs.msu.su/Projects/Pages/D3Poll.aspx</a> - where you can write some info about you and about how are you using D3.</div><div>You are welcome! :)</div><div><br></div><div>Best regards,</div><div>Mikhail.</div>",
+    "PostedDate": "2009-05-05T05:36:35.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "188250",
+    "ThreadId": "54968",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>My name is Kamel Aouane and I am 24.</p>\r\n<p>After a bachelor in engineering in France I recently finished my master in finance, in Canada.</p>\r\n<p>I am using D3 for financial charting but also for physical application from basic statistics to more complex analysis (Multifractal analysis, first time passage...).</p>\r\n<p>What is 5th grade in Russia? What is your field of study?</p>\r\n<p>What are you hoping to do after your studies?</p>\r\n<p>Sincerly,</p>\r\n<p>Kamel</p>",
+    "PostedDate": "2009-05-08T11:54:41.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "189691",
+    "ThreadId": "54968",
+    "Html": "<p>I'm interested in this control. But before we commit to using it in a commercial application I have a few questions:</p>\r\n<p>1) Will the D3 eventually be added to a .Net release?</p>\r\n<p>2) Will it be offered for sale separately?</p>\r\n<p>3) If I commit to using it in an commercial application, will I have to play any license fees?</p>\r\n<p>4) Do you have a plan for features in future releases?</p>\r\n<p>5) Your blog seems to have some discussions about the control. Will an Englsh version become available?</p>\r\n<p>6) Will this control work in an app that is using the M-V-VM design patterns?</p>\r\n<p>Thanks,</p>\r\n<p>Mitch</p>",
+    "PostedDate": "2009-05-13T04:45:37.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191025",
+    "ThreadId": "54968",
+    "Html": "<p>Hi Mitch,</p>\r\n<p>1) I think, no - there is no sense doing this, because D3 is a rather specific library, which is not neccessay for the most part of .NET programmers. And those of them who need D3 can easily download it from this site.</p>\r\n<p>2) D3 is free, and there are no plans about selling it.</p>\r\n<p>3) The best answer to this question is our license -&nbsp;<a href=\"http://dynamicdatadisplay.codeplex.com/license\">http://dynamicdatadisplay.codeplex.com/license</a>. I've specially read it for the first time now and I found no words about licence fees (unfortunately :) ) The best way, I think, is to refer to our license or ask a question to Microsoft layers (smth like this)</p>\r\n<p>4) Actually, we have some plans, but they are not published anywhere and are mostly in the heads of 2-3 persons. If you have some suggestion or feature request, you can publish it here or post to our survey form.</p>\r\n<p>5) Sorry, I don't have enough time for doing this now, but who knows what can happen in the future?</p>\r\n<p>6) Can you give me a little wider explanation about what do you mean saying M-V-VM app? What pecularities does it have that can influence on e.g., ChartPlotter inside of it? If you want, you can e-mail me a sample of such an application or it source code. My e-mail is thecentury@gmail.com</p>\r\n<p>&nbsp;</p>\r\n<p>By the way, you've said that your system doesn't have a application to open *.chm files, such as our 'documentation'. It seemed to me that all versions of Windows has such app, or I'm wrong? That chm file is no more than xml documentation comments, compiled by SandCastle into one file, and I'm not sure that it can compile those comments into smth other than chm or MSDN-like formats. Correct me, if I'm wrong.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-05-16T06:17:01.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191033",
+    "ThreadId": "54968",
+    "Html": "Hi,<br><br>You can't read .chm files by default with windows vista. However when<br>you try to open the document you will have a message error. Click on<br>&quot;get on-line help&quot; or something like that. You'll be redirected to the<br>Microsoft website to download a little program.<br>It will take less than 2 minutes to download and install it.<br><br>2009/5/16, Thecentury &lt;notifications@codeplex.com&gt;:<br>&gt; From: Thecentury<br>&gt;<br>&gt; Hi Mitch,1) I think, no - there is no sense doing this, because D3 is a<br>&gt; rather specific library, which is not neccessay for the most part of .NET<br>&gt; programmers. And those of them who need D3 can easily download it from this<br>&gt; site.2) D3 is free, and there are no plans about selling it.3) The best<br>&gt; answer to this question is our license -<br>&gt; http://dynamicdatadisplay.codeplex.com/license. I've specially read it for<br>&gt; the first time and I found no words about licence fees (unfortunately :) )<br>&gt; The best way, I think, is to refer out license or ask a question Microsoft<br>&gt; layers (smth like this)4) Actually, we have some plans, but they are not<br>&gt; published anywhere and are mostly in the heads of 2-3 persons. If you have<br>&gt; some suggestion or feature request, you can publish it here or post to our<br>&gt; survey form.5) Sorry, I don't have enough time for doing this now, but who<br>&gt; knows what can happen in the future?6) Can you give me a little wider<br>&gt; explanation about what do you mean saying M-V-VM app? What pecularities does<br>&gt; it have that can influence on e.g., ChartPlotter inside of it? If you want,<br>&gt; you can e-mail me a sample of such an application or it source code. My<br>&gt; e-mail is [email removed] By the way, you've said that your system<br>&gt; doesn't have a application to open *.chm files, such as our 'documentation'.<br>&gt; It seemed to me that all versions of Windows has such app, or I'm wrong?<br>&gt; That chm file is no more than xml documentation comments, compiled by<br>&gt; SandCastle into one file, and I'm not sure that it can compile those<br>&gt; comments into smth other than chm or MSDN-like formats. Correct me, if I'm<br>&gt; wrong.Best regards,Mikhail.<br>&gt;<br>&gt; ",
+    "PostedDate": "2009-05-16T07:24:29.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

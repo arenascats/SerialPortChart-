@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1229903",
+    "ThreadId": "541051",
+    "Html": "how to find min and max values​​, all plotter and individual Linegraph.\r<br />\n<br />\nvar v = plotter.Visible;\r<br />\nint X_left = Convert.ToInt32(v.XMin);\r<br />\nint X_right = Convert.ToInt32(v.XMax);\r<br />\n<br />\nthis will not work and shows the total min max.<br />\n",
+    "PostedDate": "2014-04-03T07:25:03.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

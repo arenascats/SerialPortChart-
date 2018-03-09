@@ -1,0 +1,3322 @@
+[
+  {
+    "Id": "33582",
+    "Title": "How to change control properties?",
+    "LatestDate": "2008-08-26T00:52:31.587-07:00"
+  },
+  {
+    "Id": "33861",
+    "Title": "Plotting in VB.NET",
+    "LatestDate": "2008-09-03T19:25:15.96-07:00"
+  },
+  {
+    "Id": "35013",
+    "Title": "License information",
+    "LatestDate": "2008-09-05T08:17:53.543-07:00"
+  },
+  {
+    "Id": "35226",
+    "Title": "HorizontalAxis or VerticalAxis Brush",
+    "LatestDate": "2009-12-17T11:10:30.367-08:00"
+  },
+  {
+    "Id": "35948",
+    "Title": "IS there any documentation available for this?",
+    "LatestDate": "2008-09-25T07:47:23.6-07:00"
+  },
+  {
+    "Id": "36776",
+    "Title": "Hide the legend",
+    "LatestDate": "2008-10-07T05:04:40.703-07:00"
+  },
+  {
+    "Id": "36882",
+    "Title": "Problems with library",
+    "LatestDate": "2008-10-06T10:44:35.043-07:00"
+  },
+  {
+    "Id": "36886",
+    "Title": "3D support would be awsome",
+    "LatestDate": "2009-02-05T07:06:19.553-08:00"
+  },
+  {
+    "Id": "37859",
+    "Title": "Time on Axis",
+    "LatestDate": "2008-12-09T16:28:40.747-08:00"
+  },
+  {
+    "Id": "40270",
+    "Title": "How to remove the PointMarks from the screen",
+    "LatestDate": "2008-11-19T04:44:58.807-08:00"
+  },
+  {
+    "Id": "41826",
+    "Title": "Highlight Ranges",
+    "LatestDate": "2009-01-10T05:01:36.567-08:00"
+  },
+  {
+    "Id": "42243",
+    "Title": "Constraints on auto fit to view.",
+    "LatestDate": "2008-12-13T15:32:26.417-08:00"
+  },
+  {
+    "Id": "42244",
+    "Title": "Value ball that follows the cursor.",
+    "LatestDate": "2013-10-08T00:57:05.377-07:00"
+  },
+  {
+    "Id": "42245",
+    "Title": "Control over what methods of interaction are available.",
+    "LatestDate": "2008-12-19T04:40:23.067-08:00"
+  },
+  {
+    "Id": "42262",
+    "Title": "Constraints on zoom/pan.",
+    "LatestDate": "2008-12-15T11:47:27.847-08:00"
+  },
+  {
+    "Id": "42594",
+    "Title": "ElementMarkerPointsGraph Detaching problem",
+    "LatestDate": "2009-01-06T23:46:53.307-08:00"
+  },
+  {
+    "Id": "42671",
+    "Title": "svn repository not up to date",
+    "LatestDate": "2009-01-04T09:26:37.38-08:00"
+  },
+  {
+    "Id": "43101",
+    "Title": "How to Set the Value of Axis",
+    "LatestDate": "2012-05-30T06:28:37.883-07:00"
+  },
+  {
+    "Id": "43468",
+    "Title": "CPU usage varies with size of window in your real-time PerfCounterSample ",
+    "LatestDate": "2009-01-09T08:05:43.863-08:00"
+  },
+  {
+    "Id": "43878",
+    "Title": "Scenarios of DynamicDataDisplay's usage",
+    "LatestDate": "2009-01-10T05:13:00.603-08:00"
+  },
+  {
+    "Id": "44314",
+    "Title": "Using a string on the axis",
+    "LatestDate": "2012-05-04T08:13:59.137-07:00"
+  },
+  {
+    "Id": "44526",
+    "Title": "Styleable/Templateable PointMarker",
+    "LatestDate": "2009-01-19T11:37:03.73-08:00"
+  },
+  {
+    "Id": "44783",
+    "Title": "Remove one linegraph from ChartPlotter",
+    "LatestDate": "2009-10-20T10:02:37.12-07:00"
+  },
+  {
+    "Id": "46579",
+    "Title": "Changing the location of the legend",
+    "LatestDate": "2009-04-03T03:06:28.67-07:00"
+  },
+  {
+    "Id": "46581",
+    "Title": "Setting the minimum range of the vertical axis",
+    "LatestDate": "2009-03-27T02:49:18.503-07:00"
+  },
+  {
+    "Id": "46593",
+    "Title": "HelloWorldSample in F# not working",
+    "LatestDate": "2009-05-05T05:29:34.957-07:00"
+  },
+  {
+    "Id": "46893",
+    "Title": "Why not use an ItemsControl",
+    "LatestDate": "2009-02-14T08:19:08.1-08:00"
+  },
+  {
+    "Id": "47391",
+    "Title": "Silverlight toolkit charts, running in WPF",
+    "LatestDate": "2009-03-02T10:30:21.963-08:00"
+  },
+  {
+    "Id": "47475",
+    "Title": "Setting axis title in code",
+    "LatestDate": "2009-03-27T02:46:23.41-07:00"
+  },
+  {
+    "Id": "48568",
+    "Title": "problem with updating time(HH:mm:ss) ",
+    "LatestDate": "2009-03-02T10:18:10.127-08:00"
+  },
+  {
+    "Id": "48956",
+    "Title": "Is it possible to get the click event on a marker?",
+    "LatestDate": "2009-06-24T08:08:26.207-07:00"
+  },
+  {
+    "Id": "49088",
+    "Title": "Creating Custom Markers",
+    "LatestDate": "2009-07-06T20:02:47.953-07:00"
+  },
+  {
+    "Id": "50136",
+    "Title": "Setting axis labels",
+    "LatestDate": "2009-03-27T01:58:32.437-07:00"
+  },
+  {
+    "Id": "50137",
+    "Title": "Setting axis extents",
+    "LatestDate": "2009-04-01T08:20:51.97-07:00"
+  },
+  {
+    "Id": "50835",
+    "Title": "MAJOR BUG - URGENT (please)!",
+    "LatestDate": "2009-03-27T01:25:03.287-07:00"
+  },
+  {
+    "Id": "50842",
+    "Title": "Tooltip in real time",
+    "LatestDate": "2009-03-27T01:46:35.107-07:00"
+  },
+  {
+    "Id": "51155",
+    "Title": "Creating horizontal lines dynamically",
+    "LatestDate": "2009-04-15T18:11:54.047-07:00"
+  },
+  {
+    "Id": "51224",
+    "Title": "Displaying data for the last 24 hour period",
+    "LatestDate": "2009-04-01T03:10:53.027-07:00"
+  },
+  {
+    "Id": "51510",
+    "Title": "Exception is thrown when ChartPlot without explicitly set size",
+    "LatestDate": "2009-03-31T01:50:52.803-07:00"
+  },
+  {
+    "Id": "51558",
+    "Title": "Multi series Bar Chart?",
+    "LatestDate": "2009-04-06T01:23:52.457-07:00"
+  },
+  {
+    "Id": "52795",
+    "Title": "namespace problem when dragging chartPlotter from the toolbox",
+    "LatestDate": "2010-07-27T09:31:05.607-07:00"
+  },
+  {
+    "Id": "52797",
+    "Title": "Y axis on the right?",
+    "LatestDate": "2009-04-10T01:26:43.127-07:00"
+  },
+  {
+    "Id": "53203",
+    "Title": "mapping vertical axis value with horizontal time axis",
+    "LatestDate": "2009-11-23T12:00:55.05-08:00"
+  },
+  {
+    "Id": "53272",
+    "Title": "Polar & Smith Charts?",
+    "LatestDate": "2015-06-12T21:26:44.517-07:00"
+  },
+  {
+    "Id": "53291",
+    "Title": "BUG_overflowException with AppendAsync method",
+    "LatestDate": "2009-04-16T05:04:10.06-07:00"
+  },
+  {
+    "Id": "53493",
+    "Title": "Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.",
+    "LatestDate": "2009-04-16T06:43:38.817-07:00"
+  },
+  {
+    "Id": "53943",
+    "Title": "Adding some more data to chart , every time when timer runs (Join, or Concat)",
+    "LatestDate": "2011-03-11T01:23:45.4-08:00"
+  },
+  {
+    "Id": "54105",
+    "Title": "How to fix axis limits of an axis (Time axis)",
+    "LatestDate": "2009-04-29T19:29:21.463-07:00"
+  },
+  {
+    "Id": "54248",
+    "Title": "ObservableDataSource<Point> is displaying wrong cahrt",
+    "LatestDate": "2009-04-23T06:50:41.37-07:00"
+  },
+  {
+    "Id": "54611",
+    "Title": "Vertical axis problems",
+    "LatestDate": "2009-05-20T02:45:36.623-07:00"
+  },
+  {
+    "Id": "54629",
+    "Title": "ContextMenu not available!",
+    "LatestDate": "2009-04-30T03:39:36.003-07:00"
+  },
+  {
+    "Id": "54665",
+    "Title": "Adding DateTimeAxis in C#",
+    "LatestDate": "2009-04-29T19:13:11.453-07:00"
+  },
+  {
+    "Id": "54968",
+    "Title": "THANKS!!!",
+    "LatestDate": "2009-05-16T07:24:29.743-07:00"
+  },
+  {
+    "Id": "55230",
+    "Title": "Bar chart support",
+    "LatestDate": "2009-05-04T03:02:50.203-07:00"
+  },
+  {
+    "Id": "55231",
+    "Title": "How to remove disable default zooming and view port draggings (movements) with mouse",
+    "LatestDate": "2009-10-26T11:00:15.283-07:00"
+  },
+  {
+    "Id": "55291",
+    "Title": "Logarithmic Y Axis?",
+    "LatestDate": "2013-12-10T01:03:48.45-08:00"
+  },
+  {
+    "Id": "55361",
+    "Title": "Simulation Example AutoPan feature?",
+    "LatestDate": "2009-05-14T00:15:08.75-07:00"
+  },
+  {
+    "Id": "56524",
+    "Title": "How to color axes in DynamicDataDisplay",
+    "LatestDate": "2009-05-16T06:42:18.623-07:00"
+  },
+  {
+    "Id": "56832",
+    "Title": "How to invert Y (Vertical) axis",
+    "LatestDate": "2011-03-02T06:07:37.12-08:00"
+  },
+  {
+    "Id": "56857",
+    "Title": "Performance Tips",
+    "LatestDate": "2009-07-06T06:16:01.923-07:00"
+  },
+  {
+    "Id": "57597",
+    "Title": "HorizontalDateTimeAxis trouble...",
+    "LatestDate": "2009-06-26T09:02:21.887-07:00"
+  },
+  {
+    "Id": "57607",
+    "Title": "set HorizontalDateTimeAxis style",
+    "LatestDate": "2013-10-08T02:02:53.27-07:00"
+  },
+  {
+    "Id": "57646",
+    "Title": "Changing LineGraph Stroke or StrokeThickness doesn't update the legend - solved",
+    "LatestDate": "2009-08-25T03:24:31.493-07:00"
+  },
+  {
+    "Id": "58203",
+    "Title": "Legends without lines on graph?",
+    "LatestDate": "2010-06-01T07:45:58.03-07:00"
+  },
+  {
+    "Id": "59221",
+    "Title": "Selecting a range of values?",
+    "LatestDate": "2009-06-26T10:00:47.01-07:00"
+  },
+  {
+    "Id": "59340",
+    "Title": "Ability to handle NULL values?",
+    "LatestDate": "2009-06-26T11:21:01.69-07:00"
+  },
+  {
+    "Id": "59547",
+    "Title": "Bug in AxisBase.GetInsertionIndexByPlacement?",
+    "LatestDate": "2009-08-09T10:05:22.537-07:00"
+  },
+  {
+    "Id": "59708",
+    "Title": "Bug in ElementMarkerPointsGraph. Markers do not transform.",
+    "LatestDate": "2009-06-16T13:05:33.413-07:00"
+  },
+  {
+    "Id": "60322",
+    "Title": "Relationship to Silverlight Toolkit Charts",
+    "LatestDate": "2009-07-21T08:23:59.667-07:00"
+  },
+  {
+    "Id": "60799",
+    "Title": "Solution: how to skip points",
+    "LatestDate": "2009-07-06T06:09:25.453-07:00"
+  },
+  {
+    "Id": "60942",
+    "Title": "Last marker on a graph never changes",
+    "LatestDate": "2009-07-06T06:05:12.603-07:00"
+  },
+  {
+    "Id": "61278",
+    "Title": ".chm file doesnt work",
+    "LatestDate": "2009-08-25T12:43:32.213-07:00"
+  },
+  {
+    "Id": "61375",
+    "Title": "reload plotter",
+    "LatestDate": "2009-07-30T21:58:39.743-07:00"
+  },
+  {
+    "Id": "61561",
+    "Title": "About CursorCoordinateGraph",
+    "LatestDate": "2009-08-03T00:45:23.943-07:00"
+  },
+  {
+    "Id": "61698",
+    "Title": "Swapping the X and Y axis",
+    "LatestDate": "2009-07-07T03:50:25.74-07:00"
+  },
+  {
+    "Id": "61968",
+    "Title": "Data Value on Series",
+    "LatestDate": "2009-07-31T01:59:14.157-07:00"
+  },
+  {
+    "Id": "61969",
+    "Title": "Changing Context menu depending on what is clicked?",
+    "LatestDate": "2012-02-15T13:06:26.55-08:00"
+  },
+  {
+    "Id": "61982",
+    "Title": "Straight lines...",
+    "LatestDate": "2009-07-12T23:51:24.28-07:00"
+  },
+  {
+    "Id": "62284",
+    "Title": "Independent Y-Axis on ChartPlotter",
+    "LatestDate": "2013-07-04T06:41:34.047-07:00"
+  },
+  {
+    "Id": "62313",
+    "Title": "IntensityChart",
+    "LatestDate": "2009-07-22T01:02:26.203-07:00"
+  },
+  {
+    "Id": "62491",
+    "Title": "D3 Maps + Drawing Shapes + Drag&Drop",
+    "LatestDate": "2009-07-22T10:12:38.487-07:00"
+  },
+  {
+    "Id": "62813",
+    "Title": "Printing charts using XPS",
+    "LatestDate": "2012-07-29T22:25:27.84-07:00"
+  },
+  {
+    "Id": "62863",
+    "Title": "WPF Toolkit / Chart Control",
+    "LatestDate": "2009-07-18T14:34:31.687-07:00"
+  },
+  {
+    "Id": "63195",
+    "Title": "Log X Axis only & CircleElementPointMarker crash",
+    "LatestDate": "2009-07-22T10:54:52.09-07:00"
+  },
+  {
+    "Id": "63633",
+    "Title": "MVVM LineGraph DataSource DP",
+    "LatestDate": "2013-12-10T00:30:02.59-08:00"
+  },
+  {
+    "Id": "63986",
+    "Title": "Animation and Independent Y-Axis",
+    "LatestDate": "2009-07-31T05:15:27.867-07:00"
+  },
+  {
+    "Id": "64319",
+    "Title": "Can \"WPF Dynamic Data display\" support dual y-axis chart?",
+    "LatestDate": "2014-05-05T02:34:58.91-07:00"
+  },
+  {
+    "Id": "64661",
+    "Title": "Is there a way to ensure the Top scale number in Y-axis always visible?",
+    "LatestDate": "2009-08-08T19:10:01.083-07:00"
+  },
+  {
+    "Id": "64819",
+    "Title": "How would I make the plotter slower?",
+    "LatestDate": "2009-08-08T09:57:24.357-07:00"
+  },
+  {
+    "Id": "64883",
+    "Title": "Does the WPF Dynamic Data Display support localization on-the-fly for line description?",
+    "LatestDate": "2009-08-21T04:26:53.703-07:00"
+  },
+  {
+    "Id": "65082",
+    "Title": "Is there a way to mark some points with y value?",
+    "LatestDate": "2009-08-10T11:02:33.133-07:00"
+  },
+  {
+    "Id": "65083",
+    "Title": "How to know when the chart finished to draw?",
+    "LatestDate": "2009-08-11T19:38:11.1-07:00"
+  },
+  {
+    "Id": "65113",
+    "Title": "overlay an image in sync with the plotter",
+    "LatestDate": "2009-08-27T16:36:49.643-07:00"
+  },
+  {
+    "Id": "65357",
+    "Title": "LineGraphs draw over eachother/Bring to Front",
+    "LatestDate": "2009-08-24T02:48:45.34-07:00"
+  },
+  {
+    "Id": "65451",
+    "Title": "Can't get FitToViewRestrictions to work with build 28448",
+    "LatestDate": "2009-08-26T07:40:54.06-07:00"
+  },
+  {
+    "Id": "65718",
+    "Title": "LogarithmNumericTicksProvider is causing overflows during zoom and pan ",
+    "LatestDate": "2010-03-19T13:03:41.113-07:00"
+  },
+  {
+    "Id": "66143",
+    "Title": "Is it possible to show the axis unit in specific culture?",
+    "LatestDate": "2009-08-24T09:43:29.297-07:00"
+  },
+  {
+    "Id": "66262",
+    "Title": "Does the WPF Dynamic data display support Expression Blend 2 or 3?",
+    "LatestDate": "2009-10-14T07:23:30.14-07:00"
+  },
+  {
+    "Id": "66500",
+    "Title": "WMS map network server",
+    "LatestDate": "2009-08-21T05:33:23.353-07:00"
+  },
+  {
+    "Id": "66778",
+    "Title": "Right Click on Axis - Unexpected Behaviour",
+    "LatestDate": "2009-08-25T01:05:33.593-07:00"
+  },
+  {
+    "Id": "66819",
+    "Title": "Is it possible to know when Content of a Plotter.Children has changed?",
+    "LatestDate": "2009-09-01T04:19:03.78-07:00"
+  },
+  {
+    "Id": "66821",
+    "Title": "Is it possible that we can position the line description in middle or left?",
+    "LatestDate": "2009-08-25T09:13:30.51-07:00"
+  },
+  {
+    "Id": "66849",
+    "Title": "DateTime Axis bug",
+    "LatestDate": "2009-08-26T11:33:52.903-07:00"
+  },
+  {
+    "Id": "66919",
+    "Title": "Two Independent Axes with injected plotter does not work in latest nightly build",
+    "LatestDate": "2009-09-01T08:19:44.003-07:00"
+  },
+  {
+    "Id": "67332",
+    "Title": "How do I style the chart components",
+    "LatestDate": "2009-09-17T09:50:23-07:00"
+  },
+  {
+    "Id": "67334",
+    "Title": "Axis restrictions",
+    "LatestDate": "2009-08-31T07:55:44.92-07:00"
+  },
+  {
+    "Id": "67392",
+    "Title": "Primary and secondary X axis",
+    "LatestDate": "2009-08-30T23:25:49.22-07:00"
+  },
+  {
+    "Id": "67727",
+    "Title": "Issue with adding vertical range",
+    "LatestDate": "2011-11-09T02:39:20.383-08:00"
+  },
+  {
+    "Id": "67748",
+    "Title": "Get X axes value from the cursor coodinate.",
+    "LatestDate": "2009-10-14T08:36:01.98-07:00"
+  },
+  {
+    "Id": "67781",
+    "Title": "How can we set initial reason graph range?",
+    "LatestDate": "2009-09-11T00:49:11.39-07:00"
+  },
+  {
+    "Id": "67918",
+    "Title": "Force Axis to refresh tick labels?",
+    "LatestDate": "2009-09-08T10:51:31.28-07:00"
+  },
+  {
+    "Id": "68453",
+    "Title": "Colored maps / surface",
+    "LatestDate": "2012-04-03T07:58:44.927-07:00"
+  },
+  {
+    "Id": "68494",
+    "Title": "Show axis values in exponential form",
+    "LatestDate": "2009-09-11T00:41:01.633-07:00"
+  },
+  {
+    "Id": "68560",
+    "Title": "Independant Y-Axis with Independant scrolling",
+    "LatestDate": "2009-09-11T01:12:56.523-07:00"
+  },
+  {
+    "Id": "68780",
+    "Title": "How should I begin learning D3?",
+    "LatestDate": "2009-09-16T07:21:15.033-07:00"
+  },
+  {
+    "Id": "69034",
+    "Title": "Support for double.NaN's",
+    "LatestDate": "2010-05-26T22:29:09.223-07:00"
+  },
+  {
+    "Id": "69055",
+    "Title": "Leading zone mechanism to reduce CPU load.",
+    "LatestDate": "2009-09-17T19:36:24.533-07:00"
+  },
+  {
+    "Id": "69226",
+    "Title": "3D D3",
+    "LatestDate": "2009-09-17T09:37:08.32-07:00"
+  },
+  {
+    "Id": "69390",
+    "Title": "How to make vertical axis start from top end on bottom",
+    "LatestDate": "2009-09-25T05:53:54.593-07:00"
+  },
+  {
+    "Id": "69427",
+    "Title": "What platform do I need to use D3?",
+    "LatestDate": "2009-09-20T19:57:06.117-07:00"
+  },
+  {
+    "Id": "69447",
+    "Title": "Is it possible to show scrollbar",
+    "LatestDate": "2014-09-21T01:33:01.943-07:00"
+  },
+  {
+    "Id": "69577",
+    "Title": "Data virtualization",
+    "LatestDate": "2009-09-29T09:29:58-07:00"
+  },
+  {
+    "Id": "69635",
+    "Title": "Draggable Marker",
+    "LatestDate": "2009-09-25T05:34:09.673-07:00"
+  },
+  {
+    "Id": "69690",
+    "Title": "Performance",
+    "LatestDate": "2009-09-25T05:29:08.637-07:00"
+  },
+  {
+    "Id": "70302",
+    "Title": "Hide the Legend broken?",
+    "LatestDate": "2013-08-27T07:49:11.197-07:00"
+  },
+  {
+    "Id": "70303",
+    "Title": "Status on Bar Chart Support",
+    "LatestDate": "2009-10-14T08:21:29.28-07:00"
+  },
+  {
+    "Id": "70342",
+    "Title": "Limit zooming to X-Axis?",
+    "LatestDate": "2009-10-14T08:25:57.75-07:00"
+  },
+  {
+    "Id": "70455",
+    "Title": "Using Image in ListBox as \"thumbnail\"",
+    "LatestDate": "2009-10-14T08:13:17.803-07:00"
+  },
+  {
+    "Id": "70873",
+    "Title": "Is there any AutoScale function for axes?",
+    "LatestDate": "2009-10-14T08:02:31.14-07:00"
+  },
+  {
+    "Id": "70874",
+    "Title": "Cursor Coordinate Graph - Box Position",
+    "LatestDate": "2009-10-14T07:45:42.17-07:00"
+  },
+  {
+    "Id": "70913",
+    "Title": "Showing markers on ViewportPolygon",
+    "LatestDate": "2009-10-14T07:44:00.77-07:00"
+  },
+  {
+    "Id": "71063",
+    "Title": "Rolling window graph",
+    "LatestDate": "2014-07-03T06:12:27.487-07:00"
+  },
+  {
+    "Id": "71608",
+    "Title": "Is there a way to display axes that go through the Origin of a LineGraph ?",
+    "LatestDate": "2009-10-14T11:16:07.36-07:00"
+  },
+  {
+    "Id": "71698",
+    "Title": "Chartplotter in an Expander doesn't show legend etc",
+    "LatestDate": "2009-10-18T08:07:53.6-07:00"
+  },
+  {
+    "Id": "71787",
+    "Title": "How to raise click/select Events for child VerticalAxis",
+    "LatestDate": "2009-10-21T00:58:23.327-07:00"
+  },
+  {
+    "Id": "71882",
+    "Title": "Fixed values in the vertical axis",
+    "LatestDate": "2009-10-14T11:11:24.977-07:00"
+  },
+  {
+    "Id": "72366",
+    "Title": "Scatter Plot?",
+    "LatestDate": "2009-11-13T09:20:17.44-08:00"
+  },
+  {
+    "Id": "72459",
+    "Title": "Limit MinorTick in DateTimeAxis",
+    "LatestDate": "2010-05-21T02:01:34.357-07:00"
+  },
+  {
+    "Id": "72517",
+    "Title": "How do I stop cliping of axis labels?",
+    "LatestDate": "2010-11-09T13:08:53.077-08:00"
+  },
+  {
+    "Id": "72783",
+    "Title": "Data from same Line but not connected",
+    "LatestDate": "2009-11-03T04:17:19.24-08:00"
+  },
+  {
+    "Id": "72908",
+    "Title": "Change the label and Tick when zooming",
+    "LatestDate": "2009-10-31T13:30:09.453-07:00"
+  },
+  {
+    "Id": "72988",
+    "Title": "IntensityPlot alternative",
+    "LatestDate": "2009-11-01T17:31:34.953-08:00"
+  },
+  {
+    "Id": "73410",
+    "Title": "Two Dynamic lines with separate scales",
+    "LatestDate": "2009-10-30T20:38:10.113-07:00"
+  },
+  {
+    "Id": "73577",
+    "Title": "How to customize the legend?",
+    "LatestDate": "2009-12-10T08:02:21.213-08:00"
+  },
+  {
+    "Id": "73597",
+    "Title": "LineGraph's bound DataSource not updated when not fit to view ",
+    "LatestDate": "2009-11-02T04:11:58.537-08:00"
+  },
+  {
+    "Id": "73652",
+    "Title": "MayorDateTimeLabelProvider Needs GridBackground and RectangleBorder Brush properties",
+    "LatestDate": "2009-11-02T08:22:29.623-08:00"
+  },
+  {
+    "Id": "73708",
+    "Title": "DateTimeAxis change day too soon",
+    "LatestDate": "2009-10-31T13:38:26.907-07:00"
+  },
+  {
+    "Id": "73812",
+    "Title": "Sync visible area on multiple charts",
+    "LatestDate": "2009-11-09T07:42:14.58-08:00"
+  },
+  {
+    "Id": "73870",
+    "Title": "DataBinding Error 4",
+    "LatestDate": "2010-04-15T21:35:07.75-07:00"
+  },
+  {
+    "Id": "73905",
+    "Title": "Digital graph",
+    "LatestDate": "2017-04-27T17:31:22.707-07:00"
+  },
+  {
+    "Id": "73933",
+    "Title": "Manual Grid Lines & Tick Marks",
+    "LatestDate": "2009-11-06T11:13:16.953-08:00"
+  },
+  {
+    "Id": "74187",
+    "Title": "ChartPlotter with transparent background goes black when copy to clipboard",
+    "LatestDate": "2009-12-16T07:57:48.543-08:00"
+  },
+  {
+    "Id": "74319",
+    "Title": "WPF Legend, and other customization",
+    "LatestDate": "2009-11-13T10:24:36.463-08:00"
+  },
+  {
+    "Id": "74496",
+    "Title": "Binding to multiple LineGraphs from a ViewModel",
+    "LatestDate": "2009-12-08T04:46:51.147-08:00"
+  },
+  {
+    "Id": "74562",
+    "Title": "Line Chart with Transparent Fill",
+    "LatestDate": "2009-11-09T22:19:45.99-08:00"
+  },
+  {
+    "Id": "74638",
+    "Title": "Navigation options",
+    "LatestDate": "2009-11-10T10:09:04.1-08:00"
+  },
+  {
+    "Id": "74741",
+    "Title": "Data Binding using XmlDataProvider and XPath",
+    "LatestDate": "2009-12-15T21:03:01.62-08:00"
+  },
+  {
+    "Id": "74845",
+    "Title": "ChartPlotter resize ",
+    "LatestDate": "2009-12-13T08:28:47.473-08:00"
+  },
+  {
+    "Id": "74886",
+    "Title": "Transform of TextBlock and Image",
+    "LatestDate": "2009-11-13T08:38:37.003-08:00"
+  },
+  {
+    "Id": "74901",
+    "Title": "Line drawing performance in WPF",
+    "LatestDate": "2010-08-31T11:02:46.187-07:00"
+  },
+  {
+    "Id": "74955",
+    "Title": "Problem changing ViewportPanel.ViewportWidthProperty?",
+    "LatestDate": "2009-11-12T17:16:09.7-08:00"
+  },
+  {
+    "Id": "75028",
+    "Title": "Axes behave strangely when refreshing the data",
+    "LatestDate": "2012-08-29T05:07:58.117-07:00"
+  },
+  {
+    "Id": "75335",
+    "Title": "CircleElementPointMarker really slows up Plotter",
+    "LatestDate": "2014-05-16T04:15:26.75-07:00"
+  },
+  {
+    "Id": "75429",
+    "Title": "Data markers on child vertical axis",
+    "LatestDate": "2009-12-10T07:14:24.083-08:00"
+  },
+  {
+    "Id": "75587",
+    "Title": "How do the filters work?",
+    "LatestDate": "2009-11-27T02:10:49.247-08:00"
+  },
+  {
+    "Id": "75635",
+    "Title": "Drawing  a large ammount of data",
+    "LatestDate": "2009-11-27T02:06:02.943-08:00"
+  },
+  {
+    "Id": "75708",
+    "Title": "Support for colors",
+    "LatestDate": "2009-11-25T01:23:33.667-08:00"
+  },
+  {
+    "Id": "75944",
+    "Title": "How to sync the vertical axis tick width of 2 charts",
+    "LatestDate": "2010-10-21T04:11:13.253-07:00"
+  },
+  {
+    "Id": "75956",
+    "Title": "Cursor does not follow while dragging a point",
+    "LatestDate": "2009-11-24T11:16:54.627-08:00"
+  },
+  {
+    "Id": "76075",
+    "Title": "Filled IsoLineGraph",
+    "LatestDate": "2009-11-24T10:58:45.49-08:00"
+  },
+  {
+    "Id": "76097",
+    "Title": "Changset 29304 - what's different",
+    "LatestDate": "2009-11-24T10:56:42.757-08:00"
+  },
+  {
+    "Id": "76369",
+    "Title": "Is it possible to set mutiple axises ",
+    "LatestDate": "2009-11-27T01:09:22.087-08:00"
+  },
+  {
+    "Id": "76417",
+    "Title": "Real Time Chart With \"fixed Now\" TimeSpanAxis",
+    "LatestDate": "2009-11-27T08:57:03.437-08:00"
+  },
+  {
+    "Id": "76901",
+    "Title": "Plotting an ArcSegment (or any PathGeometry) correctly",
+    "LatestDate": "2010-02-15T09:46:24.68-08:00"
+  },
+  {
+    "Id": "76945",
+    "Title": "Source code for the samples?",
+    "LatestDate": "2009-12-03T05:03:05.323-08:00"
+  },
+  {
+    "Id": "77325",
+    "Title": "Problem with HorizontalDateTimeAxis labels",
+    "LatestDate": "2009-12-11T06:01:44.78-08:00"
+  },
+  {
+    "Id": "77382",
+    "Title": "VerticalLine moved by DateTimeSelector",
+    "LatestDate": "2009-12-07T08:54:10.243-08:00"
+  },
+  {
+    "Id": "77388",
+    "Title": "More comprehensive mouse Leave/Enter",
+    "LatestDate": "2009-12-12T07:31:56.357-08:00"
+  },
+  {
+    "Id": "77541",
+    "Title": "License clarification",
+    "LatestDate": "2009-12-11T03:14:50-08:00"
+  },
+  {
+    "Id": "77574",
+    "Title": "Marking of data points",
+    "LatestDate": "2009-12-09T01:13:25.15-08:00"
+  },
+  {
+    "Id": "77659",
+    "Title": "Problem with DataTriggers on Markers?",
+    "LatestDate": "2010-01-10T12:26:31.277-08:00"
+  },
+  {
+    "Id": "78105",
+    "Title": "Tooltips with UserControl",
+    "LatestDate": "2009-12-14T09:15:27.7-08:00"
+  },
+  {
+    "Id": "78387",
+    "Title": "OpenStreetMapServer",
+    "LatestDate": "2009-12-18T06:27:56.363-08:00"
+  },
+  {
+    "Id": "78472",
+    "Title": "Error Bars",
+    "LatestDate": "2009-12-17T10:21:22.137-08:00"
+  },
+  {
+    "Id": "78488",
+    "Title": "Error on D3 WPF install in IE 7x, any ideas?",
+    "LatestDate": "2009-12-24T09:51:13.357-08:00"
+  },
+  {
+    "Id": "78576",
+    "Title": "Functionality questions",
+    "LatestDate": "2009-12-18T14:24:14.107-08:00"
+  },
+  {
+    "Id": "78607",
+    "Title": "D3 and MVVM?",
+    "LatestDate": "2009-12-30T03:51:03.133-08:00"
+  },
+  {
+    "Id": "78696",
+    "Title": "Just getting started",
+    "LatestDate": "2009-12-20T17:54:09.75-08:00"
+  },
+  {
+    "Id": "78792",
+    "Title": "Proper use of FitToViewRestrictions?",
+    "LatestDate": "2013-07-16T05:04:29.397-07:00"
+  },
+  {
+    "Id": "79040",
+    "Title": "Get mouse down data position?",
+    "LatestDate": "2009-12-29T08:12:22.197-08:00"
+  },
+  {
+    "Id": "79287",
+    "Title": "Cursor or Slider on line charts",
+    "LatestDate": "2010-09-10T06:17:59.287-07:00"
+  },
+  {
+    "Id": "79475",
+    "Title": "Virtual Earth Example",
+    "LatestDate": "2010-01-03T23:59:56.437-08:00"
+  },
+  {
+    "Id": "79714",
+    "Title": "Linegraph filters and markers?",
+    "LatestDate": "2010-01-04T10:00:58.497-08:00"
+  },
+  {
+    "Id": "79764",
+    "Title": "Filtering problem (bug?)",
+    "LatestDate": "2013-09-24T04:17:53.133-07:00"
+  },
+  {
+    "Id": "79840",
+    "Title": "The best approach to fill an area below the line chart?",
+    "LatestDate": "2010-01-05T14:56:30.887-08:00"
+  },
+  {
+    "Id": "80012",
+    "Title": "Polygon plot",
+    "LatestDate": "2010-01-06T20:44:13.62-08:00"
+  },
+  {
+    "Id": "80075",
+    "Title": "Y Axis and X Axis Min and Max Value",
+    "LatestDate": "2010-01-07T07:56:49.663-08:00"
+  },
+  {
+    "Id": "80214",
+    "Title": "Breaking samples in nightly build (v0.3.4703.0)",
+    "LatestDate": "2010-11-22T08:22:27-08:00"
+  },
+  {
+    "Id": "80351",
+    "Title": "System.ArgumentException  Message=\"Assertion failed.\"   Source=\"DynamicDataDisplay\"",
+    "LatestDate": "2010-01-11T16:15:56.157-08:00"
+  },
+  {
+    "Id": "80641",
+    "Title": "How do you utilize RectangleSelector?",
+    "LatestDate": "2010-01-12T23:12:05.45-08:00"
+  },
+  {
+    "Id": "80677",
+    "Title": "Handle the Legend mouse events",
+    "LatestDate": "2010-01-13T06:56:02.82-08:00"
+  },
+  {
+    "Id": "80760",
+    "Title": "Common X axis with several stacked Y axes",
+    "LatestDate": "2010-01-13T21:18:01.923-08:00"
+  },
+  {
+    "Id": "81079",
+    "Title": "Problem with Assembly ref.",
+    "LatestDate": "2010-01-18T20:40:13.187-08:00"
+  },
+  {
+    "Id": "81142",
+    "Title": "ViewPortChanging event",
+    "LatestDate": "2010-01-19T22:46:32.917-08:00"
+  },
+  {
+    "Id": "81230",
+    "Title": "PointsGraphBase.GetVisiblePoints() ?",
+    "LatestDate": "2010-02-19T11:33:05.237-08:00"
+  },
+  {
+    "Id": "81241",
+    "Title": "Infinite loop when doing Fit To View...",
+    "LatestDate": "2010-01-19T20:10:30.627-08:00"
+  },
+  {
+    "Id": "81311",
+    "Title": "D3 Project Status?",
+    "LatestDate": "2010-01-20T16:06:18.047-08:00"
+  },
+  {
+    "Id": "81789",
+    "Title": "very high CPU load",
+    "LatestDate": "2010-01-23T05:59:01.857-08:00"
+  },
+  {
+    "Id": "82093",
+    "Title": "Chart Destruction, Memory, and Garbage Collection",
+    "LatestDate": "2010-03-01T07:31:09.783-08:00"
+  },
+  {
+    "Id": "82245",
+    "Title": "Making Viewport2D.Domain a DP",
+    "LatestDate": "2010-07-05T23:07:45.653-07:00"
+  },
+  {
+    "Id": "82755",
+    "Title": "Timeline with variable length shapes",
+    "LatestDate": "2010-02-01T09:17:35.107-08:00"
+  },
+  {
+    "Id": "83180",
+    "Title": "GenericLocationalLabelProvider problems",
+    "LatestDate": "2012-01-27T13:41:41.307-08:00"
+  },
+  {
+    "Id": "83211",
+    "Title": "Setting XAxis through binding?",
+    "LatestDate": "2010-02-08T00:14:27.673-08:00"
+  },
+  {
+    "Id": "83916",
+    "Title": "Plotting Data on a Map",
+    "LatestDate": "2010-02-10T04:33:31.473-08:00"
+  },
+  {
+    "Id": "85353",
+    "Title": "LineGraph.Name is not accepting all names(Bug)",
+    "LatestDate": "2010-02-16T05:27:59.517-08:00"
+  },
+  {
+    "Id": "85373",
+    "Title": "Context Menus from CodeBehind",
+    "LatestDate": "2010-02-15T04:02:16.517-08:00"
+  },
+  {
+    "Id": "85509",
+    "Title": "Legends messed up?",
+    "LatestDate": "2010-02-16T10:58:46.067-08:00"
+  },
+  {
+    "Id": "85560",
+    "Title": "Invert Y Axis",
+    "LatestDate": "2010-02-17T05:20:12.33-08:00"
+  },
+  {
+    "Id": "85790",
+    "Title": "ViewportPanel.ActualWidth and ActualHeight return zero.",
+    "LatestDate": "2010-02-18T07:48:32.333-08:00"
+  },
+  {
+    "Id": "85833",
+    "Title": "DataTable data source for DevMarkerChart",
+    "LatestDate": "2010-02-18T10:29:49.83-08:00"
+  },
+  {
+    "Id": "195634",
+    "Title": "Rendering Graphs One Line Segent At A Time",
+    "LatestDate": "2010-02-25T10:03:03.293-08:00"
+  },
+  {
+    "Id": "196622",
+    "Title": "Endless cycling on load",
+    "LatestDate": "2010-03-01T07:33:33.897-08:00"
+  },
+  {
+    "Id": "199401",
+    "Title": "Superimposing Two Charts",
+    "LatestDate": "2010-02-26T02:39:39.737-08:00"
+  },
+  {
+    "Id": "203650",
+    "Title": "Multiple cursors",
+    "LatestDate": "2010-04-29T01:04:18.567-07:00"
+  },
+  {
+    "Id": "204950",
+    "Title": "Text Annotation on data series",
+    "LatestDate": "2010-03-26T00:13:09.443-07:00"
+  },
+  {
+    "Id": "205270",
+    "Title": "Can you explain CoordinateTransform?",
+    "LatestDate": "2010-03-17T09:45:43.007-07:00"
+  },
+  {
+    "Id": "207339",
+    "Title": "New to DDD and OpenStreetMap",
+    "LatestDate": "2010-03-26T00:10:36.767-07:00"
+  },
+  {
+    "Id": "208124",
+    "Title": "Percentage Zoom",
+    "LatestDate": "2011-02-04T14:34:44.617-08:00"
+  },
+  {
+    "Id": "208310",
+    "Title": "Sync two charts with DataFollowChart's",
+    "LatestDate": "2010-04-04T15:30:49.8-07:00"
+  },
+  {
+    "Id": "208619",
+    "Title": "Performance with large data sources",
+    "LatestDate": "2010-04-12T19:17:02.353-07:00"
+  },
+  {
+    "Id": "208879",
+    "Title": "Are you guys still working on D3?",
+    "LatestDate": "2010-09-27T04:19:41.493-07:00"
+  },
+  {
+    "Id": "209116",
+    "Title": "Tooltip on charts do not work and crashes with Log10XTransform",
+    "LatestDate": "2010-04-12T15:56:08.287-07:00"
+  },
+  {
+    "Id": "209121",
+    "Title": "Adjust Spacing of Tick Marks",
+    "LatestDate": "2012-07-09T09:30:08.023-07:00"
+  },
+  {
+    "Id": "209159",
+    "Title": "Removing default ContextMenu Items",
+    "LatestDate": "2010-04-14T04:33:00.967-07:00"
+  },
+  {
+    "Id": "209194",
+    "Title": "Mayor",
+    "LatestDate": "2010-04-13T10:10:42.883-07:00"
+  },
+  {
+    "Id": "209737",
+    "Title": "[ASK] Center position of axis",
+    "LatestDate": "2010-04-21T20:15:41.587-07:00"
+  },
+  {
+    "Id": "209751",
+    "Title": "Isolinetext label",
+    "LatestDate": "2010-04-19T16:02:35.707-07:00"
+  },
+  {
+    "Id": "209826",
+    "Title": "image plot?",
+    "LatestDate": "2010-04-19T16:14:40.117-07:00"
+  },
+  {
+    "Id": "210023",
+    "Title": "PlotterChildrenCollection.BlockEvents - how to use it",
+    "LatestDate": "2010-04-21T05:52:03.2-07:00"
+  },
+  {
+    "Id": "210225",
+    "Title": "How to restrict zoom on the graph",
+    "LatestDate": "2010-06-17T05:40:53.063-07:00"
+  },
+  {
+    "Id": "210310",
+    "Title": "Ms-RL License Discussion",
+    "LatestDate": "2010-04-23T09:25:25.017-07:00"
+  },
+  {
+    "Id": "210531",
+    "Title": "Documentation",
+    "LatestDate": "2010-04-26T19:24:04.24-07:00"
+  },
+  {
+    "Id": "210631",
+    "Title": "Need help on rolling graph with datatime axis",
+    "LatestDate": "2010-04-26T19:19:27.813-07:00"
+  },
+  {
+    "Id": "210795",
+    "Title": "WPF 4.0 / MSVS2010 compatible?",
+    "LatestDate": "2011-08-08T02:46:25.22-07:00"
+  },
+  {
+    "Id": "210799",
+    "Title": "Axis Labels overlapping",
+    "LatestDate": "2010-04-29T01:27:06.89-07:00"
+  },
+  {
+    "Id": "210800",
+    "Title": "CursorCoordinateGraph - Moving text labels near to intersection point",
+    "LatestDate": "2010-04-28T01:48:47.92-07:00"
+  },
+  {
+    "Id": "210838",
+    "Title": "InvalidOperationException when using HorizontalRange ",
+    "LatestDate": "2010-04-28T04:37:10.317-07:00"
+  },
+  {
+    "Id": "211168",
+    "Title": "Changes in way to get overlayed plots?",
+    "LatestDate": "2010-04-30T13:02:29.663-07:00"
+  },
+  {
+    "Id": "211170",
+    "Title": "Anything like IsZoomed?",
+    "LatestDate": "2010-05-03T19:03:22.867-07:00"
+  },
+  {
+    "Id": "211411",
+    "Title": "Interpolation Options",
+    "LatestDate": "2010-06-17T05:46:00.613-07:00"
+  },
+  {
+    "Id": "211424",
+    "Title": "Large Data Initial Loading Time",
+    "LatestDate": "2010-07-22T17:06:56.49-07:00"
+  },
+  {
+    "Id": "211934",
+    "Title": "Modify Foreground/background of ContextMenu",
+    "LatestDate": "2010-05-07T08:51:18.327-07:00"
+  },
+  {
+    "Id": "212140",
+    "Title": "'ViewportHostPanel' does not exist...",
+    "LatestDate": "2010-05-11T14:49:07.92-07:00"
+  },
+  {
+    "Id": "212161",
+    "Title": "Align multiple graphs",
+    "LatestDate": "2010-05-19T01:25:06.8-07:00"
+  },
+  {
+    "Id": "212578",
+    "Title": "Isoline sample for VB 2010",
+    "LatestDate": "2010-05-23T07:05:58.553-07:00"
+  },
+  {
+    "Id": "212645",
+    "Title": "D3 WPF control not visible in XBAP(WPF brower application)",
+    "LatestDate": "2010-05-14T06:32:54.533-07:00"
+  },
+  {
+    "Id": "213420",
+    "Title": "String Axis Label Provider",
+    "LatestDate": "2010-05-21T06:48:08.553-07:00"
+  },
+  {
+    "Id": "213814",
+    "Title": "D3 Memory Leak",
+    "LatestDate": "2010-06-17T09:33:54.36-07:00"
+  },
+  {
+    "Id": "213888",
+    "Title": "Using RawDataSource - no graph is displayed",
+    "LatestDate": "2010-05-26T09:28:18.11-07:00"
+  },
+  {
+    "Id": "213919",
+    "Title": "Synch Multiple Charts",
+    "LatestDate": "2010-06-09T13:59:55.433-07:00"
+  },
+  {
+    "Id": "213967",
+    "Title": "Fit to view does not work in IsoLineGraph",
+    "LatestDate": "2010-05-27T12:10:05.16-07:00"
+  },
+  {
+    "Id": "214987",
+    "Title": "Does anyone check these discussion boards?",
+    "LatestDate": "2010-06-04T06:42:37.003-07:00"
+  },
+  {
+    "Id": "215015",
+    "Title": "Issue with Vertical Axis and Removing/Adding lines.",
+    "LatestDate": "2011-11-08T01:31:54.607-08:00"
+  },
+  {
+    "Id": "215075",
+    "Title": "Retrieving data points currently in view",
+    "LatestDate": "2010-06-10T20:02:35.363-07:00"
+  },
+  {
+    "Id": "215430",
+    "Title": "D3-Line-in-3D Line3DSample throws exception",
+    "LatestDate": "2010-06-09T01:34:07.973-07:00"
+  },
+  {
+    "Id": "215632",
+    "Title": "ShapePointMarker FillProperty",
+    "LatestDate": "2010-06-10T10:15:58.343-07:00"
+  },
+  {
+    "Id": "215725",
+    "Title": "Extend D3 for Top to bottom chart",
+    "LatestDate": "2010-06-12T03:46:12.92-07:00"
+  },
+  {
+    "Id": "215966",
+    "Title": "Status of this project",
+    "LatestDate": "2010-06-17T20:47:20.94-07:00"
+  },
+  {
+    "Id": "216100",
+    "Title": "Line Graph Performance",
+    "LatestDate": "2010-06-15T13:17:40.47-07:00"
+  },
+  {
+    "Id": "216443",
+    "Title": "Legend.VisibleInLegend does not update legend",
+    "LatestDate": "2010-06-17T14:31:48.597-07:00"
+  },
+  {
+    "Id": "217108",
+    "Title": "Bar Chart",
+    "LatestDate": "2010-06-23T15:45:09.7-07:00"
+  },
+  {
+    "Id": "217415",
+    "Title": "D3: Current Status and Plans",
+    "LatestDate": "2010-06-30T01:34:21.397-07:00"
+  },
+  {
+    "Id": "217619",
+    "Title": "Thanks to Mikhail",
+    "LatestDate": "2010-06-29T19:35:26.883-07:00"
+  },
+  {
+    "Id": "217689",
+    "Title": "Draw lines for minor ticks",
+    "LatestDate": "2010-06-29T02:31:28.753-07:00"
+  },
+  {
+    "Id": "218493",
+    "Title": "Intensity Example (thanks Mikhail)",
+    "LatestDate": "2010-07-07T07:13:45.673-07:00"
+  },
+  {
+    "Id": "218954",
+    "Title": "How to restrict draggable points movement?",
+    "LatestDate": "2010-07-09T11:29:26.763-07:00"
+  },
+  {
+    "Id": "219145",
+    "Title": "Define numeric axis tick parameters",
+    "LatestDate": "2010-07-13T06:42:33.797-07:00"
+  },
+  {
+    "Id": "219577",
+    "Title": "Dashed lines",
+    "LatestDate": "2010-07-15T13:47:45.817-07:00"
+  },
+  {
+    "Id": "219647",
+    "Title": "Update Chart Header etc",
+    "LatestDate": "2010-07-16T10:23:16.193-07:00"
+  },
+  {
+    "Id": "219707",
+    "Title": "How to clear plot window for new data",
+    "LatestDate": "2010-07-19T15:10:42.883-07:00"
+  },
+  {
+    "Id": "219939",
+    "Title": "TwoIndependent Y-Axis Sample does not respond appropriately to Zoom and Pan",
+    "LatestDate": "2010-08-05T11:03:35.763-07:00"
+  },
+  {
+    "Id": "220204",
+    "Title": "How can I make a series selectable on the graph",
+    "LatestDate": "2010-07-23T13:49:03.903-07:00"
+  },
+  {
+    "Id": "220807",
+    "Title": "Using Coastline Class",
+    "LatestDate": "2010-07-24T04:04:13.81-07:00"
+  },
+  {
+    "Id": "220985",
+    "Title": "Locking multiple charts together",
+    "LatestDate": "2010-07-29T05:37:44.65-07:00"
+  },
+  {
+    "Id": "221993",
+    "Title": "tutorial for creating a graph?",
+    "LatestDate": "2010-08-30T06:29:33.287-07:00"
+  },
+  {
+    "Id": "222041",
+    "Title": "Markers on X-Axis read in-correct value in Log scale",
+    "LatestDate": "2010-07-30T12:54:20.98-07:00"
+  },
+  {
+    "Id": "222171",
+    "Title": "D3 Performance",
+    "LatestDate": "2010-08-13T08:58:40.667-07:00"
+  },
+  {
+    "Id": "222495",
+    "Title": "Turn off or hide axis completely",
+    "LatestDate": "2010-08-04T17:41:14.62-07:00"
+  },
+  {
+    "Id": "222634",
+    "Title": "How to modify the Y-Axis range to center the line graph",
+    "LatestDate": "2010-08-05T19:35:23.887-07:00"
+  },
+  {
+    "Id": "222693",
+    "Title": "Map sample usage",
+    "LatestDate": "2010-08-06T02:08:48.11-07:00"
+  },
+  {
+    "Id": "222724",
+    "Title": "correct usage of method ChartPlotter.CreateScreenshot()",
+    "LatestDate": "2010-08-09T01:16:36.66-07:00"
+  },
+  {
+    "Id": "222867",
+    "Title": "New code/Discussion responses by D3 Team? ",
+    "LatestDate": "2010-08-31T15:57:21.203-07:00"
+  },
+  {
+    "Id": "223091",
+    "Title": "How to Align the Vertical Axis in a multi plotter environment",
+    "LatestDate": "2010-08-10T13:26:40.283-07:00"
+  },
+  {
+    "Id": "223399",
+    "Title": "D3 Performance",
+    "LatestDate": "2010-08-12T11:53:26.283-07:00"
+  },
+  {
+    "Id": "223521",
+    "Title": "Graph image scrambled",
+    "LatestDate": "2010-08-13T12:44:37.87-07:00"
+  },
+  {
+    "Id": "223793",
+    "Title": "printing visual or what?",
+    "LatestDate": "2013-10-17T12:14:10.36-07:00"
+  },
+  {
+    "Id": "223881",
+    "Title": "IsolineBuilder Issues",
+    "LatestDate": "2010-08-19T08:40:49.113-07:00"
+  },
+  {
+    "Id": "224225",
+    "Title": "Bug: DDD can't able to handle step(ON/OFF) signals, If the time stamp is too small or same",
+    "LatestDate": "2010-08-20T03:56:10.167-07:00"
+  },
+  {
+    "Id": "224503",
+    "Title": "Help a new user to D3 for simple XY scatter plots. ",
+    "LatestDate": "2013-09-23T02:43:31.9-07:00"
+  },
+  {
+    "Id": "224780",
+    "Title": "Many plotters spaced by an appropriate Y offset  in the same graph",
+    "LatestDate": "2010-08-25T07:42:44.77-07:00"
+  },
+  {
+    "Id": "224830",
+    "Title": "Rolling Graph - Only show last 25 points while graph rolls",
+    "LatestDate": "2010-08-25T13:39:40.377-07:00"
+  },
+  {
+    "Id": "225011",
+    "Title": "Points not aligned with axes",
+    "LatestDate": "2011-12-05T06:51:55.607-08:00"
+  },
+  {
+    "Id": "225084",
+    "Title": "Limit # of items on axis / Preset Y axis with set values",
+    "LatestDate": "2011-08-01T04:51:02-07:00"
+  },
+  {
+    "Id": "225274",
+    "Title": "How to start the graph coordinates from 0,0 on x and y axis",
+    "LatestDate": "2010-08-31T06:22:27.147-07:00"
+  },
+  {
+    "Id": "225408",
+    "Title": "Displaying specific range of data ",
+    "LatestDate": "2010-08-31T19:39:50.387-07:00"
+  },
+  {
+    "Id": "225444",
+    "Title": "How to restrict zooming or restrict graph moving with mouse?",
+    "LatestDate": "2010-08-31T08:51:55.983-07:00"
+  },
+  {
+    "Id": "225488",
+    "Title": "Graph crashes after 3 minutes of real-time graphing",
+    "LatestDate": "2011-11-22T09:33:48.923-08:00"
+  },
+  {
+    "Id": "225564",
+    "Title": "How to restrict panning / Zooming in horizontal and vertical axis?",
+    "LatestDate": "2010-09-09T13:32:52.057-07:00"
+  },
+  {
+    "Id": "225719",
+    "Title": "Why zooming and panning is not working if using genericplotter datarect or viewportrect",
+    "LatestDate": "2010-09-01T19:15:48.963-07:00"
+  },
+  {
+    "Id": "225721",
+    "Title": "IS there any evnt which gets fired when zooming or panning?",
+    "LatestDate": "2010-09-01T22:53:58.043-07:00"
+  },
+  {
+    "Id": "225733",
+    "Title": " Latest post: Thu 2:08 AM 2 posts How to restrict panning / Zooming in horizontal and vertical axis? ",
+    "LatestDate": "2011-08-01T05:00:54.42-07:00"
+  },
+  {
+    "Id": "225761",
+    "Title": "Adding overlays to existing graphs",
+    "LatestDate": "2010-09-03T01:31:24.043-07:00"
+  },
+  {
+    "Id": "225809",
+    "Title": "Plotter background grid problem",
+    "LatestDate": "2010-09-02T07:30:29.583-07:00"
+  },
+  {
+    "Id": "226220",
+    "Title": "Binding to a collection",
+    "LatestDate": "2010-09-06T07:54:04.443-07:00"
+  },
+  {
+    "Id": "226234",
+    "Title": "FakePointList.Count bug",
+    "LatestDate": "2010-09-06T09:26:35.46-07:00"
+  },
+  {
+    "Id": "226392",
+    "Title": "Highlighting individual markers",
+    "LatestDate": "2010-09-07T16:35:02.81-07:00"
+  },
+  {
+    "Id": "227628",
+    "Title": "Changing axis ticks with 0.3.4703",
+    "LatestDate": "2010-09-17T07:11:59.947-07:00"
+  },
+  {
+    "Id": "227632",
+    "Title": "Constraint on Vertical Axis",
+    "LatestDate": "2010-09-18T17:06:05.61-07:00"
+  },
+  {
+    "Id": "227867",
+    "Title": "Performance issues on v0.3 real-time Samples",
+    "LatestDate": "2010-09-30T06:26:51.12-07:00"
+  },
+  {
+    "Id": "227992",
+    "Title": "How do I: Chart Data Binding",
+    "LatestDate": "2016-11-03T21:03:32.857-07:00"
+  },
+  {
+    "Id": "228122",
+    "Title": "The property 'LineGraphs' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.",
+    "LatestDate": "2014-09-16T23:27:00.843-07:00"
+  },
+  {
+    "Id": "228663",
+    "Title": "Hit testing to determine shape and source data",
+    "LatestDate": "2010-09-26T20:50:15.283-07:00"
+  },
+  {
+    "Id": "228678",
+    "Title": "Reposition NewLegend legend",
+    "LatestDate": "2011-02-14T20:50:22.993-08:00"
+  },
+  {
+    "Id": "228735",
+    "Title": "Markers",
+    "LatestDate": "2010-10-10T14:06:18.453-07:00"
+  },
+  {
+    "Id": "229491",
+    "Title": "Will the next release be compatible with .Net 3.5SP1?",
+    "LatestDate": "2010-10-03T21:24:08.08-07:00"
+  },
+  {
+    "Id": "230063",
+    "Title": "vertical axis direction",
+    "LatestDate": "2010-10-07T14:36:22.567-07:00"
+  },
+  {
+    "Id": "230911",
+    "Title": "any chance of changing the license to Ms-PL",
+    "LatestDate": "2010-10-14T07:20:40.537-07:00"
+  },
+  {
+    "Id": "231311",
+    "Title": "synchronize viewports",
+    "LatestDate": "2010-10-20T05:34:53.943-07:00"
+  },
+  {
+    "Id": "231387",
+    "Title": "Next Release Date.",
+    "LatestDate": "2010-10-18T14:58:42.287-07:00"
+  },
+  {
+    "Id": "231550",
+    "Title": "CursorCoordinateGraph for inner plotter",
+    "LatestDate": "2010-10-20T06:22:39.637-07:00"
+  },
+  {
+    "Id": "231555",
+    "Title": "Rendering Performance, what about the DirectX approach",
+    "LatestDate": "2011-04-24T22:40:38.053-07:00"
+  },
+  {
+    "Id": "231624",
+    "Title": "Disproportionate X and Y axis",
+    "LatestDate": "2010-11-07T01:17:42.067-08:00"
+  },
+  {
+    "Id": "231694",
+    "Title": "Reverse Y data causes distortions.",
+    "LatestDate": "2010-10-20T13:44:05.443-07:00"
+  },
+  {
+    "Id": "231734",
+    "Title": "How to disable legend at left-top corner in chartplotter?",
+    "LatestDate": "2010-10-20T22:40:31.51-07:00"
+  },
+  {
+    "Id": "231807",
+    "Title": "Problem with mapping in D3 Silverlight v2",
+    "LatestDate": "2010-10-21T07:03:00.747-07:00"
+  },
+  {
+    "Id": "231813",
+    "Title": "freezing gridlines",
+    "LatestDate": "2010-10-21T07:25:47.007-07:00"
+  },
+  {
+    "Id": "231971",
+    "Title": "How to remove Zoom Buttons in D3 Silverlight",
+    "LatestDate": "2010-10-22T08:16:43.413-07:00"
+  },
+  {
+    "Id": "232102",
+    "Title": "WPF Feature Suggestion",
+    "LatestDate": "2011-03-09T06:48:35.297-08:00"
+  },
+  {
+    "Id": "232125",
+    "Title": "Turning away from D3 because it is not useable for project outsiders...",
+    "LatestDate": "2010-11-07T01:17:16.093-08:00"
+  },
+  {
+    "Id": "232232",
+    "Title": "static gridlines",
+    "LatestDate": "2010-11-07T01:16:59.147-08:00"
+  },
+  {
+    "Id": "232255",
+    "Title": "Losing mouse navigation after viewing custom context menu",
+    "LatestDate": "2010-11-07T01:16:40.51-08:00"
+  },
+  {
+    "Id": "232298",
+    "Title": "Updated DirectX library",
+    "LatestDate": "2011-12-13T03:28:40.493-08:00"
+  },
+  {
+    "Id": "232529",
+    "Title": "Distance between major ticks",
+    "LatestDate": "2010-11-07T01:14:02.657-08:00"
+  },
+  {
+    "Id": "232557",
+    "Title": "Set LineGraph description in xaml",
+    "LatestDate": "2010-11-07T01:13:45.577-08:00"
+  },
+  {
+    "Id": "233821",
+    "Title": "Mouse zooming not working",
+    "LatestDate": "2010-11-07T19:47:29.443-08:00"
+  },
+  {
+    "Id": "234042",
+    "Title": "Silverlight version Zoom / Pan / Resize axis problem",
+    "LatestDate": "2010-11-09T09:20:16.157-08:00"
+  },
+  {
+    "Id": "234267",
+    "Title": "How do i plot contineous line graph",
+    "LatestDate": "2010-11-11T23:30:32.937-08:00"
+  },
+  {
+    "Id": "236007",
+    "Title": "Graph load bug",
+    "LatestDate": "2012-01-26T06:12:50.717-08:00"
+  },
+  {
+    "Id": "236129",
+    "Title": "Multi vertical Axis",
+    "LatestDate": "2010-12-20T04:25:30.383-08:00"
+  },
+  {
+    "Id": "236223",
+    "Title": "3D graph plot",
+    "LatestDate": "2010-11-27T09:54:59-08:00"
+  },
+  {
+    "Id": "236327",
+    "Title": "Can D3 takes CollectionView as data source?",
+    "LatestDate": "2010-11-28T21:31:50.743-08:00"
+  },
+  {
+    "Id": "236487",
+    "Title": "Scaled Markers",
+    "LatestDate": "2010-11-30T05:30:01.227-08:00"
+  },
+  {
+    "Id": "236820",
+    "Title": "\"ViewportHostPanel \" is  missing",
+    "LatestDate": "2010-12-02T15:45:23.647-08:00"
+  },
+  {
+    "Id": "236973",
+    "Title": "Color setting to IsolineGraph",
+    "LatestDate": "2011-03-23T05:53:02.303-07:00"
+  },
+  {
+    "Id": "237014",
+    "Title": "Rule / Magnifying with mini axis ",
+    "LatestDate": "2010-12-07T06:28:59.777-08:00"
+  },
+  {
+    "Id": "237298",
+    "Title": "MVVM LineGraph - Unable to populate graph from Constructor",
+    "LatestDate": "2010-12-07T02:21:31.81-08:00"
+  },
+  {
+    "Id": "237419",
+    "Title": "keep width and height equal",
+    "LatestDate": "2010-12-07T04:46:22.92-08:00"
+  },
+  {
+    "Id": "237620",
+    "Title": "Newbyes questions! How to add single point, markers etc",
+    "LatestDate": "2010-12-13T02:24:49.92-08:00"
+  },
+  {
+    "Id": "238708",
+    "Title": "The data in isoline sample",
+    "LatestDate": "2010-12-20T01:58:50.937-08:00"
+  },
+  {
+    "Id": "239382",
+    "Title": "Graph with non numeric x-axis mapping",
+    "LatestDate": "2010-12-29T02:07:54.823-08:00"
+  },
+  {
+    "Id": "240277",
+    "Title": ".NET version assembly conflicts in using PRISM?",
+    "LatestDate": "2011-01-03T07:49:09.007-08:00"
+  },
+  {
+    "Id": "240567",
+    "Title": "SnapsToDevicePixels for Ticks and AxisGrid",
+    "LatestDate": "2011-01-05T06:35:25.84-08:00"
+  },
+  {
+    "Id": "240589",
+    "Title": "Fixed axis scale ratio",
+    "LatestDate": "2011-02-09T09:10:10.9-08:00"
+  },
+  {
+    "Id": "240690",
+    "Title": "TwoIndependentAxis and live data - Main axis follows injected plotter",
+    "LatestDate": "2011-01-06T04:59:49.02-08:00"
+  },
+  {
+    "Id": "240865",
+    "Title": "Fix axis values",
+    "LatestDate": "2011-01-11T13:50:18.763-08:00"
+  },
+  {
+    "Id": "241164",
+    "Title": "MVVM Line Graph and Binding",
+    "LatestDate": "2011-01-10T09:28:29.28-08:00"
+  },
+  {
+    "Id": "241196",
+    "Title": "Is there a Smoothing option?",
+    "LatestDate": "2011-01-18T06:04:50.41-08:00"
+  },
+  {
+    "Id": "241477",
+    "Title": "Bar Chart",
+    "LatestDate": "2011-01-14T09:57:29.63-08:00"
+  },
+  {
+    "Id": "241728",
+    "Title": "Namespace trouble, getting started",
+    "LatestDate": "2011-12-09T04:08:35.697-08:00"
+  },
+  {
+    "Id": "242229",
+    "Title": "How should I clear the resources used by ChartPlotter (D3 v0.3)?",
+    "LatestDate": "2011-01-18T04:54:13.933-08:00"
+  },
+  {
+    "Id": "242354",
+    "Title": "How to add figure on chart plotter?",
+    "LatestDate": "2011-09-01T09:25:51.01-07:00"
+  },
+  {
+    "Id": "242808",
+    "Title": "netCDF file display ?",
+    "LatestDate": "2011-01-21T15:44:26.913-08:00"
+  },
+  {
+    "Id": "244177",
+    "Title": "How to set plotter to default viewport",
+    "LatestDate": "2011-02-01T11:13:22.43-08:00"
+  },
+  {
+    "Id": "245287",
+    "Title": "Using multiple constraints",
+    "LatestDate": "2011-02-09T06:48:50.827-08:00"
+  },
+  {
+    "Id": "245333",
+    "Title": "Silverlight CandleStick",
+    "LatestDate": "2011-02-09T12:25:36.223-08:00"
+  },
+  {
+    "Id": "245334",
+    "Title": "Silverlight CandleStick",
+    "LatestDate": "2011-02-09T18:18:20.72-08:00"
+  },
+  {
+    "Id": "245817",
+    "Title": "Customize the ticks and labeling.",
+    "LatestDate": "2011-02-12T22:38:42.037-08:00"
+  },
+  {
+    "Id": "245837",
+    "Title": "How to achieve x-axis custom Time span",
+    "LatestDate": "2011-02-13T06:10:17.72-08:00"
+  },
+  {
+    "Id": "246306",
+    "Title": "Keep DataFollowChart contents on top?",
+    "LatestDate": "2011-02-16T08:24:47.9-08:00"
+  },
+  {
+    "Id": "246579",
+    "Title": "DynamicDataDisplay ChartPlotter how to use",
+    "LatestDate": "2011-02-17T19:57:22.127-08:00"
+  },
+  {
+    "Id": "246651",
+    "Title": "NumericAxis and NumericTicksProvider able to be done in XAML",
+    "LatestDate": "2011-02-18T09:10:35.037-08:00"
+  },
+  {
+    "Id": "247011",
+    "Title": "The Value in chart does not match VerticalAxis tick",
+    "LatestDate": "2011-02-21T19:18:06.403-08:00"
+  },
+  {
+    "Id": "247012",
+    "Title": "how to Modify DynamicDataDisplay.Silverlight‘s VerticalAxis",
+    "LatestDate": "2011-02-21T19:44:17.893-08:00"
+  },
+  {
+    "Id": "247367",
+    "Title": "Bar Graph in  D3?",
+    "LatestDate": "2011-02-23T23:22:43-08:00"
+  },
+  {
+    "Id": "247954",
+    "Title": "Labeling data points on line graph",
+    "LatestDate": "2013-10-08T22:07:22.243-07:00"
+  },
+  {
+    "Id": "248185",
+    "Title": "Crop graph",
+    "LatestDate": "2011-03-03T09:29:09.873-08:00"
+  },
+  {
+    "Id": "248244",
+    "Title": "Plotting Electrocardiograms in real-time with good performance",
+    "LatestDate": "2011-03-09T06:45:56.533-08:00"
+  },
+  {
+    "Id": "248362",
+    "Title": "Endless longitude on geo map with isolines?",
+    "LatestDate": "2011-03-03T13:08:37.39-08:00"
+  },
+  {
+    "Id": "248842",
+    "Title": "InvalidOperationException in EnumerableDataSource.",
+    "LatestDate": "2011-03-09T21:33:03.64-08:00"
+  },
+  {
+    "Id": "248866",
+    "Title": "Line Graph Value Errors",
+    "LatestDate": "2011-07-27T12:18:17.72-07:00"
+  },
+  {
+    "Id": "248927",
+    "Title": "Animating Data",
+    "LatestDate": "2011-03-08T14:21:28.747-08:00"
+  },
+  {
+    "Id": "249141",
+    "Title": "Problem in using List as EnumerableDataSource",
+    "LatestDate": "2011-03-10T01:07:32.697-08:00"
+  },
+  {
+    "Id": "249565",
+    "Title": "To provide multiple colors for a graph.",
+    "LatestDate": "2011-04-11T01:16:39.663-07:00"
+  },
+  {
+    "Id": "249830",
+    "Title": "Can I sepecify the Legend's Stroke Dashstyle?",
+    "LatestDate": "2014-02-06T13:51:12.303-08:00"
+  },
+  {
+    "Id": "249841",
+    "Title": "change size and position of a rectangle in the graph",
+    "LatestDate": "2011-04-11T01:21:24.627-07:00"
+  },
+  {
+    "Id": "251187",
+    "Title": "Values of Axis",
+    "LatestDate": "2011-03-28T04:01:28.857-07:00"
+  },
+  {
+    "Id": "251462",
+    "Title": "plotter MouseWheel Event",
+    "LatestDate": "2011-03-28T04:03:06.573-07:00"
+  },
+  {
+    "Id": "251482",
+    "Title": "Custom MouseNavigation",
+    "LatestDate": "2011-04-06T00:50:20.18-07:00"
+  },
+  {
+    "Id": "251522",
+    "Title": "TableDataSource from a BindingSource Generated Table",
+    "LatestDate": "2011-03-28T10:54:06.123-07:00"
+  },
+  {
+    "Id": "252307",
+    "Title": "graph the ODE's solution",
+    "LatestDate": "2011-04-03T04:14:33.517-07:00"
+  },
+  {
+    "Id": "252312",
+    "Title": "problem with bounds",
+    "LatestDate": "2011-04-03T05:30:50.17-07:00"
+  },
+  {
+    "Id": "252339",
+    "Title": "Issue with Plotter.SaveScreenshot method",
+    "LatestDate": "2015-10-29T01:30:04.063-07:00"
+  },
+  {
+    "Id": "252708",
+    "Title": "How to improve D3 chart performance using Filter",
+    "LatestDate": "2011-04-05T21:56:02.503-07:00"
+  },
+  {
+    "Id": "252937",
+    "Title": "Highlighting single point in Line Graph",
+    "LatestDate": "2011-04-07T05:05:33.17-07:00"
+  },
+  {
+    "Id": "254619",
+    "Title": "Capability of DynamicDataDisplay",
+    "LatestDate": "2011-04-20T02:04:16.457-07:00"
+  },
+  {
+    "Id": "255562",
+    "Title": "Patching DDD",
+    "LatestDate": "2011-04-28T07:39:30.65-07:00"
+  },
+  {
+    "Id": "255967",
+    "Title": "how to force DataSet Viewer to also show map and specific colors",
+    "LatestDate": "2011-05-02T03:32:06.163-07:00"
+  },
+  {
+    "Id": "256139",
+    "Title": "Text on the markers",
+    "LatestDate": "2011-05-03T06:22:29.617-07:00"
+  },
+  {
+    "Id": "256180",
+    "Title": "Is this project still alive?",
+    "LatestDate": "2011-05-03T10:56:44.143-07:00"
+  },
+  {
+    "Id": "257810",
+    "Title": "Use of heat map / coloured grid",
+    "LatestDate": "2011-05-20T01:23:16.913-07:00"
+  },
+  {
+    "Id": "258548",
+    "Title": "Documentation?",
+    "LatestDate": "2011-05-22T09:11:01.457-07:00"
+  },
+  {
+    "Id": "259608",
+    "Title": "Set different point color",
+    "LatestDate": "2011-06-04T07:44:06.867-07:00"
+  },
+  {
+    "Id": "260040",
+    "Title": "Tooltip Live Bug FIXED",
+    "LatestDate": "2011-06-03T01:16:31.773-07:00"
+  },
+  {
+    "Id": "260080",
+    "Title": "Fixing range of scatter plot axes",
+    "LatestDate": "2011-06-09T04:47:46.883-07:00"
+  },
+  {
+    "Id": "260088",
+    "Title": "Is is possible to create a collection of LineGraphs in Xaml?",
+    "LatestDate": "2011-06-06T12:47:29.77-07:00"
+  },
+  {
+    "Id": "260816",
+    "Title": "ItemsControl doesn't work in ChartPlotter",
+    "LatestDate": "2011-06-09T12:14:47.2-07:00"
+  },
+  {
+    "Id": "260875",
+    "Title": "Ticks and Labels, Axis and Chartplotter",
+    "LatestDate": "2011-06-10T01:36:26.573-07:00"
+  },
+  {
+    "Id": "261164",
+    "Title": "need help on zooming for horizontaldatetimeaxis",
+    "LatestDate": "2011-06-13T03:40:17.127-07:00"
+  },
+  {
+    "Id": "261233",
+    "Title": "Label shifting",
+    "LatestDate": "2011-06-14T09:25:51.957-07:00"
+  },
+  {
+    "Id": "263067",
+    "Title": "Weekends",
+    "LatestDate": "2012-11-08T06:49:15.297-08:00"
+  },
+  {
+    "Id": "263942",
+    "Title": "Code Samples Available?",
+    "LatestDate": "2011-07-05T06:59:57.777-07:00"
+  },
+  {
+    "Id": "264078",
+    "Title": "3d Plotting",
+    "LatestDate": "2011-07-06T05:36:39.637-07:00"
+  },
+  {
+    "Id": "266799",
+    "Title": "Steve Billington/UK/MKS is out of the office.",
+    "LatestDate": "2011-07-27T14:01:28.34-07:00"
+  },
+  {
+    "Id": "267071",
+    "Title": "Questions on Chartplotter (FitToView on Horizontal and Vertical Axis, Axis in the middle of ChartPlotter)",
+    "LatestDate": "2011-07-29T08:53:50.163-07:00"
+  },
+  {
+    "Id": "267274",
+    "Title": "DateTime Axis Vanishes",
+    "LatestDate": "2011-08-03T13:25:47.7-07:00"
+  },
+  {
+    "Id": "268578",
+    "Title": "X Axis Tick Handling / Labeling",
+    "LatestDate": "2011-10-06T22:14:47.4-07:00"
+  },
+  {
+    "Id": "268659",
+    "Title": "Hosting IsolineGraph in WinForms",
+    "LatestDate": "2011-08-11T00:51:26.443-07:00"
+  },
+  {
+    "Id": "270134",
+    "Title": "Next release",
+    "LatestDate": "2011-08-23T12:44:47.973-07:00"
+  },
+  {
+    "Id": "270138",
+    "Title": "Real Time Tooltips",
+    "LatestDate": "2011-08-23T13:13:42.783-07:00"
+  },
+  {
+    "Id": "270351",
+    "Title": "ZIndex problem with MarkerElementPointGraph",
+    "LatestDate": "2011-08-25T04:50:54.503-07:00"
+  },
+  {
+    "Id": "270566",
+    "Title": "Legend Does Not Appear Using Pie Graph",
+    "LatestDate": "2011-08-26T11:11:48.287-07:00"
+  },
+  {
+    "Id": "270857",
+    "Title": "How to remove grid and axis labeling?",
+    "LatestDate": "2011-10-07T00:01:21.08-07:00"
+  },
+  {
+    "Id": "270907",
+    "Title": "how can we set the interval, max and min, and grid properties of axis??",
+    "LatestDate": "2011-10-06T22:10:22.91-07:00"
+  },
+  {
+    "Id": "271033",
+    "Title": "HorizontalDateTimeAxis and logarithmic data",
+    "LatestDate": "2011-09-01T00:39:10.55-07:00"
+  },
+  {
+    "Id": "271783",
+    "Title": "Auto Range Y Axis and X Axis on a chart plotter",
+    "LatestDate": "2013-10-18T03:59:40.45-07:00"
+  },
+  {
+    "Id": "271892",
+    "Title": "How to make visual changes?",
+    "LatestDate": "2011-09-09T18:49:06.44-07:00"
+  },
+  {
+    "Id": "272013",
+    "Title": "Border Thickness",
+    "LatestDate": "2011-10-06T21:38:03.547-07:00"
+  },
+  {
+    "Id": "274971",
+    "Title": "Can I set a color for a linegraph distance between two values so that the rest part of linegraph steel would be the same?",
+    "LatestDate": "2011-10-06T21:12:39.933-07:00"
+  },
+  {
+    "Id": "275221",
+    "Title": "How to Highlight Portion of Chart?",
+    "LatestDate": "2011-10-08T16:40:03.33-07:00"
+  },
+  {
+    "Id": "275658",
+    "Title": " x-axis autoscroll",
+    "LatestDate": "2011-10-13T11:14:18.833-07:00"
+  },
+  {
+    "Id": "275765",
+    "Title": "Plotting voltage in a chart..",
+    "LatestDate": "2013-10-22T06:41:18.16-07:00"
+  },
+  {
+    "Id": "275879",
+    "Title": "Several Independant cursorCoordinateGraphs on one plotter",
+    "LatestDate": "2011-10-14T02:23:27.943-07:00"
+  },
+  {
+    "Id": "276091",
+    "Title": "how to kill the strange point (0,0) ",
+    "LatestDate": "2011-10-16T19:20:25.21-07:00"
+  },
+  {
+    "Id": "276269",
+    "Title": "ActiveDirectory : update of information stored in global-security-groups on the client-host",
+    "LatestDate": "2011-10-18T04:14:00.687-07:00"
+  },
+  {
+    "Id": "276308",
+    "Title": "Help with d3",
+    "LatestDate": "2011-10-18T06:52:34.447-07:00"
+  },
+  {
+    "Id": "276944",
+    "Title": "NaN values for IsolineGraph",
+    "LatestDate": "2011-10-24T00:36:38.83-07:00"
+  },
+  {
+    "Id": "277020",
+    "Title": "overlay graph",
+    "LatestDate": "2011-10-24T10:59:31.01-07:00"
+  },
+  {
+    "Id": "277243",
+    "Title": "MainHorizontalAxis LabelProvider",
+    "LatestDate": "2011-10-26T03:31:30.267-07:00"
+  },
+  {
+    "Id": "277414",
+    "Title": "Convert chart coordinates to real x/y values",
+    "LatestDate": "2011-10-27T06:01:34.563-07:00"
+  },
+  {
+    "Id": "277625",
+    "Title": "d3:ColorSelector",
+    "LatestDate": "2011-10-29T06:54:37.857-07:00"
+  },
+  {
+    "Id": "278019",
+    "Title": "Scatter chart perfomance",
+    "LatestDate": "2011-11-02T03:52:55.233-07:00"
+  },
+  {
+    "Id": "278168",
+    "Title": "how to allow user to draw point on chart",
+    "LatestDate": "2011-11-03T04:00:55.897-07:00"
+  },
+  {
+    "Id": "278200",
+    "Title": "Problem creating a plot with ObservableDataSource",
+    "LatestDate": "2011-11-03T07:18:15.887-07:00"
+  },
+  {
+    "Id": "278675",
+    "Title": "Vertical axis labels overridden by ticks after adding line graph",
+    "LatestDate": "2011-11-07T23:43:11.807-08:00"
+  },
+  {
+    "Id": "278677",
+    "Title": "Vertical axis ticks overlap the labels when adding a line graph",
+    "LatestDate": "2012-07-27T06:26:11.047-07:00"
+  },
+  {
+    "Id": "278904",
+    "Title": "Xaml Serialization and Deserialization",
+    "LatestDate": "2011-11-09T11:21:26.007-08:00"
+  },
+  {
+    "Id": "278910",
+    "Title": "Slow to graph",
+    "LatestDate": "2011-11-22T16:54:38.7-08:00"
+  },
+  {
+    "Id": "278975",
+    "Title": "Heat Map",
+    "LatestDate": "2011-11-10T04:20:58.007-08:00"
+  },
+  {
+    "Id": "280459",
+    "Title": "Labels on the inside (right side) of primary vertical axis",
+    "LatestDate": "2011-12-18T10:43:18.827-08:00"
+  },
+  {
+    "Id": "280472",
+    "Title": "Cannot zoom in for very tiny data points",
+    "LatestDate": "2011-11-30T10:43:17.617-08:00"
+  },
+  {
+    "Id": "280476",
+    "Title": "Dynamic Data Display 2.0 for Silverlight is here",
+    "LatestDate": "2011-12-04T18:42:08.02-08:00"
+  },
+  {
+    "Id": "280523",
+    "Title": "I want to create dynamic chart but do not want to clear the points out of screen",
+    "LatestDate": "2011-11-23T00:27:23.3-08:00"
+  },
+  {
+    "Id": "280529",
+    "Title": "small time use as x axes data problem!",
+    "LatestDate": "2011-11-23T00:52:58.92-08:00"
+  },
+  {
+    "Id": "280594",
+    "Title": "Dynamic data display for plotting simple line graph using serial port data",
+    "LatestDate": "2011-11-23T07:50:24.033-08:00"
+  },
+  {
+    "Id": "281164",
+    "Title": "Fixed Y axis",
+    "LatestDate": "2013-11-12T07:14:43.777-08:00"
+  },
+  {
+    "Id": "282120",
+    "Title": "Help wanted! Heatmap under VB2010!?",
+    "LatestDate": "2012-05-04T13:46:31.127-07:00"
+  },
+  {
+    "Id": "282647",
+    "Title": "HorizontalDateTime",
+    "LatestDate": "2011-12-12T05:59:25.673-08:00"
+  },
+  {
+    "Id": "283229",
+    "Title": "Does D3 work with NET Framework version 4.0?",
+    "LatestDate": "2011-12-16T08:47:10.403-08:00"
+  },
+  {
+    "Id": "284314",
+    "Title": "Zoom, Dynamic data from DB together not working.",
+    "LatestDate": "2011-12-28T01:52:49.29-08:00"
+  },
+  {
+    "Id": "284354",
+    "Title": "How to create a Piesewise-constant (discontinous) linegraph etc.",
+    "LatestDate": "2011-12-28T05:25:54.377-08:00"
+  },
+  {
+    "Id": "284832",
+    "Title": "Update plotter after databind without using FitToView",
+    "LatestDate": "2012-01-03T07:14:47.737-08:00"
+  },
+  {
+    "Id": "285437",
+    "Title": "Data cursors in Graph ",
+    "LatestDate": "2012-01-09T02:37:09.737-08:00"
+  },
+  {
+    "Id": "285463",
+    "Title": "Time on X-Axis",
+    "LatestDate": "2012-05-07T06:01:42.2-07:00"
+  },
+  {
+    "Id": "285624",
+    "Title": "Cursor and DateTime-X-Axis",
+    "LatestDate": "2012-07-10T13:50:13.83-07:00"
+  },
+  {
+    "Id": "285746",
+    "Title": "Drag the point with the mouse",
+    "LatestDate": "2012-01-11T04:40:59.983-08:00"
+  },
+  {
+    "Id": "286106",
+    "Title": "How to programmatically add a second Y axis and plot data in the same Chart or Grid",
+    "LatestDate": "2012-01-20T07:35:13.443-08:00"
+  },
+  {
+    "Id": "286267",
+    "Title": "Setting a DraggablePoint initially at 0,0 means the Draggable point is not visible",
+    "LatestDate": "2012-01-16T02:21:17.573-08:00"
+  },
+  {
+    "Id": "288038",
+    "Title": "Reversing the Y Axis Direction",
+    "LatestDate": "2017-06-01T00:48:15.373-07:00"
+  },
+  {
+    "Id": "298184",
+    "Title": "Memory Out Of Exception in plotting 2,00,000 points",
+    "LatestDate": "2012-02-07T20:34:48.717-08:00"
+  },
+  {
+    "Id": "298187",
+    "Title": "Out Of Memory Exception in plotting 200000 points",
+    "LatestDate": "2012-02-08T08:29:29.21-08:00"
+  },
+  {
+    "Id": "299038",
+    "Title": "HorizontalDateTimeAxis doesn't fit to view",
+    "LatestDate": "2012-05-09T08:21:36.66-07:00"
+  },
+  {
+    "Id": "299527",
+    "Title": "Put the legend on the right of the graph (outside the graph)",
+    "LatestDate": "2012-12-10T11:56:53.757-08:00"
+  },
+  {
+    "Id": "299532",
+    "Title": "Colour Coding in Bing maps",
+    "LatestDate": "2012-02-09T03:39:57.31-08:00"
+  },
+  {
+    "Id": "303288",
+    "Title": "How can I bind Visible X property(Solved)",
+    "LatestDate": "2012-02-17T06:05:34.087-08:00"
+  },
+  {
+    "Id": "318617",
+    "Title": "Is possible to have logarithmic charts?",
+    "LatestDate": "2012-02-17T00:17:54.447-08:00"
+  },
+  {
+    "Id": "341039",
+    "Title": "How to display string value in X-Axis label",
+    "LatestDate": "2012-05-11T21:19:03.047-07:00"
+  },
+  {
+    "Id": "344690",
+    "Title": "drag and drop from datagrid to Chartplotter",
+    "LatestDate": "2012-02-24T03:53:28.343-08:00"
+  },
+  {
+    "Id": "347304",
+    "Title": "Plotting Time on X-Axis",
+    "LatestDate": "2012-03-06T05:11:38.87-08:00"
+  },
+  {
+    "Id": "347784",
+    "Title": "Endless loop with PhysicalProportionsRestriction",
+    "LatestDate": "2016-12-09T12:35:29.14-08:00"
+  },
+  {
+    "Id": "348069",
+    "Title": "Change mouseNavigation zooming",
+    "LatestDate": "2012-03-09T20:05:25.677-08:00"
+  },
+  {
+    "Id": "348693",
+    "Title": "Using D3 Silverlight on WP7",
+    "LatestDate": "2012-03-15T00:30:31.553-07:00"
+  },
+  {
+    "Id": "348850",
+    "Title": "Unable to bind Description String to Legend",
+    "LatestDate": "2012-03-16T00:34:52.317-07:00"
+  },
+  {
+    "Id": "348861",
+    "Title": "Silverlight d3:chart - How to bind DateTime data to X-Axis?",
+    "LatestDate": "2012-03-16T02:14:46.143-07:00"
+  },
+  {
+    "Id": "348862",
+    "Title": "Silverlight d3:chart - How to bind DateTime data to X-Axis?",
+    "LatestDate": "2012-03-16T02:14:47.093-07:00"
+  },
+  {
+    "Id": "349407",
+    "Title": "Plot 3 lines in a single graph and all three having same Y-axis ",
+    "LatestDate": "2012-03-20T19:15:14.89-07:00"
+  },
+  {
+    "Id": "349423",
+    "Title": "подпись значений на осях символами pi",
+    "LatestDate": "2012-03-22T05:52:47.907-07:00"
+  },
+  {
+    "Id": "349593",
+    "Title": "ChartPlotter",
+    "LatestDate": "2012-03-22T02:32:14.5-07:00"
+  },
+  {
+    "Id": "349677",
+    "Title": "How can I draw periodical data",
+    "LatestDate": "2012-03-29T08:08:35.657-07:00"
+  },
+  {
+    "Id": "349735",
+    "Title": "Missed dll-files",
+    "LatestDate": "2012-03-22T23:52:27-07:00"
+  },
+  {
+    "Id": "350175",
+    "Title": "Show old data in graph",
+    "LatestDate": "2012-03-27T02:51:15.463-07:00"
+  },
+  {
+    "Id": "351037",
+    "Title": "Custom Mouse Navigation",
+    "LatestDate": "2012-04-03T08:07:41.48-07:00"
+  },
+  {
+    "Id": "351040",
+    "Title": "Colour Shading between IsolineGraph lines",
+    "LatestDate": "2012-04-03T08:34:18.453-07:00"
+  },
+  {
+    "Id": "351907",
+    "Title": "Shortcut or hotkeys",
+    "LatestDate": "2012-04-11T07:05:16.087-07:00"
+  },
+  {
+    "Id": "352396",
+    "Title": "how to make checkbox in line series chart?",
+    "LatestDate": "2012-04-18T14:31:01.257-07:00"
+  },
+  {
+    "Id": "353095",
+    "Title": "Source Code",
+    "LatestDate": "2012-04-21T15:50:46.137-07:00"
+  },
+  {
+    "Id": "353099",
+    "Title": "What to do with changesets",
+    "LatestDate": "2012-04-21T20:08:31.413-07:00"
+  },
+  {
+    "Id": "353668",
+    "Title": "How can I animate LineGraph DataSourse",
+    "LatestDate": "2012-04-26T02:29:17.78-07:00"
+  },
+  {
+    "Id": "354918",
+    "Title": "X-Axis, skip missing data (dates)",
+    "LatestDate": "2012-12-18T12:14:39.27-08:00"
+  },
+  {
+    "Id": "355010",
+    "Title": "The number on vertical axes display only highest number",
+    "LatestDate": "2012-05-29T00:12:19.863-07:00"
+  },
+  {
+    "Id": "356125",
+    "Title": "Issues with Memory leaks when adding and removing lines from live data",
+    "LatestDate": "2013-05-05T23:00:36.403-07:00"
+  },
+  {
+    "Id": "359196",
+    "Title": "Help with 3D plot",
+    "LatestDate": "2012-07-26T02:00:38.217-07:00"
+  },
+  {
+    "Id": "359505",
+    "Title": "Restrict dragging along vertical axis",
+    "LatestDate": "2013-10-08T01:21:20.387-07:00"
+  },
+  {
+    "Id": "359867",
+    "Title": "Pick points on a graph with the mouse?",
+    "LatestDate": "2012-06-16T21:30:11.49-07:00"
+  },
+  {
+    "Id": "370098",
+    "Title": "Is it possible to have independent multiple axes in WPF graphs?",
+    "LatestDate": "2012-10-18T22:17:54.613-07:00"
+  },
+  {
+    "Id": "371340",
+    "Title": "How to  set the maximum and minimum of the VerticalAxis in Dynamic Data Display.",
+    "LatestDate": "2012-07-29T06:15:10.37-07:00"
+  },
+  {
+    "Id": "380716",
+    "Title": "Major and minor ticks properties for chart (WPF) ",
+    "LatestDate": "2012-07-20T18:25:26.437-07:00"
+  },
+  {
+    "Id": "385049",
+    "Title": "Graph grid...",
+    "LatestDate": "2012-07-22T08:07:34.92-07:00"
+  },
+  {
+    "Id": "389102",
+    "Title": "How to set the values for axes ?",
+    "LatestDate": "2012-07-26T02:30:14.313-07:00"
+  },
+  {
+    "Id": "389282",
+    "Title": "how add data labels for all markers",
+    "LatestDate": "2013-10-08T22:16:15.203-07:00"
+  },
+  {
+    "Id": "390781",
+    "Title": "CreateVisualProxy throwing an exception",
+    "LatestDate": "2012-08-08T13:46:42.487-07:00"
+  },
+  {
+    "Id": "390820",
+    "Title": "Hide/unhide lines with checkboxes in legend",
+    "LatestDate": "2012-08-08T20:38:29.62-07:00"
+  },
+  {
+    "Id": "391656",
+    "Title": "changing axes titels dynamycally",
+    "LatestDate": "2016-05-09T16:14:49.637-07:00"
+  },
+  {
+    "Id": "391839",
+    "Title": "How to remove all the elements of the ObservableDataSource",
+    "LatestDate": "2012-10-02T02:44:58.29-07:00"
+  },
+  {
+    "Id": "392754",
+    "Title": "[Wpf] any sample on how to constraint the pan and zoom?",
+    "LatestDate": "2012-08-27T02:42:47.373-07:00"
+  },
+  {
+    "Id": "393537",
+    "Title": "Commercial usage for this control",
+    "LatestDate": "2012-08-29T09:06:16.417-07:00"
+  },
+  {
+    "Id": "393650",
+    "Title": "Support for multitouch",
+    "LatestDate": "2012-08-29T16:15:48.63-07:00"
+  },
+  {
+    "Id": "393807",
+    "Title": "Center graph baseline",
+    "LatestDate": "2012-08-30T13:22:58.723-07:00"
+  },
+  {
+    "Id": "393906",
+    "Title": "AddingTooltip on each data point",
+    "LatestDate": "2012-09-04T03:56:17.747-07:00"
+  },
+  {
+    "Id": "394106",
+    "Title": "Can I change the HorizontalAxis string?",
+    "LatestDate": "2013-09-02T21:50:09.39-07:00"
+  },
+  {
+    "Id": "396332",
+    "Title": "TwoIndependentAxis and realtime data",
+    "LatestDate": "2013-01-11T13:41:35.643-08:00"
+  },
+  {
+    "Id": "397127",
+    "Title": "Bug: Line disappearing - any solutions?",
+    "LatestDate": "2015-10-28T13:34:53.227-07:00"
+  },
+  {
+    "Id": "400299",
+    "Title": "Minima and Maxima ",
+    "LatestDate": "2012-10-31T01:57:57.677-07:00"
+  },
+  {
+    "Id": "400753",
+    "Title": "Handling dynamic context menu click using values of horizontal and vertical axis",
+    "LatestDate": "2012-10-25T02:04:48.677-07:00"
+  },
+  {
+    "Id": "400893",
+    "Title": "Setting Min-/Max-count of graph-ticks",
+    "LatestDate": "2012-10-26T02:51:08.04-07:00"
+  },
+  {
+    "Id": "401246",
+    "Title": "Skipping points/ranges on the x-axis",
+    "LatestDate": "2012-11-08T06:47:59.61-08:00"
+  },
+  {
+    "Id": "401414",
+    "Title": "About TwoLinesSamples",
+    "LatestDate": "2012-10-31T06:15:39.05-07:00"
+  },
+  {
+    "Id": "402550",
+    "Title": "WPF DynamicDataDisplay version problems with hiding the legend and using logarithmic scale",
+    "LatestDate": "2013-01-23T00:09:28.313-08:00"
+  },
+  {
+    "Id": "403318",
+    "Title": "HeatMaps in WPF",
+    "LatestDate": "2012-11-15T04:56:34.733-08:00"
+  },
+  {
+    "Id": "403960",
+    "Title": "How to fill area under the curve in a graph!",
+    "LatestDate": "2012-11-20T07:27:00.417-08:00"
+  },
+  {
+    "Id": "405519",
+    "Title": "Two questions - Customizing zoom, and customizing CircleElementPointMarker",
+    "LatestDate": "2012-12-10T11:54:29.37-08:00"
+  },
+  {
+    "Id": "406658",
+    "Title": "Save chart state",
+    "LatestDate": "2012-12-13T07:20:26.673-08:00"
+  },
+  {
+    "Id": "407162",
+    "Title": "ChartPlotter different background colors",
+    "LatestDate": "2013-01-15T21:23:09.483-08:00"
+  },
+  {
+    "Id": "407174",
+    "Title": "(Vertical) Axis Labels with Icons (Images)",
+    "LatestDate": "2012-12-18T07:35:03.223-08:00"
+  },
+  {
+    "Id": "427997",
+    "Title": "Real Time Performance",
+    "LatestDate": "2012-12-29T08:37:54.84-08:00"
+  },
+  {
+    "Id": "429130",
+    "Title": "Quickstart d3 for WPF: point position display and rectangles/any drawing",
+    "LatestDate": "2013-01-10T01:03:22.633-08:00"
+  },
+  {
+    "Id": "429141",
+    "Title": "D3 InjectedPlotter - Unable to Zoom",
+    "LatestDate": "2013-01-22T23:51:05.663-08:00"
+  },
+  {
+    "Id": "429231",
+    "Title": "Set range on multiple Y axis",
+    "LatestDate": "2013-11-28T04:00:06.12-08:00"
+  },
+  {
+    "Id": "429271",
+    "Title": "Pan and zoom override events/callbacks",
+    "LatestDate": "2013-01-22T21:30:08.713-08:00"
+  },
+  {
+    "Id": "429451",
+    "Title": "WPF ChartPlotter zoom only the X-Axis",
+    "LatestDate": "2013-02-15T00:56:00.133-08:00"
+  },
+  {
+    "Id": "429672",
+    "Title": "Offscreen rendering to bitmap",
+    "LatestDate": "2013-01-15T06:12:27.45-08:00"
+  },
+  {
+    "Id": "429702",
+    "Title": "Help - Infinite resize",
+    "LatestDate": "2013-01-22T21:24:25.297-08:00"
+  },
+  {
+    "Id": "432361",
+    "Title": "Отрисовка маркера",
+    "LatestDate": "2013-02-07T10:42:27.59-08:00"
+  },
+  {
+    "Id": "432440",
+    "Title": "Real-time candelstick chart",
+    "LatestDate": "2013-05-05T23:25:26.78-07:00"
+  },
+  {
+    "Id": "432862",
+    "Title": "memory leaks in chartplotter how to",
+    "LatestDate": "2013-02-15T00:51:05.073-08:00"
+  },
+  {
+    "Id": "433186",
+    "Title": "Vb.Net: The name \"ChartPlotter\" does not exist in the namespace \"http://research.microsoft.com/DynamicDataDisplay/1.0\" ",
+    "LatestDate": "2014-09-16T23:25:39.46-07:00"
+  },
+  {
+    "Id": "433352",
+    "Title": "Plotting real-time data over a long period of time",
+    "LatestDate": "2013-06-18T00:39:03.447-07:00"
+  },
+  {
+    "Id": "435559",
+    "Title": "How to customize start and enddate for the date axis (x-axis)",
+    "LatestDate": "2013-03-07T06:26:05.213-08:00"
+  },
+  {
+    "Id": "435777",
+    "Title": "Cannot impliment heatmaps in C#",
+    "LatestDate": "2013-03-14T04:06:03.447-07:00"
+  },
+  {
+    "Id": "435807",
+    "Title": "Insert control (button, treeview) instead of Map",
+    "LatestDate": "2013-03-07T12:13:02.793-08:00"
+  },
+  {
+    "Id": "436607",
+    "Title": "Did sb know a simple way to update the Viewport",
+    "LatestDate": "2013-03-14T04:34:32.84-07:00"
+  },
+  {
+    "Id": "437390",
+    "Title": "Is there source code for the Silverlight version?",
+    "LatestDate": "2013-03-22T08:49:05.637-07:00"
+  },
+  {
+    "Id": "438335",
+    "Title": "Markers, lines and other highlighting sign in the chart",
+    "LatestDate": "2013-03-28T07:55:57.46-07:00"
+  },
+  {
+    "Id": "441251",
+    "Title": "Need to fill line graph area with background color.",
+    "LatestDate": "2013-05-19T20:48:52.177-07:00"
+  },
+  {
+    "Id": "441720",
+    "Title": "Bezier filter",
+    "LatestDate": "2013-04-26T14:13:39.93-07:00"
+  },
+  {
+    "Id": "442251",
+    "Title": "Memory leak in D3",
+    "LatestDate": "2016-06-03T13:14:09.49-07:00"
+  },
+  {
+    "Id": "443226",
+    "Title": "Markers overlap",
+    "LatestDate": "2013-05-10T03:54:30.287-07:00"
+  },
+  {
+    "Id": "443416",
+    "Title": "D3 openstreetmap position is wrong!",
+    "LatestDate": "2013-05-12T20:24:32.87-07:00"
+  },
+  {
+    "Id": "443837",
+    "Title": "Select a piece on ChartPlotter",
+    "LatestDate": "2013-07-15T04:54:06.437-07:00"
+  },
+  {
+    "Id": "444191",
+    "Title": "How i can get X\\YTextProperty from CursorCoordinateGraph?",
+    "LatestDate": "2013-05-19T21:05:41.973-07:00"
+  },
+  {
+    "Id": "444429",
+    "Title": "How can i display datetime axis in Silverlight?",
+    "LatestDate": "2013-05-21T07:10:42.917-07:00"
+  },
+  {
+    "Id": "444531",
+    "Title": "unable to erase chartplotter data on C# WPF",
+    "LatestDate": "2013-05-24T03:18:56.89-07:00"
+  },
+  {
+    "Id": "444562",
+    "Title": "Clickable Bar charts in WPF",
+    "LatestDate": "2013-05-22T02:50:07.397-07:00"
+  },
+  {
+    "Id": "446555",
+    "Title": "Date time labels in CursorCoordinateGraph?",
+    "LatestDate": "2013-06-10T06:36:46.81-07:00"
+  },
+  {
+    "Id": "446796",
+    "Title": "Is Dynamic Data dead? Is this CodePlex project dead?",
+    "LatestDate": "2013-06-12T07:01:56.773-07:00"
+  },
+  {
+    "Id": "447921",
+    "Title": "Need Line Cursor",
+    "LatestDate": "2013-06-23T04:39:17.75-07:00"
+  },
+  {
+    "Id": "447925",
+    "Title": "ZoomIn and ZoomOut based on Y-Axiz values",
+    "LatestDate": "2013-12-27T19:11:16.657-08:00"
+  },
+  {
+    "Id": "448253",
+    "Title": "Moving more charts simultaneously",
+    "LatestDate": "2013-06-26T03:18:28.723-07:00"
+  },
+  {
+    "Id": "449064",
+    "Title": "static gridline-intervals on the x-axis",
+    "LatestDate": "2016-12-14T20:44:05.623-08:00"
+  },
+  {
+    "Id": "449531",
+    "Title": "Real time graph with max 100000 points to plot and refresh rate for the graph will be minimum 500ms to 1 second",
+    "LatestDate": "2013-07-29T08:50:44.56-07:00"
+  },
+  {
+    "Id": "451893",
+    "Title": "D3, WPF and heatmap ",
+    "LatestDate": "2013-08-05T12:16:45.25-07:00"
+  },
+  {
+    "Id": "452110",
+    "Title": "time-lag",
+    "LatestDate": "2013-08-01T07:00:30.27-07:00"
+  },
+  {
+    "Id": "452415",
+    "Title": "Scaling TimeSpanAxis",
+    "LatestDate": "2013-09-12T20:53:05.317-07:00"
+  },
+  {
+    "Id": "453900",
+    "Title": "can we plot multiple colors for the same line-graph in dynamic-data-display?",
+    "LatestDate": "2013-08-19T23:16:44.907-07:00"
+  },
+  {
+    "Id": "458887",
+    "Title": "Linegraph layout",
+    "LatestDate": "2013-09-24T02:12:38.153-07:00"
+  },
+  {
+    "Id": "461600",
+    "Title": "adding item to context menu (programmatically)",
+    "LatestDate": "2014-07-26T07:25:30.013-07:00"
+  },
+  {
+    "Id": "462064",
+    "Title": "X Axis panning restriction",
+    "LatestDate": "2013-10-14T00:39:00.81-07:00"
+  },
+  {
+    "Id": "462717",
+    "Title": "D3 BarChart",
+    "LatestDate": "2013-10-21T00:47:02.677-07:00"
+  },
+  {
+    "Id": "462842",
+    "Title": "TimeSpan on the Y-Axis",
+    "LatestDate": "2013-10-21T01:04:28.083-07:00"
+  },
+  {
+    "Id": "462952",
+    "Title": "Customization of Graph Properties",
+    "LatestDate": "2013-10-21T03:55:18.6-07:00"
+  },
+  {
+    "Id": "463891",
+    "Title": "Silverlight to Wpf",
+    "LatestDate": "2013-10-28T05:50:56.097-07:00"
+  },
+  {
+    "Id": "465282",
+    "Title": "Remove description box from chart",
+    "LatestDate": "2013-11-11T02:53:06.907-08:00"
+  },
+  {
+    "Id": "465379",
+    "Title": "Is there a way to make the horizontal axis shared for 2 charts in WPF like in silverlight?",
+    "LatestDate": "2013-11-06T20:48:39.703-08:00"
+  },
+  {
+    "Id": "466255",
+    "Title": "How to : Load the co-ordinates when mouse is hovered on a line graph",
+    "LatestDate": "2015-06-26T21:00:47.58-07:00"
+  },
+  {
+    "Id": "468267",
+    "Title": "What is the stable release version which includes all the functionalities?",
+    "LatestDate": "2013-11-12T07:36:23.497-08:00"
+  },
+  {
+    "Id": "468774",
+    "Title": "set z-index of plotter.children",
+    "LatestDate": "2013-11-15T02:06:18.66-08:00"
+  },
+  {
+    "Id": "471118",
+    "Title": "Custome BarPlots with labels on each bar",
+    "LatestDate": "2013-11-25T12:48:52.503-08:00"
+  },
+  {
+    "Id": "474261",
+    "Title": "How create marker for one point?",
+    "LatestDate": "2013-12-16T04:56:28.053-08:00"
+  },
+  {
+    "Id": "474289",
+    "Title": "Tick marks for both axes display garbled",
+    "LatestDate": "2014-04-02T09:18:07.597-07:00"
+  },
+  {
+    "Id": "478013",
+    "Title": "How to draw a graph from a file?",
+    "LatestDate": "2013-12-26T01:44:53.37-08:00"
+  },
+  {
+    "Id": "478075",
+    "Title": "get horizontal axis min and max values",
+    "LatestDate": "2013-12-27T19:10:40.06-08:00"
+  },
+  {
+    "Id": "483858",
+    "Title": "Question about logarithmic y-axis",
+    "LatestDate": "2014-01-06T11:09:23.14-08:00"
+  },
+  {
+    "Id": "484160",
+    "Title": "Graph suddenly disappears while zooming/scrolling",
+    "LatestDate": "2015-10-23T03:57:31.06-07:00"
+  },
+  {
+    "Id": "501377",
+    "Title": "How to get data points from plotter???",
+    "LatestDate": "2014-02-03T09:29:51.377-08:00"
+  },
+  {
+    "Id": "529014",
+    "Title": "Rolling Window on DateTimeAxis",
+    "LatestDate": "2014-02-05T07:55:26.55-08:00"
+  },
+  {
+    "Id": "531279",
+    "Title": "synchronize two DataFollowChart multiple chart",
+    "LatestDate": "2014-02-10T22:37:27.107-08:00"
+  },
+  {
+    "Id": "535744",
+    "Title": "Implement FitToView use MVVM mode",
+    "LatestDate": "2014-04-17T07:59:35.06-07:00"
+  },
+  {
+    "Id": "538412",
+    "Title": "How can I make the D3 ChartPlotter fill the entire space allocated to the control?",
+    "LatestDate": "2014-03-08T14:50:49.673-08:00"
+  },
+  {
+    "Id": "539446",
+    "Title": "ChartPlotter Save Screenshot() issue",
+    "LatestDate": "2014-03-19T02:29:42.233-07:00"
+  },
+  {
+    "Id": "539980",
+    "Title": "How add text to any point",
+    "LatestDate": "2014-03-27T09:12:26.84-07:00"
+  },
+  {
+    "Id": "541051",
+    "Title": "min and max value Linegraph",
+    "LatestDate": "2014-04-03T07:25:03.11-07:00"
+  },
+  {
+    "Id": "543921",
+    "Title": "DateTime x axis in Simulation sample",
+    "LatestDate": "2014-04-30T14:14:54.973-07:00"
+  },
+  {
+    "Id": "548858",
+    "Title": "how can I：Select an area on ChartPlotter to show ",
+    "LatestDate": "2014-06-16T23:38:00.33-07:00"
+  },
+  {
+    "Id": "549013",
+    "Title": "Multiple Y Axes",
+    "LatestDate": "2014-06-18T05:29:57.41-07:00"
+  },
+  {
+    "Id": "550429",
+    "Title": "Can we have  Scroll Bars  in the graphs",
+    "LatestDate": "2014-07-02T21:10:31.013-07:00"
+  },
+  {
+    "Id": "552237",
+    "Title": "Legend with user controls",
+    "LatestDate": "2014-07-20T11:03:55.147-07:00"
+  },
+  {
+    "Id": "554046",
+    "Title": "Main Axis And Wpf Window question",
+    "LatestDate": "2014-07-24T11:37:04.467-07:00"
+  },
+  {
+    "Id": "560335",
+    "Title": "Plot axis flickering",
+    "LatestDate": "2014-08-07T07:07:48.293-07:00"
+  },
+  {
+    "Id": "560437",
+    "Title": "How to set a ColorMap",
+    "LatestDate": "2014-08-07T08:11:59.98-07:00"
+  },
+  {
+    "Id": "560541",
+    "Title": "WPF XAML editor error in Design time, But the application works fine in run time",
+    "LatestDate": "2014-08-07T23:50:11.707-07:00"
+  },
+  {
+    "Id": "562207",
+    "Title": "WPF Isolines - Is it possible to display data from triangular source instead of grid.",
+    "LatestDate": "2014-08-26T17:47:12.227-07:00"
+  },
+  {
+    "Id": "567646",
+    "Title": "Screenshot of d3 chart",
+    "LatestDate": "2014-09-17T00:14:56.7-07:00"
+  },
+  {
+    "Id": "568014",
+    "Title": "Converting from NotifyCollection to CompositeDataSource",
+    "LatestDate": "2014-09-21T11:48:08.423-07:00"
+  },
+  {
+    "Id": "568108",
+    "Title": "Clickable Linegraphs in ChartPlotter",
+    "LatestDate": "2014-09-22T17:28:24.34-07:00"
+  },
+  {
+    "Id": "569083",
+    "Title": "Port of D3 for Windows Store apps (universal apps)",
+    "LatestDate": "2014-10-05T17:34:07.167-07:00"
+  },
+  {
+    "Id": "570321",
+    "Title": "How to: Display logarithmic scale Y axis",
+    "LatestDate": "2014-10-21T02:22:27.207-07:00"
+  },
+  {
+    "Id": "570485",
+    "Title": "how to create draggableLine",
+    "LatestDate": "2014-10-24T03:06:15.29-07:00"
+  },
+  {
+    "Id": "571813",
+    "Title": "Change axis tick mark color",
+    "LatestDate": "2015-03-05T00:17:15.083-08:00"
+  },
+  {
+    "Id": "574661",
+    "Title": "Dynamic Data Display: hide the axis lable",
+    "LatestDate": "2015-02-25T03:05:55.16-08:00"
+  },
+  {
+    "Id": "575936",
+    "Title": "textBox on a chartplotter ? ",
+    "LatestDate": "2015-03-04T22:46:38.56-08:00"
+  },
+  {
+    "Id": "577468",
+    "Title": "Insufficient memory to continue the execution of the program.",
+    "LatestDate": "2015-01-12T02:41:05.06-08:00"
+  },
+  {
+    "Id": "579687",
+    "Title": ".net 4 Version @ github",
+    "LatestDate": "2015-02-06T14:44:24.577-08:00"
+  },
+  {
+    "Id": "581822",
+    "Title": "Pie Chart Tutorial or Example Code",
+    "LatestDate": "2015-02-25T06:56:53.633-08:00"
+  },
+  {
+    "Id": "584608",
+    "Title": "Handling null values in a line graph.",
+    "LatestDate": "2015-03-05T04:20:54.607-08:00"
+  },
+  {
+    "Id": "616139",
+    "Title": "Remove first and last LabelTickInfo",
+    "LatestDate": "2015-08-04T05:53:32.35-07:00"
+  },
+  {
+    "Id": "627509",
+    "Title": "Two Scales Sample with v3",
+    "LatestDate": "2015-04-14T05:43:29.387-07:00"
+  },
+  {
+    "Id": "630936",
+    "Title": "Multiple Y axis plot scale issue",
+    "LatestDate": "2016-12-13T20:43:39.06-08:00"
+  },
+  {
+    "Id": "631846",
+    "Title": "Line Graph isn't automatically updating",
+    "LatestDate": "2015-08-04T05:31:22.85-07:00"
+  },
+  {
+    "Id": "637789",
+    "Title": "How to drag a point in the linegraph using Dynamic data display",
+    "LatestDate": "2015-08-04T04:15:24.003-07:00"
+  },
+  {
+    "Id": "639843",
+    "Title": "Custom labels on Y-axiss",
+    "LatestDate": "2015-08-04T04:17:14.81-07:00"
+  },
+  {
+    "Id": "641052",
+    "Title": "Zoom issue with multiple axis",
+    "LatestDate": "2015-08-04T03:39:51.873-07:00"
+  },
+  {
+    "Id": "642295",
+    "Title": "Capture zoom state",
+    "LatestDate": "2015-08-06T00:43:43.51-07:00"
+  },
+  {
+    "Id": "644211",
+    "Title": "how to save chart into XPS or PDF?",
+    "LatestDate": "2015-08-25T21:13:20.84-07:00"
+  },
+  {
+    "Id": "645797",
+    "Title": "Source code",
+    "LatestDate": "2015-10-04T18:40:11.697-07:00"
+  },
+  {
+    "Id": "646193",
+    "Title": "Graph data not refreshing after applying Axis Restrictions",
+    "LatestDate": "2015-10-14T01:44:18.26-07:00"
+  },
+  {
+    "Id": "649469",
+    "Title": "Chart getting messed up and freezes",
+    "LatestDate": "2016-01-17T21:39:25.663-08:00"
+  },
+  {
+    "Id": "649509",
+    "Title": "Simulating Graphy Paper with the ticks",
+    "LatestDate": "2016-01-01T20:05:51.003-08:00"
+  },
+  {
+    "Id": "650118",
+    "Title": "Discontinued line graph - distinct legend",
+    "LatestDate": "2016-01-17T21:32:16.94-08:00"
+  },
+  {
+    "Id": "650538",
+    "Title": "Polyline : Display the previous line from where it is dragged",
+    "LatestDate": "2016-01-27T00:40:38.143-08:00"
+  },
+  {
+    "Id": "650677",
+    "Title": "Polyline : Drag the complete polyline by providing a small marker symbol",
+    "LatestDate": "2016-01-29T05:32:43.923-08:00"
+  },
+  {
+    "Id": "650816",
+    "Title": "Implementation of MVVM in D3, question adding a Legend with checkbox",
+    "LatestDate": "2016-11-16T02:47:55.98-08:00"
+  },
+  {
+    "Id": "653014",
+    "Title": "Detect the right click drag on the x/y axis",
+    "LatestDate": "2016-03-29T02:56:24.407-07:00"
+  },
+  {
+    "Id": "654454",
+    "Title": "chartmare",
+    "LatestDate": "2016-05-09T06:16:40.11-07:00"
+  },
+  {
+    "Id": "654474",
+    "Title": "Documentation and status of project",
+    "LatestDate": "2016-05-09T15:49:12.003-07:00"
+  },
+  {
+    "Id": "654717",
+    "Title": "How to add a marker at a specific point on plot?",
+    "LatestDate": "2016-05-16T07:26:20.22-07:00"
+  },
+  {
+    "Id": "655953",
+    "Title": "Can D3 be  used as grid lines on Dotspatial control or mapwindow",
+    "LatestDate": "2016-06-28T08:57:37.213-07:00"
+  },
+  {
+    "Id": "655954",
+    "Title": "D3 Tutorials I found online ",
+    "LatestDate": "2016-07-26T16:41:16.02-07:00"
+  },
+  {
+    "Id": "659120",
+    "Title": "D3 SaveScreenShot",
+    "LatestDate": "2016-11-02T02:17:27.03-07:00"
+  },
+  {
+    "Id": "660123",
+    "Title": "How to Change the X axis ticks number or interval?",
+    "LatestDate": "2016-12-13T18:14:08.747-08:00"
+  },
+  {
+    "Id": "660124",
+    "Title": "How to Control the MajorLabels the length.",
+    "LatestDate": "2016-12-13T19:13:32.287-08:00"
+  },
+  {
+    "Id": "660226",
+    "Title": "Memory Leak  when using dynamic Tabs",
+    "LatestDate": "2016-12-19T07:50:50.863-08:00"
+  },
+  {
+    "Id": "660562",
+    "Title": "How to refresh viewer?",
+    "LatestDate": "2017-01-08T17:22:03.017-08:00"
+  },
+  {
+    "Id": "661811",
+    "Title": "How do I recover the AutoFitToView property after I have done a drag-drop or mousewheel operation?",
+    "LatestDate": "2017-03-09T07:20:01.54-08:00"
+  },
+  {
+    "Id": "663402",
+    "Title": "Using several Y axis with different scale",
+    "LatestDate": "2017-07-11T00:53:05.127-07:00"
+  },
+  {
+    "Id": "663589",
+    "Title": "Multiple synchronized plotters",
+    "LatestDate": "2017-08-10T23:31:44.733-07:00"
+  }
+]

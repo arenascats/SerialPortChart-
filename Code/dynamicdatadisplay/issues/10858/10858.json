@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "User successfully compiled the source code.",
+    "ClosedDate": "2009-11-01T09:53:21.073-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI downloaded the last avialabeled build #29117 and open the solution from \"Stable\\v0.3.1\\\".\nWhen compilation process ended I got 25 errors:\n \n[path to project]\\Stable\\v0.3.1\\src\\DynamicDataDisplay\\Charts\\Legend.xaml(15,18): error MC3074: The tag 'Rectangle.Effect' does not exist in XML namespace 'http://schemas.microsoft.com/winfx/2006/xaml/presentation'. \n[path to project]\\Stable\\v0.3.1\\src\\DynamicDataDisplay.Controls\\PaletteControl.xaml(18,4): error MC3074: The tag 'NumericAxisControl' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'. \n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.3\\MapSample\\Window1.xaml(6,9): error MC3050: Cannot find the type 'D3IconHelper'. Note that type names are case sensitive.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.3\\IsolineSampleApp\\Window1.xaml(6,65): error MC3050: Cannot find the type 'D3IconHelper'. Note that type names are case sensitive.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.3\\CoastlineSampleApp\\Window1.xaml(5,59): error MC3050: Cannot find the type 'D3IconHelper'. Note that type names are case sensitive.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\Tooltip\\Window1.xaml(15,4): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\StockExchangeSample\\Window1.xaml(7,4): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\PlotterLayout\\MainWindow.xaml(14,14): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\PerfCounter\\Window1.xaml(7,4): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\Markers\\Window1.xaml(7,10): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\LineSample\\Window1.xaml(7,4): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'. \n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.3\\MercatorShaderMapSampleApp\\Window1.xaml(6,9): error MC3050: Cannot find the type 'D3IconHelper'. Note that type names are case sensitive.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\HelloWorld\\MainWindow.xaml(7,6): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\Demo\\MainWindow.xaml(7,10): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'. \n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\DataTable\\Window1.xaml(7,10): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\CurrencyExchangeSample\\Window1.xaml(7,4): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\Animation\\MainWindow.xaml(7,10): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.3\\Simulation\\Window1.xaml(6,5): error MC3050: Cannot find the type 'D3IconHelper'. Note that type names are case sensitive.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.3\\PaletteControlSampleApp\\Window1.xaml(10,22): error MC3074: The tag 'PaletteControl' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\n[path to project]\\Stable\\v0.3.1\\src\\Samples\\v0.2\\ImageHistogram\\Window1.xaml(21,5): error MC3074: The tag 'ChartPlotter' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'.\nerror CS0006: Metadata file '[path to project]\\Stable\\v0.3.1\\sln\\DynamicDataDisplay\\Debug\\bin\\DynamicDataDisplay.dll' could not be found\nerror CS0006: Metadata file '[path to project]\\Stable\\v0.3.1\\sln\\DynamicDataDisplay\\Debug\\bin\\DynamicDataDisplay.dll' could not be found\nerror CS0006: Metadata file '[path to project]\\Stable\\v0.3.1\\src\\DynamicDataDisplay.Maps\\DynamicDataDisplay.Maps\\bin\\Debug\\DynamicDataDisplay.Maps.dll' could not be found\nerror CS0006: Metadata file '[path to project]\\Stable\\v0.3.1\\src\\DynamicDataDisplay.Controls\\bin\\Debug\\DynamicDataDisplay.Controls.dll' could not be found\nerror CS0006: Metadata file '[path to project]\\Stable\\v0.3.1\\sln\\DynamicDataDisplay\\Debug\\bin\\DynamicDataDisplay.dll' could not be found\n \n \nIs it mean that project needs some setups? \nPlease tell me what I have to do to solve this problem?\n \nWith best regards, Alexander.",
+    "LastUpdatedDate": "2013-05-16T04:53:48.2-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-10-30T11:53:53.02-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The errors appeared when I try to build sources",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10858
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have just downloaded and successfully build this solution, so the problem is probably not with D3. Are you sure you have .net 3.5 sp1 intalled?",
+      "PostedDate": "2009-10-30T20:29:49.917-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-31T02:45:34.61-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I updated framework. All projects build correct. Thank you for quick assistance.",
+      "PostedDate": "2009-10-31T02:48:29.337-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-01T09:53:21.073-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:55.68-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:48.2-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

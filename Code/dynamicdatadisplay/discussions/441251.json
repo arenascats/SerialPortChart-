@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1034353",
+    "ThreadId": "441251",
+    "Html": "Hi All,\r<br />\n<br />\ni have created a chart using dynamic data display dll. I need to fill the graph area with background color. In the code below\r<br />\n<br />\nplotter1.AddLineGraph(ds1,<br />\n<pre><code>               new Pen(Brushes.Green, 1),\n               new CirclePointMarker { Size = 0.0, Fill = Brushes.Black },\n               new PenDescription(&quot;Volts&quot;));\n\n\n</code></pre>\n\ni am not seeing the option to set background color for plotted graph reagion. \r<br />\nAny suggestion where i am missing.<br />\n",
+    "PostedDate": "2013-04-23T00:28:40.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045837",
+    "ThreadId": "441251",
+    "Html": "Hi\r<br />\n<br />\nAs per my knowledge, There is no direct way to do area graphs(Area region) using DDD.\r<br />\nDDD has only VericalRange and HorizontalRange, these are to add horizontal and vertical rectangle regions.\r<br />\n<br />\nThe line graph has(the return type of plotter.AddLineGraph(......))  point data collection.\r<br />\nSince this is WPF chart control, you can always add polygon with the point data collection.\r<br />\nyou can do some thing like this<br />\n<pre><code>                System.Windows.Media.PointCollection polygonPoints = new System.Windows.Media.PointCollection();\n                System.Windows.Media.SolidColorBrush yellowBrush = new System.Windows.Media.SolidColorBrush();\n                yellowBrush.Color = System.Windows.Media.Colors.Yellow;\n                System.Windows.Media.SolidColorBrush blackBrush = new System.Windows.Media.SolidColorBrush();\n                blackBrush.Color = System.Windows.Media.Colors.Black;\n\n                System.Windows.Shapes.Polygon polygon = new System.Windows.Shapes.Polygon();\n                polygon.Stroke = blackBrush;\n                polygon.Fill = yellowBrush;\n                polygon.StrokeThickness = 3;\n                var points = lineGraph.DataSource.GetPoints().ViewportToScreen(plotter1.Viewport.Transform).ToList();\n                foreach (var pnt in points)\n                {\n                    polygonPoints.Add(new Point(pnt.X, pnt.Y));\n                }\n\n                //Here you have to add two more points to complete the loop\n                polygonPoints.Add(new Point(0, hightOfChart));\n                polygonPoints.Add(new Point(widthOfChart, hightOfChart));\n \n               polygon.Points = polygonPoints;\n\n                yourPrentGridOrPlot.Children.Add(polygon);\n                //yourPrentGridOrPlot is parent grid where you plan to add ploygon</code></pre>\n\nI didn't try this code, But this code should work.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-05-19T20:48:52.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

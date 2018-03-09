@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I add a line graph like this\n \nvar pen = new Pen(color,2);\npen.DashStyle = dashline;\nplotter.AddLineGraph(data, pen, new PenDescription(\"Something\"));\n \nIt would be nice if the line in the legend also showed dashes, dots etc, depending on what I set on pen.DashStyle.",
+    "LastUpdatedDate": "2014-02-06T15:22:51.29-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-11-20T02:43:34.683-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Legend line should pick up pen style fully",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 10976
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "See [my solution in the discussion forum](https://dynamicdatadisplay.codeplex.com/discussions/249830).",
+      "PostedDate": "2014-02-06T15:22:51.29-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

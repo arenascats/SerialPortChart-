@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "276680",
+    "ThreadId": "80677",
+    "Html": "<p>Hello.</p>\r\n<p>I try to develop feature for saving the data from charts to the Excel.</p>\r\n<p>For this purpose I want to change legend (user can select the lines for saving) and default context menu (add new command &quot;Export selected to MS Excel&quot;).</p>\r\n<p>The CheckBoxes was added into class LegendItem, but a mouse event doesn't handle. Is it possible to make event independent Legend? How to do this?</p>\r\n<p>&nbsp;</p>\r\n<p>With best regards, Alexander.</p>",
+    "PostedDate": "2010-01-13T06:56:02.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

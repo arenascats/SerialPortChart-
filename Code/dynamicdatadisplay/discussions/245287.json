@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "563324",
+    "ThreadId": "245287",
+    "Html": "\r\n<p>I am using multiple constraints like this:</p>\r\n<p><span style=\"color:blue\">this</span>.chartPlotter.Viewport.Constraints.Add(<span style=\"color:blue\">new</span>&nbsp;<span style=\"color:#2b91af\">PhysicalProportionsConstraint</span>(1));</p>\r\n<p><span style=\"color:blue\">this</span>.chartPlotter.Viewport.Constraints.Add(<span style=\"color:blue\">new</span>&nbsp;<span style=\"color:#2b91af\">DomainConstraint</span>(<span style=\"color:blue\">new</span>&nbsp;<span style=\"color:#2b91af\">DataRect</span>(-60,&nbsp;-14,&nbsp;120,&nbsp;28)));</p>\r\n<p>However, the initial view of the graph shows me -30 to 30 in x direction and -14 to 14 in y direction. I want to see the whole chart to start, I should see at least -60 to 60 and then due to the physical proportions constraint I would see something larger\r\n than -14 to 14 in the y direction. Why is my initial view not -60 to 60? Do I need to set some other property of the chart plotter? Thanks.</p>\r\n",
+    "PostedDate": "2011-02-09T06:48:50.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

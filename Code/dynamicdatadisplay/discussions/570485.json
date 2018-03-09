@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1315934",
+    "ThreadId": "570485",
+    "Html": "I need for draggable VerticalLine(class). The D3 lib has draggablePoint but not draggableLine. How to do it.<br />\n",
+    "PostedDate": "2014-10-23T01:47:33.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1316215",
+    "ThreadId": "570485",
+    "Html": "I'm try to extend VerticalLine. <br />\n<pre><code>public class DraggableLine : SimpleLine\n    {\n        Point p1;\n        Point p2;\n        bool dragging = false;\n        Point dragStart;\n        Vector shift;\n\n        \n\n        protected override void UpdateUIRepresentationCore()\n        {\n            var transform = Plotter.Viewport.Transform;\n            Point p1 = new Point(Value, Plotter.Viewport.Visible.Top).DataToScreen(transform);\n            Point p2 = new Point(Value, Plotter.Viewport.Visible.Bottom).DataToScreen(transform);\n            LineGeometry.StartPoint = p1;\n            LineGeometry.EndPoint = p2;\n        }\n       \n        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)\n        {\n            dragStart = e.GetPosition(Plotter.Viewport).ScreenToData(Plotter.Viewport.Transform);\n            shift = p1 - dragStart;\n            dragging = true;\n\n            CaptureMouse();\n        }\n\n        protected override void OnMouseMove(MouseEventArgs e)\n        {\n            if (!dragging) return;\n\n            Point mouseInData = e.GetPosition(Plotter.Viewport).ScreenToData(Plotter.Viewport.Transform);\n\n            if (mouseInData != dragStart)\n            {\n                p1 = mouseInData + shift;\n            }\n        }\n\n        protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)\n        {\n            ReleaseMouseCapture();\n            dragging = false;\n        }\n    }</code></pre>\n\nbut OnMouseLeftButtonDown not called, only OnMouseLeftButtonUp works.<br />\n",
+    "PostedDate": "2014-10-24T03:06:15.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

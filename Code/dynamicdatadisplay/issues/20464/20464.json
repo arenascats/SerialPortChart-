@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, I want to draw pointwise. I used\n```\n            calculator.CalculateSequence();\n\n            var xCoord = new EnumerableDataSource<double>(calculator.XCoordinates);\n            var yCoord = new EnumerableDataSource<double>(calculator.YCoordinates);\n            xCoord.SetXMapping(x => x);\n            yCoord.SetYMapping(y => y);\n\n            CompositeDataSource plotterPoints = new CompositeDataSource(xCoord, yCoord);\n            plotter.AddLineGraph(plotterPoints); // here It wraws a line\n```\nAnd For sure, It draws united points like one line.  How I can draw point to point (separately and pointwise) .  Using points from List of points like mine.",
+    "LastUpdatedDate": "2013-11-30T09:56:23.057-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2013-11-28T08:39:39.547-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Drawing pointwise",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20464
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "For drawing separated dots you can use markers - look at Markers / Simple marker graph in [Interactive SDK ](http://research.microsoft.com/en-us/um/cambridge/projects/ddd/d3isdk/)",
+      "PostedDate": "2013-11-30T09:56:23.057-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

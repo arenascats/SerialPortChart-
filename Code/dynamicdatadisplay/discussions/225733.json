@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "487988",
+    "ThreadId": "225733",
+    "Html": "<p>I tried the below code even i didn't able to remove the zooming on horizontal and vertical axis.</p>\r\n<p>AxisNavigation HVaxis = new AxisNavigation();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.Children.Remove(HVaxis);</p>\r\n<p>&nbsp;</p>\r\n<p>Can u please&nbsp;&nbsp; revise my code? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks &amp; Regards</p>\r\n<p>Srujana&nbsp; &nbsp;&nbsp;&nbsp;</p>",
+    "PostedDate": "2010-09-01T22:20:59.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487995",
+    "ThreadId": "225733",
+    "Html": "<p>Srujana,</p>\r\n<p>You need to remove the existing AxisNavigation object from the plotter. &nbsp;Your code is attempting to create a new one!</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>plotter.Children.Remove(plotter.HorizontalAxisNavigation);\r\nplotter.Children.Remove(plotter.VerticalAxisNavigation);\r\nplotter.Children.Remove(plotter.KeyboardNavigation);\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-09-01T22:27:24.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "650488",
+    "ThreadId": "225733",
+    "Html": "<p>Thanks for that... has the development stopped..?</p>\r\n<p>Am sure there are many ppl still using it <em>and</em>&nbsp;having lots of doubts.. :)</p>",
+    "PostedDate": "2011-08-01T05:00:54.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

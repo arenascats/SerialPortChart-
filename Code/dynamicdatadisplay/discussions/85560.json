@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "291375",
+    "ThreadId": "85560",
+    "Html": "<p>Hello,</p>\r\n<p>Is there currently a way to invert the Y axis, so that the origin(0, 0) matches the WPF screen coordinate system (Top left)?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-02-16T12:05:22.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291682",
+    "ThreadId": "85560",
+    "Html": "<p>Hello,</p>\r\n<p>To invert Y axis, use the following code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>plotter.DataTransform = <span style=\"color:Blue\">new</span> LambdaDataTransform(p =&gt; <span style=\"color:Blue\">new</span> Point(p.X, -p.Y), p =&gt; <span style=\"color:Blue\">new</span> Point(p.X, -p.Y));\r\n</pre>\r\n</div>\r\n<p>and then set up visible area as you want.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-17T05:20:12.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

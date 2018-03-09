@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "499009",
+    "ThreadId": "228735",
+    "Html": "<p>How do I add a tooltip so that when I hover over a pointmarker, it displays the information for the data point?</p>\r\n<p>&nbsp;</p>\r\n<p>Pen bluePen = new Pen(System.Windows.Media.Brushes.Blue, 1.0);</p>\r\n<p>CirclePointMarker cpm = new CirclePointMarker();</p>\r\n<p>PenDescription stockPriceDes = new PenDescription(&quot;Stock Price&quot;);</p>\r\n<p>LineAndMarker&lt;MarkerPointsGraph&gt; pointsgraph = StockPrices.AddLineGraph(stockDataSource, bluePen, cpm, stockPriceDes);</p>",
+    "PostedDate": "2010-09-27T09:12:35.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "504311",
+    "ThreadId": "228735",
+    "Html": "<p>Did you ever figure out how to do this?</p>",
+    "PostedDate": "2010-10-08T08:21:36.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "505117",
+    "ThreadId": "228735",
+    "Html": "<p>Have a look at the samples in the &quot;nightly&quot; builds. &nbsp;For example, there is two that show how to create tooltips for markers (Demo &amp; TooltipSample).</p>",
+    "PostedDate": "2010-10-10T14:06:18.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

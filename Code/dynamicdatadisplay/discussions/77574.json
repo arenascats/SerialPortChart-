@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "265231",
+    "ThreadId": "77574",
+    "Html": "<p>Dear D3-team,<br><br>I appreciate your very nice data representation tool.<br>I have an request. Is it possible to select certain data points within the line graph manually?<br>The procedure is as follows:<br><br>1. The data are displayed as line diagram<br>2. The user identifies some outliers<br>3. The user clicks on the outliers in the line diagram<br>4. The outliers are displayed as marked<br>5. The data are displayed as line diagram again (without the outliers)<br><br>Is such an option already integrated or does someone knows how to do this?<br><br>Cheers<br>Markus</p>",
+    "PostedDate": "2009-12-09T01:13:25.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "247405",
+    "ThreadId": "72459",
+    "Html": "<p>Hi,</p>\r\n<p>I have limited my Axis zooming to 1 hour and it shows 1 minute in the labels and the line divisors for 1 minute.</p>\r\n<p>How can I show only 5 minutes interval?</p>\r\n<pre>axis.LabelProvider.SetCustomFormatter(info =&gt;\r\n                  {\r\n                      DifferenceIn differenceIn = (DifferenceIn) info.Info;\r\n                      if(differenceIn == DifferenceIn.Minute)\r\n                      {\r\n                          if (info.Tick.Minute % 5 == 0)\r\n                          {\r\n                              return info.Tick.ToString(&quot;%m:ss&quot;);\r\n                          }\r\n                          else\r\n                          {\r\n                              return &quot;&quot;;\r\n                          }\r\n                      }\r\n                      return null;\r\n                  });</pre>\r\n<p>It&nbsp;sort of works. When I open the app, it shows only the labels&nbsp;for 5 minutes but show the division for 1 minute(I think i need to change my minor&nbsp;tick, but I dont&nbsp;know how to do).</p>\r\n<p>When I zoom out and back in, a only see&nbsp;15 minutes and not 5... and my minorTick change from 1 to 3(shows 15 because its multiple of 3).</p>\r\n<p>Thanks for your attention.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-19T12:08:30.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248010",
+    "ThreadId": "72459",
+    "Html": "<p>Hi,</p>\r\n<p>Label Provider is a entity that takes already generated ticks and creates an output labels for each of these ticks. To change ticks that are generated, you have to tune TicksProvider, but for now it doesn't allow to perform such tuning. I'll change it to enable your task to be performed and will notify you as it done.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-21T01:18:44.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253104",
+    "ThreadId": "72459",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Is there any solution to change TicksProvider.</p>\r\n<p>I need this for DateTime axis, When I change DateTime axis limits from 59 minutes to 1 hour only 1 tick mark label&nbsp;is visible, also When I change from&nbsp; 23 hours to 1 day only 1 tick mark&nbsp;label&nbsp;is visible.</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2009-11-03T21:26:56.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264318",
+    "ThreadId": "72459",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Is there any updates on this.</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2009-12-06T21:18:00.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "445748",
+    "ThreadId": "72459",
+    "Html": "<p>Hi,</p>\r\n<p>I got this.</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=210799\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=210799</a></p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2010-05-21T02:01:34.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

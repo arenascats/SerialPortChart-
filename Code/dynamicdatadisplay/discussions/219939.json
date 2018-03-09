@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "469181",
+    "ThreadId": "219939",
+    "Html": "<p>Hello D3,</p>\r\n<p>I am a new user of D3 and trying to understand your TwoIndependent Axis functionality. I am following your TwoIndependentAxis example in Dev sample and I do see two independent Y Axis. But when I pan the graph only one series pans the other series does not. Also when I zoom on the X-Axis only one series reponds the other series does not. I am guessing both the independent Y Axis share the same X-Axis. Zooming on the X-Axis should cause the zoom in both the series. What am I&nbsp;missing here. I have attached a screen shot of what I am trying to convey. When I try and zoom out on the X-Axis the series Torque does not repond to the X-Axis zoom out. What am I missing here. I have your build number 0.3.4703.0\r\n<p>\r\n<p><img src=\"http://lh3.ggpht.com/_kJaXpVpql30/TESmeCkScnI/AAAAAAAAG0k/NYdDLUk2rB0/d3 independent Axis.png.jpg\" alt=\"\"></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Kishore</p>\r\n</p>\r\n</p>",
+    "PostedDate": "2010-07-19T12:29:51.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469251",
+    "ThreadId": "219939",
+    "Html": "<p>Kishore,</p>\r\n<p>You can make the sample work as you require by adding the following code:&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\"><div style=\"color:black;background-color:white\"><pre><span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> Window1_Loaded(<span style=\"color:blue\">object</span> sender, RoutedEventArgs e){</pre>\r\n<pre>...</pre>\r\n<pre>...         </pre>\r\n<pre>\r\nplotter.Viewport.PropertyChanged += <span style=\"color:blue\">new</span> EventHandler&lt;ExtendedPropertyChangedEventArgs&gt;(Viewport_PropertyChanged);      \r\n}\r\n\r\n\r\n<span style=\"color:blue\">void</span> Viewport_PropertyChanged(<span style=\"color:blue\">object</span> sender, ExtendedPropertyChangedEventArgs e)\r\n{\r\n\t<span style=\"color:blue\">if</span> (e.PropertyName == <span style=\"color:#a31515\">&quot;Visible&quot;</span>)            \r\n\t{               \r\n\t <span style=\"color:blue\">if</span> (innerPlotter.Viewport.Visible.Height != 1.0)                     \r\n\tinnerPlotter.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(plotter.Viewport.Visible.XMin, innerPlotter.Viewport.Visible.YMin, plotter.Viewport.Visible.Width, innerPlotter.Viewport.Visible.Height);\r\n            }        \r\n}\r\n</pre>\r\n</div>\r\n</span></pre>\r\n</div>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-07-19T14:30:39.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469262",
+    "ThreadId": "219939",
+    "Html": "<p>Hey Grant,</p>\r\n<p>That works !!!.</p>\r\n<p>Are you a dev on this team? or a user of the library?</p>\r\n<p>Kishore</p>",
+    "PostedDate": "2010-07-19T15:12:36.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469316",
+    "ThreadId": "219939",
+    "Html": "<p>Kishore,</p>\r\n<p>I'm a user of D3.&nbsp;</p>\r\n<p>It's a great tool but the lack of documentation can make it difficult to work out how to achieve the desired result.</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-07-19T18:52:38.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469661",
+    "ThreadId": "219939",
+    "Html": "<p>&nbsp;</p>\r\n<div><span style=\"font-family:Arial;font-size:x-small\">Thank you Grant - this was a major help to me also.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial;font-size:x-small\">David Roh</span></div>",
+    "PostedDate": "2010-07-20T05:26:58.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476580",
+    "ThreadId": "219939",
+    "Html": "<p>Panning and Zoom in the graph area has a problem on with the secondary Y-Axis.</p>\r\n<p>When I Pan on the graph it Pans both the series on  X-Axis only. In regards to the vertical axis only one axis pans and that is the primary Y-Axis which you can see on the picture.</p>\r\n<p>The secondary Y-Axis (on the right) does not pan. It also does not respond to zoom (MouseWheel scroll events on the Graph Area ) as well.</p>\r\n<p>Can some one help me here?</p>\r\n<p>The response from Grantz on&nbsp;Jul 19 at 4:30 PM helps with X-Axis zoom and pan events on both the series but does not help with zoom and pan on the Graph Area with respect to secondary Y-Axis(on the right)</p>\r\n<p><img src=\"http://lh4.ggpht.com/_kJaXpVpql30/TFnQeBd6JUI/AAAAAAAAG28/frJ00OAAuKc/mousePan.gif\" alt=\"\"></p>\r\n<p>&nbsp;&nbsp;<span style=\"white-space:pre\"> </span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-04T12:29:35.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476623",
+    "ThreadId": "219939",
+    "Html": "<p>Kishore,</p>\r\n<p>This will make the inner plotter follow the panning but it won't respond to the mouse wheel. &nbsp;No doubt you could make this work as well but I've always assumed users would want to independently scale the left &amp; right vertical axes.</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>        <span style=\"color:blue\">void</span> Viewport_PropertyChanged(<span style=\"color:blue\">object</span> sender, Microsoft.Research.DynamicDataDisplay.ExtendedPropertyChangedEventArgs e)\r\n        {\r\n            <span style=\"color:blue\">if</span> (e.PropertyName == <span style=\"color:#a31515\">&quot;Visible&quot;</span>)\r\n            {\r\n                <span style=\"color:blue\">if</span> (innerPlotter.Viewport.Visible.Height != 1.0)\r\n                {\r\n                    DataRect oldRect = (DataRect) e.OldValue;\r\n                    DataRect newRect = (DataRect) e.NewValue;\r\n\r\n                    <span style=\"color:blue\">if</span> (plotter.Viewport.PanningState == Viewport2DPanningState.Panning)\r\n                    {\r\n                        <span style=\"color:blue\">double</span> verticalMove = ((newRect.YMin - oldRect.YMin) / newRect.Height) * innerPlotter.Viewport.Visible.Height;\r\n                        innerPlotter.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(plotter.Viewport.Visible.XMin, innerPlotter.Viewport.Visible.YMin+verticalMove, plotter.Viewport.Visible.Width, innerPlotter.Viewport.Visible.Height);\r\n                    }\r\n                    <span style=\"color:blue\">else</span>\r\n                        innerPlotter.Viewport.Visible = <span style=\"color:blue\">new</span> DataRect(plotter.Viewport.Visible.XMin, innerPlotter.Viewport.Visible.YMin, plotter.Viewport.Visible.Width, innerPlotter.Viewport.Visible.Height);\r\n                }\r\n            }\r\n        }\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-08-04T14:48:11.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477027",
+    "ThreadId": "219939",
+    "Html": "<p>Cool, yup I got the zoom to work</p>\r\n<p>Thanks</p>\r\n<p>Kishore</p>",
+    "PostedDate": "2010-08-05T11:03:35.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

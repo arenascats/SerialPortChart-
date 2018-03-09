@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am not able to create a screenshot with x and y axis values. Only graph is showing in the screenshot. See attachment . Is there any way to create a screenshot with x and y axis values. i am using chartPlotter.",
+    "LastUpdatedDate": "2015-03-19T04:56:31.047-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2015-03-19T04:56:29.463-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How can i get screenshot with x and y axis values",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21786
+  },
+  "FileAttachments": [
+    {
+      "FileId": 8841,
+      "FileName": "test.png",
+      "DownloadUrl": ".\\8841"
+    }
+  ],
+  "Comments": []
+}

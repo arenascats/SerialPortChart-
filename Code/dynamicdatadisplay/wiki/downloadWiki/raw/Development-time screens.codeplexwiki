@@ -1,0 +1,55 @@
+! This page contains screens of DynamicDataDisplay in development.
+* Projects from here are available from *Source Code* page, latest Changeset, *Nightly* directory. For example, you can open *sln/DynamicDataDisplay.sln* from here and run *NewMarkersSample* project from *DevSamples* solution folder, or some other project you like.
+* *!* Note that source code from *Nightly* directory is in development now, it may have different bugs and unexpected features. Use it with caution, or wait for the next release, till which bugs will be fixed, I hope.
+
+!! Linear integral Convolution (LIC) and 3D sections and isolines
+[image:3DSections+LIC+Isolines.PNG]
+
+!! Linear Integral Convolution of vector field and streamlines
+[image:LIC + Streamlines.PNG]
+
+!! Endless map - no ends in longitude
+[image:Endless map.PNG]
+
+!! Colored vector field Line Integral Convolution
+[image:Colored vector convolution.PNG]
+
+[image:VectorFieldConvolution - 1.png]
+!! Color maps and isolines on source containing 43200*21600 points
+[image:Gtopo30 - ColorMap.PNG]
+[image:Gtopo30 - Isolines.PNG]
+!! Color maps (early development version)
+[image:Color map.PNG]
+[image:Cropped color map.png]
+!! Rotated ellipses (request of user)
+[image:RotatedEllipses.PNG]
+!! Different built-in markers on one page:
+[image:Different Built-in markers.PNG]
+!! *TwoLinesSample* with lines in different scales both on one plotter and in one Legend
+[image:TwoLinesSample.PNG]
+!! Live Editable shapes - polylines, polygons and poly-bezier lines - project _EditableShapes_ in *Nightly*
+[image:EditableShapes.png]
+!! Pie chart with live editing
+[image:PieChart2.PNG]
+!! Point Set with 1 million filtered points
+[image:PointSet with 1 million pts.png]
+!! Acceptable ranges markers with grid to edit values on the fly
+[image:AcceptableRanges.PNG]
+!! StockChart with another style of markers:
+[image:StockChart.PNG]
+!! Candlestick chart
+[image:WPF D3 Candlestick Chart.png]
+!! Microsoft Virtual Earth map
+[image:D3-Maps-Magnified.png]
+!! Mandelbrot fractal
+[image:Mandelbrot.png]
+!! Axis with π as a base
+[image:Pi Axis.png]
+!! Intensity color map with section
+[image:IntensitySample.png]
+!! Markers upon the map
+[image:Rainfall in USA.png]
+!! Bar chart with fill binding
+[image:Bar Chart.png]
+!! Forest display
+[image:ForestDisplay.png]

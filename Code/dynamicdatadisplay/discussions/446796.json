@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1055816",
+    "ThreadId": "446796",
+    "Html": "Dear D3 CodePlex Project -- \r<br />\n<br />\nIs Dynamic Data dead? \r<br />\n<br />\nIs this CodePlex project dead?\r<br />\n<br />\nIt seems like &quot;yes&quot; to both, given that a search for &quot;Dynamic Data&quot; on CodePlex yields nothing more recent than 2012.\r<br />\n<br />\nWhat do you think?\r<br />\n<br />\nPlease advise.\r<br />\n<br />\nThanks.\r<br />\n<br />\n-- Mark Kamoski<br />\n",
+    "PostedDate": "2013-06-12T06:14:31.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055840",
+    "ThreadId": "446796",
+    "Html": "I believe the original project was largely created by Mikhail who did a great job; however, I think he has dropped out of the project due to other pressing needs.\r<br />\n<br />\nMikhail also started a newer version at <a href=\"http://d3future.codeplex.com/\" rel=\"nofollow\">http://d3future.codeplex.com/</a>  but I believe he has dropped out of that project also.\r<br />\n<br />\nD3 is a great charting program that needs some code cleanup for performance and it certainly could use better documentation.\r<br />\n<br />\nDavid<br />\n",
+    "PostedDate": "2013-06-12T07:01:56.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

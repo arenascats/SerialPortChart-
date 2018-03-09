@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi All,\n\nI want to plot a CIE 1931 chromaticity diagram plotting the location of the red, green and blue. I've base plot image of chromaticity. So I want to add the base plot image to the dynamic data display graph and call methods like drawcircle,drawsqure.. is it possible using the dynamic data display?, if so which type of graph can I used?\n\nRegards,\nGeorge",
+    "LastUpdatedDate": "2016-07-25T22:21:28.157-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2016-07-25T22:21:28.157-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "CIE Chromatocity plot using dynamic data display",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 22316
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "819293",
+    "ThreadId": "351040",
+    "Html": "\r\n<p>I am trying to chart a contour plot, with colour shading inbetween each of the contour lines.</p>\r\n<p>I have successfully created a non-colour shaded version using IsolineGraph.</p>\r\n<p>Additionally, by modifying &quot;density&quot; property of IsolineBuilder, I have been able to get a colour shading effect by plotting lots of lines.&nbsp; However, this solution has problems with flat regions, as regardless of the density of plot lines (within reason),\r\n some areas never get filled.&nbsp; Also, speed degrades as number of lines is increased.</p>\r\n<p>What I really need is a way to &quot;shade&quot; in between contour lines.&nbsp; Is there a solution to this problem?</p>\r\n<p>Regards</p>\r\n<p>Craig</p>\r\n",
+    "PostedDate": "2012-04-03T08:34:18.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

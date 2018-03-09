@@ -1,0 +1,146 @@
+[
+  {
+    "Id": "256369",
+    "ThreadId": "74901",
+    "Html": "<p>My requirement is quite simple: I'd like to create an oscilloscope-type graph which shows time series data from a digital source in real time, feeding new data in on the right hand side and showing a few seconds' worth of data scrolling towards the left.</p>\r\n<p>I downloaded the WPF Dynamic Data Display library, and checked out the &quot;Animation&quot; sample, which seems to be roughly what I want to create. However, the signal I get often varies quite rapidly, so the line segments connecting the signal will sometimes be long. Therefore, I changed the code in the Animation sample so that every second sample is the negative of the SIN, in the function that generates the signal, AnimatedPlot_Timer():</p>\r\n<p>for (int i = 0; i &lt; animatedX.Length; i++)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if((i % 2) == 0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animatedY[i] = Math.Sin(animatedX[i] + phase);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animatedY[i] = -Math.Sin(animatedX[i] + phase);</p>\r\n<p>}</p>\r\n<p>This creates a realistic simulation of the signal I will actually try and display.</p>\r\n<p>The problem now is that update is painfully slow. As soon as I blow the window up to a decent size, say 1000 x 1000 pixels on my screen, the update rate drops to perhaps only 6-7fps when there are 1000 points in the graph. Making the window much smaller improves the update rate dramatically. If I increase the number of points to 5000, which is what my real requirement is (data comes in at 1000Hz, and I want to show at least 5 seconds worth of data), the update rate drops to around 1fps when the window is large, again a much smaller window improves the situation dramatically.</p>\r\n<p>Is this the actual limit for what WPF can do - 5000 lines a second? It seems incredible that rendering so little should take this much time, even if some of the lines are a few hundred pixels long...! But neither the D3 library nor my own code experiments have succeeded in making WPF do this seemingly simple task anywhere near as fast as GDI code.</p>\r\n<p>So my question is: should I give up WPF for this requirement, or is there some optimization trick I'm missing? Any comments would be very gratefully received.</p>\r\n<p>Many thanks in anticipation,</p>\r\n<p>Lasse</p>\r\n<p>PS HP laptop with NVidia QuadFX2700M card, WinXPsp3, VS2008 and .NET3.5.</p>",
+    "PostedDate": "2009-11-12T08:08:00.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256830",
+    "ThreadId": "74901",
+    "Html": "<p>Hi Lasse,</p>\r\n<p>unfortunately, now I can't name a solution that will enable WPF to render such long lines as you need quickly enough.</p>\r\n<p>Maybe in the future we'll create some solution with DirectX hosted in D3DImage inside of WPF scene, but I can't name any precise dates.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-13T09:16:59.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257123",
+    "ThreadId": "74901",
+    "Html": "<p>Hi Lasse,</p>\r\n<p>I've created a first draft of line chart using DirectX to render itself. This lineChart can be integrated into WPF's scene seamlessly, without air control conflicts and so on, by using D3DImage, provided by ЦЗАю</p>\r\n<p>This chart has very nice performance - at least animated series with your modification were working in fullscreen mode (1920*1080) without any lags on my GeForce 9600 M.</p>\r\n<p>So you probably should not be very sad and should not begin to search for other (for example, GDI) solution, as we are capable to provide such high performance solution by WPF+DirectX.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-14T10:21:43.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257434",
+    "ThreadId": "74901",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>That sounds great. I actually had a similar idea myself, but using OpenGL instead of DirectX (I think I read somewhere on the Web that OpenGL is better for 2D than DirectX - which is optimised for 3D high-end games performance. Perhaps you have a comment on this?).</p>\r\n<p>Anyway, using the very recently released BETA of OpenTK (www.opentk.com), I created a Windows Control derived from the Toolkit class GLControl. I embedded the Control in the WPF XASM using &lt;WindowsFormsHost&gt;, and now rendering 20,000 lines at 50fps without problems, even when the window is full-screen.</p>\r\n<p>This really has been an eye-opener though. When I first started using WPF it seemed ideal, with everything integrated in a very nice framework based on XML. However, if the 2D (and therefore presumably also 3D) performance is so poor that rendering anything more than a few hundred simple dynamic gfx primitives per second is not possible, even when the WPF stuff is allegedly based directly on DirectX, then I must say I'm disappointed. Is it the anti-aliasing that takes such a long time? Since the performance is so dependent on the length of the rendered lines this would seem logical. Perhaps it can be turned off somehow? But since I'm seeing a performance enhancement in the order of between 100 and 1000 (!!) with OpenGL, I cannot really understand what WPF is doing. Perhaps it's taking small naps or something.</p>\r\n<p>It does seem that Microsoft have taken some massive step forwards with WPF, but also some unfortunate steps back....</p>\r\n<p>Regards,</p>\r\n<p>Lasse</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-16T02:31:45.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283377",
+    "ThreadId": "74901",
+    "Html": "<p>Mikhail,</p>\r\n<p>Has there been any progess on this? I have exactly the same problem, but I am bound&nbsp;to using WPF for my project. A solution to this would be very nice.</p>\r\n<p>Thanks,</p>\r\n<p>Jason</p>",
+    "PostedDate": "2010-01-29T09:24:15.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287037",
+    "ThreadId": "74901",
+    "Html": "<p>Hi Jason,</p>\r\n<p>currently we doesn't have some better line drawing solution than that we have now. And our experiments with DirectX and SlimDX drawing of lines are for now just experiments.</p>\r\n<p>I'll inform you if some movement in this area happens.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-02-08T01:03:03.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287183",
+    "ThreadId": "74901",
+    "Html": "<p>Mikhail,</p>\r\n<p>If you&nbsp;could get me&nbsp;the source code for your DirectX implmentation, I could contribute to the project&nbsp;by developing it further. Otherwise, I may have to create my own branch and develop it on my own. Let me know if I can help.</p>\r\n<p>Thanks,</p>\r\n<p>Jason</p>",
+    "PostedDate": "2010-02-08T08:02:06.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287854",
+    "ThreadId": "74901",
+    "Html": "<p>Actually, I found the DirectX2D library in the latest nightly build release, so I should be able to run with it from there. I will let you know if I find any bugs.</p>",
+    "PostedDate": "2010-02-09T14:37:01.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290877",
+    "ThreadId": "74901",
+    "Html": "<p>Have you made any progress Foxman?</p>\r\n<p>&nbsp;</p>\r\n<p>A friend and I are starting a project where we need to plot several thousand markers at once, and we are thinking about trying to modify D3 to draw using D3DImage like Mikhail mentioned. We are interested in how much the performance increase will be, since plotting thousands of anything in wpf seems to be very slow.</p>",
+    "PostedDate": "2010-02-15T08:33:49.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291295",
+    "ThreadId": "74901",
+    "Html": "<p>I have looked at it some, but my priorities have been elsewhere this past week. I will be working on it next week and I will post up anything I come up with.</p>",
+    "PostedDate": "2010-02-16T08:58:12.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "387381",
+    "ThreadId": "74901",
+    "Html": "<p>It is possible to switch off anti aliasing in a WPF control by setting the RenderOptions.EdgeMode property, this does bring quite substancial performance boost when using thousands of points:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><pre style=\"color:#000000;font-family:Consolas, 'Courier New', Courier, monospace;font-size:1em;margin:8px\"><span style=\"color:#0000ff\"><div style=\"color:Black;background-color:White\"><pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Window</span> <span style=\"color:Red\">x:Class</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Test.SimulationResultViewWindow</span><span style=\"color:Black\">&quot;</span>\r\n    <span style=\"color:Red\">xmlns</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span style=\"color:Black\">&quot;</span>\r\n    <span style=\"color:Red\">xmlns:x</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">http://schemas.microsoft.com/winfx/2006/xaml</span><span style=\"color:Black\">&quot;</span>\r\n    <span style=\"color:Red\">xmlns:d3</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">http://research.microsoft.com/DynamicDataDisplay/1.0</span><span style=\"color:Black\">&quot;</span> \r\n    <span style=\"color:Red\">Title</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Simulation Result Viewer</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Height</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">768</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">Width</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">1024</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n   <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">Grid</span><span style=\"color:Blue\">&gt;</span>\r\n      <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">plotter</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">SnapsToDevicePixels</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">True</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n   <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Grid</span><span style=\"color:Blue\">&gt;</span> \r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">Window</span><span style=\"color:Blue\">&gt;</span></pre>\r\n</div>\r\n</span></pre>\r\n<span style=\"color:#0000ff\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> SimulationResultViewWindow()\r\n        {\r\n            InitializeComponent();\r\n\r\n            <span style=\"color:Green\">// ... Other Code</span>\r\n\r\n            <span style=\"color:Green\">// Remove Anti-Aliasing from plotter</span>\r\n            RenderOptions.SetEdgeMode(plotter, EdgeMode.Aliased);\r\n<span style=\"white-space:pre\">\t</span>}</pre>\r\n</div>\r\n</span></pre>\r\n</div>",
+    "PostedDate": "2010-02-25T03:26:55.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "400815",
+    "ThreadId": "74901",
+    "Html": "<p>That is true, but in my case, I am drawing waveforms, so Anti-aliasing needs to be on to smooth the lines. I am still planning on the DirectX approach, but I have not had a chance to work on it yet.</p>",
+    "PostedDate": "2010-02-25T08:49:55.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "412788",
+    "ThreadId": "74901",
+    "Html": "<p>Just checked out your Nightly code with the DirectX shim, looks very promising. Are you still making headway on it this week?</p>",
+    "PostedDate": "2010-03-01T10:29:15.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "413308",
+    "ThreadId": "74901",
+    "Html": "<p>Hi all,&nbsp;</p>\r\n<p>I am slightly confused about the performance benefits achieved by switching from WPF to DirectX. According to Microsoft's <a href=\"http://msdn.microsoft.com/en-us/library/bb613578.aspx\">documentation</a>, WPF leverages DirectX,to enable hardware acceleration. I totally accept that raw DirectX code might be faster than WPF, but it seems strange to hear that DirectX is orders of magnitude faster for 2D graphics. Can any of you good people explain this enormous difference?</p>\r\n<p>I've built a data display program that scrolls output from a scientific instrument (an SRS boxcar integrator). On a machine that WPF recognizes as having Tier 1 graphics acceleration, I can plot around 3k points on screen, refreshing at about 1Hz. On a system without any hardware acceleration (Tier 0) I am luck if I get 1/3 that performance. So it certainly seems like DynamicDataDisplay is leveraging at least some hardware acceleration as-is. NOTE: for info about WPF graphics tiers, click the link above.</p>\r\n<p>And Liam, thanks very much for the anti-aliasing trick, it looks very promising.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>James Remeika</p>\r\n<p>University of Miami</p>",
+    "PostedDate": "2010-03-02T11:03:36.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "413354",
+    "ThreadId": "74901",
+    "Html": "<p>James,</p>\r\n<p>It's down to the 'retained mode' graphics which WPF uses, essentially, each Point, Series, Graph etc. is stored as object(s) (i.e. retained) by WPF, this way you can manipulate the objects - change properties (e.g. colour, line thickness) , assign events (e.g. onclick) and so on after they have been drawn. WPF then automatically redraws the scene when a property changes or event occurs, but this comes with an overhead cost.</p>\r\n<p>If you used 'immediate mode' graphics such as what DirectX offers (or WPF WriteableBitmap), the graph objects are drawn directly to an image as pixels, which are then presented to your screen. You could then translate, scale, rotate the entire image by using Matrix transforms but you could not change the properties of the previously drawn elements.</p>\r\n<p>Hope this helps!</p>\r\n<p>Liam</p>",
+    "PostedDate": "2010-03-02T12:43:35.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "414232",
+    "ThreadId": "74901",
+    "Html": "<p>Liam,</p>\r\n<p>Thanks for the thoughtful reply. That makes perfect sense.&nbsp;</p>\r\n<p>James</p>",
+    "PostedDate": "2010-03-04T09:31:29.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "416915",
+    "ThreadId": "74901",
+    "Html": "<p>Is there a sample in the solution for direct x rendering? what is the current project status? is there still any active development? The latest official release is nearly one year old.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>",
+    "PostedDate": "2010-03-11T05:26:09.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487117",
+    "ThreadId": "74901",
+    "Html": "<p>bump</p>\r\n<p>Just wanted to bring this up again as I'd love to see the sample as well.</p>",
+    "PostedDate": "2010-08-31T11:02:46.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

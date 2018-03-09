@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "239434",
+    "ThreadId": "70303",
+    "Html": "<p>What is the status on bar chart support? I remember a posting that had announced it for June/July, but I don't see any support for it.</p>\r\n<p>I would also like to see stacked bar charts as well as combined charts (i.e. line+bar). Any hope for these?</p>",
+    "PostedDate": "2009-09-28T01:31:20.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245634",
+    "ThreadId": "70303",
+    "Html": "<p>Hi,</p>\r\n<p>there is a CTP version of bar charts in 'Source code' page, you can simply download the latest changeset, and it'll contain some of charts you want. NewMarkersSample in DevSamples solution folder contains different demos of markers (e.g., charts) that we have for this moment.</p>\r\n<p>Can you please give me an example of 'stacked bar charts' or 'combined charts'? By the way, maybe the latest one can be built as simply two charts - line and marker charts on one data?</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T08:21:29.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

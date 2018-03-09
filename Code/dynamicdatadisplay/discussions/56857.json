@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "192179",
+    "ThreadId": "56857",
+    "Html": "<p>Hi Dynamic Data Display guys,</p>\r\n<p>I love your product. It's excellent. I'm going to be using it to display streaming real time data. The more graphs with the more points I can display, the better the application will be. I wonder if you have any tips about how I can maximize the performance.</p>\r\n<p>Is there a preferred data source to use for points?</p>\r\n<p>I'm thinking&nbsp;of an array of doubles that is completely replaced every update, and raising the RaiseDataChanged event like in the animation sample, or</p>\r\n<p>a RingArray&lt;Point&gt; like in the PerfCounter sample, or</p>\r\n<p>an ObservableDataSource&lt;Point&gt; like in the SimulationSample.</p>\r\n<p>Which is better, or is there no real difference?</p>\r\n<p>Does using the readonly keyword make a difference?</p>\r\n<p>Any other tips to maximize performance?</p>\r\n<p>Thanks a lot and great work! I'm a big fan and you guys are making me look good.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-05-19T20:53:57.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192748",
+    "ThreadId": "56857",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your compliments)</p>\r\n<p>&nbsp;</p>\r\n<p>I suppose that replacing array of doubles completely should work well in your case.</p>\r\n<p>Observable collection, storing all data for a large period of time, while displaying only some latest data, will not be the best choice. Our RingArray&lt;T&gt; is simply a collection which deletes its first element when new element is added and its count is bigger than its capacity.</p>\r\n<p>Readonly is simply a way to say to compiler that reference on some value should not be allowed to change. I don't think that this keyword can influence on performace.</p>\r\n<p>&nbsp;</p>\r\n<p>If you get performance that is not satisfactory for you, please don't hesitate to contact me.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-05-21T04:18:56.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193456",
+    "ThreadId": "56857",
+    "Html": "<p>Thanks for your reply.</p>\r\n<p>I might not have really described the problem well enough for you to give a good answer. We're getting data at an update rate of 1 hz, and we're getting a lot of different fields, say hundreds of different fields at this 1 hz rate. Each field is a double, and we'd like to display up to the last hour of as many fields as possible - 3600 points. It will be impossible to display them all, of course, but it would be great to display a lot.</p>\r\n<p>In this case, is&nbsp;completely replacing the array of doubles every second, even though we only have one new data point, and then raising the raisedatachanged event the fastest?</p>\r\n<p>Do you have any advice regarding threads? I see the SimulationSample retrieves the point to add to&nbsp;the ObservableDataSource in a seperate thread, and then asks the dispatcher to add the point and raise the RaiseDataChanged event. That seems like a good way to do it to me - you have any thoughts about thread optimization?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again. You're awesome. :)</p>",
+    "PostedDate": "2009-05-22T20:32:30.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "193844",
+    "ThreadId": "56857",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Well, I thought that each second you are getting completely new data. In youк case, of cource, it is better to use ObservableDataSource and to add new point to it as it is received. RingArray is designed to be used when you have points repeatedly being added to it, but you are displaing only some fixed amount of latest points - in this case all previous points will be lost and final amount of points that will be passed to points filter will be not large.</p>\r\n<p>I don't think that it is necessary to create an independent thread - total number of data items and frequency of their addition is not very large.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-05-25T02:36:01.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206467",
+    "ThreadId": "56857",
+    "Html": "<p>My program gets points from the device with the rate up to 10kHz - that's a real challenge for D3 :-)</p>\r\n<p>I&nbsp;filter received&nbsp;points in another thread and only after that push them to D3.&nbsp; Everyting works fine till user changes scale. The source of the points is not locked&nbsp;thus I get the exception: &quot;Collection was changed&quot;. Sure I can move filtering to UI Thread but UI responsiveness considerably slows. I think the best solution is to make plot &quot;static&quot; i.e. nonresponsive to user input while data flow is not stopped.</p>\r\n<p>Any other advices?</p>",
+    "PostedDate": "2009-06-28T23:02:38.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208920",
+    "ThreadId": "56857",
+    "Html": "<p>Hi,</p>\r\n<p>Maybe you should create a new collection (array, maybe) and copy filtered items in worker thread, and then pass this collection to D3?</p>\r\n<p>Or maybe you can have collection of items being displayed in D3, and add filtered items from worker thread to this collection using Dispatcher in UI thread?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-06T06:16:01.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "468291",
+    "ThreadId": "219707",
+    "Html": "<p>Currently when I resend data to my plotter,&nbsp; my legend keeps appending the new calls.- and the plot window fills with overwritten data ?</p>\r\n<p>Whats a suggested way to clean out just the last plotted data and legend&nbsp; ?</p>\r\n<p>( assume I reload the arrays )</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;MyHeader.Content = (object)&quot;Number of data points &quot; + theSize.ToString();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var evelopeXaxisSource = new EnumerableDataSource&lt;double&gt;(xaxis);&nbsp; // xaxis feed //<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; evelopeXaxisSource.SetXMapping(x =&gt; x);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var envelHiLimitsSource = new EnumerableDataSource&lt;double&gt;(HiLimits);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; envelHiLimitsSource.SetYMapping(y =&gt; y);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var envelLoLimitsSource = new EnumerableDataSource&lt;double&gt;(LoLimits);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; envelLoLimitsSource.SetYMapping(y =&gt; y);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CompositeDataSource compositeDateSource1 = new CompositeDataSource(evelopeXaxisSource, envelHiLimitsSource);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CompositeDataSource compositeDateSource2 = new CompositeDataSource(evelopeXaxisSource, envelLoLimitsSource);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var indepXaxisSource = new EnumerableDataSource&lt;double&gt;(xindeps);&nbsp; // xaxis feed //<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; indepXaxisSource.SetXMapping(x =&gt; x);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var SensorSource = new EnumerableDataSource&lt;double&gt;(SensVals);&nbsp; // xaxis feed //<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SensorSource.SetYMapping(y =&gt; y);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CompositeDataSource compositeDateSource3 = new CompositeDataSource(indepXaxisSource, SensorSource);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // how do I clear legend ? and clean screen&nbsp; ?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.AddLineGraph(compositeDateSource1, new Pen(Brushes.Green, 2), new CirclePointMarker { Size = 7.0, Fill = Brushes.GreenYellow }, new PenDescription(&quot;High Limit&quot;));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.AddLineGraph(compositeDateSource2, new Pen(Brushes.Green, 2), new CirclePointMarker { Size = 7.0, Fill = Brushes.GreenYellow }, new PenDescription(&quot;Low Limit&quot;));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.AddLineGraph(compositeDateSource3, new Pen(Brushes.Red, 2), new CirclePointMarker { Size = 5.0, Fill = Brushes.Red }, new PenDescription(&quot;SensorName&quot;));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.Viewport.FitToView();</p>",
+    "PostedDate": "2010-07-16T10:28:38.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468395",
+    "ThreadId": "219707",
+    "Html": "<p>The way I do this is to store the LineGraph/MarkerGraph object pair&nbsp;that is returned by plotter.AddLineGraph. When you no longer want the data plotted, just remove the stored object from the plotter children collection.</p>\r\n<p>&nbsp;e.g.</p>\r\n<pre>var graph = plotter.AddLineGraph(compositeDateSource1, new Pen(Brushes.Green, 2), new CirclePointMarker { Size = 7.0, Fill = Brushes.GreenYellow }, new PenDescription(&quot;High Limit&quot;)); \r\n\r\n...... \r\n\r\nplotter.Children.Remove(graph.LineGraph);<br>plotter.Children.Remove(graph.MarkerGraph);</pre>\r\n<p>&nbsp;or if you are using the &quot;Nightly&quot; version of D3, you can remove all linegraphs with:</p>\r\n<pre><pre><pre>plotter.Children.RemoveAll&lt;LineGraph&gt;();\r\nplotter.Children.RemoveAll&lt;MarkerPointsGraph&gt;();  </pre>\r\n</pre>\r\n</pre>",
+    "PostedDate": "2010-07-16T17:16:45.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468425",
+    "ThreadId": "219707",
+    "Html": "<p>Thank you for the reply !</p>\r\n<p>When I tried to use</p>\r\n<pre><pre><pre>plotter.Children.RemoveAll&lt;LineGraph&gt;();<br><br>It wants Type in the pass parameter....  <br><br>Based on what you said I must have something less than the nightly build.<br><br>I then tried the other method - which requires I keep a history of what is loaded - and it did work !!!<br><br>Another side question, is I downloaded the  documentation CHM help file and it pointed to some URL that was inactive or could not be displayed  - the index was there, but no content.<br><br>Any ideas ?  Thanks</pre>\r\n</pre>\r\n</pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-16T21:25:02.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468445",
+    "ThreadId": "219707",
+    "Html": "<p>Sounds like you are using the &quot;Recommended Download&quot;.&nbsp; I think most people use the most recent version (from late 2009) which is available from <a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/list/changesets\">http://dynamicdatadisplay.codeplex.com/SourceControl/list/changesets</a></p>\r\n<p>Yes, I get the same problem with the documentation.&nbsp; The documentation is just generated from the source code so it's not all that helpful.</p>",
+    "PostedDate": "2010-07-16T23:05:32.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468534",
+    "ThreadId": "219707",
+    "Html": "<p>Thanks grantnz.&nbsp;&nbsp; Within dynamicdatadisplay-31108.zip I did not see the binary -DynamicDataDisplay.dll&nbsp; -</p>\r\n<p>I did see other DLL's- ShaderBuildTask.DLL &amp; DynamicDataDisplay Sources v0.34703.0.zip &amp; that contains a number of DLL's including WPFToolKit &amp; System.Windows.Controls.DataVisualization DLL; SlimDX.dll</p>\r\n<p>Does that mean your reference to most people are compiling the source code for create their own ( and possibly&nbsp; variant ) version ? I&nbsp; assumed that was what was needed.</p>\r\n<p>I did find a sln\\DynamicDataDisplay\\DynamicDataDisplay.sln file - it did say build succeeded, and I have a new file to test</p>\r\n<p>&nbsp;</p>\r\n<p>I renamed the old DLL &amp; copied the revised DLL to where my project looked</p>\r\n<p>When I rebuilt my project I have this error - <span style=\"color:#ff0000\">Error&nbsp;&nbsp; &nbsp;1&nbsp;&nbsp; &nbsp;The tag 'ChartPlotter.HorizontalAxis' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'. Line 9 Position 18.&nbsp;&nbsp; &nbsp;C:\\....\\my documents\\visual studio 2010\\Projects\\WpfApplicationTestBed\\WpfApplicationTestBed\\MainWindow.xaml&nbsp;&nbsp; &nbsp;9&nbsp;&nbsp; &nbsp;18&nbsp;&nbsp; &nbsp;WpfApplicationTestBed</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter.HorizontalAxis&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:HorizontalAxis Name=&quot;IndepAxis&quot;&gt; &lt;/d3:HorizontalAxis&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter.HorizontalAxis&gt;</p>\r\n<p>ChartPlotter.HorizontalAxis shows on the intellisense. There must be a mix of components when the project rebuilt,&nbsp; Any idea on what I also need besides the DLL ?</p>\r\n<p>Thanks !</p>",
+    "PostedDate": "2010-07-17T09:34:13.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468634",
+    "ThreadId": "219707",
+    "Html": "Andrew,\r\n\r\nThere have been a few changes between the &quot;Recommended&quot; build and the latest one.\r\n\r\nOne of the changes is that HorizontalAxis was renamed MainHorizontalAxis.  Just add the &quot;Main&quot; prefix and you should be okay.\r\n\r\nNot sure why Intellisense still think HorizontalAxis exists.\r\n\r\nGrant.",
+    "PostedDate": "2010-07-18T01:24:55.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469029",
+    "ThreadId": "219707",
+    "Html": "<p>Hi Grant !</p>\r\n<p>Yes I see MainHorizontalAxis now, and no longer Horizontal - ditto for VerticleAxis -&gt; MainVerticleAxis.&nbsp;</p>\r\n<p>This morning after trying to type in Main, it told me the designer needed to be reloaded and then it seemed to rectify the intellisense issue.</p>\r\n<p>But yes there is one more strange issue - the first time I load I get 2 legends - However on repeat calls, just one legend. The bonus legend is on the top left.</p>\r\n<p>My code that calls to load &amp; display the first time is identical, as far as I can tell, that will execute the subsequent calls. ( just a button event ).</p>\r\n<p>The only change I can think that happened is the recompiled DLL that support &nbsp;&nbsp;&nbsp; plotter.Children.RemoveAll&lt;LineGraph&gt;(); &amp; MainHorizontalAxis</p>\r\n<p>Thanks ! Andrew</p>",
+    "PostedDate": "2010-07-19T07:19:22.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469240",
+    "ThreadId": "219707",
+    "Html": "<p>Andrew,</p>\r\n<p>The 2nd legend is imaginatively called &quot;NewLegend&quot;.&nbsp; You can hide it with:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">NewLegendVisible</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">False</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Alternatively,&nbsp; you can hide the &quot;old&quot; legend with</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>LegendVisibility=&quot;Collapsed&quot;\r\n</pre>\r\n</div>\r\n<p>and use the new one which has some extra features that give you more control of the legend display.</p>\r\n<p>For example, I use it when I don't want all of the LineGraphs to have a legend entry.</p>\r\n<p>Grant.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-19T14:09:59.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469261",
+    "ThreadId": "219707",
+    "Html": "<p>Hi Grant !</p>\r\n<p><br>Fanatastic !&nbsp; Thanks for the quick reply your suggestion works great&nbsp; !</p>\r\n<p>typically data builds to the right in my work, so placing the legend to the top left is actually a better spot</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-19T15:10:42.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

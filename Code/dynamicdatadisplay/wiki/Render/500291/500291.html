@@ -1,0 +1,27 @@
+<div class="wikidoc">DynamicDataDisplay 1.0 is a library of WPF controls for dynamic data visualization. It features efficient binding mechanisms and real-time interactivity capable of charting millions of data points. Current release allows flexible drawing of line/marker plots.<br /><br />DynamicDataDisplay controls can be used in your application in the same way as other WPF controls. Any data can be used as a source of coordinates on your chart. It can be an array, a DataTable or a function. Every change in the data source causes update of the chart. As an example, you can use this feature for monitoring running computations. Using mouse or keyboard you can zoom in deep into the graph to see its subtle details.<br />
+<h2>How to use DynamicDataDisplay library in your projects?</h2><ol><li>Ensure that Microsoft .NET Framework version 3.5 is installed on your computer.</li>
+<li>Download latest release and extract DynamicDataDisplay.dll file in a folder of your choice.</li>
+<li>Reference the library in you project.</li>
+<li>To use DynamicDataDisplay control in C#-code, add a namespace reference to DynamicDataDisplay namespace - e.g., <b>using Microsoft.Research.DynamicDataDisplay;</b></li>
+<li>To use DynamicDataDisplay control in XAML, add a xml-namespace reference to DynamicDataDisplay&#39;s xml namespace - add the following line to the header of your XAML file: <b>xmlns:d3=&quot;http://research.microsoft.com/DynamicDataDisplay/1.0&quot;</b>. Now all DynamicDataDisplay&#39;s controls are available under &quot;d3:&quot; prefix, e.g. <b>&quot;&lt;d3:ChartPlotter/&gt;&quot;</b></li></ol>
+Source code in the Samples folder will give you an idea how to come from data to an interactive chart in your application window.
+<h1>Samples Gallery</h1>
+<a href="https://dynamicdatadisplay.codeplex.com/wikipage?title=more%20samples&referringTitle=D3v1">more samples</a>
+<ul><li><b>HelloWorldSample</b> shows how to plot basic line graph from two arrays. Title and axis text are declared in XAML. </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306194" alt="HelloWorldSample.jpg" title="HelloWorldSample.jpg" />
+<ul><li><b>IsolineSample</b> shows how to display isolines.</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306195" alt="Isolines.png" title="Isolines.png" />
+<ul><li><b>MapSample</b> shows tiled map with tiles downloaded from <a href="http://openstreetmap.com">openstreetmap.com</a></li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306197" alt="Map.png" title="Map.png" />
+<ul><li><b>CurrencyExchangeSample</b> plots exchange rates for four main world currencies. Horizontal axis uses DateTime. </li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306191" alt="CurrencyExchangeSample.png" title="CurrencyExchangeSample.png" />
+<ul><li><b>DataTableSample</b> plots data from System.Data.DataTable object. Additional table rows named &#39;Index&#39; and &#39;Sqrt&#39; define marker color and size respectively. </li></ul>
+[image:DataTableSample.jpg]
+<ul><li><b>AnimatedSample</b> display dynamically changing data. Values of Y coordinates are changed by timer event. This sample also features programmatic creation and update of plot title.</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306190" alt="AnimatedSample.jpg" title="AnimatedSample.jpg" />
+<ul><li><b>MarkersSample</b> illustrates how to plot data using various line styles and different types of markers.</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306198" alt="MarkersSample.jpg" title="MarkersSample.jpg" />
+<ul><li><b>TooltipSample</b> adds textual description to each point of data. Mapping from numeric value to string is defined in sample&#39;s code.</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306200" alt="TooltipSample.jpg" title="TooltipSample.jpg" />
+<ul><li><b>SimulationSample</b> imitates rendering data from some simulation that constantly adds new data points.</li></ul>
+<img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=dynamicdatadisplay&DownloadId=306199" alt="SimulationSample.jpg" title="SimulationSample.jpg" /></div><div class="ClearBoth"></div>

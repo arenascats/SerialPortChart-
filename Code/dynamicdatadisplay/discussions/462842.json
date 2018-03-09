@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1109614",
+    "ThreadId": "462842",
+    "Html": "Hello,\r<br />\n<br />\nI am a bit new to programming in C#,  I started learning about it a few days ago to complete an idea for a program that will help display data I have been gathering for my work.  So please forgive me if this is a rather silly question.\r<br />\n<br />\nI am trying to get the units on the Y-Axis to work similarly to how the DateTime scale works on the X-Axis.   However, the value of the units on Y are not dates, but they are TimeSpans.  I want it to work in a similar way, IE when you are zoomed out it will display hours or days, and as you zoom in it will change to minutes etc.<br />\n\r<br />\nSo far I have it as:<br />\n<pre><code>                var datesDataSource = new EnumerableDataSource&lt;DateTime&gt;(dates);\n                datesDataSource.SetXMapping(x =&gt; dateAxis.ConvertToDouble(x));\n\n                var timesDataSource = new EnumerableDataSource&lt;TimeSpan&gt;(times);\n                timesDataSource.SetYMapping(y =&gt; y.TotalMinutes);</code></pre>\n\nHowever, this method doesn't result in the Y axis scaling Days -&gt; Hours -&gt; Minutes etc. (I'm not expecting it to), however the plot is working.<br />\n\r<br />\nIs there a simple way to do achieve this?\r<br />\n<br />\nThanks for your time,\r<br />\nCollin<br />\n",
+    "PostedDate": "2013-10-20T00:23:34.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109619",
+    "ThreadId": "462842",
+    "Html": "I feel that I should clarify:<br />\n<br />\nOn the X-Axis I want dates and times (this is working)<br />\nOn the Y-Axis I want time (and I would like it to scale from days to hours to minutes to seconds depending on how far I am zoomed in or out on the graph).<br />\n<br />\n<br />\nNote that the Y-Axis doesn't have a date, only a time (the time it took to run the experiment for my work)<br />\n<br />\nThis way when the experiments take a longer time, it is easier to comprehend what it means.  It a natural thing to understand 23 hours rather than 1380 minutes when the times are long and say 3 minutes versus .05 hours when the times are short.<br />\n<br />\nI hope this makes sense, it is rather late. <br />\n<br />\nThanks,<br />\nCollin<br />\n",
+    "PostedDate": "2013-10-20T00:32:52.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109823",
+    "ThreadId": "462842",
+    "Html": "Hi\r<br />\n<br />\nyou try some thing like this.\r<br />\n<br />\nY axis will be having Custom formatter<br />\n<pre><code>\nyAxis.LabelProvider.CustomFormatter = (tickInfo)=&gt;\n{\nreturn tickInfo.Tick.ToString(@&quot;dd\\.hh\\:mm\\:ss\\&quot;); \n};</code></pre>\n\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2013-10-20T23:15:11.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109837",
+    "ThreadId": "462842",
+    "Html": "I assume I need to change this?<br />\n<pre><code>                var timesDataSource = new EnumerableDataSource&lt;TimeSpan&gt;(times);\n                timesDataSource.SetYMapping(y =&gt; y.TotalMinutes);</code></pre>\n\nto<br />\n<pre><code>                var timesDataSource = new EnumerableDataSource&lt;TimeSpan&gt;(times);\n                timesDataSource.SetYMapping(y =&gt; y.Ticks);</code></pre>\n\nHowever, it doesn't seem to display any kind of label if I implement your code or not.\r<br />\n<br />\nIf I change y.TotalMinutes to y.Ticks and plot the results (without your CustomFormatter), I get nothing on the Y axis (the plot still looks right, has the same shape).  If I add your CustomFormatter, I still get nothing?<br />\n<pre><code>                var timesDataSource = new EnumerableDataSource&lt;TimeSpan&gt;(times);\n                timesDataSource.SetYMapping(y =&gt; y.Ticks);\n\n                timeAxis.LabelProvider.CustomFormatter = (tickInfo) =&gt;\n                {\n                    return tickInfo.Tick.ToString(@&quot;dd\\.hh\\:mm\\:ss&quot;);\n                };\n</code></pre>\n\n",
+    "PostedDate": "2013-10-21T00:36:17.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109841",
+    "ThreadId": "462842",
+    "Html": "Hi,\r<br />\n<br />\nI thought your Y axis is TimeSpan axis, after seeing your code I understand your Y axis is numeric axis.\r<br />\n<br />\nIf you Y axis is numeric axis, then you do something like this<br />\n<pre><code>yAxis.LabelProvider.CustomFormatter = (tickInfo)=&gt;\n{\nreturn tickInfo.Hours+&quot;:&quot;+tickInfo.Minutes+&quot;:&quot;+tickInfo.Minutes;\n};</code></pre>\n\nthis may work. (I didn't test this code). Check this part of code is triggering or not.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-10-21T00:50:26.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109844",
+    "ThreadId": "462842",
+    "Html": "I am pretty sure that I now understand how the custom formatter works, and I don't think that is the problem.  The ticks aren't displaying on the axis if I use it (the custom formatter) or not.<br />\n\r<br />\nThe largest tick in this particular data set is:\r<br />\n1965650000000\r<br />\n<br />\nwhich is:\r<br />\n<br />\n2.06.36.05 \r<br />\n<br />\nOh and thank you very much for your response, and for the time you are spending to help me.  I really do appreciate it.<br />\n",
+    "PostedDate": "2013-10-21T00:53:42.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109845",
+    "ThreadId": "462842",
+    "Html": "I just saw your reply, let me test it out.\r<br />\nThanks!<br />\n",
+    "PostedDate": "2013-10-21T00:55:13.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109849",
+    "ThreadId": "462842",
+    "Html": "Based on the post you just posted, I got something to work:<br />\n<pre><code>                var timesDataSource = new EnumerableDataSource&lt;TimeSpan&gt;(times);\n                timesDataSource.SetYMapping(y =&gt; Convert.ToInt64(y.TotalSeconds));\n\n                timeAxis.LabelProvider.CustomFormatter = (tickInfo) =&gt;\n                {\n\n                    int hours = (tickInfo.Tick / 3600);\n                    int minutes = (tickInfo.Tick % 3600) / 60;\n                    int seconds = (tickInfo.Tick % 60);\n\n                    if ((minutes &lt; 10) &amp;&amp; (seconds &lt; 10))\n                        return hours + &quot;:0&quot; + minutes + &quot;:0&quot; + seconds;\n                    else if ((minutes &gt; 9) &amp;&amp; (seconds &lt; 10))\n                        return hours + &quot;:&quot; + minutes + &quot;:0&quot; + seconds;\n                    else if ((minutes &lt; 10) &amp;&amp; (seconds &gt; 9))\n                        return hours + &quot;:0&quot; + minutes + &quot;:&quot; + seconds;\n                    else\n                        return hours + &quot;:&quot; + minutes + &quot;:&quot; + seconds;\n\n                    //return tickInfo.Tick.ToString(@&quot;dd\\.hh\\:mm\\:ss&quot;);\n                };</code></pre>\n\nThanks a lot!<br />\n",
+    "PostedDate": "2013-10-21T01:04:28.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

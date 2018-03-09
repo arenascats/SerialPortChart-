@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "537130",
+    "ThreadId": "238708",
+    "Html": "\r\n<p>Hey there</p>\r\n<div id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_BodyDiv\">\r\n<p>This is an&nbsp;awesome project!</p>\r\n<p>But I have a question about the data in isoline sample.</p>\r\n<p>I wan to make sure the data in SampleData.txt is hard-code manual&nbsp;or generated some code? And what the type of the data is?</p>\r\n<p>Here I have some speicial points and want to generate the&nbsp;data&nbsp;grid&nbsp;like the SampleData.txt, but looks it's not easy.</p>\r\n<p>Thanks</p>\r\n<p>Tom</p>\r\n</div>\r\n",
+    "PostedDate": "2010-12-16T22:34:33.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "538180",
+    "ThreadId": "238708",
+    "Html": "Hi Tom,\r\n<div>Thank you.</div>\r\n<div><br>\r\n</div>\r\n<div>I don't know the origin of data in isolines sample, but I think it was generated using some kind of actual data as a sample.</div>\r\n<div>To create similar data, you have to have grid (coordinates of points in which data was measured or acquired) and scalar values of some data.</div>\r\n<div>--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-12-20T01:58:50.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

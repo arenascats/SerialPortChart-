@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "278139",
+    "ThreadId": "81079",
+    "Html": "<p>I was hoping to use your charting tools but after following the 5-step instructions on how to add the library into my wpf project I'm having a little trouble</p>\r\n<p>Here is what I am seeing,</p>\r\n<p>http://img69.imageshack.us/img69/41/deliq.jpg</p>\r\n<p>although I have included the reference, I'm still getting an error message, but the chart seems to work fine?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-17T04:24:41.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "278643",
+    "ThreadId": "81079",
+    "Html": "It may sound stupid but did you build the project?<br><br><div>2010/1/17 vfeo <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span><br><blockquote style=\"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex\">\r\n   <div> <p>From: vfeo</p> <div><p>I was hoping to use your charting tools but after following the 5-step instructions on how to add the library into my wpf project I'm having a little trouble</p>\r\n<p>Here is what I am seeing,</p>\r\n<p><a href=\"http://img69.imageshack.us/img69/41/deliq.jpg\">http://img69.imageshack.us/img69/41/deliq.jpg</a></p>\r\n<p>although I have included the reference, I'm still getting an error message, but the chart seems to work fine?</p>\r\n<p> </p></div> <div> <p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=81079&ANCHOR#Post278139\">full discussion online</a>.</p> <p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:81079]\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n <p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a></p> <p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\">unsubscribe or change your settings</a> on codePlex.com.</p>\r\n <p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com\">codeplex.com</a></p> </div> </div> </blockquote>\r\n</div><br>",
+    "PostedDate": "2010-01-18T13:46:22.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "278683",
+    "ThreadId": "81079",
+    "Html": "<p>I did, but to be perfectly honest I do have a feeling I've missed something obvious.</p>\r\n<p>I opened up some of the Sample projects and they all compile fine however I am still getting this annoying error that usually stops the design window from loading.</p>\r\n<p>So in that regard I'm not been stopped from plotting charts.</p>\r\n<p>This is the screenshot from the HelloWorldSample,</p>\r\n<p>http://img97.imageshack.us/img97/3231/delqi.jpg</p>\r\n<p>many thanks,</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-18T16:09:28.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "278703",
+    "ThreadId": "81079",
+    "Html": "<p>I think you are opening the sample project as a standalone app? &nbsp;If so, and you try to build, it will tell you the referenced component 'DynamicDataDisplay' could not be found. &nbsp;When you look in the references, sure enough it cant find it.</p>\r\n<p>The projects were set up to build all together, so the helloworld app is expecting the D3 dll to be in its solution, which it is not.</p>\r\n<p>So you can either go to the sln folder and open the solution file and set HelloWorld as the startup project and run it that way, or you can remove the bad reference and point it to a valid DynamicDataDisplay.dll.</p>\r\n<p>HTH!</p>",
+    "PostedDate": "2010-01-18T17:45:56.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "278718",
+    "ThreadId": "81079",
+    "Html": "<p>Thanks Nicros, I did add the DynamicDataDisplay.dll&nbsp;reference (it wouldn't compile w/o it!) I even redl'd the reference thinking it was corrupted but the blue underlines regardless remain.</p>\r\n<p>It's an annoying SOB, but I am able to compile which is what's bizarre, and fortunate too of-course, at least I can make plots.</p>\r\n<p>This visualization tool is excellent and I can ignore this problem for small apps (just coding XAML) but in larger ones I would like to see the design window.</p>",
+    "PostedDate": "2010-01-18T19:11:22.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "278728",
+    "ThreadId": "81079",
+    "Html": "<p>Hmm. &nbsp;Sometimes Ive seen that happen if there is an uninitialized variable in the codebehind or a singleton, but other than that its pretty odd!&nbsp;</p>\r\n<p>If I load up the nightly build (the entire solution) I actually do see the 'Simple Chart' in the designer okay...</p>\r\n<p>Now Im curious too, Ill take a look tomorrow...</p>",
+    "PostedDate": "2010-01-18T20:40:13.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

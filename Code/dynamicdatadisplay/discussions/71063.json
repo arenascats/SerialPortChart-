@@ -1,0 +1,202 @@
+[
+  {
+    "Id": "242333",
+    "ThreadId": "71063",
+    "Html": "<p>Hi</p>\r\n<p>I am trying to create a &quot;rolling window&quot; type graph. Essentially I want it to work like the Simulation sample, just with the modification that after a certain number of data points (say 1000) has been added to the graph, the x-axis should automatically scroll to only show the last 1000 data points. Ideally it should be possible to scroll back in order to view older data points, and when a new data point is added the x-axis should again automatically scroll forward to show the 1000 most recently added data points (like a standard trading candlestick chart)</p>\r\n<p>The sample MultipleDataPoints is close to this behaviour and I could probably hack it to do approx. what I want, but I assume there is a better way to implement it.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards and thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n&nbsp;\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-05T16:06:17.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246857",
+    "ThreadId": "71063",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>First of all, some theory: DynamicDataDisplay's ChartPlotter (to be more precise, its Viewport) can be in two modes - 'FitToView' mode, when visible area is determined as a union of all charts' content bounds, and the second mode, when user (or programmer) have specified some value of plotter.Viewport.Visible and this value is a visible area, with no regard to charts' content bounds. Simulation sample works quite using this mechanism, so in the beginning chart is fitted to view and that's why its visible area is updated when content bounds of line chart changes.</p>\r\n<p>And now how can you solve your task:</p>\r\n<p>1) there is a special little system that can help you - it is called Viewport restrictions and it is a small bit of code that is called whenever viewport.Visible changes and allows you to change the way how the final value of visible is calculated. Also there are a little bit restrictions - those that are contained in FitToViewRestrictions collection of viewport - these are applied only when viewport is in fit-to-view mode. I have created a sample for you, it is available in the recent changeset (<a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 29055\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29055\">29055</a>), in DynamicDataDisplay.sln, and there in Samples/Simple solution folder. In this sample I'm adding to plotter.Viewport.FitToViewRestrictions a new instance of FixedWidthRestriction, which allows us to have visible only the latest <em>width </em>values of data.</p>\r\n<p>2) Also I have added a logic to the method that adds new point to data, that calls FitToView() method of Plotter - this is smth that you are describing like <em>when a new data point is added the x-axis should again automatically scroll forward to show the 1000 most recently added data points.</em></p>\r\n<p>&nbsp;</p>\r\n<p>Hope this sample will help you,</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-17T05:13:23.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247218",
+    "ThreadId": "71063",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>D3 is an awesome library - thank you!</p>\r\n<p>I am also very interested in the Rolling Windows Graph; however, I don't see the sample that you referred to in the Samples folder (no Simple solution) in&nbsp; 29055.&nbsp; If I am looking in the wrong place, please let me know.</p>\r\n<p>Thank you and the team for sharing your hard work.</p>\r\n<p>Best regards,</p>\r\n<p>David Roh</p>",
+    "PostedDate": "2009-10-19T02:32:05.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247242",
+    "ThreadId": "71063",
+    "Html": "<p>Hi David,</p>\r\n<p>you need to open Nightly/sln/DynamicDataDisplay.sln/&quot;Samples&quot; solution folder/&quot;Simple&quot; sub folder/DynamicPointAddSample.csproj.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-19T04:56:32.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247246",
+    "ThreadId": "71063",
+    "Html": "<p>Thank you Mikhail - I was looking in the DevSamples folder instead of the Samples folder.</p>\r\n<p>Best regards,</p>\r\n<p>David Roh</p>",
+    "PostedDate": "2009-10-19T05:04:14.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247249",
+    "ThreadId": "71063",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I have an interest in joining the development team.</p>\r\n<p>Best regards,</p>\r\n<p>David Roh</p>\r\n<p><a href=\"mailto:JK1@SoftwareByDavid.com\">JK1@SoftwareByDavid.com</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-19T05:26:29.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247308",
+    "ThreadId": "71063",
+    "Html": "<p>Hi David,</p>\r\n<p>&nbsp;</p>\r\n<p>You are the first who had such an interest, so we do not have yet some mechanism of doing this.</p>\r\n<p>First of all, why do you want to join us? Do you have some additions to D3 that as you think can be interesting to others? What are they, or what are you going to develop?</p>\r\n<p>Also there is a legal question of you taking part in development of D3. I'm not sure we are allowed by Microsoft to take other people into our team, but I'll investigate this question.</p>\r\n<p>&nbsp;</p>\r\n<p>But of course we are grateful to you for such a desire. Maybe it can be implemented by creating another project (e.g., &quot;DynamicDataDisplay Additions&quot; or smth like that) and adding you as its developer - this is only one of mine ideas, it doesn't mean that we are to do it.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-19T08:31:38.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247325",
+    "ThreadId": "71063",
+    "Html": "<p>Hi Mikhail,</p>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">My interest in D3 is for some statistical analysis programs and some data visualization programs (I am also interested in working on combining your polynomial parser with D3 - I know that it is planned).</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">My motivation is simple - there are bugs in D3 that need to be fixed - if I fix them in my local code then I am out of synch with CodePlex.&nbsp; In addition, it would be nice to contribute for the many hours of development time that I have received from CodePlex.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">I am very busy so there are no guarantees for the amount of time that I will be able to contribute.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">Send me an email address and I will return my resume - I have 10+ years of C#, 25+ years of C++, 20 years of Windows, 2 years of WPF and 2&nbsp;years of&nbsp;Silverlight.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">Best regards,</span></div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">David Roh</span></div>",
+    "PostedDate": "2009-10-19T09:02:36.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248008",
+    "ThreadId": "71063",
+    "Html": "<p>Hi David,</p>\r\n<p>&nbsp;</p>\r\n<p>Sorry, but as this project is developed with the support and management of Microsoft Research Cambridge, we are not allowed to change our team. But we would be very grateful to you if you send us results of your work (I'm speaking now about bugs in D3 you have fixed) to my mail - thecentury@gmail.com.</p>\r\n<p>It would be really great if there would be some notes saying what the bug was and how and where you've fixed it. We'll examine your changes and inculcate them into the most recent code of D3.</p>\r\n<p>&nbsp;</p>\r\n<p>Parser you were speaking about is my own project, it is connected to D3 only as I'm belonging to D3's development team, though I was really planning some integration of this parser to D3. This integration should be rather simple - it was supposed to be done in the terms of new markers' data source.</p>\r\n<p>As in new markers chart has an ItemsSource property of Object type, we can assign to this property whatever we want, and there is a set of factories that are actually building a dataSource from ItemsSource. Iе was supposed that user is able to pass a function as a string to ItemsSource property, and parser will parse it to some delegate like Func&lt;T&gt; and then this Func&lt;T&gt; will be used to calculate coordinates of markers and line points (as I was going to change LineChart's data source type to this data source from new markers).&nbsp;</p>\r\n<p>Thank you for your suggestions, I'm looking in future for working together with for making D3 better.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-21T01:14:23.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248091",
+    "ThreadId": "71063",
+    "Html": "\r\n<div>Hi Mikhail,</div>\r\n<div> </div>\r\n<div>Okay, sounds good - I'll send in my bug fix with \r\ndocumentation.</div>\r\n<div> </div>\r\n<div>What country are you in?</div>\r\n<div> </div>\r\n<div>Best regards,</div>\r\n<div>David</div>\r\n<div>_____________</div>\r\n<div>David Roh</div>\r\n<div>McKinney, Texas</div>\r\n<blockquote dir=ltr style=\"padding-right:0px;padding-left:5px;margin-left:5px;border-left:#000000 2px solid;margin-right:0px\">\r\n  <div style=\"font:10pt arial\">----- Original Message ----- </div>\r\n  <div style=\"background:#e4e4e4;font:10pt arial;font-color:black\"><b>From:</b> \r\n  [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>To:</b> [email removed] \r\n  </div>\r\n  <div style=\"font:10pt arial\"><b>Sent:</b> Wednesday, October 21, 2009 3:21 \r\n  AM</div>\r\n  <div style=\"font:10pt arial\"><b>Subject:</b> Re: Rolling window graph \r\n  [dynamicdatadisplay:71063]</div>\r\n  <div><br></div>\r\n  \r\n\r\n  <p>From: thecentury</p>\r\n  <div id=ThreadNotificationPostBody>\r\n  <p>Hi David,</p>\r\n  <p> </p>\r\n  <p>Sorry, but as this project is developed with the support and management of \r\n  Microsoft Research Cambridge, we are not allowed to change our team. But we \r\n  would be very grateful to you if you send us results of your work (I'm \r\n  speaking now about bugs in D3 you have fixed) to my mail - <a href=\"mailto:thecentury@gmail.com\">thecentury@gmail.com</a>.</p>\r\n  <p>It would be really great if there would be some notes saying what the bug \r\n  was and how and where you've fixed it. We'll examine your changes and \r\n  inculcate them into the most recent code of D3.</p>\r\n  <p> </p>\r\n  <p>Parser you were speaking about is my own project, it is connected to D3 \r\n  only as I'm belonging to D3's development team, though I was really planning \r\n  some integration of this parser to D3. This integration should be rather \r\n  simple - it was supposed to be done in the terms of new markers' data \r\n  source.</p>\r\n  <p>As in new markers chart has an ItemsSource property of Object type, we can \r\n  assign to this property whatever we want, and there is a set of factories that \r\n  are actually building a dataSource from ItemsSource. Iе was supposed that user \r\n  is able to pass a function as a string to ItemsSource property, and parser \r\n  will parse it to some delegate like Func&lt;T&gt; and then this Func&lt;T&gt; \r\n  will be used to calculate coordinates of markers and line points (as I was \r\n  going to change LineChart's data source type to this data source from new \r\n  markers). </p>\r\n  <p>Thank you for your suggestions, I'm looking in future for working together \r\n  with for making D3 better.</p>\r\n  <p>Best regards,</p>\r\n  <p>Mikhail.</p></div>\r\n  </blockquote>",
+    "PostedDate": "2009-10-21T05:45:29.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248093",
+    "ThreadId": "71063",
+    "Html": "<p>I'm in Moscow, Russian Federation.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-21T05:54:45.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248096",
+    "ThreadId": "71063",
+    "Html": "\r\n<div>Hi Mikhail</div>\r\n<div> </div>\r\n<div>That is what I suspected - my wife and son are from \r\nUkraine so I can get any translation done that I need.</div>\r\n<div> </div>\r\n<div>Best regards,</div>\r\n<div>David</div>\r\n<blockquote dir=ltr style=\"padding-right:0px;padding-left:5px;margin-left:5px;border-left:#000000 2px solid;margin-right:0px\">\r\n  <div style=\"font:10pt arial\">----- Original Message ----- </div>\r\n  <div style=\"background:#e4e4e4;font:10pt arial;font-color:black\"><b>From:</b> \r\n  [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>To:</b> [email removed] \r\n  </div>\r\n  <div style=\"font:10pt arial\"><b>Sent:</b> Wednesday, October 21, 2009 7:54 \r\n  AM</div>\r\n  <div style=\"font:10pt arial\"><b>Subject:</b> Re: Rolling window graph \r\n  [dynamicdatadisplay:71063]</div>\r\n  <div><br></div>\r\n  \r\n\r\n  <p>From: thecentury</p>\r\n  <div id=ThreadNotificationPostBody>\r\n  <p>I'm in Moscow, Russian Federation.</p>\r\n  <p> </p>\r\n  <p>Best regards,</p>\r\n  <p>Mikhail.</p></div>\r\n  </blockquote>",
+    "PostedDate": "2009-10-21T06:06:18.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "254296",
+    "ThreadId": "71063",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I have been experimenting with the DynamicPoints sample you mentioned and have come across a problem.&nbsp; I reduced the timer tick period to 200ms.&nbsp; Initially the auto view fit works fine but then gradually slows down.&nbsp; i.e. the rate at which the viewport is updated slows from 5 times per second down to once every few seconds.&nbsp; The data is still being added to the linegraph at the correct rate but the viewport is not updating as regularly.</p>\r\n<p>Trying to debug I found the following:</p>\r\n<p>LineGraph.OnDataChanged() is called at the correct rate.&nbsp; This calls base.UpdateBounds() which calls ViewPort2D.SetContentBounds().&nbsp; For some reason this is only called at half the rate (cant figure out why but could be obvious to you).&nbsp; This sets the ContentBoundsProperty dependancy prop which is where the problem seems to arise.&nbsp; The ViewPortElement2D.OnPropertyChanged() does not seem to be called as many times as the dep prop changes.&nbsp; I dont know very much about WPF but is this possible? (I have checked and the dep prop is being set to a different value each time)</p>\r\n<p>&nbsp;</p>\r\n<p>Edit: I have realised that the frequency of view port updates is proportional to number of points in the graph.&nbsp; If I start the graph with 10000 points then the view port is updated extremely infrequently.</p>\r\n<p>Thanks</p>\r\n<p>Dan</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"overflow:hidden;left:-10000px;top:0px;width:1px;height:1px\">&gt;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.ViewportElement2D.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs e = {System.Windows.DependencyPropertyChangedEventArgs}) Line 278&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;WindowsBase.dll!System.Windows.DependencyObject.NotifyPropertyChange(System.Windows.DependencyPropertyChangedEventArgs args) + 0x2c bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;WindowsBase.dll!System.Windows.DependencyObject.UpdateEffectiveValue(System.Windows.EntryIndex entryIndex = {System.Windows.EntryIndex}, System.Windows.DependencyProperty dp = {ContentBounds}, System.Windows.PropertyMetadata metadata, System.Windows.EffectiveValueEntry oldEntry, ref System.Windows.EffectiveValueEntry newEntry = {System.Windows.EffectiveValueEntry}, bool coerceWithDeferredReference, System.Windows.OperationType operationType) + 0x515 bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;WindowsBase.dll!System.Windows.DependencyObject.SetValueCommon(System.Windows.DependencyProperty dp, object value, System.Windows.PropertyMetadata metadata, bool coerceWithDeferredReference, System.Windows.OperationType operationType, bool isInternal) + 0x1eb bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;WindowsBase.dll!System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty dp, object value) + 0x2e bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.Viewport2D.SetContentBounds(System.Windows.DependencyObject obj = {LineGraph: LineGraph}, Microsoft.Research.DynamicDataDisplay.DataRect value = {(4.03125;0) -&gt; 662.90625*811}) Line 54 + 0x3e bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.PointsGraphBase.UpdateBounds(Microsoft.Research.DynamicDataDisplay.DataSources.IPointDataSource dataSource = {Microsoft.Research.DynamicDataDisplay.DataSources.RawDataSource}) Line 108 + 0x38 bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.PointsGraphBase.OnDataChanged() Line 76 + 0x1c bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.LineGraph.OnDataChanged() Line 160 + 0x8 bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.PointsGraphBase.OnDataChanged(object sender = {Microsoft.Research.DynamicDataDisplay.DataSources.RawDataSource}, System.EventArgs e = {System.EventArgs}) Line 71 + 0xb bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.DataSources.EnumerableDataSourceBase&lt;System.Windows.Point&gt;.RaiseDataChanged() Line 50 + 0x1d bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicDataDisplay.dll!Microsoft.Research.DynamicDataDisplay.DataSources.EnumerableDataSourceBase&lt;System.Windows.Point&gt;.observableCollection_CollectionChanged(object sender = Count = 812, System.Collections.Specialized.NotifyCollectionChangedEventArgs e = {System.Collections.Specialized.NotifyCollectionChangedEventArgs}) Line 44 + 0x8 bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;WindowsBase.dll!System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Point&gt;.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs e) + 0x41 bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;WindowsBase.dll!System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Point&gt;.InsertItem(int index, System.Windows.Point item) + 0xbc bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;mscorlib.dll!System.Collections.ObjectModel.Collection&lt;System.Windows.Point&gt;.Add(System.Windows.Point item) + 0x49 bytes&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicPointAddSample.exe!DynamicPointAddSample.Window1.AddNextPoint() Line 69 + 0x37 bytes&nbsp;&nbsp; &nbsp;C#<br>&nbsp;&nbsp;&nbsp; &nbsp;DynamicPointAddSample.exe!DynamicPointAddSample.Window1.timer_Tick(object sender = {System.Windows.Threading.DispatcherTimer}, System.EventArgs e = {System.EventArgs}) Line 56 + 0x8 bytes&nbsp;&nbsp; &nbsp;C#<br><br></div>",
+    "PostedDate": "2009-11-06T08:48:52.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "254768",
+    "ThreadId": "71063",
+    "Html": "<p>Hi Dan,</p>\r\n<p>This is a bug, and it is fixed now thanks to your report :)</p>\r\n<p>The problem was in viewport's Visible update method, which used approximate relative comparison of content bounds. Now it is possible to turn this off.</p>\r\n<p>Next version of nightly DynamicDataDisplay will not contain it. Also you would propably interested in changes in DynamicPointAddSample that are necessary to be done to archive proper behavior.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-08T09:30:46.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419837",
+    "ThreadId": "71063",
+    "Html": "<p>I downloaded the most recent version of DynamicDataDisplay and changeset (<a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 29055\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29055\">29055</a>) that is mentioned in this post. &nbsp;However, in the most recent version I can't seem to find anything related to FitToViewRestrictions. &nbsp;It seems that Viewport2D has gone through a lot of changes since that changeset. &nbsp;</p>\r\n<p>Could someone please explain how it is possible to do this (<em>when a new data point is added the x-axis should again automatically scroll forward to show the 1000 most recently added data points.) </em>with the most current version of DynamicDataDisplay?</p>\r\n<p>Thank you for any help,</p>\r\n<p>Ricky</p>",
+    "PostedDate": "2010-03-18T09:22:46.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419853",
+    "ThreadId": "71063",
+    "Html": "Take a look Under &quot;Samples-&gt;Simple-&gt;DynamicPointAddSample&quot; and see if this provides any help.\r\n\r\nDavid Roh\r\n",
+    "PostedDate": "2010-03-18T09:41:12.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419855",
+    "ThreadId": "71063",
+    "Html": "<p>I can't find Samples-&gt;Simple-&gt;DynamicPointAddSample in the newest release. &nbsp;I'm looking at it in the 29055 changeset and I see that, but the code has changed significantly since then it seems.</p>",
+    "PostedDate": "2010-03-18T09:46:11.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419860",
+    "ThreadId": "71063",
+    "Html": "<p>I was looking at the source files and samples, not the most recent changeset, sorry. &nbsp;Hopefully this will solve my issue. &nbsp;Thank you!</p>",
+    "PostedDate": "2010-03-18T09:53:56.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419862",
+    "ThreadId": "71063",
+    "Html": "<div><span style=\"font-family:Arial;font-size:x-small\">I am using the 31108 change set Dec 12, 2009 under nightly in The DynamicDataDisplay solution.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial;font-size:x-small\">David Roh</span></div>",
+    "PostedDate": "2010-03-18T09:56:14.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419877",
+    "ThreadId": "71063",
+    "Html": "<p>ok, now I'm completely confused.</p>\r\n<p>The files I originally downloaded to work with were <a id=fileDownload1 style=\"text-decoration:underline;color:#3e62a6\" tabindex=9 href=\"http://dynamicdatadisplay.codeplex.com/releases/view/26761#DownloadId=66878\">DynamicDataDisplay v0.3 Binaries</a>&nbsp;and <a id=fileDownload2 style=\"text-decoration:underline;color:#ce8b10\" tabindex=9 href=\"http://dynamicdatadisplay.codeplex.com/releases/view/26761#DownloadId=66880\">DynamicDataDisplay v0.3 Source</a>.</p>\r\n<p>The 31108 change set looks like it has completely different code than this, such as:</p>\r\n<p>-The 31108 change set contains &quot;fitToViewRestrictions&quot; and uses it in the DynamicPointAddSample.</p>\r\n<p>-The source listed on the &quot;downloads&quot; page does not have this in its code anywhere.</p>\r\n<p>&nbsp;</p>\r\n<p>I guess the solution is to use the 31108 changeset instead of the latest source download&nbsp;available? Just seems weird to me.</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&lt;d3:ChartPlotter.FitToViewRestrictions&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;d3:FollowWidthRestriction Width=&quot;50&quot;/&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>&lt;/d3:ChartPlotter.FitToViewRestrictions&gt;</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-18T10:16:55.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419879",
+    "ThreadId": "71063",
+    "Html": "<p>and even when I try the stable source that comes along with that change set, the &quot;fitToViewRestrictions&quot; is nowhere to be found.</p>\r\n<p>What am I doing wrong??? confused.....</p>",
+    "PostedDate": "2010-03-18T10:21:38.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992266",
+    "ThreadId": "71063",
+    "Html": "\r\n<p>This is the patch Nightly/src/Samples/Simple/DynamicPointAddSample/Window1.xaml...but the example is very basic</p>\r\n",
+    "PostedDate": "2013-01-25T15:33:12.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083070",
+    "ThreadId": "71063",
+    "Html": "Hi , <br />\n<br />\nFirst of all thanks for sharing your hard work.<br />\n<br />\nNow here is my problem ,I'm trying to use the example you have provided here <br />\n&quot;<a href=\"https://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29055#Nightly/src/Samples/Simple/DynamicPointAddSample/\" rel=\"nofollow\">https://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29055#Nightly/src/Samples/Simple/DynamicPointAddSample/</a>&quot;<br />\n<br />\nbut its giving me error<br />\n<ol>\n<li>The attachable property 'FitToViewRestrictions' was not found in type 'ChartPlotter'.</li>\n<li>\nThe type 'd3:FollowWidthRestriction' was not found. Verify that you are not missing an assembly reference and that all referenced assemblies have been built.<br />\n</li>\n</ol>\ncould you please tell me why m'I getting these error and how to resolve these error.<br />\n<br />\nThanks <br />\nRaj<br />\n",
+    "PostedDate": "2013-08-21T05:19:33.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1112644",
+    "ThreadId": "71063",
+    "Html": "Same here. \r<br />\n<br />\n&quot;The attachable property 'FitToViewRestrictions' was not found in type 'ChartPlotter'.&quot;.\r<br />\n<br />\nIt seems that &quot;FiToViewRestrictions&quot; has been removed from the current version. \r<br />\n<br />\nCould someone confirm this?\r<br />\n<br />\nThanks,\r<br />\n<br />\nWei<br />\n",
+    "PostedDate": "2013-10-27T07:00:56.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1262362",
+    "ThreadId": "71063",
+    "Html": "Does anyone know what happened to 'FitToViewRestrictions'? Or know of an alternative solution for rolling graphs?\r<br />\n<br />\nThanks, Andrea<br />\n",
+    "PostedDate": "2014-07-03T06:12:27.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

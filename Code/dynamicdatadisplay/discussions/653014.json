@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1468302",
+    "ThreadId": "653014",
+    "Html": "Hi All,\r<br />\n<br />\nDoes anyone know how to detect the right click drag for rescaling on the x/y axis? TicksChanged event gets called, but I want to detect the drag start and end.\r<br />\n<br />\nThanks.\r<br />\nGanesh<br />\n",
+    "PostedDate": "2016-03-29T02:56:24.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1472918",
+    "ThreadId": "654474",
+    "Html": "Dear community of D3, although impressive in features, responsiveness and overall look and feel of charts, I must say that documentation is rather low for such a product. A great deal of developing good graphing library, but you have to spend hours and hours looking through discussion threads, of other problems, to come to a hint on how to do something.\r<br />\n<br />\nI am in the process of implementing the library for seismic signal analysis, using graphing of seismic reports and processing. Yet, to even do a simple line graph with TimeSpan for axis, took me several days to get a hint.\r<br />\n<br />\nIs there also another way to save the graph to image rather than just the save clipboard? If so please tell since the clipboard on occasions cuts off the horizontal axis. I have several samples of this I can send to you.\r<br />\n<br />\nPlease let me know if there is a repository, wiki, or other documentation for the 0.4.0 version. The 0.3.1 version, I had to downgrade to, has most of the documentation and samples available.\r<br />\n<br />\nThank you,<br />\n",
+    "PostedDate": "2016-05-09T15:49:12.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

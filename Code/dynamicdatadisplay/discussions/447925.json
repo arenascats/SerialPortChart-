@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1060017",
+    "ThreadId": "447925",
+    "Html": "Hi Team,\r<br />\n<br />\nCurrently, I have developed a graph using ChartPlotter and Im trying to achieve a functionality where user can provide maximum and minimum values of Y-axis in a text box or slider, so that chart/graph should fit into user given MIN and MAX range of Y-Axis. I don't bother about X-axis range, best way could be change the X axis range in proportion to Y-axis range.\r<br />\n<br />\nI came across several posts on all types of <strong>&quot;Restrictions&quot;</strong> and tried accessing current range of X-axis and Y-axis values using <strong>plotter.ViewPort.Visible</strong>, but, failed to implement such functionality. There is a functionality called <strong>BringIntoView()</strong> on top of ViewPort of plotter object, but, not sure how to use this function. :(\r<br />\n<br />\nCould you, anyone, please suggest me on how to achieve this Fit To Y Axis Range functionality. Help to this question would be a lot to me and thanks in advance.\r<br />\n<br />\nRegards,\r<br />\nKumar<br />\n",
+    "PostedDate": "2013-06-23T04:24:21.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1062265",
+    "ThreadId": "447925",
+    "Html": "Kumar,\r<br />\n<br />\nI had to set several items to get this same type of functionality:\r<br />\n<br />\nAdd a DomainRestriction of the proper size.\r<br />\nSetup Viewport.Domain of the proper size.\r<br />\nsetup a Viewport.Visible rectangle for initial display\r<br />\nsetup a MinimalWidthRestriction  for zoom in\r<br />\nsetup a MaximalSizeRestriction for zoom out<br />\n",
+    "PostedDate": "2013-06-27T20:06:51.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064096",
+    "ThreadId": "447925",
+    "Html": "<strong>smonsees wrote:</strong><br />\n<blockquote>\nKumar,<br />\n<br />\nI had to set several items to get this same type of functionality:<br />\n<br />\nAdd a DomainRestriction of the proper size.<br />\nSetup Viewport.Domain of the proper size.<br />\nsetup a Viewport.Visible rectangle for initial display<br />\nsetup a MinimalWidthRestriction  for zoom in<br />\nsetup a MaximalSizeRestriction for zoom out<br />\n</blockquote>\nHi smonsees, \r<br />\n<br />\nThanks for the reply. Luckily, I managed to get what I wanted and here is how.<br />\n<pre><code>           Rect rect = plotter.Viewport.Visible.ViewportToData(plotter.Viewport.Transform);\n            double factor = Convert.ToDouble(maxYvalue - minYvalue) / rect.Height;\n            Rect newRect = new Rect() { X = rect.X, Y =minYvalue, Height = rect.Height * factor, Width = rect.Width * factor };\n           if (!rect.IsEmpty)\n            {\n                Rect test = newRect.DataToViewport(plotter.Viewport.Transform);\n                plotter.Viewport.Visible = test;\n            }</code></pre>\n\nHope, this solution is helpful to others who are in need of it.\r<br />\n<br />\nRegards,\r<br />\nKumar<br />\n",
+    "PostedDate": "2013-07-03T06:16:38.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1142285",
+    "ThreadId": "447925",
+    "Html": "Hi Kumar,\r<br />\n<br />\nSaw your above post, similar to something which I am trying to do as well. I want to get the Min and Max values of the horizontal and vertical axes currently on display. i.e. once I zoom in/out the current linegraph on my chartplotter, I want to extract the current starting and ending values of both axes using a button click or something. Seeing your above solution, I think it is for setting those values. Any idea on how to extract those values? Your reply is much appreciated.\r<br />\n<br />\nThank you!<br />\n",
+    "PostedDate": "2013-12-26T00:44:46.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143452",
+    "ThreadId": "447925",
+    "Html": "<pre><code>        var v = plotter.Visible;\n        int X_left = Convert.ToInt32(v.Left);\n        int X_right = Convert.ToInt32(v.Right);</code></pre>\n\n",
+    "PostedDate": "2013-12-27T19:11:16.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

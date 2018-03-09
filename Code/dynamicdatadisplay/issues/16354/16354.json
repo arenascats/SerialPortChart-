@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi there,\n \nDon't know if this project is still under active development, but since C#/VS has introduced new language Keywords (async/ await) it would be great if you would rename your variables in Methoddefinitions like\n \nPolylineEditor.cs\n   private void AddLineToPlotter(bool async){\n   \n   }\n \nOtherwise this Project can't compile when the Async CTP is installed.\nMore infos to the Async CTP: http://msdn.microsoft.com/en-us/vstudio/gg316360\n \nCheers",
+    "LastUpdatedDate": "2013-02-21T17:36:51.143-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-08-08T01:44:01.473-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Dont use \"async\" as Variable Name",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16354
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

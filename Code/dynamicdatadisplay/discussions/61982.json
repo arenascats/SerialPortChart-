@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "210394",
+    "ThreadId": "61982",
+    "Html": "<p>Currently D3 offers HorizontalLine and VerticalLine classes to allow annotation of a chart</p>\r\n<p>Might there be a chance of generic straight line class being added?</p>\r\n<p>This would be -very- useful to me to show tangents.</p>\r\n<p>Thanks,</p>\r\n<p>Nick</p>",
+    "PostedDate": "2009-07-09T06:24:06.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211318",
+    "ThreadId": "61982",
+    "Html": "<p>Hi Nick,</p>\r\n<p>&nbsp;</p>\r\n<p>Take a look at a source code of HorizontalLine and VerticalLine in Shapes folder - if you wish, you can modify their code to draw a inclined line.</p>\r\n<p>If you want me to create such a class, I need to know the way you are going to give a line - is it is described by one point and an angle, or by two points the line is passing through.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-12T23:51:24.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

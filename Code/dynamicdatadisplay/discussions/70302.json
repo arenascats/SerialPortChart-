@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "239432",
+    "ThreadId": "70302",
+    "Html": "<p>How do I hide the legend?</p>\r\n<p>I have tried LegendVisible=&quot;False&quot; in XAML and code as well as Legend.Visibility = System.Windows.Visibility.Hidden in code, but neither has shown any effect.</p>",
+    "PostedDate": "2009-09-28T01:28:48.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "239589",
+    "ThreadId": "70302",
+    "Html": "<p>Have you tried plotter.LegendVisible = false; ?</p>",
+    "PostedDate": "2009-09-28T09:21:35.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "239931",
+    "ThreadId": "70302",
+    "Html": "<p>Yes. (That is what my previous post was trying to indicate: setting LegendVisible to false on the plotter object in code or XAML does not seem to have any effect, neither has Legend.Visibility = System.Windows.Visibility.Hidden in code)</p>",
+    "PostedDate": "2009-09-29T04:16:09.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242471",
+    "ThreadId": "70302",
+    "Html": "<p>Any news on this item? It appears to be a pretty fundamental issue. Am I doing something wrong, or is the current version just broken?</p>",
+    "PostedDate": "2009-10-06T02:20:55.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242525",
+    "ThreadId": "70302",
+    "Html": "<p>This works fine for me in the newest build (28841):</p>\r\n<p>plotter.LegendVisibility = Visibility.Hidden;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-06T05:50:59.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242566",
+    "ThreadId": "70302",
+    "Html": "<p>Ok, I just noticed, that I was using the stable version which is pretty dated. The change log says that legend visibility was fixed since then.</p>\r\n<p>So I downloaded the nightly build, but this is having other issues: where did HorizontalDateTimeAxis go? What was working with stable no longer compiles with the nighly build. Any ideas?</p>",
+    "PostedDate": "2009-10-06T07:54:14.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245604",
+    "ThreadId": "70302",
+    "Html": "<p>Hi,</p>\r\n<p>why have you decided that HorizontalDateTimeAxis moved somewhere? It is still at its place in Charts/Axes/DateTime folder and in Microsoft.Research.DynamicDataDisplay.Charts namespace. maybe you thought so because we've renamed some properties of Plotter: e.g., HorizontalAxis is now a MainHorizontalAxis, and so for vertical axis, too.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T07:38:27.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477519",
+    "ThreadId": "70302",
+    "Html": "<p>Is the hide legend still broken??</p>\r\n<p>I have the latest build&nbsp;0.3.4703.0</p>\r\n<p>&nbsp;</p>\r\n<p>thanks</p>\r\n<p>Kishore Vanapalli</p>",
+    "PostedDate": "2010-08-06T14:48:20.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "480941",
+    "ThreadId": "70302",
+    "Html": "I too am having trouble hiding the legend, though, I'm using the stable version.  I've tried downloading the Nightly build to see if that would help, however, I cannot find the latest DynamicDataDisplay.dll file.  I thought that's how I would have to 'get' the latest version...am I just going about implementing the newest version into my project incorrectly or what?\r\n\r\nThanks so much! \r\n\r\n-Al",
+    "PostedDate": "2010-08-16T05:08:51.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "480992",
+    "ThreadId": "70302",
+    "Html": "<p>The code is in a transitory state right now, but if you want to hide both the left and right legends, you need to set the LegendVisibility&nbsp;= Visibility.Hidden/Collapsed and the NewLegendVisible = false. You can do this in code or XAML.</p>\r\n<p>As for the nightly build, I think you need to build the source projects in order to obtain the latest libraries.</p>",
+    "PostedDate": "2010-08-16T07:03:28.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085421",
+    "ThreadId": "70302",
+    "Html": "Hello, \r<br />\nEven i'm in late to answer, if it could help somebody. I propose this solution:\r<br />\nI had the same problem, but i successed to find the solution:\r<br />\n<br />\nIn C# code, before to create the chart you write this:<br />\n<pre><code>       ChartPlotter m_Plotter = plotter    // creation of the chart, egal to the plotter which was create via xaml file\n\n   __ ____    m_Plotter.Legend.Visibility=System.Windows.Visibility.Collapsed;______ \n\n        m_Plotter.AddLineGraph(ds, new Pen(Brushes.Red, 1), null);\n</code></pre>\n\nAs you can notice, it is not &quot;Hidden&quot; but &quot;collapsed&quot;, that you must used.\r<br />\nlegend is not displayed.\r<br />\n<br />\nAlso THANKS A LOT Mikhail! for your excellent library!\r<br />\n<br />\nNicolas NGHIEM<br />\n",
+    "PostedDate": "2013-08-27T07:49:11.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

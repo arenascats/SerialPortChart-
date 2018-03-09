@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "155652",
+    "ThreadId": "46579",
+    "Html": "I have line graphs which typically start in the lower-left corner of the canvas and end up on the upper-right corner.  Since the data ends up high on the right side of the canvas, the legend box gets in the way and I need to drag the graph with the mouse in order to see the end of the line.  Is there a way I can move the location of the legend box so it won't be in the way?  It would even be nice if I could move it into the header or footer.\r\n",
+    "PostedDate": "2009-02-08T19:52:27.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157678",
+    "ThreadId": "46579",
+    "Html": "Hi! <br><br>Internally Legend has a Canvas with a Grid on it, Grid has Canvas.Right = 5 and Canvas.Top = 5.<br>For now you can simply change these values, for example, set Canvas.Left to 5 and clear Canvas.Right. Of course, it is a workaround, but Legend doesn't allow now changing of its internal template. This feature will be added to our roadmap, as you need it. Moving Legend to Footer or Header is also planned, but not implemented yet.<br>\r\n<br clear=all>С уважением,                      Regards,<br>Михаил Бринчук.                 Mikhail Brinchuk.<br>\r\n<br><br><div>2009/2/9 psyphyre <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span><br><blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\">\r\n   <div> <p>From: psyphyre</p> <div>I have line graphs which typically start in the lower-left corner of the canvas and end up on the upper-right corner.  Since the data ends up high on the right side of the canvas, the legend box gets in the way and I need to drag the graph with the mouse in order to see the end of the line.  Is there a way I can move the location of the legend box so it won't be in the way?  It would even be nice if I could move it into the header or footer.\r\n</div> <div> <p>Read the <a href=\"http://www.codeplex.com/dynamicdatadisplay/Thread/View.aspx?ThreadId=46579&ANCHOR#Post155652\">full discussion online</a>.</p> <p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:46579]\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n <p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a></p> <p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/project/unsubscribe/dynamicdatadisplay\">unsubscribe or change your settings</a> on codePlex.com.</p>\r\n <p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com\">codeplex.com</a></p> </div> </div> </blockquote>\r\n</div><br>",
+    "PostedDate": "2009-02-14T08:11:08.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174867",
+    "ThreadId": "46579",
+    "Html": "Hi Mikhail,<br>\r\n<br>\r\nDo you have xaml code for this workaround. I have tried everything and the legend will not move.<br>\r\nBTW, awesome product!\r\n",
+    "PostedDate": "2009-04-02T08:51:11.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "175203",
+    "ThreadId": "46579",
+    "Html": "Hi,<div><br></div><div>Thank you for your appreciation!)</div><div><br></div><div>Currently, there is now convenient way to change position of legend, but you indeed can do it (I've checked it recently :-) ), modifying DynamicDataDisplay source code:</div><div>Open file Legend.xaml from DynamicDataDisplay\\Charts and change there values of attached properties Canvas.Top || Canvas.Left || smth like this, set on Grid, to values that you want.</div><div><br></div><div>Hope this'll help.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-04-03T03:06:28.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

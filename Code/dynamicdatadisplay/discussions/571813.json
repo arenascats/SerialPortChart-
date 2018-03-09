@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1321062",
+    "ThreadId": "571813",
+    "Html": "I've been working on styling a line graph for my current project and have been unable to find a way to change the tick color. As you know, it defaults to black, but my application uses a black background and so it disappears.\r<br />\n<br />\nIs there an easy way that I've missed? Or could some one point me to where it's set in the source?<br />\n",
+    "PostedDate": "2014-11-11T13:35:18.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359994",
+    "ThreadId": "571813",
+    "Html": "Hi\r<br />\n<br />\nyou can try some thing like this. This will work.<br />\n<pre><code>   NumericAxis numericAxis = plotter.MainVerticalAxis as NumericAxis;\n   numericAxis.AxisControl.TicksPath.Stroke = Brushes.White;\n   plotter.MainVerticalAxis = numericAxis;</code></pre>\n\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2015-03-05T00:17:15.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

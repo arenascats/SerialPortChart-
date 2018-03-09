@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "669522",
+    "ThreadId": "272013",
+    "Html": "\r\n<div>\r\n<p>&nbsp;</p>\r\n<div>\r\n<pre>How can I change the thickness of the plots border? In my application I would like to display only the horizontal border right</pre>\r\n<pre>above the MainHorizontal-Axes. I tried to set the property in Xaml and I used the following code without success?          &nbsp;</pre>\r\n<pre><br></pre>\r\n<pre>Thickness myBorder = <span>new</span> Thickness(0,0,0,10);</pre>\r\n<pre>plotter.BorderThickness = myBorder;\r\n</pre>\r\n<pre><br></pre>\r\n<pre>Changing the Color of the ChartPlotters-Border works just fine. By the means of applying transparent -&quot;color&quot;, the border disappears</pre>\r\n<pre>accordingly.</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Any suggestions would be appreciated!</p>\r\n<p>Thanks,</p>\r\n<p>Dominik</p>\r\n</div>\r\n",
+    "PostedDate": "2011-09-08T23:25:02.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681136",
+    "ThreadId": "272013",
+    "Html": "<p>Hi Dominik,</p>\r\n<p>plotter contains panels.Use these panels to change the properties (plotter.BottomPanel, plotter.TopPanel, ploter.RightPanel, ploter.LeftPanel etc.)</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2011-10-06T21:38:03.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

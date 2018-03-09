@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1315255",
+    "ThreadId": "570321",
+    "Html": "Hello,\r<br />\n<br />\nI'm lookig for some guidance on how to make a logarithmic y axis. I tried to use following code: <br />\n<pre><code>        plotter.DataTransform = new Log10YTransform();\n        VerticalAxis axis = new VerticalAxis\n        {\n            TicksProvider = new LogarithmNumericTicksProvider(10),\n            LabelProvider = new UnroundingLabelProvider()\n        };\n        plotter.MainVerticalAxis = axis;\n\n        plotter.AxisGrid.DrawVerticalMinorTicks = true;\n</code></pre>\n\nwhich I found in one of the discussions. But it seems, that there is not Log10YTransform class as well as LogarithmNumericTicksProvider and UnroundingLabelProvider classes.\r<br />\n<br />\nI greatly appreciate any points you can give on how to implement this enhancement.\r<br />\n<br />\nThanks,\r<br />\nVolodymyr Handziuk<br />\n",
+    "PostedDate": "2014-10-21T02:22:27.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

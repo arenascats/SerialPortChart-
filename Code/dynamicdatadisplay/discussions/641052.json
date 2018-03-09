@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1433474",
+    "ThreadId": "641052",
+    "Html": "Hi,<br />\nWe are using dynamic data display for plotting simple line chart with two independent axis (Injected plotter) in wpf application, when i move my mouse wheel only one curve and one axis getting zoomed. The other curve and other axis is not being zoomed. Please help me to solve this issue.<br />\nZoom works perfectly with dynamicdatadisplay 2.0 for silverlight, but i'm not able to find source code for that :(<br />\n<br />\nexpected result : <br />\nTwo scales in figure<br />\n<a href=\"http://research.microsoft.com/en-us/um/cambridge/projects/ddd/d3isdk/\" rel=\"nofollow\">http://research.microsoft.com/en-us/um/cambridge/projects/ddd/d3isdk/</a><br />\n<br />\nThanks,<br />\nSunil<br />\n",
+    "PostedDate": "2015-07-07T20:20:30.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437143",
+    "ThreadId": "641052",
+    "Html": "Hi Sunil,\r<br />\n<br />\nI'm struggling to use the injectedplotter. Would you be able to share the piece of code that uses the injected plotter? Sorry this is not the answer to your question above :).\r<br />\n<br />\nCheers,\r<br />\nGanesh<br />\n",
+    "PostedDate": "2015-08-04T03:39:51.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

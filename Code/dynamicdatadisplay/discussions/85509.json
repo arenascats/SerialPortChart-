@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "291222",
+    "ThreadId": "85509",
+    "Html": "<p>Hello everyone,</p>\r\n<p>&nbsp;</p>\r\n<p>first of all, thanks for this project! I use this to plot some spectral data and can't figure out what is going on with the legend in my plot. If i add a Linegraph to my ChartPlotter there is a legend to the left and a legend to the right.</p>\r\n<p>The legend on the left side does not have a border. If i make the legend invisible (collapsed) i still see the legend on the left side, but now having a border. I think there is something screwed up?? I would like to have no legend view at all if that would be possible?? I don't know where te one on the left side is from. You can reproduce this with the example program which plots the sin curve. Same effect here.<br><br>Hope someone knows how i can fix this.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards so far!&nbsp;</p>",
+    "PostedDate": "2010-02-16T06:16:52.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "291350",
+    "ThreadId": "85509",
+    "Html": "<p>I noticed this too. In fact, there are two Legends now and&nbsp;their visibilities are controlled independently.</p>\r\n<p>For the old Legend, you set LegendVisibilty = Visibility.Hidden; to hide it.</p>\r\n<p>For the new legand you set NewLegendVisible = false;</p>\r\n<p>I assume this is a transitional code artifact that will be resolved in the next release.</p>",
+    "PostedDate": "2010-02-16T10:58:46.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

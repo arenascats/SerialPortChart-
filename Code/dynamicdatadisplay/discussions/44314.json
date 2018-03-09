@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "147503",
+    "ThreadId": "44314",
+    "Html": "Is it possible to use a string instead of a double or date along the graphs axis?  For instance, I'd like to run the build number of a project along the x axis to show performance results for each build.\r\n",
+    "PostedDate": "2009-01-15T14:44:37.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "148459",
+    "ThreadId": "44314",
+    "Html": "Hi!<br>\r\n<br>\r\nFor now this feature is unavailable, but we'll add it to DynamicDataDisplay in near future.<br>\r\n<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\nDynamicDataDisplay Dev Team. \r\n",
+    "PostedDate": "2009-01-19T11:38:51.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823767",
+    "ThreadId": "44314",
+    "Html": "<p>Was there any change since 2009? Was this feature developed, or not?</p>",
+    "PostedDate": "2012-04-14T00:42:22.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832235",
+    "ThreadId": "44314",
+    "Html": "<p>You can&nbsp;look at my answer on this <a href=\"http://dynamicdatadisplay.codeplex.com/discussions/341039\" target=\"_self\">thread</a>. ﻿﻿</p>\r\n<p>Sebastien Chandonnet</p>",
+    "PostedDate": "2012-05-04T08:13:59.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

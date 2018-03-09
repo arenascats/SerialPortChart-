@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "708723",
+    "ThreadId": "282120",
+    "Html": "\r\n<div id=\"DescriptionPanel\">I am looking for a code-snippet with which I can realize a heatmap-chart under VB2010 to embed it in a geo-application.<br>\r\nCan anybody help me?</div>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-12-07T04:02:07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832347",
+    "ThreadId": "282120",
+    "Html": "<p>Hi</p>\r\n<p>I'm looking to implement a heatmap in VS2010.</p>\r\n<p>Did you succeed and can you provide a sample?</p>\r\n<p>Kind regards</p>\r\n<p>Hans</p>",
+    "PostedDate": "2012-05-04T13:46:31.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

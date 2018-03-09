@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "957640",
+    "ThreadId": "407162",
+    "Html": "\r\n<p>Is there a way to give different ranges in the X axis, different background colors. for example if my X axis is between 10 -100 so</p>\r\n<p>the area between 10 to 30 will get a red background color,</p>\r\n<p>the area between&nbsp;30 to 60 will get a green background color</p>\r\n<p>etc.</p>\r\n",
+    "PostedDate": "2012-12-18T06:33:27.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "987395",
+    "ThreadId": "407162",
+    "Html": "\r\n<p>Hi</p>\r\n<p>Use Vertical Range.</p>\r\n<p>Search in the discussions you can find some code</p>\r\n<p>&#65279;&#65279;<a href=\"http://dynamicdatadisplay.codeplex.com/discussions/67727\">http://dynamicdatadisplay.codeplex.com/discussions/67727</a></p>\r\n<p>Regards</p>\r\n<p>Ravi</p>\r\n",
+    "PostedDate": "2013-01-15T21:23:09.483-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

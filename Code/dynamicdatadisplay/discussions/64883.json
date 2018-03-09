@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "220950",
+    "ThreadId": "64883",
+    "Html": "<p>We have tried localization on-the-fly (switch language&nbsp;when&nbsp;application running)&nbsp;for WPF Dynamic Data Display.</p>\r\n<p>It looks like that axis title which binding in xaml will work. However, line description which add in the code-behind does not work.</p>\r\n<p><span style=\"font-size:medium\">&lt;font size=&quot;4&quot;&gt;\r\n<p>plotter.AddLineGraph(rgvm.source1, SpeedColor, 2,</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"font-size:medium;color:#2b91af\">GeneralResource</span><span style=\"font-size:medium\">.RunGraph_Speed);</span></p>\r\n<p><span style=\"font-size:medium\">Is there way to make the line description also work for localization on-the-fly?</span></p>\r\n<p><span style=\"font-size:medium\">thx!</span></p>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-07T15:16:49.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221187",
+    "ThreadId": "64883",
+    "Html": "<p>Hi,</p>\r\n<p>currently description of line graph doesn't support such localization.</p>\r\n<p>Try to add all you line charts into some list and the change manually descriptions to translated ones.</p>\r\n<p>This part of D3 will be changed to better in the future.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-08T19:00:14.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221566",
+    "ThreadId": "64883",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thanks for your reply.</p>\r\n<p>we do not have problem to change the line description's content after language change on-the-fly.</p>\r\n<p>The problem is that we do not know how to update the line description after description content change.</p>\r\n<p>Is there any function we can call?</p>\r\n<p>thx!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-10T08:58:41.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222300",
+    "ThreadId": "64883",
+    "Html": "<p>Hi Jane,</p>\r\n<p>Hi, this part of D3 is a little bit undeveloped, but it is possible to do what you want.</p>\r\n<p>Just execute this code where <em>chart </em>is a LineGraph which description you want to change:</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>chart.Description = new PenDescription(&quot;Chart2&quot;);</div>\r\n<p>&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span><span style=\"white-space:pre\">chart.Description = <span style=\"color:Blue\">new</span> PenDescription(<span style=\"color:#A31515\">&quot;Chart2&quot;</span>);</span></p>\r\n<p>Hope this'll help)</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>\r\n<div></div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-11T19:51:05.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222302",
+    "ThreadId": "64883",
+    "Html": "<p>Hi Jane,</p>\r\n<p>I've created a project for you - it is in <strong>SourceCode/LatestChanegset (28448)/Nightly/.../DynamicDataDisplay.sln/Repros/DescriptionChangeOnTheFly.csproj.</strong></p>\r\n<p>Regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-08-11T20:07:09.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222717",
+    "ThreadId": "64883",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>We follow your example and it works!</p>\r\n<p>It seems we handle all localization cases so far.</p>\r\n<p>Thanks very much!</p>\r\n<p>Jane</p>",
+    "PostedDate": "2009-08-12T14:31:34.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226268",
+    "ThreadId": "64883",
+    "Html": "<p>Hi Jane,</p>\r\n<p>glad I was helpful)</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-21T04:26:53.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

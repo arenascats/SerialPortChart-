@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "509625",
+    "ThreadId": "231550",
+    "Html": "<p>How do I get a cursor coordinator on the right axis?</p>\r\n<p>I tried to add the Cursor Coordinator to the InnerPlotter before adding the innerPlotter to the plotter children</p>\r\n<p>But it did not work</p>\r\n<p><img src=\"http://lh4.ggpht.com/_kJaXpVpql30/TL4QEUWcldI/AAAAAAAAHac/5u4_ZiINZeU/CursorCoordinatorOnThe Right.png\" alt=\"\"></p>",
+    "PostedDate": "2010-10-19T14:41:25.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509906",
+    "ThreadId": "231550",
+    "Html": "<p>Look at the YTextMapping property, you can set this to a delegate that will translate the value as you desire.<br><br>In this example, injectedPlotter shares the x axis but the range on the y axis is different. Its viewport's transform has already been set.<br><br></p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>DataTransform transform = injectedPlotter.Viewport.Transform.DataTransform; <br>cursorTrackingGraph.YTextMapping = (y =&gt; String.Format(s, transform.ViewportToData(<span style=\"color:blue\">new</span> Point(0, y)).Y));\r\n</pre>\r\n</div>\r\n<p><br>I actually have a graph with several Y axes, and&nbsp; build an array of these, so the user can press a key to cycle through them. It works very well.</p>\r\n<p>&nbsp;</p>\r\n<p>Jim</p>\r\n<p>[Edit]</p>\r\n<p>My explanation was how to show the other Y axis value in the cursor coordinate graph. After rereading your question, I'm not sure that's what you were asking. Let me know if you need more help.</p>",
+    "PostedDate": "2010-10-20T06:22:39.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

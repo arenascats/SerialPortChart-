@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1306817",
+    "ThreadId": "568014",
+    "Html": "In my viewmodel i have this property<br />\n<pre><code>        public NotifyCollection&lt;Signal&gt; Signals { get; private set; }\n</code></pre>\n\nSince Signal is a custom class containing values, and a timestamps I dont know howto bind it as a datasource for a LineGraph. I'm at a loss to find any examples using LineGraphs with a Dynamic custom datasource.<br />\n",
+    "PostedDate": "2014-09-21T11:48:08.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

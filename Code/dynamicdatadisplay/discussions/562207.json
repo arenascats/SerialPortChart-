@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1293750",
+    "ThreadId": "562207",
+    "Html": "Hi guys,\r<br />\nI am a Civil Engineering designer and find that the WPF isolines could display contours real time is very interesting. I managed to try a set of Light Detection and Ranging (LiDAR) data which consist of a regular square grid of levels data of spacing 1m. The output of contours is accurate and my client is very impressed. However most of my work involve survey(or design) data from 12D Models (civil design software) that comes from a triangulation of points (x,y,z) where xy are coordinates and z the levels. Each point is named from 1 to 25,000 for example and the connectivity of the points in a triangle are given as 1,2,3 or 4,1,5 etc.\r<br />\nI am wondering is there a possibility to modify the warped grid method of displaying isolines to a triangular based method. I do not know what are the new features in the nightly built as I failed to built a working dll.  Any advice from you guys will be appreciated.<br />\n",
+    "PostedDate": "2014-08-26T17:47:12.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

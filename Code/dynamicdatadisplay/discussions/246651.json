@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "568632",
+    "ThreadId": "246651",
+    "Html": "<p>In order to customize the look of the ChartPlotter graph I have to specify ticks, steps, and colors in code.&nbsp; I would much prefer this do be done in XAMl.&nbsp; For example, the following code works I would just prefer it to be handled by the view and not the  viewmodel.</p>\n<pre> ((NumericAxis)plotter.MainHorizontalAxis).AxisControl.DrawMinorTicks = false;</pre>\n<p>&nbsp;Edit: In the XAML From the AxisGrid I was able to set the DrawHorizontalMinorTicks to false however it&nbsp; does not work, it is still showing all ticks given the following</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter&gt;</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:AxisGrid DrawHorizontalMinorTicks=\"False\"/&gt;</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/d3:ChartPlotter&gt;</p>",
+    "PostedDate": "2011-02-18T09:10:35.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

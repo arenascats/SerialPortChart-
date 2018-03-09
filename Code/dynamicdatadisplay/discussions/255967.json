@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "605779",
+    "ThreadId": "255967",
+    "Html": "\r\n<p>Is there any way to</p>\r\n<p>a)force DataSet viewer to display the bing maps along with the &quot;isolines&quot; or the &quot;color map&quot;&nbsp;</p>\r\n<p>See for example the screeenshot of &quot;tasmax(lon,lat) Style:Isolines&quot;</p>\r\n<p><img src=\"http://147.102.85.132/Public/isolinesAndMap.png\" alt=\"\"></p>\r\n<p>&nbsp;</p>\r\n<p>b) Change the color pallet and the color ranges used ? I tryed using the following code:</p>\r\n<p>Dim Palette As String</p>\r\n<p>Palette = &quot;Palette:White,Green,GreenYellow,Yellow,Orange,OrangeRed,Red,DarkRed&quot;</p>\r\n<p>h.Add(New Viewer.VisualizationHint(mainVariablePseudoName &amp; &quot;(&quot; &amp; lonName &amp; &quot;,&quot; &amp; latName &amp; &quot;) Style:Colormap; &quot; &amp; Palette))</p>\r\n<p>DataSetViewerControl1.DataView.AddUserHints(h)</p>\r\n",
+    "PostedDate": "2011-05-02T03:32:06.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

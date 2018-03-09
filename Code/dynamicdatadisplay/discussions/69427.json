@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "236229",
+    "ThreadId": "69427",
+    "Html": "<p>Now for a real &quot;newbie&quot; question ...<br>I was looking for a data visualization tool, and came upon your home page http://dynamicdatadisplay.codeplex.com/.&nbsp; It looks like exactly what I am looking for.&nbsp; However, my &quot;native&quot; programming language is Python or when necessary Visual Basic 6.&nbsp; (Yeah, I know -- dark ages programming ... ;)&nbsp; Anyway, I got myself a copy of Visual C# 2008 Express and tried compiling your source by double-clicking DynamicDataDisplay.Silverlight.sln.&nbsp; The result was:<br><br><em>The project file 'C:..DynamicDataDisplaySilverlight.csproj' cannot be opened.&nbsp; The project type is not supported by this installation.</em><br><br>When I closed that window, I got several more, like<br><br><em>Solution folders are not supported in this version of the application.&nbsp; Solution folder 'Samples' will be displayed as unavailable.</em><br><br>I assume this means Micro$oft wants to get some money before it lets me try out your programs, but I would appreciate having this confirmed, before I put up the $ for a non-Express version of Visual Studio and then learn that the problem is somewhere else...<br><br>For other newbies that may be reading this thread, there is another, closely related question that I would like to ask. &nbsp;<br>Someone working with the Hard Rock Memorabilia demo, http://memorabilia.hardrock.com/ has described compiling its C-sharp source without Visual Studio.&nbsp; His remarks are here: http://projectsilverlight.blogspot.com/2008/04/dissecting-hard-rock-memorabilia-part-9.html where he says in the third paragraph: <em>I used Notepad++ as my editor since I do not have access to Visual Studio.</em>&nbsp; If he does not have Visual Studio, how does he compile the C# source he edits?<br><br>Thanks for your help!</p>",
+    "PostedDate": "2009-09-18T13:54:44.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236274",
+    "ThreadId": "69427",
+    "Html": "<p>Hi,<br><br>You shouldn't have any problem using Visual C# 2008 Express.</p>\r\n<p>However, I don't think you want the silverlight version. Go to&nbsp; http://dynamicdatadisplay.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=26761 and download<br> <img id=\"ctl00_ctl00_MasterContent_Content_ReleasePanelOrderingContainer_ReleaseFilesCtrl_recommendedFileImage\" style=\"border-width:0px\" src=\"http://i3.codeplex.com/Images/v15691/RuntimeBinary.gif\" alt=Application align=middle> <a id=\"ctl00_ctl00_MasterContent_Content_ReleasePanelOrderingContainer_ReleaseFilesCtrl_recommendedFileHyperLink\" tabindex=9 href=\"../Release/ProjectReleases.aspx?ReleaseId=26761#DownloadId=66879\">DynamicDataDisplay v0.3 Binaries &amp; Samples</a> .</p>\r\n<p>Then in the folder downloaded, go to samples -&gt; v0.2 and have a look to the basic samples (HelloWord...).</p>\r\n<p>Also you can have a look to the DynamicDataDisplay's <span>wiki</span> : <a href=\"http://microsoft.cs.msu.su/personal/thecentury/Public+Documents/Wiki/D3.html\">http://microsoft.cs.msu.su/personal/thecentury/Public%20Documents/<span>Wiki</span>/D3.html .</a></p>\r\n<p>&nbsp;</p>\r\n<p>Cheers,</p>\r\n<p>Kamel</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T16:14:17.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236307",
+    "ThreadId": "69427",
+    "Html": "<p>Thanks for the suggestion.&nbsp; I appreciate the opportunity to see the demos run, but I am interested in access to the source.</p>\r\n<p>I downloaded the v0.3 source, and tried compiling it.&nbsp; While I did not get the first message, the subsequent one was the same:</p>\r\n<p><em>Solution folders are not supported in this version of the application.&nbsp; Solution folder 'Samples' will be displayed as unavailable.</em></p>\r\n<p><em>That message was then repeated for 'Solution Items'.</em></p>\r\n<p><br><em>Furthermore, it reported that <strong>The DynamicDataDisplay.Maps project file has been customized and could present a security risk ...</strong></em></p>\r\n<p>&nbsp;</p>\r\n<p><em><strong>I repeat: What is needed to actually compile your source?</strong></em></p>\r\n<p><br><em><strong>(Codeplex appears to be unable to terminate either Bold or Italic settings, once italic has been entered by copy and paste.)</strong></em></p>\r\n<p>&nbsp;</p>\r\n<p><em><strong>Thanks for your quick response.<br></strong></em></p>",
+    "PostedDate": "2009-09-18T18:20:43.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236636",
+    "ThreadId": "69427",
+    "Html": "<p>Hi,</p>\r\n<p>Kamel is right, though Visual C# 2008 Express Edition has less features than other editions of Visual Studio, as it is free, but nevertheless you are able to compile D3's sources using this IDE. I have specially downloaded and installed it and checked this.</p>\r\n<p>You can simply ignore these warnings.</p>\r\n<p>DynamicDataDisplay.Maps contains custom build action for building pixel shader that implements mercator transform for tiles of maps. There is no security risk in this project, though IDE reports about this.</p>\r\n<p>&nbsp;</p>\r\n<p>Also, you should decide, what platform you are interested in - WPF or Silverlight, as the first is a desktop applications technology, and the second is for web applications.</p>\r\n<p>I have not tested if Silverlight version of our project can be compiled in Visual C# 2008 Express Edition.</p>\r\n<p>&nbsp;</p>\r\n<p>.NET itself also contains everything that is necessary to build .NET projects - there is a msbuild and C# console compiler, of which I'm not well informed but which which are capable of compiling everything that Visual Studio can build.</p>\r\n<p>Also you can give a try to other freeware C# IDEs - for example, SharpDevelop -&nbsp;<a href=\"http://www.icsharpcode.net/OpenSource/SD/\">http://www.icsharpcode.net/OpenSource/SD/</a>. I have not tested it in building D3's sources, too, but maybe it will work.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-20T11:57:15.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236733",
+    "ThreadId": "69427",
+    "Html": "<p>Your detailed response is very helpful!&nbsp; I assumed that since certain folders were not included, it would not compile.&nbsp; I will go back and try it.&nbsp; Your suggestions for alternatives are also very helpful.&nbsp; I am downloading the required files (1.5 GB!) for SharpDevelop and will try it.&nbsp; I have also found MSBuild.exe and csc.exe on my computer, now that you have alerted me to their existence.&nbsp; Frankly, I am more familiar with building complex projects at the command line in Linux than I am in Windows.&nbsp; I will try both, and report back on what I can make work, for your other readers.</p>\r\n<p>My objective is the Silverlight side.&nbsp; I am working with a legacy Visual Basic program and have been asked to try to web-enable it.&nbsp; However, my first objective is to find sample code using dotNET that I can compile!&nbsp; It has become clear that I will need to learn C-sharp to analyze interesting applications, such as D3, SLIdentity and Hot Rock Memorabilia.</p>\r\n<p>It is interesting how far I have had to &quot;travel&quot; to learn more about coding methods developed in the U.S.!</p>\r\n<p>Thanks very much, or</p>\r\n<p>Благодарю вас!</p>\r\n<p>docduke</p>",
+    "PostedDate": "2009-09-20T19:57:06.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

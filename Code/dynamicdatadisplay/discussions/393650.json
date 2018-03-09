@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "906013",
+    "ThreadId": "393650",
+    "Html": "\r\n<p>I've looked through the library and there are support for mouse, keyboard, and trackpad navigation. Does anyone have any suggestion on implementing multitouch navigation? Or is it simpler to work around it by using touch events to manually change the plot\r\n axis?</p>\r\n",
+    "PostedDate": "2012-08-29T16:15:48.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

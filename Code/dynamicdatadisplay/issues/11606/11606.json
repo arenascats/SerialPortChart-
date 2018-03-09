@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Using one of the simple samples, you can replae the xDataSorce with an EnumerableDataSource<int>. \nWhen runing the exampleyou will receive an InvaldCastExcpton in class EnumerablePointEnumerator in Mmethd GetCurrent.",
+    "LastUpdatedDate": "2013-02-21T17:36:54.653-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-01-24T02:21:29.397-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InvalidCastException  EnumerablePointEnumeratorwhen using int as EnumerableDataSource",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11606
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

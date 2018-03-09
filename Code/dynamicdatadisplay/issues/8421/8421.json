@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This bug was fixed in release 0.2.",
+    "ClosedDate": "2008-12-10T12:16:41.46-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When using multiple ChartPlotters in the same stackpanel,  the right click-> Copy picture will copy a black rectangle to the clipboard if used on the second or later ChartPlotters.\n \nWorkaround:  Create a Border for each ChartPlotter and make the ChartPlotter the child of the border.  Add the borders to the StackPanel.  After doing this,  each ChartPlotter copies correctly to the clipboard.",
+    "LastUpdatedDate": "2013-05-16T04:53:49.793-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2008-12-05T21:56:49.24-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Copy Picture To Clipboard produces black square",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8421
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2396,
+      "FileName": "MainWindow.xaml",
+      "DownloadUrl": ".\\2396"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "This bug was fixed in release 0.2 [release:20298].\r\nBut also release 0.2 introduced a peculiarity of Plotter's behavior - if it is added to StackPanel, it should have a width or height set explicitly (property to set depends on StackPanel's orientation).\r\nIf Plotter is added to grid, it is not necessary to set width or height.",
+      "PostedDate": "2008-12-10T12:16:07.68-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-10T12:16:41.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:58.03-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:49.793-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

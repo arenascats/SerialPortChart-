@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "239594",
+    "ThreadId": "70342",
+    "Html": "<p>When scrolling the mouse wheel over the chart, the chart zooms in both the X and Y axes. Is it possible to limit zooming to just the X-axis? If so, how can I achieve this?</p>\r\n<p>Thanks in advance.</p>\r\n<p>-JP</p>",
+    "PostedDate": "2009-09-28T09:41:11.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245636",
+    "ThreadId": "70342",
+    "Html": "<p>Hi,</p>\r\n<p>you can place mouse over one of axes of the plotter and than rotate its wheel - this will result into zooming only on axis's direction. Also you can create a new class deriving from ViewportRestriction which will allow zooming only for one axis.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T08:25:57.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

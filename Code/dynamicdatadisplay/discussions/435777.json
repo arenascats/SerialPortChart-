@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1011847",
+    "ThreadId": "435777",
+    "Html": "I am trying to implement the standalone heatmaps in C#. But for some reason, I get the error that:\r<br />\n&quot;Error\t2\tSystem.IO.FileNotFoundException was thrown on : Could not load file or assembly 'System.Windows, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e' or one of its dependencies. The system cannot find the file specified.&quot;\r<br />\nWhat seems to be the problem?\r<br />\nI think the dll file cannot be used in C#, am I right?\r<br />\nThanks for the help<br />\n",
+    "PostedDate": "2013-03-07T08:23:39.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013148",
+    "ThreadId": "435777",
+    "Html": "try to compile your own dll e.g. from <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/ZoomSliderSample.zip\" rel=\"nofollow\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/ZoomSliderSample.zip</a>.\r<br />\ndose that solve the problem?\r<br />\n<br />\nregards karma<br />\n",
+    "PostedDate": "2013-03-11T03:02:14.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014759",
+    "ThreadId": "435777",
+    "Html": "Cannot run this program. I receive this error:\r<br />\nOperation could destabilize the runtime.<br />\n",
+    "PostedDate": "2013-03-13T11:38:05.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014760",
+    "ThreadId": "435777",
+    "Html": "Cannot run this program. I receive this error:\r<br />\nOperation could destabilize the runtime.<br />\n",
+    "PostedDate": "2013-03-13T11:38:22.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014761",
+    "ThreadId": "435777",
+    "Html": "Cannot run this program. I receive this error:\r<br />\nOperation could destabilize the runtime.<br />\n",
+    "PostedDate": "2013-03-13T11:38:53.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015144",
+    "ThreadId": "435777",
+    "Html": "I think thats a LINQ error no Dynamic Data Display. Check google for further information.\r<br />\nregards karma<br />\n",
+    "PostedDate": "2013-03-14T04:06:03.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "487065",
+    "ThreadId": "225488",
+    "Html": "<p>I have a ChartPlotter&nbsp;to which I am adding&nbsp;1 LineGraph.&nbsp; I am doing a real time graph of 50 data points per second.&nbsp; After about&nbsp;5 minutes, the application crashes.&nbsp; Has anyone seen this behavior?&nbsp; If I add 2 LineGraphs, it fails after about 2 1/2 minutes.&nbsp; Seems to die at around 20K-25K data points.</p>\r\n<p>If the graph can't handle even that much data, I don't see how it is of much use...which makes me think I am doing something wrong for it to crash so quickly.&nbsp; Any help is greatly appreciated.</p>\r\n<p>Here is my graphing code:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;d3:ChartPlotter Name=&quot;plotter&quot; LegendVisibility=&quot;Hidden&quot; NewLegendVisible=&quot;false&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:Header Content=&quot;&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter.FitToViewRestrictions&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:FollowWidthRestriction Width=&quot;6&quot;/&gt;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter.FitToViewRestrictions&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter&gt;</p>\r\n<p>Codebehind snippets:</p>\r\n<p>//initialize plotter<br>plotter.Viewport.UseApproximateContentBoundsComparison = false;&nbsp;&nbsp;</p>\r\n<p>//Add the LineGraph to the plotter</p>\r\n<p>Data = new ObservableCollection&lt;Point&gt;();</p>\r\n<p>Graph = plotter.AddLineGraph(Data.AsDataSource());</p>\r\n<p>Viewport2D.SetUsesApproximateContentBoundsComparison(Graph, false);</p>\r\n<p>//Code to add a data point (called ~50/second)<br>Data.Add(point);</p>\r\n<p>&nbsp;</p>\r\n<p>Any thoughts or advice?&nbsp;</p>\r\n<p>Tks.<span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"><span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"></span></span></p>\r\n&nbsp;",
+    "PostedDate": "2010-08-31T09:15:08.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487324",
+    "ThreadId": "225488",
+    "Html": "<p>May be you need to call again Graph = plotter.AddLineGraph(Data.AsDataSource());</p>\r\n<p>You need to refresh the plotter since new data is added.</p>",
+    "PostedDate": "2010-08-31T19:54:00.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487566",
+    "ThreadId": "225488",
+    "Html": "<p>I don't understand.&nbsp; Why would I need to create a new LineGraph?&nbsp; The plotter data gets refreshed when new data is added to it.&nbsp;</p>",
+    "PostedDate": "2010-09-01T06:18:16.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "701777",
+    "ThreadId": "225488",
+    "Html": "<p>gorter, &nbsp;were you able to resolve the issue? &nbsp;I'm having exactly the same problem, started from 50 samples per second, now trying 1 sample per second and it still crashes after about 5 minutes. &nbsp;My code is almost the same. &nbsp;</p>",
+    "PostedDate": "2011-11-22T06:44:08.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "701892",
+    "ThreadId": "225488",
+    "Html": "<p>If this issue is still not resolved, may be someone can recommend other tools I can use besides ddd? &nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2011-11-22T09:33:48.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

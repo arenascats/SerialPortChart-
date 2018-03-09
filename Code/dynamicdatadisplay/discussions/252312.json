@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "590901",
+    "ThreadId": "252312",
+    "Html": "\r\n<p>I have been using a viewporthostpanel to add &quot;decorations&quot; to my plots (markers, etc.), but when my plotter area changes due to a resize, these elements sometimes get cut out of the viewport when I would expect the default view to force all of the visible\r\n objects to fit in the viewport.</p>\r\n<p>I have set the ViewportBounds property and the position properties.</p>\r\n<p>Any ideas?</p>\r\n",
+    "PostedDate": "2011-04-03T05:30:50.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1398528",
+    "ThreadId": "616139",
+    "Html": "Hi.\r<br />\n<br />\nI'm trying to remove the first and the last LabelTickInfo from my axis, because even the property IsStaticAxis is not working like I want. Removing the first ist not very difficult:<br />\n<pre><code>                xAxis.LabelProvider.CustomFormatter = tickInfo =&gt;\n                {\n                    if (tickInfo.Index == 0)\n                    {\n                        return string.Empty;\n                    }\n                    // ...\n                }</code></pre>\n\nBut how to get the last index?\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2015-04-01T02:37:13.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437173",
+    "ThreadId": "616139",
+    "Html": "Hi<br />\n<br />\nI think you have to create your own tick provider and this shouldb be derrived from LabelProvider&lt;T&gt;<br />\n<br />\nOverride CreateLabels(.....)<br />\nIf you are using DateTimeTicksProviders, override ModifyTicks(.....)<br />\n<br />\nNote: Search in the forum you will get how to create your own LabelTicksProvider.<br />\n<br />\nRegards<br />\nRavi.<br />\n",
+    "PostedDate": "2015-08-04T05:53:32.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

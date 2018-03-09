@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "447545",
+    "ThreadId": "213888",
+    "Html": "Hello,\r\nI am trying to achieve 'rolling graph' (graph is automatically scrolled rather expanded) effect using D3 and its RawDataSource. I use the following code:\r\n<br><br>\r\n <br> void MainWindow_Loaded(object sender, RoutedEventArgs e)<br>\r\n        {<br>\r\n            var source = new RawDataSource();<br>\r\n            MainChart.AddLineGraph(source, Colors.AliceBlue, 2);<br>\r\n            timer = new Timer(FeedData, source, 0, 100);<br>\r\n        }<br>\r\n<br>\r\n      <br>  private void FeedData(object state)<br>\r\n        {<br>\r\n            var source = (RawDataSource)state;<br>\r\n            var data = new Point[200];<br>\r\n            for (int index = 0; index &lt; data.Length; index++)<br>\r\n            {<br>\r\n                data[index] = new Point(it, Math.Sin(it));<br>\r\n            }<br>\r\n<br>\r\n            it += 0.1; //ignore overflow fot this simple example<br>\r\n            Action act = () =&gt;<br>\r\n                           {<br>\r\n                               source.Data = new List&lt;Point&gt;(data);<br>\r\n                               source.RaiseDataChanged();<br>\r\n<br>\r\n                           };<br>\r\n            Dispatcher.BeginInvoke(DispatcherPriority.Normal, act);<br>\r\n        }<br>\r\n<br>\r\n\r\nThe graph axes seem to 'oscillate' so the sinusoid is actually being fed as a source but... no graph ever appears, no points are actually shown only axes change (and plot center point)...\r\nwhat am i doing wrong? Is such usage pattern supported at all?",
+    "PostedDate": "2010-05-26T04:18:03.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447660",
+    "ThreadId": "213888",
+    "Html": "<p>See if &quot;src\\Samples\\Simple\\DynamicPointAddSample&quot; provides any help.</p>\r\n<p>David Roh</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-26T07:27:17.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447729",
+    "ThreadId": "213888",
+    "Html": "<p>Thank you very much, although it is not 100% what i wanted i think i may adjust it to my needs. Once again thanks for the help. Anyways implementing more 'rolling plot' would be a great feature for D3</p>",
+    "PostedDate": "2010-05-26T09:28:18.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

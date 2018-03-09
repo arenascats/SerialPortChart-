@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "668660",
+    "ThreadId": "271783",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I have a simple Line graph with 6 lines added.&nbsp; I want to be able to offer Autoranging for each axis idependantly, i.e. I might want to have the Y Axis change scale according to the min and max data, but the x stay still at a set point.&nbsp; Is there\r\n a way of doing this easily or do I have to loop round all of the data finding the max and min each time?</p>\r\n<p>Thanks</p>\r\n<p>Mark.</p>\r\n",
+    "PostedDate": "2011-09-07T08:43:05.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681137",
+    "ThreadId": "271783",
+    "Html": "<p>Hi Mark,</p>\r\n<p>use yAxis.SetConversion(....) and use viewPort.Visible to fix x axis limits.</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2011-10-06T21:47:10.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "684998",
+    "ThreadId": "271783",
+    "Html": "<p>Hi Ravi,</p>\n<p>I tried your suggestion and C# tells me yAxis does not include the method SetConvertion(...)</p>\n<p>Could you explain why to me ,please ?</p>\n<p>thanks !</p>\n<p>sumgmin.</p>\n<p>&nbsp;</p>",
+    "PostedDate": "2011-10-16T20:43:47.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "685027",
+    "ThreadId": "271783",
+    "Html": "<p>Hi,</p>\r\n<p>you may be missing namespace I guess. Namespace is</p>\r\n<p><span style=\"color: blue;\">using</span> Microsoft.Research.DynamicDataDisplay.Charts;<br />﻿My yAxis is \"VerticalAxis\" and this is derived from \"﻿﻿NumericAxis\". I&nbsp;used 0.34703.0.</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2011-10-16T23:18:08.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109142",
+    "ThreadId": "271783",
+    "Html": "Hi SetConversion does not exist in VerticalAxis class :( can you please tell me how did you solve this or did you have such a problem actually?<br />\n",
+    "PostedDate": "2013-10-18T03:59:40.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

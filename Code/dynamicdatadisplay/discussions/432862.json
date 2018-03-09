@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1000093",
+    "ThreadId": "432862",
+    "Html": "Halo,<br />\nI have a very important question related with releasing memory by D3 ( wpf, not nightly). <br />\nI am playing around with ants profiler. Have a memory leaks about 300 kB every hide show of window which is using D3.<br />\nto release resources i am using those lines:<br />\n this.dynDisp.Children.RemoveAll(typeof(RectangleHighlight));<br />\n this.dynDisp.Children.RemoveAll(typeof(LineGraph));<br />\n this.dynDisp.Children.RemoveAll(typeof(LineAndMarker&lt;MarkerPointsGraph&gt;));<br />\n this.dynDisp.Children.RemoveAll(typeof(ViewportAxesRangeRestriction));<br />\n<br />\nalso I am removing with:<br />\nthis.dynDisp.Children.Remove(lm.LineGraph);<br />\nthis.dynDisp.Children.Remove(lm.MarkerGraph);<br />\n<br />\nwhere 'lm' is a linemarkergraph collected during adding to the graph.<br />\nI am also clearing another data I am using, removing adding event handlers etc and finally i reached 300kb which is very hard for me to overcome...<br />\nWhat is interesting - when I use this line below:<br />\nthis.dynDisp.Children.RemoveAll(typeof(object));<br />\nIm left with 100 kB of leak every hide and show ! But then nothing is on the display after next show ... this is really D3 specific issue!<br />\n<br />\nCould somebody help me in this matter - will appreciate<br />\n<br />\nEdit:  without D3 chartplotter ( all logic the same ) I am gaining 6 kB per hide show !!!<br />\n<br />\nBest<br />\nJakub <br />\nPoland<br />\n",
+    "PostedDate": "2013-02-12T08:52:52.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1001668",
+    "ThreadId": "432862",
+    "Html": "Hi<br />\n<br />\nIf you add some events like &quot;lineGraph.DataChanged&quot;, &quot;ViewPortPropertyChaged&quot;, &quot;MouseDown/Up&quot; events , you should remove those events also.<br />\nAlso check the this.dynDisp.Children.Count before and after removing the linegraphs and markers.<br />\nIf you are adding injected, check those are removed are not.<br />\nRemove vertical/Horizontal axes also if added some<br />\n<br />\nRegards<br />\nRavi.Battula<br />\n",
+    "PostedDate": "2013-02-15T00:51:05.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

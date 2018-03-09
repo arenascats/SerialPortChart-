@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "476589",
+    "ThreadId": "222495",
+    "Html": "<p>Anyone know how to do this in xaml like so:</p>\r\n<p>&lt;d3:ChartPlotter&gt;&lt;TURN OFF OR HIDE X AND/OR Y AXIS HERE&gt;&lt;/d3:ChartPlotter&gt;</p>\r\n<p>I've been playing with this library for a day with good success except for this issue which is a requirement for a project I am working on.</p>\r\n<p>Thanks in advance.&nbsp; -Matt</p>",
+    "PostedDate": "2010-08-04T13:02:52.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476612",
+    "ThreadId": "222495",
+    "Html": "<p>This should work....</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">MainHorizontalAxisVisibility</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Collapsed</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">MainVerticalAxisVisibility</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Collapsed</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">&gt;</span>\r\n           \r\n        <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-08-04T14:12:39.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476659",
+    "ThreadId": "222495",
+    "Html": "<p>Thanks - that did&nbsp;it.&nbsp; I also got the latest source and found the HideAxisSample:<span style=\"color:#ffffff;font-size:x-small\"><span style=\"color:#ffffff;font-size:x-small\"></span></span>\r\n<p><span style=\"color:#ffffff;font-size:x-small\">\r\n<p><span style=\"color:#ffffff;font-size:x-small\">&gt;<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotter</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">MainHorizontalAxis</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{x:Null}</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">MainVerticalAxis</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{x:Null}</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span><br></span></p>\r\n</span></p>\r\n</p>",
+    "PostedDate": "2010-08-04T17:41:14.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

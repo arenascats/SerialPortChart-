@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "563523",
+    "ThreadId": "245334",
+    "Html": "\r\n<p>Hi im from brazil.. Im a new in DD3..&nbsp;&nbsp; i had add reference to dll silverlight last update (download&nbsp;spring 2010).. but&nbsp;I dont&nbsp;found candlestick sample .. is only for wpf this sample???? how i can get it?</p>\r\n",
+    "PostedDate": "2011-02-09T12:26:05.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "563673",
+    "ThreadId": "245334",
+    "Html": "Unzip the nightly build and follow the path: /src/DynamicDataDisplay.Samples/Demos/v04/StockMarkersPage.\r\n<div><br>\r\n</div>\r\n<div>v02 also has a related samples.</div>\r\n<div><br>\r\n</div>\r\n<div>Abraços e boa sorte.</div>\r\n<div><br clear=\"all\">\r\nDiego Frata<br>\r\n<a href=\"mailto:diego.frata@gmail.com\">diego.frata@gmail.com</a><br>\r\n<br>\r\n<br>\r\n<div>On Wed, Feb 9, 2011 at 6:26 PM, wolv2011 <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: wolv2011</p>\r\n<div>\r\n<p>Hi im from brazil.. Im a new in DD3.. i had add reference to dll silverlight last update download .. but I dont found candlestick sample .. is only for wpf this sample???? how i can get it?</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=245334&ANCHOR#Post563523\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:245334]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2011-02-09T17:47:03.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "563686",
+    "ThreadId": "245334",
+    "Html": "\r\n<p>Hi.. the&nbsp;silverlight version dont have this!!! i need for silverlight financial stock charts.. &#65279;have in this library indicators for financial stock charts?</p>\r\n<p>thanks!!!</p>\r\n",
+    "PostedDate": "2011-02-09T18:18:20.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

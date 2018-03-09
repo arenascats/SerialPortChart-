@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1410899",
+    "ThreadId": "627509",
+    "Html": "Hi,\r<br />\n<br />\nI would like to have two vertical axes like the two scales sample here : \r<br />\n<br />\n<a href=\"http://research.microsoft.com/en-us/um/cambridge/projects/ddd/d3isdk/\" rel=\"nofollow\">http://research.microsoft.com/en-us/um/cambridge/projects/ddd/d3isdk/</a>\r<br />\n<br />\nI have downloaded the v3 of Dynamic Data Display, but the code of the sample doesn't work , the &quot;Figure&quot; tag doesn't exist in the spacename.\r<br />\nDo you know why?\r<br />\n<br />\nThanks for your help,\r<br />\n<br />\nFanny B.<br />\n",
+    "PostedDate": "2015-04-14T05:43:29.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

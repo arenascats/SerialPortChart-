@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1460827",
+    "ThreadId": "650538",
+    "Html": "Hi,\r<br />\n<br />\nI'm using PolyLineEditor class to display the line which can be draggable.\r<br />\nEven after dragging the line from one point to another point, still i want to display the line(greyed out) from where it is being dragged.\r<br />\nPlease help me regarding the same.\r<br />\nDoes the control provide this option by default?<br />\n",
+    "PostedDate": "2016-01-27T00:40:38.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

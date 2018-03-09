@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "814222",
+    "ThreadId": "349677",
+    "Html": "<p>Hi All! I have list of periodic records in database - something like that:</p>\n<p>public class PeriodEntry<br /> {<br /> &nbsp; public DateTime From { get; set; }<br /> &nbsp; public DateTime To { get; set; }<br /> &nbsp; public double Value { get; set; }<br /> }</p>\n<p>I want to show this data as segmented(splitted) line (<a href=\"https://skydrive.live.com/redir.aspx?cid=914be1670ab2c2cd&amp;resid=914BE1670AB2C2CD%21116&amp;parid=914BE1670AB2C2CD%21115&amp;authkey=%21ACHtXzdscLq50lM\" target=\"_blank\">ex. image</a>).</p>\n<p>Is it possible?</p>\n<p>Thank You!</p>",
+    "PostedDate": "2012-03-22T11:46:46.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "817223",
+    "ThreadId": "349677",
+    "Html": "<p>UP!</p>",
+    "PostedDate": "2012-03-29T08:08:35.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

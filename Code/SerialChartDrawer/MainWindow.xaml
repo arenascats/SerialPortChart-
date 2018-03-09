@@ -1,0 +1,83 @@
+﻿<Window x:Class="SerialChartDrawer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerialChartDrawer"
+        mc:Ignorable="d"
+        Title="SerialChart" Height="824.066" Width="1026">
+    <Grid RenderTransformOrigin="0.441,0.438">
+        <d3:ChartPlotter x:Name="MainChart" Loaded="Window_Loaded" Background="White" Margin="0,0,24,0" HorizontalAlignment="Right" Width="606" Height="367" VerticalAlignment="Top" >
+            <d3:ChartPlotter.MainVerticalAxis>
+                <d3:VerticalIntegerAxis />
+            </d3:ChartPlotter.MainVerticalAxis>
+            <d3:ChartPlotter.MainHorizontalAxis>
+                <d3:HorizontalIntegerAxis />
+            </d3:ChartPlotter.MainHorizontalAxis>
+            <d3:Header Content="Report Data"/>
+            <d3:VerticalAxisTitle Content="mA"/>
+            <d3:HorizontalAxisTitle Content="Ua" />
+        </d3:ChartPlotter>
+        <Grid HorizontalAlignment="Left" Height="456" Margin="29,36,0,0" VerticalAlignment="Top" Width="354">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="57*"/>
+                <ColumnDefinition Width="58*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="446" Margin="10,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="340" Grid.ColumnSpan="2"/>
+            <Label x:Name="label2" HorizontalAlignment="Left" Margin="26,25,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="135" Width="288">
+                <GroupBox x:Name="groupBox" Header="扫描电压" HorizontalAlignment="Left" VerticalAlignment="Top" Height="125" Width="278">
+                    <Grid HorizontalAlignment="Left" Margin="0,0,-12,0" Width="278">
+                        <RadioButton x:Name="radioButton_Copy" Content="90V" HorizontalAlignment="Left" Margin="21,25,0,0" VerticalAlignment="Top" GroupName="ScanVoltage" IsChecked="True"/>
+                        <RadioButton x:Name="radioButton_Copy1" Content="150V" HorizontalAlignment="Left" Margin="197,25,0,0" VerticalAlignment="Top" GroupName="ScanVoltage"/>
+                        <RadioButton x:Name="radioButton_Copy2" Content="250V" HorizontalAlignment="Left" Margin="21,63,0,0" VerticalAlignment="Top" GroupName="ScanVoltage"/>
+                        <RadioButton x:Name="radioButton_Copy3" Content="300V" HorizontalAlignment="Left" Margin="197,63,0,0" VerticalAlignment="Top" GroupName="ScanVoltage"/>
+                    </Grid>
+
+                </GroupBox>
+            </Label>
+            <Label x:Name="label3" Content="电流限制 (0-200mA)" HorizontalAlignment="Left" Margin="26,162,0,0" VerticalAlignment="Top" Height="25" Width="123"/>
+            <Label x:Name="label4" Content="栅极负压 (0-45V)" HorizontalAlignment="Left" Margin="26,209,0,0" VerticalAlignment="Top" Height="25" Width="104"/>
+            <Label x:Name="label5" Content="曲线间隔" HorizontalAlignment="Left" Margin="26,263,0,0" VerticalAlignment="Top" Height="25" Width="58"/>
+            <Button x:Name="btSettingApply" Content="开始测试" HorizontalAlignment="Left" Margin="134,343,0,0" VerticalAlignment="Top" Width="75" Click="btSettingApply_Click" Height="45" Foreground="#FF323630" Background="#7FFFFFFF" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tbCurrentLimited" HorizontalAlignment="Left" Height="23" Margin="25,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="1" PreviewTextInput="tb_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
+            <TextBox x:Name="tbGridNagVoltage" HorizontalAlignment="Left" Height="23" Margin="25,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="1" PreviewTextInput="tb_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
+            <Label x:Name="label6_Copy" Content="mA" HorizontalAlignment="Left" Margin="144,162,0,0" VerticalAlignment="Top" Grid.Column="1" Height="25" Width="30"/>
+            <Label x:Name="label6_Copy1" Content="V" HorizontalAlignment="Left" Margin="144,209,0,0" VerticalAlignment="Top" Grid.Column="1" Height="25" Width="18"/>
+            <RadioButton x:Name="rbInterval1" Content="1V" HorizontalAlignment="Left" Margin="115,269,0,0" VerticalAlignment="Top"  GroupName="Interval" Height="14" Width="34" IsChecked="True"/>
+            <RadioButton x:Name="rbInterval2" Content="2V" HorizontalAlignment="Left" Margin="77,269,0,0" VerticalAlignment="Top" GroupName="Interval" Grid.Column="1" Height="14" Width="34"/>
+            <Label x:Name="label6" Content="空格键紧急停止" HorizontalAlignment="Left" Margin="126,403,0,0" VerticalAlignment="Top" Foreground="#7F000000" Grid.ColumnSpan="2" Height="25" Width="94"/>
+
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="161" Margin="432,331,0,0" VerticalAlignment="Top" Width="562">
+            <TextBox x:Name="tbReceivedData" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Width="243"/>
+            <TextBox x:Name="tbDrawedData" HorizontalAlignment="Left" Margin="330,41,-2,0" TextWrapping="Wrap" Width="234" IsReadOnly="True"/>
+            <Label x:Name="label" Content="接收数据" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="label1" Content="发送数据" HorizontalAlignment="Left" Margin="340,16,0,0" VerticalAlignment="Top"/>
+            <Canvas HorizontalAlignment="Left" Height="137" Margin="248,24,0,0" VerticalAlignment="Top" Width="75">
+                <Button x:Name="btRefresh" Content="刷新绘制" HorizontalAlignment="Left" Width="75" Height="32" Canvas.Top="24"/>
+            </Canvas>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="268" Margin="432,499,0,0" VerticalAlignment="Top" Width="562">
+            <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="268" Stroke="Black" VerticalAlignment="Top" Width="562"/>
+
+            <Button x:Name="btConnect" Content="连接" HorizontalAlignment="Left" Margin="244,206,0,0" VerticalAlignment="Top" Width="75" Click="btConnect_Click"/>
+            <ComboBox x:Name="cbCommunicatePort" Margin="244,41,125,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbBaud" Margin="244,102,125,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy" Content="端口" HorizontalAlignment="Left" Margin="153,41,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy1" Content="波特率" HorizontalAlignment="Left" Margin="153,102,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="tbDefautlDevice" Height="23" Margin="244,161,125,0" TextWrapping="Wrap" Text="USB 串行设备" VerticalAlignment="Top"/>
+            <Button x:Name="btDefDevice" Content="默认设备" HorizontalAlignment="Left" Margin="153,161,0,0" VerticalAlignment="Top" Width="75" Click="btDefDevice_Click"/>
+            <Label x:Name="lbSerialState" Content="串口未连接" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,10,0,0"/>
+        </Grid>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="100" Margin="1077,767,-159,-74" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btTestEnter" Content="TestEnter" HorizontalAlignment="Left" Margin="206,527,0,0" VerticalAlignment="Top" Width="70" Click="btTestEnter_Click" Height="21"/>
+        <Label x:Name="label7" Content="X" HorizontalAlignment="Left" Margin="39,491,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label7_Copy" Content="Y" HorizontalAlignment="Left" Margin="184,491,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbX" HorizontalAlignment="Left" Height="23" Margin="84,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"  MouseWheel="numberWheelchange" PreviewTextInput="tb_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="tbY" HorizontalAlignment="Left" Height="23" Margin="206,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"  MouseWheel="numberWheelchange" PreviewTextInput="tb_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"/>
+        <Label x:Name="label8" Content="Group" HorizontalAlignment="Left" Margin="39,523,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbLineGroup" HorizontalAlignment="Left" Margin="85,527,0,0" VerticalAlignment="Top" Width="69"/>
+    </Grid>
+</Window>

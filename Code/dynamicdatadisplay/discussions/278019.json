@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "692647",
+    "ThreadId": "278019",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I need to make scatter chart with about of 500000 points. I try to use the example http://msdn.microsoft.com/en-us/magazine/ff714591.aspx, but chart generates too slowly (~1 minute). Actually, i need only to rasterize a set of points, OpenGL does it for\r\n milliseconds. Can i do this with dynamic data display library?</p>\r\n",
+    "PostedDate": "2011-11-02T03:52:55.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

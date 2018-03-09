@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "An InvalidOperationException with the detail:\n \n Layout measurement override of element 'System.Windows.Shapes.Path' should not return PositiveInfinity as its DesiredSize, even if Infinity is passed in as available size.\n \nwhen using a HorizontalRange within a ChartPlotter if both of the following conditions are present:\n \n1. The HorizontalRange Value1 attribute is less than the current Y Axis minimum value\n \n2. The ChartPlotter is hosted by a Grid row with height set to Auto\n \nModifying the sample LineSample as show below will reproduce the problem.  \n \n \n \n \n \n    <Grid >\n        <Grid.RowDefinitions>\n            <RowDefinition Height=\"Auto\"></RowDefinition>\n        </Grid.RowDefinitions>\n            <c:ChartPlotter Name=\"plotter\"  Margin=\"10\" Grid.Row=\"0\">\n\t\t\t<c:RectangleHighlight Bounds=\"0.1, 0.6, 0.15, 0.2\" StrokeThickness=\"2\" Fill=\"MidnightBlue\"\n\t\t\t\t\t\t\t\t\t ToolTip=\"Sample region\"/>\n\t\t\t<c:HorizontalLine Value=\"0.5\" StrokeThickness=\"2\" ToolTip=\"Hamster was here\"/>\n\t\t\t<c:HorizontalLine Value=\"0.25\"/>\n\t\t\t<c:VerticalLine Value=\"0.4\"/>\n\t\t\t<c:VerticalLine Value=\"0.7\"/>\n\t\t\t<c:Segment StartPoint=\"0.3, 0.45\" EndPoint=\"0.5, 0.65\" Stroke=\"Green\" StrokeThickness=\"2\"\n\t\t\t\t\t\t\t\t StrokeDashArray=\"2\"/>\n\t\t\t<c:HorizontalRange Value1=\"-0.4\" Value2=\"0.5\" Fill=\"Green\"/>\n\t\t\t<c:VerticalRange Value1=\"0.1\" Value2=\"0.12\" Fill=\"Fuchsia\"/>\n \n\t\t\t<c:ViewportUIContainer Position=\"0.3,0.7\">\n\t\t\t\t<Button>Hello!</Button>\n\t\t\t</c:ViewportUIContainer>\n\t\t</c:ChartPlotter>\n    </Grid>\n \n \n \nAdding the following checks to the end of the four overrides of MeasureOverride in ViewportRectPanel doesn't resolve the problem\n \n            if (Double.IsPositiveInfinity(availableSize.Width))\n                availableSize.Width = 0;\n            if (Double.IsPositiveInfinity(availableSize.Height)) \n                availableSize.Height = 0;",
+    "LastUpdatedDate": "2013-02-21T17:36:53.45-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-06-30T14:06:48.463-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InvalidOperationException when using HorizontalRange",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 13641
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The same InvalidOperationException is thrown when using AutoSized Grid and VerticalRange.",
+      "PostedDate": "2010-09-17T06:43:49.513-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-09-17T06:43:53.367-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:53.45-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

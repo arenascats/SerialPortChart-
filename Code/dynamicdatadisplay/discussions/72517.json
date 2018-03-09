@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "247618",
+    "ThreadId": "72517",
+    "Html": "<p>I have a graph than has 0,0 as a lower limit - so I have &quot;plotter.Domain = new DataRect(0, 0, max, max);&quot; but the 0 labels on the graph are being clipped:</p>\r\n<p><img src=\"http://lh5.ggpht.com/_sZQr7K5nN3k/St2KGaLKEYI/AAAAAAAAeSo/_FZetaaT0A8/s800/clip.jpg\" alt=\"\"></p>\r\n<p>The same problems happens with the values at the top of the axis (8000 on the y-axis in this case), but I'm less concerned about that.</p>\r\n<p>How can I stop the 0 values being clipped on this graph?</p>",
+    "PostedDate": "2009-10-20T03:02:29.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247998",
+    "ThreadId": "72517",
+    "Html": "<p>Hi,</p>\r\n<p>in the most recent version of source code (changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 29117\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29117\">29117</a>) you can find a property IsStaticAxis of AxisControl class.</p>\r\n<p>For example, if you have HorizontalAxis axis = new HorizontalAxis(); then you can execute the following code: axis.AxisControl.IsStaticAxis = true;</p>\r\n<p>This will make axis labels that are close to sides of axis, to change their position so that they are no more clipped.</p>\r\n<p>&nbsp;</p>\r\n<p>By the way, as I see from the picture, toy have expanded D3 a little and created an area chart, isn't it?</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-21T00:55:55.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248558",
+    "ThreadId": "72517",
+    "Html": "<p>Thanks, that has fixed the problem with the zeros on the graph. However, it seems there's an issue with the high end. On this graph, which goes from 0 to 255 on the horizontal axis (it's a histogram for an 8bit image) the high values overlap each other:</p>\r\n<p><img src=\"http://lh5.ggpht.com/_sZQr7K5nN3k/SuBfRCw0s4I/AAAAAAAAegs/HD9CcmNEwfQ/s800/graph2.jpg\" alt=\"\"></p>\r\n<p>Also, I haven't expanded D3 for area charts - that was just a line graph showing a histogram of a 16bit image - so all the up and down lines squashed together make it look like an area graph, when really it's still a line graph.</p>",
+    "PostedDate": "2009-10-22T06:40:51.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248621",
+    "ThreadId": "72517",
+    "Html": "<p>Hi,</p>\r\n<p>I'll try to create some fix. Maybe there will be separate properties for left and right sides of axis.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-22T08:38:55.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251792",
+    "ThreadId": "72517",
+    "Html": "<p>Hmm.</p>\r\n<p>I don't like the fact that using IsStaticAxis ... moves the position of the label ...</p>\r\n<p>Is there a way to just not clip the labels?</p>\r\n<p>Thanks,</p>\r\n<p>Cory</p>",
+    "PostedDate": "2009-10-30T15:02:27.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252158",
+    "ThreadId": "72517",
+    "Html": "<p>Hi Cory,</p>\r\n<p>please take a look at changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 29226\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29226\">29226</a>, there is alternative solution, enabled by default.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-01T09:56:23.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252452",
+    "ThreadId": "72517",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I like that the labels no longer clip ... but I don't care for how the Y axis labels now appear 'on top' of the chart ... how do I turn that off ... so that the labels are once again on the side by the tick marks?</p>\r\n<p>By the way ... nice job with this&nbsp;library ...</p>\r\n<p>Cory</p>",
+    "PostedDate": "2009-11-02T08:07:37.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252523",
+    "ThreadId": "72517",
+    "Html": "<p>Fixed in changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 29239\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/29239\">29239</a>.</p>",
+    "PostedDate": "2009-11-02T11:51:18.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252860",
+    "ThreadId": "72517",
+    "Html": "<p>This works much better ... however I notice that it still clips the labels if you resize the graph small enough.</p>",
+    "PostedDate": "2009-11-03T07:56:13.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519561",
+    "ThreadId": "72517",
+    "Html": "\r\n<p>I am using version 0.3 and see no option for IsStaticAxis... and the clipping problems exactly as described in the first post above on both x- and y- axes persist.</p>\r\n<p>How to fix this ??</p>\r\n<p>I am using a plot with a HorizontalDateTimeAxis like this</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Window</span> <span style=\"color:red\">x:Class</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">CurrencyExchangeSample.Window1</span><span style=\"color:black\">&quot;</span>\r\n    <span style=\"color:red\">xmlns</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span style=\"color:black\">&quot;</span>\r\n    <span style=\"color:red\">xmlns:x</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://schemas.microsoft.com/winfx/2006/xaml</span><span style=\"color:black\">&quot;</span>\r\n\t\t<span style=\"color:red\">xmlns:c</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://research.microsoft.com/DynamicDataDisplay/1.0</span><span style=\"color:black\">&quot;</span>\r\n    <span style=\"color:red\">Title</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Window1</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">WindowState</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Maximized</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Grid</span><span style=\"color:blue\">&gt;</span>\r\n\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotter</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter.HorizontalAxis</span><span style=\"color:blue\">&gt;</span>\r\n\t\t\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">HorizontalDateTimeAxis</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">dateAxis</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n\t\t\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter.HorizontalAxis</span><span style=\"color:blue\">&gt;</span>\r\n\t\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Grid</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Window</span><span style=\"color:blue\">&gt;</span>\r\n\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-09T13:08:53.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "455692",
+    "ThreadId": "216100",
+    "Html": "I am making a line graph to display a decent amount of data at once.  However, when I have about 9,000 points on the screen at once, panning and zooming can be very slow and laggy. <br><br>\r\n\r\nHowever, sometimes there can be more points than this (when zoomed out) and it pans and zooms fine.<br><br>\r\n\r\nIs there any way for me to fix this?...I'm hoping that I'm just doing something wrong with the way I am adding data:<br><br>\r\n\r\n<p>\r\n <code>\r\nObservableDataSource&lt;float&gt; testOdsY1 = new ObservableDataSource&lt;float&gt;(channelData1);<br>\r\nObservableDataSource&lt;float&gt; testOdsY2 = new ObservableDataSource&lt;float&gt;(channelData2);<br>\r\n\r\n            ObservableDataSource&lt;float&gt; testOdsY3 = new ObservableDataSource&lt;float&gt;(channelData3);<br>\r\n            ObservableDataSource&lt;float&gt; testOdsY4 = new ObservableDataSource&lt;float&gt;(channelData4);<br>\r\n            ObservableDataSource&lt;float&gt; testOdsY5 = new ObservableDataSource&lt;float&gt;(channelData5);<br>\r\n            ObservableDataSource&lt;float&gt; testOdsY6 = new ObservableDataSource&lt;float&gt;(channelData6);<br>\r\n            ObservableDataSource&lt;Int64&gt; testOdsX = new ObservableDataSource&lt;Int64&gt;(timestampData);<br><br>\r\n\r\n            testOdsY1.SetYMapping(F =&gt; F);<br>\r\n            testOdsY2.SetYMapping(F =&gt; F);<br>\r\n            testOdsY3.SetYMapping(F =&gt; F);<br>\r\n            testOdsY4.SetYMapping(F =&gt; F);<br>\r\n            testOdsY5.SetYMapping(F =&gt; F);<br>\r\n            testOdsY6.SetYMapping(F =&gt; F);<br>\r\n            testOdsX.SetXMapping(I =&gt; I);<br><br>\r\n\r\n            CompositeDataSource compositeDataSource1 = new CompositeDataSource(testOdsX, testOdsY1);<br>\r\n            CompositeDataSource compositeDataSource2 = new CompositeDataSource(testOdsX, testOdsY2);<br>\r\n            CompositeDataSource compositeDataSource3 = new CompositeDataSource(testOdsX, testOdsY3);<br>\r\n            CompositeDataSource compositeDataSource4 = new CompositeDataSource(testOdsX, testOdsY4);<br>\r\n            CompositeDataSource compositeDataSource5 = new CompositeDataSource(testOdsX, testOdsY5);<br>\r\n            CompositeDataSource compositeDataSource6 = new CompositeDataSource(testOdsX, testOdsY6);<br><br>\r\n\r\n            LineGraph lg1 = topChart.AddLineGraph(compositeDataSource1, &quot;Channel 1&quot;);<br>\r\n            LineGraph lg2 = topChart.AddLineGraph(compositeDataSource2, &quot;Channel 2&quot;);<br>\r\n            LineGraph lg3 = topChart.AddLineGraph(compositeDataSource3, &quot;Channel 3&quot;);<br>\r\n            LineGraph lg4 = topChart.AddLineGraph(compositeDataSource4, &quot;Channel 4&quot;);<br>\r\n            LineGraph lg5 = topChart.AddLineGraph(compositeDataSource5, &quot;Channel 5&quot;);<br>\r\n            LineGraph lg6 = topChart.AddLineGraph(compositeDataSource6, &quot;Channel 6&quot;);<br><br>\r\n</code>\r\n</p>\r\n\r\nWhen it is lagging at its worst, the channel data (channelData1, channelData2, etc. all of which are lists of floats) contain 1530 points each.<br><br>\r\n\r\nBut when I am zoomed out, with each channel containing 1700 points each, I can zoom and pan fine.<br><br>\r\n\r\nPlease let me know if I am doing something ( or a lot of things :p ) wrong...I hope so because I am really depending on D3 for this project.<br><br>\r\n\r\nThank you for any help",
+    "PostedDate": "2010-06-15T08:49:52.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455712",
+    "ThreadId": "216100",
+    "Html": "<p>Hi,</p>\r\n<p>please wait for some weeks, we are going to publish DirectX line and marker chart. These charts should resolve your problem. I'm being so unclear in date because this part is being developed by another person and I didn't have time to talk to him to determine exact date.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-15T09:35:53.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455716",
+    "ThreadId": "216100",
+    "Html": "Thank you for your quick reply.  Please let me know when you get a better estimate of when these DirectX charts will become available.\r\n\r\nI still feel like it might be an issue on my part, as your &quot;Simulation&quot; sample does a good job with a decently large dataset.",
+    "PostedDate": "2010-06-15T09:43:46.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455718",
+    "ThreadId": "216100",
+    "Html": "<p>Can you please send me a sample that can reproduce your problem?</p>",
+    "PostedDate": "2010-06-15T09:46:42.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455733",
+    "ThreadId": "216100",
+    "Html": "I won't be able to send my current code.  I will try to reproduce the problem another way and get that to you.",
+    "PostedDate": "2010-06-15T10:14:10.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455744",
+    "ThreadId": "216100",
+    "Html": "I just changed my program over to how your simulation sample works (with threading, and appending data) and it still is bad when scrolling/zooming.  So I'm not sure where the problem lies anymore.",
+    "PostedDate": "2010-06-15T10:32:00.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455751",
+    "ThreadId": "216100",
+    "Html": "<p>The performance is directly related to how many lines WPF is having to draw, so if your points are very close in X and very far apart in Y, then WPF has to draw thousands of long lines and it is not designed to handle this situation with good perfromance. That is why the team is working on a DirectX rendering solution.</p>",
+    "PostedDate": "2010-06-15T10:43:45.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455796",
+    "ThreadId": "216100",
+    "Html": "Makes sense, thanks for the input. Here's hoping the DirectX version comes along soon.",
+    "PostedDate": "2010-06-15T12:52:14.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455803",
+    "ThreadId": "216100",
+    "Html": "I tried checking out the latest nightly build that looks like it has some DirectX stuff in it, but had a lot of errors getting it up and running.  Would the latest nightly give me a good idea of how much better performance I can get out of this?",
+    "PostedDate": "2010-06-15T13:17:40.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

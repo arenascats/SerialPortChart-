@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1203025",
+    "ThreadId": "529014",
+    "Html": "Hi,\r<br />\n<br />\nI am using a DateTimeAxis as my x-axis and would love to add the rolling window feature. However when I add the code below my graph only shows the date 1/1/0001 12:00:00 AM.<br />\n<pre><code>&lt;d3:ChartPlotter.FitToViewRestrictions&gt;\n      &lt;d3:FollowWidthRestriction Width=&quot;30&quot;/&gt;\n&lt;/d3:ChartPlotter.FitToViewRestrictions&gt;</code></pre>\n\nI'm guessing the issue has to do with the width and setting that to match a Datetime instead of a double.\r<br />\n<br />\nWondering if anyone has any ideas for making this work or if it can be done at all?<br />\n",
+    "PostedDate": "2014-02-05T07:55:26.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

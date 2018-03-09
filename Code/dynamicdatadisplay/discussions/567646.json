@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1305463",
+    "ThreadId": "567646",
+    "Html": "In a loop, I need to update d3 line graph for each iteration and have to take screenshot of all instance. Problem which I'm facing is &quot;linegraph is getting updated after come out of loop&quot; so plotter.screenshot giving me the same graph for all iteration. Any solutions for this?<br />\n",
+    "PostedDate": "2014-09-17T00:14:56.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

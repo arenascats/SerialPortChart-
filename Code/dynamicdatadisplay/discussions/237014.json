@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "530622",
+    "ThreadId": "237014",
+    "Html": "\r\n<p>Has anyone made a &lsquo;ruler&rsquo; control?</p>\r\n<p><br>\r\nSomething that works similar to the MapMagnifyingGlass control (or MagnifyingGlass but in a rectangle) but also has a mini X and Y axis. The idea is this would make it eaiser for the user to analysis the data without having to line it up with the axis at the\r\n bottom of screen.<br>\r\n<br>\r\n<br>\r\n</p>\r\n",
+    "PostedDate": "2010-12-03T05:22:09.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530708",
+    "ThreadId": "237014",
+    "Html": "Can you please illustrate your control's behavior and look by providing some images?<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n",
+    "PostedDate": "2010-12-03T07:54:49.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530729",
+    "ThreadId": "237014",
+    "Html": "\r\n<p>will do, BTW your CV link is broken.</p>\r\n",
+    "PostedDate": "2010-12-03T08:43:36.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530733",
+    "ThreadId": "237014",
+    "Html": "\r\n<p>Why do you think that my CV's link is broken? Is it point to&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a>?</p>\r\n<p>Is it possible to open&nbsp;<a href=\"http://dl.dropbox.com/u/585051/CV%20of%20Mikhail%20Brinchuk.pdf\">http://dl.dropbox.com/u/585051/CV%20of%20Mikhail%20Brinchuk.pdf</a>?</p>\r\n",
+    "PostedDate": "2010-12-03T08:47:08.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530926",
+    "ThreadId": "237014",
+    "Html": "\r\n<p>oh yeah, they work fine now (from home), maybe it was down for a while, couldn't hit it from work.</p>\r\n<p>Here is my fine art work describing what I'm talking about. Please don't pass this fine piece on as I've spend many weeks crafting it :)</p>\r\n<p><img src=\"http://dl.dropbox.com/u/2801585/Programming/DynamicDataDisplay.jpg\" alt=\"\"></p>\r\n<p>The idea is the inner square works follows the mouse but the axis are in the same ration the axis. Another varient may just be a simple ruler, i.e. perhaps just the bottom line of the inner square above, it'd just follow the mouse and the user could measure\r\n changes in the data without having to calculate in their heads.</p>\r\n<p>Just a thought, I'm more interested in the DirectX integration you guys are chatting about over here: http://d3commdev.codeplex.com/Thread/View.aspx?ThreadId=235398</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-03T14:27:36.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532125",
+    "ThreadId": "237014",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I have a question on this fine piece of art)</p>\r\n<p>What is a scale of miniplotter? Does it contain a visible rectangle which is simply a part of outer visible, or it zooms in? Can you please draw another picture with more clear scale of all axes?</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-12-06T22:43:28.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532271",
+    "ThreadId": "237014",
+    "Html": "\r\n<p>Ok maybe this is a simpler example. Lets call the control a ruler control, when you turn it on, it creates something that looks like a ruler. The measurements on the ruler are the same as the measurements on the x axis, if you zoom the chart and the x axis\r\n measurements change (for example, from seconds to milliseconds) so should the ruler measurements change from seconds to milliseconds. I think the tricky part is creating the measurements to be the same as that of the x axis.</p>\r\n<p>In the image below the user can see that the difference in the chart changes are equal to about 3, they then don't have to calculate 8-5 = 3 in their head. Simple example but the functionality provides more value when the numbers are harder.</p>\r\n<p>&nbsp;<img src=\"http://dl.dropbox.com/u/2801585/Programming/DynamicDataDisplay2.jpg\" alt=\"\"></p>\r\n",
+    "PostedDate": "2010-12-07T06:28:59.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

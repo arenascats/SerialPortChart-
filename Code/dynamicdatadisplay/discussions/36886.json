@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "122378",
+    "ThreadId": "36886",
+    "Html": "Hi,<br>\r\n<br>\r\nis 3D data visualization on the cards?<br>\r\n<br>\r\nthanks,<br>\r\n<br>\r\nDanny<br>\r\n",
+    "PostedDate": "2008-10-02T07:01:03.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123437",
+    "ThreadId": "36886",
+    "Html": "Hi! <br>\r\n<br>\r\nYes, 3D visualization is definitely in the plan. But I''m not sure about exact dates.<br>\r\n<br>\r\nCan you tell us about your specific requirements?<br>\r\n<br>\r\nWhat type of visualization&nbsp;do you need?&nbsp;&nbsp;Surfaces z&nbsp;= F(x,y)&nbsp;or &nbsp;isosurfaces F(x,y,z) = const or something else? <br>\r\n<br>\r\nWhat is the size of data and what is spatial structure? Is it rectangular grid or something more complex?<br>\r\n",
+    "PostedDate": "2008-10-07T04:40:23.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123877",
+    "ThreadId": "36886",
+    "Html": "<br>\r\nHi sberezin,<br>\r\n<br>\r\ngreat news.<br>\r\n<br>\r\nspecific requirements... well if I could choose:<br>\r\n<br>\r\nReal table data: <br>\r\n<br>\r\nin F# (do you use it? you should!):<br>\r\n<br>\r\nlet plot = Plot3D(ObservableCollection xValues, ObservableCollection yValues, Observable2DCollection zValues)<br>\r\n<br>\r\n// Rectangular grid good to start with.<br>\r\n// Bicubic splines for interpolation the surface. The collections would be updatable by slices, so that a single point or<br>\r\n// contiguous range could be update without redrawing the whole surface. <br>\r\n<br>\r\nplot.ZValues.[2 .. 3, 1] &lt;- [1; 2] // this would update the 2nd and 3rd rows in column 1.;<br>\r\n<br>\r\nlet me know if you want further details and keep up the good work!<br>\r\n<br>\r\nregards,<br>\r\n<br>\r\nDanny<br>\r\n<br>\r\n",
+    "PostedDate": "2008-10-08T14:46:09.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154393",
+    "ThreadId": "36886",
+    "Html": "Hello,<br>\r\n<br>\r\nAny update on supporting basic 3D graphs to represent &quot;R2=&gt;R&quot; functions?<br>\r\n<br>\r\nRegards.<br>\r\n<br>\r\nCarlos.\r\n",
+    "PostedDate": "2009-02-04T12:14:05.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "154661",
+    "ThreadId": "36886",
+    "Html": "Hello,<br>\r\n<br>\r\nCurrently DynamicDataDisplay doesn't have support of 3D graphs, but we have it in our plans.<br>\r\nThe only way you are able now to show R²→R functions is to plot an isoline; isolines will be included into next D3's release.<br>\r\n<br>\r\nRegards,<br>\r\nMikhail.\r\n",
+    "PostedDate": "2009-02-05T07:06:19.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "471626",
+    "ThreadId": "220985",
+    "Html": "<p>Hi everyone,</p>\r\n<p>I have a project where we have many diagnostic signals that need to be graphed. The number of charts and which graphs are on each chart is not known before the program is run, the user can add/remove charts and graphs at will. Now, the easy way would be to just have all graphs on the same chart, but because there are more than 100 signals and many of them are digital signals which overlap heavily, they need to be separated.</p>\r\n<p>The charts each have draggable &quot;cursors&quot; that display their x coordinate and the distance between them. I used a modified CursorCoordinateGraph to do this.</p>\r\n<p><a href=\"http://img8.imageshack.us/img8/9458/examplegraphs.jpg\">Here</a> is a screen shot of the existing setup. These graphs are in a ListBox that intercepts and handles the mouse events while the graphs are locked together so that they wont zoom/pan independently. The issue with that is that the draggable cursors I have won't work then either and it's kind of a messy solution.</p>\r\n<p>So, I need a way to have all of the graphs aligned for the x-axis and the cursors should also be the same across all charts.</p>\r\n<p>I guess my question is: Is there a built in way to sync the charts to view the same area or a better way to do this? I could just put each graph above the previous one, but I need the y-value to be correct for each graph so that isn't really acceptable.</p>\r\n<p>Thanks!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-23T07:13:12.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471665",
+    "ThreadId": "220985",
+    "Html": "<p>After some searching I found some other discussions related to this. Disregard this discussion unless someone has any tips! Thanks!</p>",
+    "PostedDate": "2010-07-23T08:37:20.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472723",
+    "ThreadId": "220985",
+    "Html": "<p>Hi aklein,</p>\r\n<p>&nbsp;</p>\r\n<p>I guess we are working on&nbsp;similar&nbsp;problem space. I have several graphs and the user has a list of series that he wants to plot. He is going to drag the series at run time. Can you point me to the discussion that you found. I am a new user to this lib. Its a Lib and I am just trying to get my head around the lib to see how I can customize the lib.</p>\r\n<p>If you have any questions in the context that you are working on I may be able to help you find answers too.&nbsp;</p>",
+    "PostedDate": "2010-07-26T09:56:12.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472820",
+    "ThreadId": "220985",
+    "Html": "<p>The following discussions may be relevant:</p>\r\n<ul>\r\n<li><span style=\"text-transform:none;text-indent:0px;border-collapse:separate;font:medium 'Times New Roman';white-space:normal;letter-spacing:normal;color:#000000;word-spacing:0px\"><span style=\"font-family:'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif;color:#6d8d34;font-size:12px;font-weight:bold\"><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=73812\">Sync visible area on multiple charts</a></span></span></li>\r\n<li><span style=\"text-transform:none;text-indent:0px;border-collapse:separate;font:medium 'Times New Roman';white-space:normal;letter-spacing:normal;color:#000000;word-spacing:0px\"><span style=\"font-family:'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif;color:#6d8d34;font-size:12px;font-weight:bold\"><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=75944\">How to sync the vertical axis tick width of 2 charts</a></span></span></li>\r\n</ul>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-26T13:34:46.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474220",
+    "ThreadId": "220985",
+    "Html": "<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=213919\">Synch Multiple Charts</a> is another relevant discussion.</p>\r\n<p>For my specific application, I just bind the viewport of a new chart to the viewport of the previous one. It's pretty easy. The only issue I had is that, when adding a new graph to a chart, you need to make sure all the graphs are visible. .FitToView() does not work for this because it unbinds the charts. Also, if any of the graphs are differently sized from others, they could be cut off when their chart is bound to another, smaller chart.</p>",
+    "PostedDate": "2010-07-29T05:37:44.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

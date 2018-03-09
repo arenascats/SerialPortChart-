@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "235538",
+    "ThreadId": "69226",
+    "Html": "<div><span style=\"font-size:x-small;font-family:Arial\">Really awesome work!</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">Thank you for sharing this - especially thank you for the Silverlight version.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">What are your plans for a 3D version of Dynamic Data Display?</span></div>\r\n<div>&nbsp;</div>\r\n<div>Check out the very nice 3D work &quot;<span id=\"ctl00_ArticleTopHeader_ArticleTitle\">High performance WPF 3D Chart&quot;&nbsp; - <a href=\"http://www.codeproject.com/KB/WPF/WPFChart3D.aspx\">http://www.codeproject.com/KB/WPF/WPFChart3D.aspx</a></span></div>\r\n<div><span>&nbsp;</span></div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">David Roh</span></div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\">McKinney, Texas</span></div>\r\n<div><span style=\"font-size:x-small;font-family:Arial\"><a>JK1@SoftwareByDavid.com</a></span></div>",
+    "PostedDate": "2009-09-17T05:26:00.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235652",
+    "ThreadId": "69226",
+    "Html": "<p>Hi David,</p>\r\n<p>Thank you for rating our work highly.</p>\r\n<p>We have some plans about 3D in D3, but currently they are not very clear for me. In several moths we will, as I think, support surfaces in 3D, markers and maybe something additional; but no precise dates and features for now.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail Brinchuk.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-17T09:37:08.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

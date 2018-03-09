@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "723072",
+    "ThreadId": "285624",
+    "Html": "\r\n<p>Is it possible to use the cursor with the DateTime-Axis?</p>\r\n<p>I use this syntax ang get values like 6,34E&#43;07 instead of hh:mm:ss - format</p>\r\n<p><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"></p>\r\n<p>&lt;d3:CursorCoordinateGraph Name = &quot;cursor&quot;/&gt;</p>\r\n<p><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\">&nbsp;</span></span></span></span>&lt;d3:AxisCursorGraph&gt;&lt;/d3:AxisCursorGraph&gt;</p>\r\n<p><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\">&nbsp;</span></span></span></span></p>\r\n<p><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"></span></span></span></p>\r\n</span></span></span></span>\r\n<p></p>\r\n",
+    "PostedDate": "2012-01-10T05:49:36.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "859945",
+    "ThreadId": "285624",
+    "Html": "\r\n<p>In your C# code, you can use the following example to format your graph's X-Axis tooltip to display Date/Time values rather than doubles.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>CursorCoordinateGraph ccg = <span style=\"color:blue\">new</span> CursorCoordinateGraph();\nccg.XTextMapping = x =&gt; dateAxis.ConvertFromDouble(x).ToString(CultureInfo.CurrentCulture);\n<em>YourChartControlName</em>.Children.Add(ccg);</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Hope this helps!</p>\r\n<p>Evan</p>\r\n",
+    "PostedDate": "2012-07-10T13:50:13.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

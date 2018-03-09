@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "251461",
+    "ThreadId": "73577",
+    "Html": "<p>I would like to change the background of the legend item on mouse over and trigger a command when the user click on a legend item.</p>\r\n<p>How do I do that?</p>",
+    "PostedDate": "2009-10-29T21:40:55.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252276",
+    "ThreadId": "73577",
+    "Html": "<p>Hi,</p>\r\n<p>you can insert the following code somewhere in the Legend.cs:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> Panel ContentPanel\r\n{\r\n     <span style=\"color:Blue\">get</span> { <span style=\"color:Blue\">return</span> stackPanel; }\r\n}\r\n</pre>\r\n</div>\r\n<p>This will enable you to have access to StackPanel that contains Legend's elements, which are of type LegendItem : ContentControl.</p>\r\n<p>Next changeset will contain this change, too.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-01T23:09:13.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "252607",
+    "ThreadId": "73577",
+    "Html": "<p>Thanks! :-)</p>",
+    "PostedDate": "2009-11-02T16:29:24.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262840",
+    "ThreadId": "73577",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>What is the recommended way, in your opinion, to change the LegendItems to be checkboxes, allowing the user to turn series on/off? &nbsp; Or should I just create my own legend of checkbox items, each corresponding to a data series? &nbsp;It would be easy for me to do this, but if there is some built-in mechanism which I have missed, I thought I'd ask.</p>\r\n<p>Thanks very much!</p>\r\n<p>E.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-02T10:22:57.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265720",
+    "ThreadId": "73577",
+    "Html": "<p>Hi,</p>\r\n<p>currently our legend doesn't allow such changes, and though we are developing new legend which will allow changing its items' templates, but it is not ready yet,</p>\r\n<p>so it would be quicker for you to create your own solution.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-10T07:16:03.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265748",
+    "ThreadId": "73577",
+    "Html": "<p>Sounds good.</p>\r\n<p>I just dynamically created as many checkboxes are there are series in my plotter and switched the Visibility as the checkboxes are toggled.</p>\r\n<p>Thanks for the response.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-10T08:02:21.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "487949",
+    "ThreadId": "225719",
+    "Html": "<p>I ma trying to specify range to view data using dataRect or viewportRect. Both of the cases work but if i want to zoom or pan, it doesnt work. Why this features getting restricted?</p>\r\n<p>&nbsp;var genericPlotter = ChtPlotter.GetGenericPlotter&lt;DateTime, int&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; genericPlotter.DataRect = new GenericRect&lt;DateTime, int&gt;(DateTime.Parse(&quot;15/01/1990&quot;), 0, DateTime.Now.AddMonths(12), 100);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //genericPlotter.ViewportRect = new GenericRect&lt;DateTime, int&gt;(DateTime.Parse(&quot;15/01/2010&quot;), 0, DateTime.Now.AddMonths(12), 100);</p>",
+    "PostedDate": "2010-09-01T19:15:48.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

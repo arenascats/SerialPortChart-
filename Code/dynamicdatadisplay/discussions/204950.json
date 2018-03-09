@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "418063",
+    "ThreadId": "204950",
+    "Html": "<p>I would like to show labels on the various data series instead of showing the labels using a legend (i.e. on a line chart). I have seen something similar in isolines example. Wondering if there is any such functionality provided already and if it's achievable inside a chart? Thanks</p>",
+    "PostedDate": "2010-03-14T21:32:07.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423944",
+    "ThreadId": "204950",
+    "Html": "<p>Hi,</p>\r\n<p>you can add an instance of ViewportHostPanel to plotter.Children and then add TextBlocks to it. To set a location of each textblock, use attached properties ViewportPanel.X and ViewportPanel.Y.</p>\r\n<p>Bestr regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-03-26T00:13:09.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I had a problem while changing ZIndex value in a MarkerElementPointGraph -> It changes, but the visual appearance is the same.\n \nAfter some debugging, I found that the problem is that this Marker \"Element\" Point Graph is using a grid to create the items (elements), and adds this auxiliary grid to the main Plotter. Thus, their ZIndex value is not changed when the MarkerElementPointGraph is changed.",
+    "LastUpdatedDate": "2013-02-21T17:36:50.647-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-08-25T03:53:40.923-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ZIndex problem with MarkerElementPointGraph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16457
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have just submitted a code patch (ID. 10273)",
+      "PostedDate": "2011-08-25T04:49:38.197-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:50.647-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

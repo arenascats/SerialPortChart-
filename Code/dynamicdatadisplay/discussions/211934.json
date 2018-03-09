@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "440390",
+    "ThreadId": "211934",
+    "Html": "<p>I'm looking to modify the foreground color of my contextmenu that I'm using with ChartPlotter.&nbsp; Can anyone give me some advice, I'm looking to do this in code as that is where I'm creating this plotter to be viewed in my WPF.</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<pre><pre>            ChartPlotter plotter = new ChartPlotter();\r\n            plotter.Children.Add(new Header()\r\n            {\r\n                Content = new TextBlock()\r\n                {\r\n                    Text = parametername,\r\n                    Margin = new Thickness(10),\r\n                    FontWeight = FontWeights.Bold\r\n                }\r\n            });\r\n            plotter.Children.Remove(plotter.Legend);\r\n            (plotter.MainVerticalAxis as NumericAxis).ShowMinorTicks = false;\r\n            (plotter.MainVerticalAxis as NumericAxis).\r\n                AxisControl.TicksPath.Stroke = new SolidColorBrush(Colors.LightGray);\r\n            (plotter.MainHorizontalAxis as NumericAxis).ShowMinorTicks = false;\r\n            (plotter.MainHorizontalAxis as NumericAxis).\r\n                AxisControl.TicksPath.Stroke = new SolidColorBrush(Colors.LightGray);\r\n\r\n            switch (type)\r\n            {\r\n                case DisplayType.Profile:\r\n                    CreateProfileView(plotter, parameterindex, data, false);\r\n                    break;\r\n                case DisplayType.Spots:\r\n                    CreateSpotsView(plotter, parameterindex, data, false);\r\n                    break;\r\n                case DisplayType.Numbers:\r\n                    CreateTextView(plotter, parameterindex, data, false);\r\n                    break;\r\n                case DisplayType.Map:\r\n                    CreateMapView(plotter, parameterindex, data, false);\r\n                    break;\r\n            }\r\n\r\n</pre>\r\n</pre>\r\n</p>",
+    "PostedDate": "2010-05-07T08:51:18.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "436299",
+    "ThreadId": "210799",
+    "Html": "<p>Hi,</p>\r\n<p>I am displaying dates on the x-axis where the xaxis labels are rotated via the following snippet, the issue is that when the dates are close to each other they start overlapping, is there a way i can show/hide axis labels when i zoom-in/out depending if they can fit without overlapping</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><img src=\"http://i.imgur.com/8UUVs.jpg\" alt=\"\"></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  GenericLocationalLabelProvider&lt;CustomXAxisInfo, double&gt;  labelProvider = new GenericLocationalLabelProvider&lt;CustomXAxisInfo,  double&gt;(customXAxisLabels, labels =&gt; labels.Name);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GenericLocationalTicksProvider&lt;CustomXAxisInfo,  double&gt; ticksProvider = new  GenericLocationalTicksProvider&lt;CustomXAxisInfo,  double&gt;(customXAxisLabels, labels =&gt; labels.Coordinate);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; axis.LabelProvider = labelProvider;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; axis.TicksProvider = ticksProvider;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; axis.LabelProvider.SetCustomView((li, uiElement) =&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FrameworkElement element = (FrameworkElement)uiElement;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; element.LayoutTransform = new RotateTransform(-90, 0,  0);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks much.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-27T22:13:20.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436304",
+    "ThreadId": "210799",
+    "Html": "<p>Hi,</p>\r\n<p>Use custom ticks</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=209121\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=209121</a></p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2010-04-27T22:33:49.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436869",
+    "ThreadId": "210799",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for the info, in my case I am not using HorizontalDateTimeAxis, is there another TicksProvider i can use in this case?</p>",
+    "PostedDate": "2010-04-28T21:59:35.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436955",
+    "ThreadId": "210799",
+    "Html": "<p>Never mind i created CustomGenericLocationalTicksProvider and it worked like a charm... Thanks though.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; public ITicksInfo&lt;TAxis&gt; GetTicks(Range&lt;TAxis&gt; range, int ticksCount)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnsureSearcher();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //minResult = searcher.SearchBetween(range.Min, minResult);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //maxResult = searcher.SearchBetween(range.Max, maxResult);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minResult = searcher.SearchFirstLess(range.Min);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxResult = searcher.SearchGreater(range.Max);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Double minRange = range.Min.ToDouble();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Double maxRange = range.Max.ToDouble();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Double minStep = (maxRange - minRange)*.10;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!(minResult.IsEmpty &amp;&amp; maxResult.IsEmpty))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int startIndex = !minResult.IsEmpty ? minResult.Index : 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int endIndex = !maxResult.IsEmpty ? maxResult.Index : collection.Count - 1;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count = endIndex - startIndex + 1;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TAxis[] ticks = new TAxis[count];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double lastVal = 0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = startIndex; i &lt;= endIndex; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var val = axisMapping(collection[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(val.ToDouble() - lastVal &gt; minStep)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ticks[i - startIndex] = val;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastVal = val.ToDouble();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br><br></p>",
+    "PostedDate": "2010-04-29T01:27:06.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

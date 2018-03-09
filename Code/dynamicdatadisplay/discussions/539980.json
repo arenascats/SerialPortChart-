@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1226081",
+    "ThreadId": "539980",
+    "Html": "How add text to any point.<br />\nExample:<br />\n<a href=\"http://fastpic.ru/session/2014/0324/p1X5ibd6Sm.html\" rel=\"nofollow\">TEXT</a><br />\n",
+    "PostedDate": "2014-03-24T09:31:49.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1227433",
+    "ThreadId": "539980",
+    "Html": "I'm found.\r<br />\n<br />\nxaml:<br />\n<pre><code>    &lt;d3:ChartPlotter Name=&quot;plotter1&quot; Grid.Row=&quot;1&quot; Margin=&quot;0&quot; &gt;\n\n        &lt;d3:ChartPlotter.MainHorizontalAxis&gt;\n            &lt;d3:HorizontalDateTimeAxis Name=&quot;dateAxis1_Water&quot; /&gt;\n        &lt;/d3:ChartPlotter.MainHorizontalAxis&gt;\n\n    &lt;/d3:ChartPlotter&gt;\n</code></pre>\n\nin code c#:\r<br />\n<br />\nMicrosoft.Research.DynamicDataDisplay.Charts.PositionalViewportUIContainer t_ssv = new PositionalViewportUIContainer();<br />\n<pre><code>                t_ssv.Position = new Point(dateAxis1_Water.ConvertToDouble(listFromFile[i].Time), listFromFile[i].Value);\n                t_ssv.Content = new Label { Content = listFromFile[i].Value.ToString(), FontSize = 12, FontWeight = FontWeights.Bold, Background = new SolidColorBrush(Colors.White) };\n                t_ssv.OnPlotterAttached(plotter1);</code></pre>\n\n",
+    "PostedDate": "2014-03-27T09:12:26.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

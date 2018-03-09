@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "899432",
+    "ThreadId": "391656",
+    "Html": "\r\n<p>Hi,&nbsp;</p>\r\n<p>I'm quit new to this great library, and i have a simple Q that i cant seem to find an answer for in the discussion board history, which makes me feel it is even more simple than what i think... :)</p>\r\n<p>Im have a general porpuse plotter in my gui tool, which the user can choose which graph he would like to plot on. I want to change the axis labels accordingly. It seems i can only set in advance the axes titels by hard coding them into the xaml.&nbsp;</p>\r\n<p>is there a simple way to do that?</p>\r\n<p>thanks,&nbsp;</p>\r\n<p>Ido</p>\r\n<p>&nbsp;</p>\r\n<p>Edit: same to the title, and infect all strings in &nbsp;a graph. can those be changed dynamically during runtime?</p>\r\n",
+    "PostedDate": "2012-08-15T01:59:54.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "937135",
+    "ThreadId": "391656",
+    "Html": "<p>Isn't there anyone who fixed this problem? I tried it myself, but did not come to any conclusion yet...</p>",
+    "PostedDate": "2012-11-06T01:27:24.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "937144",
+    "ThreadId": "391656",
+    "Html": "\r\n<p>yea, it's easy :)</p>\r\n<p>just name your axe in the xaml, and then in the code use the name to change the titels:</p>\r\n<p>in the xaml:<span style=\"color:blue\">&nbsp;</span></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\"><div style=\"color:black; background-color:white\"><pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">HorizontalAxisTitle</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotterXtitle</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\n <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span></pre>\n</div>\n</span></pre>\r\n</div>\r\n<p>and in the code:</p>\r\n<p>plotterXtitle.Content = <span style=\"color:#a31515\">&quot;Time(sec)&quot;</span>;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-06T01:54:41.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "937146",
+    "ThreadId": "391656",
+    "Html": "<p>Of course EASY :D Very Easy... That's the problem with all this programming... The last thing I thought about is the easy way...&nbsp;</p>\r\n<p>Thank you very much!!!!</p>",
+    "PostedDate": "2012-11-06T01:57:37.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1472920",
+    "ThreadId": "391656",
+    "Html": "And how would you do it if you created the axis in code?<br />\n<pre><code>plotter. Child(Axis)</code></pre>\n\nThere is no Axis.Title reference to add the name of it.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2016-05-09T16:14:49.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

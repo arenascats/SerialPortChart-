@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "986101",
+    "ThreadId": "429451",
+    "Html": "\r\n<p>How can i make the ChartPlotter zoom effect only the X-Axis, while the Y-Axis stays the same?</p>\r\n",
+    "PostedDate": "2013-01-13T05:42:26.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "987389",
+    "ThreadId": "429451",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Its not possible to zoom for only one Axis. (I didn't check in the latest version).</p>\r\n<p>You can write your own custom zooming. It is very easy to write custom zooming and you will havev full control over zooming. I did it for my application.</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>\r\n",
+    "PostedDate": "2013-01-15T20:52:03.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "988742",
+    "ThreadId": "429451",
+    "Html": "\r\n<p>I am interested in customizing zoom and pan behavior in WPF version of D3.&nbsp; Can someone post an example of how to do this? When a user pans or zooms, I need to repopulate plotter with more details (e.g., denser curve data then shown at home view).</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-18T07:17:32.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990669",
+    "ThreadId": "429451",
+    "Html": "\r\n<p>Hi</p>\r\n<p>You can do some thing like this,</p>\r\n<p>In mouse down event , when mouse is clicked -</p>\r\n<ul>\r\n<li>store mouse positions </li><li>Create VerticalRange/HorizontalRange </li><li>Add this to chart children </li></ul>\r\n<p>Move the mouse</p>\r\n<ul>\r\n<li>When mouse is moved , Change the Value2 of VerticalRange/HorizontalRange( This is to indicate that you are making zoom)\r\n</li></ul>\r\n<p>When Mouse is Up</p>\r\n<ul>\r\n<li>Remove VerticalRange/HorizontalRange from Char Children </li><li>Make New View port Rect with old&nbsp;mouse position(i.e Mouse position when you Press mouse down) and mouse positions at mouse Up time\r\n</li><li>Update Chart ViewPort with the new View Port -some thing like this new Rect(xmin, 0, xmax-xmin, 100)\r\n</li><li>Change Axis limits like &quot;AxisY.SetConversion(0, ymin,100, ymax)&quot; ----&nbsp;(This conversion is with respect to 0,100)R\r\n</li></ul>\r\n<p>Best Regards</p>\r\n<p>Ravi.</p>\r\n",
+    "PostedDate": "2013-01-22T21:19:37.91-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "997681",
+    "ThreadId": "429451",
+    "Html": "Hi Ravi,\r<br />\n<br />\ncan you please send me or add to your message a full example in <strong>code</strong> of custom zoom.\r<br />\n<br />\nthanks.<br />\n",
+    "PostedDate": "2013-02-06T22:12:58.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1001670",
+    "ThreadId": "429451",
+    "Html": "Hi\r<br />\n<br />\nI will try in to do it in couple of days.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-02-15T00:56:00.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

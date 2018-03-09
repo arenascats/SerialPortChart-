@@ -1,0 +1,156 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Please take a look at new changeset. This bug should be fixed there.",
+    "ClosedDate": "2009-11-02T11:49:59.66-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I was working with build 28841, then I change to the last one.\nAnd pan started to have problems, the graphics moves well but the axis don't.\nAny doubts ask me.\nThanks",
+    "LastUpdatedDate": "2013-05-16T04:53:48.503-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-10-24T11:55:20.21-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Pan with problems in last versions",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10824
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3467,
+      "FileName": "TesteErroDynamic.zip",
+      "DownloadUrl": ".\\3467"
+    },
+    {
+      "FileId": 3484,
+      "FileName": "D3PanningProblem.zip",
+      "DownloadUrl": ".\\3484"
+    },
+    {
+      "FileId": 3489,
+      "FileName": "stillproblems.jpg",
+      "DownloadUrl": ".\\3489"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi,\r\ncan you please name, for example, the sample in which axes are working wrong?\r\n\r\nMikhail.",
+      "PostedDate": "2009-10-25T04:57:35.65-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Currently I'm unable to reproduce this, though there really were changes in axes, that were targeted to improve their stability.",
+      "PostedDate": "2009-10-25T08:36:39.827-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "When I was triyng to simulate the odd behavior, I found out that is a performance problem.\r\nWith 10 ViewportPolyline with 10 points the problem didn't happen. With 100 polylines and 100 points the problem happen.\r\nBut with a previous version this didn't  happen. \r\nWith the improvement in stability we lose some performance.\r\n\r\nRafael Carlos",
+      "PostedDate": "2009-10-25T15:08:43.16-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-25T15:08:48.38-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi, I have noticed some lag in axes update, will try to fix it. Thanks for your sample!",
+      "PostedDate": "2009-10-26T11:01:48.63-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-30T02:54:59.277-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I reproduced the problem on a 29117 build (but I had the same problem on a 0.3 version), I attach a small project that causes the problem. You just have to frantically pan from left to right and you can see that the plotted data (that are supposed to start from 0 on X axis) start to move across  the line of the 0 value.\r\n\r\nIn the attachment you find an .avi, it is the screencast showing the problem (it ends with a large displacement between the data and the axis)\r\n",
+      "PostedDate": "2009-10-30T06:54:37.733-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-30T06:54:42.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "sorry I just noticed the comments put the most recent on the top, and that an example had been already sent.",
+      "PostedDate": "2009-10-30T06:56:30.807-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Soon I'll upload a version with this problem fixed.",
+      "PostedDate": "2009-10-30T08:55:05.77-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-01T09:53:55.52-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I still have the problem.. and some other problem on the axis labels as well.\r\n\r\nI attach a screenshot",
+      "PostedDate": "2009-11-02T02:43:04.297-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-02T02:43:05.267-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Fixed in changeset 29226, if not - please report about it.\r\n\r\n\n\n** Closed by Thecentury 11/1/2009 9:53 AM",
+      "PostedDate": "2009-11-02T09:42:16.57-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-02T09:42:17.713-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-02T11:49:59.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I tested the build 29239, now the axis labels are ok, but I'm still able to displace the axis with respect of the data by panning (using the example I've attached here D3PanningProblem.zip)",
+      "PostedDate": "2009-11-03T01:35:08.48-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Teudimundo, you should not call dataSource.RaiseDataChanged() on every viewport's property change. Then there will be no problems with the chart.",
+      "PostedDate": "2009-11-03T04:23:36.387-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:56.053-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:48.503-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

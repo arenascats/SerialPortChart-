@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "684175",
+    "ThreadId": "275879",
+    "Html": "\r\n<p>Is it possible to create such model?</p>\r\n",
+    "PostedDate": "2011-10-14T01:34:04.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "684182",
+    "ThreadId": "275879",
+    "Html": "<p>Hi,</p>\r\n<p>This is possible. Try this,&nbsp; this works for me.</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>CursorCoordinateGraph cursorCoordinateGraph = <span style=\"color: blue;\">new</span> CursorCoordinateGraph();\r\nCursorCoordinateGraph cursorCoordinateGraph1 = <span style=\"color: blue;\">new</span> CursorCoordinateGraph();\r\n<span style=\"color: blue;\">public</span> MainWindow()\r\n{\r\n            InitializeComponent();\r\n            <span style=\"color: blue;\">this</span>.plotter.Children.Add(cursorCoordinateGraph);\r\n            <span style=\"color: blue;\">this</span>.plotter.Children.Add(cursorCoordinateGraph1);\r\n            <span style=\"color: blue;\">this</span>.plotter.MouseMove += <span style=\"color: blue;\">new</span> MouseEventHandler(plotter_MouseMove);\r\n}\r\n<span style=\"color: blue;\">void</span> plotter_MouseMove(<span style=\"color: blue;\">object</span> sender, MouseEventArgs e)\r\n{\r\n            <span style=\"color: green;\">//cursorCoordinateGraph.Position = new Point(e.GetPosition(cursorCoordinateGraph).X + 10.0d, e.GetPosition(cursorCoordinateGraph).Y + 10.0d);</span>\r\n            cursorCoordinateGraph1.Position = <span style=\"color: blue;\">new</span> Point(e.GetPosition(cursorCoordinateGraph1).X + 50.0d, e.GetPosition(cursorCoordinateGraph1).Y + 50.0d);\r\n}\r\n</pre>\r\n</div>\r\n<p>You have to control visibility of cursorcoordinate lines and position.</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-10-14T01:59:13.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "684191",
+    "ThreadId": "275879",
+    "Html": "<p>Thank you very much. I will try to use this technique.</p>\n<p>&nbsp;</p>\n<p>I have seen different discussions about CursorCoordinateGraph and still have not realized how to make such thing that on the instercest point of ccg and linegraph I will get a textblock with intersect coordinates&nbsp;</p>\n<p>how can I set those textblock near intersect point?&nbsp;</p>\n<p>May be the way to achive this is to use datafollowchart ?</p>\n<p>&nbsp;</p>\n<p>I made it =)</p>\n<p>I wish I knew xaml &nbsp;deeper))</p>",
+    "PostedDate": "2011-10-14T02:23:27.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

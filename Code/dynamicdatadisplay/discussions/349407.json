@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "813323",
+    "ThreadId": "349407",
+    "Html": "\r\n<p>Hello All,</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;I want to draw a graph like the one that can be seen in simulation samples a dynamic graph.But I want to go a bit step ahead.I want to plot say 3 lines in graph and all three have different x-axis and\r\n same y-axis same chart or grid.This would be done in WPF .Also I want to draw the x-axis and y-axis&nbsp;pro grammatically.But&nbsp;don't&nbsp;know how and where to start.Any samples or links would be great help.</p>\r\n<p>&nbsp;</p>\r\n<p>I hope I am clear .</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n",
+    "PostedDate": "2012-03-20T19:15:14.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

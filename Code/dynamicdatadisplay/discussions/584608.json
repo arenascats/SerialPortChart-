@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1359829",
+    "ThreadId": "584608",
+    "Html": "Hi,\r<br />\n<br />\nI use Dynamic Data Display to display live distance measurements from a ranging sensor.\r<br />\n<br />\nThe problem I have is when there is no target within the range of the sensor. \r<br />\n<br />\nCurrently in this instance I plot a value 'off the scale', however this produces a vertical line from the last valid point to the top of the graph. I would instead like to represent this simply by a break in the line graph but see no way to do this.\r<br />\n<br />\nPresumably if a line graph is represented by a number of points, connected by line segments, there must be a way to skip line segments. Does anyone know of a way to achieve this.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2015-03-04T07:32:59.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359964",
+    "ThreadId": "584608",
+    "Html": "Hi\r<br />\n<br />\nYou cannot break the line. DDD does not support this.\r<br />\nthink of using two seperate lines.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2015-03-04T22:39:04.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360047",
+    "ThreadId": "584608",
+    "Html": "Thanks Ravi,\r<br />\n<br />\nThere would be potentially a lot of breaks in the plot so this would result in a number of individual lines drawn and this would be difficult to manage. The data is live and so performance is also an issue.\r<br />\n<br />\nI have a workaround where I draw over the vertical lines in the background colour, however this introduces gaps in the gridlines. I can (hopefully) remove the gridlines. \r<br />\n \r<br />\nI wonder if it would be difficult to add this feature myself. As i mentioned before, if the line graph is represented by a number of points connected by line segments, would it be possible for me to add a flag to the observable data source to decide if the segments should be drawn or not. I am not sure where in the class model to implement this though.\r<br />\n<br />\nAny ideas.\r<br />\n<br />\nThanks,\r<br />\n<br />\nMarc<br />\n",
+    "PostedDate": "2015-03-05T04:20:54.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

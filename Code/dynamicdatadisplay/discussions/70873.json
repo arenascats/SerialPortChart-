@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "241554",
+    "ThreadId": "70873",
+    "Html": "<p>Hi,</p>\r\n<p>I'm new to D3 and I couldn't find a way to auto scale axes. I thought &quot;fit to view&quot; was doing that; I mean the axes were automatically scaled to fit the all shapes in plotter. We are using ZedGraph and there is an AxisChange method on GraphControl which does that. I searched the posted threads and seen that the this is done manually by setting the appropriate DataRect to the Plotter.Viewport.Visible.</p>\r\n<p>But we need this to be done automatically. Is this possible?</p>\r\n<p>Thanks in advance</p>",
+    "PostedDate": "2009-10-02T18:15:07.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245623",
+    "ThreadId": "70873",
+    "Html": "<p>Hi,</p>\r\n<p>if you have something inside plotter that has a content bounds (e.g., line chart or marker chart), viewport will respect their content bounds and FotToView method will set to Visible such a rectangle that contains all charts' data.</p>\r\n<p>Also you can manually set the visible area of plotter using its plotter.Visible property.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T08:02:31.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

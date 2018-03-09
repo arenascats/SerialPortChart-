@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "693323",
+    "ThreadId": "278200",
+    "Html": "\r\n<p>How come this works:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">using</span> (DataContext context = <span style=\"color:blue\">new</span> DataContext())\r\n{\r\n    <span style=\"color:blue\">var</span> data = <span style=\"color:blue\">from</span> x <span style=\"color:blue\">in</span> context.Table1\r\n               <span style=\"color:blue\">select</span> (<span style=\"color:blue\">new</span> GraphPoint(x.Field1, x.Table2.Field1));\r\n\r\n    ObservableDataSource points = <span style=\"color:blue\">new</span> ObservableDataSource();\r\n    points.AppendMany(data);\r\n    plotter.AddLineGraph(points, 2.0f);\r\n}</pre>\r\n</div>\r\n<p></p>\r\n<p>And this doesn't:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">using</span> (DataContext context = <span style=\"color:blue\">new</span> DataContext())\r\n{\r\n    <span style=\"color:blue\">var</span> data = <span style=\"color:blue\">from</span> x <span style=\"color:blue\">in</span> context.Table1\r\n               <span style=\"color:blue\">select</span> (<span style=\"color:blue\">new</span> GraphPoint(x.Field1, x.Table2.Field1));\r\n\r\n    ObservableDataSource points = <span style=\"color:blue\">new</span> ObservableDataSource(data);\r\n    plotter.AddLineGraph(points, 2.0f);\r\n}</pre>\r\n</div>\r\n<p></p>\r\n<p>It compiles and runs without errors but just doesn't add the graph to the plot.</p>\r\n<p>Does this make sense to anyone?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-11-03T07:04:24.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "693331",
+    "ThreadId": "278200",
+    "Html": "<p>Nevermind. I think the problem is due to the \"data\" variable being disposed when the context goes out of scope.</p>",
+    "PostedDate": "2011-11-03T07:18:15.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

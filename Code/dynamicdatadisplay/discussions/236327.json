@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "528025",
+    "ThreadId": "236327",
+    "Html": "\r\n<p>I have ObservableCollection which holds the data points for 3 lineCharts, and this&nbsp;ObservableCollection is dynamically updated.</p>\r\n<p>can I create a view of the my data source, and bind the view to the line chart?</p>\r\n<p>thanks</p>\r\n",
+    "PostedDate": "2010-11-28T20:07:34.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "528038",
+    "ThreadId": "236327",
+    "Html": "Hi,\r\n<div>I have newer worked with CollectionView, so can you please tell me how do you use it, where do you ues it (from XAML or from C#), and how it works. Can you please provide a documentation links for this class?<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-11-28T21:31:50.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

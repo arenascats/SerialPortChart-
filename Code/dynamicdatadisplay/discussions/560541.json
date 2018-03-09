@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1287903",
+    "ThreadId": "560541",
+    "Html": "In my daily work, I faced an issue regarding WPF XAML editor. For example, I will use Dynamic Data Display in my project. Firstly, I will add the DynamicDataDisplay.DLL to my project. And then I will add a specific xmlns for this DLL. But I found there is no IntelliSense for the added DLL, I shared the screenshot on my OneDrive. \r<br />\n<a href=\"https://onedrive.live.com/redir?resid=6FF216CBAAA91C6%21351\" rel=\"nofollow\">https://onedrive.live.com/redir?resid=6FF216CBAAA91C6%21351</a>\r<br />\n<br />\nHere is my project, <a href=\"https://onedrive.live.com/redir?resid=6FF216CBAAA91C6%21350\" rel=\"nofollow\">https://onedrive.live.com/redir?resid=6FF216CBAAA91C6%21350</a>\r<br />\n<br />\nAs you can see, I have referenced the DLL in my XAML Code, but the editor give me the error about \r<br />\n<br />\n<em>The type 'd3:ChartPlotter' was not found. Verify that you are not missing an assembly reference and that all referenced assemblies have been built.</em>\r<br />\n<br />\nWhen I clicked the reloaded the designer. I tested this issue on VS 2010 SP1/VS 2013 Update2. But if I build this application. No errors, and it runs OK.\r<br />\n<br />\nI am not an English speaker. if you cannot understand my question. please feel free to let me know. I will clarify it.\r<br />\n<br />\nAny help would be appreciated! Thank You very much! :)<br />\n",
+    "PostedDate": "2014-08-07T23:50:11.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

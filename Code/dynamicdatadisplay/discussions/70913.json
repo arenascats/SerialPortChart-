@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "241725",
+    "ThreadId": "70913",
+    "Html": "<p>Hi,</p>\r\n<p>Is it possible to show markers on ViewportPolygon? As much as I've seen from the samples the markers could only be specified when using ChartPlotter.AddLineGraph().</p>\r\n<p>Thanks in advance</p>",
+    "PostedDate": "2009-10-03T13:49:27.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245607",
+    "ThreadId": "70913",
+    "Html": "<p>Hi,</p>\r\n<p>what do you mean saying 'to show markers on ViewportPolygon'? Do you need a marker placed at each point of such polygon? You can try to use the newer version of markers, which is situated in DynamicDataDisplay.Markers.dll and has samples in NewMarkersSample project at DevSamples folder.</p>\r\n<p>You'll need to create a DevMarkerChart, set its MarkerBuilder property to an instance of MarkerBuilder (this is a thing that describes how markers are looking), for example, an EllipseMarker of CrossMarker or something custom build from WPF's template, and that assign your data (e.g., a collection of points - positions of each marker) to its ItemsSource property.</p>\r\n<p>&nbsp;</p>\r\n<p>Do not hesitate to ask more questions.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T07:44:00.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

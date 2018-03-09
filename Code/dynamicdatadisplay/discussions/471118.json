@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1128913",
+    "ThreadId": "471118",
+    "Html": "Hi , \r<br />\n<br />\nI want to have a barplot as following : \r<br />\n<br />\n<img src=\"http://i39.tinypic.com/i258bd.png\" alt=\"Image\" />\r<br />\n<br />\nSome bar plots, each having a title on top of it. To do this, I use following code : <br />\n<pre><code>Microsoft.Research.DynamicDataDisplay.Charts.RectangleHighlight T = new Microsoft.Research.DynamicDataDisplay.Charts.RectangleHighlight();\n\nMicrosoft.Research.DynamicDataDisplay.Charts.ViewportUIContainer Tt = new Microsoft.Research.DynamicDataDisplay.Charts.ViewportUIContainer();\n\nT.Bounds = new Rect(Drawing_Start_X, Drawing_Start_Y, Width, Height);\n            T.Fill = new SolidColorBrush(Colors.DodgerBlue);\n            T.Stroke = new SolidColorBrush(Colors.Black);\n            T.StrokeThickness = Stroke_Thickness;\n            Tt.Position = new Point(Drawing_Start, Height);\n            Tt.Content = new Label { Content = &quot;Total Peaks&quot;, FontSize = 12, FontWeight = FontWeights.Bold, Background = new SolidColorBrush(Colors.White) };</code></pre>\n\nThis works fine on a big screen ! \r<br />\nWhen screen size is changes or some zoom-in\\out , the Rectangles are fine, but the texts become quite messy (their render size is not changing, so they will be rendered either so big or small regarding the bars). for example : \r<br />\n<br />\n<img src=\"http://i39.tinypic.com/fopq95.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-11-25T12:48:52.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "593442",
+    "ThreadId": "252937",
+    "Html": "\r\n<p>Is there any way to highlight the nearest point in the graph related to my mouse cursor position? I am adding 2 line Graphs to the plotter. Now when I keep the mouse on the chart control the closest point near to the mouse should be highlighted. I have seen\r\n sample codes such as 'CircleElementPointMarker' but here all the available points would be highlighted. I dont want this feature. Just need only one point to be highlighted.</p>\r\n<p>Any help would be greatly appreciated.</p>\r\n<p><span style=\"font-family:Times New Roman\"><br>\r\n</span></p>\r\n",
+    "PostedDate": "2011-04-07T05:05:33.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

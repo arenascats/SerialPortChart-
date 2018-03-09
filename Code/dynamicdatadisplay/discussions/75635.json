@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "258776",
+    "ThreadId": "75635",
+    "Html": "<p>I made some tests using the Bitmap Based Chart, and I made a line chart (actually a polyline drawed on-demmand according my visible area), but I got some problems with the Y Axis. I would know if there is a easier way to do that (draw a bitmap line using a LineChart).</p>",
+    "PostedDate": "2009-11-19T10:16:16.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261099",
+    "ThreadId": "75635",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Sorry, but actually I didn't fully understand you question. BitmapBasedChart is a base class for charts that are rendered on demand into bitmap. Why do you need render polyline into bitmap? What problems did you have with Y axis?</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-27T02:06:02.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

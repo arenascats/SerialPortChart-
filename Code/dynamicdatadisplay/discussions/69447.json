@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "236320",
+    "ThreadId": "69447",
+    "Html": "<p>I really can not figure out how to add scrollbar to the chart so user can scroll vertically. Can you help?</p>",
+    "PostedDate": "2009-09-18T19:24:31.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238753",
+    "ThreadId": "69447",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>This feature is not fully implemented for now in DynamicDataDisplay. There is a class <strong>HorizontalScrollBar</strong>, instance of which can be added to plotter.Children. This <strong>HorizontalScrollBar </strong>takes values minimal and maximal values of its scrollbar from plotter.Viewport.Domain property, which is a rectangle that limits movements of all charts (it limits values of Viewport.Visible property). Also there is a <strong>VerticalScrollbar </strong>class, but it is not ready as it works wrongly. I didn't yet have enough time to fix it, maybe you will be more&nbsp;successful&nbsp;in performing this task. I'm not sure if this class is in our latest release, but it should be available in source code of our library.</p>\r\n<p>If I have some extra time, I may spend it on trying to fix <strong>VerticalScrollBar</strong>, but I'm not giving a promise.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T05:43:24.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1236157",
+    "ThreadId": "69447",
+    "Html": "Hi,\r<br />\n<br />\nPlease help how to make the scrollbar chart? What example you can view this implementation? Need HorizontalScrollBar, but I can't find it. \r<br />\n<br />\nThanks in advance!\r<br />\n<br />\n<br />\nBest regards, Tatyana<br />\n",
+    "PostedDate": "2014-04-21T07:01:48.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1261929",
+    "ThreadId": "69447",
+    "Html": "Hi,<br />\n<pre><code>Would request your help to add horizontal scroll bar in the line graph for WPF . I could see that it is available in Dynamic data display for silver light version in the sample page [http://research.microsoft.com/en-us/um/cambridge/projects/ddd/d3isdk/]\n</code></pre>\n\nThanks in advance.\r<br />\nBest Regards,\r<br />\nTelpr2<br />\n",
+    "PostedDate": "2014-07-02T05:08:21.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306770",
+    "ThreadId": "69447",
+    "Html": "Did you get the solution for horizontal and vertical scroll bar? We should be grateful if you could send  us the solution..<br />\n",
+    "PostedDate": "2014-09-21T01:33:01.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

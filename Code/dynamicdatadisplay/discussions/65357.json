@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "222562",
+    "ThreadId": "65357",
+    "Html": "<p>I have a chart with 5 LineGraphs as shown below:</p>\r\n<p>Note the Blue Line is at the back</p>\r\n<p><a href=\"http://s1014.photobucket.com/albums/af262/quinlivan/?action=view&current=blueatback.jpg\"><img src=\"http://i1014.photobucket.com/albums/af262/quinlivan/blueatback.jpg\" border=0 alt=\"Blue at Back\"></a></p>\r\n<p>I am trying to add functionality to allow user to Bring to Front on Right Click - which I have implement but I think my method is incorrect. I simply find the line, remove it from plotter and then reattach. This however moves the legend item to the bottom as can be seen here with the Legend (a)</p>\r\n<p><a href=\"http://s1014.photobucket.com/albums/af262/quinlivan/?action=view&current=blueatfront.jpg\"><img src=\"http://i1014.photobucket.com/albums/af262/quinlivan/blueatfront.jpg\" border=0 alt=\"Blue at Front\"></a></p>\r\n<p>Is there any way to tell the plotter to draw something in front of others without reordering the way they are drawn on the legend?</p>\r\n<p>This is what I am doing - where (drawnGraph) is the Line clicked</p>\r\n<p><span style=\"font-size:x-small\">\r\n<p>plotter.Children.Remove(drawnGraph.LineGraph);</p>\r\n<p>plotter.Children.Add(drawnGraph.LineGraph);</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-12T08:29:58.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226314",
+    "ThreadId": "65357",
+    "Html": "<p>Hi,</p>\r\n<p>I've created for you new <strong>ChartBringToFrontSample</strong>&nbsp;- it is in the <strong>Latest changeset (28519)</strong>/<strong>DynamicDataDisplay.sln</strong>/<strong>DevSamples</strong>/<strong>ChartBringToFrontSample.csproj</strong>.</p>\r\n<p>Briefly - <em>use the Z-Order, programmer, and everything'll be OK)</em></p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-21T06:31:25.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226975",
+    "ThreadId": "65357",
+    "Html": "<p>Thank you Mikhail</p>\r\n<p>You and your team are doing an excellent job with this!</p>",
+    "PostedDate": "2009-08-24T02:48:45.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "717724",
+    "ThreadId": "284314",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using VS2010[wpf / C# &amp; Oracle DB11G]</p>\r\n<p>This is the first time I'm using D3. I download latest version from this link.</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/changes/31108\">http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/changes/31108</a></p>\r\n<p>My requirement in a chart,</p>\r\n<p>1. Multiple Y axis.</p>\r\n<p>2. Change color X-axis and Y Axis</p>\r\n<p>3. Zooming</p>\r\n<p>4. Real Time Data. ie. When the data is add to datagrid it must be update or reflect to the Chart\r\n<span style=\"color:#ff0000\"><strong>/// this is important///</strong></span></p>\r\n<p>well, while I search for Zooming in a discussion List I got a link. //<a href=\"https://skydrive.live.com/?cid=eaf0a921258b5980&id=EAF0A921258B5980%212673\">https://skydrive.live.com/?cid=eaf0a921258b5980&amp;id=EAF0A921258B5980%212673</a>&nbsp;</p>\r\n<p>this dynamicdatadisplay.dll will work only zooming. not others like Simulation project.[adding data&nbsp;continuously&nbsp;to chat from text file]</p>\r\n<p>In the Above skydrive link, I found many project like color axis, zoom etc... but its works&nbsp;separately&nbsp;not work altogether.</p>\r\n<p>My Question is, For all my above requirements which DLL I need to Download and Use.</p>\r\n<p>Please Tell me.</p>\r\n<p>Thanks,</p>\r\n<p>thenndral.</p>\r\n",
+    "PostedDate": "2011-12-27T21:36:13.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "717803",
+    "ThreadId": "284314",
+    "Html": "<p>hi any one....</p>\r\n<p>help need...</p>\r\n<p>&nbsp;</p>\r\n<p>thanks,</p>\r\n<p>thenndral</p>",
+    "PostedDate": "2011-12-28T01:52:49.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

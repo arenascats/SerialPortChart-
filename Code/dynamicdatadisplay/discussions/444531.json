@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1046869",
+    "ThreadId": "444531",
+    "Html": "Hi,<br />\nI am using d3 for the first time and I find it very useful. I am taking a dynamic integer value coming in at frequent intervals and plotting it as a linegraph ('line1') onto a chartplotter named 'plotter'. What I want is to have a way to erase all the data from the chartplotter when I uncheck the checkbox and start plotting again once i check it back. I thought I might be able to accomplish it with plotter.Children.Remove(line1), but it does not erase the old data. Instead it plots over the old data again and I have double data lines. Here is the code example (includes some pseudo codes)  that I have so far. <br />\n<pre><code>ObservableDataSource&lt;System.Windows.Point&gt; source1=new ObservableDataSource&lt;System.Windows.Point&gt;();\nLineGraph line1=new LineGraph(source1);\nline1.Name = &quot;Data1&quot;;\nint i=0;\nstart a timer to CaptureData...\nCaptureData(....,...)\n{\n  if a CheckBox is checked...()\n {\n    if (i == 0)\n    {\n    plotter.Children.Add(line1);\n    }\n    double graph_x = Convert.ToDouble(i);\n    double graph_y = Convert.ToDouble(datapoint that I have);\n    System.Windows.Point p1 = new System.Windows.Point(graph_x, graph_y);\n    source1.AppendAsync(Dispatcher, p1);\n    i++;\n    }\n }\n Once the checkBox is unchecked\n {\n    if (i != 0)\n      {\n         i=0;\n         plotter.Children.Remove(line1);\n      }\n }\n}</code></pre>\n\nThis code is able to take out the data plot once the box is unchecked, but it plots over the old data once I check it again. any way that I can avoid this? Any pointer to solve this are welcome...<br />\n",
+    "PostedDate": "2013-05-21T23:15:29.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048040",
+    "ThreadId": "444531",
+    "Html": "Hi... ANyone with any hint??? Please let me know if the question is not clear to you!!!<br />\n",
+    "PostedDate": "2013-05-23T19:20:46.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048137",
+    "ThreadId": "444531",
+    "Html": "Hi,\r<br />\n<br />\nAfter unchecking do something like this<br />\n<pre><code>foreach(var child in plotter.Children)\n{\n       if(child.GetType() == typeof(LineGraph )\n       {\n               if(child.tag = line1.tag) // Some name comparison\n               {\n                       plotter.Children.Remove(child);\n                       //Reset this.\n               }\n       }\n}</code></pre>\n\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2013-05-24T02:14:51.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048153",
+    "ThreadId": "444531",
+    "Html": "Hi Ravi,\r<br />\nMany thanks for your reply. From looking at this code, isn't it just removing all the children from the graph without actually blanking out the data from the graph, similar to what I already have? With the code that I mentioned in my first post, I am able to clear out the graph from the plotter, but when I plot again using the same linegraph child, the old points are still there. Here is an image of what I get using my current code to get a better understanding. \r<br />\n<img src=\"https://dl.dropboxusercontent.com/u/49447650/test5.png\" alt=\"Image\" />\r<br />\n<br />\nI tried to use the code you provided in my program. It throws error at the <strong>foreach</strong> line &quot;<em>Collection was modified; enumeration operation may not execute</em>&quot;<br />\nAnd in my program I can't find the child.TAG object. so I omitted that comparison checking. Please let me know if you need the complete code that I have. <br />\n",
+    "PostedDate": "2013-05-24T03:18:56.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

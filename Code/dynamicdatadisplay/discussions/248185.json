@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "574579",
+    "ThreadId": "248185",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I used this lib to write an app that produces &quot;live&quot; graphs of the readings from a Marposs measuring device. It produces really nice graphs but I have a question:</p>\r\n<p>&nbsp;</p>\r\n<p>Say I have 1000 samples from the device and want to trim the first houndred. Could this be done with two vertical bars with &quot;draghandles&quot;.&nbsp;</p>\r\n<p>I&acute;m looking for the kind of feel that photoshop has when cropping an image. The reason I need to trim the data and not just zoom in the graph is that it would be nice to trim it before saving to file.</p>\r\n<p>&nbsp;</p>\r\n<p>I should also add that I am a noob programmer.</p>\r\n<p>/Johan</p>\r\n",
+    "PostedDate": "2011-03-02T11:50:32.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "574806",
+    "ThreadId": "248185",
+    "Html": "<p>Hi,</p>\r\n<p>What do you need to save to file? The image, or the data? If it's the image, you can use the Ctrl-MouseDrag select zoom, and that will work for you with save screenshot.</p>\r\n<p>If it's the data you want to crop, you can do something like this:</p>\r\n<p>Add 2 draggablePoints with 2 Vertical lines, and the \"Value\" property of the Vertical lines bound to the \"Position.X\" property of the DraggablePoints, like this:</p>\r\n<p>&nbsp;&lt;d3:ChartPlotter Name=\"plotter\"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:DraggablePoint x:Name=\"FirstPoint\" Position=\"10, 0\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:DraggablePoint x:Name=\"SecondPoint\" Position=\"90, 0\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:VerticalLine Value=\"{Binding ElementName=FirstPoint, Path=Position.X}\" /&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:VerticalLine Value=\"{Binding ElementName=SecondPoint, Path=Position.X}\" /&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Button Content=\"Crop\" Width=\"70\" Height=\"50\" VerticalAlignment=\"Bottom\"Click=\"CropData\"/&gt;</p>\r\n<p>The user can position the points, and generate an event (i.e. button click) to crop the data, and then call a function to cut the points below the lower draggablePoint, and above the higher draggablePoint, something like this:</p>\r\n<p>&nbsp;private void CropData(object sender, RoutedEventArgs e)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double xMin = FirstPoint.Position.X;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double xMax = SecondPoint.Position.X;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // in case the drag points \"crossed\"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (xMin &gt; xMax)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double temp = xMin;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xMin = xMax;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xMax = temp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // make a function to throw away points below xMin and above xMax<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CropDataSource(xMin, xMax);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>",
+    "PostedDate": "2011-03-02T22:52:41.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "574916",
+    "ThreadId": "248185",
+    "Html": "<p>Thank you. This looks exactly like what I want, very nice of you to provide sample code.</p>\r\n<p>For your question, I want to save the data to file. I think it will be a nice feature to be able to trim the data in the graph view, prior to saving it.</p>\r\n<p>If anyone is interested I can upload the app.</p>",
+    "PostedDate": "2011-03-03T03:22:31.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "574936",
+    "ThreadId": "248185",
+    "Html": "<p>Hi Johan,</p>\r\n<p>I am interested - thank you for sharing.</p>\r\n<p>David</p>",
+    "PostedDate": "2011-03-03T04:07:43.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "575142",
+    "ThreadId": "248185",
+    "Html": "<p>Two things:</p>\r\n<ol>\r\n<li>&nbsp;I&acute;m going to have to go by the book and ask my employer if this is ok to share. I guess it is will get back to you on this.</li>\r\n<li>How do I share it, I am extremely noob. Where can I find the steps of how to do this? How do I get access.</li>\r\n</ol>\r\n<p>This could actually turn out to something really nice if we can agree on interfaces. We are planning to make a wrapper that samples siemens powerline to get axispositions etc.</p>\r\n<p>If the graphing part is a well written MVVM it would be nice to use MEF to expose devices that can be used as datasources, for example make the graph configurable so the X axis could be axisposittion from siemens and the Y axis readings from the Marposs device.</p>\r\n<p>&nbsp;</p>\r\n<p>Sidenote: I&acute;m planning to write an FFT view of the data, we have purchased Extreme Numerics at our company but if this is going to be open source it is probably not a good idea to use proprietary code in it.</p>",
+    "PostedDate": "2011-03-03T09:29:09.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

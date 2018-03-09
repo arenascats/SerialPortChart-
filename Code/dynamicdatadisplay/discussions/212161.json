@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "441119",
+    "ThreadId": "212161",
+    "Html": "<p>I have multiple graphs aligned vertically on top of each others however because the y legend is larger on some than others, I loose the alignment.</p>\r\n<p>Is there a proper way to align multiple graphs and also synchronize the scrolling between them? Also possibly, I'd like to be able to take a single screenshot of all the graphs at once... I downloaded the nigthly code and looked at the examples but did not find anything.</p>\r\n<p>Thanks</p>\r\n<p>Erik.</p>",
+    "PostedDate": "2010-05-10T08:50:52.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "444746",
+    "ThreadId": "212161",
+    "Html": "<p>Take a look at <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=75944\">this thread</a>.</p>",
+    "PostedDate": "2010-05-19T01:25:06.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "436303",
+    "ThreadId": "210800",
+    "Html": "<p>Hi All,</p>\r\n<p>Is there any way to move&nbsp;Text labels(Text blocks) near to intersection of vertical line and horizontal line.</p>\r\n<p>Regards</p>\r\n<p>Ravi.&nbsp;Battula&nbsp;</p>\r\n<p><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">\r\n<p>&nbsp;</p>\r\n</span></span></p>",
+    "PostedDate": "2010-04-27T22:32:13.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436324",
+    "ThreadId": "210800",
+    "Html": "<p>Hi Ravi,</p>\r\n<p>Can you please give a picture of what you want?</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-27T23:19:14.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436331",
+    "ThreadId": "210800",
+    "Html": "<p>Hi Mikhail,</p>\r\n<div id=\"sn_ccHtml_commentControl0\">I need to move Horizontal text block and vertical text block neat to the intersection of horizontal line and vertical line.</div>\r\n<div>If I move mouse the text blocks should always near to the intersection of verical line and horizontal line.</div>\r\n<p><a href=\"http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/Trend Snaps/CursorCoordinate.jpg?ccr=4214\">http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/Trend%20Snaps/CursorCoordinate.jpg?ccr=4214</a></p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2010-04-27T23:32:47.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436343",
+    "ThreadId": "210800",
+    "Html": "<p>1) I could not watch your picture, because it was unavailable.</p>\r\n<p>2) You can easily create such modification of CursorCoordinateGraph, changing its source. Simply change positions of those textblocks.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail,</p>",
+    "PostedDate": "2010-04-28T00:12:33.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436386",
+    "ThreadId": "210800",
+    "Html": "<p>Thanks Mikhail,</p>\r\n<p>I did it. I used</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre> Canvas.SetTop(vertGrid, mousePos.Y - height - blockShift.Y);\r\n Canvas.SetLeft(vertGrid, mousePos.X - vertTextBlock.Text.Length);\r\n</pre>\r\n</div>\r\n<p>these properties to change the posions of text blocks and this is working.</p>\r\n<p>Thanks and Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2010-04-28T01:44:27.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436387",
+    "ThreadId": "210800",
+    "Html": "<p>Well, I'm glad that you've done it :)</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-28T01:48:47.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

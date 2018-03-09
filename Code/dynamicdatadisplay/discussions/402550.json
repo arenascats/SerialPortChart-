@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "939088",
+    "ThreadId": "402550",
+    "Html": "\r\n<p>Hi<br>\r\n<br>\r\nI am using Microsoft's D3 with WPF (not silverlight). I am desperately looking for a version of D3 that would allow ,me to hide the legend. I found several examples online, using older versions of D3. When adding the sources of this version to my solution,\r\n I lost other functionality I was using - plotting a graph with logarithmic scales. Another version of D3 that was used in an example of a logarithmic scale did not have &quot;hide legend&quot; implemented yet. Apparently, the examples I've seen used different versions\r\n that are mutually exclusive. Moreover, I am not enough savvi with c# to take one version and convert it to the other.<br>\r\n<br>\r\nWould you guys please please please help me and provide a solution that uses any (preferably latest) version of D3 for WPF that makes a ChartPlotter with logarithmic scale and is able to hide the legend?<br>\r\n<br>\r\nThanks</p>\r\n",
+    "PostedDate": "2012-11-09T05:16:59.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990736",
+    "ThreadId": "402550",
+    "Html": "\r\n<p>Hi</p>\r\n<p>check this.</p>\r\n<p>plotter.LegendVisibility = Visibility.Hidden;</p>\r\n<p>This should be available even in the latest also. I checked in old version, I checked in d3Futere - few months back I downloaded, in both version this propery is there.</p>\r\n<p>Best Regards</p>\r\n<p>Ravi.</p>\r\n",
+    "PostedDate": "2013-01-23T00:09:28.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

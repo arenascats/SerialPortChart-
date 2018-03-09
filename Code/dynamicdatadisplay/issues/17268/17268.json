@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Creating a DraggablePoint at 0,0 by any method, xaml or on c# means that the Draggable point is not visible. \ne.g.   <d3:DraggablePoint Position=\"0,0\"/>",
+    "LastUpdatedDate": "2013-02-21T17:36:49.96-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2012-01-16T01:36:18.003-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Setting a DraggablePoint initially at 0,0 means the Draggable point is not visible",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 17268
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

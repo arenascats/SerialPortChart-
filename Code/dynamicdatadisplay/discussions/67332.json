@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "228826",
+    "ThreadId": "67332",
+    "Html": "<p>I would like to style the different components of the chart to blend in seamless with other controls in my project. Is it possible to have a sample on where to start. I would like to change the axis font, grid etc..</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-08-28T12:57:42.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229340",
+    "ThreadId": "67332",
+    "Html": "<p>Hi,</p>\r\n<p>Please take a look at a <strong>AxisColoringSample</strong> in Samples/v0.3.1. Maybe it will give you some answers on part of your question.</p>\r\n<p>Also, to answer I need more details - what do you mean 'to change axis ... grid'?</p>\r\n<p>Pictures can help me)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-31T07:48:55.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229776",
+    "ThreadId": "67332",
+    "Html": "<p>Hi Mikhail</p>\r\n<p>To be more specific, in the case of the axis I would like the ticks to be inside the plot rather than outside. I am also creating a graph where energy is plotted against wavelength and I was wondering how to do that. (something like this http://www.eyehortilux.com/images/LU1000MH_dist.gif).</p>\r\n<p>Is it also possible to put labels on certain positions in the graph to identify certain points.</p>\r\n<p>Thanks</p>\r\n<p>Jauwaad</p>",
+    "PostedDate": "2009-09-01T09:44:17.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232566",
+    "ThreadId": "67332",
+    "Html": "<p>Hi Jauwaad,</p>\r\n<p>Currently DynamicDataDisplay does not support out-of-the-box ticks to be placed inside the plot, though this can be done by changing some part of AxisControl class. Also it is currently impossible to create such plots as you've shown, because this is AreaChart on the picture, and D3 doesn't have AreaChart, though it will have it in future.</p>\r\n<p>&nbsp;</p>\r\n<p>To place a label in certain position on the plotter, you should place the following XAML into your plotter:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ViewportHostPanel</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">TextBlock</span> <span style=\"color:Red\">d3:ViewportPanel.X</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">0.5</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">d3:ViewportPanel.Y</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">0.5</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>Sample text in position (0.5, 0.5)<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">TextBlock</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ViewportHostPanel</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n</pre>\r\n</div>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-09T00:44:44.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234878",
+    "ThreadId": "67332",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I was going through the samples and I came across the ColumnChartSample in the NewMarkersSample Project. I managed to create the chart I was looking for the time being using columnChart. It's not perfect but will do for the time being..</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Jauwaad</p>",
+    "PostedDate": "2009-09-15T13:07:09.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235664",
+    "ThreadId": "67332",
+    "Html": "<p>Hi Jauwaad,</p>\r\n<p>I really forgot about this sample and this way of displaying data in the way you need, so I'm glad that you've discovered it)</p>\r\n<p>I'm ready to help if there are some difficulties.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-17T09:50:23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1414597",
+    "ThreadId": "630936",
+    "Html": "Hello,\r<br />\n   I want to plot multiple y-axis line chart. I tried it with injected plotter and able to plot multiple Y axis.\r<br />\nThough I can plot the multiple lines in the chart, but the reference of scale taken by each line is from Major y-axis. And the other Y-axis range is in multiplication of major y-axis.\r<br />\n<br />\nMy Y-axis range is from 0-100, where as other Y-axis range is not defined. Other Y axis range can be between 0 to 350  or 1 to 375.\r<br />\n<br />\nThanks in advance.\r<br />\n<br />\nRegards,\r<br />\nAbhishek<br />\n",
+    "PostedDate": "2015-04-15T23:59:44.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1414620",
+    "ThreadId": "630936",
+    "Html": "Hi Abhishek,\r<br />\n<br />\nyou can use SetYMapping to overcome this issue<br />\n<pre><code>yourYaxisDataSource.SetYMapping(y=&gt; ((y-ymin)*(MainYAxisYMax-MainYAxisYMin)/(ymax-ymin)) + MainYAxisYMin);\n\nhere in your case ymin =0 or 1, ymax = 350 or 375, MainYAxisYMax = 100, MainYAxisYMin =0\n</code></pre>\n\nsure this will work. try this.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2015-04-16T00:48:26.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1414755",
+    "ThreadId": "630936",
+    "Html": "Hello Ravi,\r<br />\n<br />\n Thank you for your reply. \r<br />\nMy problem is that, while plotting the chart, I have no idea about the min and max value of the chart. It is a live data.\r<br />\n<br />\nAlso, the line data are taking reference of Main vertical axis.\r<br />\n<br />\nBasically, I want multiple line graph with different scale range to be plotted against single x axis.\r<br />\n<br />\nRegards,\r<br />\nAbhishek.<br />\n",
+    "PostedDate": "2015-04-16T05:09:38.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1416128",
+    "ThreadId": "630936",
+    "Html": "Hi Abhishek,\r<br />\n<br />\nIn order to get the different scale you have to use SetYMapping. Then only you will get the different scale. Else all the lines will be mapped to the Main vertical axis scale.\r<br />\nYou are saying you don't have min and max. You are already plotting line, means you have data. It is not diffucult to find min and max from existing data.\r<br />\nFind min and max from existing data. Use setYMapping, then you will get differenet scale.\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2015-04-20T23:11:30.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1416807",
+    "ThreadId": "630936",
+    "Html": "Hi Ravi, \r<br />\n  Thanks for your reply.  I was able to generate the multiple axis graph now. \r<br />\nBut it seems to be that the x-axis is tightly binded with main y-axis.\r<br />\nWhen I scroll x-axis, only y-axis graph moves, Y1 and Y2 axis graph remains at same position.\r<br />\nAlso, I need to show the value of marker position on mouse move for all graph lines.\r<br />\n<br />\nThanks\r<br />\nAbhishek <br />\n",
+    "PostedDate": "2015-04-22T06:57:04.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437163",
+    "ThreadId": "630936",
+    "Html": "Hi Abhishek,\r<br />\n<br />\nSorry for the late reply. I hope you have solved this issue. If not try to set the Viewport.Visible for all injected plotters.\r<br />\nCheck your Horizontal X axis is common for all injected plotters.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2015-08-04T05:03:20.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1489806",
+    "ThreadId": "630936",
+    "Html": "could you help me ?  my question :the majorlabels is very long compare the x axis ,my chary plotter is not drag and move , what should i do ?\r<br />\nThank you ?\r<br />\na new boy for d3.<br />\n",
+    "PostedDate": "2016-12-13T20:43:39.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For Isoline Graphs, we need to use \"WarpedDataSource2D\" class to create the data source .But the properties of this class like Data,Grid are read only, that means this WrapedDataSource2D collection cant be modified dynamically.Is it the case?\n \nAnd one more point , this WrappedDataSource2D class implementing a Changed event but the \"RaiseEvent\" method which is raising this event whenever the WrappeddataSource2D collection is changed , is not getting called anywhere.Please let me know , how do i go about it?\n \nDoes Isoline graph support real time update?",
+    "LastUpdatedDate": "2013-02-21T17:36:52.477-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-02-15T22:59:37.563-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue with Isoline graph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15338
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

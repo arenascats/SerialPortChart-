@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1002141",
+    "ThreadId": "433352",
+    "Html": "Hi,\r<br />\n<br />\nCurrently I'm using D3 to plot real time simulation data. A typical simulation would run for several days and generate new values every second. In my application I would be having multiple <code>ChartPlotter</code>s and each plotter will have multiple line graphs. I want each chart to keep track of the latest values (Currently I use <code>FollowWidthRestriction</code> but I'm not sure what is the correct value for width to use) and let the user pan/zoom to view the whole data since the simulation start.\r<br />\n<br />\nI realize that there is a performance issue when plotting large number of points. So I'm wondering what would be a good solution for this? Are filters going to help with the performance issues? Do I need to store the data in some other structure than the <code>ObservableDataSource</code>?\r<br />\n<br />\nI have noticed some similar discussions but there wasn't a definitive answer. I hope that it is possible to achieve these requirements with D3.\r<br />\n<br />\nBest Regards,<br />\n",
+    "PostedDate": "2013-02-16T01:28:37.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011525",
+    "ThreadId": "433352",
+    "Html": "Hi,\r<br />\n<br />\nView can not handle more data points (Max arround 10000 data points).\r<br />\n<br />\nI have one suggestion, Use some fixed span like 1 hour + 10% buferfer.\r<br />\nFor example if you started simulation at 10:00 AM, keep your chart span from 9:00 Am to 10:06 AM.\r<br />\nData starting position is at 10:00 Am and data plots up to 10:06, thenat 10:06 you shift your chart span to 9:06 to 10:12, Shift chart span again at 10:12\r<br />\n..... like this\r<br />\n<br />\nWhen the time reachs  11:06 your chart span will be 10:06 to 11:12, remove data from 10:00 to 10:06 from your chart line graph, other wise again you will get performance issues after some time if line graph grows.\r<br />\n<br />\nthere were few discussion earlier Check <a href=\"\" rel=\"nofollow\">http://dynamicdatadisplay.codeplex.com/discussions/53943</a> link, the version in this link may be very old.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-03-06T19:26:52.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058049",
+    "ThreadId": "433352",
+    "Html": "Performance is not primarily related to the total number of points, but with the number of pixels that are redrawn. If you look at the class MarkerPointsGraph you'll see that D3 is trying each time to redraw all the points in DataSourse. To avoid this, you can limit the amount of redrawing changing class MarkerPointsGraph. The following is a derived class. This is not my code, but I have not found the original post. My charts are drawn all day with no problems. Sorry for the Visual Basic. <br />\n<pre><code>mports Microsoft.Research.DynamicDataDisplay.DataSources\nImports Microsoft.Research.DynamicDataDisplay.PointMarkers\nImports Microsoft.Research.DynamicDataDisplay.Common\nImports Microsoft.Research.DynamicDataDisplay.Charts\nImports Microsoft.Research.DynamicDataDisplay\nImports System.Diagnostics\n\nPublic Class FilteredMarkerPointsGraph\n    Inherits MarkerPointsGraph\n\n    Sub New()\n        MyBase.New()\n    End Sub\n\n    Sub New(dataSource As IPointDataSource)\n        MyBase.New(dataSource)\n    End Sub\n\n    Protected Overrides Sub OnRenderCore(dc As DrawingContext, state As RenderState)\n        '' base.OnRenderCore\n        If Me.DataSource Is Nothing Then Return\n        If Me.Marker Is Nothing Then Return\n\n        Dim left = Viewport.Visible.Location.X\n        Dim right = Viewport.Visible.Location.X + Viewport.Visible.Size.Width\n        Dim top = Viewport.Visible.Location.Y\n        Dim bottom = Viewport.Visible.Location.Y + Viewport.Visible.Size.Height\n        Dim transform = Plotter2D.Viewport.Transform\n        Dim bounds As DataRect = DataRect.Empty\n        Using enumerator As IPointEnumerator = Me.DataSource.GetEnumerator(GetContext())\n            Dim point As Point = New Point()\n            Do While enumerator.MoveNext()\n                enumerator.GetCurrent(point)\n                If point.X &gt;= left AndAlso point.X &lt;= right AndAlso point.Y &gt;= top AndAlso point.Y &lt;= bottom Then\n                    enumerator.ApplyMappings(Marker)\n                    Dim screenPoint As Point = point.DataToScreen(transform)\n                    bounds = DataRect.Union(bounds, point)\n                    Dim ta = DirectCast(Marker, ITransformAware)\n                    If ta IsNot Nothing Then\n                        ta.Transform = transform\n                        Marker.Render(dc, screenPoint)\n                    End If\n                End If\n            Loop\n        End Using\n        Viewport2D.SetContentBounds(Me, bounds)\n    End Sub\nEnd Class</code></pre>\n\n",
+    "PostedDate": "2013-06-18T00:39:03.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

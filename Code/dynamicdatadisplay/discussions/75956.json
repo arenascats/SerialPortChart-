@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "259816",
+    "ThreadId": "75956",
+    "Html": "<p>When dragging an editable point with the mouse the chart cursor does not follow if it is set to auto-hide.</p>\r\n<p>Is this a bug or an option somewhere that I've missed?</p>\r\n<p><a href=\"http://i906.photobucket.com/albums/ac266/McBainUK/Cursordoesnotfollowwhiledragging.png\">http://i906.photobucket.com/albums/ac266/McBainUK/Cursordoesnotfollowwhiledragging.png</a></p>",
+    "PostedDate": "2009-11-23T06:25:23.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "260317",
+    "ThreadId": "75956",
+    "Html": "<p>Hi, this is a bug which currently I don't know how to fix.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-24T11:16:54.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

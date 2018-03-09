@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "237040",
+    "ThreadId": "69635",
+    "Html": "<p>Hi,</p>\r\n<p>I need to drag a marker and arrange my linegraph, I see the Draggable class, but I don't know how add Draggables and bind to my marker. I see EditableShapes example, but I don't know how I integrate them.</p>\r\n<p>Also, I need to restrict to drag only in X coordinates. =)</p>\r\n<p>BTW, thanks for the good framework.</p>",
+    "PostedDate": "2009-09-21T13:55:03.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238747",
+    "ThreadId": "69635",
+    "Html": "<p>Hi,</p>\r\n<p>It seems to me that I have not understood you need perfectly. Do you need by dragging some marker translate some chart? Or do you want by dragging a marker edit data that is drawn in line chart?</p>\r\n<p><strong>DraggablePoint</strong> class has a <strong>Position </strong>property and <strong>PositionChanged </strong>event, that may be useful to you.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T05:34:09.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

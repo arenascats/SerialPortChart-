@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "811306",
+    "ThreadId": "348861",
+    "Html": "<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">Hello,</span></p>\n<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">I do have developed Silverlight Navigation Application, Where I am looking for D3 Charts, found that there is no support for HorizontalDateTime Axis like WPF ChartPlotter Control.  Can you suggest how I can achieve the same?</span></p>\n<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">Does Silverlight Chart control has any provision to handle Date Time Values on X-Axis, Also should be mange/plot the intervals automatically based on Chart Zoom in/out. / Or individual  axis Mouse wheel scroll.</span></p>\n<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">Please revert. Thanks in advance.</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">Please help....</span></p>\n<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">Regards</span></p>\n<p><span style=\"font-family: 'Segoe UI','sans-serif'; color: black; font-size: 10pt;\">Raviraj</span></p>",
+    "PostedDate": "2012-03-16T02:14:46.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

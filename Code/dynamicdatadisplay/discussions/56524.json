@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "191030",
+    "ThreadId": "56524",
+    "Html": "<p>Hi!</p>\r\n<p>&nbsp;</p>\r\n<p>Several users have requested a more detailed overview of how to color axes in DynamicDataDisplay, so I've created a sample of how to do it, which'll be included into the next D3 release.</p>\r\n<p>I'm publishing it now, so that you don't wait for the release - sample can be downloaded here:&nbsp;<a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay AxisColoringSample.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay%20AxisColoringSample.zip</a></p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk,</p>\r\n<p>DynamicDataDisplay Developer.</p>",
+    "PostedDate": "2009-05-16T06:42:18.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "143255",
+    "ThreadId": "43101",
+    "Html": "I would like to set the value of the verticalAxis,such as MaxValue or MinValue. <br>\r\nThe Axis is so sensitive,  for example, the number between 2.1 and 2.2, if only two number on the Plotter, there'll be a big fall.<br>\r\nhow can I set the verticalAxis...? can I?\r\n",
+    "PostedDate": "2008-12-28T18:46:57.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143282",
+    "ThreadId": "43101",
+    "Html": "Hi!<br>\r\n<br>\r\nSorry, but I think I didn't really get an idea of your request.<br>\r\nDo you want to set an array of ticks on axis manually?<br>\r\n<br>\r\nWhat do you mean, asking &quot;how can I set the&nbsp;verticalAxis...?&quot;? You can change axis, using properties HorizontalAxis and VerticalAxis of ChartPlotter.\r\n",
+    "PostedDate": "2008-12-28T23:45:03.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143769",
+    "ThreadId": "43101",
+    "Html": "Somewhat related to this... I would like to set my horizontal axis so that only whole numbers are used.  Fractional double values don't really make sense for the data I'm charting.  But I don't want to have to calculate the tick values manually.  I want the control to do it but also to use just whole numbers for the major ticks.  Can this be done?\r\n",
+    "PostedDate": "2008-12-31T13:40:09.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143839",
+    "ThreadId": "43101",
+    "Html": "Hi!<br>\r\n<br>\r\nI got the idea, but if you'll draw a picture that shows ticks' behavior you need, it will be even better.<br>\r\nAlso you can describe a little pecularities of data and model you are visualizing, maybe in picture, too. This will help us to understand your problem better and probably to give you some suggestions.<br>\r\nAnd please describe how whole ticks should behave while panning and zooming charts. \r\n",
+    "PostedDate": "2009-01-01T02:12:24.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "143870",
+    "ThreadId": "43101",
+    "Html": "\r\nI want the same behavior that exists in the Stock Exchange sample that is distributed with the code.  Notice that all the major ticks are whole year values.  That's exactly the behavior that I want but for regular numbers rather than years.  <br><br>\r\n<hr id=stopSpelling>\r\nFrom: [email removed]<br>To: [email removed]<br>Date: Thu, 1 Jan 2009 02:12:32 -0800<br>Subject: Re: How to Set the Value of Axis [dynamicdatadisplay:43101]<br><br>\r\n\r\n\r\nFrom: thecentury<br>\r\n<div id=\"EC_ThreadNotificationPostBody\">Hi!<br><br>I got the idea, but if you'll draw a picture that shows ticks' behavior you need, it will be even better.<br>Also you can describe a little pecularities of data and model you are visualizing, maybe in picture, too. This will help us to understand your problem better and probably to give you some suggestions.<br>And please describe how whole ticks should behave while panning and zooming charts. </div>\r\n<div id=\"EC_ThreadNotificationFooter\">\r\nRead the <a href=\"http://www.codeplex.com/dynamicdatadisplay/Thread/View.aspx?ThreadId=43101&ANCHOR#Post143839\">full discussion online</a>.<br>\r\nTo add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:43101]\">dynamicdatadisplay@discussions.codeplex.com</a>)<br>\r\nTo start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a><br>\r\nYou are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/43101\">unsubscribe</a> on codePlex.com.<br>\r\nPlease note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at codeplex.com<br></div>",
+    "PostedDate": "2009-01-01T09:38:49.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144209",
+    "ThreadId": "43101",
+    "Html": "Hi, psyphyre!<br>\r\n<br>\r\nI'm not sure you want certainly this, but in the latest version of DynamicDataDisplay v0.2.1 it is possible to specify minimal step between ticks on numeric axis. This can be done by such code:<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; ((NumericTicksProvider)((NumericAxis)plotter.HorizontalAxis).TicksProvider).MinStep = 1;<br>\r\nIs this what you've wanted?<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-01-04T06:43:18.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144263",
+    "ThreadId": "43101",
+    "Html": "Hi!<br>\r\n<br>\r\nSorry, but I think I didn't really get an idea of your request.<br>\r\nDo you want to set an array of ticks on axis manually?<br>\r\n<br>\r\nWhat do you mean, asking &quot;how can I set the verticalAxis...?&quot;? You can change axis, using properties HorizontalAxis and VerticalAxis of ChartPlotter.<br>\r\n<br>\r\n----------------------------------------------------------------------------------------------------------<br>\r\n<br>\r\nsorry.<br>\r\n  I mean &quot;How can I set the Maxvalue of the VerticalAxis of ChartPlotter&quot;. The Axis of ChartPlotter is Auto Fit To View.<br>\r\nif  the number between 0 and 100 on the ChartPlotter , the Maxvalue of the VerticalAxis  would be 100, but I want it to be 150 or 200 or ....  Otherwise ,if I don't care about the number below 50, can I change the MinValue of  the VerticalAxis to 50 ?<br>\r\n",
+    "PostedDate": "2009-01-04T17:30:09.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144302",
+    "ThreadId": "43101",
+    "Html": "Hi!<br>\r\n<br>\r\nBoth horizontal and vertical axes are taking their values from one place - this is ChartPlotter.Viewport.Visible property. Visible is a rectangle; by setting new visible rect to Viewport you can control displayed area.<br>\r\nAutoFitToView can be switched off by setting Viewport's property AutoFitToView to false.<br>\r\n<br>\r\nBest regards,<br>\r\nMikhail Brinchuk, DynamicDataDisplay Dev Team. \r\n",
+    "PostedDate": "2009-01-04T23:50:55.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144500",
+    "ThreadId": "43101",
+    "Html": "Yep, the MinStep property pretty much gives me what I wanted.  The major ticks now show up in whole number increments.  But now is it possible for me to remove the minor ticks from appearing on the axis?  \r\n",
+    "PostedDate": "2009-01-05T12:59:30.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144574",
+    "ThreadId": "43101",
+    "Html": "<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl14_BodyDiv\">Hi!<br>\r\n<br>\r\nBoth horizontal and vertical axes are taking their values from one place - this is ChartPlotter.Viewport.Visible property. Visible is a rectangle; by setting new visible rect to Viewport you can control displayed area.<br>\r\nAutoFitToView can be switched off by setting Viewport's property AutoFitToView to false.<br>\r\n<br>\r\nBest regards,<br>\r\nMikhail Brinchuk, DynamicDataDisplay Dev Team. <br>\r\n<hr id=stopSpelling>\r\n Hi!<br>\r\n   Thanks! That works.  <br>\r\nBest regards<br>\r\n  someone.<br>\r\n</div>\r\n",
+    "PostedDate": "2009-01-05T17:10:08.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "145714",
+    "ThreadId": "43101",
+    "Html": "Hi, psyphyre!<br>\r\n<br>\r\nYou can hide minor ticks from Axis, setting false to Axis's DrawMinorTicks property.<br>\r\n",
+    "PostedDate": "2009-01-09T07:52:51.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "842534",
+    "ThreadId": "43101",
+    "Html": "<p>Hi!</p>\r\n<p>&nbsp;</p>\r\n<p>I want to change the axis's major ticks. Currently the range is 0 to 60 and I want it like 0-5-10.......60 on numeric axis.</p>\r\n<p>How can I do this?&nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2012-05-30T06:28:37.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

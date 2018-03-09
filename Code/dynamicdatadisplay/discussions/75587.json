@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "258622",
+    "ThreadId": "75587",
+    "Html": "<p>I need to show a large ammount of data using the D3, and I would know how do the filters work, because I guess it can help me</p>",
+    "PostedDate": "2009-11-19T04:23:02.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261101",
+    "ThreadId": "75587",
+    "Html": "<p>Hi,</p>\r\n<p>filters are simple classes that filter some lists (currently they are lists, but in future they can become IEnumerable&lt;Point&gt;). By default filters are enabled for LineChart, so the only thing that can help you to increase performance is to create some new filter class and to add it to lineGraph.Filters.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-27T02:10:49.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

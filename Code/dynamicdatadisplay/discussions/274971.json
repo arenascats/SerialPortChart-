@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "680762",
+    "ThreadId": "274971",
+    "Html": "\r\n<p>It is posiible when you have two points and we can create a new graph over the old graph between two points(in the way it repeat all old-graph points)&nbsp;</p>\r\n<p>Is there in D3 any features for such problem ?</p>\r\n",
+    "PostedDate": "2011-10-06T06:05:32.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681133",
+    "ThreadId": "274971",
+    "Html": "<p>Hi,</p>\r\n<p>I am not sure how you are expecting. DDD has injected ploters options. You can create old graph as injected ploter and also new graph as injected ploter. Then you can have two seperate graphs on top of main chart and you can have full control on each ijected ploter like y axis, zoom etc.</p>\r\n<p>Regards</p>\r\n<p>Ravi. Battula</p>",
+    "PostedDate": "2011-10-06T21:12:39.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

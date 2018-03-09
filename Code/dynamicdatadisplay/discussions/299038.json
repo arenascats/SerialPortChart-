@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "747472",
+    "ThreadId": "299038",
+    "Html": "\r\n<p>Hello, it's my first time here, I had search in the forum for a solution but I hadn't find.&nbsp;</p>\r\n<p>When I use FitToView, I call the ClearValue(VisibleProperty) and then the&nbsp;CoerceValue(VisibleProperty), It works for the graphs, that stay fitted in the view, but the HorizontalDateTimeAxis doesn't update.</p>\r\n<p>Thanks in advantage,</p>\r\n<p>Marcus Garcia.</p>\r\n",
+    "PostedDate": "2012-02-08T09:35:17.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "834027",
+    "ThreadId": "299038",
+    "Html": "<p>Did you try the following?<br />\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>ChartPlotter.Viewport.FitToView();\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-05-09T08:21:36.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

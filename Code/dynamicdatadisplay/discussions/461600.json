@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1105365",
+    "ThreadId": "461600",
+    "Html": "Hello folks,\r<br />\n<br />\nI'm new to DynamicDataDisplay and also to .NET honestly. \r<br />\nI'm using ChartPlotter to plot a real-time variable and I need the ploting area (viewport)  to be fixed by default and the line representing the variable to slide from right to left until the plot area is full and then the plot area to start translating toward left.\r<br />\n<br />\nI succeeded in this task, but I would like that a user interacting with plot area, moving or zooming, can go back (automatically) to the initial setting, i.e. the fixed plot area sliding toward left.\r<br />\n<br />\nThe best choice for me would be add a item to the context menu, just before the others, but I don't know where to start! \r<br />\n<br />\nI just made this try:<br />\n<pre><code>      _plotter.Show();\n      MenuItem resetViewItem = new MenuItem\n      {\n        Header = &quot;Reset view&quot;,\n        ToolTip = &quot;Turn the view to last 30 seconds&quot;,\n        Icon = new Image { Source = new BitmapImage(new Uri(&quot;C:\\\\Users\\\\LabSviNa\\\\Desktop\\\\icona.bmp&quot;)) },\n        Command = ChartCommands.FitToView,\n        CommandTarget = _plotter.plotter\n      };\n\n      _plotter.plotter.DefaultContextMenu.StaticMenuItems.Add(resetViewItem);  </code></pre>\n\nbut it result in a nullreferenceexeception, because the property StaticMenuItems getter return null.\r<br />\n<br />\nI hope someone could help me.\r<br />\n<br />\nRegards,\r<br />\n<br />\nAlessandro<br />\n",
+    "PostedDate": "2013-10-09T01:48:58.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1277982",
+    "ThreadId": "461600",
+    "Html": "This code works <br />\n<pre><code>&lt;d3:ChartPlotter Name=&quot;Chart&quot;  HorizontalAlignment=&quot;Left&quot; Height=&quot;270&quot; Margin=&quot;320,145,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;557&quot; Background=&quot;Transparent&quot; BorderThickness=&quot;0&quot; FontSize=&quot;10&quot;&gt;\n                        &lt;d3:ChartPlotter.HorizontalAxis&gt;\n                        &lt;d3:HorizontalDateTimeAxis Name=&quot;dateAxis&quot;&gt;\n                        &lt;/d3:HorizontalDateTimeAxis&gt;\n                            \n                        &lt;/d3:ChartPlotter.HorizontalAxis&gt;\n                        &lt;d3:ChartPlotter.VerticalAxis&gt;\n                        &lt;d3:VerticalAxis Name=&quot;countAxis&quot;&gt;&lt;/d3:VerticalAxis&gt;\n                        &lt;/d3:ChartPlotter.VerticalAxis&gt;\n\n                    &lt;/d3:ChartPlotter&gt;</code></pre>\n\n<pre><code>\nObservableCollection&lt;object&gt; staticMenuItems = (ObservableCollection&lt;object&gt;)Chart.ContextMenu.ItemsSource;\n MenuItem limitMenuItem = new MenuItem\n            {\n                Header = &quot;Limit&quot;,\n                IsCheckable = true\n            };\n\n            staticMenuItems.Add(limitMenuItem);\n            Chart.ContextMenu.ItemsSource = staticMenuItems;</code></pre>\n\n",
+    "PostedDate": "2014-07-26T07:25:30.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

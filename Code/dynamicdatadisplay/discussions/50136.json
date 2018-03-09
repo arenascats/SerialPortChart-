@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "167832",
+    "ThreadId": "50136",
+    "Html": "<p style=\"margin:0cm 0cm 10pt\"><span style=\"font-family:calibri\">How do I set the axis labels so I can change the labels at runtime?<br>\r\n<br>\r\nThanks, Rich</span></p>\r\n",
+    "PostedDate": "2009-03-13T10:49:35.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "169949",
+    "ThreadId": "50136",
+    "Html": "ChartPlotter has a member Children, that is a ObservableCollection&lt;IPlotterElement&gt;.<br>\r\n<br>\r\nYou should look inside Children member for the HorizontalAxisTitle (or VerticalAxisTitle) and then change its Content property.<br>\r\n<br>\r\nI did it this way...\r\n",
+    "PostedDate": "2009-03-19T12:07:43.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172673",
+    "ThreadId": "50136",
+    "Html": "Hi!<div><br></div><div>Do you mean showing a contents of some collection as labels in axis? If this is so, at the present time it is not possible to change labels of axis at runtime with the current version of DynamicDataDisplay. This feature is now in development. I'll check its readiness and if it is in satisfactory state, I'll upload it's code somewhere and reply here.</div><div><br></div><div>Or maybe I misunderstood your question?</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-03-27T01:58:32.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

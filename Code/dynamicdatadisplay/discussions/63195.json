@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "214758",
+    "ThreadId": "63195",
+    "Html": "<p>Hi,</p>\r\n<p>I have a funny problem. If I load a chart with a Log Y Axis and a LineGraph with ElementPointMarkers as shown below:</p>\r\n<p><span style=\"font-size:x-small\">&nbsp;</span></p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>plotter.AddLineGraph(ds, AssignPenColour(i), AssignPointMarker(i), <span style=\"color:Blue\">new</span> PenDescription(<span style=\"color:#A31515\">&quot;My Set&quot;</span>));</pre>\r\n</div>\r\n<p>I get the following:</p>\r\n<p><a href=\"http://s1014.photobucket.com/albums/af262/quinlivan/Work Related/?action=view&current=LogYAxis.jpg\"><img src=\"http://i1014.photobucket.com/albums/af262/quinlivan/Work Related/LogYAxis.jpg\" border=0 alt=\"Log Y Axis\"></a></p>\r\n<p>&nbsp;</p>\r\n<p>However, If I have a Log X Axis (with the exact same dataset), I get an Error in the SetPosition of the&nbsp;<span style=\"font-size:x-small;color:#2b91af\"><span style=\"font-size:x-small;color:#2b91af\">CircleElementPointMarker</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><a href=\"http://s1014.photobucket.com/albums/af262/quinlivan/Work Related/?action=view&current=MarkerIssue.jpg\"><img src=\"http://i1014.photobucket.com/albums/af262/quinlivan/Work Related/MarkerIssue.jpg\" border=0 alt=\"Issue - Log X Axis\"></a></p>",
+    "PostedDate": "2009-07-22T06:49:39.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214859",
+    "ThreadId": "63195",
+    "Html": "<p>Hi,</p>\r\n<p>this is a well expected exception - your left most point has zero x coordinate, which logarithm is -infinity. Canvas cannot have element with such coordinates, it is simply impossible and not needed to draw them.</p>\r\n<p>Or you should have your data be strongly positive, or change you transform so that it shifts data a little before applying log transform.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-22T10:07:59.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214877",
+    "ThreadId": "63195",
+    "Html": "<p>Thank you so much! That makes perfect sense!</p>",
+    "PostedDate": "2009-07-22T10:54:52.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

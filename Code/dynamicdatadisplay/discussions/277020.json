@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "688549",
+    "ThreadId": "277020",
+    "Html": "\r\n<p>Does the D3 WPF Dynamic Data Display supports overlay graph (viewing multiple graphs in a single frame)?</p>\r\n<p>we need the overlay feature such as users can load different sets of data bases on their selection of data sets and compare them in a single frame</p>\r\n<p>(x and y scale are the same for all sets of data)&nbsp;</p>\r\n<p>Maybe one time, they want load 20 sets of data, next time they may&nbsp;want to lod 50 sets of data and do the comparison.&nbsp;</p>\r\n<p>thx!</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-10-24T10:59:31.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

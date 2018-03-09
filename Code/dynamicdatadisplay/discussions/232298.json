@@ -1,0 +1,378 @@
+[
+  {
+    "Id": "512477",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi everyone,</p>\r\n<p>I had a need to improve the performance of the LineGraph in DynamicDataDisplay, so I took the example DirectX&nbsp;library from the latest nightly build and improved upon it myself. Please keep in mind that I developed it for my project's needs, so you may\r\n have to modify some things to fit yours, but I will try to explain the things you an change to make it easier.</p>\r\n<p>First, I want to go over the changes:</p>\r\n<ul>\r\n<li>I upgraded to the latest SlimDX library from June of this year, so you will need to download that SDK and/or binaries in order to build the project.\r\n</li><li>I scrapped the DirectXHost class after working on it quite a bit in favor of the example SlimDXControl included in the SlimDX SDK.\r\n</li><li>I moved the TransparencyEffect into its own effect library to make compiling easier to handle. It uses the ShaderBuildTask from the WPFToolkit. This may not be necessary, but I left it just in case.\r\n</li><li>I replicated the class hierarchy from the main D3 library in order to host a DirectXLineGraph just like you would a normal WPF LineGraph in the ChartPlotter class.\r\n</li><li>I implemented a timer to control the rendering loop instead of the CompositionTarget.Rendering event. It seemed net some more performance since you are not relying on the WPF rendering loop to trigger.\r\n</li><li>I created some extension methods that duplicate the AddLineGraph() methods ,which you can look at and duplicate if you need to.\r\n</li></ul>\r\n<p>Now, to build it, you will need the following:</p>\r\n<ul>\r\n<li>Download the source: DynamicDataDisplay.DirectX2D and TransparencyEffect. Those files are located here:&nbsp;<a title=\"Source\" href=\"http://cid-0cd3e1f8014fc24f.office.live.com/self.aspx/Source%20Code/D3.DirectX.zip\">http://cid-0cd3e1f8014fc24f.office.live.com/self.aspx/Source%20Code/D3.DirectX.zip</a>\r\n</li><li>Download and install the latest SlimDX SDK here:&nbsp;<a href=\"http://slimdx.org/download.php\">http://slimdx.org/download.php</a>. You will probably have to fix the reference to the SlimDX library installed on your machine.\r\n</li><li>You will need to install the ShaderBuildTask to build the TransparencyEffect library. You can download that here:&nbsp;<a href=\"http://wpf.codeplex.com/releases/view/14962#DownloadId=40167\">http://wpf.codeplex.com/releases/view/14962#DownloadId=40167</a>\r\n</li><li>In the main DynamicDataDisplay library, you will need to make one small change to the PlotterElement class. Change the accessor on the &quot;plotter&quot; member variable from &quot;private&quot; to &quot;protected&quot;.\r\n</li></ul>\r\n<p>To use the new DirectXLineGraph, there has to be a SlimDXControl in the ChartPlotter.Children collection. You can add it in XAML or code. Then, you can add a new line graph. Here is an example in code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>_chartPlotter.Children.Add(<span style=\"color:blue\">new</span> SlimDXControl());\r\n_chartPlotter.AddDXLineGraph(pointCollection, Colors.Green, <span style=\"color:#a31515\">&quot;description&quot;</span>);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>I have the line graph background color set to black, but you can change that in the SlimDXControl. Look for this line and change the color:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">private</span> Color4 _backBufferColor = <span style=\"color:blue\">new</span> Color4(1, 0, 0, 0);</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>If I think of any more tips, I will edit this thread. Also, feel free to post any questions, comments or suggestions you have regarding my changes. I hope you guys can make use of it.</p>\r\n<p>Edit: I mistakenly put ViewportElement2D instead of PlotterElement in the last line of the build instructions.</p>\r\n",
+    "PostedDate": "2010-10-25T19:16:41.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512570",
+    "ThreadId": "232298",
+    "Html": "\r\n<div><span style=\"font-family:Arial; font-size:x-small\">&nbsp;\r\n<div><span style=\"font-family:Arial; font-size:x-small\">\r\n<div><span style=\"font-family:Arial; font-size:x-small\"><span style=\"font-size:small\">Awesome!</span></span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial; font-size:x-small\"><span style=\"font-size:small\">Thank you Jason&nbsp;for sharing your hard work.</span></span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial; font-size:x-small\"><span style=\"font-size:small\">David Roh</span></span></div>\r\n<div id=\"x_x__mcePaste\" style=\"width:1px; height:1px; overflow:hidden; top:0px; left:-10000px\">\r\n<span style=\"font-size:small\">&#65279;</span></div>\r\n</span></div>\r\n</span></div>\r\n",
+    "PostedDate": "2010-10-26T01:35:48.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513031",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I will be posting an update tomorrow that addresses some pretty major performance issues. Stay tuned.</p>\r\n",
+    "PostedDate": "2010-10-26T15:38:23.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513397",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I am getting some exceptions with the Line Description in the D3 library once I start using DXLineGraph</p>\r\n<p>Below Image shows the code for adding the DirectXLineGraph</p>\r\n<p><img src=\"http://lh4.ggpht.com/_kJaXpVpql30/TMg6t8fQKaI/AAAAAAAAHjE/UqBQzaSm2jw/AddingDXLineGraph.png\" alt=\"\" width=\"1000px\"></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#000000\">Below Code show the exception that happens inside the D3 library since it cannot find a LineGraph to add the description</span></p>\r\n<p><img src=\"http://lh4.ggpht.com/_kJaXpVpql30/TMg6uR-S2CI/AAAAAAAAHjI/oJgzSSSxK4E/DXLIneGraphNotFound.png\" alt=\"\" width=\"1000px\"></p>\r\n<p>&nbsp;</p>\r\n<p>Are you seeing this error.</p>\r\n<p>Thanks</p>\r\n<p>Kishore Vanapalli</p>\r\n",
+    "PostedDate": "2010-10-27T07:46:40.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513493",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Yes. This is change I forgot to document. Since it was expecting the concrete class LineGraph, I had to change it to an interface reference.</p>\r\n<p>Change that line(29) to:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>IOneDimensionalChart g = graph <span style=\"color:blue\">as</span> IOneDimensionalChart;\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2010-10-27T09:58:33.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513497",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I also ran into an issue yesterday while I was profiling the memory usage of my application. It was generating a lot of garbage, causing way too many Gen0 collections. I tracked the issue down to the GetPoints() method of IPointSource. This method returns\r\n an IEnumerable of Points that was being converted into an array of Points using the .ToArray() method.</p>\r\n<p>The current work around for me is to add seperate float arrays for my X and Y graph values and completely bypassing the standard D3 point datasource system. I realize this may not work for some people, as I developed for my case, but does anyone have the\r\n need to chart anything other than double or float values in a line graph?</p>\r\n",
+    "PostedDate": "2010-10-27T10:09:07.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513499",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>DateTime on the independent axis.</p>\r\n",
+    "PostedDate": "2010-10-27T10:13:01.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513582",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I am getting a blank screen with no plot in the graph region</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>  <span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> Window_Loaded(<span style=\"color:blue\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            DirectXLineGraph lineGraph = <span style=\"color:blue\">null</span>;\r\n            <span style=\"color:blue\">double</span>[] yPts = <span style=\"color:blue\">new</span> <span style=\"color:blue\">double</span>[] { 11, 44, 22, 55, 33, 88, 66, 77, 99, 110 };\r\n            <span style=\"color:blue\">double</span>[] xPts = <span style=\"color:blue\">new</span> <span style=\"color:blue\">double</span>[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };\r\n\r\n            IPointDataSource dSource = xPts.AsXDataSource().Join(yPts.AsYDataSource());\r\n            lineGraph = plotter1.AddDXLineGraph(dSource, Colors.Blue, 1, <span style=\"color:#a31515\">&quot;Phase&quot;</span>);\r\n\r\n            <span style=\"color:green\">//StartToLoadData();</span>\r\n        }\r\n</pre>\r\n<pre><br></pre>\r\n<pre>Below is the image. 38 is the Frames that is shown in the debug mode.</pre>\r\n</div>\r\n<p><img src=\"http://lh3.ggpht.com/_kJaXpVpql30/TMiAVHdmLhI/AAAAAAAAHjg/hN7zHdpX9E8/blankgraph.png\" alt=\"\"></p>\r\n",
+    "PostedDate": "2010-10-27T12:42:25.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513596",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>It looks like the values you are graphing fall outside the range of your chartplotter. Can you zoom the viewport out, or change your values?</p>\r\n<p>Also, I noticed the TransparencyEffect is used to set the backbuffer color to transparent, if you want to use the graph background color instead. I have this re-enabled on the newer version of the library. If you want to enable it yourself, just add this\r\n line in the constructor of SlimDXControl. The backbuffer color&nbsp;does need to be set to black:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>Effect = <span style=\"color:blue\">new</span> Transparency();\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2010-10-27T13:04:11.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513614",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi&nbsp;Foxman13, and thanks for the work you've put into this DirectX implementation.</p>\r\n<p>Like&nbsp;kvanapal, I'm having a similar issue - I don't see the graph Line that I should (I don't see any line at all), and like kvanapal I can see the legend and frame-rate (as well as the axis etc).</p>\r\n<p>There is&nbsp;definitely&nbsp;a SlimDXControl added to the plotter, and I have followed the example and changes that you have suggested in your previous posts.</p>\r\n<p>Any ideas what could be going wrong here?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your time,</p>\r\n<p>pete</p>\r\n",
+    "PostedDate": "2010-10-27T14:02:27.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513621",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Are you seeing any first chance exceptions in the output window during debug?</p>\r\n",
+    "PostedDate": "2010-10-27T14:10:52.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513630",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>There is just one exception thrown, but I tracked this down to the creation of the Driect3DEx object (see code snippet below). I'm running Windows XP, and I understand that the Direct3DEx class is only available with Windows Vista onwards?</p>\r\n<p>Anyway, yes there is an exception but nothing that I thought would cause the issue which I am experiencing.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> InitializeDirect3D()\r\n{\r\nDirectXStatus = DirectXStatus.Unavailable_Unknown;\r\nReleaseDevice();\r\n\r\n...other code\r\n\r\n<span style=\"color:blue\">try</span>\r\n            {\r\n                _direct3DEx = <span style=\"color:blue\">new</span> Direct3DEx(); <span style=\"color:#ff0000\">&lt;-- Exception thrown here</span>\r\n                UseDeviceEx = <span style=\"color:blue\">true</span>;\r\n            }\r\n            <span style=\"color:blue\">catch</span>\r\n            {\r\n                <span style=\"color:blue\">try</span>\r\n                {\r\n                    _direct3D = <span style=\"color:blue\">new</span> Direct3D();\r\n                    UseDeviceEx = <span style=\"color:blue\">false</span>;\r\n                }\r\n                <span style=\"color:blue\">catch</span> (Direct3DX9NotFoundException)\r\n                {\r\n                    DirectXStatus = DirectXStatus.Unavailable_MissingDirectX;\r\n                    <span style=\"color:blue\">return</span>;\r\n                }\r\n                <span style=\"color:blue\">catch</span>\r\n                {\r\n                    DirectXStatus = DirectXStatus.Unavailable_Unknown;\r\n                    <span style=\"color:blue\">return</span>;\r\n                }\r\n            }\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Hope this can help you,</p>\r\n<p>Pete</p>\r\n",
+    "PostedDate": "2010-10-27T14:31:31.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513633",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I found the issue. To work around the problem for now, go to DirectXChart.cs and find the OnMainLoop() method. In it, change the following:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>            <span style=\"color:green\">// only process our rendering if the data is updated</span>\r\n            <span style=\"color:green\">//if (_renderUpdate)</span>\r\n            <span style=\"color:green\">//{</span>\r\n            <span style=\"color:green\">//    OnDirectXRender();</span>\r\n            <span style=\"color:green\">//}</span>\r\n\r\n            OnDirectXRender();\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2010-10-27T14:41:15.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513645",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Ok everything seems to work.&nbsp;I did not see anything because my values were way above the range of the Axis. The default range is 0-1 on both the axes</p>\r\n<p>We need to fix the method plotter.FitToView().&nbsp;</p>\r\n<p>otherwise we have to set the viewport all the time after we render</p>\r\n<p>OR</p>\r\n<p>is the FitToView() already fixed??</p>\r\n",
+    "PostedDate": "2010-10-27T15:09:51.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513650",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Let me take a look at FitToView() and see if I can get it going. I will also look at implementing a HighPerformanceDataSource type class to fix some of the garbage collection issues. I will keep everyone updated.</p>\r\n",
+    "PostedDate": "2010-10-27T15:15:27.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513695",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>How do you make the DirectX work with terminal services on a computer ???</p>\r\n",
+    "PostedDate": "2010-10-27T17:27:42.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513714",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>If you are talking about a remote desktop situation, I am pretty sure you can't share a DirectX device over that protocol.</p>\r\n",
+    "PostedDate": "2010-10-27T18:40:48.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513839",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi Jason,</p>\r\n<p>&nbsp;</p>\r\n<p>thanks a lot for your effort. I will check this out tonight @ home. There are some question i have beforhand:</p>\r\n<p>- I will not be able to see the plot over a remote desktop connection?<br>\r\n- Am i able to host more than one of these controls in one application the same time?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n<p>joe</p>\r\n",
+    "PostedDate": "2010-10-28T01:56:41.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513972",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi Joe,</p>\r\n<p>Hardware accelerated graphics such as DirectX will not display over a remote desktop connection. This is dues to the surface actually being drawn on the GPU and the RDP knows nothing about it. Everything rendered over RDP is software-only.</p>\r\n<p>Here is a little snippet that explains some of the problems with DirectX and RDP:\r\n<a href=\"http://social.msdn.microsoft.com/Forums/en-US/gametechnologiesdirectx101/thread/8b037258-431b-4286-b4f5-7070ca0afd98/\">\r\nhttp://social.msdn.microsoft.com/Forums/en-US/gametechnologiesdirectx101/thread/8b037258-431b-4286-b4f5-7070ca0afd98/</a></p>\r\n<p>Also, you can host multiple plotters in the same application. However, I wouldn't recommend displaying more than 2-3 at a time, as it will bog down your video card.</p>\r\n",
+    "PostedDate": "2010-10-28T06:57:04.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513983",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>If I use the transparency effect in the constructor it is throwing an exception&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><img src=\"http://lh5.ggpht.com/_kJaXpVpql30/TMmJB7fca3I/AAAAAAAAHj0/UzBtCiu-3BI/tranparencyEffect.png\" alt=\"\"></p>\r\n",
+    "PostedDate": "2010-10-28T07:31:06.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514012",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Try placing it above InitializeComponent();</p>\r\n",
+    "PostedDate": "2010-10-28T08:14:39.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514102",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Although you are using FrequencyFilter with your&nbsp;DirectXLineGraph it seems to me that that Filter is not being called and it is trying to plot all the thousands of points in the data source. At 20K point data source the graph just dies.</p>\r\n<p>I have uploaded a working sample of the application that switches between 5K, 10K, 20K, 30K and 100K points</p>\r\n<p>here is the link <a href=\"https://docs.google.com/leaf?id=0B67dwyK2bTZtYTJlODM1MWQtNmY3NC00ZDlhLWJmYjgtMWJhN2VjOTQ2MjAw&hl=en\" target=\"_blank\">\r\nD3.DirectX.zip</a></p>\r\n<p>You can clearly see that the application does not respond at20K points. It is clearly not using the FrequencyFilter that is added to the graph.</p>\r\n",
+    "PostedDate": "2010-10-28T10:22:31.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514153",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>You are correct. I should have mentioned that this wasn't a full blown replication of the LineGraph, as I developed it for my project's use cases. For example, the most points I would ever need to plot at once is 3000 and that represents a rolling time window\r\n on a data set.</p>\r\n<p>Howver, if that is something you guys need, let me take a look at it and see what I can do. Or, feel free to add the additional functionality yourself.</p>\r\n",
+    "PostedDate": "2010-10-28T11:50:07.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514154",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Yes I would be more than happy to help you develop this further. Just let me know where how I can help you add this filtering in. I can take this from there. I am still trying to get my head around what you have done. I am totally new to DirectX programming\r\n so still learning. But I am pretty well versed with how D3 works. Let me know where can I help and lets get it working.</p>\r\n<p>kishore</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-10-28T11:53:42.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514158",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I suggest we setup a development project then based on the community's contributions. I will create a Codeplex project and update you shortly. Then, we can have source control and a release system for changes.</p>\r\n",
+    "PostedDate": "2010-10-28T11:58:36.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514269",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>There is something wrong with the Transparency. The graph area is only transparent on the areas where we paint it. The rest of the graph area is white. See picture below</p>\r\n<p><img src=\"http://lh5.ggpht.com/_kJaXpVpql30/TMn-drod3KI/AAAAAAAAHkU/7gyjgnu7DNg/horizontalTicks.png\" alt=\"\"></p>\r\n<p><img src=\"http://lh4.ggpht.com/_kJaXpVpql30/TMn95OqCUiI/AAAAAAAAHkI/wrMOexxIW-E/morehorizontalTicks.png\" alt=\"\"></p>\r\n",
+    "PostedDate": "2010-10-28T15:49:51.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515980",
+    "ThreadId": "232298",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>Foxman13 wrote:</strong><br>\r\n<p>I suggest we setup a development project then based on the community's contributions. I will create a Codeplex project and update you shortly. Then, we can have source control and a release system for changes.</p>\r\n</blockquote>\r\n<p>&nbsp;Did someone create a fork of this project that will actually have work being done on it?&nbsp; If so, where is it?</p>\r\n",
+    "PostedDate": "2010-11-02T08:40:50.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516059",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>we got the project set up here&nbsp;<a href=\"http://d3commdev.codeplex.com/\">http://d3commdev.codeplex.com</a>. Trying to get the DirectX to work more appropriately using filters.</p>\r\n<p>&nbsp;</p>\r\n<p>Kishore</p>\r\n",
+    "PostedDate": "2010-11-02T11:19:26.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516061",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>You have to be a developer or coordinator to have access to it right now.&nbsp; I am neither.</p>\r\n",
+    "PostedDate": "2010-11-02T11:21:29.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516062",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>There is not any code posted to that site yet. I apologize for the delay, but i have been sick the past few days.</p>\r\n<div>On Nov 2, 2010 1:21 PM, \"iguanamind\" <<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>> wrote:<br type=\"attribution\">\r\n> From: iguanamind<br>\r\n> <br>\r\n> You have to be a developer or coordinator to have access to it right now. I am neither.\r\n<br>\r\n> <br>\r\n> <br>\r\n</div>\r\n",
+    "PostedDate": "2010-11-02T11:25:21.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516065",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi Jason, Kishore,</p>\r\n<p>I am also very interested in this project - please keep us updated on your progress on this thread and let us know when you have a discussion opened on the new project site.</p>\r\n<p>Thank you for all the hard work that you are doing - it is appreciated.</p>\r\n<p>David</p>\r\n",
+    "PostedDate": "2010-11-02T11:28:48.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516067",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>NP!&nbsp; Been battling something myself.&nbsp; I am interested in a fork on this since nothing is being done (no releases or patches).&nbsp; I probably don't have the same interest that generated this particular thread, but I am interested in helping.&nbsp;\r\n I'm sure when you open up the new project, you will be more clear on purposes.</p>\r\n",
+    "PostedDate": "2010-11-02T11:31:38.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516068",
+    "ThreadId": "232298",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>kvanapal wrote:</strong><br>\r\n<p>There is something wrong with the Transparency. The graph area is only transparent on the areas where we paint it. The rest of the graph area is white. See picture below</p>\r\n<p><img src=\"http://lh5.ggpht.com/_kJaXpVpql30/TMn-drod3KI/AAAAAAAAHkU/7gyjgnu7DNg/horizontalTicks.png\" alt=\"\"></p>\r\n<p><img src=\"http://lh4.ggpht.com/_kJaXpVpql30/TMn95OqCUiI/AAAAAAAAHkI/wrMOexxIW-E/morehorizontalTicks.png\" alt=\"\"></p>\r\n</blockquote>\r\n<p>&nbsp;Interesting. I haven't seen this issue, but that is probably because I hide the grid lines in my charts. I am also using a black background.</p>\r\n",
+    "PostedDate": "2010-11-02T11:33:35.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516523",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>If u hide the axis Grid then it is not a problem. But I would like to see the Axis grid.</p>\r\n<p>I am trying to overlay the curves on top of the Axis Grid so I am seeing the problem. Let me know if you find a fix.</p>\r\n",
+    "PostedDate": "2010-11-03T08:53:46.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516529",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I am working on a much complex problem set for the graphing library.</p>\r\n<p>I need to be able to plot upwards of 50K points and may be upto 200K. I need Zoom &amp; Pan, need Axis on the right, need Logarithmic Axis on X axis. Thats is basic set of features that I need. Although D3 provides all the above Its rendering is very slow,\r\n so I am trying to see if DirectX can scale and it does. But the thing is I need to add all these bunch of features again back into the DirectX. I am new to DirectX and battling with the API.</p>\r\n",
+    "PostedDate": "2010-11-03T09:03:27.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516540",
+    "ThreadId": "232298",
+    "Html": "\r\n<div>We'll work on these features. Zoom and Pan work, along with the Axis positioning. I have it working in my project.\r\n</div>\r\n<div> </div>\r\n<div>We will need to focus on the DataSource side of things though, because that seems to be the biggest performance issue(aside from drawing) when you are graphing large amounts of data and/or data in real-time.<br>\r\n<br>\r\n</div>\r\n<div>On Wed, Nov 3, 2010 at 11:03 AM, kvanapal <span dir=\"ltr\"><<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>></span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid; margin:0px 0px 0px 0.8ex; padding-left:1ex\">\r\n<div>\r\n<p>From: kvanapal</p>\r\n<div>\r\n<p>I am working on a much complex problem set for the graphing library.</p>\r\n<p>I need to be able to plot upwards of 50K points and may be upto 200K. I need Zoom & Pan, need Axis on the right, need Logarithmic Axis on X axis. Thats is basic set of features that I need. Although D3 provides all the above Its rendering is very slow,\r\n so I am trying to see if DirectX can scale and it does. But the thing is I need to add all these bunch of features again back into the DirectX. I am new to DirectX and battling with the API.</p>\r\n</div>\r\n<div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=232298&ANCHOR#Post516529\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:232298]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n<br clear=\"all\">\r\n<br>\r\n-- <br>\r\nJason Fox<br>\r\n",
+    "PostedDate": "2010-11-03T09:28:31.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516566",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Oh thts good. I think I have the filtering enabled and working. I also realized that the Viewport is not set to the right bounds to start with.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>Foxman13 wrote:</strong><br>\r\n<div>We'll work on these features. Zoom and Pan work, along with the Axis positioning. I have it working in my project.</div>\r\n<div>We will need to focus on the DataSource side of things though, because that seems to be the biggest performance issue(aside from drawing) when you are graphing large amounts of data and/or data in real-time.<br>\r\n<br>\r\n</div>\r\n<div>On Wed, Nov 3, 2010 at 11:03 AM, kvanapal <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid; margin:0px 0px 0px 0.8ex; padding-left:1ex\">\r\n<div>\r\n<p>From: kvanapal</p>\r\n<div>\r\n<p>I am working on a much complex problem set for the graphing library.</p>\r\n<p>I need to be able to plot upwards of 50K points and may be upto 200K. I need Zoom &amp; Pan, need Axis on the right, need Logarithmic Axis on X axis. Thats is basic set of features that I need. Although D3 provides all the above Its rendering is very slow,\r\n so I am trying to see if DirectX can scale and it does. But the thing is I need to add all these bunch of features again back into the DirectX. I am new to DirectX and battling with the API.</p>\r\n</div>\r\n<div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=232298&ANCHOR#Post516529\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:232298]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n<br>\r\n<br>\r\n-- <br>\r\nJason Fox<br>\r\n</blockquote>\r\n<p>Kishore</p>\r\n",
+    "PostedDate": "2010-11-03T10:21:39.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516592",
+    "ThreadId": "232298",
+    "Html": "Are you graphing real-time data, many points of data, or a combination of both?<br>\r\n<br>\r\n<div>On Wed, Nov 3, 2010 at 12:21 PM, kvanapal <span dir=\"ltr\"><<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>></span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid; margin:0px 0px 0px 0.8ex; padding-left:1ex\">\r\n<div>\r\n<p>From: kvanapal</p>\r\n<div>\r\n<p>Oh thts good. I think I have the filtering enabled and working. I also realized that the Viewport is not set to the right bounds to start with.</p>\r\n<div>\r\n<div></div>\r\n<div>\r\n<blockquote style=\"border-bottom:#ccc 0.1em solid; border-left:#ccc 0.1em solid; padding-bottom:0px; font-style:italic; margin:0.25em 1em 0px; padding-left:0.25em; padding-right:0.25em; border-top:#ccc 0.1em solid; border-right:#ccc 0.1em solid; padding-top:0px\">\r\n<strong>Foxman13 wrote:</strong><br>\r\n<div>We'll work on these features. Zoom and Pan work, along with the Axis positioning. I have it working in my project.</div>\r\n<div>We will need to focus on the DataSource side of things though, because that seems to be the biggest performance issue(aside from drawing) when you are graphing large amounts of data and/or data in real-time.<br>\r\n<br>\r\n</div>\r\n<div>On Wed, Nov 3, 2010 at 11:03 AM, kvanapal <span dir=\"ltr\"><<a href=\"mailto:notifications@codeplex.com\" target=\"_blank\">notifications@codeplex.com</a>></span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid; margin:0px 0px 0px 0.8ex; padding-left:1ex\">\r\n<div>\r\n<p>From: kvanapal</p>\r\n<div>\r\n<p>I am working on a much complex problem set for the graphing library.</p>\r\n<p>I need to be able to plot upwards of 50K points and may be upto 200K. I need Zoom & Pan, need Axis on the right, need Logarithmic Axis on X axis. Thats is basic set of features that I need. Although D3 provides all the above Its rendering is very slow,\r\n so I am trying to see if DirectX can scale and it does. But the thing is I need to add all these bunch of features again back into the DirectX. I am new to DirectX and battling with the API.</p>\r\n</div>\r\n<div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=232298&ANCHOR#Post516529\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:232298]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n<br>\r\n<br>\r\n-- <br>\r\nJason Fox<br>\r\n</blockquote>\r\n</div>\r\n</div>\r\n<p>Kishore</p>\r\n</div>\r\n<div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=232298&ANCHOR#Post516566\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:232298]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n<br clear=\"all\">\r\n<br>\r\n-- <br>\r\nJason Fox<br>\r\n",
+    "PostedDate": "2010-11-03T11:09:01.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517091",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I have the filtering working on the ChartPlotter. I am not plotting real time data, I have to plot a data file which are really huge.</p>\r\n<p>kishore</p>\r\n",
+    "PostedDate": "2010-11-04T07:43:09.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517114",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Awesome! Can you send me your code? I will merge it with the changes I made for drawing and upload it as the initial verison on the community codeplex project.</p>\r\n",
+    "PostedDate": "2010-11-04T08:18:55.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517193",
+    "ThreadId": "232298",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>Foxman13 wrote:</strong><br>\r\n<p>Awesome! Can you send me your code? I will merge it with the changes I made for drawing and upload it as the initial verison on the community codeplex project.</p>\r\n</blockquote>\r\n<p>Here is the code please get it and sync it with our changes.&nbsp;<a href=\"https://docs.google.com/leaf?id=0B67dwyK2bTZtMzZlZDkwZmQtNDFmOC00YTFhLWE5MDItNmZlNWEzMmRiYTgx&hl=en&authkey=CNTD-foL\">D3.DirectX.zip</a></p>\r\n<p>DirectXPointsGraphBase has update method that currently does nothing. I have updated it to call UpdateCore which is a virtual method and is implemented in DirectXLineGraph. So i added UpdateCore to DirectXLineGraph and a whole slew of things that it needs\r\n to support the method.&nbsp;</p>\r\n<p>What is also important is a change in the&nbsp;AddDXLineGraph in the Plotter2DExtensions.cs You have to add the graph to the plotter before you set the datasource to the graph so the sequence of things is important so that the graph knows its plotter and\r\n the viewport and then knows how to deal with the data source when it is set. So this what I did&nbsp;\r\n</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">static</span> DirectXLineGraph AddDXLineGraph(<span style=\"color:blue\">this</span> <span style=\"color:#008080\">Plotter2D </span>plotter, <span style=\"color:#008080\">IPointDataSource </span>pointSource, <span style=\"color:#008080\">Pen </span>linePen, <span style=\"color:#008080\">Description </span>description)\r\n        {\r\n            <span style=\"color:blue\">if</span> (pointSource == <span style=\"color:blue\">null</span>)\r\n                <span style=\"color:blue\">throw</span> <span style=\"color:blue\">new</span> ArgumentNullException(<span style=\"color:#a31515\">&quot;pointSource&quot;</span>);\r\n            <span style=\"color:blue\">if</span> (linePen == <span style=\"color:blue\">null</span>)\r\n                <span style=\"color:blue\">throw</span> <span style=\"color:blue\">new</span> ArgumentNullException(<span style=\"color:#a31515\">&quot;linePen&quot;</span>);\r\n            \r\n            DirectXLineGraph graph = <span style=\"color:blue\">new</span> DirectXLineGraph();            \r\n            graph.LinePen = linePen;            \r\n            <span style=\"color:blue\">if</span> (description != <span style=\"color:blue\">null</span>)\r\n            {\r\n                NewLegend.SetDescription(graph, description.Brief);\r\n                graph.Description = description;\r\n            }\r\n            \r\n            graph.AddToPlotter(plotter);\r\n            graph.DataSource = pointSource;            \r\n            graph.Filters.Add(<span style=\"color:blue\">new</span> FrequencyFilter());\r\n            <span style=\"color:blue\">return</span> graph;\r\n        }\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>The DirectXChart inherits from ViewportElement2D which provides the Viewport and the Plotter2D properties. But we need to override these two properties in the DirectXChart so I have the two new properties in DirectXChart.cs file and these two functions are\r\n important for the filtering to work</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">new</span> <span style=\"color:blue\">protected</span> Plotter2D Plotter2D\r\n{\r\n    <span style=\"color:blue\">get</span> { <span style=\"color:blue\">return</span> (Plotter2D)<span style=\"color:blue\">this</span>.plotter; }\r\n}\r\n\r\n        \r\n        \r\n<span style=\"color:blue\">new</span> <span style=\"color:blue\">protected</span> Viewport2D Viewport\r\n{\r\n   <span style=\"color:blue\">get</span>\r\n   {\r\n      <span style=\"color:blue\">return</span> Plotter2D.Viewport;\r\n   }\r\n}</pre>\r\n<pre><br></pre>\r\n<pre>In your SlimDXControl.cs in the onRendering method you are setting the _needsRendering to always true and there by&nbsp;</pre>\r\n<pre>redrawing it several times and we dont want to do that. I am not a DirectX expert so I will leave that for you to change.&nbsp;</pre>\r\n<pre>I made some changes that work ok for me but you want to further polish that.</pre>\r\n<pre><br></pre>\r\n<pre>In my test application I am trying to add LineGraph to the plotter in the Window_ContentRendered method but you can do that in Window_Loaded as well</pre>\r\n<pre>without any problem</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-04T10:24:54.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517970",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>When are you guys going to open-up the http://d3commdev.codeplex.com/ for the public? I wanna try the latest community version but it's locked.</p>\r\n",
+    "PostedDate": "2010-11-05T15:01:16.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517975",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>We are working on getting the initial code check-in done. Once we do, we will make it public for you guys to do bug testing and provide feedback.</p>\r\n",
+    "PostedDate": "2010-11-05T15:26:03.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "517996",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>I'm evaluating some charting components and I'm intending to evaluate any working sample of D3 running over SlimDX. I'm afraid I don't have much time to make some decisions about using D3 or trying something else. If you could send me anything to evaluate\r\n ASAP would be of great help. I know it's not even ready for bug testing and feedback, but I would like to see it running so I could measure if it can fit my purpose.</p>\r\n<p>I'm intending to contribute with code as well over the next months -- if I choose D3 as my charting engine. Feel free to drop me and e-mail at diego.frata [at] gmail . com</p>\r\n",
+    "PostedDate": "2010-11-05T16:52:45.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518308",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-07T01:12:37.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518828",
+    "ThreadId": "232298",
+    "Html": "\r\n<p>Hi everyone. We have the community version of DynamicDataDisplay up over at <a href=\"http://d3commdev.codeplex.com/\">\r\nhttp://d3commdev.codeplex.com/</a>. This is just focusing on the DirectX version of the LineGraph at this point in time, so if you have need of plotting many thousands of points, then please go there and grab the latest source. If time permits, we will look\r\n at fixing some of the other issues plaguing D3 and possibly implementing missing features.</p>\r\n<p>If you run across any issues, please use the issue tracker to submit issues and we will take a look at them.</p>\r\n<p>The community&nbsp;version is released under the same license as D3 to comply with the Ms-RL&nbsp;license. However, I am working to contact somebody at Microsoft to change the license from Ms-RL to Ms-PL, so a lot of us&nbsp;would feel better about using\r\n it in our projects.</p>\r\n<p>Thank!</p>\r\n",
+    "PostedDate": "2010-11-08T08:23:08.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "711353",
+    "ThreadId": "232298",
+    "Html": "<p><em>&gt;&gt;The community&nbsp;version is released under the same license as D3 to comply with the Ms-RL&nbsp;license. However, I am working to contact somebody at Microsoft to change the license from Ms-RL to Ms-PL, so a lot of us&nbsp;would feel better about using it in our projects.</em></p>\n<p>Hi, I'm wondering if there are still plans to change the license from MS-RL to MS-PL?<br />That would definitely make me feel better!</p>\n<p>Thanks in advance.</p>",
+    "PostedDate": "2011-12-13T03:28:40.493-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

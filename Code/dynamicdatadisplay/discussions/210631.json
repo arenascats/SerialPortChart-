@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "435745",
+    "ThreadId": "210631",
+    "Html": "<p>Hi ,</p>\r\n<p>First of all i would like to appreciate D3 team for their work. And coming to my part, I am trying to create a resource monitoring graph using D3. I found <strong>DynamicPointAddSample</strong> a very good example for my work and i used the logic in that sample to create a graph with widthrestriction. But the <strong>x axis </strong>seem to give integer value , what i want is <strong>datetime</strong> value instead of that integer value . I tried setting a datetime axis as my&nbsp;MainHorizontalAxis still am not able to get working correctly. Can you please help me ?? It would be helpful if you provide me some code sample to solve this problem. Please consider am very new to wpf.</p>\r\n<p><span style=\"font-size:x-small\">\r\n<p>&nbsp;</p>\r\n</span></p>",
+    "PostedDate": "2010-04-26T18:41:33.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "435750",
+    "ThreadId": "210631",
+    "Html": "<p>Hi!</p>\r\n<p>I'm writing a degree work now and it is a serious time in my life now, that's why all non-trivial help after mid of June.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-26T19:19:27.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

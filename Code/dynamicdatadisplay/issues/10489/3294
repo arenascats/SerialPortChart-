@@ -1,0 +1,15 @@
+Index: src/DynamicDataDisplay/Common/DataRect.cs
+===================================================================
+--- src/DynamicDataDisplay/Common/DataRect.cs	(revision 28505)
++++ src/DynamicDataDisplay/Common/DataRect.cs	(working copy)
+@@ -631,8 +631,8 @@
+ 					rect = DataRect.Create(
+ 						Convert.ToDouble(values[0], cultureInfo),
+ 						Convert.ToDouble(values[1], cultureInfo),
+-						Convert.ToDouble(values[2], cultureInfo),
+-						Convert.ToDouble(values[3], cultureInfo)
++						Convert.ToDouble(values[3], cultureInfo),
++						Convert.ToDouble(values[4], cultureInfo)
+ 						);
+ 				}
+ 			}

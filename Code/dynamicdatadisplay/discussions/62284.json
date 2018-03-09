@@ -1,0 +1,186 @@
+[
+  {
+    "Id": "211386",
+    "ThreadId": "62284",
+    "Html": "<p>Is it possible to have multiple Y-Axes, but have them operate independently of each other?</p>\r\n<p>For example, I would like for a user to be able to click on Y-Axis and pan the values only in the Y-Axis, while all of the other Y-Axis scales remain the same.</p>",
+    "PostedDate": "2009-07-13T10:14:06.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211411",
+    "ThreadId": "62284",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Yes, it is possible to have multiple vertical axes - simply create axes and add them one after one to <strong>plotter.Children</strong>.</p>\r\n<p>Every axis in DynamicDataDisplay takes its values to show from one place - it is plotter.Viewport.Visible. Each axis is capable to transform this value - such DateTime axes are working.</p>\r\n<p>I seem not to understand your second question - what do you mean saying 'while all of the other Y-Axis scales remain the same'? What is 'scale' here?</p>\r\n<p>A picture or set of pictures can help me - you can draw some steps of user interaction with your system.</p>\r\n<p>&nbsp;</p>\r\n<p>Best refards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-13T11:11:19.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211435",
+    "ThreadId": "62284",
+    "Html": "<p>Hi. Sorry for the confusion.</p>\r\n<p>By scale, I am referring to the Y-Axis Min and Max. I guess maybe I should refer to it as a&nbsp;range.</p>\r\n<p>Let's say I have a plotter with 2 Y-Axes, each with a range of -100 to 100. I would like for the user to be able to click and drag on Y-Axis #2 and change it's range from -150 to 50, while Y-Axis #1 remains at -100 to 100.</p>\r\n<p>Does this make sense?</p>\r\n<p>&nbsp;</p>\r\n<p>I am trying to duplicate some behavior that we currently have using another component. Our software is currently written in Delphi,and we are doing some research to port over to WPF.</p>\r\n<p>I can make you a sample application to demonstrate if you can tell me some way to get it to you.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-07-13T12:00:02.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211441",
+    "ThreadId": "62284",
+    "Html": "<p>As, as I've already said, in D3 each axis has a values transform to and from values of viewport. what will it mean in terms of Viewport.Visible (it is a rectangle, and vertical axes are changing its vertical values) if one axis pans while another remains still?</p>\r\n<p>I hope D3 can help you, but I can't get an idea - maybe it is because it is 23:19 in Moscow and it's time to go to bed)))</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-13T12:19:32.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211442",
+    "ThreadId": "62284",
+    "Html": "<p>Maybe you are speaking not about an axis, but about some value selector?</p>",
+    "PostedDate": "2009-07-13T12:20:08.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211444",
+    "ThreadId": "62284",
+    "Html": "<p>We use our plots to overlay related data, however the values sometimes are very far apart.</p>\r\n<p>For example, we may trend a pressure, 8000-9000 psig, and a temperature, 50-150 &deg;F, on the same plot.</p>\r\n<p>&nbsp;</p>\r\n<p>We like for our users to be able to easily change the visible range of the Y-Axes easily and independent of each other. I think maybe I am not understanding exactly what it is that you are referring to as a viewport.</p>\r\n<p>&nbsp;</p>\r\n<p>Do you have a site where I may upload a file for you to try?</p>",
+    "PostedDate": "2009-07-13T12:25:53.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211448",
+    "ThreadId": "62284",
+    "Html": "<p>You can upload it here - <a href=\"http://box.net/\">http://box.net/</a>&nbsp;or here - <a href=\"http://skydrive.live.com/\">http://skydrive.live.com/</a>, &nbsp;both requires registration.</p>\r\n<p>Also, if file or archive is not big, you can mail it to my mailbox - thecentury@gmail.com.</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-13T12:31:24.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211455",
+    "ThreadId": "62284",
+    "Html": "<p>OK. I will send shortly.</p>",
+    "PostedDate": "2009-07-13T12:50:37.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211459",
+    "ThreadId": "62284",
+    "Html": "<p>I have uploaded an example app to <a href=\"http://cid-a317ddba516647ac.skydrive.live.com/self.aspx/.Public/PlotTester.zip\">http://cid-a317ddba516647ac.skydrive.live.com/self.aspx/.Public/PlotTester.zip</a></p>\r\n<p>Let me know if you have problems getting it. I tried to email it to your gmail account but it was rejected because of the attachment.</p>",
+    "PostedDate": "2009-07-13T12:57:15.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211794",
+    "ThreadId": "62284",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Gmail rejected you email because it contained an archive with an executable file. Gmail recognized archive and *exe file by their extension, so you may simply change their extension to e.g. zip_for_gmail, gmail will pass it normally, and you recipient will only have to change the extension.</p>\r\n<p>&nbsp;</p>\r\n<p>I wanted to notify you that now I'm working on your case, and there are first results, so soon you'll get it!</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-14T10:51:40.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211941",
+    "ThreadId": "62284",
+    "Html": "<p>Hi,</p>\r\n<p>I think I may have a similar issue. In my case I am plotting measurements of different gases where some are measured in % (0-100 but usually less than 10) and ppm which is often going into the 1000's. I have each axis on a different scale using the DataTransform and the axis ConvertToDouble/ConvertFromDouble, however, scrolling affects all axis (and is throwing an exception as I just found out).&nbsp;</p>\r\n<p>It would be nice to manipulate each axis independently, which&nbsp;I guess would require a direct association between the axes and the line graphs in the plot so that manipulation of a specific axis affects only the associated LineGraph. &nbsp;I imagine, though, that that would be a pretty big functionality to implement. If this is what you're working on or there is another solution I would be eager to find out.</p>\r\n<p>BTW, thank you Mikhail for the great work. D3 is by far the best WPF charting component i've come across and the only one that has given good performance to my WPF application.</p>\r\n<p>Best Regards,</p>\r\n<p>Andrew&nbsp;</p>",
+    "PostedDate": "2009-07-14T20:55:26.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212157",
+    "ThreadId": "62284",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Take a look on what I've done for you - <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/TwoAxesSample.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/TwoAxesSample.zip</a></p>\r\n<p>Try to pan different axes and see, what'll happen.</p>\r\n<p>&nbsp;</p>\r\n<p>Briefly - there are two different plotters, each having its own Viewport and an are to show (Visible in our terms). You can add charts to each of these plotters and they'll be layed out in their plotter's own coordinates.</p>\r\n<p>Note that I'm programmatically making inner plotter have X logical coordinate and width equal to the first plotter values.</p>\r\n<p>You can also disable mouse navigation simply by removing MouseNavigation from outer plotter.</p>\r\n<p>This looks very much like waht&nbsp;<a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl16_UserNameLink\" style=\"text-decoration:underline;color:#3e62a6\" href=\"http://www.codeplex.com/site/users/view/michmela44\">michmela44</a>&nbsp;has posted, so I hope this sample'll help you.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-15T08:46:27.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212192",
+    "ThreadId": "62284",
+    "Html": "<p>Hi.</p>\r\n<p>This looks like what i was talking about, but there are a few things that I wanted to point out, that I am not sure if they were intended.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 1. There are three Y-Axes. the one on the right and the one on the far left seem to be tied together. I removed the following two lines from the XAML:</p>\r\n<p><span style=\"color:#008000;font-size:x-small\"><span style=\"color:#008000;font-size:x-small\">\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&lt;<span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">VerticalAxis</span> <span style=\"color:Red\">Placement</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Right</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span></p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">           &lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">NewAxisNavigation</span> <span style=\"color:Red\">Placement</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">Right</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p><span style=\"color:#000000\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I now have only the two&nbsp;Y-Axes on the left, but I don't know&nbsp;if this has any other negative side effects.</span></p>\r\n</span></span></p>\r\n<p>&nbsp;&nbsp;&nbsp; 2.&nbsp; Panning and Zooming over the Grid Viewport does not affect all Y-Axes. This has a strange effect since the x-axis is affected for both</p>\r\n<p>&nbsp;&nbsp;&nbsp; 3.&nbsp; On the far left Y-Axis, if you move the mouse scroll wheel to zoom, it is then stuck in Pan mode as though you have the left mouse button held down on it.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot for your help</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-15T10:02:01.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "212371",
+    "ThreadId": "62284",
+    "Html": "Hi Mikhail,<br><br>thank you for the sample and code.<br><br>To test it out I did the following. For each dataset I created an <br>InjectedPlotter, added a LineGraph to the InjectedPlotter, add a <br>VerticalAxis to the InjectedPlotter, then added the InjectedPlotter to <br>the plotters children. Since these are dynamically selected by the user <br>from items in a listbox I am clearing the plotter of InjectedPlotters <br>then repopulating it with the new selection.<br><br>With this I can click any of the axes on the left and drag it up/down to <br>move the associated LineGraph, but nothing happens when I try to scroll <br>(with the wheel). The next thing I tried was to dynamically assign the <br>MouseNavigation to the appropriate InjectedPlotter by capturing the <br>MouseDown on the LineGraphs. The idea being a linegraph can be selected <br>and panned by clicking on it. This works for the first selection, but <br>afterwards I can't select any others. It seems that the <br>MouseNavigation.Remove() needs to be called for the LineGraph.MouseDown <br>to be captured again. Do you have any suggestions here?<br><br>If I add the first dataset to the main plot and use the viewport <br>restrictions then I get the appropriate behavior of having changes <br>(panning and scrolling) to the x-axis affect all LineGraphs. In this <br>case, however, i'm also experiencing the stuck panning and scrolling <br>that Michmela44 described. This only happens when I assign a LineGraph <br>to the main plotter. Scrolling on the vertical axis works only on the <br>axis added to the main plotter, but panning (by holding the mouse button <br>down and moving up/down) works on all axis. One thing I like is that <br>when the main plotter has the MouseNavigation, zooming by dragging a box <br>zooms in on all the plots (I guess because of the viewport restriction).<br><br>Thanks again for the great work and help. Let me know if you need <br>clarification on the above.<br><br>Best Regards,<br>Andrew",
+    "PostedDate": "2009-07-15T17:19:24.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428846",
+    "ThreadId": "62284",
+    "Html": "<p>Did anyone ever get anywhere with this?&nbsp; Seems like multiple y-axes is pretty common in scientific types of applications.&nbsp; I'm facing the problem where my x-axis only moves the objects in plotter, and not the inner plotter(s).&nbsp; I'm working in VB and cannot use the lamda expression in the example to sync the x-axis, and wasn't sure how to write it with the callback. Also, like already stated the zooming only effects the objects in plotter, not the inner plotter(s)</p>\r\n<p>Anyone have any suggestions?</p>\r\n<p>Thanks,</p>\r\n<p>Kevin</p>\r\n<p>&nbsp;</p>\r\n<p>Edit:&nbsp; Duh.&nbsp; This seemed to fix my issues for anyone else using VB.</p>\r\n<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim V As New ViewportRestrictionCallback(AddressOf Callback)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; innerPlotter.Viewport.Restrictions.Add(New InjectionDelegateRestriction(plotter.Viewport, V))<br><br><br>&nbsp;&nbsp;&nbsp; Public Function Callback(ByVal rect As DataRect) As DataRect<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rect.XMin = plotter.Viewport.Visible.XMin<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rect.Width = plotter.Viewport.Visible.Width<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return rect<br>&nbsp;&nbsp;&nbsp; End Function</p>",
+    "PostedDate": "2010-04-08T08:15:52.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434582",
+    "ThreadId": "62284",
+    "Html": "<p>Hi Kevin,</p>\r\n<p>Check</p>\r\n<pre>injectedPlotter.SetViewportBinding = false;</pre>\r\n<p>If this is not what you want, Then use ViewPort.PropertyChanged event and do somthing like</p>\r\n<p>InjectedPloter.viewPort.Visible = MainPlotter.ViewPort.Visible.</p>\r\n<p>Regards</p>\r\n<p>Ravi.Battula</p>",
+    "PostedDate": "2010-04-23T05:24:30.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434590",
+    "ThreadId": "62284",
+    "Html": "<div><span style=\"font-family:Arial\">Hi,</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">First, I would like to thank the D3 Team and Microsoft for this great free library.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">I also have a serious need for two independent axes capability in being able to compare two (or more!)&nbsp;plots.</span></div>\r\n<div>&nbsp;</div>\r\n<div>\r\n<div><span style=\"font-family:Arial\">The major issue that I have is the lack of any serious code&nbsp;documentation.&nbsp; I am spending a lot of hours going through the code building an understanding of how&nbsp;D3 works.&nbsp; </span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">I realize that for a Russian team English documentation can be challenging; however, the&nbsp;most important thing needed to turn D3 into an awesome library is really&nbsp;good documentation.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">If the Russian team does not have the band width to create English documentation, maybe there is someway for the interested users to contribute to a documentation wiki.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">Anyway, a&nbsp;high level - functional explanation of the D3 library would be extremely helpful from my viewpoint.</span></div>\r\n<div>&nbsp;</div>\r\n<div><span style=\"font-family:Arial\">David Roh</span></div>\r\n<div>&nbsp;</div>\r\n<div>&nbsp;</div>\r\n</div>",
+    "PostedDate": "2010-04-23T05:49:59.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453477",
+    "ThreadId": "62284",
+    "Html": "Hi Mikhail & others,\r\n\r\njust like the original poster I have two (or multiple) dataseries with very different ranges, which I would like to plot in one plotter, on two different Y axes.\r\n\r\nI browsed through the code (in v0.3) and I understand how the Y-axis gets its range from the viewports data range.\r\n\r\nI also browsed through the Nightly code and I understand Mikhails solution to work with an InjectedPlotter, which has its own viewport, and hence its own datarange for the second Y-axis. It seems elegant, but as others in this discussion pointed out, zooming behaviour in unintuitive.\r\n\r\nI would like to propose a different solution, as suggested by showcaser to make a direct association between the axes and the line graphs in the plot so that manipulation of a specific axis affects only the associated LineGraph, and vice versa.\r\n\r\nI will try to implement this in stable version v0.3 and let you know.\r\n\r\nBest Regards, \r\nelJorro\r\n\r\n",
+    "PostedDate": "2010-06-09T04:57:52.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "473373",
+    "ThreadId": "62284",
+    "Html": "<p>Hi Centruy,</p>\r\n<p>You have posted a link&nbsp;&nbsp;<a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/TwoAxesSample.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/TwoAxesSample.zip</a>&nbsp;for a piece of code. Can you post this code again? This link is not working.</p>\r\n<p>I have a requirement to plot two series of measurement data that are measured in Kilo units and milli units. When I add the two series the range is so big that the smaller unit series is almost flat. I need to be able to plot the two series together with independent y-Axis on the left. How can I do this?</p>\r\n<p>thanks</p>\r\n<p>Kishore</p>",
+    "PostedDate": "2010-07-27T14:38:14.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "473525",
+    "ThreadId": "62284",
+    "Html": "<p><br>Hi kvanapal, I downloaded this example some time ago ... I made a link just for you so you can download from that:<br><br>http://cid-8804efd5e9189e9a.office.live.com/browse.aspx/TwoAxisSample<br><br>bye<br><br>Leandro<br><br></p>",
+    "PostedDate": "2010-07-28T00:24:35.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043712",
+    "ThreadId": "62284",
+    "Html": "Hi All. <br />\nI got some little problem with &quot;Independent Y-Axis&quot; in my project. <br />\n<br />\nIn sample &quot;TwoHorizontalAxes&quot; (last build DevSamples\\TwoHorizontalAxes) you using converter <br />\nInjectedPlotterVerticalSyncConverter, and its working good. <br />\n<br />\nIn my project I need HorisontalConverter, so I little bit changed yours code for my needs (same converter but for vertical <br />\naxes - InjectedPlotterHorizontalSyncConverter).<br />\nIn project .Net 3.5 work fine, all axes independet scrolling and zooming. <br />\nBut in .Net 4.0 all vertical axes just freezing (not zooming, not scrolling). It's happen because in .net 3.5 <br />\nConvertCore happen only when i change mainplotter visible on horizontal axis. <br />\nBut in .net 4.0 its happen when I changing mainplotter visible on horizontal axis and on one of vertical axis.<br />\nMaybe someone has some advice what can i do in this case?<br />\n<br />\nUpgrade<br />\n<a href=\"https://skydrive.live.com/redir?resid=59843D7F85477B08!265&amp;authkey=!AE6RFBSUvDGkmZ4\" rel=\"nofollow\">Link for problem sample</a><br />\n",
+    "PostedDate": "2013-05-15T00:56:40.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061763",
+    "ThreadId": "62284",
+    "Html": "<strong>WarFollowsMe wrote:</strong><br />\n<blockquote>\nHi All. <br />\nI got some little problem with &quot;Independent Y-Axis&quot; in my project. <br />\n</blockquote>\nHi there,\r<br />\nHas anybody solved this Problem ?\r<br />\n<br />\nGreetz\r<br />\nhgbutte<br />\n",
+    "PostedDate": "2013-06-26T20:58:17.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064553",
+    "ThreadId": "62284",
+    "Html": "I am interested in this feature too... \r<br />\n<br />\nI am also not able to download what @TheCentury posted above<br />\n",
+    "PostedDate": "2013-07-04T06:41:34.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

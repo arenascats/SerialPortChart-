@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "237242",
+    "ThreadId": "69690",
+    "Html": "<p>Hi,</p>\r\n<p>i have to display around 5 x 1000 values in a ChartPlotter which takes about 1-2 seconds. This is too slow for me. Is this normal and what is the fastest way to display line series?</p>",
+    "PostedDate": "2009-09-22T03:42:44.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238746",
+    "ThreadId": "69690",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>This is not the easiest question, but I'll try to give you an advice.</p>\r\n<p>1) Try to set some value to plotter.Visible property. This will disable mechanism of automatic charts' content bounds determining, and charts will arranged less times.</p>\r\n<p>2) Try to disable filtering - instead of using plotter.AddLineChart(dataSource) method, which internally creates an instance of LineGraph and adds to it some filters, create this chart manually, set a DataSource property and add to plotter.Children.</p>\r\n<p>3) Where is you data stored in? Maybe this also have some influence.</p>\r\n<p>&nbsp;</p>\r\n<p>For now this is all what I can advise, maybe there are some extra information about this case you can share with me and which can help me to say more.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-25T05:29:08.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

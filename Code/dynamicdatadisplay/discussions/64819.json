@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "220744",
+    "ThreadId": "64819",
+    "Html": "<p>Hi,</p>\r\n<p>I'm tinkering with your PlotterSample. When I run it as is, it hogs all my processor cycles. I would like it to update less frequently so as to use less processor resources. I tried increasing the UpdateInterval in the PerfomanceDataSource. This does change how often data is requested from the performance counters, but the graph keeps speeding away at the same speed. How would I tell it to move slower (or faster for that matter)?</p>",
+    "PostedDate": "2009-08-07T05:31:05.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "220745",
+    "ThreadId": "64819",
+    "Html": "<p>never mind, I'm an idiot :(</p>\r\n<p>I changed the value of the updateInterval variable, but didn't notice that that isn't used during the initialisation of timer...</p>",
+    "PostedDate": "2009-08-07T05:37:21.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221118",
+    "ThreadId": "64819",
+    "Html": "<p>I'm glad you have done what you wanted)</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-08T09:57:24.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

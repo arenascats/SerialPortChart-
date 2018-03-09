@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "613446",
+    "ThreadId": "257810",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I am trying to implement a heat map using D3. I do this by adding rectangle highlights to the plotter at regular intervals and setting their colours accordingly. The problem is that for larger plots (e.g. 200 x 200 cells), the time taken to draw the plot\r\n is very high. The issue seems to be with Add() or AddMany() to the chart plotter's children - these methods take a long time to add so many rectangle highlights. Is there a way to speed this process up at all? Alternatively, is there a more efficient approach\r\n to setting up such a heat map (I'm sure there is - I'm still finding my way with D3...)?</p>\r\n<p>Thanks in advance for any advice.</p>\r\n<p>Matt</p>\r\n",
+    "PostedDate": "2011-05-16T10:12:40.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "615484",
+    "ThreadId": "257810",
+    "Html": "<p>WPF rendering is indeed very slow. you might want to render directly to the bitmap. See WriteableBitmapEx or agg-sharp projects.</p>",
+    "PostedDate": "2011-05-19T12:49:06.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "615745",
+    "ThreadId": "257810",
+    "Html": "<p>Thanks for your help.</p>",
+    "PostedDate": "2011-05-20T01:23:16.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

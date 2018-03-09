@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "577182",
+    "ThreadId": "248866",
+    "Html": "\r\n<p>This may be a similar problem to the one that darksied posted, but I want to plot a simple line graph to get started. I'm using silverlight 4 and my code is</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double[] x = new double[2];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double[] y = new double[2];<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x[0] = 0;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y[0] = 0;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x[1] = 10;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y[1] = 10;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnumerableDataSource&lt;double&gt; xs = new EnumerableDataSource&lt;double&gt;(x);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EnumerableDataSource&lt;double&gt; ys = new EnumerableDataSource&lt;double&gt;(y);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xs.SetXMapping(_x =&gt; _x);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ys.SetYMapping(_y =&gt; _y);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CompositeDataSource ds = new CompositeDataSource(xs, ys);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph = new LineGraph(ds, &quot;Current Calibration&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.LineThickness = 1;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; graph.LineColor = Colors.Red;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MainPlotter.Children.Add(graph);</p>\r\n<p>The problem is the line gets plotted from 0,0.6 to 9.4,10, is there something I'm missing</p>\r\n",
+    "PostedDate": "2011-03-08T06:44:33.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577748",
+    "ThreadId": "248866",
+    "Html": "<p>What version are you using?</p>",
+    "PostedDate": "2011-03-09T06:41:17.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577790",
+    "ThreadId": "248866",
+    "Html": "<p>The dll is the one that came in ﻿﻿﻿﻿V0.2 silverlight binary download, the dll version is V1.0.0.0 and I'm using silverlight 4 in web developer express 2010, is that all the information you need ?</p>",
+    "PostedDate": "2011-03-09T07:29:51.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577951",
+    "ThreadId": "248866",
+    "Html": "<p>In 0.3.4703.0 there is no constructor for LineGraph that takes two parameters. I've never used D3 with Silverlight, though. So, I'm not sure what's going on here.</p>",
+    "PostedDate": "2011-03-09T11:22:18.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578914",
+    "ThreadId": "248866",
+    "Html": "<p>I'm not really a software engineer so kicked the code around a bit with no success, then went to look at the example line graph on the home page and assuming the code is the same as the source code download and plots x values from -5 to +5, I see the same problem. Do other people see this or is it something intrinsic to my PC.</p>",
+    "PostedDate": "2011-03-11T01:16:13.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "648484",
+    "ThreadId": "248866",
+    "Html": "<p>Yeah, i got the SAME problem too.</p>\r\n<p>Could any one can see to fix this?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2011-07-27T12:18:17.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

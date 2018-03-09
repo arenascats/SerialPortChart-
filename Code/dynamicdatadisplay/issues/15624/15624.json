@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Please let me know can D3 draw 1000000 points in a second?",
+    "LastUpdatedDate": "2013-02-21T17:36:51.987-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-03-31T22:28:50.93-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "can D3 draw 1000000 points in a second?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15624
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "No. By far no, mainly with default settings.\r\nSet RenderOptions.EdgeMode for window containing D3 to remove antialiasing (a lot faster).\r\nAlthought anti-aliasing removed, I have really better performance with National Instrument \"Measurement Studio\" graphics (WinForms).\r\n\r\nEric",
+      "PostedDate": "2011-09-09T05:45:46.897-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:51.987-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "263062",
+    "ThreadId": "76945",
+    "Html": "<p>Maybe I'm missing something here but I can't find the source code for the samples. I downloaded &quot;DynamicDataDisplay v0.3 Binaries &amp; Samples&quot; but there are&nbsp;only binaries in the samples folder. Is the source available from somewhere else?</p>",
+    "PostedDate": "2009-12-03T00:44:56.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263146",
+    "ThreadId": "76945",
+    "Html": "<p>Click the <a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx\">Download button</a> on the 'Source Code' tab for the latest nightly.</p>\r\n<p>Or the '<a href=\"http://dynamicdatadisplay.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=26761#DownloadId=66880\">DynamicDataDisplay v0.3 Source</a>' link in the 'Other Available Downloads' section on the Download page for the stable source.</p>",
+    "PostedDate": "2009-12-03T04:54:49.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "263151",
+    "ThreadId": "76945",
+    "Html": "<p>Ah, yes. Thank you!</p>",
+    "PostedDate": "2009-12-03T05:03:05.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

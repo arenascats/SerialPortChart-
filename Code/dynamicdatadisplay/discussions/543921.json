@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1240051",
+    "ThreadId": "543921",
+    "Html": "Is it possible to create updatable diagramm (like in Simulation sample), but with dates on X axis? The problem is that AppendAsync works with Point(double x, double y) class only, but now with Smth(DateTime x, double y).<br />\n",
+    "PostedDate": "2014-04-30T14:14:54.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "558845",
+    "ThreadId": "244177",
+    "Html": "\r\n<p>I set a viewport for ChartPlotter to restrict the X Y threshold. How can I set it back to the default viewport to make the viewport dynamically change?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-02-01T11:03:35.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "558860",
+    "ThreadId": "244177",
+    "Html": "\r\n<p>I just realize that FitToView() can do that.</p>\r\n",
+    "PostedDate": "2011-02-01T11:13:22.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

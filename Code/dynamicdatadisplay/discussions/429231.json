@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "985221",
+    "ThreadId": "429231",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I am using Dynamic Data Display and plot multiple curves on the same chart - that is I have multiple Y axes. I am unable to set the min and max values for Y axes? Can someone help me please...</p>\r\n",
+    "PostedDate": "2013-01-10T19:13:40.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990676",
+    "ThreadId": "429231",
+    "Html": "\r\n<p>Hi</p>\r\n<p>Check yaxis.SetConverion(0,ymin, 100, ymax) - Replace 0 and 100 with your own converion factor values. This is smiple linear conversion</p>\r\n<p>you have to keep in mind that this y axis may not be your main y axis.</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>\r\n",
+    "PostedDate": "2013-01-22T21:34:29.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1129961",
+    "ThreadId": "429231",
+    "Html": "Hi  Ravi, \r<br />\n<br />\nCan you please help me to reach SetConversion function whatever i did, second Y axis take value of first Y axis..\r<br />\n<br />\nBest Regards<br />\n",
+    "PostedDate": "2013-11-28T04:00:06.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

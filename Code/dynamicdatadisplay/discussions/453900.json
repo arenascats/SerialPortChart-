@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1082494",
+    "ThreadId": "453900",
+    "Html": "I am using dynamic data display to plot realtime data as a line graph. \r<br />\nI am trying to plot a line graph with certain values in different color and the others in another colour. But when i tried changing the line colour now, the whole line changes. Anyone knows how to achieve that? <br />\n",
+    "PostedDate": "2013-08-19T22:40:06.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082497",
+    "ThreadId": "453900",
+    "Html": "Hi,\r<br />\n<br />\nThere is no direct solution for this.\r<br />\nBut may be you can use some workaround.(Check this option).\r<br />\nSplit your line graph. I mean use different line graph for each color. Add the Last value of the previous line graph as first value in next line graph.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-08-19T22:44:57.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082505",
+    "ThreadId": "453900",
+    "Html": "Is there no way by modifying dynamic data display classes to into the requirement?\r<br />\nCreating new line graph for some points would be difficult, as in my scenario I want to change my line graph color as the status of the graph changes, this might be more that 10 times, so creating 10 different line graphs will be difficult and also performance will hit because of this.\r<br />\n<br />\nThanks ,\r<br />\nPallavi<br />\n",
+    "PostedDate": "2013-08-19T23:16:44.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

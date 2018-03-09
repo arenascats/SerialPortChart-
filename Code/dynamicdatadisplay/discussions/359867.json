@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "849936",
+    "ThreadId": "359867",
+    "Html": "\r\n<p>Is it possible to select a point with the mouse and have it highlight?&nbsp; I'd also need to handle the pick outside of the graph, so the rest of my program can interact appropriately.&nbsp;</p>\r\n",
+    "PostedDate": "2012-06-16T21:30:11.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

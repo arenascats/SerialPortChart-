@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "259038",
+    "ThreadId": "75708",
+    "Html": "<p>I have just found the D3 and find it very interesting. I have a requirements for a chart with some 10k data points and using WPF polyline etc become very slow. However I need to control every singel color used in the control and also be able to switch on/off grid, labels, axis etc. Is this possible ?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-20T04:44:53.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "260517",
+    "ThreadId": "75708",
+    "Html": "<p>Hi,</p>\r\n<p>1) if you can filter your 10k data points using our filters, built-in into linechart, you'll be able to draw your data a little bit faster. Also we are developing a DirectX solution for drawing large amounts of data.</p>\r\n<p>2) What colors do you need to control in our control?</p>\r\n<p>3) To disable some functionality, you can simply remove it using code like chartPlotter.Children.Remove(chartPlotter.AxisGrid). You can read about it in detail at our wiki:&nbsp;<a href=\"http://microsoft.cs.msu.su/personal/thecentury/Public Documents/Wiki/D3.html\">http://microsoft.cs.msu.su/personal/thecentury/Public%20Documents/Wiki/D3.html</a>.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-25T01:23:33.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

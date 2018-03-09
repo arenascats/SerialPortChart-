@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "634055",
+    "ThreadId": "263067",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>How Can i remove the weekend days from the datetimeaxis?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n",
+    "PostedDate": "2011-06-28T03:30:40.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "934334",
+    "ThreadId": "263067",
+    "Html": "<p>Did you figure out how to do this Mario? If so, it would be greatly&nbsp;appreciated&nbsp;if you could post the solution. Thanks!</p>",
+    "PostedDate": "2012-10-30T11:10:22.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "938546",
+    "ThreadId": "263067",
+    "Html": "<p>Hey Mario, I figured out a solution that might help you to do this, I posted the answer here:</p>\r\n<p><a href=\"http://stackoverflow.com/questions/12937164/dynamic-data-display-scattered-datetime-axis\">http://stackoverflow.com/questions/12937164/dynamic-data-display-scattered-datetime-axis</a></p>",
+    "PostedDate": "2012-11-08T06:49:15.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

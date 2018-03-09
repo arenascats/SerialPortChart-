@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "485735",
+    "ThreadId": "225084",
+    "Html": "<p>I am doing a real time graph where I am graphing 100+ points per second.&nbsp; I would like to set the graph up so the X axis (which represents time passed in seconds) only shows integers rather than trying to break the view down into tenths of seconds.&nbsp; When the graph first starts, it shows 0.2, 0.4, 0.65, 0.78, etc.&nbsp; I would like it to only show 0,1,2,3...</p>\r\n<p>I do have '&lt;d3:FollowWidthRestriction Width=&quot;6&quot;/&gt;' set so once we get up to about 8-9 seconds, then the axis shows 8,9,10,11...and no longer breaks things down to tenths of seconds.</p>\r\n<p>Sort of related, but I would also like to pre-set the value of the Y axis to always remain between -5 and 5 or something similar.&nbsp;</p>\r\n<p>Any ideas?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-08-27T09:20:13.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487125",
+    "ThreadId": "225084",
+    "Html": "<p>From an earlier&nbsp;thread:</p>\r\n<p><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><span style=\"font-family:Consolas;font-size:x-small\"><font face=Consolas size=2>\r\n<p>((NumericTicksProvider)((NumericAxis)plotter.MainHorizontalAxis).TicksProvider).MinStep = 1;</p>\r\n</font></span></span></span></span></span></span></span></span></p>",
+    "PostedDate": "2010-08-31T11:18:55.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "650486",
+    "ThreadId": "225084",
+    "Html": "<p>Thanks!!</p>",
+    "PostedDate": "2011-08-01T04:51:02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

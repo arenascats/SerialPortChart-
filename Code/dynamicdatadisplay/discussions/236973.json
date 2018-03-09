@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "530492",
+    "ThreadId": "236973",
+    "Html": "\r\n<p>Hi&nbsp;</p>\r\n<p>Is it possible to designate a color to IsolineGraph depend on data value?</p>\r\n<p>fe.</p>\r\n<p>&nbsp;&nbsp; &nbsp;0 to 100 &nbsp;: RED , 101 to 200:GREEN, 201 to 300:BLUE , 301 to 400:YELLOW</p>\r\n<p>&nbsp;thanks</p>\r\n",
+    "PostedDate": "2010-12-02T23:22:06.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530707",
+    "ThreadId": "236973",
+    "Html": "\r\n<p>Let's move this discussion to d3future.codeplex.com.</p>\r\n<p>To change colors of isoline chart, use should change its palette. And in your case you should implement custom palette.</p>\r\n<p>If your data are values <strong>exactly</strong>&nbsp;from 0 to 400, then your task will be easier: palette will look like this (pseudocode):</p>\r\n<p>Color GetColor(doublle ratio) {</p>\r\n<p>if(ratio &lt; 0.25) return Colors.Red;</p>\r\n<p>if(ratio &lt; 0.5) return Colors.Green;</p>\r\n<p>etc...</p>\r\n<p>}</p>\r\n<p>If you data lays not exactly from 0 to 400, you should use linear interpolation. Please try to implement this palette yourselft, probably creating a\r\n<em>fork</em>&nbsp;of D3Future project, and your solution will probably merged with D3's trunk.</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-12-03T07:53:10.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "530742",
+    "ThreadId": "236973",
+    "Html": "\r\n<p>I will probably change the Ipalette interface so that all necessary data come directly into palette. PaletteContext will include global dataSource's min and max values, current value in coordinates of dataSource and currentValue interpolated in the segment\r\n [0..1].</p>\r\n",
+    "PostedDate": "2010-12-03T09:02:52.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "531501",
+    "ThreadId": "236973",
+    "Html": "\r\n<p><span style=\"font-size:13.1944px\">Hi Mikhail. Thanks again.</span></p>\r\n<p>What I want to do is to classify data to several kinds.<br>\r\nEach kind have a color to display itself.<br>\r\nMy data is 16bits unsigned.<br>\r\nI think I'm going to creat new Pallete.</p>\r\n",
+    "PostedDate": "2010-12-05T17:26:34.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "584284",
+    "ThreadId": "236973",
+    "Html": "<p>I have a similar query , but on the LineGraph..... please tell me how to set multiple color for a graph line? For example,  At present my graph color is blue and in my y axis , I am displaying  values. So In my graph curve, the graph above a  certain limit (say 100) should be in red. Once the graph comes down  below 100, then it should retain its old color( Blue). Is any feature  exists in the D3 to support this?</p>",
+    "PostedDate": "2011-03-22T03:12:20.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "584376",
+    "ThreadId": "236973",
+    "Html": "<p>The easiest thing would be to have multiple line graphs.</p>",
+    "PostedDate": "2011-03-22T06:39:15.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "584862",
+    "ThreadId": "236973",
+    "Html": "<p>Well, the issue is that user would be able to modify the upper limit dynamically. Fox example, if I am highlighting the curve above 100 in red in my graph now, user should be able to change to above 200. So the solution you have given would end up in re drawing  entire graph(s).</p>",
+    "PostedDate": "2011-03-23T01:34:34.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "584976",
+    "ThreadId": "236973",
+    "Html": "<p>Depending on your situation, that might be acceptable.</p>\n<p>It sounds like you may need to do something like this: have two canvases in the grid area, each with the same line graph, but different colors. Then, set the heights of each such that for one only the bottom portion is visible, and for the other the top  portion. To the user (hopefully) it looks like one line graph with different colors. Maybe you could use a grid to hold the canvases, then you could put in a splitter.</p>\n<p>I don't know if this idea will work. Just trying to be helpful.</p>",
+    "PostedDate": "2011-03-23T05:53:02.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

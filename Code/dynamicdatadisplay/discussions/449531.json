@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1066431",
+    "ThreadId": "449531",
+    "Html": "Hi,\r<br />\n<br />\nIs it possible to plot real time graph with max 100000 points to plot and refresh rate for the graph will be minimum 500ms to 1 second, with dynamic data display tool.\r<br />\nAnd with this criteria what will be the perfomance of application in terms of CPU usage and Memory consumption?\r<br />\n<br />\n<br />\nThanks,\r<br />\nPallavi<br />\n",
+    "PostedDate": "2013-07-10T00:18:55.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1074350",
+    "ThreadId": "449531",
+    "Html": "Hi \r<br />\nI run something similar with updates every 500ms for 10 hours (about 75000 points) with about 10 windows each window holds one or two charts\r<br />\nSo yes it is possible\r<br />\n<br />\nAlthough optimization needs to be considered i.e. don't draw all the points only the changes my mechanism draws a point every second or every change\r<br />\nRoey<br />\n",
+    "PostedDate": "2013-07-29T08:50:44.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

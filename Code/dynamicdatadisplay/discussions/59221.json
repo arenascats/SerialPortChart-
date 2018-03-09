@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "200500",
+    "ThreadId": "59221",
+    "Html": "<p>Great Control! It has really helped me out. I was wondering if there is a simple way for a user to select a range of values (I have disabled the mouse effects) so I can update other UI elements on the page? I have a graph and I would like the user to be able to click on two different points in the graph to select a &quot;range&quot; of values, and for the graph to somehow return the two points that are clicked. Is there an easy way of doing this?</p>",
+    "PostedDate": "2009-06-11T10:55:34.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205969",
+    "ThreadId": "59221",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>If you are displaying a set of points as a line graph, it is impossible to get info about mouse clicks on specific points, it is only possible ot be notified when user clicks on entire line. In this case, I can advice you to develop a control, siimilar to rectangle selection control, that appears when you move mouse with RMB pressed - see a MouseNavigation class for details.</p>\r\n<p>If you are displaying a set of points as markers in MarkerElementGraph, where each marker is a separate UIElement, it is possible to subscribe to its MouseDown event and be notified when user click on a marker. Currently UIElements that are displaying markers are not public visible, but you can easily change this.</p>\r\n<p>Simply have somewhere a logic that'll wait until user clicks consequently on two different markers and then you can calculate their position in viewport coordinates.</p>\r\n<p>&nbsp;</p>\r\n<p>Currently it is not possible to easily highlight selected markers, you can obtain this functionality by creating your own control as a marker, which will have some property, changing which will cause marker to change it look, for example, to draw a outline or smth like this. In the future it probably will be possible to store markers in ItemsControl, which supports native multiple selection and highlighting of selected items.</p>\r\n<p>&nbsp;</p>\r\n<p>Hope I helped you a little bit.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-06-26T10:00:47.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

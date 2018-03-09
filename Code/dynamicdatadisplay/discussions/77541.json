@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "265150",
+    "ThreadId": "77541",
+    "Html": "<p style=\"padding-left:30px\">&quot;(A) Reciprocal Grants- For any file you distribute that contains code from the software (in source code or binary format), you must provide recipients the source code to that file along with a copy of this license, which license will govern that file. You may license other files that are entirely your own work and do not contain code from the software under any terms you choose.&quot;</p>\r\n<p>We are considering using this library in a commercial application, but are confused over the above licence restriction. It would seem to say that any installation using this software has to include the full source of DynamicData, and if we modify any part then those modificaitons&nbsp;must be open as well. Would this include implementing some of your interfaces? eg. if we wrote a new plot type xyz, does that become open source?&nbsp; Am I reading it correctly?</p>\r\n<p>Any clarificaiton would be great.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Paul.</p>",
+    "PostedDate": "2009-12-08T18:41:39.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266161",
+    "ThreadId": "77541",
+    "Html": "<p>Dear Paul,</p>\r\n<p>I'm afraid there are no lawers on this forum. We use standard license agreement and our intention is to allow wide use of the codes. If in doubt please ask your legal consultants, this is the only way to get responsible answer.</p>\r\n<p>Kind regards,<br>Vassily</p>",
+    "PostedDate": "2009-12-11T03:14:50-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

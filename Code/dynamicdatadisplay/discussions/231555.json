@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "509632",
+    "ThreadId": "231555",
+    "Html": "<p>Hi folks,</p>\r\n<p>i'm currently testing if ddd will match our requirements regarding performance. therefore i have built a little app that has n data sources generating 2048 data points very fast (100Hz/sleep 10) and use ddd to display the data. I have built my own custom control hosting the chartplotter and refresh it using a dispatcher timer to decouple data generation from displaying/refreshing.</p>\r\n<p>my control refreshes the plot (if necessary) every 250ms (this means 4Hz) which is far away from realtime, but however would be acceptable.</p>\r\n<p>Here is what i experienced:</p>\r\n<p>When using 9 of these charts (3x plots on screen) cpu load varies depending on how large i size the window. When i scale to a small window i got around 14% cpu load, which would be acceptable since it gives room &nbsp;for even more data to be charted and already is a kind of heavy load scenario for our purpose. BUT, when i size the window to fullscreen (1600x1200) cpu load goes up to 50% which shows that the rendering process itself takes very long to draw all the stuff.</p>\r\n<p>Why is this the case? Is WPF itself the reason for the slow down? I come to nearly similar cpu loads on my virtual machine (using parallels) with WPF HW acceleration turned off compared to my faster work pc running windows 7 natively and wpf hw acceleration turned on (there is a registry toggle for that, and i have to disable it on my virtual machine, because blend caused render bugs). OK, the resolution of the work pc is in fact higher and cpu load is about 45% and not 50% like on the vm.</p>\r\n<p>But how can this happen? I have not used performance tools like dotTrace to look into it, but for me it would be interesting to know how the actual size of chart can have such an impact on performance. the number of data points is the same, just the plain (hw accelerated) painting takes even long if the window is bigger.</p>\r\n<p>@Mikhail/the century: I remember that you conducted a little quickndirty sample of using some sort of directx D3DImage stuff to increase rendering performance. However it did not compile or run on my pc without problems. How much would it afford to bring this approach to a &quot;stable&quot; nightly build? I'm again and again seeing people having problems finding a good flexible AND FAST charting library, ddd could be a great solution to this problem but i think it is too slow in the current state.</p>\r\n<p>Any comments/discussions/help are very appreciated.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n<p>joe</p>",
+    "PostedDate": "2010-10-19T14:54:25.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509642",
+    "ThreadId": "231555",
+    "Html": "<p>Hi All,</p>\r\n<p>I wanted to let everyone know that I have done a lot of work to get DirectX working based on the example in the nightly build.</p>\r\n<p>Just to let you know, I am seeing upwards of 70-80 FPS plotting 2048 data points at 50hz using one LineGraph. Using multiple LineGraphs, I am seeing around 30 FPS. All rendering is offloaded to the GPU, so the CPU cycles are&nbsp;almost nothing.</p>\r\n<p>As I cannot transfer files from my work PC, I will have to do it from home. I will set it on my calendar and try to do it tomorrow while I am at a conference. If you don't see by Thursday, then hound me a little till I post it =).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-19T15:34:54.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509666",
+    "ThreadId": "231555",
+    "Html": "<p>I was just going over my current implementation and realized I never quite figured out how to handle losing the DirectX device like in the case of locking the computer screen and coming back. In this case, I would like to get that worked out and it should only take me a couple of hours of dev time to get it going. I will post the source as soon as I get this handled properly. Thanks.</p>",
+    "PostedDate": "2010-10-19T16:17:38.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509894",
+    "ThreadId": "231555",
+    "Html": "<p>Hello Foxman13,</p>\r\n<p>that sounds promising. I remember from the nighly build example, that it was not possible to zoom and scroll in the view. Is this the price one have to pay when using the directx approach? Would not be a killer in our case anyway. I'm looking forward for your post. Let me know, by dripping a note here.</p>\r\n<p>Regards</p>\r\n<p>jOe</p>",
+    "PostedDate": "2010-10-20T05:45:27.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509903",
+    "ThreadId": "231555",
+    "Html": "<p>I have it working just like the normal WPF LineGraph, so it supports panning and zooming.</p>",
+    "PostedDate": "2010-10-20T06:13:30.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509929",
+    "ThreadId": "231555",
+    "Html": "<p>Oh wow, that sounds even more promising. Will this be published by your self somewhere else or will it be checked in to the current repository? I'm very exited!</p>",
+    "PostedDate": "2010-10-20T07:11:29.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509935",
+    "ThreadId": "231555",
+    "Html": "I don't have access to the repository, so I will have to get it to you guys myself. I will probably post it on SkyDrive or something. Anyways, I am at a Microsoft launch event today and tomorrow, so it will probably be Friday before I can get it posted.<br clear=all>\r\n<br>-- <br>Jason Fox<br>",
+    "PostedDate": "2010-10-20T07:16:40.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511271",
+    "ThreadId": "231555",
+    "Html": "\r\n<p>Hi Jason,</p>\r\n<p>did you have time already to upload something?</p>\r\n<p>Regards</p>\r\n<p>joe</p>\r\n",
+    "PostedDate": "2010-10-22T12:34:29.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511273",
+    "ThreadId": "231555",
+    "Html": "No, I still have a weird issue to resolve where DirectX is leaving render targets in the GPU after a reset and this causes performance to degrade over time. After that, it should be at a serviceable level for you guys to use. I will try to get it done\r\n today, so that I can upload it when I get home tonight.<br>\r\n<br>\r\n<div>On Fri, Oct 22, 2010 at 2:34 PM, oldpasch <span dir=\"ltr\"><<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>></span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid; margin:0px 0px 0px 0.8ex; padding-left:1ex\">\r\n<div>\r\n<p>From: oldpasch</p>\r\n<div>\r\n<p>Hi Jason,</p>\r\n<p>did you have time already to upload something?</p>\r\n<p>Regards</p>\r\n<p>joe</p>\r\n</div>\r\n<div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=231555&ANCHOR#Post511271\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:231555]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n<br clear=\"all\">\r\n<br>\r\n-- <br>\r\nJason Fox<br>\r\n",
+    "PostedDate": "2010-10-22T12:40:45.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511275",
+    "ThreadId": "231555",
+    "Html": "\r\n<p>ok, that would be cool. take your time!</p>\r\n<p>thanks in advance!</p>\r\n",
+    "PostedDate": "2010-10-22T12:42:40.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512189",
+    "ThreadId": "231555",
+    "Html": "\r\n<p>Just wanted to let you know I haven't forgotten about getting this out. I ran accross a performance issue on Friday and hope to have that worked out today, so hopefully I can get this to you guys tonight.</p>\r\n",
+    "PostedDate": "2010-10-25T08:25:36.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512214",
+    "ThreadId": "231555",
+    "Html": "Oh good to know. I did not want to ask again, i'm still very interested in your code!<br /><br />Sent from my iPhone",
+    "PostedDate": "2010-10-25T08:58:19.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516859",
+    "ThreadId": "231555",
+    "Html": "\r\n<p>Has there been any more progress on this work?&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-03T23:22:23.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518310",
+    "ThreadId": "231555",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-07T01:13:18.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602276",
+    "ThreadId": "231555",
+    "Html": "<p>Hello Foxman13, what happened with this? did you managed to upload a working copy? We're very interested in using it.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advanced</p>\r\n<p>Juan Campa</p>",
+    "PostedDate": "2011-04-24T22:40:38.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

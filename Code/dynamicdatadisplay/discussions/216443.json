@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "456956",
+    "ThreadId": "216443",
+    "Html": "I have bound this attached property: when the source of the binding changes, the legend is not updated. The following code change was necessary in Legend.xaml.cs:\r\n\r\n\r\n\r\n        public static readonly DependencyProperty VisibleInLegendProperty =\r\n            DependencyProperty.RegisterAttached(\r\n            &quot;VisibleInLegend&quot;,\r\n            typeof(bool),\r\n            typeof(Legend), new UIPropertyMetadata(\r\n                false, null, OnVisibleInLegend\r\n                ));\r\n\r\n        private static object OnVisibleInLegend(DependencyObject dependencyObject, object obj)\r\n        {\r\n            ViewportElement2D plotterElement = dependencyObject as ViewportElement2D;\r\n            if (plotterElement != null)\r\n            {\r\n                ChartPlotter chartPlotter = plotterElement.Plotter as ChartPlotter;\r\n                if (chartPlotter != null && chartPlotter.Legend != null)\r\n                {\r\n                    if ((bool)obj)\r\n                    {\r\n                        chartPlotter.Legend.RemoveLegendItem(plotterElement.Description.LegendItem);\r\n                        chartPlotter.Legend.AddLegendItem(plotterElement.Description.LegendItem);\r\n                    }\r\n                    else\r\n                    {\r\n                        chartPlotter.Legend.RemoveLegendItem(plotterElement.Description.LegendItem);\r\n                    }\r\n                }\r\n            }\r\n            return obj;\r\n        }\r\n",
+    "PostedDate": "2010-06-17T14:31:48.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

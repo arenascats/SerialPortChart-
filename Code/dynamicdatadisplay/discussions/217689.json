@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "461057",
+    "ThreadId": "217689",
+    "Html": "<p>Hello,</p>\r\n<p>I'd like to draw grid lines for minor ticks. How can I do that ?</p>\r\n<p>Is there an option or should I create another class (and which one should I extend ? AxisControl ?)</p>\r\n<p>Thank you.&nbsp;</p>",
+    "PostedDate": "2010-06-29T02:14:31.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461073",
+    "ThreadId": "217689",
+    "Html": "<p>Found it, it's in</p>\r\n<p>plotter.AxisGrid.DrawVerticalMinorTicks = true; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>plotter.AxisGrid.DrawHorizontalMinorTicks = true;</p>",
+    "PostedDate": "2010-06-29T02:31:28.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

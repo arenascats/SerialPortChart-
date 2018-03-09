@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1045642",
+    "ThreadId": "444191",
+    "Html": "Hello, how i can get this values?\r<br />\n<img src=\"https://dl.dropboxusercontent.com/u/26365458/image.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-05-19T06:23:22.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045841",
+    "ThreadId": "444191",
+    "Html": "Hi,\r<br />\n<br />\nImage is not visible for me.\r<br />\n<br />\nCursorCoordinateGraph text properties are encapsulated(I mean hidden, those are private properties).\r<br />\nBut I guess you don't need those properties.\r<br />\n<br />\nCheck the below properties<br />\n<pre><code>cursorCoordinateGraph.XTextMapping = x =&gt; yourconversion;\ncursorCoordinateGraph.YTextMapping = x =&gt; yourconversion;\n\nthis.cursorCoordinateGraph.CustomXFormat = your custom format;\nthis.cursorCoordinateGraph.CustomYFormat = your custom format;</code></pre>\n\nIf this is not what you are looking for, please attach image again or explain in detail what you are looking for, I will try to help you.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2013-05-19T21:05:41.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1330962",
+    "ThreadId": "574661",
+    "Html": "I am a new gay on WPF and D3.\r<br />\n<br />\nThe value of X axis in my chart is not meaningful(just 1,2,3,....), so I want to hide the value, just keep the ticks.\r<br />\n<br />\nHow can I do this?\r<br />\n<br />\nTnx for anyone whose can help.<br />\n",
+    "PostedDate": "2014-12-11T04:22:38.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355554",
+    "ThreadId": "574661",
+    "Html": "Does <br />\n<br />\n&lt;d3:ChartPlotter MainHorizontalAxisVisibility=&quot;Collapsed&quot;<br />\n<br />\ndo the trick?<br />\n",
+    "PostedDate": "2015-02-25T03:05:55.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

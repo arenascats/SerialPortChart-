@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We have been using DynamicDataDisplay in a Visual Studio 2010 project.  After installing Visual Studio 2012 our application is throwing the following runtime exception when trying to instantiate an object that has ChartPlotter as the base class.\n\n\"Operation could destabilize the runtime.\"\n\nStackTrace:\n   at Microsoft.Research.DynamicDataDisplay.Charts.AxisControl`1..ctor()\n   at Microsoft.Research.DynamicDataDisplay.Charts.NumericAxisControl..ctor()\n   at Microsoft.Research.DynamicDataDisplay.Charts.NumericAxis..ctor()\n   at Microsoft.Research.DynamicDataDisplay.Charts.HorizontalAxis..ctor()\n   at Microsoft.Research.DynamicDataDisplay.ChartPlotter..ctor()\n   at ApplicationDataChart..ctor() i",
+    "LastUpdatedDate": "2013-03-04T09:00:12.8-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2012-10-02T07:09:32.817-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "\"Operation could destabilize the runtime\" exception after installing Visual Studio 2012",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 18738
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I should clarify that this occurs when we build the application with Visual Studio 2010.",
+      "PostedDate": "2012-10-02T07:14:50.253-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I created a simple WPF test app that has a ChartPlotter on its main form.  It also produces the error when built with Platform Target \"x86\".  When built with Platform Target \"Any CPU\", it runs without error.\r\n\r\nMy development machine is running 64 bit Windows 7.  We target x86 because we have other 32 bit components in our application, and need to target 32 bit OS.",
+      "PostedDate": "2012-10-09T07:21:16.217-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This exception is due to an issue in the .NET Framework 4.5, which was installed with your Visual Studio 2012. See http://elegantcode.com/2012/08/23/net-4-5-operation-could-destabilize-the-runtime-yikes/\nIn contrast to the example there, for me it helped to uncomment\n[assembly: AllowPartiallyTrustedCallers]\nin AssemblyInfo.cs of the DDD library, which obviously switched off the CLR verification.",
+      "PostedDate": "2012-10-24T07:32:43.793-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks.  I do not have AllowPartiallyTrustedCallers in my DDD project.\r\n\r\nHowever, I was able to work around this problem by adding this line to AssemblyInfo.cs in the DDD project:\r\n\r\n[assembly: SecurityRules(SecurityRuleSet.Level1, SkipVerificationInFullTrust = true)] \r\n\r\n",
+      "PostedDate": "2012-10-24T08:30:13.877-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-11-05T21:14:13.887-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:48.893-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-23T10:48:09.663-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-03-04T09:00:12.8-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

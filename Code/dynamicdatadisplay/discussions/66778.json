@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "226978",
+    "ThreadId": "66778",
+    "Html": "<p>When I right click on an axis (VerticalAxis or HorizontalAxis), the axis goes into scale mode, where mouse movements stretch/shrink the range displayed on the Axis.</p>\r\n<p>No matter where I click or what I do, this continues... I dont think this is the expected behaviour.</p>\r\n<p>&nbsp;</p>\r\n<p>Note: I am using the latest source (28519) but it was present in previous two versions (28332 and 28208).</p>",
+    "PostedDate": "2009-08-24T03:14:26.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227164",
+    "ThreadId": "66778",
+    "Html": "<p>Hi!</p>\r\n<p>Will be fixed in next changeset - there will be a little bit strange behaviour of ContextMenu on axes, but everything else seems to be OK.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T11:29:57.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227360",
+    "ThreadId": "66778",
+    "Html": "<p>Hi,</p>\r\n<p>Fixed in 'Nightly' in changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28547\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28547\">28547</a>.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-25T00:54:01.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227366",
+    "ThreadId": "66778",
+    "Html": "<p>Thank you!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-25T01:05:33.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

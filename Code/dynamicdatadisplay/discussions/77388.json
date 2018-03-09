@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "264551",
+    "ThreadId": "77388",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>This is not a D3 question but maybe D3 have something that will help me.</p>\r\n<p>The problem: I have some ViewportPolylines that are thick and some are dashed, and is difficult to stay in the line... i cant put a bigger line, i need to have a comprehensive Mouse Enter.</p>\r\n<p>Something like the LiveGeometry project has.</p>\r\n<p>Can you give me some hints, or D3 have something for this?</p>\r\n<p>Thanks,</p>\r\n<p>Rafael Carlos</p>",
+    "PostedDate": "2009-12-07T09:40:11.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265717",
+    "ThreadId": "77388",
+    "Html": "<p>Hi!</p>\r\n<p>Do you mean some kind of line highlighting when user clicked (or 'selected') it?</p>\r\n<p>This can be reached by some effect applied to line.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-10T07:08:35.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266203",
+    "ThreadId": "77388",
+    "Html": "<p>No,</p>\r\n<p>I have a dashed line that is very difficult to maintain the mouse over the line... I need my line to be thin but a large border to be over.</p>\r\n<p>I need that&nbsp; the mouse enter event occur when I'm near the dashed line and not over.</p>\r\n<p>The same with Mouse leave, I want it to occur when i'm far from the line.</p>\r\n<p>Best regards,</p>\r\n<p>Rafael Carlos</p>",
+    "PostedDate": "2009-12-11T05:10:59.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266610",
+    "ThreadId": "77388",
+    "Html": "<p>Hi Rafael,</p>\r\n<p>you can try to implement the following:</p>\r\n<p>1) create a line with large thickness and transparent fill (Stroke property)</p>\r\n<p>2) create a dashed-line chart on the same data</p>\r\n<p>3) subscribe for mouse enter and leave events of both controls, and implement some logic that will not notify about mouse entering or leaving when mouse have actually moved from one of these charts to another.</p>\r\n<p>Maybe this can help you.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-12T07:31:56.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "170377",
+    "ThreadId": "50835",
+    "Html": "Hello,<br>\r\n<br>\r\nI am trying to use Dynamic Data Display in a financial application that can test automated trading systems.<br>\r\nSometimes I need to plot<br>\r\n<ul>\r\n    <li>&nbsp;millions of points as I am working with tick data (each transaction)</li>\r\n    <li>some Markers to visualize my entry and exit points on the market.</li>\r\n</ul>\r\n<br>\r\nHowever if you just plot 1000 points, the chart appears to be completely random!!! For example, if I add some markers, they should always be on the curve, which is not the case (see code). The problem is not coming from the markers but from the line plot. The problem is still the same if you try to use other data sources (composite, enumerable...).<br>\r\nAlso, if you try to drag the chart, the markers does not follow!<br>\r\nIt should be noticed that these bugs was not present in the previous release of dynamic data display. But I need datetime support!<br>\r\n<br>\r\nPlease can anyone help me on this?<br>\r\n<br>\r\nThanks,<br>\r\nKamel<br>\r\n<br>\r\nTo test the bug, add a chart named &quot;plotter&quot; and copy the following code:<br>\r\n<br>\r\nusing System;<br>\r\nusing System.Collections.Generic;<br>\r\nusing System.Linq;<br>\r\nusing System.Text;<br>\r\nusing System.Windows;<br>\r\nusing System.Windows.Controls;<br>\r\nusing System.Windows.Data;<br>\r\nusing System.Windows.Documents;<br>\r\nusing System.Windows.Input;<br>\r\nusing System.Windows.Media;<br>\r\nusing System.Windows.Media.Imaging;<br>\r\nusing System.Windows.Navigation;<br>\r\nusing System.Windows.Shapes;<br>\r\nusing Microsoft.Research.DynamicDataDisplay;<br>\r\nusing Microsoft.Research.DynamicDataDisplay.DataSources;<br>\r\nusing Microsoft.Research.DynamicDataDisplay.PointMarkers;<br>\r\n<br>\r\n<br>\r\nnamespace ddd_test1<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;<br>\r\n&nbsp;&nbsp;&nbsp; /// Interaction logic for Window1.xaml<br>\r\n&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;<br>\r\n&nbsp;&nbsp;&nbsp; public partial class Window1 : Window<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private List&lt;Trade&gt; _listOfTrade;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private List&lt;Trade&gt; _listMarker;<br>\r\n<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public Window1()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InitializeComponent();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _listOfTrade = new List&lt;Trade&gt;();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _listMarker = new List&lt;Trade&gt;();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BeginSimulation();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EditGraph();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void BeginSimulation()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random random = new Random();<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int counter = 1; counter &lt; 1000; counter++)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trade trade = new Trade(counter, random.NextDouble());<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _listOfTrade.Add(trade);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (counter % 10 == 0)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _listMarker.Add(trade);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void EditGraph()<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObservableDataSource&lt;Trade&gt; source = new ObservableDataSource&lt;Trade&gt;(_listOfTrade);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source.SetXMapping(c =&gt; c.Counter);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source.SetYMapping(d =&gt; d.Price);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ObservableDataSource&lt;Trade&gt; sourceMarker = new ObservableDataSource&lt;Trade&gt;(_listMarker);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sourceMarker.SetXMapping(c =&gt; c.Counter);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sourceMarker.SetYMapping(d =&gt; d.Price);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.AddLineGraph(source, new Pen(Brushes.Gold, 3), new PenDescription(&quot;chart&quot;));<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LineAndMarker&lt;MarkerPointsGraph&gt; chartMarkerBuy = plotter.AddLineGraph(<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sourceMarker,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new Pen(Brushes.Red, 3),<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new TrianglePointMarker { Size = 5, Brush = Brushes.Blue },<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new PenDescription(&quot;marker&quot;));<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chartMarkerBuy.LineGraph.DataSource = null;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; plotter.Viewport.FitToView();<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp; public class Trade<br>\r\n&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public double Price { get; set; }<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public double Counter { get; set; }<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public Trade(double counter, double price)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price = price;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Counter = counter;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n}<br>\r\n",
+    "PostedDate": "2009-03-21T10:15:34.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171312",
+    "ThreadId": "50835",
+    "Html": "<div>Hi!</div><div><br></div><div>I've reproduced the bug you've submitted and created a fix for it. You can download archive here http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay.zip, extract it and replace DynamicDataDisplay.csproj with archive's contents.</div><div><br></div><div>Error was in wrongly added by default filter to LineGraph.</div><div><br></div><div>Yours,</div><div>Mikhail Brinchuk.</div>",
+    "PostedDate": "2009-03-24T07:07:28.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171364",
+    "ThreadId": "50835",
+    "Html": "Hi<br>\r\n<br>\r\nThanks Mikhail for the great job, it works fine!!!<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-24T08:44:07.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171491",
+    "ThreadId": "50835",
+    "Html": "Hi<br>\r\n<br>\r\nUnfortunatly I have some problems.<br>\r\n<br>\r\n1/ If I follow exactly what you said (I replace the&nbsp; DynamicDataDisplay.csproj from the source code downloaded from the site by the  DynamicDataDisplay.csproj downloaded from the archive you communicated me), I have multiple errors when I try to compile the code.<br>\r\n<br>\r\n2/ If I replace the&nbsp; DynamicDataDisplay.csproj from the the archive you communicated me by the DynamicDataDisplay.csproj downloaded\r\nfrom source code\r\ndownloaded from the site, I still have multiple errors.<br>\r\n<br>\r\n3/ If I compile directly the code from the the archive you communicated me, I have multiple warnings but it works fine. The bug doesn't exist anymore. However, the sample Tooltip doesn't work anymore!<br>\r\n<br>\r\nIt seems that a lot of new stuff is coming in the new version. The graggable axes are a nice feature!<br>\r\n<br>\r\nThanks again,<br>\r\nKamel \r\n",
+    "PostedDate": "2009-03-24T13:08:00.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171559",
+    "ThreadId": "50835",
+    "Html": "Hi,<br>\r\n<br>\r\nIs there any way to apply the ToolTipTextProperty to a basic line instead of the markers?<br>\r\nThis is not the same time to download 1M point with a simple line plot than a marker plot...<br>\r\n<br>\r\nThanks,<br>\r\nKamel<br>\r\n",
+    "PostedDate": "2009-03-24T14:33:51.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172662",
+    "ThreadId": "50835",
+    "Html": "<div>Hi, Kamel!</div><div><br></div><div>You can add ToolTip to line by setting LineGraph.ToolTip property to anything you want to show as a tooltip. This works similar to standart WPF way of setting tooltips.</div><div><br></div><div>Mikhail.</div><div><br></div>",
+    "PostedDate": "2009-03-27T01:25:03.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

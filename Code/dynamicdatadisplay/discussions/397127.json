@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "918348",
+    "ThreadId": "397127",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I read somewhere that it's a common bug that lines disappear (are not drawn) if you zoom in very deeply.</p>\r\n<p>Has anybody a solution for this bug?</p>\r\n",
+    "PostedDate": "2012-09-27T03:12:28.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1449494",
+    "ThreadId": "397127",
+    "Html": "I've just post an answer for a similar question, see the following link to read the reply...\r<br />\n<br />\n<a href=\"https://dynamicdatadisplay.codeplex.com/discussions/484160\" rel=\"nofollow\">Graph suddenly disappears while zooming/scrolling</a><br />\n",
+    "PostedDate": "2015-10-23T04:02:54.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1450134",
+    "ThreadId": "397127",
+    "Html": "Thanks a lot!!! :-)<br>\r\n<br>\r\nAm 28.10.2015 09:25, schrieb ChristopherSauer:\r\n<blockquote type=\"cite\">\r\n<p>From: ChristopherSauer</p>\r\n<div id=\"ThreadNotificationPostBody\">I've just post an answer for a similar question, see the following link to read the reply...\r\n<br>\r\n<br>\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/discussions/484160\" rel=\"nofollow\">Graph suddenly disappears while zooming/scrolling</a><br>\r\n</div>\r\n</blockquote>\r\n<br>\r\n",
+    "PostedDate": "2015-10-28T13:34:53.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

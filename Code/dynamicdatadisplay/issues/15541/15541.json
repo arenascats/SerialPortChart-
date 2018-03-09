@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I had a chart that uses a DateTimeAxis for the Primary Axis and I was trying to programmatically set the CursorCoordinateGraph's Position parameter.  Nothing was appearing on the chart.  To reproduce I modified the FixedCursorCoordinateGraph project.  In the Window1() constructor I added the following after the InitializeComponent() call:\n \n            xSlider.Minimum = ProbeDateAxis.ConvertToDouble(DateTime.Now.AddHours(-2.0));\n            xSlider.Value = ProbeDateAxis.ConvertToDouble(DateTime.Now);\n            xSlider.Maximum = ProbeDateAxis.ConvertToDouble(DateTime.Now.AddHours(2.0));\n \n            double startLocation = xSlider.Minimum;\n            double endLocation = xSlider.Maximum;\n \n            plotter.Viewport.Visible = new DataRect(startLocation, -20,\n                endLocation - startLocation, 150);\n \nIn the XAML I modified the ChartPlotter's children to contain this:\n \n            <d3:ChartPlotter.MainHorizontalAxis>\n                <d3:HorizontalDateTimeAxis Placement=\"Bottom\" Name=\"ProbeDateAxis\" />\n            </d3:ChartPlotter.MainHorizontalAxis>\n \n            <d3:CursorCoordinateGraph Name=\"cursorGraph\" FollowMouse=\"False\" />\n \nAfter reviewing the CursorCoordinateGraph.xaml.cs file it appears that the problem is in the UpdateUIRepresentation( Point mousePos) method.  Near the beginning of this method there is a if (!output.Contains(mousePos)) which is comparing the passed in Position to the screen coordinates, but with a DateTimeAxis the graphing range is really big and the rendering range is small and the Position \"appears\" outside so it exits the method.  Just after this if test there is a call to mousePos = mousePos.DataToScreen(transform) if followMouse is set to false which converts the passed in Position into screen coordinates.  I believe this should be moved before the output.Contains check.  In my testing that solved my problem.",
+    "LastUpdatedDate": "2013-02-21T17:36:52.31-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-03-17T14:20:08.173-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Setting CursorCoordinateGraph's position fails when chart range exceeds rendering range",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15541
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

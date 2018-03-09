@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "805396",
+    "ThreadId": "347304",
+    "Html": "\r\n<p>I am very new to D3 component and I need help on plotting the time on x-axis.</p>\r\n<p>I want to plot Y(double) value against the X time(hh:mm:ss). I want&nbsp;<span>adjust Spacing of Tick on the X-axis with difference in 5 seconds.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span><br>\r\n</span></p>\r\n",
+    "PostedDate": "2012-03-05T01:58:23.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "805921",
+    "ThreadId": "347304",
+    "Html": "<p><a href=\"http://dynamicdatadisplay.codeplex.com/discussions/209121?ProjectName=dynamicdatadisplay\">http://dynamicdatadisplay.codeplex.com/discussions/209121?ProjectName=dynamicdatadisplay</a></p>\r\n<p>Try this, this may work (Some class name might be chnaged, this is based on some old version)</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2012-03-05T19:04:17.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806157",
+    "ThreadId": "347304",
+    "Html": "<p>Thanks Ravi for your quick response.</p>\r\n<p>&nbsp;</p>\r\n<p>When I am using the code which you have suggested doesn't triggers when there is change in the seconds/milliseconds. I am looking for the graph like below image</p>\r\n<p><a href=\"https://skydrive.live.com/?cid=8a86b063da89b3ee&amp;sc=photos&amp;id=8A86B063DA89B3EE%21106\">https://skydrive.live.com/?cid=8a86b063da89b3ee&amp;sc=photos&amp;id=8A86B063DA89B3EE%21106</a></p>\r\n<p>Each line will have same x axis i.e. only time but y axis will change. For example red line y axis value range will be between 1000 to 3000 and for blue color line value range will be between 300 to 500.</p>\r\n<p>Can you suggest me how can we&nbsp;achieve&nbsp;this type of graph.</p>\r\n<p>﻿﻿</p>",
+    "PostedDate": "2012-03-06T05:11:38.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

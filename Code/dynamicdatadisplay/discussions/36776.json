@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "122023",
+    "ThreadId": "36776",
+    "Html": "How do I hide the legend in xaml or in code?<br>\r\n<br>\r\nThanks!<br>\r\nTian\r\n",
+    "PostedDate": "2008-09-30T19:43:35.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123442",
+    "ThreadId": "36776",
+    "Html": "Hello! To do this you'll need to modify source code of library. More precise legend control will be added in next release.<br>\r\n<br>\r\nNow you can use following workaround. Add following property to ChartPlotter.cs<br>\r\n<br>\r\n<span style=\"font-size:13px\">class ChartPlotter&nbsp;{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp; ...<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;public</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">bool</span><span style=\"font-size:13px\"> LegendVisible { </span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get { </span><span style=\"font-size:13px;color:#0000ff\">return</span><span style=\"font-size:13px\"> legend.Visibility == </span><span style=\"font-size:13px;color:#2b91af\">Visibility</span><span style=\"font-size:13px\">.Visible; } </span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set { </span><span style=\"font-size:13px\">legend.Visibility = </span><span style=\"font-size:13px;color:#0000ff\">value</span><span style=\"font-size:13px\"> ? </span><span style=\"font-size:13px;color:#2b91af\">Visibility</span><span style=\"font-size:13px\">.Visible : </span><span style=\"font-size:13px;color:#2b91af\">Visibility</span><span style=\"font-size:13px\">.Hidden; }\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;}<br>\r\n<br>\r\n}</p>\r\n</span>\r\n<p>And use this property to show or hide legend everywhere you need in code.</p>\r\n",
+    "PostedDate": "2008-10-07T05:04:40.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

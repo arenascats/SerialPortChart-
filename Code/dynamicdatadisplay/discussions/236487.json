@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "528708",
+    "ThreadId": "236487",
+    "Html": "\r\n<p>Hey there.</p>\r\n<p>At first, congrats for this awesome project!</p>\r\n<p>But what i miss&nbsp;are markers (similar to the &#65279;Bargraph or Boxplot examples) that&nbsp;are scaling while user zooms in or out.</p>\r\n<p>Bargraph marker&nbsp;should get an average where ther bars start, ending at the function values. Its Width should also vary, so that the Bargraph looks like stairs. Zooming shouldn't change that.</p>\r\n<p>Boxplot marker should get either three (min, max, average)&nbsp;or five values (like in the example). Width should also vary.</p>\r\n<p>In both cases it is important that the marker is zoomed too, otherwise it would display the values on false positions.</p>\r\n<p>Could you please provide a solution for this?</p>\r\n<p>ThermDev</p>\r\n",
+    "PostedDate": "2010-11-30T02:18:28.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "528766",
+    "ThreadId": "236487",
+    "Html": "\r\n<p>Thank you for your high rank of this project.</p>\r\n<div></div>\r\n<div>D3 has an ability to display charts like you've described, though this ability lacks good examples and documentation. Please take a look at ViewportPanel and ViewportHostPanel.</div>\r\n<div>These panels allows such charts which will be scaled when zooming in/out, though there are some problems with charts with a lot of scalable content like Boxchart.</div>\r\n<div>In the future I'm planning to widen these panels' abilities.</div>\r\n<div></div>\r\n<div>By the way: all further development of DynamicDataDisplay will happen here -\r\n<a href=\"http://d3future.codeplex.com\">d3future.codeplex.com</a>. So I ask you to post additional threads or posts there.</div>\r\n<div>Thank you.<br>\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-11-30T05:30:01.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

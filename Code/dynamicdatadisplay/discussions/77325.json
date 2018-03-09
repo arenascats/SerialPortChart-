@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "264317",
+    "ThreadId": "77325",
+    "Html": "<p>Hi,</p>\r\n<p>While resizing&nbsp;the chart, Time&nbsp;lables are not filling entire axis, tick marks are not properly distributing, If i resize again, these tick marks are adjusting again.</p>\r\n<p><a href=\"http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/Trend Snaps/TimeLabelsError.bmp?ccr=9729\">http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/Trend%20Snaps/TimeLabelsError.bmp?ccr=9729</a></p>\r\n<p>will you give any solution for this (Work arround is also Ok for me for time beeing). I am using 29117 version.</p>\r\n<p>In earlier version I was restting Viewport.Visible to solve this problem. But I can't able to solve this proble in 29117 by resetting the&nbsp;Viewport.Visible.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n<p>Ravi.&nbsp;</p>",
+    "PostedDate": "2009-12-06T21:08:41.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264347",
+    "ThreadId": "77325",
+    "Html": "<p>Hi Ravi,</p>\r\n<p>I've recently fixed this bug, so the next changeset of DynamicDataDisplay will handle axis size changes properly.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-06T23:48:09.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265234",
+    "ThreadId": "77325",
+    "Html": "<p>Hi,</p>\r\n<p>When can I get this, other wise Can you please&nbsp;provide some work arround for this. I need it in this&nbsp;week,&nbsp;Its very urgent</p>\r\n<p>Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2009-12-09T01:38:31.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266144",
+    "ThreadId": "77325",
+    "Html": "<p>\r\n<p>Hi Ravi,</p>\r\n<p>&nbsp;</p>\r\n<p>Currently I cannot upload fixed version because of internal reasons, but you can fix this issue by changing mainGrid_SizeChaged method of AxisControl class in Charts/Axes in DynamicDataDisplay.csproj:</p>\r\n<p>entire method should look like this:</p>\r\n</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">void</span> mainGrid_SizeChanged(<span style=\"color:Blue\">object</span> sender, SizeChangedEventArgs e)\r\n{\r\n  <span style=\"color:Blue\">if</span> (placement.IsBottomOrTop() &amp;&amp; e.WidthChanged ||\r\n               e.HeightChanged)\r\n    {\r\n      <span style=\"color:Green\">// this is performed because if not, whole axisControl's size was measured wrongly.</span>\r\n      InvalidateMeasure();\r\n      UpdateUI();\r\n    }\r\n}\r\n</pre>\r\n</div>\r\n<p>Hope this will help.</p>\r\n<p>Mikhail.</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (placement.IsBottomOrTop() &amp;&amp; e.WidthChanged ||</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.HeightChanged)</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// this is performed because if not, whole axisControl's size was measured wrongly.</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;InvalidateMeasure();</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>UpdateUI();</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-11T02:11:00.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266214",
+    "ThreadId": "77325",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thank you.</p>\r\n<p>Its working. This saved my week end.</p>\r\n<p>Thanks again</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2009-12-11T06:01:44.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

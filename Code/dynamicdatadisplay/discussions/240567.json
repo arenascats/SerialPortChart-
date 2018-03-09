@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "544297",
+    "ThreadId": "240567",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>does anyone know if it is possible to change the code quickly so that the axis grid and line ticks, or at least the axis grid are always drawn to device pixels? I'm note sure how this can be accomplished since it is a line geometry drawn on a canvas. Any\r\n hints would be great.</p>\r\n<p>Regards</p>\r\n<p>jp</p>\r\n",
+    "PostedDate": "2011-01-05T06:22:40.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544305",
+    "ThreadId": "240567",
+    "Html": "\r\n<p>Got it my self. I added a function to AxisGrid class:</p>\r\n<p>&nbsp;</p>\r\n<p>public void SetEdgeMode(EdgeMode edgeMode)<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RenderOptions.SetEdgeMode(path, edgeMode);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>this allows to set the render mode for the path/axis grid.</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2011-01-05T06:33:40.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544307",
+    "ThreadId": "240567",
+    "Html": "\r\n<p>Unfortunately this seems not to be a good solution since it produces flickering lines. Any other suggestions?</p>\r\n",
+    "PostedDate": "2011-01-05T06:35:25.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

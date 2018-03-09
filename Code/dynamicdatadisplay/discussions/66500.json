@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "225908",
+    "ThreadId": "66500",
+    "Html": "<p>Hi, first of all I want to thank you for this very high quality piece of software.</p>\r\n<p>I'm evaluating to use it as the main navigation component of a GIS-like software package.&nbsp;Right now I'm in the prototyping stage.</p>\r\n<p>I need some help to create a WMS (Web Map Service) NetworkServer; I know that I need to overwrite the CreateRequestUri method to provide my server's url, but the issue is that I don't know how to get the data needed in the url from the index parameter. A tipical WMS url looks like this:</p>\r\n<p>http://localhost:60048/wms.ashx?STYLES=&amp;VERSION=1.3.0&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;BBOX=-89.999872,-89.999872,-44.999936,-44.999936&amp;FORMAT=image/png&amp;WIDTH=256&amp;HEIGHT=256&amp;CRS=EPSG:4326&amp;layers=base</p>\r\n<p>So, basically I need to get the bounding box of the requested tile... How can achieve this?</p>\r\n<p>Thanks in advance.</p>\r\n<p>Regards,</p>\r\n<p>Germ&aacute;n Schuager</p>",
+    "PostedDate": "2009-08-20T08:21:09.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "225931",
+    "ThreadId": "66500",
+    "Html": "<p>Hi again,</p>\r\n<p>I've solved my problem...</p>\r\n<p>I've created a dependency property called TileProvider in my WmsNetworkServer class and set it through binding in XAML, something like this:</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;d3:Map Name=&quot;map&quot;&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;demo4:WmsNetworkServer TileProvider=&quot;{Binding Path=TileProvider, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type d3:Map}}}&quot; &nbsp;/&gt;</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/d3:Map&gt;</div>\r\n<p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;d3:Map Name=&quot;map&quot;&gt;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;demo4:WmsNetworkServer TileProvider=&quot;{Binding Path=TileProvider, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type d3:Map}}}&quot; &nbsp;/&gt;</p>\r\n<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/d3:Map&gt;</p>\r\n</p>\r\n<p>then, in the override of CreateRequestUri I've done the following to get the tile bounding box:</p>\r\n<p>\r\n<p><span style=\"white-space:pre\"> </span>var bounds = TileProvider.GetBounds(index);</p>\r\n<div>If there is a better method to solve this please let me know.</div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-20T09:09:25.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226284",
+    "ThreadId": "66500",
+    "Html": "<p>Hi Germ&aacute;n,</p>\r\n<p>&nbsp;</p>\r\n<p>I think code can be a little more&nbsp;simple&nbsp;- you can create your in C#, and have a ctor of WmsNetworkServer with Map as an argument, or with TileProvider as an argument.</p>\r\n<p>And then you can set map's&nbsp;<strong>NetworkTileServer&nbsp;</strong>property to your server.</p>\r\n<p>But your solution is acceptable, if it solves what it should solve)</p>\r\n<p>&nbsp;</p>\r\n<p>TileProvider is certainly that thing that should be used to get bounds of tile, so your solution is right.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-08-21T05:33:23.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

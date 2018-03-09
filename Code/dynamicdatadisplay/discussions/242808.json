@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "553482",
+    "ThreadId": "242808",
+    "Html": "\r\n<p>&nbsp;I want to display a netCDF file like this:</p>\r\n<p><img src=\"http://147.102.85.132/netCDF/netCDF1.png\" alt=\"\">147.102.85.132/netCDF/netCDF1.png</p>\r\n<p><img src=\"http://147.102.85.132/netCDF/netCDF2.png\" alt=\"\">147.102.85.132/netCDF/netCDF2.png</p>\r\n<p>I am also using sds to read the netCDF files.</p>\r\n<p>Any clues on how to set the display ?</p>\r\n",
+    "PostedDate": "2011-01-21T15:44:26.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

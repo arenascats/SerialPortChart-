@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "227248",
+    "ThreadId": "66849",
+    "Html": "<p>Hi,</p>\r\n<p><span style=\"font-size:10pt;color:black\"><span style=\"white-space:pre\"> </span>Has anyone else experienced a problem with the datetime axis? For me the yellow bar is positioned incorrectly (using nightly builds). Rather than January 2010 starting at January 1st, it is centered on January 1st. i.e. December 16th - January 16th are labeled as January.</span></p>\r\n<p>&nbsp;</p>\r\n<p>Is this a known bug or do you require a repro sample?</p>\r\n<p>&nbsp;</p>\r\n<p>Kelly&nbsp;</p>",
+    "PostedDate": "2009-08-24T16:07:08.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227355",
+    "ThreadId": "66849",
+    "Html": "<p>Hi Kelly,</p>\r\n<p>Thanks for reporting, that is a known bug, I'll try to fix it ASAP.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-25T00:23:25.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228070",
+    "ThreadId": "66849",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>Thanks for the quick reply! Turns out my clients would like me to hide that yellow bar (they can see the date in the crosshairs). Is it possible to hide that part? I would like to keep the rest of the axis (the ticks and black labels) but hide the yellow bar.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for the help,</p>\r\n<p>Kelly Vanee</p>",
+    "PostedDate": "2009-08-26T11:20:52.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "228073",
+    "ThreadId": "66849",
+    "Html": "<p>Hi Kelly,</p>\r\n<p>Simply set <strong>MayorLabelProvider </strong>of the axis to null.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-26T11:33:52.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

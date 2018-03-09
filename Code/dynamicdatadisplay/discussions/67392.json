@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "229052",
+    "ThreadId": "67392",
+    "Html": "<p>Hi all,</p>\r\n<p>I see this component during a night fly over CodePlex projects and I find it very pretty...</p>\r\n<p>&nbsp;</p>\r\n<p>One thing my customers ask sometimes is to have a graph where i can set the X axis of each series to primary or secondary and then the customer want to scroll separately the two different axis to overlap different time period of different series to compare it.</p>\r\n<p>&nbsp;</p>\r\n<p>I still have to take a deeper look over the source code, but probably you can already tell me if this can be a great next feature or it's impossible to integrate this in the component.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-08-29T23:51:13.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229104",
+    "ThreadId": "67392",
+    "Html": "<p>Hi!</p>\r\n<p>Maybe you are speaking about something like <a href=\"http://www.youtube.com/watch?v=UNiXTROHVXw\">this</a>&nbsp;(video recording of sample application)?</p>\r\n<p>Source code for this sample is situated at '<a href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx\">Source code</a>' page, in the latest changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28606\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28606\">28606</a>, in Nightly/DynamicDataDisplay.sln/DevSamples/TwoHorizontalAxes project.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-30T08:32:45.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229209",
+    "ThreadId": "67392",
+    "Html": "<p>PERFECT!!!!</p>\r\n<p>&nbsp;</p>\r\n<p>This is what I'm searching for.... thanks a lot</p>\r\n<p>&nbsp;</p>\r\n<p>Mauro</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-30T23:25:49.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

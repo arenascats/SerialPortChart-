@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "579929",
+    "ThreadId": "249565",
+    "Html": "<p>Hi,</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I have seen examples to set the graph color. But Can anyone please tell me how to set multiple color for a graph line? For example, At present my graph color is blue color and in my y axis , I am displaying some&nbsp; random double values(in between 250 and -250) and x axis shows time . So In my graph curve, the graph above a  certain limit (say 100) should be in red. Once the graph comes down below 100, then it should retain its old color( Blue). Is any feature exists in the D3 to support this?</p>",
+    "PostedDate": "2011-03-14T03:01:19.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579962",
+    "ThreadId": "249565",
+    "Html": "<p>I think that you'd have to have a routine to filter through your Data, creating a new Datasource and Line graph for each section of the graph that exceeds your limit.</p>\r\n<p>Then you can plot all the data (in one datasource) in a linegraph with a blue stroke, and then plot the sections that exceed the limit in new line graphs that have a red stroke. To do this you'll need to create the \"red\" line graphs dynamically....</p>\r\n<p>there might be a better way to do this with markers.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-03-14T04:28:38.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "595145",
+    "ThreadId": "249565",
+    "Html": "<p>Hello Guys, Any help for the issue? Already my graphs runs so slow..... So not very sure, how good it is to go for new DataSource to handle the range as Mr.devoNur said. Kindly give me some hint to proceed.&nbsp; I could not see any examples in sample codes or any queries regarding this in the forums. Please help...</p>",
+    "PostedDate": "2011-04-11T01:16:39.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

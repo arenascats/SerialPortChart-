@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "273186",
+    "ThreadId": "79764",
+    "Html": "<p>In my codebehind, I am adding a bunch of data points (65k) to a line graph:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>spectraPlot.AddLineGraph(ds,\r\n<span style=\"color:Blue\">new</span> Pen(Brushes.LimeGreen, 1),\r\n<span style=\"color:Blue\">new</span> CircleElementPointMarker\r\n{\r\n    Size = 5,\r\n    Brush = Brushes.Red,\r\n    Fill = Brushes.Orange\r\n},\r\n<span style=\"color:Blue\">new</span> PenDescription(<span style=\"color:#A31515\">&quot;Data&quot;</span>));\r\n</pre>\r\n</div>\r\n<p>I am stepping through the code for AddLineGraph in Plotter2DExtensions.cs, and see where the FrequencyFilter is being added to the LineGraph:</p>\r\n<p>graph.Filters.Add(new FrequencyFilter());</p>\r\n<p>But there appears to be no filter on the Markers? &nbsp;This is killing my app, since no matter how I filter my data, there does not appear to be any difference in the number of Markers shown: in my case all 65k. &nbsp;</p>\r\n<p>Is this a bug or am I missing something?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-04T23:00:48.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "277461",
+    "ThreadId": "79764",
+    "Html": "<p>I am also having the same issue...</p>\r\n<p>Adding Markers is killing the performance.</p>\r\n<p>Any means to apply filter on markers?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n<p>Naveen</p>",
+    "PostedDate": "2010-01-14T22:19:09.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465271",
+    "ThreadId": "79764",
+    "Html": "<p>I am also having performance related issues with markers. Is there anything that can be done about it?</p>",
+    "PostedDate": "2010-07-09T01:18:17.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471265",
+    "ThreadId": "79764",
+    "Html": "<p>Same here - I am actually trying to display 4 line charts, each with 65k points. &nbsp;Performance is terrible as a result once markers are added. &nbsp;Any advice??</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-22T16:41:19.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098476",
+    "ThreadId": "79764",
+    "Html": "Same here! What can i do? it seems  that it is a bug. because when i resize chart, my chart shows the right data.<br />\n",
+    "PostedDate": "2013-09-24T04:17:53.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

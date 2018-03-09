@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1335175",
+    "ThreadId": "575936",
+    "Html": "There is any option to put a textbox on the chartplotter? Because textbox isn't child of Chartplotter. So is there any other way to put a text on the chart ? I have a line and i want to write in the middle the length. How can I do it ? (I have the length, I just want to know how to put a vertical text).\r<br />\nThanks in advice, Ben.<br />\n",
+    "PostedDate": "2014-12-20T11:18:33.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359970",
+    "ThreadId": "575936",
+    "Html": "Yes, <br />\n<br />\nJust add chartplotter.Children.Add(textbox);<br />\nnot only just text box you can add any control to this.<br />\n<br />\nRegards<br />\nRavi.<br />\n",
+    "PostedDate": "2015-03-04T22:46:38.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

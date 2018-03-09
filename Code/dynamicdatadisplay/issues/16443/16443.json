@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Zooming do not work while over item with context menu (see: context menu sample).\n \nSample downloaded: https://skydrive.live.com/?cid=eaf0a921258b5980&sc=documents&id=EAF0A921258B5980%212685\n \nZooming is centered on mouse usually but zooming stop working while over an object.",
+    "LastUpdatedDate": "2013-02-21T17:36:50.967-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-08-23T10:25:26.5-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Zooming do not work while over item with context menu (see: context menu sample)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16443
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

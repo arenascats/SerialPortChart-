@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "163520",
+    "ThreadId": "48956",
+    "Html": "Hello,<br>\r\n<br>\r\nI was wondering if there's a way to know if an element of the chart plotter (in my case, a LineGraph with only a CircleElementPointMarker) has been clicked by the user.<br>\r\nI don't think it's possible to manage events on items on the chart plotter, and only the chart plotter has click, mousedown etc. events...&nbsp; <br>\r\nWhat should I do? The only idea so far is to get click event coordinates on chart plotter and transform the points of my datasource in the client coordinates to compare them. But even in this case I don't know how to get zoom and translation informations...<br>\r\n<br>\r\nContinue the good work, DDD is really very good.<br>\r\n<br>\r\nThank you very much for your help<br>\r\n<br>\r\nStefano \r\n",
+    "PostedDate": "2009-03-02T09:36:00.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166742",
+    "ThreadId": "48956",
+    "Html": "Assuming you're using the source of DDD, you can change the top of the CircleElementPointMarkerClass.cs to look as follows<span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">\r\n<p>using System;<br>\r\nusing System.Windows;<br>\r\nusing System.Windows.Controls;<br>\r\nusing System.Windows.Shapes;<br>\r\nusing System.Windows.Input;</p>\r\n<p>namespace Microsoft.Research.DynamicDataDisplay.PointMarkers<br>\r\n{<br>\r\n    /// &lt;summary&gt;Adds Circle element at every point of graph&lt;/summary&gt;<br>\r\n public class CircleElementPointMarker : ShapeElementPointMarker {</p>\r\n<p>        public EventHandler&lt;MouseButtonEventArgs&gt; MarkerClick;</p>\r\n<p>        public override UIElement CreateMarker()<br>\r\n        {<br>\r\n            Ellipse result = new Ellipse();<br>\r\n            result.Width = Size;<br>\r\n            result.Height = Size;<br>\r\n            result.Stroke = Brush;<br>\r\n   result.Fill = Fill;</p>\r\n<p>            result.MouseLeftButtonDown += new MouseButtonEventHandler(result_MouseLeftButtonDown);</p>\r\n<p>            if (!String.IsNullOrEmpty(ToolTipText))<br>\r\n            {<br>\r\n                ToolTip tt = new ToolTip();<br>\r\n                tt.Content = ToolTipText;<br>\r\n                result.ToolTip = tt;<br>\r\n            }<br>\r\n            return result;<br>\r\n        }</p>\r\n<p>        void  result_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)<br>\r\n        {<br>\r\n            if (MarkerClick != null)<br>\r\n            {<br>\r\n                MarkerClick(sender, e);<br>\r\n            }<br>\r\n        }</p>\r\n<p>.....</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px\"><br>\r\nThis gives you a MarkerClick event that you can then consume, somewhere else in your app. It's also useful to make the Markers Collection public in MarkerElementPointGraph.cs<br>\r\n<br>\r\n        public ObservableCollection&lt;UIElement&gt; Markers<br>\r\n        {<br>\r\n            get { return markers; }<br>\r\n        }<br>\r\n<br>\r\nHope that helps, let me know how you go ...\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-03-10T21:59:40.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "166863",
+    "ThreadId": "48956",
+    "Html": "Thank you very much for your reply! <br>\r\n<br>\r\nI'll give it a try soon and I'll let you know. In any case, I think it would be a nice addition for future releases of DDD.<br>\r\n<br>\r\nStefano<br>\r\n",
+    "PostedDate": "2009-03-11T05:19:31.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167485",
+    "ThreadId": "48956",
+    "Html": "I tried and it works fine!!<br>\r\n<br>\r\nThanks<br>\r\n<br>\r\nStefano<br>\r\n",
+    "PostedDate": "2009-03-12T11:54:35.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205033",
+    "ThreadId": "48956",
+    "Html": "<p>Hello,</p>\r\n<p>I have a similar requirement where i need to have clickable data point marker.</p>\r\n<p>I tried the above code, but it does not work for me. And I am not able to grab click events on markets.</p>\r\n<p>However when I remove&nbsp;mouseNavigation child element from chartPlotter.cs in the source code, I am able to get the click event on marker.</p>\r\n<p>But I dont want to remove mouseNavigation from the charterPlot.&nbsp;</p>\r\n<p>Thanks for the help.</p>\r\n<p>Basit&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-24T08:08:26.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

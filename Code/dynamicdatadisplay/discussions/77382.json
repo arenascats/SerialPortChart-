@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "264533",
+    "ThreadId": "77382",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>I have VerticalLine and I want to move it by a DateTimeSelector. But the Selector has his own plotter. There is an example or a way to do a selector that use my Plotter instead of his own?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Rafael Carlos</p>",
+    "PostedDate": "2009-12-07T08:54:10.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

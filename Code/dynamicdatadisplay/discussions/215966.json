@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "455230",
+    "ThreadId": "215966",
+    "Html": "Hi,\r\n\r\nI love D3 but I'm afraid to use since it doesn't seem like an active project. There hasn't been a release since April 2009 and last source code change was in December 2009.\r\n\r\nWill this project be supported or is it dead (I hope not!)?\r\n\r\nThanks in advance",
+    "PostedDate": "2010-06-14T07:53:19.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455315",
+    "ThreadId": "215966",
+    "Html": "<p>Hello, there is some kind of&nbsp;slackening in D3 at codeplex. But internally we continue working on it. Please don't think that D3 is dead.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail</p>",
+    "PostedDate": "2010-06-14T10:34:50.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "455496",
+    "ThreadId": "215966",
+    "Html": "Hi,\r\n\r\nThanks for the good news! I'll be anxiously waiting for the updates.\r\n\r\nThanks again\r\n\r\n",
+    "PostedDate": "2010-06-14T23:37:11.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456683",
+    "ThreadId": "215966",
+    "Html": "<p>Don't bother anxiously waiting, I just got this response to my latest question:</p>\r\n<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl10_BodyDiv\">\r\n<p><em>Hi,</em></p>\r\n<p><em>I'm no longer working on this project, so I suppose that there will  be some time (several months) during which there will be nobody to  answer at this forum.</em></p>\r\n<p><em>Best regards,</em></p>\r\n<p><em>Mikhail.</em></p>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-17T06:25:39.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456692",
+    "ThreadId": "215966",
+    "Html": "<p>Maybe I was not very accurate with the time, and probably will find a person to answer at these discussions forum earlier.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-17T06:33:14.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456694",
+    "ThreadId": "215966",
+    "Html": "<p>Also, D3 != me, there are other developers, so please don't worry.</p>",
+    "PostedDate": "2010-06-17T06:33:55.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456743",
+    "ThreadId": "215966",
+    "Html": "Also, D3 != me, there are other developers, so please don't worry.<br>=&gt; You mainly wrote the first versions of this project... Excellent work. Thanks again.<br><br>Kamel<br><br><br><br><div>2010/6/17 Thecentury <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span><br>\r\n<blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\">   <div> <p>From: Thecentury</p> <div><p>Also, D3 != me, there are other developers, so please don't worry.</p>\r\n</div><div> <div> <p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=215966&ANCHOR#Post456694\">full discussion online</a>.</p> <p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:215966]\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n <p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a></p> <p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\">unsubscribe or change your settings</a> on codePlex.com.</p>\r\n <p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com\">codeplex.com</a></p> </div> </div></div> </blockquote>\r\n</div><br>",
+    "PostedDate": "2010-06-17T07:56:12.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "457053",
+    "ThreadId": "215966",
+    "Html": "<div>And thank you, Kamel, for your interest to me and your answers on D3's discussions.<br><br>Отправлено с iPad</div><div><br>17.06.2010, в 18:56, kawone &lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt; написал(а):<br>\r\n<br></div><div></div><blockquote><div> <p>\r\nFrom: kawone</p> <div id=ThreadNotificationPostBody>Also, D3 != me, there are other developers, so please don't worry.<br>=&gt; You mainly wrote the first versions of this project... Excellent work. Thanks again.<br>\r\n<br>Kamel<br><br><br><br><div>2010/6/17 Thecentury <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\"><a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a></a>&gt;</span><br>\r\n<blockquote style=\"margin:0pt 0pt 0pt 0.8ex;padding-left:1ex\">   <div> <p>From: Thecentury</p> <div><p>Also, D3 != me, there are other developers, so please don't worry.</p>\r\n</div><div> <div> <p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=215966&ANCHOR#Post456694\">full discussion online</a>.</p> <p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:215966]\"><a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a></a>)</p>\r\n\r\n <p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\"><a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\">dynamicdatadisplay@discussions.codeplex.com</a></a></p>\r\n <p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\">unsubscribe or change your settings</a> on <a href=\"http://codePlex.com\">codePlex.com</a>.</p>\r\n\r\n <p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com\"><a href=\"http://codeplex.com\">codeplex.com</a></a></p> </div>\r\n </div></div> </blockquote>\r\n</div><br></div> \r\n  </div></blockquote>",
+    "PostedDate": "2010-06-17T20:47:20.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

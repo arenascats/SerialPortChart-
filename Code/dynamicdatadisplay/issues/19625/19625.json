@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi All,\nI am displaying a graph with ths xaml code.\n====================================================\n<Grid>\n        <d3:ChartPlotter x:Name=\"chartPlotter\">\n            <d3:ChartPlotter.HorizontalAxis>\n                <d3:HorizontalDateTimeAxis Name=\"dateAxis\"></d3:HorizontalDateTimeAxis>\n            </d3:ChartPlotter.HorizontalAxis>\n            <d3:ChartPlotter.VerticalAxis>\n                <d3:VerticalIntegerAxis Name=\"countAxis\"></d3:VerticalIntegerAxis>\n            </d3:ChartPlotter.VerticalAxis>\n            <d3:Header Content=\"Weather Information\" FontFamily=\"Verdana\"></d3:Header>\n            <d3:VerticalAxisTitle Content=\"Count\" FontFamily=\"Verdana\"></d3:VerticalAxisTitle>\n            <d3:HorizontalAxisTitle Content=\"Date\" FontFamily=\"Verdana\"></d3:HorizontalAxisTitle>\n        </d3:ChartPlotter>\n    </Grid>\n=======================================================\n//Object & variables\n\nList<WeatherData> weatherInfoList; \nDateTime[] dates;\n        int[] minTemp;\n        int[] maxTemp;\n\n\nOn window load start a timer:\n---------------------------------------------\nprivate void Window1_Loaded(object sender, RoutedEventArgs e)\n{\n            StartTimer();\n }\n--------------------------------------------\nprivate void StartTimer()\n {\n\n            DisplayDynamicDataFromText();\n            objTimer.Interval = new TimeSpan(0, 0, 1);\n            objTimer.Tick += new EventHandler(objTimer_Tick);\n            objTimer.Start();\n  }\n--------------------------------------------------------------\n        private void DisplayDynamicDataFromText()\n        {\n           RemoveOldLine();// Removing all old line from chart\n\n            weatherInfoList = LoadWeatherInfo(\"..\\\\..\\\\WeatherRecord.txt\");\n          // loading weather info from txt file to the list of class Wether Info having    properties \"DateTime\",\"minTemp\",\"MaxTemp\"\n            \n            dates = new DateTime[weatherInfoList.Count];\n            minTemp = new int[weatherInfoList.Count];\n            maxTemp = new int[weatherInfoList.Count];\n\n            \n            for (int i = 0; i < weatherInfoList.Count; ++i)\n                {\n                    dates[i] = weatherInfoList[i].date;\n                    minTemp[i] = weatherInfoList[i].minTemp;\n                    maxTemp[i] = weatherInfoList[i].maxTemp;\n                }\n            \n            \n            //Get date collection from text file\n            var datesDataSource = new ObservableDataSource<DateTime>(dates);\n            //Set date to X-Axis\n            datesDataSource.SetXMapping(x => dateAxis.ConvertToDouble(x));\n\n            //Get number of min  and set it to Y-Axis\n            var numberOpenDataSource = new ObservableDataSource<int>(minTemp);\n            numberOpenDataSource.SetYMapping(y => y);\n\n            \n            compositeDataSource1 = new CompositeDataSource(datesDataSource, numberOpenDataSource);\n            //CompositeDataSource compositeDataSource2 = new CompositeDataSource(datesDataSource, numberClosedDataSource);\n\n            chartPlotter.AddLineGraph(compositeDataSource1,\n                   new Pen(Brushes.Blue, 2),\n                   new CirclePointMarker { Size = 10.0, Fill = Brushes.Red },\n                   new PenDescription(\"Minimum Temperature\"));\n\n\n            chartPlotter.Viewport.FlowDirection = FlowDirection.RightToLeft;\n            //chartPlotter.Viewport.FitToView();\n                      \n        }\n\n//Upto this point data is showing properly and expected. but on timer event i am inserting new record to txt file for each tick after displaying the current data.\n\n//My requirement is to move the horizontal axis with corrresponding graph on every tick as we insert new record in txt file.\n\n\nprivate void objTimer_Tick(object sender, EventArgs e)\n        {\n            Int32 intMin = _r.Next(2, 10);\n            Int32 intMax = _r.Next(30, 50);\n\n            DisplayDynamicDataFromText();\n\n           File.AppendAllText(\"..\\\\..\\\\WeatherRecord.txt\", Environment.NewLine + DateTime.Now.AddYears(tempCount).Date.ToShortDateString() + \":\" + intMin + \":\" + intMax);\n           tempCount++;\n         \n        } \n\n//Suppose for first time txt file have entries\nDateTime   Min   Max\n1/1/2010     3       34\n1/1/2011     5       44\n1/1/2012     6       24\n1/1/2013     2       41\n1/1/2014     8       40\n\nSo for first time x axis should be plotted like\n\nX--------------------------------------------------------------------------------------\n*1/1/2010       *1/1/2011     *1/1/2012     *1/1/2013     *1/1/2014     \n\nFor secode tick we have already added a new entry\nDateTime   Min   Max\n1/1/2010     3       34\n1/1/2011     5       44\n1/1/2012     6       24\n1/1/2013     2       41\n1/1/2014     8       40\n1/1/2015     5       35  new\n\nso this time graph should be \n\nX--------------------------------------------------------------------------------------\n*1/1/2011       *1/1/2012     *1/1/2013     *1/1/2014     *1/1/2015\n\n--------like way\nX--------------------------------------------------------------------------------------\n*1/1/2012       *1/1/2013     *1/1/2014     *1/1/2015     *1/1/2016\n\n-----\n\n---\nX--------------------------------------------------------------------------------------\n*1/1/2017       *1/1/2018     *1/1/2019     *1/1/2020     *1/1/2021\n\nSo overall effect sould be movable from user prospective.\n\n-------------------------------------------------------------------------------------------\nLet me know if you have any idea guys!!!!\n\nThanks\nShambhu",
+    "LastUpdatedDate": "2013-04-21T21:13:20.2-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2013-04-21T21:13:20.2-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Need to move horizontal axis with graph",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19625
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

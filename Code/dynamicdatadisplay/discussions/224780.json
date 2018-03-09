@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "484682",
+    "ThreadId": "224780",
+    "Html": "<p style=\"margin-bottom:0cm\">Hello everyone!</p>\r\n<p style=\"margin-bottom:0cm\">First of all, thanks to all those who work on this project, congratulations!</p>\r\n<p style=\"margin-bottom:0cm\">I'm trying to use it from since few weeks and I found him very simple to use and very powerful.</p>\r\n<p style=\"margin-bottom:0cm\">I wish to handle a variable number of InjectedPlotter (from 2 to 10/20) that shares the same x asisse scale, so that during the acquisition they are separately displayed, but on the same graph, all children of one main plotter (ChartPlotter), so that it is possible to compare the overlap between them although each y-axis it consists of different scales.</p>\r\n<p style=\"margin-bottom:0cm\">So far the only way I found was to use ViewportRestriction, applying a zoom to each injected plotter, calculating an offset by constants to be applied to the zoom parameter Point to.</p>\r\n<p style=\"margin-bottom:0cm\">Someone would have some suggestion about it?</p>\r\n<p style=\"margin-bottom:0cm\">Currently I am using the nigthly version.</p>\r\n<p style=\"margin-bottom:0cm\">Thanks!</p>\r\n<p style=\"margin-bottom:0cm\">Leandro</p>",
+    "PostedDate": "2010-08-25T07:42:44.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

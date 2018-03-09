@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "532996",
+    "ThreadId": "237620",
+    "Html": "\r\n<p>Hi! I'm an italian user which is working with Dynamic Data Display to show results of his program (thesis program).<br>\r\nI've to show on the graph a lot of data, and now i'm doing it like this:<br>\r\nPSEUDOCODE!!</p>\r\n<p>Dictionary&lt;string s, ObservableList&lt;Point&gt;&gt; Points;<br>\r\nInitialize:<br>\r\nPoints = new Dictionary&lt;string s, ObservableList&lt;Point&gt;&gt; Points;<br>\r\nforeach (Func to analize)<br>\r\n{<br>\r\nPoints.add(funcionname, new obvlist())<br>\r\nGraph.AddLineGraph(...)<br>\r\n}<br>\r\nRefresh:<br>\r\nforeach new point<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp; Points[func].Collection.Add(new point)<br>\r\n}</p>\r\n<p>So, the question are:<br>\r\n- Is that the right way to do that? (not in code, but in ideas..)<br>\r\n- Is possible to wrote down single points on the graph without use a new LineGraph?<br>\r\n- Is possible to easily hide a LineGraph (or simply change color and other things)<br>\r\n- Is there any marker for Variance? Something like a point with indicated like bars the variance of the point</p>\r\n<p>Thank you very much!!!</p>\r\n<p>P.S:&nbsp;Excuse my English!</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-08T10:16:10.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533250",
+    "ThreadId": "237620",
+    "Html": "Hi!\r\n<div><br>\r\n</div>\r\n<div>This is right way of doing this.</div>\r\n<div>Soon I'm going to release new LineChart, and with it there will go a new kind of chart, where it will be enough to bind to a collection of collection of points, and all other things will be implemented automatically.</div>\r\n<div>And new lineChart will be capable to dynamically change lineColor and hide entire chart. I'm not ready to answer if current version of LineChart can reflect such changes.</div>\r\n<div><br>\r\n</div>\r\n<div>How does variance marker look like?<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n</div>\r\n",
+    "PostedDate": "2010-12-08T23:22:36.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533315",
+    "ThreadId": "237620",
+    "Html": "\r\n<p>Ok! Thank you very much!<br>\r\nI'm grad to know i'm on the right way!!!</p>\r\n<p>The variance simbol is like this:</p>\r\n<p>[IMG]http://i54.tinypic.com/2lmq7ns.jpg[/IMG]</p>\r\n<p>&nbsp;</p>\r\n<p>(I hope you can see the pic!)</p>\r\n",
+    "PostedDate": "2010-12-09T02:47:07.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "534614",
+    "ThreadId": "237620",
+    "Html": "This kind of chart will be available soon with new marker chart.<br clear=\"all\">\r\n--<br>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n",
+    "PostedDate": "2010-12-12T05:47:47.353-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "534891",
+    "ThreadId": "237620",
+    "Html": "\r\n<p>ok thanks!</p>\r\n",
+    "PostedDate": "2010-12-13T02:24:49.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

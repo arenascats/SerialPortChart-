@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1150076",
+    "ThreadId": "483858",
+    "Html": "Hello,\r<br />\nSorry to disturb you. I created some WPF application some parameters in-line monitoring. I need have a logarithmic scale on my Y-axis. I created a window with <br />\n<pre><code>       plotterForce1.DataTransform = new Log10YTransform();\n        VerticalAxis axis = new VerticalAxis\n        {\n            TicksProvider = new LogarithmNumericTicksProvider(10),\n            LabelProvider = new UnroundingLabelProvider(),\n        };\n        plotterForce1.MainVerticalAxis = axis;\n        plotterForce1.AxisGrid.DrawVerticalMinorTicks = true;\n        force1Line.Value = 500;\n        plotterForce1.Visible = new DataRect(0, 0.01, 100, 4);\n</code></pre>\n\nBut my Y-label is shifted compare to my data. I found what it has my Y-axis has 10 division, insted of 9.  How can I fix the issue. \r<br />\n<br />\nThank you\r<br />\n<br />\nIgor<br />\n",
+    "PostedDate": "2014-01-06T11:09:23.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

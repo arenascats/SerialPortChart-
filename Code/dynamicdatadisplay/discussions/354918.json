@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "833428",
+    "ThreadId": "354918",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Like many others here, I'm kinda new with D3. As a personnal project, I'm trying to build myself a stock charting / portfolio management software. For the &quot;charting&quot; part of it, I've decided to use D3 (based on the great work of Felice Pollano and his blog\r\n -&gt; http://www.felicepollano.com/CategoryView.aspx?category=Charting).</p>\r\n<p>&nbsp;</p>\r\n<p>It's working great but I have one small problem: Since stock markets are closed on weekends and holidays, those days are not in the data retrieved (witch is ok), but they are still displayed on the X-axis, which creates gaps in the chart.</p>\r\n<p>&nbsp;</p>\r\n<p>Example: I have four dates in my data -&gt; may 3, may 4, may 7, may 8</p>\r\n<p>On the chart's x-axis you will have -&gt; may 3, may 4, may 5, may 6, may 7, may 8</p>\r\n<p>So since on may 5 and 6 I have no data, there's a blank diplayed.</p>\r\n<p>&nbsp;</p>\r\n<p>So the question: is there a way to display only dates on the X-Axis where I actually have data for? Or at least a hint of where I should check in the source code.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks, Guillaume.</p>\r\n",
+    "PostedDate": "2012-05-08T05:53:45.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "934214",
+    "ThreadId": "354918",
+    "Html": "<p>Hey Gui, I'm developing a very similar application, and was wondering if you managed to figure this out? If so, it would be highly appreciated if you could post the solution here! Likewise, if I come up with an answer in the coming days, I will post it. Thanks!</p>",
+    "PostedDate": "2012-10-30T06:48:31.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "938545",
+    "ThreadId": "354918",
+    "Html": "<p>Hey Gui. I came up with a solution that might help you. I posted my answer here :</p>\r\n<p><a href=\"http://stackoverflow.com/questions/12937164/dynamic-data-display-scattered-datetime-axis\">http://stackoverflow.com/questions/12937164/dynamic-data-display-scattered-datetime-axis</a></p>",
+    "PostedDate": "2012-11-08T06:48:37.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "957907",
+    "ThreadId": "354918",
+    "Html": "\r\n<p>Hey pol315, since i still cannot comment @ stackoverflow i ask here:</p>\r\n<p>How is the Method <code><span>GetResourceFromPool</span><span>(); implemented ?<br>\r\n</span></code></p>\r\n",
+    "PostedDate": "2012-12-18T12:14:39.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

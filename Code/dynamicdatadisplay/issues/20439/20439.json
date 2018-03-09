@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\n\n  I am creating Dynamic Data Display with in tab control .When I opening multiple tabs, Only one (Last opened tab's) Dynamic data display is active(Graph is plotting) .Other tab's Dynamic Data Displays are in Idle. Is there possible to solve this problem?........",
+    "LastUpdatedDate": "2014-05-22T08:34:53.97-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2013-11-20T04:23:25.32-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Dynamic Data Display not working under Multiple TabItem",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20439
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

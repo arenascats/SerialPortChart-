@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "488274",
+    "ThreadId": "225809",
+    "Html": "<p>Hi,</p>\r\n<p>I have a ChartPlotter with 2 line graphs inside a user control. This user control stretches both vertically and horizontally. When the plotter first draws, everything is OK, but when&nbsp;I&nbsp;maximize the window and the user control expands...the background grid in the ChartPlotter does not&nbsp;resizes&nbsp;properly, leaving a blank space on the right side of the plotter (the line graphs expand and so does the axis, but not the background).</p>\r\n<p>&nbsp;</p>\r\n<p>EDIT: Just in case I should say, I'm creating everything but the plotter and the axis labels dynamically.</p>\r\n<p>EDIT2: I have also just noticed that the background grid (which&nbsp;I&nbsp;believe is ChartPlotter.CentralGrid) is not resizing along with the rest of the plotter, so it doesn't keeps up with the change in the axis ticks.</p>",
+    "PostedDate": "2010-09-02T07:30:29.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

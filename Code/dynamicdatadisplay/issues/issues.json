@@ -1,0 +1,310 @@
+[
+  {
+    "Id": 7885,
+    "Title": "Problem With Sample"
+  },
+  {
+    "Id": 7893,
+    "Title": "WPF Dynamic Data Display needs running through VSTS Code Analysis/FXCop"
+  },
+  {
+    "Id": 7894,
+    "Title": "WPF Dynamic Data Display should meet StyleCop code style requirements."
+  },
+  {
+    "Id": 8421,
+    "Title": "Copy Picture To Clipboard produces black square"
+  },
+  {
+    "Id": 8529,
+    "Title": "Exception thrown when zooming in to graph."
+  },
+  {
+    "Id": 8592,
+    "Title": "Zero axes labels unreadable"
+  },
+  {
+    "Id": 8599,
+    "Title": "Deleting rows in table used as TableDataSource causes DeletedRowInaccessibleException"
+  },
+  {
+    "Id": 8778,
+    "Title": "Control Sizing Not Working Correctly in Grid"
+  },
+  {
+    "Id": 9571,
+    "Title": "MAJOR BUG"
+  },
+  {
+    "Id": 10297,
+    "Title": "Create a sample with two log axes - horiz and vert ones"
+  },
+  {
+    "Id": 10489,
+    "Title": "DataRect.Parse bug"
+  },
+  {
+    "Id": 10529,
+    "Title": "Cannot change Axis stroke color."
+  },
+  {
+    "Id": 10605,
+    "Title": "Using ellipses as markers."
+  },
+  {
+    "Id": 10824,
+    "Title": "Pan with problems in last versions"
+  },
+  {
+    "Id": 10855,
+    "Title": "Last point is always filtered out by FrequencyFilter"
+  },
+  {
+    "Id": 10858,
+    "Title": "The errors appeared when I try to build sources"
+  },
+  {
+    "Id": 10976,
+    "Title": "Legend line should pick up pen style fully"
+  },
+  {
+    "Id": 11019,
+    "Title": "Confusion while plotting PathGeometry (edited: not an issue, actually question)"
+  },
+  {
+    "Id": 11522,
+    "Title": "Ability to add annotations"
+  },
+  {
+    "Id": 11533,
+    "Title": "Context Menu crashing in xbap application"
+  },
+  {
+    "Id": 11606,
+    "Title": "InvalidCastException  EnumerablePointEnumeratorwhen using int as EnumerableDataSource"
+  },
+  {
+    "Id": 12063,
+    "Title": "DraggablePoint does not use DataTransform"
+  },
+  {
+    "Id": 12398,
+    "Title": "Invalid Cast ViewportPanel to IPlotterElement"
+  },
+  {
+    "Id": 12829,
+    "Title": "Has capability to set axis in central position instead of on Bottom, Top, Left, Right."
+  },
+  {
+    "Id": 13550,
+    "Title": "VerticalLine and HorizontalLine in connection with DataTransform"
+  },
+  {
+    "Id": 13640,
+    "Title": "Support for double.NaN's"
+  },
+  {
+    "Id": 13641,
+    "Title": "InvalidOperationException when using HorizontalRange"
+  },
+  {
+    "Id": 13700,
+    "Title": "Bug in SortedXSearcher1d.cs"
+  },
+  {
+    "Id": 14036,
+    "Title": "Bug in CircleElementPointMarker.SetPosition"
+  },
+  {
+    "Id": 14302,
+    "Title": "angosso"
+  },
+  {
+    "Id": 14512,
+    "Title": "Export graph as jpg"
+  },
+  {
+    "Id": 15338,
+    "Title": "Issue with Isoline graph"
+  },
+  {
+    "Id": 15541,
+    "Title": "Setting CursorCoordinateGraph's position fails when chart range exceeds rendering range"
+  },
+  {
+    "Id": 15623,
+    "Title": "can D3 draw 1000000 points in a second?"
+  },
+  {
+    "Id": 15624,
+    "Title": "can D3 draw 1000000 points in a second?"
+  },
+  {
+    "Id": 15625,
+    "Title": "can D3 draw 1000000 points in a second?"
+  },
+  {
+    "Id": 15666,
+    "Title": "Binding error of context menu"
+  },
+  {
+    "Id": 15716,
+    "Title": "Filter is not updated on pan"
+  },
+  {
+    "Id": 16045,
+    "Title": "Application Crashes When Using Map Control !"
+  },
+  {
+    "Id": 16354,
+    "Title": "Dont use \"async\" as Variable Name"
+  },
+  {
+    "Id": 16443,
+    "Title": "Zooming do not work while over item with context menu (see: context menu sample)"
+  },
+  {
+    "Id": 16444,
+    "Title": "Legend has only one column and hide items that falls below the graph"
+  },
+  {
+    "Id": 16457,
+    "Title": "ZIndex problem with MarkerElementPointGraph"
+  },
+  {
+    "Id": 16933,
+    "Title": "Dynamic Data Display for Silverlight 2.0 license"
+  },
+  {
+    "Id": 17007,
+    "Title": "Help Wanted! Heatmap under VB2010???"
+  },
+  {
+    "Id": 17268,
+    "Title": "Setting a DraggablePoint initially at 0,0 means the Draggable point is not visible"
+  },
+  {
+    "Id": 17333,
+    "Title": "Stretch property of Image for IsolineGraph"
+  },
+  {
+    "Id": 17663,
+    "Title": "Bring back WPF support for version 2.0"
+  },
+  {
+    "Id": 17664,
+    "Title": "Provide NuGet packages"
+  },
+  {
+    "Id": 17731,
+    "Title": "Support for Metro apps through Portable Class Library"
+  },
+  {
+    "Id": 18208,
+    "Title": "MarkerGraph doesn't render big X values"
+  },
+  {
+    "Id": 18738,
+    "Title": "\"Operation could destabilize the runtime\" exception after installing Visual Studio 2012"
+  },
+  {
+    "Id": 19237,
+    "Title": "LineCursor Vertical"
+  },
+  {
+    "Id": 19238,
+    "Title": "LineCursor Vertical Line"
+  },
+  {
+    "Id": 19625,
+    "Title": "Need to move horizontal axis with graph"
+  },
+  {
+    "Id": 19787,
+    "Title": "Change gird color"
+  },
+  {
+    "Id": 20170,
+    "Title": "Can I display the value range from data source"
+  },
+  {
+    "Id": 20294,
+    "Title": "How to assign Y axis to an array"
+  },
+  {
+    "Id": 20379,
+    "Title": "Is there a way to make the horizontal axis shared for 2 charts in WPF like in silverlight?"
+  },
+  {
+    "Id": 20439,
+    "Title": "Dynamic Data Display not working under Multiple TabItem"
+  },
+  {
+    "Id": 20464,
+    "Title": "Drawing pointwise"
+  },
+  {
+    "Id": 20646,
+    "Title": "How to draw a linegraph with singular points?"
+  },
+  {
+    "Id": 20811,
+    "Title": "Error bar graph"
+  },
+  {
+    "Id": 21159,
+    "Title": "How can I change properties of Chart axis in Dynamic Data Display (D3) for Silverlight?"
+  },
+  {
+    "Id": 21503,
+    "Title": "Vertical Axis starts from Top (using Data Transform)"
+  },
+  {
+    "Id": 21504,
+    "Title": "Vertical Axis starts from Top (using Data Transform)"
+  },
+  {
+    "Id": 21535,
+    "Title": "Graph bug"
+  },
+  {
+    "Id": 21786,
+    "Title": "How can i get screenshot with x and y axis values"
+  },
+  {
+    "Id": 21801,
+    "Title": "Mouse Wheel Related Exception"
+  },
+  {
+    "Id": 21915,
+    "Title": "Display big data in ChartPlotter"
+  },
+  {
+    "Id": 22125,
+    "Title": "D3 Heat Chart For WPF"
+  },
+  {
+    "Id": 22146,
+    "Title": "Windows Platform Universa"
+  },
+  {
+    "Id": 22316,
+    "Title": "CIE Chromatocity plot using dynamic data display"
+  },
+  {
+    "Id": 22423,
+    "Title": "polar plot in dynamic data display"
+  },
+  {
+    "Id": 22427,
+    "Title": "The majorLabels is very long What should i do"
+  },
+  {
+    "Id": 22447,
+    "Title": "Independent axis Dynamic Data Display"
+  },
+  {
+    "Id": 22550,
+    "Title": "Graph line with Custome Design"
+  }
+]

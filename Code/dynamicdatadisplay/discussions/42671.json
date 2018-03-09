@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "141818",
+    "ThreadId": "42671",
+    "Html": "Hi,<br>\r\n<br>\r\nI would appreciate if the latest release, or maybe even latest development version could be dropped in the source control repository.<br>\r\n<br>\r\n",
+    "PostedDate": "2008-12-19T04:52:37.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "141821",
+    "ThreadId": "42671",
+    "Html": "Currently you can download the most recent version <a href=\"http://www.codeplex.com/dynamicdatadisplay/Release/ProjectReleases.aspx?ReleaseId=20298\">here</a> - simply download archive, uncompress it and add &quot;DynamicDataDisplay&quot; project into your solution.<br>\r\nWe'll upload this version into Source Control later.<br>\r\n",
+    "PostedDate": "2008-12-19T05:04:47.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "144228",
+    "ThreadId": "42671",
+    "Html": "Hi, kristogar!<br>\r\n<br>\r\nI've uploaded latest source code into our repository.<br>\r\n<br>\r\nBest regards,<br>\r\nMikhail.<br>\r\n",
+    "PostedDate": "2009-01-04T09:26:37.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

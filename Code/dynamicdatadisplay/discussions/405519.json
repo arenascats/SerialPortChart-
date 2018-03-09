@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "951111",
+    "ThreadId": "405519",
+    "Html": "\r\n<p>I'm new to D3 and have run into two challenges I need guidance on; I hope someone can help:</p>\r\n<p>&nbsp;</p>\r\n<p>1) I need to override the zoom behavior, such that each time the user zooms (e.g., mousewheel, and right click 'fit to view') I can update the chart (i.e., add some markers) and do normal zoom behavior.&nbsp; How do I customize/override default zoom?</p>\r\n<p>2) I am adding some markers to my chart, but seem to be limited to circle (e.g., &#65279;&#65279;&#65279;&#65279;CircleElementPointMarker) or rectangle plain Jane markers.&nbsp; How can I do something a little more custom (e.g., circle with a letter within\r\n circle, or icon)?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for the help.</p>\r\n",
+    "PostedDate": "2012-12-04T05:24:19.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954135",
+    "ThreadId": "405519",
+    "Html": "\r\n<p>You can take control of the MouseWheel events in the MouseNavigation class. All the mouse events are handled there.</p>\r\n<p>&nbsp;</p>\r\n<p>You certainly can do pretty much any marker. Simply add a class to the PointMarkers folder in the source code and derive the class from ShapePointMarker. Now, in the render method, you can choose whatever shape you want to draw. If what you are trying is\r\n too complex to render using the drawing context, you can also derive a class from ShapeElementPointMarker and add your own objects to the chart. However, ShapeElementPointMarker seems to consume more CPU resources, so be careful with what you are trying to\r\n implement. :)</p>\r\n",
+    "PostedDate": "2012-12-10T11:54:29.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

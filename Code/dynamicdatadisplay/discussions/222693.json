@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "477292",
+    "ThreadId": "222693",
+    "Html": "<p>I have started looking taking a quick look at the Map Sample as to possibly using it to access Open Street Map in an application.&nbsp; However, I'm not quite sure how to programmatically make the map's center position at certain locations in lat/long and how to zoom in or out.&nbsp; It seems that the Visible property of the Chart2D plotter might be what I should use, but when I enter lat/long coordinates and extents in that DataRect structure, it doesn't appear to be positioning the control anywhere near where I expect.&nbsp; I'm sure that given I have only taken a cusory look at the source code that I am missing something.&nbsp; Could anyone shed some light as to how I can programmatically do the basic location, pan and zoom type of operations with the Map control and how I can read back data representing the state of the control in lat/long?</p>\r\n<p>Thanks in advance!</p>",
+    "PostedDate": "2010-08-06T02:08:48.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

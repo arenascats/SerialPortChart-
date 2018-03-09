@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "483585",
+    "ThreadId": "224503",
+    "Html": "Dear D3 Community.\r\nI wish to use the D3 plotting libraries to make simple XY scatter plots. I am familiar with c#, but have little experience with the D3 packages, or plotting libraries with c#.  \r\n\r\nCould someone kindly offer me some advice or recommend a document on how to do this?  I have looked through the Wiki, Tweets, and discussions, but these are too specific/advanced. \r\n\r\nI am running MS visual Studio with .NET 4. \r\nI have referenced D3 with “using Microsoft.Research.DynamicDataDisplay;” and can created new instances of the class’ the library provides. I can look through the names of these classes, but cannot view detailed meta-data (F12) or figure out what class to use first.\r\n\r\nAny advice would be appreciated, either here or to my email, dpooley@gmail.com\r\n\r\nDaniel.\r\n\r\nP.S is anyone in the community feels that the D3 are too advanced for my needs, any recommendations for simple, FREE, plotting libraries would be appreciated. \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "PostedDate": "2010-08-23T06:26:48.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "483799",
+    "ThreadId": "224503",
+    "Html": "<p>Have you looked at the samples that are part of the DynamicDataDisplay solution?</p>\r\n<p>For example, HelloWorldSample demonstrates a simple line graph and MarkersSample demonstrates marker plots. &nbsp;There are 10's of sample projects which show most features in D3.</p>\r\n<p>&nbsp;</p>\r\n<p>Main XAML &amp; code from&nbsp;HelloWorldSample</p>\r\n<p>XAML</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotter</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">Header</span> <span style=\"color:red\">TextBlock.FontSize</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">20</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n            Very simple chart\r\n        <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">Header</span><span style=\"color:blue\">&gt;</span>\r\n\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">VerticalAxisTitle</span><span style=\"color:blue\">&gt;</span>Sine value<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">VerticalAxisTitle</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">HorizontalAxisTitle</span><span style=\"color:blue\">&gt;</span>Sine argument<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">HorizontalAxisTitle</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Code</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">using</span> Microsoft.Research.DynamicDataDisplay;\r\n<span style=\"color:blue\">using</span> Microsoft.Research.DynamicDataDisplay.DataSources;\r\n<span style=\"color:blue\">using</span> Microsoft.Research.DynamicDataDisplay.PointMarkers;\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>\t<span style=\"color:blue\">public</span> MainWindow()\r\n\t\t{\r\n\t\t\tInitializeComponent();\r\n\r\n\t\t\tLoaded += <span style=\"color:blue\">new</span> RoutedEventHandler(MainWindow_Loaded);\r\n\t\t}\r\n\r\n\t\t<span style=\"color:blue\">void</span> MainWindow_Loaded(<span style=\"color:blue\">object</span> sender, RoutedEventArgs e)\r\n\t\t{\r\n\t\t\t<span style=\"color:green\">// Prepare data in arrays</span>\r\n\t\t\t<span style=\"color:blue\">const</span> <span style=\"color:blue\">int</span> N = 1000;\r\n\t\t\t<span style=\"color:blue\">double</span>[] x = <span style=\"color:blue\">new</span> <span style=\"color:blue\">double</span>[N];\r\n\t\t\t<span style=\"color:blue\">double</span>[] y = <span style=\"color:blue\">new</span> <span style=\"color:blue\">double</span>[N];\r\n\r\n\t\t\t<span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; N; i++)\r\n\t\t\t{\r\n\t\t\t\tx[i] = i * 0.1;\r\n\t\t\t\ty[i] = Math.Sin(x[i]);\r\n\t\t\t}\r\n\r\n\t\t\t<span style=\"color:green\">// Create data sources:</span>\r\n\t\t\t<span style=\"color:blue\">var</span> xDataSource = x.AsXDataSource();\r\n\t\t\t<span style=\"color:blue\">var</span> yDataSource = y.AsYDataSource();\r\n\r\n\t\t\tCompositeDataSource compositeDataSource = xDataSource.Join(yDataSource);\r\n\t\t\t<span style=\"color:green\">// adding graph to plotter</span>\r\n\t\t\tplotter.AddLineGraph(compositeDataSource,\r\n\t\t\t\tColors.Goldenrod,\r\n\t\t\t\t3,\r\n\t\t\t\t<span style=\"color:#a31515\">&quot;Sine&quot;</span>);\r\n\r\n\t\t\t<span style=\"color:green\">// Force evertyhing plotted to be visible</span>\r\n\t\t\tplotter.FitToView();\r\n\t\t}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-23T14:02:35.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "483979",
+    "ThreadId": "224503",
+    "Html": "Hello grantz\r\n\r\nThank you for your useful information. I am afraid my problem is that I do not know how to view the c# code from the .exe example files provided in the sample folder. IF I could view this code, then my life would be much easier. \r\n\r\nCould you suggest how I view the c# code?\r\n\r\nThank you again\r\n\r\nDaniel\r\n",
+    "PostedDate": "2010-08-24T01:09:26.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "484127",
+    "ThreadId": "224503",
+    "Html": "<p>download the source code and examples from the link below</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/releases/view/26761\">http://dynamicdatadisplay.codeplex.com/releases/view/26761</a></p>\r\n<p>&nbsp;</p>\r\n<p>thanks</p>\r\n<p>kishore vanapalli</p>",
+    "PostedDate": "2010-08-24T06:45:12.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1097949",
+    "ThreadId": "224503",
+    "Html": "Hello gratz,\r<br />\n<br />\nthank you for this code, it helps me too.\r<br />\n<br />\nOttilie<br />\n",
+    "PostedDate": "2013-09-23T02:43:31.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

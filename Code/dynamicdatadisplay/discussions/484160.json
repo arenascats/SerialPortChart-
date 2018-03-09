@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1151254",
+    "ThreadId": "484160",
+    "Html": "I have a serious problem when scrolling and zooming a graph.\r<br />\n<br />\nUp to a specific zoom range, everything works fine. Zooming, Scrolling, Panning - everything works as it should.\r<br />\n<br />\nZooming in one step more somehow breaks the graph. When I pan on the x-axis, the graph suddenly disappears. Panning more on the x-axis, lets the graph flicker. \r<br />\nIn some situations, I use a vertical line cursor. When the graph is broken, I can use the LineCursor to &quot;erase&quot; the graph with the cursor.\r<br />\n<br />\nMinimizing and restoring or resizing the window, where the graph is displayed will redraw the graph so it is visible again, but the problem remains until I zoom out one step.\r<br />\n<br />\nThis only happens when the zoom level exceeds a specific level and it seems the graph is then not drawn anylonger. \r<br />\nIs there any fix or workaround for this?<br />\n",
+    "PostedDate": "2014-01-09T01:49:19.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1449491",
+    "ThreadId": "484160",
+    "Html": "Hello cactusjack, I've just found a way to fix that issue.\r<br />\n<br />\nIt's on the file LineGraph.cs, go to the method OnRenderCore and replace the following line from <br />\n<pre><code>context.BeginFigure(FilteredPoints.StartPoint, false, false);</code></pre>\n\nto<br />\n<pre><code>context.BeginFigure(FilteredPoints.StartPoint, true, false);</code></pre>\n\nIt's works fine for me now....\r<br />\n<br />\nIt's maybe too late for you but maybe this reply can help anyone else...<br />\n",
+    "PostedDate": "2015-10-23T03:57:31.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

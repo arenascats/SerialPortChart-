@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "471226",
+    "ThreadId": "220807",
+    "Html": "<p>Hi!, i&acute;m trying to use coastline class, but i i don&acute;t know how to connect this class with ChartPlotter class ...</p>\r\n<p>i&acute;m writing something like ...</p>\r\n<p><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp; public partial class MainWindow : Window</span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp; {</span></p>\r\n<p><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ChartPlotter _chart;</span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Coastline _coast;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public MainWindow()</span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _coast = new Coastline(&quot;D:\\\\Samples\\\\DynamicDataDisplay v0.3 Source\\\\src\\\\Samples\\\\v0.3\\\\CoastlineSampleApp\\\\Coastline.txt&quot;); // create new object &amp; loading points from file</span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _chart = new ChartPlotter(); // create new chart</span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _coast.AddToPlotter(_chart); // &iquest;is this the way? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.AddChild(_chart);&nbsp; // adding chart to window &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>\r\n<p><br><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InitializeComponent();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>\r\n<p><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>\r\n<p><span style=\"color:#0000ff\">&nbsp;&nbsp;&nbsp; }</span></p>\r\n<p><br>At the end, i only get the chart, but the points are not drawn.</p>\r\n<div dir=ltr>\r\n<div id=\"tts_button\" style=\"display:block\" title=\"Oír esta traducción\">\r\n&lt;object id=&quot;tts_flash&quot; width=&quot;18&quot; height=&quot;18&quot; type=&quot;application/x-shockwave-flash&quot; data=&quot;http://www.gstatic.com/translate/sound_player2.swf&quot;&gt;\r\n&lt;param name=&quot;movie&quot; value=&quot;http://www.gstatic.com/translate/sound_player2.swf&quot; /&gt;\r\n&lt;param name=&quot;flashvars&quot; value=&quot;sound_name=&amp;sound_name_cb=_TTSSoundFile&quot; /&gt;\r\n&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;\r\n&lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;\r\n&lt;/object&gt;\r\n</div>\r\n</div>\r\n<div dir=ltr><span id=\"result_box\"><span>Any suggestions??</span></span></div>\r\n<div dir=ltr></div>\r\n<div dir=ltr><span><span>Thanks!<br></span></span></div>\r\n<p>???</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-22T14:20:29.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471239",
+    "ThreadId": "220807",
+    "Html": "<p>I haven't used the Coastline object but in general you need to add an element to the plotters children collection before it is shown in the chart.</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>  <span style=\"color:blue\">public</span> <span style=\"color:blue\">partial</span> <span style=\"color:blue\">class</span> MainWindow : Window\r\n    {\r\n\r\n        ChartPlotter _chart;\r\n        Coastline _coast;\r\n        \r\n        <span style=\"color:blue\">public</span> MainWindow()\r\n        {\r\n            _coast = <span style=\"color:blue\">new</span> Coastline(<span style=\"color:#a31515\">&quot;D:\\\\Samples\\\\DynamicDataDisplay v0.3 Source\\\\src\\\\Samples\\\\v0.3\\\\CoastlineSampleApp\\\\Coastline.txt&quot;</span>); <span style=\"color:green\">// create new object &amp; loading points from file</span>\r\n            _chart = <span style=\"color:blue\">new</span> ChartPlotter(); <span style=\"color:green\">// create new chart</span>\r\n            _chart.Children.Add(_coast);  <span style=\"color:green\">// Add coastline to chart</span>\r\n            <span style=\"color:blue\">this</span>.AddChild(_chart);  <span style=\"color:green\">// adding chart to window            </span>\r\n\r\n\r\n            InitializeComponent();                    \r\n\r\n        }\r\n\r\n    }\r\n\r\n\r\n</pre>\r\n</div>\r\n<p>Grant.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-22T14:41:19.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471700",
+    "ThreadId": "220807",
+    "Html": "<p>thanks in advance for your answer ... but it does not seem to work!!!</p>\r\n<p>i have the same result.</p>\r\n<p>i will keep on trying ... but ... any suggestion?</p>",
+    "PostedDate": "2010-07-23T10:07:37.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472023",
+    "ThreadId": "220807",
+    "Html": "<p>well ... it works now!!</p>\r\n<p>i have to especify the visible area ... then the code &quot;complete&quot; will be ...</p>\r\n<pre>  <span style=\"color:blue\">public</span> <span style=\"color:blue\">partial</span> <span style=\"color:blue\">class</span> MainWindow : Window<br>    {<br><br>        ChartPlotter _chart;<br>        Coastline _coast;<br>        <br>        <span style=\"color:blue\">public</span> MainWindow()<br>        {<br>            _coast = <span style=\"color:blue\">new</span> Coastline(<span style=\"color:#a31515\">&quot;D:\\\\Samples\\\\DynamicDataDisplay v0.3 Source\\\\src\\\\Samples\\\\v0.3\\\\CoastlineSampleApp\\\\Coastline.txt&quot;</span>); <span style=\"color:green\">// create new object &amp; loading points from file</span><br>            _chart = <span style=\"color:blue\">new</span> ChartPlotter(); <span style=\"color:green\">// create new chart</span><br>            _chart.Children.Add(_coast);  <span style=\"color:green\">// Add coastline to chart</span><br>            _chart.Viewport.Visible = new Rect(-50, -50, 100, 100); <span style=\"color:green\">// for example ... </span><br>            <span style=\"color:blue\">this</span>.AddChild(_chart);  <span style=\"color:green\">// adding chart to window            </span><br><br>            InitializeComponent();                    <br><br>        }<br><br>    }<br><br>Thanks for your help!!!<br></pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-24T04:04:13.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

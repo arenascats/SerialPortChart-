@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "474727",
+    "ThreadId": "221993",
+    "Html": "<p>Has anyone links to a tutorial/doco on getting starting and using DDD for doing some basic graphs? &nbsp; &nbsp; I didn't see any doco such as this so far? &nbsp;(perhaps I've overlooked it somewhere?)</p>\r\n<p>By the way - Is DDD a good choice for doing some graphs is a WPF application? &nbsp;I was trying the WPF Toolkit at &quot;<a href=\"http://wpf.codeplex.com/releases/view/29117\">http://wpf.codeplex.com/releases/view/29117</a>&quot; which didn't seem too bad, however they haven't really got the doco out yet for charting/graphing so it's a bit slow going trying to work things out. &nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-30T06:04:23.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486392",
+    "ThreadId": "221993",
+    "Html": "<p>The Dynamic Data Display is a very impressive piece of code but as many newbies, including me, have mentioned it is lacking &quot;regular&quot; documentation.</p>\r\n<p>The best article I have found was in MSDN magazine and you can read it at:</p>\r\n<p>﻿﻿﻿<a href=\"http://msdn.microsoft.com/en-us/magazine/ff714591.aspx\">http://msdn.microsoft.com/en-us/magazine/ff714591.aspx</a></p>\r\n<p>The other thing you need to do is download the sources to get the source code for the samples and of course download&nbsp;the documentation - although to be honest the documentation is really a token effort and I didn't find it all that helpful.</p>\r\n<p>I hope the above doesn't sound like a complaint - D3 is a great resource - and has saved me so much time and I really appreciate the work people have put into it</p>",
+    "PostedDate": "2010-08-30T06:21:45.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486397",
+    "ThreadId": "221993",
+    "Html": "<p>Thank you very much for the reference to the MSDN article - I did not know about it.</p>\r\n<p>David Roh</p>",
+    "PostedDate": "2010-08-30T06:29:33.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

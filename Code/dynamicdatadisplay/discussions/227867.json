@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "496038",
+    "ThreadId": "227867",
+    "Html": "<p>&nbsp;</p>\r\n<p>After trying out almost every &quot;good&quot; real-time&nbsp;commercial WPF chart out there - Syncfusion, Visifire, Modulus StockChartX etc. - I started to think the high performance charts in WPF are a myth.&nbsp;&nbsp; Our requirements are simple,&nbsp;4&nbsp;realtime charts in one window&nbsp;for our&nbsp;traders.&nbsp;&nbsp;The only thing the charts&nbsp;have to do&nbsp;is&nbsp;display real-time price ticks&nbsp;from live market data.&nbsp; This is the most basic requirement for a &quot;realtime&quot; chart - display live data as it becomes available and re-render itself.&nbsp;&nbsp;The other thing we wanted to do is&nbsp;keep the charts open during trading hours for 4-5 hours at a time, which is standard practice in trading.</p>\r\n<p>Most&nbsp;of the commercial charts&nbsp;failed&nbsp;with just one chart in a matter of minutes, with respect to&nbsp;CPU performance.&nbsp; This was&nbsp;without any hookup to the&nbsp;backend market data servers.&nbsp;&nbsp;For testing we&nbsp;randomly generated the ticks&nbsp;inside&nbsp;the WPF codebehind, in order to&nbsp;eliminate any&nbsp;server latency issues.&nbsp;&nbsp;Simulating&nbsp;even slow moving markets, say&nbsp;only 1 tick per second the performance was not good.&nbsp;&nbsp;We&nbsp;intensively profiled all these commercial packages (with SciTech, .DotTrace, WPF toolkit and several other profilers both for memory and cpu performance) and most of them seemed to point to fundamental flaws&nbsp;with&nbsp;how Microsoft&nbsp;System.Windows.Shapes was written the deeper&nbsp;we looked.&nbsp;&nbsp;When I came across&nbsp;the&nbsp;great reviews&nbsp;D3&nbsp;had&nbsp;for its performance, I was very excited and&nbsp;wanted to&nbsp;give it a try.&nbsp;&nbsp;Unfortunatelty Im sad&nbsp;to say&nbsp;I have to keep looking&nbsp;-- or at this point I will probably write one myself.</p>\r\n<p>In&nbsp;downloaded the&nbsp;latest DynamicDataDisplay_v0.3_Binaries_&amp;_Samples.zip and ran Samples/v0.3/Simulation.&nbsp; On an Intel Xeon 4 core 2.33Ghz, 3 GB RAM machine, running only the single chart sample racked up overall CPU usage to 50%.&nbsp; On&nbsp;two other separate Intel Xeon 2.2.7 Ghz 8 core, 3.5 GB&nbsp;machines the CPU performance was between 10-20% for SimulationSample.exe.&nbsp;&nbsp;With 4 charts the CPU utilization was close to 100%.</p>\r\n<p>I just wanted to share my&nbsp;findings out&nbsp;here, for any one else grappling with streaming charts in WPF.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-20T08:03:30.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496153",
+    "ThreadId": "227867",
+    "Html": "<p>We too are running into performance problems with trying to do our charting.&nbsp; We need to have a line graph that maps up to 200 points per second and keeps the history of past points.&nbsp;&nbsp; This needs to run for up to an hour.&nbsp; We usually start seeing performance hiccups after only a few minutes.&nbsp; We are now pursuing writing directly to DirectX but are finding this to be not very intuitive and slow going.&nbsp;</p>\r\n<p>I'd love to hear about findings anyone has for doing data intensive real-time charting in WPF.</p>",
+    "PostedDate": "2010-09-20T12:12:20.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496264",
+    "ThreadId": "227867",
+    "Html": "<p>Pardon me for saying so, but with all due respect, I find the data and the conclusions on both the above posts a bit puzzling.</p>\r\n<p>@ gorter : What you are describing, right here, is a de facto memory leak. In fact it is probably the most accurate definition of a memory leak. Without having seen any of the performance hiccups you talk about, and since you don't describe them in detail, I could imagine that after a few minutes of your data flowing, there would be quite a few objects lying around and never freed. What happens next is that garbage collections happen more frequently, and take more time (sometimes right up to a full second for generation 2 collections). This would probably not be helped by any directX as it is not caused by the grid itself. This is a normal behaviour of the .net framework and is to be expected. You should probably look for improvements around your data structures, advanced DataBinding, and a very different design alltogether. Another grid will not solve those problems. No .Net Grid can.</p>\r\n<p>&nbsp;</p>\r\n<p>@asifrah : I am surprised that you are surprised. Also, may I humbly question your benchmarking process. Everything GUI related will happen on a GUI thread. That means at maximum on one processor. On an 8 core machine, that means you will get maximum 100/8 = 12.5% total CPU usage from this grid. Not sure how you get 100% CPU usage, apart from maybe launching 4 separate processes with a grid each. That is not a good benchmark. What you want to benchmark is what happens when you have 4 grid in the same process. How does it affect the rate of processing, does the performance degrade gracefully, does it degrade by increasing latency (and by how much) or does it degrade by freezing regularly. A good run in a profiler would also help somewhat in highlighting some performance bottlenecks that could be in your code.</p>\r\n<p>As a side note, I am not sure why people usually think 100% CPU usage, or high memory consumption is that bad. In fact, I would want my software, if written to be high perf, to use up all available resources. If it doesn't, then surely, that means it is doing something else, like waiting for I/O, or twiddling its thumbs. The only case when I like to see low CPU usage is if that software was designed to be scalable (usually, we are talking server-side here, not GUI) and that it meant it could process many things at a time. This usually would mean decreased latency (a software using only 2% of the CPU is NOT processing things as fast as possible). What you want to be thinking about when designing software is not CPU usage. It is scalability, latency. That is a very different approach.</p>\r\n<p>One big pitfall people fall into also, is the one where you think you app actually NEEDS to update every single bit of data coming in. Now I don't know about your traders, but ours, they don't have bionic eyes just yet. They will probably get some grafted as soon as the technology allows, but we're still not quite there yet. Updating a number (or a graph) 200 times a second is just plain silly. Now, processing 200 updates a second is reasonable goal, but on another thread. What you want to do is your GUI to &quot;reflect&quot; the result of those 200 updates, but only by a &quot;snapshot&quot; that will aggregate them, and display them to the trader at a much more sensible (and readable) rate. I have found that 2 times per second is already quite enough for most people to endure. Your high level testosterone fueled trader can have 3 times /sec and he will do just as good a job. More, and you are designing something that only a machine could process. You are also wasting valuable resources in the GUI thread, that could be defered to one of the other 7 cores.</p>\r\n<p>Now pardon my tone here, but when I read those posts, it felt just like what the juniors (junior in the field of realtime front office dev, they could be seasoned geeks in another field) guys we see around would say in their first few months. The bad case of &quot;premature optimization&quot;, with a whiff of not understanding the real implications of data intensive work.</p>\r\n<p>If I am completely wrong, feel free to open up the can of bird names ;-)</p>",
+    "PostedDate": "2010-09-20T17:43:07.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496289",
+    "ThreadId": "227867",
+    "Html": "<p>Michel, &nbsp;</p>\r\n<p>Many people consider high CPU utilisation by an application to be bad because they would like their PC's to be responsive to other applications. &nbsp;If one app is using continually using 100% of the CPU other applications are likely to lose their responsiveness.</p>\r\n<p>BTW, I'm not sure if you realise that&nbsp;asifrah &amp; gorter are referring to the performance of the dynamic data display. This is a graphing control and (as far as I know) it has no grid features.</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-09-20T19:47:28.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496304",
+    "ThreadId": "227867",
+    "Html": "<p>@alexis_michel: &nbsp; Can of bird names it is ;). &nbsp;&nbsp;</p>\r\n<p>I do think you took this personally for one reason or the other. &nbsp;Before you dive into this sort discussion, please test the samples for yourself. &nbsp;Execute&nbsp;SimulationSample.exe 4 times so that you have 4 instances running. &nbsp;Each running sample has only one chart. &nbsp;If you believe that is an unfair test, take the sample code and paste it 4 times into a WrapPanel so that all the charts fit nicely in one window, and is inside one process. &nbsp;Now run the process. &nbsp;If you do better than 50% CPU on an average machine, let us know. &nbsp;&nbsp;</p>\r\n<p>Also Im not sure what sort of software development school is teaching developers to max out the CPU or memory on a machine. &nbsp;Did you happen to notice that the windows operating system is close to unresponsive with an application running at those levels? &nbsp;</p>\r\n<p>Fundamentally what we are taking about here is a problem with WPF in and of itself as far as charting goes. &nbsp; The problem lies in the System.Windows.Shapes namespace. &nbsp;Take the simple case of the Line class in System.Windows.Shapes. &nbsp;In order to draw 1 line four coordinates need to be set - X1, Y1, X2, and Y2 - each of which is exposed as a .NET property of type double. &nbsp;Now draw a line once every second, NOT 200 times a second. &nbsp;It is well known that even the individuals with the best eyesight strain to distinguish beyond 50 frames per second. &nbsp; Now what happens when we set one of these coordinates? &nbsp;</p>\r\n<p>[ This is actual .NET 3.5 framework code ]&nbsp;</p>\r\n<p>public void set_X1(double value)<br>{<br>&nbsp; &nbsp;base.SetValue(X1Property, value);<br>}<br><br>..and what happens inside setValue? &nbsp;</p>\r\n<p><br>public void SetValue(DependencyProperty dp, object value)<br>{<br>&nbsp; &nbsp;base.VerifyAccess();<br>&nbsp; &nbsp;PropertyMetadata metadata = this.SetupPropertyChange(dp);<br>&nbsp; &nbsp;this.SetValueCommon(dp, value, metadata, false, OperationType.Unknown, false);<br>}</p>\r\n<p>So what does this all mean? &nbsp;What exactly are we talking about here? &nbsp;First there is a boxing operation when a double value is implicitly converted into System.Object. &nbsp; Then SetValue causes a DependencyPropertyChanged. &nbsp;Now do this for all 4 coordinates. &nbsp; Now say a chart is made up of 50 lines, so do this 50 times for each line - remember all the coordinates on the chart will be redrawn every time there is an update. &nbsp;Now do all this once per second, i.e. 60 times a minute. &nbsp;Now keep doing this for one hour, assuming you keep the chart running for an hour. &nbsp;So what do we finally have?</p>\r\n<p>After one hour we have &nbsp;4 * 50 * 60 * 60 = 720,000 Dependency Property Changes and 720,000 boxing operations. &nbsp;And that is for only one chart, updating once a second.</p>\r\n<p>Now imagine having 4 charts, running for 4 hours under the same scenario? &nbsp;11,520,000. &nbsp;That is over 11 million boxing operations and DP changes!</p>\r\n<p>So while WPF is great framework -- System.Windows.Shapes which all WPF charts seem to be based on, doesn't seem to be that agreeable. &nbsp;It is as if it was added onto .NET as an afterthought without much thought how it will actually work with live graphics.</p>\r\n<p>I believe it is because of limitations like these other contributors of D3 have started writing a DirectX version of D3. &nbsp;See the following thread:&nbsp;http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=74901. &nbsp;A barebones version of this code is available in the nightly build in the downloads section of this project.</p>\r\n<p>So the real question is, how does a developer with a limited amount of time work around this? &nbsp;One is to implement their own charts with classes in the System.Windows.Media.Drawing namespace. The other and more simpler way, is to have a queueing mechanism for their observable collection so as to display limited number of live datapoints at any one time, as new points are queued and displayed, older points are dequeued and fall of the chart. &nbsp;I have actually tried this, and performance-wise it works out ok. &nbsp;</p>\r\n<p>Of couse one could also consider embedding charting packages that use ActiveX, DirectX or other technologies, but they will not have inherent support for themes.</p>\r\n<p>@alexis_michel please try to restrain yourself if you do not actually have something useful or productive to add ;). &nbsp;Unless of course you work for microsoft and have taken an unspoken offense.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-20T20:45:54.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "500029",
+    "ThreadId": "227867",
+    "Html": "<p>I have changed from using the D3 charting tools to running a Windows Forms Chart within a 'WindowsFormHost' control in my WPF application.&nbsp; Performance is no longer a problem.<span style=\"font-family:Consolas;color:#0000ff;font-size:x-small\"></span></p>",
+    "PostedDate": "2010-09-29T07:54:06.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "500049",
+    "ThreadId": "227867",
+    "Html": "<p>Hi Gorter,</p>\r\n<p>I have the same problem (in exactly the same type of application - Forex) - what Windows Forms chart are you using?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-29T08:25:11.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "500055",
+    "ThreadId": "227867",
+    "Html": "<p>I am using a FastLine chart.&nbsp; Basically I took the 'RealTimeTimer' sample and have adapted for our use.&nbsp; Still a work in progress, but seems to be working much better than previous attempts with other charts.</p>",
+    "PostedDate": "2010-09-29T08:36:24.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "500062",
+    "ThreadId": "227867",
+    "Html": "<p>Thank you for the info - let us know how things progress.</p>",
+    "PostedDate": "2010-09-29T08:41:43.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "500505",
+    "ThreadId": "227867",
+    "Html": "<p>Hey Guys,</p>\r\n<p>any plans when exactly (at least month) the new version with DirectX-Rendering will appear?</p>\r\n<p>It would be great, so we could adapt out application development plans to your schedule.</p>\r\n<p>&nbsp;</p>\r\n<p>greetz,</p>\r\n<p>Mav</p>",
+    "PostedDate": "2010-09-30T06:26:51.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

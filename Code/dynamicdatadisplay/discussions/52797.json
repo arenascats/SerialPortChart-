@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "177616",
+    "ThreadId": "52797",
+    "Html": "Hi,<br>\r\n<br>\r\nIs there any easy way to put the y-axis on the right instead of the left?<br>\r\n<br>\r\nThanks,<br>\r\nKamel \r\n",
+    "PostedDate": "2009-04-09T07:25:30.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177882",
+    "ThreadId": "52797",
+    "Html": "Hi Kamel,<div><br></div><div>Yes, there is an easy way:</div><div>1) you should slightly modify interface IAxis in D3\\Charts\\Axes\\IAxis.cs: add setter to Placement property (it should look like this: <em>AxisPlacement Placement { get; set; }</em>)</div><div>2) and now you can get plotter's vertical axis from ChartPlotter.VerticalAxis property and set it's Placement property to Placement.Right.</div><div><br></div><div>That's all!</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-04-10T01:26:43.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

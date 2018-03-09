@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1457611",
+    "ThreadId": "649469",
+    "Html": "Hi,\r<br />\n<br />\nHas anyone experienced a scenario where the x-axis of the chart gets messed up and the whole chart freezes? That is the x-axis keeps jumping with the spacing between the x-axis points continuously jumping back and forth and the chart becomes unusable? Usually happens when there are multiple linegraphs drawn at the same time, or when a additional linegraph is added which exceeds the current visible x-axis. Very hard to explain and reproduce though!\r<br />\n<br />\nThanks.\r<br />\nGanesh<br />\n",
+    "PostedDate": "2015-12-30T23:58:52.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1457855",
+    "ThreadId": "649469",
+    "Html": "Hi,\r<br />\n<br />\nIf you are using injected plotters, use the same horizontal axis for all injected plotters.\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2016-01-04T00:49:18.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1457856",
+    "ThreadId": "649469",
+    "Html": "Hi Ravi,\r<br />\n<br />\nI'm not using any injected plotters. I just have multiple linegraphs on the base plotter with point values changing quite frequently.\r<br />\n<br />\nRegards,\r<br />\nGanesh<br />\n",
+    "PostedDate": "2016-01-04T00:56:51.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1457861",
+    "ThreadId": "649469",
+    "Html": "Hi Ganesh,\r<br />\n<br />\nTry fixing X axis by setting the visible rect. \r<br />\nViewport.Visible is the trick to control the filckering.\r<br />\n<br />\nFor example if you want see the graph for last 1 hour like ( DateTime.Now.AddHours(-1) to DateTime.Now), \r<br />\nthen you try to set time for DateTime.Now.AddHours(-1) to DateTime.Now.AddMinutes(10).\r<br />\nBy setting 10 minutes extra time you can have the stable graph for next 10 minutes, once the time reaches the end time, reset the visible rect once again. \r<br />\n<br />\nPlease share line graphs adding code.\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2016-01-04T01:12:27.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1457864",
+    "ThreadId": "649469",
+    "Html": "\r\n<p dir=\"ltr\">hi ravi,</p>\r\n<p dir=\"ltr\">will give this a try and let you know. but i would have thought the x axis auto adjusts based on the line graphs plotted.</p>\r\n<div></div>\r\n",
+    "PostedDate": "2016-01-04T02:20:59.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1458396",
+    "ThreadId": "649469",
+    "Html": "Hi ravi,\r<br />\n<br />\nI tried this. Didn't help much. It causes the graph to mess up even when I drag it a little fast. Not sure whats happening.!\r<br />\nI can mail you a screenshot.\r<br />\n<br />\nRegards,\r<br />\nGanesh<br />\n",
+    "PostedDate": "2016-01-07T19:48:27.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1459593",
+    "ThreadId": "649469",
+    "Html": "Hi Ganesh,\r<br />\n<br />\nDid you solve this issue, If not Can you mail screen and code snippet, I will try.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2016-01-17T21:35:04.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1459594",
+    "ThreadId": "649469",
+    "Html": "\r\n<p dir=\"ltr\">Hi ravi,</p>\r\n<p dir=\"ltr\">I partially solved it. will send you screenshots n code soon.</p>\r\n<p dir=\"ltr\">thanks.</p>\r\n<div></div>\r\n",
+    "PostedDate": "2016-01-17T21:39:25.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

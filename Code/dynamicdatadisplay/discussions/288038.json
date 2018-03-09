@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "733257",
+    "ThreadId": "288038",
+    "Html": "\r\n<p>Hi</p>\r\n<p>&nbsp;</p>\r\n<p>i am creating a iso line graph to represent the depth of water on surface</p>\r\n<p>need to reverse the Y Axis direction ..</p>\r\n<p>it plots the Y axis from 0-1000 where 0 is at the bottom of the graph</p>\r\n<p>but i need the Axis to start its 0 from top and end with 1000 at the bottom..</p>\r\n<p>x axis to switch to top instead of bottom</p>\r\n<p>similar to MS chart control . AxisY.reverse</p>\r\n<p>Please help me out on this..</p>\r\n<p>any Help is highly appreciated</p>\r\n<p>Thanks</p>\r\n<p>Arun</p>\r\n",
+    "PostedDate": "2012-01-31T07:38:17.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1494924",
+    "ThreadId": "288038",
+    "Html": "I'm doing exactly the same thing.\r<br />\nDid you solve the problem?<br />\n",
+    "PostedDate": "2017-03-30T13:03:54.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1496841",
+    "ThreadId": "288038",
+    "Html": "Found somewhere on the Internet:\r<br />\n<br />\n<br />\nplotter.DataTransform = new NegativeYDataTransforms();\r<br />\n //lineTrend.RenderTransform = plotter.RenderTransform;\r<br />\n<br />\n<br />\n<br />\n<br />\npublic class NegativeYDataTransforms :DataTransform<br />\n<pre><code>{\n    public override Point DataToViewport(Point pt)\n    {\n        return new Point(pt.X, -pt.Y);\n    }\n    public override Point ViewportToData(Point pt)\n    {\n        return new Point(pt.X, -pt.Y);\n    }\n\n}</code></pre>\n\n",
+    "PostedDate": "2017-06-01T00:48:15.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "833786",
+    "ThreadId": "355010",
+    "Html": "<p>I'm using DynamicDataDisplay to create several lines, and there is checkbox on the GUI to hide or show one line.</p>\n<p>The HorizontalAxis display a time, the VerticalAxis display a double value(the value is around 100).</p>\n<p>The issue is that vertical axis display correctly at the first time as below:</p>\n<p>150</p>\n<p>130</p>\n<p>110</p>\n<p>...</p>\n<p>But when I click one checkbox to display or hide one line, the number in the axis will change as below:</p>\n<p>1</p>\n<p>1</p>\n<p>1</p>\n<p>...</p>\n<p>Only the highest number displayed.</p>\n<p>When I click the checkbox again, the vertical axis will change back to normal.</p>\n<p>I'm very confuse, can anybody help me on this issue, thank you.</p>\n<p>My code as below:</p>\n<p>&lt;d3:ChartPlotter x:Name=\"plotter\" Margin=\"0,-66,0,0\" Grid.Column=\"1\" Height=\"450\" Width=\"580\" &gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter.Resources&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;bs:Date2AxisConverter x:Key=\"Date2AxisConverter\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter.Resources&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter.VerticalAxis&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:VerticalIntegerAxis Name=\"yAxis\" /&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter.VerticalAxis&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:ChartPlotter.HorizontalAxis&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:HorizontalDateTimeAxis Name=\"dateAxis\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter.HorizontalAxis&gt;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:VerticalAxisTitle Content=\"Volume\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/d3:ChartPlotter&gt;</p>",
+    "PostedDate": "2012-05-08T20:35:24.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "841905",
+    "ThreadId": "355010",
+    "Html": "<p>Can anybody help on this issue, thank you.</p>",
+    "PostedDate": "2012-05-28T23:49:52.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "841913",
+    "ThreadId": "355010",
+    "Html": "<p>Found the answer from:</p>\r\n<p>http://dynamicdatadisplay.codeplex.com/discussions/215015</p>",
+    "PostedDate": "2012-05-29T00:12:19.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

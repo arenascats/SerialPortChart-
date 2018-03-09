@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1015160",
+    "ThreadId": "436607",
+    "Html": "I implement:<br />\n<pre><code>private void slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs&lt;double&gt; e)\n{\n    if (plotter == null) return;\n    //change point thickness\n    Slider thickness = sender as Slider;\n    for (int child = 14; child &lt; plotter.Children.Count; child++)\n    {\n        MarkerPointsGraph cur = plotter.Children.ElementAt(child) as MarkerPointsGraph;\n        if (cur != null)\n        {\n            ShapePointMarker curpoint = cur.Marker as ShapePointMarker;\n            curpoint.Size = thickness.Value + 3;\n        }\n    }\n    //update chart\n    DataRect visible = plotter.Viewport.Visible;\n    plotter.Viewport.Visible = new DataRect(0, 0, 0, 0);\n    plotter.Viewport.Visible = visible;\n}\n</code></pre>\n\nit works but it seems not efficiently<br />\n",
+    "PostedDate": "2013-03-14T04:34:32.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

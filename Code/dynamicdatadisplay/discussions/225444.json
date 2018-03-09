@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "486925",
+    "ThreadId": "225444",
+    "Html": "<p>Hi ,</p>\r\n<p>i am using chartplotter control in wpf. I want to restrict the zooming effect or restricting the graph sliding with mouse. i want to show the graph fixed with out giving a chance to the user to move the graph.</p>\r\n<p>can u please gave me a code for this.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks &amp; Regards</p>\r\n<p>Srujana</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-31T06:18:03.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487058",
+    "ThreadId": "225444",
+    "Html": "<p>As mentioned in the previous answer about setting the origin you need to modify or remove the mouse and keyboard navigation objects. One way to do that is:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>plotter.Children.RemoveAll&lt;IPlotterElement&gt;(plotter.MouseNavigation.GetType()); </pre>\r\n<pre>plotter.Children.RemoveAll&lt;IPlotterElement&gt;(plotter.KeyboardNavigation.GetType()); </pre>\r\n</div>\r\n<p>Note that while this prevents keyboard and mouse panning/zooming on the graph it still allows the panning/zooming on the horizontal and vertical&nbsp;axes. I'll leave it as an excersize for the reader to disable these</p>",
+    "PostedDate": "2010-08-31T08:51:55.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

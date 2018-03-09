@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "955632",
+    "ThreadId": "406658",
+    "Html": "\r\n<p>Hi&nbsp;</p>\r\n<p>I would like to save the current chart state (data, zoom, pan, ...) to a file. I get it done saving the series with colors, point, markers, etc...but I can't save (don't know how) the zoom and pan position.</p>\r\n<p>What I need is to save that info in a file and be able to reload to get the chart in the exact same position was while saved.</p>\r\n<p>Thanks</p>\r\n<p>emanuele</p>\r\n",
+    "PostedDate": "2012-12-13T07:20:26.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

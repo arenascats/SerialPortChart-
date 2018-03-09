@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "405076",
+    "ThreadId": "196622",
+    "Html": "<p>A number of the samples cycle endlessly while loading.&nbsp; The problem is with the ChartPlotter setup XAML.&nbsp; One such case is the XAML for the seperate EditableShapes example under the &quot;0.4&quot; solution folder (note: this example has correct XAML under the &quot;DynamicDataDisplay.Samples&quot; solution folder).</p>\r\n<p>The XAML is:</p>\r\n<p>&lt;d3:ChartPlotter Name=&quot;plotter&quot;&gt;</p>\r\n<p>But should be something like:</p>\r\n<p>&lt;d3&quot;ChartPlotter Name=&quot;plotter&quot; visible=&quot;0,0,1,1&quot;&gt;</p>\r\n<p>As is the case in another version of the same example.</p>\r\n<p>It seems that when the &quot;visible&quot; attribute is not present, the chart setup goes into an endless loop during its viewport setup phase.&nbsp; Is this a bug in the XAML or the chart&nbsp;setup code?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-25T10:27:56.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "412714",
+    "ThreadId": "196622",
+    "Html": "<p>I noticed that too. &nbsp;I posted about it in: <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=81241\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=81241</a></p>\r\n<p>But I have had no response.&nbsp;</p>\r\n<p>E.</p>",
+    "PostedDate": "2010-03-01T07:33:33.897-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

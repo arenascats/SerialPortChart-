@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "196818",
+    "ThreadId": "58203",
+    "Html": "<p>I want to create a scatter plot, so I'm not passing in a pen for the line (because I only want points) when calling AddLineGraph - but without a line, there is no legend.</p>\r\n<p>Is it possible to have a legend for a point graph?</p>",
+    "PostedDate": "2009-06-02T06:29:55.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205959",
+    "ThreadId": "58203",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Currently it is not possible to display a legend item for marker graph using D3 'out of the box', but you can modify it so that it display such a legend item. Take a look into the code in D3\\Descriptions folder.</p>\r\n<p>If you have any questions about implementing a legend item for marker chart, do not hesitate to ask them here.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-06-26T09:33:40.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450082",
+    "ThreadId": "58203",
+    "Html": "<p>Hi there,</p>\r\n<p>I'm currently right at that point - I need legend items for a marker chart I'm using. Unfortunately I couldn't get a clue on how to do it yet. Any hints?&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Alexander Dittrich.</p>",
+    "PostedDate": "2010-06-01T07:45:58.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "696051",
+    "ThreadId": "278904",
+    "Html": "\r\n<p>Has anyone tried to serialize and deserialize a ChartPlotter control using XamlWriter.Save and XamlReader.Parse? The Content seems to always get saved in the markup (as do all the bindings and the style) and when you deserialize using XamlReader.Parse, all\r\n of the elements in the Children collection are duplicated.</p>\r\n",
+    "PostedDate": "2011-11-09T11:21:26.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

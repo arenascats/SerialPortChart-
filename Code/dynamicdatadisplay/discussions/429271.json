@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "985376",
+    "ThreadId": "429271",
+    "Html": "\r\n<p>I'm still confused about how to override pan and zoom.&nbsp; Currently sample applications build data series once, then by default panning and zooming is internal to D3 as the user navigates through the prebuilt data series.&nbsp; I'm looking to update the\r\n data series based on where the user pans and zooms to.&nbsp; What are the pan/zoom events or callbacks that D3 supports for developer to instrument with custom behavior?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2013-01-11T04:01:44.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990674",
+    "ThreadId": "429271",
+    "Html": "\r\n<p>Hi</p>\r\n<p>To achieve this you should remove naviagation from the chart(everything in chart is children here), Check these properties</p>\r\n<p>chartPlotter.Children.Remove(chartPlotter.MouseNavigation);</p>\r\n<p>chartPlotter.HorizontalNavigation.Remove();</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>\r\n",
+    "PostedDate": "2013-01-22T21:30:08.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

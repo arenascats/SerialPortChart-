@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "932887",
+    "ThreadId": "400893",
+    "Html": "\r\n<p>Hi everyone,</p>\r\n<p>if got a question concerning ticks in a linegraph:</p>\r\n<p>in my program i've got linegraphs connected to an ObservableCollection. When i add or remove entries in that collection, the axis and it's ticks change dynamicaly.</p>\r\n<p>When there are few entries in that collection, the ticklabelss in the graph are overriding each other. When there are a lot of entries in the collection, the resolution of the ticklabelss is quiet poor.</p>\r\n<p>&nbsp;</p>\r\n<p>Is there a way to define the minimum- and maximum-count of ticklabels.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your help.</p>\r\n<p>Regards</p>\r\n<p>Akki</p>\r\n",
+    "PostedDate": "2012-10-26T02:51:08.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

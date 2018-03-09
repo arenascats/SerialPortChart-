@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "907454",
+    "ThreadId": "394106",
+    "Html": "\r\n<p>I want to make a project with a line in realtime..</p>\r\n<p>So I want to the&nbsp;HorizontalAxis show this string of time like that &quot;11:20 11:21 ....11:30&quot;,but i don't how to do it?</p>\r\n<p>&nbsp;</p>\r\n<p>I find this code :</p>\r\n<p>private ObservableDataSource&lt;Point&gt; dataSource = new ObservableDataSource&lt;Point&gt;();</p>\r\n<p>the Point is with (double, double), it can't help me...</p>\r\n<p>&nbsp;</p>\r\n<p>How could i do ? thank you,</p>\r\n",
+    "PostedDate": "2012-09-02T07:00:37.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "920452",
+    "ThreadId": "394106",
+    "Html": "<p>Its all in the mapping<br /><br />I have a class called DatePoint:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">class</span> DatePoint\r\n{\r\n    <span style=\"color: blue;\">public</span> DatePoint()\r\n    {\r\n        X = <span style=\"color: blue;\">new</span> DateTime(1900, 1, 1);\r\n        Y = Double.NaN;\r\n    }\r\n\r\n    <span style=\"color: blue;\">public</span> DatePoint Clone()\r\n    {\r\n        <span style=\"color: blue;\">return</span> <span style=\"color: blue;\">new</span> DatePoint(X, Y);\r\n    }\r\n\r\n    <span style=\"color: blue;\">public</span> DatePoint(DateTime x, <span style=\"color: blue;\">double</span> y) { X = x; Y = y; }\r\n    <span style=\"color: blue;\">public</span> DateTime X { <span style=\"color: blue;\">set</span>; <span style=\"color: blue;\">get</span>; }\r\n    <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">double</span> Y { <span style=\"color: blue;\">set</span>; <span style=\"color: blue;\">get</span>; }\r\n}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;&nbsp;&nbsp; <br />with that I use <span style=\"color: #0000ff;\"><strong>ObservableDataSource&lt;DatePoint&gt;</strong></span> for my collection and for the plotter I use <strong><span style=\"color: #0000ff;\">GenericChartPlotter&lt;DateTime, double&gt;</span></strong> in order to keep my window xaml nice and neat I extended it like so: <br /><br /><span style=\"color: #0000ff;\">public class DateTimeChartPlotter : GenericChartPlotter&lt;DateTime, double&gt; { }</span><br /><br />Now for the tricky part, like I said in the beginning its all in the mapping you need to set the mapping from your point (DateTime, double) to a \"screen\" point (double, double) and this is how:<br /><br /><span style=\"color: #0000ff;\">HorizontalDateTimeAxis axis = plotter.HorizontalAxis as HorizontalDateTimeAxis;</span><br /><span style=\"color: #0000ff;\">points.SetYMapping(p =&gt; p.Y);</span><br /><span style=\"color: #0000ff;\">points.SetXMapping(p =&gt; axis.ConvertToDouble(p.X));</span></p>\r\n<p><br />As you can see since Y is a double its mapped as is but X is  DateTime so you take the mapping function from the DateTimeAxis of the plotter and use  it to convert DateTime into double in a way it will fit with the plotter.</p>\r\n<p>The mapping is set on the collection so you need to do this for each collection you want to add to the plotter (i.e. use <span style=\"color: #0000ff;\">plotter.AddLineGraph</span>), also since you set a plotter's mapping on to a collection you can't show the same exact collection on two different plotters (although you can create a copy collection and use that).<br /><br /></p>\r\n<p>good luck</p>",
+    "PostedDate": "2012-10-02T02:20:28.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1074096",
+    "ThreadId": "394106",
+    "Html": "Thanks roey_nissim! This was driving me nuts.. \r<br />\nDelegating the DateTime=&gt;Double conversion to the Axis was what I was missing. <br />\n",
+    "PostedDate": "2013-07-28T11:58:22.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087521",
+    "ThreadId": "394106",
+    "Html": "Just if any1 wonders - HorizontalDateTimeAxis is in Microsoft.Research.DynamicDataDisplay.Charts namespace.<br />\n",
+    "PostedDate": "2013-09-02T21:50:09.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

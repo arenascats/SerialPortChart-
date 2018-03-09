@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "702205",
+    "ThreadId": "280523",
+    "Html": "\r\n<p>Dear developer:</p>\r\n<p>I create a project using dynamic data display dll ,when I am using the function like v0.2/PerfCounterSample&nbsp; it shows a chart dynamicly,but I found the points out of screen will be clear when the time pass.</p>\r\n<p>I don't want to clear the out of screen points ,so when user drag the screen they can see the data which are&nbsp;generated&nbsp;hours ago.something like in v0.3/SimulationSample ,shows, while this example show all the data points in one screen shot,it means\r\n the x axes will automatically shrink for the display of chart.I want the x axes don't change the size while.</p>\r\n<p>how can I make the chart as I described?</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-11-23T00:27:23.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

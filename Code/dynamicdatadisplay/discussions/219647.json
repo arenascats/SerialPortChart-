@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "468058",
+    "ThreadId": "219647",
+    "Html": "This should be easy ....\r\n\r\nWith XAML like this :\r\n   &lt;Grid&gt;\r\n        &lt;StackPanel Height=&quot;242&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;32,28,0,0&quot; Name=&quot;stackPanel1&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;417&quot;&gt;\r\n            &lt;d3:ChartPlotter Name=&quot;plotter&quot; Margin=&quot;10,10,20,10&quot;&gt;\r\n                &lt;d3:ChartPlotter.HorizontalAxis &gt;\r\n                    &lt;d3:HorizontalAxis Name=&quot;IndepAxis&quot;&gt; &lt;/d3:HorizontalAxis&gt;\r\n                    \r\n                &lt;/d3:ChartPlotter.HorizontalAxis&gt;\r\n                \r\n                    &lt;d3:Header FontFamily=&quot;Arial&quot; Content=&quot;Chart&quot;/&gt;\r\n\r\nWhat do I have to do to grab ( & what ) to change the content - &gt; to something like Chart of X number values etc??\r\n\r\nMicrosoft.Research.DynamicDataDisplay.Common.ChildrenCollection cc = plotter.Children;\r\nI thought this might be clue, because I see with data visualizer all kinds of items - that seem inaccessible to me.\r\n\r\nThank you very much for whatever small lines of example you can provide....",
+    "PostedDate": "2010-07-15T22:12:53.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468289",
+    "ThreadId": "219647",
+    "Html": "<p>After I added a name property&nbsp; to the XAML</p>\r\n<p>&lt;d3:Header FontFamily=&quot;Arial&quot; Name=&quot;MyHeader&quot; Content=&quot;Chart&quot;/&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>I could then manipulate the text like this :&nbsp; MyHeader.Content = (object)&quot;Number of data points &quot; + theSize.ToString();</p>\r\n<p>&nbsp;</p>\r\n<p>This is a little different than creating the header&nbsp; as in the animated sample - where the header did not exist in the XAML</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-16T10:23:16.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "548127",
+    "ThreadId": "241477",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I've read a few threads relating to Bar Charts (dating back to 2009) and the consensus seemed to be that they will be added to D3. Has this been done yet? I really need to use a simple bar chart and a combined bar chart (with a line plot) but am unsure how\r\n to&nbsp;achieve this using D3.&nbsp;I am using windows forms (unavoidable for the project I'm working on) and an element host to wrap the wpf control. I've seen various links to workarounds for D3&nbsp;(special markers?) but&nbsp;I don't understand how they\r\n work. Any advice would be much appreciated.&nbsp;I think D3 looks a very promising tool but I am frustrated by the absence of any documentation.....</p>\r\n<p>Thanks in advance for any assistance.</p>\r\n<p>Matt</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-12T09:48:29.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548243",
+    "ThreadId": "241477",
+    "Html": "\r\n<p>There is a bar chart sample. Search the source for &quot;BarChart&quot;. This sample runs (for me, at least), with this version of D3, but the bars don't show up in the new version (http://d3future.codeplex.com/). Don't know why.</p>\r\n<p>It probably wouldn't be hard to do your own bars.</p>\r\n<p>Hope this helps.</p>\r\n<p>Jim</p>\r\n",
+    "PostedDate": "2011-01-12T12:51:43.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548543",
+    "ThreadId": "241477",
+    "Html": "\r\n<p>Thanks for the info Jim. I have looked at this but&nbsp;am struggling to get it to build properly, In the meantime, could you possibly point me to anything that shows how to construct the bars - are they types&nbsp;of markers?</p>\r\n<p>Thanks again</p>\r\n<p>Matt</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-13T01:21:01.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548663",
+    "ThreadId": "241477",
+    "Html": "\r\n<p>Well when I said do your own bars, I meant create your own graph in which you draw bars. For example, I have a graph where I need to draw lines that are always cover 90% of the vertical space of the graph (5% space on either end). This class is derived from\r\n PointsGraphBase, and I override OnRenderCore(). In OnRenderCore() I clear the canvas and then create the lines (which would be rectangles, in your case). Here's the snippet of code where I am determining the xy coordinates for the top and bottom of the line.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CoordinateTransform transform = GetTransform();</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; canvas.Children.Clear();</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double x = convertToDouble(time);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double y = .05;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Point point = new Point(x, y);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Point screenPoint = point.DataToScreen(transform);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line.X1 = screenPoint.X;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line.Y1 = screenPoint.Y;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; point.Y = .95;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; screenPoint = point.DataToScreen(transform);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line.X2 = screenPoint.X;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line.Y2 = screenPoint.Y;</p>\r\n<p>My horizontal axis is a date/time axis. I took an existing derived class as my model for this, but I don't remember which one.</p>\r\n<p>This is kind of low level work to do a bar chart, I admit. It would be better to get the example working. It can be a little frustrating working with D3, it's very powerful, but there's little documentation or guidance. Sometimes when Mike makes changes\r\n to the library, he doesn't update the samples right away, and they are broken.&nbsp;</p>\r\n<p>There's a better chance Mike will answer your question if you post it on http://d3future.codeplex.com/.</p>\r\n<p>Jim</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-13T05:56:00.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549487",
+    "ThreadId": "241477",
+    "Html": "\r\n<p>Thanks for your assistance Jim.</p>\r\n",
+    "PostedDate": "2011-01-14T09:57:29.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

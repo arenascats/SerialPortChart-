@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1001419",
+    "ThreadId": "433186",
+    "Html": "I am keen to use D3 for WPF in an existing large VB.Net application, but I can't get it to work. I have set up a small test project, and have added DynamicDataDisplay.dll to my references. I can see all the Microsoft.Research names in my imported namespaces.\r<br />\n have included the following line in my xaml:\r<br />\nxmlns:d3=&quot;<a href=\"http://research.microsoft.com/DynamicDataDisplay/1.0\" rel=\"nofollow\">http://research.microsoft.com/DynamicDataDisplay/1.0</a>&quot; <br />\n<ul>\n<li>but when I try any of the xaml taken from the samples provided, I get error messages such as the one above. For me this is a complete showstopper so I would appreciate your help!</li>\n</ul>\n",
+    "PostedDate": "2013-02-14T11:44:16.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1305428",
+    "ThreadId": "433186",
+    "Html": "Seems no support for this error anymore...<br />\n",
+    "PostedDate": "2014-09-16T20:57:41.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1305453",
+    "ThreadId": "433186",
+    "Html": "The download .dll need to be unlocked.\r<br />\nSolution here: <a href=\"http://stackoverflow.com/questions/3432624/wpf-assembly-reference-missing-project-still-building\" rel=\"nofollow\">http://stackoverflow.com/questions/3432624/wpf-assembly-reference-missing-project-still-building</a><br />\n",
+    "PostedDate": "2014-09-16T23:25:39.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "257831",
+    "ThreadId": "75335",
+    "Html": "<p>Hello,</p>\r\n<p>Using the 5x1000Charts example in your Repros folder - try adding the 5 Lines with a CircleElementPointMarker as shown below:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>          CircleElementPointMarker ce = <span style=\"color:Blue\">new</span> CircleElementPointMarker();\r\n          ce.Brush = ColorHelper.RandomBrush;\r\n          ce.Fill = ColorHelper.RandomBrush;\r\n          ce.Size = 10;\r\n\r\n          plotter.AddLineGraph(ds1, <span style=\"color:Blue\">new</span> Pen(ColorHelper.RandomBrush, 5), ce, <span style=\"color:Blue\">new</span> PenDescription(<span style=\"color:#A31515\">&quot;Line&quot;</span>)); \r\n</pre>\r\n</div>\r\n<p>The whole Plotter slows up significantly.</p>\r\n<p>I've changed the number of points (<span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">private </span></span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">const</span></span><span style=\"font-size:x-small\"> </span><span style=\"color:#0000ff;font-size:x-small\"><span style=\"color:#0000ff;font-size:x-small\">int</span></span><span style=\"font-size:x-small\"> count = 1000;)</span> from 10 to 100 to 1000 - you will see the difference it makes to the overall performance</p>",
+    "PostedDate": "2009-11-17T02:31:49.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266774",
+    "ThreadId": "75335",
+    "Html": "<p>Hi,</p>\r\n<p>I suggest you to move to our new markers (DynamicDataDisplay.Markers project and NewMarkerSample sample project).</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-13T08:30:31.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1246070",
+    "ThreadId": "75335",
+    "Html": "thecentury where i can find it?\r<br />\nd3.0?<br />\n",
+    "PostedDate": "2014-05-16T04:15:26.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

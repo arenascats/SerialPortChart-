@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "987221",
+    "ThreadId": "429702",
+    "Html": "\r\n<p>I've added a linegraph to an existing multichartplotter with an existing linegraph.&nbsp; My intent is to have this additional linegraph show only markers (i.e., no lines) and be displayed at the top of the chart regardless of where the user pans or zooms.&nbsp;\r\n To do this I specify an x/ymapping for the data series; for the x value I use real data but for Y data I want to always display my marker at the top of the chart; what is the Y value I want to specify for my SetYMapping?&nbsp; I thought I had it nailed but\r\n if I resize the chart window, eventually when the chart window gets big enough I wind up in a loop where the mapping causes the viewport to resize and the viewport resize causes a new point.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for any help.</p>\r\n",
+    "PostedDate": "2013-01-15T10:59:31.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990671",
+    "ThreadId": "429702",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I guess you have to do reverse calculation with the current&nbsp;viewport.Vissible to do SetTMapping</p>\r\n",
+    "PostedDate": "2013-01-22T21:24:25.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

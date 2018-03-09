@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "485473",
+    "ThreadId": "225011",
+    "Html": "<p>I've just come across this project, and it looks really cool. &nbsp;However, I noticed in the Hello World Sample that the points don't always appear in the right places. &nbsp;For example, Sin(.9) is about .78. &nbsp;However, on the graph, upon zooming in, it shows as about .73. &nbsp;I find that if I zoom in far enough (x range of .7 to 1.5, y range of -715 to .731), then resize the window vertically, the line moves about left-to-right.</p>\r\n<p>I've built from the latest source code AND run the downloaded binaries - both show the problem.</p>\r\n<p>Does anyone else see this?</p>\r\n<p>Thanks,</p>\r\n<p>Jeff</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-26T19:19:29.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485497",
+    "ThreadId": "225011",
+    "Html": "<p>Jeff,</p>\r\n<p>I've tried this on my PC and the Hello World Sample displays the sine graph correctly. &nbsp;If I zoom in on 0.9 I see the Y value of&nbsp;0.7833 (as expected).</p>\r\n<p>What O/S are you running on? &nbsp;Not sure why that would matter but can't think of any other explanation.</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-08-26T21:09:25.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485511",
+    "ThreadId": "225011",
+    "Html": "<p>I'm running Windows 7 x64. &nbsp;I tried at home on another Windows 7 x64 machine - same issue. &nbsp;Both are Core-2 Duo machines. &nbsp;I tried setting the HelloWorldSample target Processor to x86, but it didn't change the behavior.</p>\r\n<p>-Jeff</p>",
+    "PostedDate": "2010-08-26T22:15:29.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486692",
+    "ThreadId": "225011",
+    "Html": "<p>Here's a screen shot of what I'm seeing:</p>\r\n<p><a href=\"http://cid-4bc04ef57728c826.photos.live.com/embedphoto.aspx/Public/bad1.PNG\">Bad 1</a></p>\r\n<p>Then, after resizing the window just a little smaller:</p>\r\n<p><a href=\"http://cid-4bc04ef57728c826.photos.live.com/embedphoto.aspx/Public/bad2.PNG\">Bad 2</a></p>\r\n<p>If those don't work, <a href=\"http://cid-4bc04ef57728c826.skydrive.live.com/redir.aspx?page=play&resid=4BC04EF57728C826!129&Bpub=SDX.Photos&Bsrc=GetSharingLink\">this slide show is easier to see</a></p>\r\n<p>&nbsp;</p>\r\n<p><img src=\"http://cid-4bc04ef57728c826.photos.live.com/embedphoto.aspx/Public/bad1.PNG\" alt=\"\"><img src=\"http://cid-4bc04ef57728c826.photos.live.com/embedphoto.aspx/Public/Bad2.PNG\" alt=\"\"></p>",
+    "PostedDate": "2010-08-30T17:13:33.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "706456",
+    "ThreadId": "225011",
+    "Html": "<p>We are seeing the behavior that Jeff mentions, and other undesirable behaviors in the Silverlight version 0.3. In our implementation, we have several key requirements that must be met:</p>\r\n<ol>\r\n<li>The user can define the minimum and maximum values for the Y-axis.</li>\r\n<li>The user can define whether or not the Y-axis range is automatically changed to fit the plotted data points, or stays fixed at the specified minimum and maximum values.</li>\r\n<li>The user can define the time span that is displayed on the X-axis.</li>\r\n<li>The X-axis should automatically update with time values as new data is added to the plot data source.</li>\r\n<li>The user can resize the chart in the horizontal and vertical directions.</li>\r\n</ol>\r\n<p>A simplified description of our implementation goes something like this:</p>\r\n<ul>\r\n<li>We have a custom (templated) control that contains a border. The border contains a nested ContentPresenter whose content is a D3 chart.\r\n<ul>\r\n<li>The height of the border is bound to a property on the parent control. So changing the border height affects the height of the D3 chart control that it contains</li>\r\n<li>The initial height of the border is set to 250</li>\r\n</ul>\r\n</li>\r\n<li>When the control is rendered, and after each subsequent data value update, we recalculate the size of the plot viewport, which performs the following tasks:\r\n<ul>\r\n<li>If the Y-axis is set to auto-range, new minimum and maximum values are calculated based on the limits of the current data set.</li>\r\n<li>The Y-axis's AxisControl.Range property is set to a new Range instance.</li>\r\n<li>The ChartPlotter's Viewport.Visible property is set to a new rectangle that is calculated based on the user's selected data time span (X-axis) and the current Y-axis minimum and maximum values.</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<p>We have observed the following:</p>\r\n<ul>\r\n<li>When the height of the control that contains the ChartPlotter is set to the default value of 250, with a Y-axis min/max of 0/100, plotting a constant value of 20.0 in a line graph, the line graph plots at a value of about 30.&nbsp;\r\n<ul>\r\n<li>The error becomes greater as the constant value is decreased, and becomes smaller as it gets closer to 100.</li>\r\n</ul>\r\n</li>\r\n<li>If we resize the height of the control that contains the ChartPlotter, say from 250 to 300, while plotting a constant value of 20, the line graph plots at around 0.0. <strong>So there does not appear to be a causal relationship between the coordinate system of the plot area and the coordinate system of the axes.</strong></li>\r\n</ul>\r\n<p>My understanding is that, by default, the coordinate transformations for the plot viewport and the axis control are identical (identity). So if I change the available screen size by increasing or decreasing the height of the ChartPlotter, the axis would re-apply its transform the next time its Range property is set.</p>\r\n<p>Can anyone shed some light on how this works and tell me if I am correct in my understanding?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-12-02T06:40:22.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "706501",
+    "ThreadId": "225011",
+    "Html": "<p>Okay, so I figured it out. I created a SizeChanged handler for the MainGrid element in the ChartPlotter, and re-create the VerticalAxis at that point. This forces the ticks and labels to get rebuilt and everything works properly.</p>",
+    "PostedDate": "2011-12-02T08:21:54.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "707527",
+    "ThreadId": "225011",
+    "Html": "<p>integragreg,</p>\r\n<p>Would you mind providing a code example? I have a feeling I will need to do a similar thing.</p>",
+    "PostedDate": "2011-12-05T06:51:55.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

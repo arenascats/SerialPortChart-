@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed in [release:26761]",
+    "ClosedDate": "2009-05-19T02:12:36.393-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've modified the XAML definition in the HelloWorldSample that is distributed with the code to the following:\n \n<Window x:Class=\"Simplest.MainWindow\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n    xmlns:d3=\"http://research.microsoft.com/DynamicDataDisplay/1.0\"    \n    Title=\"Simplest plot sample\">\n \n    <Grid>\n        <Grid.RowDefinitions>\n            <RowDefinition Height=\"Auto\" />\n            <RowDefinition Height=\"Auto\" />\n        </Grid.RowDefinitions>\n        <Button Grid.Row=\"0\">Blah</Button>\n        <d3:ChartPlotter Name=\"plotter\"\n                         Grid.Row=\"1\">\n            <d3:Header TextBlock.FontSize=\"20\">\n                Very simple chart\n            </d3:Header>\n \n            <d3:VerticalAxisTitle>Sine value</d3:VerticalAxisTitle>\n            <d3:HorizontalAxisTitle>Sine argument</d3:HorizontalAxisTitle>\n        </d3:ChartPlotter>\n    </Grid>\n</Window>\n \nWhen executing the sample with this layout, it seems to cause the control to stretch vertically continuously.  Changing the second RowDefinition's Height to \"*\" causes it to render normally.",
+    "LastUpdatedDate": "2013-05-16T04:53:49.22-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2009-01-01T10:00:24.847-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Control Sizing Not Working Correctly in Grid",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 8778
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi!\r\n\r\nCurrently plotter doesn't have its own size - it occupies all size given by parent container. If you give it \"auto\" size, it occupies unlimited space. We'll consider changing this behavior.",
+      "PostedDate": "2009-01-02T10:29:33.77-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-21T04:00:27.037-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-03-21T17:28:07.627-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-05-19T02:12:36.393-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:57.28-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:49.22-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If LineGraph data contains NaN's, D3 will not display the line.  In the discussion forum, Kells has proposed a minor code change to LineGraph::OnRenderCore that displays a series containing NaN as line segments with breaks at the NaN values.  This is a very useful change and it would be good to have it in the main code base.\n \nin LineGraph::OnRenderCore\n\tusing (StreamGeometryContext context = streamGeometry.Open())\n\t\t{\n                    //context.BeginFigure(filteredPoints.StartPoint, false, false);\n                    //context.PolyLineTo(filteredPoints, true, smoothLinesJoin);\n \n                    Point lastPoint = new Point(0, double.NaN);\n                    foreach (var point in filteredPoints)\n                    {\n                        if (!double.IsNaN(point.Y) && double.IsNaN(lastPoint.Y))\n                            context.BeginFigure(point, false, false);\n                        else if (!double.IsNaN(point.Y))\n                            context.LineTo(point, true, true);\n                        lastPoint = point;\n                    }\n                }\n \n \nin BoundsHelper::GetViewportBounds\n \n \n \n\t\t\tforeach (Point p in viewportPoints)\n\t\t\t{\n                if (!Double.IsNaN(p.X))  // Check added\n                {\n                    xMin = Math.Min(xMin, p.X);\n                    xMax = Math.Max(xMax, p.X);\n                }\n                if (!Double.IsNaN(p.Y))  // Check added\n                {\n                    yMin = Math.Min(yMin, p.Y);\n                    yMax = Math.Max(yMax, p.Y);\n                }\n\t}",
+    "LastUpdatedDate": "2013-02-21T17:36:53.64-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-06-30T14:00:15.347-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Support for double.NaN's",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 13640
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is a pretty important feature IMHO after having programmed for years with MATLAB and having used its line() function I will definitively need it!",
+      "PostedDate": "2010-12-11T14:33:11.53-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-01-14T11:23:22.047-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:53.64-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "466292",
+    "ThreadId": "219145",
+    "Html": "Hey there,\r\n\r\nfirst of all I'd like to thank and congratulate you for your awesome work with D3.\r\n\r\nI'm searching for a way to be able to define user specific tick parameters like major tick count, start value, minor tick count, number of intervals (steps). Any hint concerning that?\r\n\r\nThanks very much!\r\n\r\nAlex",
+    "PostedDate": "2010-07-12T06:09:57.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466515",
+    "ThreadId": "219145",
+    "Html": "<p>There are a couple of discussions that may help, &quot;<span><a title=\"Manual Grid Lines & Tick Marks\" href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=73933\">Manual Grid Lines &amp; Tick Marks</a></span>&quot; &amp; &quot;<a title=\"Adjust Spacing of Tick Marks\" href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=209121\">Adjust Spacing of Tick Marks</a>&quot;.</p>\r\n<p>Have you looked at the sample&nbsp;<span style=\"font-family:Consolas, 'Courier New', Courier, monospace;white-space:pre\">DevSamples\\AxesApp in the nightly build?</span></p>",
+    "PostedDate": "2010-07-12T14:07:46.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466807",
+    "ThreadId": "219145",
+    "Html": "I already knew these discussion but couldn't get that much out of it. But I didn't know about the dev-samples which were very helpful. Thank you very much ;)",
+    "PostedDate": "2010-07-13T06:42:33.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

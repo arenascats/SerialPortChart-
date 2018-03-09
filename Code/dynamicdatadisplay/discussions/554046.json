@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1277429",
+    "ThreadId": "554046",
+    "Html": "Hello all! \r<br />\nI'm new to D3 plotter and im on a mathematics-kinect project that i want to make x=0 and y=0 Main axis and have them bold black.I know its possible but i cant figure out how..plus :\r<br />\ni have imported to my wpf MainWindow xaml my plotter :\r<br />\n<br />\n&lt;d3:ChartPlotter Name=&quot;plotter&quot; Width=&quot;900&quot; Height=&quot;700&quot; VerticalAlignment=&quot;Top&quot; HorizontalAlignment=&quot;Left&quot; Loaded=&quot;plotter_Loaded&quot; RenderTransformOrigin=&quot;0.5,0.5&quot; Margin=&quot;0,10,0,0&quot;&gt;\r<br />\n<br />\nbut on fullscreen it stays on middle and that gives me false coordinates and buggy\r<br />\nbehavior of my kinect cursor...\r<br />\nAny help will be awesome!\r<br />\n<br />\nThanks in advance!<br />\n",
+    "PostedDate": "2014-07-24T11:37:04.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

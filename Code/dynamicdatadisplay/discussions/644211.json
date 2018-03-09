@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1441915",
+    "ThreadId": "644211",
+    "Html": "Our WPF application uses the Dynamic Data display to display Graph chart.\r<br />\n<br />\nThe application also needs to save the display chart into XPS or PDF.\r<br />\nIs there any example or guideline to show us how to save into XPS or PDF? thx!<br />\n",
+    "PostedDate": "2015-08-25T17:21:12.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1441925",
+    "ThreadId": "644211",
+    "Html": "Hi,\r<br />\n<br />\nSearch in the discussions for other print/save chart you will get the answer.\r<br />\n<br />\n<a href=\"https://dynamicdatadisplay.codeplex.com/discussions/252339\" rel=\"nofollow\">link</a>\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2015-08-25T21:13:20.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "722450",
+    "ThreadId": "285463",
+    "Html": "<p>Hello,</p>\n<p>just a newbe-problem :) Please, help me...</p>\n<p>I want to create a graph with some values at y axis and time (hh:mm:ss) at the x axis. I've found the \"HorizontalTimeSpanAxis\", but how can I display the time which is saved in a table on it?</p>\n<p>The time from my table&nbsp;is converted to DateTime/Ticks first&nbsp;and than to&nbsp;double because&nbsp;of using&nbsp;the EnumerableDataSource.</p>\n<p>Sorry for my bad english :)</p>\n<p>&nbsp;Edit:</p>\n<p>OK, I get it. Admin, please delete this post.</p>",
+    "PostedDate": "2012-01-09T05:57:07.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "813996",
+    "ThreadId": "285463",
+    "Html": "<p>sorry,delete this post</p>",
+    "PostedDate": "2012-03-22T05:32:13.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832484",
+    "ThreadId": "285463",
+    "Html": "<p>ana 2711 great question.Had you solved it?I am also facing same problem.Tafroman if you have any solution for this then post here otherwise delete your comment.</p>\r\n<p>thanks</p>",
+    "PostedDate": "2012-05-05T04:21:22.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832946",
+    "ThreadId": "285463",
+    "Html": "<p>&nbsp;</p>\r\n<p><span>You can&nbsp;look at my answer on this&nbsp;</span><a href=\"http://dynamicdatadisplay.codeplex.com/discussions/341039\" target=\"_self\">thread</a><span>.</span></p>\r\n<p>Sebastien Chandonnet</p>",
+    "PostedDate": "2012-05-07T06:01:42.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

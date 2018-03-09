@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "171702",
+    "ThreadId": "51224",
+    "Html": "I would have to create a line chart which displays the data for the past 24 hours. I've been testing this with the stock exchange but I can't figure it out.<br>\r\n<br>\r\nThe following link/picture shows the look I'm trying to achieve:<br>\r\nhttp://cid-cdc8b62a957cc86c.skydrive.live.com/self.aspx/.Public/curved.png<br>\r\n<br>\r\nAs you can see at the top you can see the hours. I.e. -24 means &quot;24 hours ago&quot; and zero means the current value. The line that is drawn should be curved.<br>\r\n<br>\r\nHere is how my current chart looks:<br>\r\nhttp://cid-cdc8b62a957cc86c.skydrive.live.com/self.aspx/.Public/stock|_exchange|_hours.png<br>\r\n<br>\r\nAs you can see currently the x-axis shows the hours (04:00, 06:00 etc.). How can I change this show that it shows -24, -18 etc. on top of the chart?<br>\r\n<br>\r\nAlso how can I make the line curved. Since the chart is using my data directly all the lines are straight. I can see that in the HelloWorld sample there is CompositeDataSource but in my case I only have one value. The AnimationSample also makes the line curved. I assume I would have to somehow alter the data but I don't know how.<br>\r\n",
+    "PostedDate": "2009-03-25T00:21:11.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172668",
+    "ThreadId": "51224",
+    "Html": "Hi!<div><br></div><div>Line, visualizing some data looks smooth in DynamicDataDisplay, when this data consists of multiple points - the more points you'll pass, more smooth will your polyline look. This happens because now Line displays data as a polyline (a set of small straigth lines, each connecting two adjasent points of data). In the future we a going to add a Bezier polyline support to Line, too. This will make even lines with small points look nice and smooth (curved).</div><div><br></div><div>What about axis - maybe you should better use TimeSpanAxis, which shows TimeSpan.</div><div>I'll make a try to build sample app and show it to you a little bit later.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-03-27T01:45:43.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174243",
+    "ThreadId": "51224",
+    "Html": "Hi!<div><br></div><div>As I've promised, I've created a small sample app, which is not ideal, but I think will help you to reach your target:</div><div><br></div><div><br></div><div>// using directives - paste them into the beginning of file</div><div><div>using Microsoft.Research.DynamicDataDisplay;</div><div>using Microsoft.Research.DynamicDataDisplay.Charts;</div><div>using Microsoft.Research.DynamicDataDisplay.Charts.Axes.DateTime.Strategies;</div><div><br></div></div><div>// The following code should be inserted into window ctor or, for example, OnLoad method:<br></div><div><br></div><div><div><span style=\"white-space:pre\">\t\t\t</span>ChartPlotter plotter = new ChartPlotter();</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t</span>// setting properties of horizontal axis</div><div><span style=\"white-space:pre\">\t\t\t</span>HorizontalTimeSpanAxis axis = new HorizontalTimeSpanAxis();</div><div><span style=\"white-space:pre\">\t\t\t</span>// calculating minimal amd maximal x values</div><div><span style=\"white-space:pre\">\t\t\t</span>double minX = axis.ConvertToDouble(new TimeSpan(-24, 0, 0));</div><div><span style=\"white-space:pre\">\t\t\t</span>double maxX = axis.ConvertToDouble(new TimeSpan());</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t</span>TimeSpanTicksProvider ticksProvider = (TimeSpanTicksProvider)axis.TicksProvider;</div><div><span style=\"white-space:pre\">\t\t\t</span>// changing ticks calculating strategy to prefer separation on hours</div><div><span style=\"white-space:pre\">\t\t\t</span>ticksProvider.Strategy = new DelegateDateTimeStrategy((span) =&gt;</div><div><span style=\"white-space:pre\">\t\t\t</span>{</div><div><span style=\"white-space:pre\">\t\t\t\t</span>if (span.TotalDays &lt; 2 &amp;&amp; span.TotalHours &gt; 2) return DifferenceIn.Hour;</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t\t</span>// null makes to use base class return value</div><div><span style=\"white-space:pre\">\t\t\t\t</span>return null;</div><div><span style=\"white-space:pre\">\t\t\t</span>});</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t</span>plotter.HorizontalAxis = axis;</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t</span>Rect visible = plotter.Viewport.Visible;</div><div><span style=\"white-space:pre\">\t\t\t</span>visible.X = minX;</div><div><span style=\"white-space:pre\">\t\t\t</span>visible.Width = maxX - minX;</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t</span>plotter.Viewport.Visible = visible;</div><div><br></div><div><span style=\"white-space:pre\">\t\t\t</span>// grid is simply a visual root of window</div><div><span style=\"white-space:pre\">\t\t\t</span>grid.Children.Add(plotter);</div><div><br></div><div>If publicly available version of DynamicDataDisplay does not contain some classes or methods I've used, I'm publishing a development version of D3:</div><div>http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/DynamicDataDisplay%2001.04.09.zip<br></div><div><br></div><div>Mikhail.</div><div><br></div></div>",
+    "PostedDate": "2009-04-01T03:02:06.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174246",
+    "ThreadId": "51224",
+    "Html": "In addition to my previous answer - currently, as you might have noticed, labels of x-axis are too redundant - they display minutes, seconds and so on. Currently we have not created a convenient way to change this format, so if you'd want to do it you'll have change internal D3 code a little.<div>Hope in the next version we'll make such changes easier)</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-04-01T03:10:53.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

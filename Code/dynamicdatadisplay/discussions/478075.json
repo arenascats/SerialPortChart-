@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1142456",
+    "ThreadId": "478075",
+    "Html": "Hi,\r<br />\n<br />\nI want to access the minimum and maximum values of the horizontal and vertical axes currently on display in the chartplotter. Is there any way to achieve that? I have come across some threads on setting/writing those values using viewport2D, but none mentioned about retrieving the axes values currently on display. Anyone can help?\r<br />\n<br />\nThank you!<br />\n",
+    "PostedDate": "2013-12-26T21:24:20.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143451",
+    "ThreadId": "478075",
+    "Html": "Ok, I figured it out. Happened to be too simple. :)\r<br />\n<br />\nvar v = plotter.Visible;\r<br />\nint X_left = Convert.ToInt32(v.Left);\r<br />\nint X_right = Convert.ToInt32(v.Right);<br />\n",
+    "PostedDate": "2013-12-27T19:10:40.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-12-27T19:10:42.743-08:00"
+  }
+]

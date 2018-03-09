@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "206564",
+    "ThreadId": "60942",
+    "Html": "<p>Privet , Misha. I hope you have big plans for your charting piece, otherwise a lot of good souls are going to wind up dead in the watter.</p>\r\n<p>I am using RingArray to show last 300 minutes of data. The last&nbsp;value is&nbsp;the current minute and it's changing constantly untill this minute is gone.&nbsp;Once it&nbsp;shows up on a chart ,&nbsp;it never gets updated when that last value in RingArray is changed.</p>",
+    "PostedDate": "2009-06-29T05:47:56.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208914",
+    "ThreadId": "60942",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Can you please upload somewhere code that can reproduce this case?</p>",
+    "PostedDate": "2009-07-06T06:05:12.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

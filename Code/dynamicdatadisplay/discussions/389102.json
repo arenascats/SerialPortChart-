@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "891560",
+    "ThreadId": "389102",
+    "Html": "\r\n<p>I am creating a graph with integers on Y axis, I want to set values of Y axis to 0 as minimum and 100 as maximum. How to set it ? I have used the following XAML code to set the vertical axis.</p>\r\n<p>&lt;d3:ChartPlotter.VerticalAxis&gt;<br>\r\n&lt;d3:VerticalIntegerAxis Name=&quot;countAxis&quot; /&gt; <br>\r\n&lt;/d3:ChartPlotter.VerticalAxis&gt;</p>\r\n",
+    "PostedDate": "2012-07-26T02:30:14.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "486351",
+    "ThreadId": "225274",
+    "Html": "<p>Hi all,</p>\r\n<p>I am using chartplotter control in wpf.&nbsp; on the graph the&nbsp; x and y coordinates should start from 0,0 i.e at origin but my graph starts at -ve values.could u please send me a code for this.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-30T04:21:45.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486604",
+    "ThreadId": "225274",
+    "Html": "<p>Hi,</p>\r\n<p>The easiest way I found is simply to set the ﻿Visible property of the ChartPlotter.</p>\r\n<p>So, if your ChartPlotter has a Name attribute of 'plotter'</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>plotter.Visible = <span style=\"color:blue\">new</span> DataRect(minX, minY, widthX, WidthY);\r\n</pre>\r\n</div>\r\n<p>So to set your axes to start at 0.0, 0.0 with X being 5 units and Y being 10 units long use:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>plotter.Visible = <span style=\"color:blue\">new</span> DataRect(0, 0, 5, 10);\r\n</pre>\r\n</div>\r\n<p>This will, of course, be &quot;messed up&quot; is the user pans the axes - to handle that you would be looking at changing/replacing the keyboard and mouse navigation objects</p>\r\n<p>Btw, I had to add</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">using</span> Microsoft.Research.DynamicDataDisplay.Common;\r\n</pre>\r\n</div>\r\n<p>to get at DataRect but if I remember correctly in the latest (Nightly) build it has migrated to Microsoft.Research.DynamicDataDisplay.</p>\r\n<p>&nbsp;</p>\r\n<p>Hope this helps</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-30T12:46:59.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486930",
+    "ThreadId": "225274",
+    "Html": "<p>hi</p>\r\n<p>thanks for the code. Now the graph starts from origin.</p>",
+    "PostedDate": "2010-08-31T06:22:27.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

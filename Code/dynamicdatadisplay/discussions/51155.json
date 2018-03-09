@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "171439",
+    "ThreadId": "51155",
+    "Html": "I'm new to C# and WPF so this may just be my lack of experience. I'm trying to add horizontal lines to a chart dynamically but when I do I get the following error: &quot;Object reference not set to an instance of an object&quot;. Do I need to use the SetValue() function?<br>\r\n<br>\r\nHere's the code:<br>\r\n<br>\r\n....<br>\r\n    HorizontalLine myLine = new HorizontalLine();<br>\r\n    myLine.Value = 1600; //This is where the error occurs<br>\r\n    <br>\r\n    graph.Children.Add(myLine);<br>\r\n....<br>\r\n<br>\r\nThanks!\r\n",
+    "PostedDate": "2009-03-24T11:45:21.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172671",
+    "ThreadId": "51155",
+    "Html": "Hi!<div><br></div><div>Can you please make a small application, illustrating the problem you are speaking about, and upload it somewhere?</div><div>(You can mail it to me - my email is thecentury@gmail.com)</div><div>This is because the code fragment you've wrote is ok, and problem isn't in it.</div><div><br></div><div>From where you a calling code you've given?</div><div>Can you post more details about exception? Where does it happen? What reference is null?</div><div><br></div><div>Setting value to usual CLR property or using associated with it DependencyProperty in SetValue method are equal, CLR property is made only for developer's convenience.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-03-27T01:52:13.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179324",
+    "ThreadId": "51155",
+    "Html": "I came across this issue when I attempted to use object initialization syntax.<br>\r\n<br>\r\nThe following would fail:<br>\r\n<br>\r\nvar verticalRange = new VerticalRange { Fill = Brushes.Green, Value1 = 10.0, Value2 = 20.0 };<br>\r\ngraph.Children.Add(verticalRange);<br>\r\n<br>\r\nAnd would work when written as:<br>\r\n<br>\r\nvar verticalRange = new VerticalRange { Fill = Brushes.Green };<br>\r\ngraph.Children.Add(verticalRange);<br>\r\nverticalRange.Value1 = 10.0;<br>\r\nverticalRange.Value2 = 20.0;<br>\r\n<br>\r\nThe issue is that, in the example, the vertical range has to be added to the graph -before- its properties can be set. To my mind, this is a bug.<br>\r\n<br>\r\nI'm assuming the same applies to HorizontalLine...<br>\r\n<br>\r\nNick<br>\r\n",
+    "PostedDate": "2009-04-14T19:11:17.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179498",
+    "ThreadId": "51155",
+    "Html": "Hi, Nick and <span style=\"color:rgb(48, 51, 45);font-family:'segoe ui';font-size:14px;white-space:nowrap\">geoffmmorgan!</span><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:14px;white-space:nowrap\"><br></span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:14px;white-space:nowrap\">Thank you for your report, this is really a bug and it is fixed now. So upcoming release of DynamicDataDisplay will not have this bug more.</span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:14px;white-space:nowrap\"><br></span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:14px;white-space:nowrap\">Yours,</span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:14px;white-space:nowrap\">Mikhail Brinchuk,</span></div><div><span style=\"font-family:'segoe ui';color:rgb(48, 51, 45);font-size:14px;white-space:nowrap\">DynamicDataDisplay Dev Team.</span></div>",
+    "PostedDate": "2009-04-15T03:21:32.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179887",
+    "ThreadId": "51155",
+    "Html": "That's great!<br>\r\n<br>\r\nThanks :)<br>\r\n<br>\r\nNick <br>\r\n",
+    "PostedDate": "2009-04-15T18:11:54.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

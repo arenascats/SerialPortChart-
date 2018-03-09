@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "432632",
+    "ThreadId": "209751",
+    "Html": "<p>I want to do something similar i.e how labels are recreated and drawn &quot;OnRender&quot; method when fast-isolines are rendered, basically i don't want to show the legends and want to display labels right on the lines curves. The OnRender method in isolines example uses annotater and isolines text labels which are specific to isolines, how can i achieve the same with linegraphs? I don't want you to write the code (thought glad if you can write it) but any hints would be great assistance.</p>\r\n<p>I know one way to achieve this would be by attaching text label with the viewport2d, but then the labels would be attached to X and Y value and needs to be re-rendered and reposition again when the user zoom in/out.</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-04-19T02:36:06.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432931",
+    "ThreadId": "209751",
+    "Html": "<p>Hi!</p>\r\n<p>If you do not need to update the number of labels being drawed while zoom, then <strong>ViewportHostPanel</strong>&nbsp;can be a good solution for you. It can host any UIElement, and by using its attached poperties like <strong>X</strong>, <strong>Y</strong>, <strong>ViewportWidth</strong>&nbsp;and <strong>ViewportHeight </strong>(or maybe <strong>ViewportBounds</strong>) you can archive behaviour of textlabels similar to isolines.&nbsp;</p>\r\n<p>If you need to change your labels while zooming, than I'm sorry and you'll have to do this part manually.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-19T16:02:35.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI have to draw one line graph which will display some values between 0- 300. these values will keep on coming from a device.\n\nI want to display last 50 values on the graph and all previous values should get discarded or should not get displayed on the graph.\n\nIs there any way into D3 to do this?\n\nThanks,\nVishal N",
+    "LastUpdatedDate": "2013-09-04T23:03:57.51-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2013-09-04T23:03:57.51-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can I display the value range from data source",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20170
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

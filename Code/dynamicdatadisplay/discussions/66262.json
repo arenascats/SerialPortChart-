@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "225072",
+    "ThreadId": "66262",
+    "Html": "<p>We just notice that we have a problem to open the User Control which uses the Dynamic Data Display in Expression Blend 2.</p>\r\n<p>It complaints that &quot;Header&quot; method or operation is not implemented.</p>\r\n<p>&lt;d3:Header<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextBlock.FontSize=&quot;20&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Content=&quot;{Binding Path=GraphTitle}&quot; /&gt;</p>\r\n<p>Anyone has any clue?</p>\r\n<p>Does the Dynamic Data Display supports Expression Blend 3?</p>\r\n<p>thx!</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-18T11:26:13.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226343",
+    "ThreadId": "66262",
+    "Html": "<p>Hi Jane,</p>\r\n<p>I tried to open several projects from D3's samples and got the same message. I don't understand its meaning. Actually I don't know what's the reason for it, there is no Blend or VisualStudio specific code in DynamicDataDisplay.</p>\r\n<p>Maybe the problem is in that I'm mostly working in VisualStudio and editing raw XAML, not editing XAML in visual designer.</p>\r\n<p>Does&nbsp;existence&nbsp;of this message allow you to edit visuals in Blend? Maybe it is possible to temporarily comment some part of XAML markup to enable normal Blend functioning, and then, after editing, uncomment it.</p>\r\n<p>If somebody can lid a light on this problem, you are welcome!</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-21T07:42:50.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227070",
+    "ThreadId": "66262",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>In the past, we know there are cases, the code works for VS2008 design time. however, it does work for Expression blend 2 or 3 design time.</p>\r\n<p>In some cases, the code works for Expression blend design time. however, it does not work for VS2008.</p>\r\n<p>In most cases, microsoft&nbsp;can figure out&nbsp;what's the reason for that if we submit the example for them.</p>\r\n<p>In our cases, we should raise the question to the Microsoft Expression blend team, they will tell us what's the reason.</p>\r\n<p>regards,</p>\r\n<p>Jane</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T08:31:23.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227079",
+    "ThreadId": "66262",
+    "Html": "<p>In any case, if you get some answer from MS Expression Blend team or from somebody else, please let me know)</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T08:47:01.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244821",
+    "ThreadId": "66262",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>We have posted questions in the following link:</p>\r\n<p><a href=\"http://social.expression.microsoft.com/Forums/en-US/blend/thread/d315bc43-b420-4a87-8f2c-89ea6bc14045\">http://social.expression.microsoft.com/Forums/en-US/blend/thread/d315bc43-b420-4a87-8f2c-89ea6bc14045</a>&nbsp;</p>\r\n<p>We get the answer today. It looks like that DynamicDataDisplay library&nbsp;misses implement some Iinterfaces..</p>\r\n<p>We have tried our solution again in Expression Blend 3. This time, we open the Graph.xaml which uses DynamicDataDisplay library without any problem. So Expression Blend 3 is better than Blend 2.</p>\r\n<p>Regards,</p>\r\n<p>Jane</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-12T13:52:18.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245589",
+    "ThreadId": "66262",
+    "Html": "<p>Hi Jane,</p>\r\n<p>I've uploaded a new fixed version of D3 to 'Source code' page; this version contains a full implementation of all necessary interface members for PlotterChildrenCollection, and it is working in Expression Blend 3 (I've tested some projects particulary on this version of Expression Blend).</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T07:23:30.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

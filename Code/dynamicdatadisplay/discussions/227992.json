@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "496490",
+    "ThreadId": "227992",
+    "Html": "<p>Hello, All!</p>\r\n<p>I am new in d3.</p>\r\n<p>I &nbsp;tried use examples but I didn't find anything about binding.</p>\r\n<p>So, I have in my View d3Chart</p>\r\n<p>also I have data for this chart in such structure:</p>\r\n<p>class DataForChart</p>\r\n<p>{</p>\r\n<p>&nbsp; public double StepValue {get; set;} &nbsp;// X Values</p>\r\n<p>&nbsp; public int DurationMinutes {get; set;} &nbsp;// Y Values (Time Axis)</p>\r\n<p>}</p>\r\n<p>My data is a Step-like</p>\r\n<p>Some like this:</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_____</p>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;____|</p>\r\n<p>&nbsp; &nbsp; &nbsp;____|</p>\r\n<p>___|</p>\r\n<p>Please, advice me about it.</p>\r\n<p><span style=\"font-family:'Arial';font-size:12;color:#000000;background-color:transparent\">I'm looking forward to your advices.</span></p>\r\n<p><span style=\"font-family:'Arial';font-size:12;color:#000000;background-color:transparent\">If you can - not only for my problem. I need info about binding data in whole too.</span></p>\r\n<p><span style=\"font-family:'Arial';font-size:12;color:#000000;background-color:transparent\">Thanks!&nbsp;</span></p>\r\n<p>\r\n<div></div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-21T06:54:42.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496658",
+    "ThreadId": "227992",
+    "Html": "<p>How about something like this....</p>\r\n<p>Model</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>    <span style=\"color:blue\">public</span> <span style=\"color:blue\">class</span> ModelData\r\n    {\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">double</span> Value { <span style=\"color:blue\">get</span>; <span style=\"color:blue\">set</span>; }\r\n        <span style=\"color:blue\">public</span> TimeSpan Elapsed { <span style=\"color:blue\">get</span>; <span style=\"color:blue\">set</span>; }\r\n        <span style=\"color:blue\">public</span> ModelData(<span style=\"color:blue\">double</span> value, TimeSpan elapsed)\r\n        {\r\n            Value = value;\r\n            Elapsed = elapsed;\r\n        }\r\n    }\r\n\r\n    <span style=\"color:blue\">public</span> <span style=\"color:blue\">class</span> SampleModel\r\n    {\r\n\r\n        <span style=\"color:blue\">public</span> List&lt;ModelData&gt; Values { <span style=\"color:blue\">get</span>; <span style=\"color:blue\">private</span> <span style=\"color:blue\">set</span>; }\r\n\r\n        CompositeDataSource _timeData;\r\n        <span style=\"color:blue\">public</span> CompositeDataSource TimeData\r\n        {\r\n            <span style=\"color:blue\">get</span>\r\n            {\r\n                <span style=\"color:blue\">if</span> (_timeData == <span style=\"color:blue\">null</span>)\r\n                {\r\n                    <span style=\"color:blue\">var</span> xData = <span style=\"color:blue\">new</span> EnumerableDataSource&lt;<span style=\"color:blue\">double</span>&gt;(Values.Select(v =&gt; v.Elapsed.TotalSeconds));\r\n                    xData.SetXMapping( x =&gt; x );\r\n                    <span style=\"color:blue\">var</span> yData = <span style=\"color:blue\">new</span> EnumerableDataSource&lt;<span style=\"color:blue\">double</span>&gt;(Values.Select(v =&gt; v.Value));\r\n                    yData.SetYMapping( y =&gt; y );\r\n                    _timeData = xData.Join(yData);\r\n                }\r\n                <span style=\"color:blue\">return</span> _timeData;\r\n            }\r\n        }\r\n        <span style=\"color:blue\">public</span> SampleModel()\r\n        {\r\n            Values = <span style=\"color:blue\">new</span> List&lt;ModelData&gt;();\r\n        }\r\n    }\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>View</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Window</span> <span style=\"color:red\">x:Class</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">D3Binding.MainWindow</span><span style=\"color:black\">&quot;</span>\r\n        <span style=\"color:red\">xmlns</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span style=\"color:black\">&quot;</span>\r\n        <span style=\"color:red\">xmlns:x</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://schemas.microsoft.com/winfx/2006/xaml</span><span style=\"color:black\">&quot;</span>\r\n        <span style=\"color:red\">xmlns:d3</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://research.microsoft.com/DynamicDataDisplay/1.0</span><span style=\"color:black\">&quot;</span>\r\n        <span style=\"color:red\">Title</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">MainWindow</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Height</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">350</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Width</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">525</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Grid</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n            <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">LineGraph</span> <span style=\"color:red\">DataSource</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">{Binding Path=TimeData}</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">Stroke</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Black</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n        <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">d3</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Grid</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Window</span><span style=\"color:blue\">&gt;</span>\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>View code</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>    <span style=\"color:blue\">public</span> <span style=\"color:blue\">partial</span> <span style=\"color:blue\">class</span> MainWindow : Window\r\n    {\r\n        SampleModel Model { <span style=\"color:blue\">get</span>; <span style=\"color:blue\">set</span>; }\r\n\r\n        <span style=\"color:blue\">public</span> MainWindow()\r\n        {\r\n            InitializeComponent();\r\n\r\n            Model = <span style=\"color:blue\">new</span> SampleModel();\r\n            PopulateModel();\r\n            DataContext = Model;\r\n        }\r\n\r\n        <span style=\"color:blue\">void</span> PopulateModel()\r\n        {\r\n\r\n            <span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; 10; i++)\r\n            {\r\n                Model.Values.Add(<span style=\"color:blue\">new</span> ModelData((<span style=\"color:blue\">double</span>) i, TimeSpan.FromSeconds(i)));\r\n                Model.Values.Add(<span style=\"color:blue\">new</span> ModelData((<span style=\"color:blue\">double</span>)i, TimeSpan.FromSeconds(i+1)));\r\n            }        \r\n        }\r\n    }\r\n\r\n</pre>\r\n</div>\r\nThis can be done without code in the view but this is a start.</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-09-21T12:05:44.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496873",
+    "ThreadId": "227992",
+    "Html": "<p>Thanks, Grant.</p>\r\n<p>I tried to use your example code.</p>\r\n<p>It seems all work Ok.</p>\r\n<p>Thank you!!</p>",
+    "PostedDate": "2010-09-22T00:33:07.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "546819",
+    "ThreadId": "227992",
+    "Html": "\r\n<p>Just wanted to say thanks Grant, worked great for me as well.</p>\r\n",
+    "PostedDate": "2011-01-10T09:27:55.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1114899",
+    "ThreadId": "227992",
+    "Html": "The <a href=\"http://www.kettic.com/winforms_ui/csharp_guide/chart_feature_data_binding.shtml\" rel=\"nofollow\">Chart Databinding C# tutorial</a> shows a variety way of binding to MS SQL, Oracle, MySQL, Access ODBC as well as XML data, etc. <br />\n",
+    "PostedDate": "2013-10-30T20:41:18.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1487370",
+    "ThreadId": "227992",
+    "Html": "The problem with the above approach is each time a new EnumerableSource needs to be created. It doesn't seem to work if ModelData implements INotifyPropertyChanged and only the value changes. This causes lot of issues when you have a large set of points (2000+) updating almost every 500ms-1s. It results in the chart getting messed up when trying to pan/zoom it around. Anyone has faced this before and has a solution?<br />\n",
+    "PostedDate": "2016-11-03T21:03:32.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "811264",
+    "ThreadId": "348850",
+    "Html": "<p>Hi,</p>\n<p>I am using wpf with MVVM in my application. I was trying to bind DescriptionString to legend of a Line Graph but , It throws me an error saying that &nbsp;\"<em><strong>Binding can only be set to Dependency property of dependency object</strong></em>\". After receiving  this error I tried converting&nbsp;<strong>StandardDescription</strong> class <strong> DescriptionString</strong> Property into a Dependency property, in D3 but unfortunately it's not working. Can somebody please help me with this.</p>\n<p>&nbsp;</p>\n<p>Thanks &amp; Regards,</p>\n<p>T</p>",
+    "PostedDate": "2012-03-16T00:34:52.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

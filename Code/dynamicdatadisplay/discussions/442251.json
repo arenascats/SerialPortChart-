@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1038224",
+    "ThreadId": "442251",
+    "Html": "Hello!\r<br />\n<br />\nI have the same problem like here: <a href=\"https://dynamicdatadisplay.codeplex.com/discussions/356125\" rel=\"nofollow\">https://dynamicdatadisplay.codeplex.com/discussions/356125</a>\r<br />\n<br />\nIn few words, i'm using simple method, where i every second remove all LineGraphs from ChartPlotter and add new LineGraph.\r<br />\n<br />\nI use this to add line:\r<br />\nGraphPlotter.AddLineGraph(pointsList, new Pen(Brushes.Black, 2), new CircleElementPointMarker {Size = 5.0, Brush = Brushes.Blue, Fill = Brushes.Blue},                                   new PenDescription(&quot;description&quot;));\r<br />\n<br />\nand this to remove:\r<br />\nGraphPlotter.Children.RemoveAll(typeof(LineGraph));\r<br />\nGraphPlotter.Children.RemoveAll(typeof(ElementMarkerPointsGraph));\r<br />\n<br />\nI control the number of childrens and it is 16 always when i enter method again, so this is not problem with &quot;not removed children&quot;. \r<br />\n<br />\nEventually after each cycle of remove/add LineGraph, the memory, which my app is using, is increasing by 1-2 mb.\r<br />\n<br />\nHope for your help.<br />\n",
+    "PostedDate": "2013-05-01T10:47:46.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039697",
+    "ThreadId": "442251",
+    "Html": "Hi \r<br />\n<br />\nSomehow the linegraph what you are adding is different from line what you are trying to delete.\r<br />\n LineGraph line = plotter.AddLineGraph(......) has return type. \r<br />\nLineAndMarker&lt;MarkerPointGraph&gt; lineAndMarker = plotter.AddLineGraph(...) \r<br />\nPlease create a collection of LineGraph and LineAndMarker&lt;...&gt; and remove these collected elements from the children<br />\n<pre><code> /// &lt;summary&gt;\n    /// Chart plotter data class used in chartplotter to manipulate with plot name(entity name) and plot id(entity identifier)\n    /// &lt;/summary&gt;\n    public class ChartPlotterKey\n    {\n        /// &lt;summary&gt;\n        /// Gets or sets the name of the plot.\n        /// &lt;/summary&gt;\n        /// &lt;value&gt;The name of the plot.&lt;/value&gt;\n        public string PlotName\n        {\n            get;\n            set;\n        }\n\n        /// &lt;summary&gt;\n        /// Gets or sets the plot id.\n        /// &lt;/summary&gt;\n        /// &lt;value&gt;The plot id.&lt;/value&gt;\n        public Guid PlotId\n        {\n            get;\n            set;\n        }\n    }\n\n******************** Add marker and line\n LineAndMarker&lt;MarkerPointsGraph&gt; lineAndMarker = injectedPlotter.AddLineGraph(pointDataSource, new Pen(brush, 2), new CirclePointMarker { Size = 9, Fill = brush }, new PenDescription(&quot;pen Name&quot;));\n                lineAndMarker.LineGraph.Tag = &quot;aaaa&quot;;\n                chartPlotterKey.PlotName = (string)lineAndMarker.LineGraph.Tag;\n                this.lineAndMarkerGraphs.Add(chartPlotterKey, lineAndMarker);\n\n************************* Add line graph\n LineGraph lineGraph = injectedPlotter.AddLineGraph(pointDataSource, color, 1, &quot;bbbbb&quot;);\n                lineGraph.Tag =&quot;bbbbb&quot;;\n                chartPlotterKey.PlotName = (string)lineGraph.Tag;\n                this.lineGraphLines.Add(chartPlotterKey, lineGraph);\n*********************\n\n****** Remove lines\n foreach (KeyValuePair&lt;ChartPlotterKey, LineGraph&gt; line in this.lineGraphLines)\n            {\n                line.Value.DataChanged -= new EventHandler(this.LineGraph_DataChanged);\n            }\n\n            this.lineGraphLines.Clear();\n\n            foreach (KeyValuePair&lt;ChartPlotterKey, LineAndMarker&lt;MarkerPointsGraph&gt;&gt; line in this.lineAndMarkerGraphs)\n            {\n                line.Value.LineGraph.DataChanged -= new EventHandler(this.LineGraph_DataChanged);\n            }\n\n            this.lineAndMarkerGraphs.Clear();\n\n            foreach (KeyValuePair&lt;Guid, InjectedPlotter&gt; kvp in this.injectedPlotters)\n            {\n                kvp.Value.Viewport.PropertyChanged -= this.OnInjectedPlotterViewportPropertyChanged;\n                kvp.Value.MainVerticalAxis.MouseDown -= this.OnInjectedVerticalAxisMouseDown;\n\n                kvp.Value.Children.Clear();\n\n                if (this.Children.Contains(kvp.Value))\n                {\n                    this.Children.Remove(kvp.Value);\n                }\n            }\n\n            this.injectedPlotters.Clear(); \n</code></pre>\n\ntry something like this. Or if you have the sample where this code doesn't work, please share it, I will try to find the issue.\r<br />\n \r<br />\nRegards \r<br />\nRavi<br />\n",
+    "PostedDate": "2013-05-05T23:07:26.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098479",
+    "ThreadId": "442251",
+    "Html": "Same here! memory leak!<br />\n",
+    "PostedDate": "2013-09-24T04:20:34.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1475029",
+    "ThreadId": "442251",
+    "Html": "Well, it might be a bit late for the OP but it seems that I experienced a similar issue with the WPF version.\r<br />\n<br />\nAfter some digging I found that there is a binding that is not cleared correctly.\r<br />\n<br />\nThe LineLegendItem object creates a DataTemplate which binds to a PenDescription.  This is used for displaying a LineGraphs' color and title in the legend.\r<br />\n<br />\nTo work around you can subscribe to the graph's removal from the plotter and clean it manually:<br />\n<pre><code>private void addSeries()\n{\n   ...\n   LineGraph seriesOnGraph = plotter.AddLineGraph( ... );\n   seriesOnGraph.PlotterDetaching += SeriesOnGraph_PlotterDetaching;\n}\n\nprivate void SeriesOnGraph_PlotterDetaching(object sender, PlotterConnectionEventArgs e)\n{\n   LineGraph graph = sender as LineGraph;\n   if(graph != null)\n   {\n      graph.Description.LegendItem.Content = null;\n   }\n}</code></pre>\n\nDon't forget to remove the graphs from the plotter as suggested by Ravi.<br />\n<pre><code>private void GraphControl_Unloaded(object sender, RoutedEventArgs e)\n{\n   plotter.RemoveUserElements();\n}</code></pre>\n\n",
+    "PostedDate": "2016-06-03T13:14:09.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

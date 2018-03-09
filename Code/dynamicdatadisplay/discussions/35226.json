@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "117118",
+    "ThreadId": "35226",
+    "Html": "How can I modify the Brush color of&nbsp;HorizontalAxis or VerticalAxis<br>\r\n<br>\r\nThanks<br>\r\nMarco<br>\r\n",
+    "PostedDate": "2008-09-09T00:37:03.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "120981",
+    "ThreadId": "35226",
+    "Html": "Unfortunately, there is no way to change brush color in one line of code. Feature request is added and will be available in next release.<br>\r\n<br>\r\nIn current version&nbsp;you'll need to modify source code:<br>\r\n<br>\r\n1. Modify source code of ChartPlotter.cs in following way<br>\r\n<br>\r\n<span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">public</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#0000ff\">class</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">ChartPlotter</span><span style=\"font-size:13px\"> : </span><span style=\"font-size:13px;color:#2b91af\">Plotter2D </span><span style=\"font-size:13px\">{<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp; ...&nbsp;<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;public</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">HorizontalAxis</span><span style=\"font-size:13px\"> HorizontalAxis {</span><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;get</span><span style=\"font-size:13px\"> { </span><span style=\"font-size:13px;color:#0000ff\">return</span><span style=\"font-size:13px\"> ha; } }<br>\r\n<span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;public</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">VerticalAxis</span><span style=\"font-size:13px\"> VerticalAxis { </span><span style=\"font-size:13px;color:#0000ff\">get</span><span style=\"font-size:13px\"> { </span><span style=\"font-size:13px;color:#0000ff\">return</span><span style=\"font-size:13px\"> va; } }&nbsp;&nbsp;\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>\r\n<p>&nbsp;</p>\r\n<p>}<br>\r\n<br>\r\n2. To change brush of axis write following code where you need:<br>\r\n<br>\r\n<span style=\"font-size:13px\">plotter.VerticalAxis.Brush = </span><span style=\"font-size:13px;color:#2b91af\">Brushes</span><span style=\"font-size:13px\">.DarkGreen;\r\n<p>plotter.HorizontalAxis.Brush = </p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">Brushes</span><span style=\"font-size:13px\">.DarkOrange;\r\n<p>&nbsp;</p>\r\n<p>\r\n<p>plotter.VerticalAxis.InvalidateVisual();</p>\r\n<p>plotter.HorizontalAxis.InvalidateVisual();</p>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-09-25T08:16:30.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121502",
+    "ThreadId": "35226",
+    "Html": "<div dir=ltr><div>Thanks for the answer,</div>\r\n<div> </div>\r\n<div>another question: </div>\r\n<div>I've a LineGraph with a CirclePointMarker. I need to force an update of the graph. How can I achieve this? It seems that the graph that draws the markers has no relations with the correlated LineGraph. So if I have 20 LineGraph with 20 MarkerGraphs, is there a way to update the render of a specific LineGraph? Making public the Update method of the LineGraph? </div>\r\n\r\n<div>And What about related Markers?</div>\r\n<div> </div>\r\n<div>Thanks in advance</div></div>",
+    "PostedDate": "2008-09-29T00:49:05.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "123469",
+    "ThreadId": "35226",
+    "Html": "Best way to update line graph is to call RaiseDataChanged on associated data source (see AnimationSample).<br>\r\n<br>\r\n<hr>\r\n<br>\r\n<span style=\"font-size:13px;color:#008000\">// Here it is - signal that data is updated</span><span style=\"font-size:13px\">\r\n<p>animatedDataSource.RaiseDataChanged();</p>\r\n</span>\r\n<p>&nbsp;</p>\r\n<hr>\r\nLineGraph and markers are designed to be linked together. For example, if you&nbsp;change following lines of MainWindow.xaml.cs in AnimationSample <span style=\"font-size:13px\">\r\n<hr>\r\n<p>plotter.AddLineGraph(</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">CompositeDataSource</span><span style=\"font-size:13px\">(xSrc, animatedDataSource), </span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Pen</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">Brushes</span><span style=\"font-size:13px\">.Magenta, 3),&nbsp;</span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">PenDescription</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#a31515\">&quot;Sin(x + phase)&quot;</span><span style=\"font-size:13px\">));<br>\r\n<hr>\r\n<br>\r\nto\r\n<hr>\r\n<p>&nbsp;<span style=\"font-size:13px\">plotter.AddLineGraph(</span><span style=\"font-size:13px;color:#0000ff\">&nbsp;new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">CompositeDataSource</span><span style=\"font-size:13px\">(xSrc, animatedDataSource), <br>\r\n</span></p>\r\n<p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">Pen</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#2b91af\">Brushes</span><span style=\"font-size:13px\">.Magenta, 3), </span>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">CirclePointMarker</span><span style=\"font-size:13px\"> { Size = 10, Brush = </span><span style=\"font-size:13px;color:#2b91af\">Brushes</span><span style=\"font-size:13px\">.Red }, </span></p>\r\n<p><span style=\"font-size:13px;color:#0000ff\">&nbsp;&nbsp;&nbsp;&nbsp;new</span><span style=\"font-size:13px\"> </span><span style=\"font-size:13px;color:#2b91af\">PenDescription</span><span style=\"font-size:13px\">(</span><span style=\"font-size:13px;color:#a31515\">&quot;Sin(x + phase)&quot;</span><span style=\"font-size:13px\">));<br>\r\n<p>&nbsp;</p>\r\n<hr>\r\n<br>\r\n<p>&nbsp;</p>\r\n</span></p>\r\n<p>you'll see lines and markers moving together.<br>\r\n<br>\r\nCan we have a look to your code to understand what is wrong?\r\n<p>&nbsp;</p>\r\n</span>\r\n<p>&nbsp;\r\n<p>\r\n<p>&nbsp;\r\n<p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2008-10-07T07:21:44.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "124004",
+    "ThreadId": "35226",
+    "Html": "<div dir=ltr><p><span lang=EN-GB style=\"font-size:12pt\">I hope you'll enjoy the sample. (I'm thinking about publishing it to codeproject.)</span></p>\r\n\r\n<p><span lang=EN-GB style=\"font-size:12pt\"></span></p>\r\n<p><span lang=EN-GB style=\"font-size:12pt\">The main questions/requests are:</span></p>\r\n<p style=\"margin-left:42pt;text-indent:-18pt\"><span lang=EN-GB style=\"font-size:12pt\"><span style=\"\">1.<span style=\"font:7pt 'Times New Roman'\">  </span></span></span><span lang=EN-GB>AddLineGraph method overload, when used with markers, returns void, so I can't have a reference of the graph. I think it could be good to have a MarkerPointsGraph property in the LineGraph that references the Markers.</span></p>\r\n\r\n<p style=\"margin-left:42pt;text-indent:-18pt\"><span lang=EN-GB style=\"font-size:12pt\"><span style=\"\">2.<span style=\"font:7pt 'Times New Roman'\">  </span></span></span><span lang=EN-GB>I'm adding directly the linegraphs in the plotsurface (</span><span lang=EN-GB style=\"font-size:10pt\">myPlotSurface.Viewport.Children.Add(<span style=\"color:green\">lineGraph1</span>);</span><span lang=EN-GB>)  to keep the reference of both the markers and the graph, but the FrequencyFilter </span><span lang=EN-GB style=\"font-size:10pt;color:black\">can't be added due its protection level (eg lineGraph1.Filters.Add(new FrequencyFilter());)</span><span lang=EN-GB></span></p>\r\n\r\n<p style=\"margin-left:42pt;text-indent:-18pt\"><span lang=EN-GB style=\"font-size:12pt\"><span style=\"\">3.<span style=\"font:7pt 'Times New Roman'\">  </span></span></span><span lang=EN-GB style=\"font-size:10pt;color:black\">Think of adding 10000 points in a loop to a EnumerableDataSource. At this time when each point is added, the graph is forced to render affecting perfomance. It could be very usefull to have a SuspendUpdates and ResumeUpdates methods (in the enumerabledatasource or in the linegraph?) to improve performance.</span><span lang=EN-GB></span></p>\r\n\r\n<p style=\"margin-left:42pt;text-indent:-18pt\"><span lang=EN-GB style=\"font-size:12pt\"><span style=\"\">4.<span style=\"font:7pt 'Times New Roman'\">  </span></span></span><span lang=EN-GB style=\"font-size:10pt;color:black\">As I've already posted you, I need to have more control on the axis visual.</span><span lang=EN-GB></span></p>\r\n\r\n<p style=\"margin-left:42pt;text-indent:-18pt\"><span lang=EN-GB style=\"font-size:10pt;color:green\"><span style=\"\">5.<span style=\"font:7pt 'Times New Roman'\">    </span></span></span><span lang=EN-GB style=\"font-size:10pt;color:black\">MouseNavigation it's added by default but it should be very usefull to allow the end user to add a custom MouseNavigation</span><span lang=EN-GB style=\"font-size:10pt;color:green\"></span></p>\r\n\r\n<p><span style=\"font-size:12pt\">Thanks </span></p>\r\n<p><span style=\"font-size:12pt\">Marco Roello</span></p></div>",
+    "PostedDate": "2008-10-09T05:09:42.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268217",
+    "ThreadId": "35226",
+    "Html": "<blockquote style=\"border:0.1em solid #cccccc;margin:0.25em 1em 0pt;padding:0pt 0.25em;font-style:italic\"><strong>sberezin wrote:</strong></blockquote>\r\n<blockquote style=\"border:0.1em solid #cccccc;margin:0.25em 1em 0pt;padding:0pt 0.25em;font-style:italic\">\r\n<p><span style=\"font-size:13px\">\r\n<p>plotter.HorizontalAxis.Brush =<span style=\"font-size:13px;color:#2b91af\"> Brushes</span><span style=\"font-size:13px\">.DarkOrange;</span></p>\r\n</span></p>\r\n</blockquote>\r\n<p>Hello, this seems not current anymore - the HorizontalAxis class does not expose a Brush member.</p>\r\n<p>I tried setting HorizontalAxis.Foreground, but it only applies to labels, and I'm willing to change the color of the main axis line and ticks.</p>\r\n<p>This package is a great job!</p>\r\n<p>Best regards,</p>\r\n<p><strong>BB</strong></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-16T15:13:16.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268378",
+    "ThreadId": "35226",
+    "Html": "<p>Hi,</p>\r\n<p>now you should use the following expression to change the color of axis's ticks:</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\"><span style=\"white-space:pre\"> </span>((NumericAxis)plotter.MainHorizontalAxis).AxisControl.TicksPath.Stroke = Brushes.OrangeRed;</div>\r\n<p>\r\n<p>((NumericAxis)plotter.MainHorizontalAxis).AxisControl.TicksPath.Stroke = Brushes.OrangeRed;</p>\r\n<p>You should replace cast to the relevant class if necessary.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<div></div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-17T00:47:35.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268580",
+    "ThreadId": "35226",
+    "Html": "<p>Thanks, Mikhail!</p>\r\n<p>It works fine for the ticks, though I have plotter.HorizontalAxis, not plotter.MainHorizontalAxis (I'm using 0.3.1 stable from the package dynamicdatadisplay-31108.zip, converted to .NET 4 Beta 2).</p>\r\n<p>How may I change the color of the <span style=\"text-decoration:underline\">main axis line</span>?</p>\r\n<p>Best regards,</p>\r\n<p><strong>BB</strong></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-17T11:10:30.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

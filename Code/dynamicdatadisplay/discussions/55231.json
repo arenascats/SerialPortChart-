@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "186452",
+    "ThreadId": "55231",
+    "Html": "Hi,<br>\r\n<br>\r\nIs it possible to disable default zooming and view port movements with mouse draggings. How to do it?<br>\r\n<br>\r\nRegards<br>\r\nRavi.\r\n",
+    "PostedDate": "2009-05-04T01:52:33.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "186469",
+    "ThreadId": "55231",
+    "Html": "Hi Ravi,<div><br></div><div>Yes, it is possible to disable all mouse navigation. It is performed by MouseNavigation class, added to ChartPlotter.Children, and to do it, you should:</div><div>1) locate an instance of MouseNavigation class, that is added to ChartPlotter.Children - the easiest way to do it is to get a value from ChartPlotter.MouseNavigation.</div><div>2) remove it from plotter's Children.</div><div><br></div><div>So, the code is <em>plotter.Children.Remove(plotter.MouseNavigation)</em>;</div><div><br></div><div>Regards,</div><div>Mikhail.</div>",
+    "PostedDate": "2009-05-04T03:00:32.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249753",
+    "ThreadId": "55231",
+    "Html": "<p>Preved :)</p>\r\n<p>I have a related question. Is it possible to disable default context menu?</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards,</p>\r\n<p>Andrei Hilevich</p>",
+    "PostedDate": "2009-10-26T07:07:10.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249762",
+    "ThreadId": "55231",
+    "Html": "<p><span style=\"font-size:10pt;color:black\">I have found the answer myself. The following code does the trick:</span></p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">this</span>.plotter.DefaultContextMenu.Remove();</pre>\r\n<pre><span style=\"font-family:'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif;white-space:normal\">&nbsp;</span></pre>\r\n</div>\r\n<p><span style=\"font-size:10pt;color:black\">However, the proposed solution of disabling mouse navigation seems do not work for double clicks. When I double click the plotter, it zooms in (and zooms out with right button).</span></p>\r\n<p><span style=\"font-size:10pt;color:black\"><br></span></p>\r\n<p>Best Regards,</p>\r\n<p>Andrei Hilevich</p>",
+    "PostedDate": "2009-10-26T07:26:11.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249847",
+    "ThreadId": "55231",
+    "Html": "<p>Hi Andrei,</p>\r\n<p>double click handling is implemented in KeyboardNavigation as MouseGesture, so to disable it you should remove KeyboardNavigation from the plotter (for example, calling plotter.Children.Remove(plotter.KeyboardNavigation)).</p>\r\n<p>&nbsp;</p>\r\n<p>I wonder why do you want to remove all this functionality? Is there is some special application?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-26T11:00:15.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "202164",
+    "ThreadId": "59708",
+    "Html": "<p>If you use markers in your graph in conjunction with data transformations then you will encounter a bug. An example of a data transormation would be inverting the X or Y axis (see the excellent discussion previously on this board). Here are the source fixes to make&nbsp;transformations&nbsp;work with markers:</p>\r\n<p>1. In OnRenderCore method, change<br><strong><span style=\"color:#808080;font-size:x-small\"><span style=\"color:#808080;font-size:x-small\">\r\n<pre>            var transform = Viewport.Transform;\r\n</pre>\r\n<p>to</p>\r\n<pre>            var transform = GetTransform();\r\n</pre>\r\n</span></span></strong></p>\r\n<pre>2.  Copy the method UpdateCore() from LineGraph.cs AND all supporting properies and methods to make it compile. (Probably there should be some common base class <br>to stick all this code so we don't have to copy and paste.</pre>\r\n<pre>Good Luck.</pre>",
+    "PostedDate": "2009-06-16T13:05:33.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

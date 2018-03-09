@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "665827",
+    "ThreadId": "271033",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>can anybody show a working sample how to display a chart with a logarthmix display of the X-values where the X-axis represents dates (HorizonotalDateTimeAxis)?</p>\r\n<p>Any help greatly appreciated.</p>\r\n<p>Thank you!</p>\r\n",
+    "PostedDate": "2011-08-31T09:24:03.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "666137",
+    "ThreadId": "271033",
+    "Html": "<p>You can use this ready sample from my blog as example:</p>\r\n<p>http://www.dotmaniac.net/?p=295</p>",
+    "PostedDate": "2011-09-01T00:39:10.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

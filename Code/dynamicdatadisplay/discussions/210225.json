@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "434341",
+    "ThreadId": "210225",
+    "Html": "<p>I have a simple graph in the xaml file as follows</p>\r\n<p>&nbsp;&lt;d3:ChartPlotter Name=&quot;myPlotter&quot;&gt;&nbsp;&nbsp; &nbsp;</p>\r\n<p>&nbsp;&nbsp;&lt;/d3:ChartPlotter&gt;</p>\r\n<p><br>When I run the application, I can zoom in/out &nbsp;to any extent and I want to restrict the zoom feature.&nbsp;<br><br>I am looking for the code/method than can restrict me from zooming the graph too much. &nbsp;I tried looking around and reading the posts but was not able to figure out. If somebody can help me with the sample code, it will be much appreciated.</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-22T13:47:05.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434658",
+    "ThreadId": "210225",
+    "Html": "<p>Hi dolph,</p>\r\n<p>You will want to use ViewportRestrictions. I think in your case, you want to set a MinimalSizeRestriction and a MaximalSizeRestriction.</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>_chartPlotter.Viewport.Restrictions.Add(<span style=\"color:blue\">new</span> MinimalSizeRestriction(<span style=\"color:blue\">new</span> DataRect());\r\n_chartPlotter.Viewport.Restrictions.Add(<span style=\"color:blue\">new</span> MaximalSizeRestriction(<span style=\"color:blue\">new</span> DataRect());\r\n\r\n</pre>\r\n</div>\r\n<p>With the DataRects containing your zoom restrictions. Let me know if this helps.</p>",
+    "PostedDate": "2010-04-23T08:10:25.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434664",
+    "ThreadId": "210225",
+    "Html": "<p>Thank you for the response. I am not sure if I understand the solution you provided.</p>\r\n<p>With my My default code as above,&nbsp;my X axis is from 0 to 1 and my Y axis is from 0 to 1. &nbsp; Now if I have to control zoom such that my x axis at the max &nbsp;is 50 and min is 0, and same for Y axis, how do I provide this restriction in the code above?</p>\r\n<p>Right now with the solution you provided, I don't know how to achieve the above.</p>",
+    "PostedDate": "2010-04-23T08:19:09.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434667",
+    "ThreadId": "210225",
+    "Html": "<p>You can create your own restriction as follows:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">class</span> HWZoomRestriction : ViewportRestriction\r\n    {\r\n        <span style=\"color:blue\">private</span> <span style=\"color:blue\">double</span>? _minW = <span style=\"color:blue\">null</span>;\r\n        <span style=\"color:blue\">private</span> <span style=\"color:blue\">double</span>? _minH = <span style=\"color:blue\">null</span>;\r\n\r\n        <span style=\"color:blue\">public</span> HWZoomRestriction(<span style=\"color:blue\">double</span>? width, <span style=\"color:blue\">double</span>? height)\r\n            : <span style=\"color:blue\">base</span>()\r\n        {\r\n            _minW = width;\r\n            _minH = height;\r\n        }\r\n\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">double</span>? MinWidth\r\n        {\r\n            <span style=\"color:blue\">get</span> { <span style=\"color:blue\">return</span> _minW; }\r\n            <span style=\"color:blue\">set</span>\r\n            {\r\n                <span style=\"color:blue\">if</span> (_minW != value)\r\n                {\r\n                    _minW = value;\r\n                    RaiseChanged();\r\n                }\r\n            }\r\n        }\r\n\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">double</span>? MinHeight\r\n        {\r\n            <span style=\"color:blue\">get</span> { <span style=\"color:blue\">return</span> _minH; }\r\n            <span style=\"color:blue\">set</span>\r\n            {\r\n                <span style=\"color:blue\">if</span> (_minH != value)\r\n                {\r\n                    _minH = value;\r\n                    RaiseChanged();\r\n                }\r\n            }\r\n        }\r\n\r\n        <span style=\"color:blue\">public</span> <span style=\"color:blue\">override</span> DataRect Apply(DataRect previousDataRect, DataRect proposedDataRect, Viewport2D viewport)\r\n        {\r\n            DataRect newRect = <span style=\"color:blue\">new</span> DataRect();\r\n            <span style=\"color:blue\">if</span> (MinWidth.HasValue &amp;&amp; proposedDataRect.Width &lt; MinWidth.Value)\r\n            {\r\n                newRect.XMin = previousDataRect.XMin;\r\n                newRect.Width = MinWidth.Value;\r\n            }\r\n            <span style=\"color:blue\">else</span>\r\n            {\r\n                newRect.XMin = proposedDataRect.XMin;\r\n                newRect.Width = proposedDataRect.Width;\r\n            }\r\n            <span style=\"color:blue\">if</span> (MinHeight.HasValue &amp;&amp; proposedDataRect.Height &lt; MinHeight.Value)\r\n            {\r\n                newRect.YMin = previousDataRect.YMin;\r\n                newRect.Height = MinHeight.Value;\r\n            }\r\n            <span style=\"color:blue\">else</span>\r\n            {\r\n                newRect.YMin = proposedDataRect.YMin;\r\n                newRect.Height = proposedDataRect.Height;\r\n            }\r\n            <span style=\"color:blue\">return</span> newRect;\r\n        }\r\n    }\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>And then add that restriction to the Viewport:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>_chartPlotter.Viewport.Restrictions.Add(\r\n<span style=\"color:blue\">new</span> HWZoomRestriction(minWidth, minHeight));\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-04-23T08:33:59.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434697",
+    "ThreadId": "210225",
+    "Html": "<p>Hello everybody!</p>\r\n<p>&nbsp;</p>\r\n<p>I want to inform you that in our internal code we have renamed <em>Restrictions</em>&nbsp;to <em>Constraints, </em>so please be ready to do the same :)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-23T09:27:11.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434720",
+    "ThreadId": "210225",
+    "Html": "<p>sascharu, thanks for your response and code, but it dosen't restrict me from zooming. &nbsp;It only changed the value of the X and Y axis for me (when I passed minWidth and minHeight as 10, the X axis went from 1 to 10 and Y axis went from 1 to 10 and I could still zoom in and out).</p>\r\n<p>&nbsp;</p>\r\n<p>Mikhail, thanks for the update but I would also appreciate an answer for my question if possible. Why is it so hard to restrict zooming on a graph? Is this not a very basic feature to restrict the amount of zoom?</p>",
+    "PostedDate": "2010-04-23T10:43:02.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434740",
+    "ThreadId": "210225",
+    "Html": "<p>If you set your Viewport.Domain to the same&nbsp;constraints&nbsp;as the HWZoomRestriction, then the control would not zoom.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>_chartPlotter.Viewport.Domain = <span style=\"color:blue\">new</span> DataRect(x, y, minWidth, minHeight);\r\n</pre>\r\n</div>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>_chartPlotter.Viewport.Restrictions.Add(<span style=\"color:blue\">new</span> HWZoomRestriction(minWidth, minHeight));\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>If you don't have the Viewport.Domain set, then you can zoom out. If you don't have Restrictions/Constraints set, then you can zoom in.</p>\r\n<p>Hope this helps.</p>\r\n<p>&nbsp;</p>\r\n<p>Sasha.</p>",
+    "PostedDate": "2010-04-23T11:21:59.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456647",
+    "ThreadId": "210225",
+    "Html": "<p>Is it possible to make Viewport.Domain a dependency property so I can bind my rectangle to it in xaml? I have tried with no luck. Please help!! Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-17T05:40:53.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "220184",
+    "ThreadId": "64661",
+    "Html": "<p>We follow the Simulation project to dynamicaly display data to implement our real time data display.</p>\r\n<p>One of the problem is that the Top scale in y-axis sometimes only shows partial number. It looks like the Top scale changes as maximum Y&nbsp;data plot value changes.</p>\r\n<p>Is there a way we can overcome this problem?</p>\r\n<p>such as Set the Top scale a little big than the maximum real y data value, so the top scale number always show on the y-axis.</p>\r\n<p>thx!</p>",
+    "PostedDate": "2009-08-05T23:55:03.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221188",
+    "ThreadId": "64661",
+    "Html": "<p>Hi,</p>\r\n<p>You arу right - as data changes, its bounding box changes, too, and visible area changes to fit this bounding box. Axes takes their values to display from this visible area.</p>\r\n<p>All this happens when <strong>Viewport </strong>is in '<strong>FitToView</strong>' state, in which it changes its displayed area dynamically when charts change their size. You can set fixed size for <strong>Viewport.Visible</strong>, or you can use viewport restrictions - for example, <strong>FitToViewRestrictions </strong>to set y maximum to stable value - you should only create a descendant of <strong>ViewportRestriction </strong>class and do all the work in one overriden method, and then add a new instance of you restriction to <strong>Viewport.FitToViewRestrictions</strong> collection. These restrictions are applied only when plotter is in '<strong>FitToView</strong>' state, and other group of restrictions - simply <strong>Viewport.Restrictions </strong>are applied always. Restriction is a small piece of code that can influence on what final value <strong>Viewport.Visible </strong>will take.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-08T19:10:01.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

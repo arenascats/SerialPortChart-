@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "520399",
+    "ThreadId": "234267",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp;&nbsp; I want to show a line graph whose values are going to change contineously. It should behave in the same way as the example (..\\Samples\\v0.3\\Simulation\\SimulationSample.exe) from D3 website is behaving.<br>\r\n&nbsp;&nbsp; Could some one help me out and tell me the code to add next point to the LineSeries&nbsp;dynamically?</p>\r\n<p>Thanks &amp; Regards,</p>\r\n<p>Anand Shanbhag</p>\r\n",
+    "PostedDate": "2010-11-11T00:23:48.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520823",
+    "ThreadId": "234267",
+    "Html": "\r\n<p>You update the DataSource for the LineGraph.&nbsp; So if you are using an ObservableDataSource, then add a point to the Collection.</p>\r\n<p>ods.Add(point);</p>\r\n<p>Your graph should update automatically.</p>\r\n",
+    "PostedDate": "2010-11-11T15:31:16.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520933",
+    "ThreadId": "234267",
+    "Html": "\r\n<div style=\"color:black; background-color:white\">\r\n<pre>Thanks a lot!</pre>\r\n</div>\r\n<p>It was very useful;&nbsp; I have done the following things in my code;</p>\r\n<p><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></p>\r\n<p>&nbsp; <span style=\"color:blue\">private</span> ObservableDataSource&lt;Point&gt; source1;</p>\r\n</span></span></span>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">this</span>.source1 = <span style=\"color:blue\">new</span> ObservableDataSource&lt;Point&gt;();\r\n</pre>\r\n</div>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">this</span>.LineChart.AddLineGraph(<span style=\"color:blue\">this</span>.source1, 2.0, <span style=\"color:#a31515\">&quot;Data row 1&quot;</span>);\r\n</pre>\r\n</div>\r\n<p><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre> <span style=\"color:blue\">for</span> (<span style=\"color:blue\">int</span> i = 0; i &lt; 100; i&#43;&#43;)\r\n {\r\n     <span style=\"color:blue\">this</span>.source1.AppendAsync(<span style=\"color:blue\">base</span>.Dispatcher, item);\r\n }\r\n</pre>\r\n</div>\r\n<span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><span style=\"font-family:Consolas; font-size:x-small\"><font face=\"Consolas\" size=\"2\">\r\n<p>&nbsp;</p>\r\n</font></span></span></span></span></span></span></span></span></span>\r\n<p>&nbsp;</p>\r\n</span></span>\r\n<p>Thanks &amp; Regards,</p>\r\n<p><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\"><span style=\"font-family:Consolas; color:#0000ff; font-size:x-small\">&nbsp;</span></span></span>Anand Shanbhag</p>\r\n</span>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-family:Consolas; font-size:x-small\"></p>\r\n<p><span style=\"font-family:Consolas; font-size:x-small\">&nbsp;</span></p>\r\n</span>\r\n<p></p>\r\n",
+    "PostedDate": "2010-11-11T23:30:32.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

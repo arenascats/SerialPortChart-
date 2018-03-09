@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "690244",
+    "ThreadId": "277414",
+    "Html": "\r\n<p>Is this possible? All I can seem to find are:</p>\r\n<p><strong>plotter.Visible.Left</strong> and&nbsp;<strong>plotter.Visible.X</strong> etc.</p>\r\n<p>These just give coordinates between zero to one. Is it possible to retrieve the actual axis values for a given point?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-10-27T06:01:34.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

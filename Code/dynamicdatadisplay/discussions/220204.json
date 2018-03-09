@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "469819",
+    "ThreadId": "220204",
+    "Html": "<p>I am working on a multi graph environment where we let the users pick a series from one graph and paste the series on the other graph. How can i achieve this feature functionality?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-20T10:38:16.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471249",
+    "ThreadId": "220204",
+    "Html": "<p>Which part of this process do you need help with?</p>\r\n<ul>\r\n<li>Identifying which series the user wants to copy.</li>\r\n<li>Finding the &quot;selected&quot; series data</li>\r\n<li>Copying the data to the clipboard</li>\r\n<li>Pasting the data from the clipboard to another graph</li>\r\n</ul>\r\n<p>Are the graphs in the same program/process?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-22T15:43:17.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "471842",
+    "ThreadId": "220204",
+    "Html": "<p>I can already&nbsp;identify the series when the user clicks on it, but I need to enable them to be able to drag the series to another chartplotter in the same process. I guess what I am asking is which classes to I have to know well to achieve this.</p>\r\n<p>The chart plotters are in several tabs.</p>",
+    "PostedDate": "2010-07-23T13:49:03.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

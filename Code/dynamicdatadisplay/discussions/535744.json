@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1215478",
+    "ThreadId": "535744",
+    "Html": "Hi,\r<br />\n<br />\nI want to use ChartPlotter as MVVM mode, but I don't know how to implement FitToView, I try to use a button command,but it doesn't work.\r<br />\nThis is my code:\r<br />\n<br />\n private readonly Viewport2D viewport = new Viewport2D();\r<br />\npublic ActionCommand FitToViewCommand { get; set; }\r<br />\npublic ChartPlotterAdapter()<br />\n<pre><code>    {  \n            this.FitToViewCommand = new ActionCommand(OnFitToViewCommandExecuted);\n     }</code></pre>\n\nprivate void OnFitToViewCommandExecuted(object obj)<br />\n<pre><code>    {\n        viewport.FitToView();\n   }\n</code></pre>\n\nI hope I can get your help.<br />\n",
+    "PostedDate": "2014-02-27T00:24:51.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235072",
+    "ThreadId": "535744",
+    "Html": "I had a similar problem and figured out an easy way to handle it.\r<br />\n<br />\nI created the following simple class:<br />\n<pre><code>/// &lt;summary&gt;\n/// Used to get a handle on the Plotter that PlotterElements are attached to.\n/// Provides a way to access the plotter object via MVVM.  Just add an instance\n/// of this class to the list of PlotterElements that the Plotter2D is bound to,\n/// then you can access the Plotter object via the Plotter property.\n/// &lt;/summary&gt;\npublic class PlotterReferencePlotterElement : IPlotterElement\n{\n    public void OnPlotterAttached(Plotter plotter)\n    {\n        this.Plotter = plotter;\n    }\n\n    public void OnPlotterDetaching(Plotter plotter)\n    {\n        this.Plotter = null;\n    }\n\n    public Plotter Plotter { get; private set; }\n}\n\n</code></pre>\n\nIn my view model, I have an observable collection that the chart binds its ItemsSource to:<br />\n<pre><code>    public ObservableCollection&lt;IPlotterElement&gt; PlotterElements { get; private set; }\n</code></pre>\n\nOn initialisation of the view model, when you're adding your plotter elements, add a PlotterReferencePlotterElement<br />\n<pre><code>    private PlotterReferencePlotterElement plotterReferencePlotterElement;\n\n    private void AddPlotterReferencePlotterElement()\n    {\n        plotterReferencePlotterElement = new PlotterReferencePlotterElement();\n        PlotterElements.Add(plotterReferencePlotterElement);\n    }\n</code></pre>\n\nThen, in your view model again, define the FitToView() function like so:<br />\n<pre><code>    public void FitToView()\n    {\n        Plotter2D plotter2D = plotterReferencePlotterElement.Plotter as Plotter2D;\n        if (plotter2D != null)\n        {\n            plotter2D.FitToView();\n        }\n    }\n</code></pre>\n\nIt can access the Plotter from the plotterReferencePlotterElement, and thus call FitToView().\r<br />\n<br />\nIt works fine for me!\r<br />\n<br />\nMike<br />\n",
+    "PostedDate": "2014-04-17T07:59:35.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

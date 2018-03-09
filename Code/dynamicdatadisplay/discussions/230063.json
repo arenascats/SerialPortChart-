@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "503930",
+    "ThreadId": "230063",
+    "Html": "<p>I need the vertical axis in ChartPlotter to flow the opposite direction.&nbsp; For example I have depth values.&nbsp; For the purposes of the application, the depths are considered to be positive even though they are moving in a negative direction.&nbsp; So I just need the values plotted and labeled in reverse.</p>\r\n<p>0</p>\r\n<p>1000</p>\r\n<p>2000</p>\r\n<p>That kind of thing.&nbsp; Is this possible?</p>\r\n<p>&nbsp;</p>\r\n<p>Edit:&nbsp; Sorry for not searching the discussions more thoroughly before posting.&nbsp; Here is the answer:</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=56832\">http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=56832</a></p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-10-07T14:36:22.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

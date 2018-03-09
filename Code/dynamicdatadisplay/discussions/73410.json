@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "250891",
+    "ThreadId": "73410",
+    "Html": "<p>Good day,</p>\r\n<p>I'm trying to crate a chart that will display 2 linegraphs on a single plotter. Both lines should have their own scale. I had a look at the sample that is available for two lines with two scales, but it seems like they need to have the same xDatasource.</p>\r\n<p>Can you please give me some ideas how I can go about doing this with a dynamic Ydatasource?</p>\r\n<p>I would think that you will have to have 5 datasources, x, y1, y2, xy1 and xy2. You would then increment x, add the new values to y1 &amp; y2. However I have not been able to find a way to just add values to x, y1 &amp; y2. it seems like you have to re-create them.</p>\r\n<p>please let me know if their is an easier way to do this.</p>\r\n<p>Thanks &amp; Regards</p>\r\n<p>Cornelius Kruger<br>MediWatch</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-28T14:32:58.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251855",
+    "ThreadId": "73410",
+    "Html": "<p>Hi Cornelius,</p>\r\n<p>there is no need in having common x-dataSource for charts.</p>\r\n<p>To make data dynamic simple create ObservableCollections for you data, as it has CollectionChanged event we are using. Then wrap this collection by, for example, y-DataSource, and assign to LineChart.</p>\r\n<p>So you have to have 4 dataSources of double - x1, y1, y_for_x1 and y_for_x2.</p>\r\n<p>This should work.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-30T20:38:10.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1117544",
+    "ThreadId": "465379",
+    "Html": "I want to place 2 charts. One under the another one. And I want to have the shared horizontal axis like in silverlight example &quot;Plots Compositions -&gt; Synchronized figures&quot;. How to do it in wpf?\r<br />\n<br />\nпо-русски: Я хочу поместить 2 графика. один под другим, но так, чтобы ось X у них была общая. и чтобы когда я двигал верхний график влево-вправо, то нижний тоже бы двигался. можно ли это сделать в wpf?<br />\n",
+    "PostedDate": "2013-11-05T01:57:18.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1119563",
+    "ThreadId": "465379",
+    "Html": "Solution found. [<a href=\"http://stackoverflow.com/questions/19787080/how-to-make-the-x-axis-shared-for-2-charts-in-wpf-in-d3/19828177\" rel=\"nofollow\">http://stackoverflow.com/questions/19787080/how-to-make-the-x-axis-shared-for-2-charts-in-wpf-in-d3/19828177</a> ] (check it here)<br />\n",
+    "PostedDate": "2013-11-06T20:48:39.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

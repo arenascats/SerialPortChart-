@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1424867",
+    "ThreadId": "637789",
+    "Html": "Hi,\r<br />\n<br />\nI am using Dynamic data display for drawing a linegraph on the chartplotter.\r<br />\nBut now i need to place the draggable points and should be able to move the points,so that the linegraph should re-draw itself.\r<br />\nAs of now i couldn't see any built in function in dynamic data display which does it.\r<br />\nPlease help me regarding the same.<br />\n",
+    "PostedDate": "2015-05-11T23:39:36.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437152",
+    "ThreadId": "637789",
+    "Html": "Hi Venkatesh,\r<br />\n<br />\nYou can not do this with LineGraph. Instead you can use ViewPortPolygon.\r<br />\n<br />\nYou might have used &quot;CompositeDataSource&quot; Or &quot;EnumerableDataSource&quot; to draw the line graph.\r<br />\nThis CompositeDataSource gives you the points collection CompositeDataSourceObject.GetPoints(), these points you can map to ViewPortPolygon Points.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2015-08-04T04:15:24.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

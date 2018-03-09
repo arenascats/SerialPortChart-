@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "dynamic Data view",
+    "LastUpdatedDate": "2013-02-21T17:36:52.81-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-09-23T05:19:34.21-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "angosso",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 14302
+  },
+  "FileAttachments": [
+    {
+      "FileId": 4879,
+      "FileName": "style.css",
+      "DownloadUrl": ".\\4879"
+    },
+    {
+      "FileId": 4880,
+      "FileName": "angosso.net.sln",
+      "DownloadUrl": ".\\4880"
+    }
+  ],
+  "Comments": []
+}

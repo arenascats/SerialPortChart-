@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "201593",
+    "ThreadId": "59547",
+    "Html": "<p>I think the placement of left/top and right/bottom axes is inverted. i.e. the bottom and right axes should be the first elements in their containing panel and the top/left axes should be the last element. Corrected method is:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><div style=\"color:Black;background-color:White\"><pre>\t\t<span style=\"color:Blue\">private</span> <span style=\"color:Blue\">int</span> GetInsertionIndexByPlacement(AxisPlacement placement, Panel panel)\r\n\t\t{\r\n\t\t\t<span style=\"color:Blue\">int</span> index = panel.Children.Count;\r\n\r\n\t\t\t<span style=\"color:Blue\">switch</span> (placement)\r\n\t\t\t{\r\n\t\t\t\t<span style=\"color:Blue\">case</span> AxisPlacement.Right: <span style=\"color:Green\">// Was AxisPlacement.Left</span>\r\n\t\t\t\t\tindex = 0;\r\n\t\t\t\t\t<span style=\"color:Blue\">break</span>;\r\n\t\t\t\t<span style=\"color:Blue\">case</span> AxisPlacement.Bottom: <span style=\"color:Green\">// Was AxisPlacement.Top</span>\r\n\t\t\t\t\tindex = 0;\r\n\t\t\t\t\t<span style=\"color:Blue\">break</span>;\r\n\t\t\t\t<span style=\"color:Blue\">default</span>:\r\n\t\t\t\t\t<span style=\"color:Blue\">break</span>;\r\n\t\t\t}\r\n\r\n\t\t\t<span style=\"color:Blue\">return</span> index;\r\n\t\t}\r\n\r\n\r\n</pre>\r\n</div>\r\n</pre>\r\n</div>",
+    "PostedDate": "2009-06-15T07:33:05.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205972",
+    "ThreadId": "59547",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Idea was that axes that are added later, should be farther from viewport that axes added earlier. That's why we are inserting them at 0th index in left and top panels.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-06-26T10:06:26.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205996",
+    "ThreadId": "59547",
+    "Html": "<p>That makes sense. But if you add an axes AFTER an axes title, the newly added axes appears in the wrong place. Try this sequence:</p>\r\n<ol>\r\n<li>Create a ChartPlotter, which will generate the default vertical &amp; horizontal axes.</li>\r\n<li>Add a HorizontalAxisTitle</li>\r\n<li>Replace the&nbsp;default horizontal axis with a new horizontal axis</li>\r\n</ol>\r\n<p>Now the axis title will be closer to the viewport than the horizontal axis.</p>",
+    "PostedDate": "2009-06-26T10:57:50.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "211426",
+    "ThreadId": "59547",
+    "Html": "<p>We'll try to change behaviour of axis titles so that it make sence.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-13T11:50:53.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221281",
+    "ThreadId": "59547",
+    "Html": "<p>Hi!</p>\r\n<p>Bug you've reported was fixed - you can get the latest code without it from '<strong>Source code</strong>' page, latest Changeset.</p>\r\n<p>Also I've added ability to place <strong>HorizontalAxisTitle </strong>on the top and <strong>VerticalAxisTitle</strong>&nbsp;on the right side of plotter.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-09T10:05:22.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

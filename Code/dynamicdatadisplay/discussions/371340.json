@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "870896",
+    "ThreadId": "371340",
+    "Html": "\r\n<div>Aloha,&nbsp;</div>\r\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I&nbsp;want&nbsp;to&nbsp;ask&nbsp;how&nbsp;to&nbsp;set&nbsp;the&nbsp;maximum&nbsp;and&nbsp;minimum&nbsp;of&nbsp;the&nbsp;VerticalAxis&nbsp;in</div>\r\n<div>&nbsp;Dynamic&nbsp;Data&nbsp;Display.</div>\r\n<div>&nbsp;&nbsp;&nbsp;&nbsp; For example, I have a group of data that arranged in order from little to big, and the difference between them is big. If not fixed,&nbsp; the little number input first would be too big when come into screen and when the sequent\r\n big number come, the little number would become little.&nbsp;<br>\r\n&nbsp;&nbsp; So the range of ordinate is changing in the drawing, I want to ask if it can be fixed.</div>\r\n<div>&nbsp;&nbsp; Thanks.</div>\r\n",
+    "PostedDate": "2012-07-17T09:33:19.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892722",
+    "ThreadId": "371340",
+    "Html": "<p>Did you manage to solve this? I am having the same problem - the autofitenabled only seems to work if the new data I load is outside the current range on the y-axis. Otherwise it doesn't re-scale the y-axis. any help much appreciated - thanks!</p>\r\n<p>Edward</p>",
+    "PostedDate": "2012-07-29T06:15:10.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

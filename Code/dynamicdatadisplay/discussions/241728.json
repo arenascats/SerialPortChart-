@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "549048",
+    "ThreadId": "241728",
+    "Html": "\r\n<p>Hi All,</p>\r\n<p>WPF newbie problem:</p>\r\n<p>I'm trying to simply compile and run the &quot;Hello World&quot; project using VS2010. &nbsp;The program actually compiles just fine and runs. &nbsp;However,</p>\r\n<p>I can't get the xaml window to show. &nbsp;I get the &quot;Problem Loading&quot; dialog that tells me something is wrong in the XAML code. &nbsp;Every Type that should be in the namespace is underlined in blue.</p>\r\n<p>You'd think I don't have&nbsp;xmlns:d3=&quot;http://research.microsoft.com/DynamicDataDisplay/1.0&quot; in the namespace declaration area on the top of the window declaration, but I do. &nbsp;It acts like it isn't there.</p>\r\n<p>When I loaded the project it did need to run the 2010 converter and the .dll in the References was not correct (assuming a path issue), so I re-included the dll. &nbsp;</p>\r\n<p>A shove in the right direction would be much appreciated!</p>\r\n",
+    "PostedDate": "2011-01-13T16:11:11.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549068",
+    "ThreadId": "241728",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Which version are you using? &nbsp;Stable or &quot;Nightly&quot;? &nbsp;Nightly is better than Stable version although you may be better to switch over to&nbsp;<a href=\"http://d3future.codeplex.com/\">http://d3future.codeplex.com/</a>&nbsp;which is the version where\r\n development is taking place.</p>\r\n<p>Which projects are marked &quot;Build&quot; in the Visual Studio Configuration Manager? &nbsp;Maybe you aren't building the necessary projects (&quot;Hello World&quot; and DynamicDataDisplay.*).</p>\r\n<p>How did you add the reference to DynamicDataDisplay? &nbsp;By browsing to the DLL or by using the Projects option? &nbsp;You should use the projects option to avoid problems with selecting the &quot;wrong&quot; dll (e.g. debug instead of release).</p>\r\n<p>Grant.</p>\r\n",
+    "PostedDate": "2011-01-13T17:08:15.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "549482",
+    "ThreadId": "241728",
+    "Html": "\r\n<p>Thanks for the quick response Grant,</p>\r\n<p><span style=\"color:#0000ff\"><em>Which version are you using? &nbsp;Stable or &quot;Nightly&quot;? &nbsp;Nightly is better than Stable version although you may be better to switch over to&nbsp;<a href=\"http://d3future.codeplex.com/\">http://d3future.codeplex.com/</a>&nbsp;which\r\n is the version where development is taking place.</em></span></p>\r\n<p>I can't remember which I clicked. &nbsp;If this helps the binaries came from &quot;DynamicDataDisplay v0.3 Binaries &amp; Samples.zip&quot; and the Hello World source was in &quot;dynamicdatadisplay-31108.zip&quot;</p>\r\n<p><span style=\"color:#0000ff\"><em>Which projects are marked &quot;Build&quot; in the Visual Studio Configuration Manager? &nbsp;Maybe you aren't building the necessary projects (&quot;Hello World&quot; and DynamicDataDisplay.*).</em></span></p>\r\n<p>I only had the HelloWorldSample project in the solution. &nbsp;</p>\r\n<p><span style=\"color:#0000ff\"><em>How did you add the reference to DynamicDataDisplay? &nbsp;By browsing to the DLL or by using the Projects option? &nbsp;You should use the projects option to avoid problems with selecting the &quot;wrong&quot; dll (e.g. debug instead\r\n of release).</em></span></p>\r\n<p>I added the binary for DymanicDataDisplay.dll by right clicking References in the Solution explorer and then browsed to the dll. &nbsp;Do you mean that I should add and compile the DynamicDataDisplay source with any solution I use?</p>\r\n<p>I see that I may have not had a good .dll and it could be causing the problem.</p>\r\n<p>In light of that, I went to the d3future.codeplex.com site and downloaded from there. &nbsp;I opened the DymanicDataDisplay project and compiled it to a dll. &nbsp;I then opened the HelloWorld project and included the dll as I described above.</p>\r\n<p>Good News: The XAML viewer now works just fine.</p>\r\n<p>Bad News: AddLineGraph() no longer resolves in the .cs file.</p>\r\n<p>So in this round I can no longer compile to an executable.</p>\r\n<p>Worth noting: on the DynamicDataDisplay project the Options had been set to .NET 4.0. &nbsp;The original stuff was .NET3.5. &nbsp;Could this be an issue? &nbsp;I'll go back and re-compile at 3.5 and see if this doesn't make a difference.</p>\r\n<p>Thanks; Let me know what I'm doing wrong. &nbsp;Did I mention I was a newbie :-). &nbsp;</p>\r\n<p>Michael</p>\r\n<p><em><br>\r\n</em></p>\r\n",
+    "PostedDate": "2011-01-14T09:46:32.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "708167",
+    "ThreadId": "241728",
+    "Html": "<p>I found the solution to this problem after a lot of searching, it is described here:&nbsp; http://stackoverflow.com/questions/3432624/wpf-assembly-reference-missing-project-still-building</p>\r\n<p>\"assemblies that were downloaded need to be manually unblocked. This can  be done in the Windows file properties. After unblocking and a restart  of Visual Studio the problem was solved.\"</p>",
+    "PostedDate": "2011-12-06T07:53:25.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "709820",
+    "ThreadId": "241728",
+    "Html": "<p>Nuitari&gt;&gt; You Sir, are a gentleman.</p>",
+    "PostedDate": "2011-12-09T04:08:35.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

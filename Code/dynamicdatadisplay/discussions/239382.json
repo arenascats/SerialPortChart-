@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "539824",
+    "ThreadId": "239382",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>I have to show a M X N matrix as a&nbsp;M line graphs. I am using a datatable to represent this matrix which will have M rows and N columns. Column Names should be displayed as lables on x-axis and each row should be displayed as a line graph. I have gone\r\n through all 0.2 and 0.3 samples and source code&nbsp;but could not find any suitable example. Could you please provide an example for this, if it can be done.</p>\r\n<p>Thanks in advance.</p>\r\n<p>Shiva</p>\r\n",
+    "PostedDate": "2010-12-23T02:41:59.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540767",
+    "ThreadId": "239382",
+    "Html": "Hi Shiva,\r\n<div><br>\r\n</div>\r\n<div>First of all, please move to <a href=\"http://d3future.codeplex.com/\">http://d3future.codeplex.com/</a> - this is a new project, which is designed to continue the development process of DynamicDataDisplay.</div>\r\n<div>I have updated some samples, so please load the latest version of source code from\r\n<a href=\"http://d3future.codeplex.com/SourceControl/list/changesets\">http://d3future.codeplex.com/SourceControl/list/changesets</a>.</div>\r\n<div>Then open D3.Current solution and run AxisColoringSample project or DynamicDataDisplay.Samples project. In the latter project the sample that should be useful for you is in 0.3.1 folder and named AxisColoringSample, too.</div>\r\n<div><br>\r\n</div>\r\n<div>In the project a specially tuned axis is added to plotter. In the <span style=\"font-family:consolas; white-space:pre\">\r\nSetupLocationalAxis method I have used </span><span style=\"color:rgb(138,204,207); font-family:consolas; white-space:pre\">GenericLocationalLabelProvider and\r\n</span><span style=\"color:rgb(138,204,207); font-family:consolas; white-space:pre\">GenericLocationalTicksProvider</span>\r\n<pre style=\"font-family:consolas\">\r\n<span style=\"font-family:arial; white-space:normal\">to use labels and ticks from collection.</span></pre>\r\n<pre style=\"font-family:consolas\"><span style=\"font-family:arial; white-space:normal\">--</span></pre>\r\nBest regards,<br>\r\nMikhail Brinchuk,<br>\r\n<div><a href=\"https://sites.google.com/site/thecentury/\" target=\"_blank\">My freelance CV</a> - searching for remote work</div>\r\n<br>\r\n<br>\r\n<br>\r\n<div>On Thu, Dec 23, 2010 at 1:42 PM, shivakrishnak <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: shivakrishnak</p>\r\n<div>\r\n<p>Hi.</p>\r\n<p>I have to show a M X N matrix as a M line graphs. I am using a datatable to represent this matrix which will have M rows and N columns. Column Names should be displayed as lables on x-axis and each row should be displayed as a line graph. I have gone through\r\n all 0.2 and 0.3 samples and source code but could not find any suitable example. Could you please provide an example for this, if it can be done.</p>\r\n<p>Thanks in advance.</p>\r\n<p>Shiva</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=239382&ANCHOR#Post539824\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:239382]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2010-12-27T03:50:57.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "541566",
+    "ThreadId": "239382",
+    "Html": "\r\n<p>thanks a lot. I will try this and let u know if it works.</p>\r\n",
+    "PostedDate": "2010-12-29T02:07:54.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

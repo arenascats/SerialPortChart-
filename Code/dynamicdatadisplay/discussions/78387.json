@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "268246",
+    "ThreadId": "78387",
+    "Html": "Hello\r\nThank you for the solution.\r\n\r\nI was wondering if it is possible to display any color/dots/ image on the MapSample solution.  \r\nI tried but can't find an example. \r\n\r\nWhat I'm trying to do is to display a dot or color at certain coordinates (Geocodes).\r\n\r\nCan this be done? and is there an example?\r\n\r\nThanks.",
+    "PostedDate": "2009-12-16T17:27:50.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268456",
+    "ThreadId": "78387",
+    "Html": "<p>Hi,</p>\r\n<p>you can download the latest version of D3 in 'Source Code' page, where you can find a PointSetOnMap sample in Nightly/DynamicDataDisplay.sln/Samples solution folder/v0.4/PointSetOnMap.csproj. I think this is what you want.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-12-17T05:11:23.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "268913",
+    "ThreadId": "78387",
+    "Html": "Thank you. \r\n\r\nThis is what I was looking for. \r\n\r\n\r\nIt looks like Virtual Earth requires credentials/Key  and I was wondering where I need to change this in the project.\r\n\r\nAlso where can I sign up to get a key.  Thanks. \r\n\r\n\r\nCompiling the project stops in VEImageryServerBase.cs\r\n\r\nat the following line \r\n\r\nthrow new InvalidOperationException(VE.Properties.Resources.VEServerCannotLoadTile, e.Error);\r\n\r\nwith error\r\n\r\n\r\nServer cannot load a tile due to its invalid internal state. \r\nThis could happen because of wrong or expired VirtualEarth credentials.\r\n\r\n\r\nThanks again for prompt reply. ",
+    "PostedDate": "2009-12-18T06:27:56.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

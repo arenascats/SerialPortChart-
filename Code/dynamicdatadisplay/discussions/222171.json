@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "475411",
+    "ThreadId": "222171",
+    "Html": "<p><span style=\"font-family:Arial;font-size:medium\">It is my understanding that WPF sends all rendering to Direct3D so I am confused about how their would be any&nbsp;performance improvements by using DirectX - any explanation would be appreciated.</span></p>",
+    "PostedDate": "2010-08-02T05:48:20.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476147",
+    "ThreadId": "222171",
+    "Html": "<p>Yes, it's also my understanding that WPF renders via Direct3D.</p>\r\n<p>However, I believe it's not the actual drawing of elements that is the issue. It's the overhead associated with the WPF Stream geometry's, figures etc that the DirectX version is attempting to bypass. &nbsp;</p>\r\n<p>I'm not sure which objects are the ones the impose a significant overhead but each object that is involved in the drawing process will impose some performance penalty.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-03T14:39:54.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "480257",
+    "ThreadId": "222171",
+    "Html": "<p>Hello Everyone,</p>\r\n<p>I would&nbsp;definitely like to help with improving the performance of this library. We have a requirement to plot upwards of 250K points on the graph. We could use a smart algorithm to only draw changing points to improve performance. But I think the key is to use Graphic Acceleration card on the machine to render. Does anyone have any ideas on this?</p>\r\n<p>thanks</p>\r\n<p>Kishore Vanapalli</p>",
+    "PostedDate": "2010-08-13T08:58:40.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "Id": "0",
+    "Name": "Silverlight DynamicDataDisplay v0.2 - Spring 2010",
+    "DevelopmentStatus": "Beta",
+    "Description": "! Silverlight version of WPF DynamicDataDisplay charting library \n\n!! The version 0.2 shows a greater performance comparing with version 0.1 while having the same functionality.\n\n!! The following features are supported by Silverlight version:\n* Numeric and DateTime Axes\n* Line graphs\n* Flexible data sources\n* Setting custom legend position\n* Setting custom navigation buttons location\n\n!! Major differences from WPF version of DynamicDataDisplay\n* Use TextBlock objects in a xaml layout definition inside the VerticalAxisTitle and HorizontalAxisTitle instead of strings\n* Use VerticalAxisTitle(TextBlock content) construcor to create a VerticalAxisTitle in C#\n* Use LineGraphSettings and ChartPlotterSettings classes to perform custom configuration of LineGraph and ChartPlotter along with LineGraph(IPointDataSource pointSource, LineGraphSettings settings) and ChartPlotter(ChartPlotterSettings settings) constructors\n\n!! Help us to improve DynamicDataDisplay - take a part in our survey: [url:http://microsoft.cs.msu.su/Projects/Pages/D3Poll.aspx]\n\n!! Read more about DynamicDataDisplay.Silverlight at [DynamicDataDisplay Silverlight] wiki page",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-03-24T02:02:13.68-07:00",
+    "Files": [
+      {
+        "Id": "9b8356f1-bf6e-495c-943e-50d5ffce5adf",
+        "FileName": "DynamicDataDisplay.Silverlight Binary v0.2.zip",
+        "Url": "./0/9b8356f1-bf6e-495c-943e-50d5ffce5adf",
+        "Type": "Application",
+        "UploadDate": "2010-03-24T01:29:02.253-07:00"
+      },
+      {
+        "Id": "a5689e6e-6420-4414-9515-f7be5497dbff",
+        "FileName": "DynamicDataDisplay.Silverlight Source v0.2.zip",
+        "Url": "./0/a5689e6e-6420-4414-9515-f7be5497dbff",
+        "Type": "Source Code",
+        "UploadDate": "2010-03-24T01:55:08.947-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "Silverlight DynamicDataDisplay v0.1 - Summer 2009",
+    "DevelopmentStatus": "Beta",
+    "Description": "! Silverlight version of WPF DynamicDataDisplay charting library \n!! The following features are supported by Silverlight version:\n* Numeric and DateTime Axes\n* Line graphs\n* Flexible data sources\n* Setting custom legend position\n* Setting custom navigation buttons location\n\n!! Major differences from WPF version of DynamicDataDisplay\n* Use TextBlock objects in a xaml layout definition inside the VerticalAxisTitle and HorizontalAxisTitle instead of strings\n* Use VerticalAxisTitle(TextBlock content) construcor to create a VerticalAxisTitle in C#\n* Use LineGraphSettings and ChartPlotterSettings classes to perform custom configuration of LineGraph and ChartPlotter along with LineGraph(IPointDataSource pointSource, LineGraphSettings settings) and ChartPlotter(ChartPlotterSettings settings) constructors\n\n!! Help us to improve DynamicDataDisplay - take a part in our survey: [url:http://microsoft.cs.msu.su/Projects/Pages/D3Poll.aspx]\n\n!! Read more about DynamicDataDisplay.Silverlight at [DynamicDataDisplay Silverlight] wiki page",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-08-03T09:11:09.443-07:00",
+    "Files": [
+      {
+        "Id": "4c69965d-2ef4-48d2-abe9-f4237dabfde4",
+        "FileName": "DynamicDataDisplay.Silverlight Source.zip",
+        "Url": "./1/4c69965d-2ef4-48d2-abe9-f4237dabfde4",
+        "Type": "Source Code",
+        "UploadDate": "2009-08-03T08:45:46.137-07:00"
+      },
+      {
+        "Id": "de8e541f-1705-4608-9ffb-2d7421e8538c",
+        "FileName": "DynamicDataDisplay Binary.zip",
+        "Url": "./1/de8e541f-1705-4608-9ffb-2d7421e8538c",
+        "Type": "Application",
+        "UploadDate": "2009-08-03T08:35:02.94-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "DynamicDataDisplay v0.2.1",
+    "DevelopmentStatus": "Beta",
+    "Description": "* Added support of axes with TimeSpan ticks\n* Implemented a variety of simple shapes to be placed into Plotter, such as:\n** Horizontal and vertical lines\n** Segments\n** Horizontal and vertical rectangles\n* NumericTicksProvider has now a MinStep property to specify minimal step between ticks of Numeric Axis\n* Added several tests for DynamicDataDisplay",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-01-04T06:20:12.527-08:00",
+    "Files": [
+      {
+        "Id": "c839ae9c-7799-41b7-9f87-5091e7ad634f",
+        "FileName": "DynamicDataDisplay 0.2.1.zip",
+        "Url": "./2/c839ae9c-7799-41b7-9f87-5091e7ad634f",
+        "Type": "Source Code",
+        "UploadDate": "2009-01-04T06:16:38.01-08:00"
+      },
+      {
+        "Id": "d4b7882f-936b-4ad0-8bc6-acc5f95184b6",
+        "FileName": "DynamicDataDisplay 0.2.1 Release.zip",
+        "Url": "./2/d4b7882f-936b-4ad0-8bc6-acc5f95184b6",
+        "Type": "Application",
+        "UploadDate": "2009-01-04T06:20:12.197-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "DynamicDataDisplay v0.2 - DateTime support in axes",
+    "DevelopmentStatus": "Beta",
+    "Description": "* Major refactoring of axes rendering code\n** DateTime axes with wide range of values are implemented\n** Two new samples for time axes are added\n* Minor bugs are fixed \n* Silverlight compatibility is improved for future releases",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-12-08T10:52:11.99-08:00",
+    "Files": [
+      {
+        "Id": "63be1d3c-53c7-4ab0-acf7-4d48cc0de5ce",
+        "FileName": "DynamicDataDisplay 0.2.0.812.zip",
+        "Url": "./3/63be1d3c-53c7-4ab0-acf7-4d48cc0de5ce",
+        "Type": "Source Code",
+        "UploadDate": "2008-12-08T07:43:49.243-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "0.1.0.601",
+    "DevelopmentStatus": "Beta",
+    "Description": "Initial release. Main features include:\n* Dynamic data sources for arrays and other collections with lamda expressions converting data to coordinates;\n* Line charts drawn with any pen;\n* Marker charts with data bound marker properties;\n* High speed zooming/panning;",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-11-12T10:04:03.2-08:00",
+    "Files": [
+      {
+        "Id": "206fd466-0ead-4111-b424-2ee08d359d71",
+        "FileName": "DynamicDataDisplay_0.1.0.601.zip",
+        "Url": "./4/206fd466-0ead-4111-b424-2ee08d359d71",
+        "Type": "Application",
+        "UploadDate": "2008-07-21T03:44:39.18-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "WPF DynamicDataDisplay v0.4 - Summer 2009",
+    "DevelopmentStatus": "Planning",
+    "Description": "* Performance improvements in axes\n* Several bug fixes\n* Convenient API to set visible area when data is not of double x double type (e.g., *DateTime x double* or *double x TimeSpan*)\n* DataNavigation helpers - allows to show data for some latest period\n* New navigation control - HorizontalScrollBar\n* Maps from Microsoft VirtualEarth using MS VE ImageryService\n\n*Breaking* *changes:*\n* ChartPlotter.HorizontalAxis renamed to MainHorizontalAxis\n* ChartPlotter.VerticalAxis renamed to MainVerticalAxis\n* Type of Viewport.Visible is not a Rect, but a DataRect",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-08-10T01:11:27.77-07:00",
+    "Files": []
+  },
+  {
+    "Id": "6",
+    "Name": "WPF DynamicDataDisplay v0.3 - April 2009 Release",
+    "DevelopmentStatus": "Beta",
+    "Description": "!!! Please note that development of DynamicDataDisplay didn't stopped since April 2009, and the most new version is available in our \"Source code\" page ([url:http://dynamicdatadisplay.codeplex.com/SourceControl/ListDownloadableCommits.aspx])\n\n!!! Do you want to add some feature to DynamicDataDisplay? Do you want to change some behavior? Do you want us know how are you using DynamicDataDisplay?\n!!! Take a part in our survey - visit *[url:http://microsoft.cs.msu.su/Projects/Pages/D3Poll.aspx]*\n!! Changes and mayor features:\n* Added maps subsystem - allows to display tiled maps, with tiles downloaded from network tile servers or loaded from folders on disk.\n** Map can be displayed with coordinate transformation or with non-linear scaling applied to tiles.\n** Includes sample network tile server for OpenStreetMaps.\n* Multiple improvements in axes - now you have more ways to control labels formatting and look\n** Added axes to display integer values and any items from any collection.\n* Added support for custom context menu items\n* User interface is localized to both English and Russian\n* Added support for displaying isolines\n* Added multiple comments for classes, methods and properties (still growing)\n* Added control for displaying palettes, based on ChartPlotter\n* Added support for data transformations in viewport, allowing to implement polar transform, or, for example, non-linear mercator longitude transform.\n* Added API to adjust Legend's position\n* Multiple bug fixes\n\nAnd much more!",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-10-19T18:54:25.22-07:00",
+    "Files": [
+      {
+        "Id": "e7dfc56f-8800-44c7-83e4-60b80839571b",
+        "FileName": "DynamicDataDisplay v0.3 Binaries & Samples.zip",
+        "Url": "./6/e7dfc56f-8800-44c7-83e4-60b80839571b",
+        "Type": "Application",
+        "UploadDate": "2009-04-28T02:33:11.187-07:00"
+      },
+      {
+        "Id": "3e8382e4-cdc3-4877-897d-527e55d2155f",
+        "FileName": "DynamicDataDisplay v0.3 Binaries.zip",
+        "Url": "./6/3e8382e4-cdc3-4877-897d-527e55d2155f",
+        "Type": "Application",
+        "UploadDate": "2009-04-28T02:27:22.17-07:00"
+      },
+      {
+        "Id": "939f0108-81b6-4352-aa7f-a97075d70e86",
+        "FileName": "DynamicDataDisplay v0.3 Source.zip",
+        "Url": "./6/939f0108-81b6-4352-aa7f-a97075d70e86",
+        "Type": "Source Code",
+        "UploadDate": "2009-04-28T02:33:11.623-07:00"
+      },
+      {
+        "Id": "1900209f-8114-44b5-9bee-02bbc6171375",
+        "FileName": "DynamicDataDisplay v0.3 Documentation.zip",
+        "Url": "./6/1900209f-8114-44b5-9bee-02bbc6171375",
+        "Type": "Documentation",
+        "UploadDate": "2009-04-28T05:43:48.92-07:00"
+      }
+    ]
+  }
+]

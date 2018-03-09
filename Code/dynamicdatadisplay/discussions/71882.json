@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "245336",
+    "ThreadId": "71882",
+    "Html": "<p>Hi, in the current implementation I see that the values in an axis constantly adjust depending on the data in the chart, I need to have the vertical axis values to always be between 0 and 100. This will allow one to evaluate the change in the data, currently with adjustable axis, the scale constantly changes.</p>\r\n<p>Is there a way to achieve that?</p>",
+    "PostedDate": "2009-10-13T17:04:38.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245618",
+    "ThreadId": "71882",
+    "Html": "<p>Hi, there are different ways to archieve what you want:</p>\r\n<p>1) you can set the plotter.Viewport.Visible property to some value that is good for you, for example, to new DataRect(xMin, 0, width, 100);</p>\r\n<p>2) you can create a new class deriving from ViewportRestriction with the following code inside</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> DataRect Apply(DataRect previousDataRect, DataRect proposedDataRect, Viewport2D viewport) {\r\n  proposedDataRect.YMin = 0;\r\n  proposedDataRect.Height = 100;\r\n  <span style=\"color:Blue\">return</span> proposedDataRect;\r\n}\r\n</pre>\r\n</div>\r\n<p>and then add an instance of this restriction to plotter.Viewport.Restrictions collection.</p>\r\n<p>This will allow user to pan the chart horizontally but will restrict visible area to have fixed ystart and height.</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-14T07:52:06.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245691",
+    "ThreadId": "71882",
+    "Html": "<p>Thanks, the second approach worked pretty well in my scenario.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-14T11:11:24.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

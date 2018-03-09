@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "573681",
+    "ThreadId": "247954",
+    "Html": "\r\n<p>Is it possible to assign label for each data point on line graph? ( <a href=\"http://www.syncfusion.com/content/en-US/Products/screenshots/aspnet/img/InteractiveCursor_larger.png\">\r\nhttp://www.syncfusion.com/content/en-US/Products/screenshots/aspnet/img/InteractiveCursor_larger.png</a>)</p>\r\n<p>I wish to stick XY value near data point instead of showing it on tooltip of data point.</p>\r\n<p>Please let me know if there is any way to achieve this.</p>\r\n",
+    "PostedDate": "2011-02-28T23:22:21.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573866",
+    "ThreadId": "247954",
+    "Html": "<p>Take a look at TemplateMarkerGenerator.</p>",
+    "PostedDate": "2011-03-01T07:30:31.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654426",
+    "ThreadId": "247954",
+    "Html": "<p>@Jimfoye,</p>\r\n<p>cud u pls post a simple sample with a Numeric(X) and Double Axis(Y)?</p>",
+    "PostedDate": "2011-08-08T04:18:41.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654972",
+    "ThreadId": "247954",
+    "Html": "<p><strong>Update:</strong> I was able to do it by deriving from&nbsp;ShapeElementPointMarker.</p>\r\n<p>Posting the code for others reference :)</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">override</span> UIElement CreateMarker()\r\n        {\r\n            StackPanel stackPanel = <span style=\"color: blue;\">new</span> StackPanel();\r\n            stackPanel.Orientation = Orientation.Vertical;\r\n\r\n            Ellipse ellipse = <span style=\"color: blue;\">new</span> Ellipse()\r\n            {\r\n                Width = 10,\r\n                Height = 10,\r\n                StrokeThickness = 1,\r\n                Stroke = Brushes.OrangeRed,\r\n                Fill = Brushes.Orange,\r\n                HorizontalAlignment = HorizontalAlignment.Left\r\n            };\r\n           \r\n            stackPanel.Children.Add(ellipse);\r\n\r\n            Border border = <span style=\"color: blue;\">new</span> Border() \r\n            {\r\n                HorizontalAlignment = HorizontalAlignment.Center,\r\n                VerticalAlignment = VerticalAlignment.Center,\r\n                BorderThickness = <span style=\"color: blue;\">new</span> Thickness(1),\r\n                BorderBrush = Brushes.Black,\r\n                CornerRadius = <span style=\"color: blue;\">new</span> CornerRadius(2)\r\n            };\r\n\r\n            TextBlock txtblk = <span style=\"color: blue;\">new</span> TextBlock() \r\n            {\r\n                Background = <span style=\"color: blue;\">new</span> SolidColorBrush(Color.FromRgb(247,247,247)),\r\n                FontSize = 16,\r\n            };\r\n\r\n            border.Child = txtblk;\r\n\r\n            <span style=\"color: blue;\">if</span> (!String.IsNullOrEmpty(ToolTipText))\r\n            {\r\n                ToolTip tt = <span style=\"color: blue;\">new</span> ToolTip();\r\n                tt.Content = ToolTipText;\r\n                txtblk.Text = ToolTipText;\r\n                stackPanel.ToolTip = tt;\r\n            }\r\n\r\n            <span style=\"color: blue;\">if</span>(showLabel.Equals(<span style=\"color: #a31515;\">\"yes\"</span>))\r\n                stackPanel.Children.Add(border);\r\n\r\n            <span style=\"color: blue;\">return</span> stackPanel;\r\n        }\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-08-09T00:21:35.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105305",
+    "ThreadId": "247954",
+    "Html": "Hello ujwaliyer\r<br />\n<br />\nCould you or anyone please tell me how to label data points with their ids/names (Not x or Y values). If any sample code , please post it. It will be great help.\r<br />\nThanks <br />\n",
+    "PostedDate": "2013-10-08T22:06:52.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105306",
+    "ThreadId": "247954",
+    "Html": "Hello ujwaliyer\r<br />\n<br />\nCould you or anyone please tell me how to label data points with their ids/names (Not x or Y values). If any sample code , please post it. It will be great help.\r<br />\nThanks <br />\n",
+    "PostedDate": "2013-10-08T22:07:22.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

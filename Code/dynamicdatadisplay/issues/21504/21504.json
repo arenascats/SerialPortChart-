@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI am using D3 0.3.1 version.\n\nI have a line chart it works fine (y axis bottom to top) starts from 0,40 to 24,3000. -- Pic 1.png\n\nNow i am trying to invert the line (y axis top to bottom), this is achieved by using following link ( https://dynamicdatadisplay.codeplex.com/discussions/69390). But the issue i am facing is when it is displayed - y axis shows range from -40 to +40. it has to show only the visible graph area dynamically. -- Pic 2.png\n\ni.e, user has to scroll down the Y axis from -40 to +40 to view the line graph.\n\nExpected output - Pic 3.png\n\nThe same scenario is working fine in D3 0.3.0 version, issue occurs after migrating to latest D3 version.\nCan you please suggest a solution for it, how to display the graph in center and align the Y axis w.r.t it.\n\nPls find the attachment for pictures.\n\nThanks\nRaj",
+    "LastUpdatedDate": "2014-10-28T04:58:02.02-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2014-10-28T04:58:01.24-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Vertical Axis starts from Top (using Data Transform)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21504
+  },
+  "FileAttachments": [
+    {
+      "FileId": 8730,
+      "FileName": "Pictures.zip",
+      "DownloadUrl": ".\\8730"
+    }
+  ],
+  "Comments": []
+}

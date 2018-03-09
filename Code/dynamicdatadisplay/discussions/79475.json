@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "272095",
+    "ThreadId": "79475",
+    "Html": "It looks like Virtual Earth requires credentials/Key and I was wondering where I need to change this in the project. \r\n\r\nI've signed up to get a Virtual Earth key.  \r\n\r\nThank you.",
+    "PostedDate": "2009-12-31T16:39:17.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272762",
+    "ThreadId": "79475",
+    "Html": "I've added the ApplicationId=&quot;Account ID&quot; Token=&quot;mypassword&quot;  to the xaml file in &lt;d3:VEImageryRoadServer  tag\r\n\r\n\r\n&lt;d3:Map Name=&quot;map&quot;&gt;\r\n\t\t\t\t&lt;d3:VEImageryRoadServer ApplicationId=&quot;5digitnumber&quot; Token=&quot;Mypassword&quot; /&gt;\r\n\t\t\t&lt;/d3:Map&gt;\r\n\r\n\r\nbut still get the authentication error.\r\n\r\nI've used those credentials and am able to authenticate with the webservice\r\n\r\nhttp://dev.virtualearth.net/webservices/v1/metadata/imageryservice/imageryservice.wsdl\r\n\r\nI've signed up at\r\n\r\nhttps://mappoint-css.live.com/CSCV3/Css.aspx\r\n\r\n\r\nThe info relates to bing,  I'm guessing it's just branding. \r\n\r\n\r\nThanks in advance. \r\n",
+    "PostedDate": "2010-01-03T23:59:56.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

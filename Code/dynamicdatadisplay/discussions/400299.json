@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "930419",
+    "ThreadId": "400299",
+    "Html": "\r\n<p>I wonder if it is possible to set two lines within the graph that will show the minima and maxima for the data...</p>\r\n<p>&nbsp;</p>\r\n<p>The project is as following:&nbsp;</p>\r\n<p>I wish to display data from a .dat file within the dynamic data display. The values I get from this .dat files are for several devices.&nbsp;</p>\r\n<p>There are existing Minima and Maxima values for each device. This is what I want to display. One line, maybe in red on top, and one line in blue at the bottom. The programm will let you check if there are any values above those lines, or under them (for\r\n the minima).&nbsp;</p>\r\n<p>Is there anyone with a idea, how this could be realized?</p>\r\n<p>I tried to find it out on myself, but without a propper documentation it is really hard to come to any conclusion.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot!!!</p>\r\n",
+    "PostedDate": "2012-10-22T05:35:02.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "930430",
+    "ThreadId": "400299",
+    "Html": "<p>Hi,</p>\r\n<p>Use Range (HorizontalRange I guess).</p>\r\n<p>﻿﻿﻿﻿﻿﻿﻿HorizontalRange range = <span style=\"color: blue;\">new</span> HorizontalRange ();<br />range.Value1 = <span style=\"color: green;\">// some data </span><br />range.Value2 = <span style=\"color: green;\">// some data</span><br />range.Fill = Brushes.Red;<br /><span style=\"color: blue;\">this</span>.plotter.Children.Add(range);<br /><br />Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2012-10-22T05:54:51.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "934608",
+    "ThreadId": "400299",
+    "Html": "<p>Thanks!</p>\r\n<p>Tried this and it works :-)</p>\r\n<p>Regards</p>\r\n<p>&nbsp;</p>\r\n<p>ChatNoir</p>",
+    "PostedDate": "2012-10-31T01:57:57.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "172927",
+    "ThreadId": "51558",
+    "Html": "Hi - first off, thanks for DD, it's a great library.<br>\r\n<br>\r\nNow on to my question.&nbsp; I have a need to build a bar chart and also needs to support multiple point collections.&nbsp; Is there a straight forward way to extend DD to do this?<br>\r\n<br>\r\nThanks<br>\r\n",
+    "PostedDate": "2009-03-27T13:51:20.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172971",
+    "ThreadId": "51558",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a need to build a bar chart<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; -&gt; http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=49088<br>\r\n<br>\r\nand also needs to support multiple point collections<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; -&gt; You just need to use the AddLineGraph function of your plotter. See DataTableSample or MarkersSample<span id=\"ctl00_ctl00_MasterContent_Content_wikiSourceLabel\"></span>.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-27T16:58:26.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172984",
+    "ThreadId": "51558",
+    "Html": "I've went down that path, creating a custom Marker.  Much like the CircleElementPointMarker but instead, one which draws a Rectangle.<div><br></div><div>This works well with a single series, but with multiple series the rectangles are basically overlayed on the Canvas.  Typically, a bar chart will have each marker adjacent to each other for comparison purposes.  Here's an image of a bar chart I had in mind: <a href=\"http://www.infocaptor.com/img/charts/bar_chart.png\">http://www.infocaptor.com/img/charts/bar_chart.png</a></div><div><br></div><div>Apologies, should have explained the multi series I'm looking to achieve better.  <br></div>",
+    "PostedDate": "2009-03-27T18:28:29.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173794",
+    "ThreadId": "51558",
+    "Html": "Hi!<div><br></div><div>Curently I cannot think up a way to get multi series bar chart looking as on the picture you've given.</div><div>Maybe it is possible to emulate this kind of chart by following steps:</div><div><ul>    <li>unite yor data series into one series so that each data element has additional property indicating its initial data source (e.g. Series = 1, Series = 2,...)</li>    <li>Add a mapping to marker that will change marker's background according to initial data source of data element.</li>    <li>Also you have to modify position of each bar's marker according again to its initial data source number, arranging markers so that markers with equal position and different initial data source would be adjacent.</li></ul><div>I know that this is not the best soultion :) but it is the best I advice I can give to you now)</div><div><br></div><div>I hope that'll help you, and our team will consider developing some special chart type for such cases.</div><div><br></div><div>Mikhail.</div></div>",
+    "PostedDate": "2009-03-31T01:30:47.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174025",
+    "ThreadId": "51558",
+    "Html": "Thanks for your response.&nbsp; We will give the proposed solution a shot.<br>\r\n<br>\r\nAnother question, where can I modify the space between each tick mark?<br>\r\n",
+    "PostedDate": "2009-03-31T12:06:11.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174217",
+    "ThreadId": "51558",
+    "Html": "Space between what tick marks do you mean? A picture or additional explanation will help me to give an answer)<br><div><div><br></div><div>Yours,</div><div>Mikhail.</div></div>",
+    "PostedDate": "2009-04-01T01:49:58.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174904",
+    "ThreadId": "51558",
+    "Html": "I misread your response the first time, I think having a single data source eliminates my previous request.&nbsp; Thanks<br>\r\n",
+    "PostedDate": "2009-04-02T10:00:15.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "175057",
+    "ThreadId": "51558",
+    "Html": "Actually, how do I modify the number of visible points?<br>\r\n<br>\r\nBasically I need to limit the number of visible points so that there's enough space (specifically width) for me to fit the adjacent bar charts.<br>\r\n",
+    "PostedDate": "2009-04-02T16:31:49.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "176025",
+    "ThreadId": "51558",
+    "Html": "Hi!<div><br></div><div>LineGraph has built-in collection of filters, that a being applied to initial points, passed to chart. This collection is called Filters, and you can modify it contents - e.g., remove default filters, that are added in ChartPlotter.AddLineChart extension method. Or you can add to this collection an instance of you own filters - everything is in your hands) So you can create a filter class which wil limit somehow the number of points.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-04-06T01:23:52.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

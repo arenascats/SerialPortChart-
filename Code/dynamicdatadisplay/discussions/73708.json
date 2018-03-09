@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "252022",
+    "ThreadId": "73708",
+    "Html": "<p>I'm using the DateTimeBug as example. when I zoomIn into hours and pan until i pass through midnigt it changes the day in the mayor label.</p>\r\n<p>For example, Im in 01 january 2001 showing from 00:00 to 23:00 I pan to 01:00 of day 2, it changes the day to 02 january 2001 but almos all my graph is showing day 1 from 01/01/2001 03:00 to 02/01/2001 01:00.</p>\r\n<p>My question there is a way to show the next day only when I'm showing more hours from the next day, or something like that, because it can be confusing sometimes when you doesnt know about this behavior.</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-10-31T13:38:26.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1036293",
+    "ThreadId": "441720",
+    "Html": "Hi can someone guide me trhu what direction should i go to get a bezier filter?.\r<br />\n<br />\nI searched all over but cannot find a way to draw a curve between two points instead of the normal straight line, basically i would like to add three points for example and the graph automaticaly draws a bezier curve between those points, can someone help me?\r<br />\n<br />\nRight now i found a StepLineFilter wich does what is suposed to do and it works :) i would like to add a filter like that but instead of steps add those middle points in order to draw a curve.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-04-26T13:21:24.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036314",
+    "ThreadId": "441720",
+    "Html": "Nevermind i did it myself :)<br />\nFor anyone that is interested here is the filter, please take in mind that is still a little bit rought.<br />\nPart of the code i got from here : <a href=\"http://stackoverflow.com/questions/13940983/how-to-draw-bezier-curve-by-several-points\" rel=\"nofollow\">http://stackoverflow.com/questions/13940983/how-to-draw-bezier-curve-by-several-points</a><br />\nTo use just do like this : LineGraph.Filters.Add(new BezierLineFilter());<br />\n<pre><code>class BezierLineFilter : PointsFilterBase\n{\n    public override List&lt;Point&gt; Filter(List&lt;Point&gt; points)\n    {\n        return GetBezierApproximation(points.ToArray(), 30);\n    }\n\n    public override void SetScreenRect(Rect screenRect)\n    {\n        lastX = screenRect.X + screenRect.Width;\n    }\n\n    List&lt;Point&gt; GetBezierApproximation(Point[] controlPoints, int outputSegmentCount)\n    {\n        List&lt;Point&gt; result = new List&lt;Point&gt;();\n\n        if (controlPoints != null &amp;&amp; controlPoints.Length &gt; 1)\n        {\n            Point[] points = new Point[outputSegmentCount + 1];\n            for (int i = 0; i &lt;= outputSegmentCount; i++)\n            {\n                double t = (double)i / outputSegmentCount;\n                points[i] = GetBezierPoint(t, controlPoints, 0, controlPoints.Length);\n            }\n\n            result = new List&lt;Point&gt;(points);\n        }\n        return result;\n    }\n\n    Point GetBezierPoint(double t, Point[] controlPoints, int index, int count)\n    {\n        if (count == 1)\n            return controlPoints[index];\n        var P0 = GetBezierPoint(t, controlPoints, index, count - 1);\n        var P1 = GetBezierPoint(t, controlPoints, index + 1, count - 1);\n        return new Point((1 - t) * P0.X + t * P1.X, (1 - t) * P0.Y + t * P1.Y);\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-04-26T14:13:39.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

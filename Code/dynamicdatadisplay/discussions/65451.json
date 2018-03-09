@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "222905",
+    "ThreadId": "65451",
+    "Html": "<p>Hi,</p>\r\n<p>I have been using the FitToViewRestrictions collection as described in <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=55361\">this thread</a> and using the D3 build linked to in the same thread.&nbsp; However, when I downloaded a more recent nightly build (28448) I can't seem to get it to work again.</p>\r\n<p>Whenever Apply is called on my ViewportRestriction derived class, oldDataRect is always {(0;0) -&gt; 1*1} and newDataRect is always {Empty}.</p>\r\n<p>Does that make sense?&nbsp; Any ideas why this is happening?</p>\r\n<p>Best regards,<br>IanR</p>",
+    "PostedDate": "2009-08-13T04:32:03.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223284",
+    "ThreadId": "65451",
+    "Html": "<p>Actually, I just tried it without using the FitToViewRestrictions collection at all and the normal Fit to view behaviour doesn't seem right.&nbsp; Is this a known issue?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-14T01:37:05.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227613",
+    "ThreadId": "65451",
+    "Html": "<p>Well, this is strange. Have you tried the code from the 'Nightly' branch of the latest changeset in 'Source code' page?</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-25T12:48:46.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227953",
+    "ThreadId": "65451",
+    "Html": "<p>Hi IanR,</p>\r\n<p>I have specially checked that in the latest development version it's all ok with restrictions both in Restrictions and FitToViewRestrictions collections.</p>\r\n<p>Can you please give me a sample that reproduces this case?</p>\r\n<p>You can email me to <a href=\"mailto:thecentury+d3@gmail.com\">thecentury+d3@gmail.com</a></p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-26T06:57:43.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227974",
+    "ThreadId": "65451",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thanks for checking this.&nbsp; I've just downloaded the latest code (28547) and using the Nightly build I am still getting some strange Fit to view behaviour.&nbsp; I'll put together a sample that reproduces it and send it on to you.</p>\r\n<p>Best regards,</p>\r\n<p>IanR</p>",
+    "PostedDate": "2009-08-26T07:40:54.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

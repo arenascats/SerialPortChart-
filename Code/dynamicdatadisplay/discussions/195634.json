@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "404081",
+    "ThreadId": "195634",
+    "Html": "<p>Great library! I want to render an XY graph one line segment at a time to give the effect of animation. I successfully accomplished this by mimicing the Simulation example which uses threading. Is there a simpler approach? In other words, if I have a DataSource in memory, instead of blasting everything at once using AddLineGraph(), can I somehow iterate through the DataSource and render just one line segment (betwen two ponts in the DataSource) at a time?</p>",
+    "PostedDate": "2010-02-25T10:03:03.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "441051",
+    "ThreadId": "212140",
+    "Html": "<p>I get this error when trying to run the Intensity chart sample from the nightlies. Thanks.</p>\r\n<p>Error&nbsp;&nbsp; &nbsp;11&nbsp;&nbsp; &nbsp;The tag 'ViewportHostPanel' does not exist in XML namespace 'http://research.microsoft.com/DynamicDataDisplay/1.0'. Line 18 Position 5.&nbsp;&nbsp; &nbsp;C:\\Users\\bbauer\\Desktop\\D3\\Source Code\\Nightly\\Nightlies Source\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DevSamples\\IntensityChart\\Window1.xaml&nbsp;&nbsp; &nbsp;18&nbsp;&nbsp; &nbsp;5&nbsp;&nbsp; &nbsp;IntensityChart<br><br></p>",
+    "PostedDate": "2010-05-10T06:10:56.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441224",
+    "ThreadId": "212140",
+    "Html": "<p>Works fine for me. &nbsp;I'm using nightly from change set 31108 (v0.3.4703.0) as well (with VS2010). &nbsp;Does the&nbsp;IntensityChart project&nbsp;reference the correct version of&nbsp;<br>DynamicDataDisplay?</p>",
+    "PostedDate": "2010-05-10T14:12:04.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441438",
+    "ThreadId": "212140",
+    "Html": "<p>I am using Windows 7 as well as VS2010. Do you see the .NET Framework 3.5 in your Programs/Features list under the control panel? I do not see that listed in mine, only .NET Framework 4.0. However, when I try to install 3.5 I&nbsp; get an error message stating that I need to use &quot;Turn Windows Features On/Off&quot; to install it. I go there and put a check in the .NET 3.5, try to re-install it, and get the same error.</p>\r\n<p>Does anyone have this working on Windows 7 w/ VS2010 and .NET Framework 4.0 only? Thanks.</p>",
+    "PostedDate": "2010-05-11T05:39:34.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441451",
+    "ThreadId": "212140",
+    "Html": "<p>I was able to get the sample running!</p>\r\n<p>I re-downloaded everything and re-built all. I think it had something to do with the .NET 3.5 which seemed so install the last time I turned the feature on and ran the install again. Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-11T06:06:29.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441710",
+    "ThreadId": "212140",
+    "Html": "<p>Good to hear the sample is working now. &nbsp;</p>\r\n<p>BTW, the only framework showing in the Programs/Features list is Microsoft .Net Framework 4. &nbsp;However, &nbsp;Microsoft .Net Framework 3.5.1 is listed in the &quot;Windows Features&quot; window (accessible via &quot;Turn Windows Features on or off&quot;). &nbsp;</p>\r\n<p>Also, when I look in&nbsp;<span style=\"font-family:Consolas, 'Courier New', Courier, monospace;white-space:pre\">C:\\Windows\\Microsoft.NET\\Framework <span style=\"font-family:'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif;white-space:normal\">all the .Net Frameworks are present.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>C:\\Windows\\Microsoft.NET\\Framework&gt;dir /ad\r\n Volume <span style=\"color:blue\">in</span> drive C has no label.\r\n Volume Serial Number is 469E-39E4\r\n\r\n Directory of C:\\Windows\\Microsoft.NET\\Framework\r\n\r\n14/02/2010  07:35 p.m.    &lt;DIR&gt;          .\r\n14/02/2010  07:35 p.m.    &lt;DIR&gt;          ..\r\n28/11/2009  09:32 a.m.    &lt;DIR&gt;          1025\r\n26/12/2009  03:40 p.m.    &lt;DIR&gt;          1028\r\n28/11/2009  09:39 a.m.    &lt;DIR&gt;          2052\r\n14/07/2009  03:20 p.m.    &lt;DIR&gt;          v1.0.3705\r\n14/07/2009  03:20 p.m.    &lt;DIR&gt;          v1.1.4322\r\n17/02/2010  11:02 a.m.    &lt;DIR&gt;          v2.0.50727\r\n14/07/2009  05:37 p.m.    &lt;DIR&gt;          v3.0\r\n17/02/2010  10:59 a.m.    &lt;DIR&gt;          v3.5\r\n12/05/2010  09:00 a.m.    &lt;DIR&gt;          v4.0.30128\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-05-11T14:49:07.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

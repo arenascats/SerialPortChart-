@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1472856",
+    "ThreadId": "654454",
+    "Html": "Is it possible to generate chart where user:\r<br />\n1) can add and remove series manually (by selected sources)\r<br />\n2) can set own max value x and y, or unlock zooming\r<br />\n3) points can be calculated and added dynamically.\r<br />\n<br />\nUnfortunately examples is unrunnable on my VS.  For now I install lib from nuget.<br />\n",
+    "PostedDate": "2016-05-09T06:16:40.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

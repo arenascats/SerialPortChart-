@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The DDD for Silverlight v 2.0 is distributed under MSR-LA license which doesn't allow commercial use. Please vote here if this is an issue for you. High number will raise priority for reconsidering this decision.",
+    "LastUpdatedDate": "2013-06-17T02:11:25.42-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2011-11-23T10:45:51.72-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Dynamic Data Display for Silverlight 2.0 license",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 16,
+    "Id": 16933
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We really like the library and would want to use it our project. The project is an internal tool that will be used by our consultants to sell services to our clients. The problem is that this licence does not allow us to use it. Instead we are using DDD v0.3 which comes with a licence that allows us to use it, but misses some features.",
+      "PostedDate": "2012-07-02T05:01:01.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:50.347-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-17T02:11:25.42-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

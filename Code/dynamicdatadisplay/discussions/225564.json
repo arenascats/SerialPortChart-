@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "487360",
+    "ThreadId": "225564",
+    "Html": "<p>Hi</p>\r\n<p>Thank you for the Reply.</p>\r\n<p>I tried to restrict the panning/Zooming on horizontal and vertical axes but no luck.</p>\r\n<p>can u please send me a code for that.</p>\r\n<p>once again thank you for your replies.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks &amp; Regards</p>\r\n<p>Srujana</p>",
+    "PostedDate": "2010-08-31T22:27:21.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487946",
+    "ThreadId": "225564",
+    "Html": "<p>Just remove the AxisNavigation objects from the ChartPlotter's children</p>",
+    "PostedDate": "2010-09-01T19:08:41.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491464",
+    "ThreadId": "225564",
+    "Html": "<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:#000000\">Here is an example code</span></pre>\r\n<pre><span style=\"color:#000000\">Zoom in restriction:</span></pre>\r\n<pre><span style=\"color:blue\">private</span> <span style=\"color:blue\">void</span> SetZoomInConstraint(<span style=\"color:blue\">double</span> minResXAxis,<span style=\"color:blue\">double</span> minResYAxis)\r\n        {\r\n            HWZoomInRestriction zoomInRestriction = <span style=\"color:blue\">new</span> HWZoomInRestriction(minResXAxis, minResYAxis);\r\n            plotter.Viewport.Constraints.Add(zoomInRestriction);\r\n        }\r\n\r\n<div style=\"color:black;background-color:white\">\r\n\r\n<pre><span style=\"color:#000000\">Zoom out restriction:</span>&nbsp;</pre>\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">void</span> SetZoomOutConstraint(<span style=\"color:blue\">double</span> xAxisMinValue, <span style=\"color:blue\">double</span> yAxisMinValue, <span style=\"color:blue\">double</span> xAxisMaxRange, <span style=\"color:blue\">double</span> yAxisMaxRange)\r\n        {\r\n            Microsoft.Research.DynamicDataDisplay.DataRect dataRect = \r\n                <span style=\"color:blue\">new</span> Microsoft.Research.DynamicDataDisplay.DataRect( xAxisMinValue,  yAxisMinValue,  xAxisMaxRange,  yAxisMaxRange);                \r\n            plotter.Viewport.Domain = dataRect; <span style=\"color:green\">// Zoom out restriction</span>\r\n        }\r\n</pre>\r\n</div>\r\nThanks</pre>\r\n<pre>Kishore Vanapalli\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-09-09T13:32:52.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

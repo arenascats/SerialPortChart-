@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "984886",
+    "ThreadId": "429141",
+    "Html": "\r\n<p>I am having a Graph with x co-ordinates and two Y axis ( Y and Y1). Depending upon x axis I am plotting the graph for both Y axis.</p>\r\n<p>To be very clear Y and Y1 will be having two different graph's Y will be show in meter and Y1 will in Kilo meter.\r\n<br>\r\nI am able to plot the graph,</p>\r\n<p><br>\r\nProblem I am facing while zoom in and out, Y co-ordinates is dynamically zooming, it will change its size depending upon x axis.</p>\r\n<p>but Y1 co-ordinates was static, it is not zooming according to X axis</p>\r\n<p>Please do me the favor.</p>\r\n",
+    "PostedDate": "2013-01-10T02:59:42.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990726",
+    "ThreadId": "429141",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Injected plotters will have both x axis and y axis,</p>\r\n<p>First step define</p>\r\n<p>do someting like this</p>\r\n<p>get xmin and xmax from zoomed injected plotter(injectedPlotter1) and chage the viewport of other injected plotter(injectedPlotter2) with zoomed injected plotter.</p>\r\n<p><a href=\"http://dynamicdatadisplay.codeplex.com/discussions/62284\">http://dynamicdatadisplay.codeplex.com/discussions/62284</a></p>\r\n<p>Regards</p>\r\n<p>Ravi</p>\r\n",
+    "PostedDate": "2013-01-22T23:51:05.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

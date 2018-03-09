@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "544385",
+    "ThreadId": "240589",
+    "Html": "\r\n<p>Is there a way to enforce a certain ratio between the scale of the x-axis and the scale of the y-axis?</p>\r\n<p>&nbsp;</p>\r\n<p>EDIT: I could solve my problem by using PhysicalProportionsRestriction and fixing a nasty bug in my code, thanks! -&gt; thread can be closed</p>\r\n",
+    "PostedDate": "2011-01-05T08:37:41.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544785",
+    "ThreadId": "240589",
+    "Html": "\r\n<p>can you please explain how you did this if it's not too much trouble?</p>\r\n<p>(i.e. how you used the physical proportions restriction...</p>\r\n<p>thanks...</p>\r\n",
+    "PostedDate": "2011-01-06T06:08:00.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "562806",
+    "ThreadId": "240589",
+    "Html": "\r\n<p>I also need to know how to do this. I searched the entire D3 project for <em>PhysicalProportionsRestriction\r\n</em>and found nothing.&nbsp;</p>\r\n<p>Can anyone explain how to do this? Thanks.</p>\r\n",
+    "PostedDate": "2011-02-08T10:40:28.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "562983",
+    "ThreadId": "240589",
+    "Html": "\r\n<p>It's there, in Source\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\ViewportRestrictions\\PhysicalProportionsRestriction.cs.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-02-08T16:10:45.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "563099",
+    "ThreadId": "240589",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I figured out how to do this. It's pretty straightforward....</p>\r\n<p>The plotter can hold a list of restrictions, e.g.:</p>\r\n<p>&lt;d3:ChartPlotter.Restrictions&gt;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;d3:MaximalSizeRestriction MaxSize=&quot;75&quot; /&gt;</p>\r\n<p>&lt;/d3:ChartPlotter.Restrictions&gt;</p>\r\n<p>Each restriction can enforces some limit on some property, so you have to understand the property it limits in order to know which properties to set in the Restriction.</p>\r\n<p>For example, the maximalsize restriction limits the dimension of the viewport to 75.</p>\r\n",
+    "PostedDate": "2011-02-08T22:49:50.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "563395",
+    "ThreadId": "240589",
+    "Html": "\r\n<p>In the version of D3 my app is using (that I have customized quite a bit), it is called a PhysicalProportionConstraint. That is why I couldn't find it.</p>\r\n<p>Were Constraints replaced with Restrictions universally at some point in D3? Thanks.</p>\r\n",
+    "PostedDate": "2011-02-09T09:10:10.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

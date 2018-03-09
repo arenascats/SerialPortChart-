@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "170391",
+    "ThreadId": "50842",
+    "Html": "Hello,<br>\r\n<br>\r\nI try to apply the tooltip presented in the sample &quot;Tooltip&quot; of the last release but with real time data.<br>\r\n<br>\r\nHere is the tooltip that I want to use:<br>\r\nEnumerableDataSource&lt;double&gt; yDataSource;<br>\r\n(...)<br>\r\nyDataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,<br>\r\n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Y =&gt; String.Format(&quot;Value is {0}&quot;, Y));<br>\r\n<br>\r\nI need the function AddMapping(..) of an Enumerable dataSource but at the same time I need the AppendAsync(...) function of an ObservableDataSource for real time plot.<br>\r\nWhat is the best way to solve this problem?<br>\r\nI wish I can add to the ObservableDataSource:<br>\r\n<ul>\r\n    <li>a private readonly List&lt;Mapping&lt;T&gt;&gt; mappings = new List&lt;Mapping&lt;T&gt;&gt;();</li>\r\n    <li>a method :&nbsp; public void AddMapping(DependencyProperty property, Func&lt;T, object&gt; mapping)<br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (property == null)<br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;throw new ArgumentNullException(&quot;property&quot;);<br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (mapping == null)<br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;throw new ArgumentNullException(&quot;mapping&quot;);<br>\r\n    <br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;mappings.Add(new Mapping&lt;T&gt; { Property = property, F = mapping });<br>\r\n    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</li>\r\n</ul>\r\nBut I can not touch the code of (src -&gt; DynamicDataDisplay) as it is read only.<br>\r\nHow can I modify the open source code and create my dll?<br>\r\n<br>\r\nThanks,<br>\r\nKamel  \r\n",
+    "PostedDate": "2009-03-21T11:05:04.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171270",
+    "ThreadId": "50842",
+    "Html": "<div>Hello! </div><div><br></div><div>Currently ObservableDataSource and EnumerableDataSource are similar in their functionality. You can emulate ObservableDataSource using EnumerableDataSource and passing to it ObservableCollection with your data. Also you can emulate AppendAsync(...) method by calling its contents from outside - it is rather simple:</div><div><br></div><div>dispatcher.Invoke(DispatcherPriority.Normal,</div><div><span style=\"white-space:pre\">\t\t\t\t</span>new Action(() =&gt;</div><div><span style=\"white-space:pre\">\t\t\t\t</span>{</div><div><span style=\"white-space:pre\">\t\t\t\t\t</span>collection.Add(item);</div><div><span style=\"white-space:pre\">\t\t\t\t\t</span>RaiseDataChanged();</div><div><span style=\"white-space:pre\">\t\t\t\t</span>})); </div><div><br></div><div>where dispatcher can be Dispatcher of any your's WPF controls. </div><div><br></div><div>Yours,</div><div>Mikhail Brinchuk.</div>",
+    "PostedDate": "2009-03-24T04:29:57.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "171497",
+    "ThreadId": "50842",
+    "Html": "Hi Mikhail,<br>\r\n<br>\r\nPlease see the last post concerning the discussion &quot;major bug - urgent (please)!&quot;.<br>\r\n<br>\r\nThanks,<br>\r\nKamel<br>\r\n<h2><a href=\"View.aspx?ThreadId=50835\" id=\"ctl00_ctl00_MasterContent_Content_ThreadList_ctl00_ThreadLink\"><br>\r\n</a></h2>\r\n<br>\r\n",
+    "PostedDate": "2009-03-24T13:12:00.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172669",
+    "ThreadId": "50842",
+    "Html": "Hi Kamel,<div><br></div><div>I've posted a reply in that discussion.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-03-27T01:46:35.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

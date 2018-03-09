@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "511745",
+    "ThreadId": "232125",
+    "Html": "\r\n<p>... doing some research for an silverlight project I have spend a lot of time the last two weeks looking for a decent graphing library for silverlight that is capable of allowing real time data representation.</p>\r\n<p>I thought I might have found something with D3. Unfortunately I was not able to get it running in the way I hoped it would be. Main problem for me was that documentation, especially for the silverlight version, is so poor that it is not possible to use D3\r\n in a practical application. Sample projects are also rare and WPF samples did not help very well because there obviously really major differences in both versions.</p>\r\n<p>Looks the way I am going for Visifire right now. As I have seen here many other people are frustated because of the lack of good documentation. Maybe you should consider this the main priority in your upcoming development. Nevertheless I hope you continue\r\n your overall good work.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-10-24T08:51:47.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518317",
+    "ThreadId": "232125",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-07T01:17:16.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

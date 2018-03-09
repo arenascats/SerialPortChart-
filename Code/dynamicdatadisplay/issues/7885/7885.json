@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed.",
+    "ClosedDate": "2009-01-05T02:42:27.403-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, I m trying to do sample:\n \n// Prepare data in arrays\n            const int N = 100;\n            double[] x = new double[N];\n            double[] y = new double[N];\n \n            for (int i = 0; i < N; i++)\n            {\n                x[i] = i * 0.1;\n                y[i] = Math.Sin(x[i]);\n            }\n \n            var yDataSource = new EnumerableDataSource<double>(y);\n            var xDataSource = new EnumerableDataSource<double>(x);\n \n \n            yDataSource.SetYMapping(Y => Y);\n            yDataSource.AddMapping(ShapeElementPointMarker.ToolTipTextProperty,\n                                   Y => string.Format(\"Value is {0}\", Y));\n \n            xDataSource.SetXMapping(X => X);\n \n \n \n \n            CompositeDataSource compositeDataSource = new CompositeDataSource(xDataSource, yDataSource);\n \n            // adding graph to plotter\n            graphSalary.AddLineGraph(compositeDataSource,\n                                     new Pen(Brushes.Goldenrod, 3),\n                                     new CircleElementPointMarker(),\n                                     new PenDescription(\"Cosine\"));\n \n            // Force evertyhing plotted to be visible\n            graphSalary.FitToView();\n \nthis works when it's in block:\n \npublic MainWindow()\n        {\n            InitializeComponent();\n        }\n \nbut when it's in other method i'm getting error... something \"Error enumerating ...\"",
+    "LastUpdatedDate": "2013-05-16T04:53:49.923-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2008-10-25T14:39:59.64-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem With Sample",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7885
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello!\r\n\r\nIt would be great if you will reply, attaching to your post an archive with code, demonstrating error you are speaking about.\r\nIn this case it will be easier to us to help you.\r\n\r\nThank you.\r\nMikhail Brinchuk, DynamicDataDisplay Dev Team",
+      "PostedDate": "2008-11-08T13:05:31.5-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-01-05T02:42:27.403-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:58.517-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:53:49.923-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

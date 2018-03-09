@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "432858",
+    "ThreadId": "209826",
+    "Html": "<p>What would be the equivalent of matlab command IMAGE(X,Y,C)? I see you have linegraph, I just wonder whether you have imagegraph? To plot a 2D matrix using color based on the matrix value.</p>",
+    "PostedDate": "2010-04-19T13:19:47.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432928",
+    "ThreadId": "209826",
+    "Html": "<p>Hi!</p>\r\n<p>How does the command you pointed work? What are X, Y and C?</p>\r\n<p>Maybe you are speaking about colormap?</p>\r\n<p>If so, than currently we do not have colormap out-of-the-box, but it is almost ready and in the closest time (I suppose, 2 weeks) will be uploaded to codeplex.</p>\r\n<p>If I'm wrong than please give a explanation of what does this command do and of what type its parameters are.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-19T15:57:57.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432934",
+    "ThreadId": "209826",
+    "Html": "<p>I thought everyone has access to Matlab, it seems I am wrong, sorry about that.</p>\r\n<p><a href=\"http://www.mathworks.com/access/helpdesk/help/techdoc/ref/image.html\">http://www.mathworks.com/access/helpdesk/help/techdoc/ref/image.html</a></p>\r\n<p>I think your guess is right about what I am talking about.</p>\r\n<p>For example, given a 2D matrix, we want to make a plot out of it. In the plot, the color of each pixel represents the value in the matrix.</p>\r\n<p>Thanks for the good work!</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-19T16:14:40.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

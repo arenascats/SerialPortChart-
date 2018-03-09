@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "182233",
+    "ThreadId": "54105",
+    "Html": "Hi,<br>\r\n<br>\r\nI want to fix axis limits( Range) of my date time axis, I found a method<br>\r\n<span style=\"font-size:13px\">\r\n<p>dateAxis.SetConversion(</p>\r\n</span>\r\n<p><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Now.AddMinutes(-10).ToOADate(), </span><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Now.AddMinutes(-10), </span><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Now.AddMinutes(10).ToOADate(), </span><span style=\"font-size:13px;color:#2b91af\">DateTime</span><span style=\"font-size:13px\">.Now.AddMinutes(10));<br>\r\n<br>\r\nBut dateAxis is taking the default limits. How to set the custom limits.<br>\r\nActually I want to fix the limits of axis for some time (up to 10 Minutes), After that I want to change limits again, <br>\r\nBut this is not working, dateAxis is taking default or auto limits<br>\r\n<br>\r\nRegards<br>\r\nRavi\r\n<p>&nbsp;</p>\r\n</span></p>\r\n",
+    "PostedDate": "2009-04-22T03:12:01.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182251",
+    "ThreadId": "54105",
+    "Html": "<div>Hi, Ravi!</div><div><br></div><div>As I have understood, you want to change area that is displayed by ChartPlotter.</div><div>It is impossible to do it from SetConversion method of axis, this can be done only in one way - creating new Rect with parameters you need and then by passing it to ChartPlotter.Viewport.Visible property.</div><div><br></div><div>Let's say you want Plotter to display area with following borders:</div><div>0 to 1 vertically (values are of double type), and from 12:00 1 Jan 2009 to 13:55 2 April 2010 horizontally (values are of DateTime type). Than you should do the following:</div><div><br></div><div>var axis = (DateTimeAxis)plotter.HorizontalAxis;</div><div>double xMin = axis.ConvertToDouble(new DateTime(2009, 1, 1, 12, 0, 0));</div><div>double xMax = axis.ConvertToDouble(new DateTime(2010, 4, 2, 13, 55, 0));</div><div><br></div><div>Rect visibleRect = new Rect(xMin, 0 /* this is yMin */, xMax - xMin /* this is width */, 1-0 /* this is YMax - YMin = height */);</div><div><br></div><div>// that's all</div><div>Plotter.Viewport.Visible = visibleRect;</div><div><br></div><div>Regards,</div><div>Mikhail Brinchuk,</div><div>DynamicDataDisplay Dev Team.</div><div><br></div>",
+    "PostedDate": "2009-04-22T03:59:27.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182262",
+    "ThreadId": "54105",
+    "Html": "<p style=\"margin:0in 0in 0pt\">Hi,</p>\r\n<p style=\"margin:0in 0in 0pt\"> </p>\r\n<p style=\"margin:0in 0in 0pt\">It’s working. It’s very nice, very smooth than what I expected. </p>\r\n<p style=\"margin:0in 0in 0pt\"> </p>\r\n<p style=\"margin:0in 0in 0pt\">Thank you very much</p>\r\n<p style=\"margin:0in 0in 0pt\"> </p>\r\n<p style=\"margin:0in 0in 0pt\">Regards,</p>\r\n<p style=\"margin:0in 0in 0pt\">Ravi.</p>\r\n",
+    "PostedDate": "2009-04-22T04:39:10.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182344",
+    "ThreadId": "54105",
+    "Html": "Hi Mikhail,<br>\r\n<br>\r\nLet's say the x-axis is the DateTime and the y-axis some double values (price).<br>\r\nThrough my day I want to see the last 10 minutes of market activity. To achieve this I follow your explication above with a 10 minutes width window.<br>\r\n<br>\r\nNow, let's say that I make a compression on the x-axis and now I can see the last 25 minutes or the last 5 minutes. I want to keep this moving window with a width of 25 minutes or 5 minutes.<br>\r\nTo achieve this I take the dateTime.Now and the first visible DateTime to construct this window.<br>\r\n<br>\r\nHere is my question:<br>\r\nHow can I retrieve the first visible DateTime on my plot?<br>\r\n<br>\r\nThanks,<br>\r\nKamel<br>\r\n",
+    "PostedDate": "2009-04-22T07:32:07.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184948",
+    "ThreadId": "54105",
+    "Html": "Hi, Kamel,<div><br></div><div>What do you mean saying 'the first visible DateTime'? This value depends on Viewport.Visible rect, and if you want to convert one of the properties of Visible to DateTime, you can do the following:</div><div>AxisBase&lt;DateTime&gt; axis = (AxisBase&lt;DateTime&gt;)plotter.HorizontalAxis.</div><div>DateTime theFirstVisibleDateTime = axis.ConvertFromDouble(plotter.Viewport.Visible.Left);</div><div><br></div><div>I'm using plotter.Viewport.Visible.Left as this is left border of visible area, described by double values.</div><div><br></div><div>Have I answered on your question? If not, please explain it.</div><div><br></div><div>Best regards,</div><div>Mikhail.</div>",
+    "PostedDate": "2009-04-29T06:09:00.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185282",
+    "ThreadId": "54105",
+    "Html": "I think you did.<br>\r\n<br>\r\nI'll give it a try and get back to you.<br>\r\n<br>\r\nThanks!!!<br>\r\n",
+    "PostedDate": "2009-04-29T19:29:21.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

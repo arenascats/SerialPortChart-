@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "600258",
+    "ThreadId": "254619",
+    "Html": "\r\n<p>&nbsp;I use control ChartPlotter (DynamicDataDisplay).</p>\r\n<p>I have some questions with control capability.</p>\r\n<p>So, problem: created window with two ChartPlotters. Every ChartPlotter have 6 data array (total array in plotters is 12).</p>\r\n<p>When number of points in array push in 2000 (total number of points in all array 2*12000 = 24000) user interface is bad respond&nbsp; any action.</p>\r\n<p>When number of points in array push in 3000 (total number of points in all array 2*18000 = 36000) user interface is too bad respond&nbsp; any action.</p>\r\n<p>&nbsp;I want to know, this is extreme capability of control ?</p>\r\n<p>&nbsp;Thanks a lot. Faithfully</p>\r\n",
+    "PostedDate": "2011-04-20T02:04:16.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

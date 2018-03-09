@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "200891",
+    "ThreadId": "59340",
+    "Html": "<p>Awesome Controls. I would like to know the ETA of the ability for the chart to handle NULL values representation. I'm trying to use this control to plot LAS data which contain DEPTH and data points, but some of the datapoints represent blank or NULL values (-999.25). See data sample below:</p>\r\n<p>DEPTH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GR</p>\r\n<p>500.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13.6</p>\r\n<p>500.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -999.25</p>\r\n<p>501.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18.5</p>\r\n<p>501.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -999.25&nbsp;&nbsp; 40</p>\r\n<p>502.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14</p>\r\n<p>Thanks in advance,</p>\r\n<p>Bay</p>",
+    "PostedDate": "2009-06-12T09:35:00.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205971",
+    "ThreadId": "59340",
+    "Html": "<p>Hi Bay,</p>\r\n<p>&nbsp;</p>\r\n<p>Do you mean that you want a line have a break if some data part (e.g, x- or y-coordinate) is equal to some specific value?</p>\r\n<p>If this is so, such functionality is planned, but it is now easy for me to give you some estimate about time. Probably, to the end of summer.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-06-26T10:03:48.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206007",
+    "ThreadId": "59340",
+    "Html": "<p>That's exactly what i'm looking for. I'll be waiting for the update.</p>\r\n<p>Thank again for the awesome work!</p>\r\n<p>Bay</p>",
+    "PostedDate": "2009-06-26T11:21:01.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "155656",
+    "ThreadId": "46581",
+    "Html": "I have a set of line graphs displaying different data but I want all of them to start their ticks from 0 on the vertical axis.  This would be useful for comparison purposes across the set of graphs so that there is a consistent range of values.  Without this, I'm forced to pay special attention to the range of values on the vertical axis of each graph to judge the differences between them rather than just being able to visually judge differences in magnitude.\r\n",
+    "PostedDate": "2009-02-08T19:59:43.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "172692",
+    "ThreadId": "46581",
+    "Html": "Hi!<div><br></div><div>Sorry, I haven't caught your's idea)</div><div>Please, describe it in more details or post some picture.</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-03-27T02:49:18.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

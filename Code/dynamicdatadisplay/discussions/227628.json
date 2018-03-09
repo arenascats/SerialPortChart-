@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "494987",
+    "ThreadId": "227628",
+    "Html": "<p>Hey Guys,</p>\r\n<p>Im trying to change the axis ticks to change the grid lengthes, but i just cant figure out where to find the ticksprovider for the both axes:&nbsp; plotter.MainHorizontalAxis&nbsp;&nbsp; hasnt a ticksprovider property (being of type &quot;GeneralAxis&quot;).</p>\r\n<p>How do i access the ticksproviders in the plotter object model?</p>",
+    "PostedDate": "2010-09-17T07:11:59.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

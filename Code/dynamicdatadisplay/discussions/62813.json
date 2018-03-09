@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "213210",
+    "ThreadId": "62813",
+    "Html": "<p>I&rsquo;m having trouble getting charts to print using the XPS document related APIs.&nbsp; Our app includes several UserControls in a Grid and some of the UserControls have a ChartPlotter.&nbsp; We have a requirement for printing the grid so that the grid and all content (including the charts) are scaled to fill the page.&nbsp; The content and range of values for all data and axes on the printed chart images should match the values seen on the screen, but the shape of the charts should be transformed to fit the appropriate area on the page dedicated to each chart.&nbsp;</p>\r\n<p>I get the output page dimension and set up new transforms for the Grid that contains the UserControls (charts and other).&nbsp; Then I do a Measure/Arrange pass on the Grid, expecting that the charts would be appropriately transformed according to what was happening to the grid container.&nbsp; When printed, the grid is properly scaled and positioned on the page, but the charts are not scaled as expected.&nbsp; If the charts on the monitor are smaller than the physical page size, they don&rsquo;t scale up to fill the space on the paper.&nbsp; If the charts on the monitor are larger than the physical page size, the charts are clipped rather than scaled down to fit the proper space.&nbsp; Other controls in the Grid do resize as expected.</p>\r\n<p>I&rsquo;d appreciate any guidance you could offer on how to get the charts to scale properly when printing.&nbsp; The charts definitely scale properly as windows are resized on the screen, so it may just be something simple that I&rsquo;m missing when printing.&nbsp; I'm&nbsp;new to WPF, so that's definitely a possibility.</p>\r\n<p>I&rsquo;ve created a modified version of the D3 HelloWorldSample that demonstrates the problem.&nbsp; It&rsquo;s posted at <a href=\"http://cid-c53097b576e89f3d.skydrive.live.com/self.aspx/.Public/D3/HelloWorld|_PrintXPS.zip\">http://cid-c53097b576e89f3d.skydrive.live.com/self.aspx/.Public/D3/HelloWorld%7C_PrintXPS.zip</a>.&nbsp; I added a Grid parent element on the ChartPlotter, similar to how our app has a grid with multiple charts in it.&nbsp; Clicking the print button brings up a simple dialog for choosing to send to the printer or to an XPS file.&nbsp; Sending to an XPS file works fine because we don&rsquo;t do any transforms on the grid.&nbsp; Printing is problematic as described above.&nbsp; The PrintElement() function in the PrintManager class does most of the interesting work for setting up the transforms.</p>\r\n<p>Thank you in advance for any assistance or guidance you can offer.</p>\r\n<p>Best regards,</p>\r\n<p>Gary Sinner</p>",
+    "PostedDate": "2009-07-17T14:43:07.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "214622",
+    "ThreadId": "62813",
+    "Html": "<p>Hi Gary,</p>\r\n<p>seems like it is not a D3's problem with printing - please take a look at <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/PrintingToXps.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/PrintingToXps.zip</a></p>\r\n<p>I've a little broken youк sample, but not it works conceptually better)</p>\r\n<p>&nbsp;</p>\r\n<p>As I remember my last printing exercises, I was detaching element being printed from its parent (or create a copy of element to print using, for example, XAML serialization) and changed its size. Also it is important, if I'm not wrong, to give an element a time to changes is size - as Measure or Arrange may not &nbsp;happen as soon as their call ended, so in that sample I used Dispatcher.BeginInvoke() with low priority. But in this part (about non-instant measure and arrange) I can be wrong.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-21T22:29:51.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223108",
+    "ThreadId": "62813",
+    "Html": "<p>Hi Gary,</p>\r\n<p>&nbsp; I have also faced the same problem. The workaround I am using is I have exposed the screenshot of the chart as a CLR property. In the XPS Documents, I have hosted a Image block with source property bound to this CLR property.</p>\r\n<p>// Here the chartArea is the d3:ChartPlotter element.</p>\r\n<p>public BitmapSource Plot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return chartArea.CreateScreenshot();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>in the XPS flow document</p>\r\n<p>&lt;TableCell &gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;BlockUIContainer&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Image Height=&quot;325&quot; Name=&quot;PlotControl&quot; Source=&quot;{Binding Path=Plot}&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/BlockUIContainer&gt;<br>&lt;/TableCell&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>I made sure the PropertyChanged notifications do not wreck havoc trying to refresh the binding and will update the Report only when ABSOLUTELY neccessary.</p>\r\n<p>&nbsp;</p>\r\n<p>Hope this helps,</p>\r\n<p>Srikanth Kotagiri</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-13T13:49:44.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226267",
+    "ThreadId": "62813",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Of&nbsp;course, it is good if you have created a workaround that helps you to print D3's chart into XPS, but I don't think printing plotter to XPS as a picture is a great idea, because by default, and in the sample of Gary, we are using vector images, that are forming plotter, and in your case we are using raster images doesn't provide good quality being scaled, as opposed to vector images. I have made some changes in Gary's sample that allows to print&nbsp;successfully&nbsp;DynamicDataDisplay's <strong>ChartPlotter </strong>to XPS, so I don't see any need in such workarounds :)</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-21T04:25:33.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226561",
+    "ThreadId": "62813",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>thecentury wrote:</strong><br>\r\n<p>&nbsp;and in your case we are using raster images doesn't provide good quality being scaled, as opposed to vector images.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Of course youa re right. The Problem I had was not scaling, but whenever I tried to add the chart to flow document, it required me to disconnect it from the window. Maybe i am doing some thing wrong. I will check out this solution once.</strong></p>\r\n<p><strong>&nbsp;</strong></p>\r\n<p><strong>Thanks</strong></p>\r\n<p><strong>Srikanth</strong></p>\r\n</blockquote>\r\n<p><strong>&nbsp;</strong></p>",
+    "PostedDate": "2009-08-21T17:01:54.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "435308",
+    "ThreadId": "62813",
+    "Html": "<p>The link to the sample that Mikhail fixed no longer works. &nbsp;Does anyone have a working example of ChartPlotter printing?</p>",
+    "PostedDate": "2010-04-25T20:54:39.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "435380",
+    "ThreadId": "62813",
+    "Html": "<p>Sorry, I have deleted it as I thought it is no longer in use.</p>",
+    "PostedDate": "2010-04-26T01:25:32.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "435420",
+    "ThreadId": "62813",
+    "Html": "<p>Mikhail,</p>\r\n<p>You mentioned that:</p>\r\n<p>&quot;&nbsp;I was detaching element being printed from its parent (or create a copy of element to print using, for example, XAML serialization) and changed its size. Also it is important, if I'm not wrong, to give an element a time to changes is size - as Measure or Arrange may not &nbsp;happen as soon as their call ended, so in that sample I used Dispatcher.BeginInvoke() with low priority&quot;</p>\r\n<p>Can you give any more detail on this?</p>\r\n<p>When you say &quot;detach an element from its parent&quot; are you referring to removing it from the list of child controls &nbsp;(e.g. setting window.Content = null)?</p>\r\n<p>It's not clear to me what needs to be be called by Dispatcher.BeginInvoke. &nbsp;I've tried wrapping all calls following the call to element.Arrange in a Dispatcher.BeginInvoke with SystemIdle priority but this hasn't made any difference to the chart scaling.</p>\r\n<p>Grant.</p>",
+    "PostedDate": "2010-04-26T02:55:38.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589447",
+    "ThreadId": "62813",
+    "Html": "<p>Mikhail,</p>\r\n<p>A colleage pointed me at your post this morning. I was trying something similar - detaching the ChartPlotter from its parent and&nbsp;using Measure/Arrange to try to resize it for printing, reattaching it afterwards to the parent again.</p>\r\n<p>It wasn't working and your post lead me to realise that the actual resize could be happening asyncronously. With that in mind, I attempted the attached approach. It doesn't work either, the handler for chartPlotter.SizeChanged never gets called. The printing is obviouslt omitted here, but would occur around the <span style=\"color: #008000;\">\"// Size should now be changed...\" </span>comment. I wonder if you have any insight?</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>\r\n    <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">void</span> PrintThreadFn(Object state)\r\n    {\r\n      ChartPlotter chartPlotter = ((PrintThreadInfo)state).chartPlotter;\r\n      DockPanel parent = ((PrintThreadInfo)state).parent;\r\n      System.Windows.Threading.Dispatcher dispatcher = ((PrintThreadInfo)state).dispatcher;\r\n  \r\n      <span style=\"color: blue;\">double</span> oldWidth = <span style=\"color: blue;\">double</span>.NaN;\r\n      <span style=\"color: blue;\">double</span> oldHeight = <span style=\"color: blue;\">double</span>.NaN;\r\n      \r\n      dispatcher.Invoke((Action)<span style=\"color: blue;\">delegate</span> \r\n                        {\r\n                          oldWidth = chartPlotter.Width;\r\n                          oldHeight = chartPlotter.Height;\r\n      \r\n                          parent.Children.Remove(chartPlotter);\r\n                          chartPlotter.SizeChanged += OnWaitingPlotterSizeChange;\r\n                          _plotterSizeChangeMutex.WaitOne();\r\n                          chartPlotter.Measure(<span style=\"color: blue;\">new</span> Size(<span style=\"color: blue;\">double</span>.PositiveInfinity, <span style=\"color: blue;\">double</span>.PositiveInfinity));\r\n                          chartPlotter.Arrange(<span style=\"color: blue;\">new</span> Rect(0, 0, 400, 200));\r\n                        });\r\n\r\n      _plotterSizeChangeMutex.WaitOne();\r\n      \r\n      <span style=\"color: green;\">// Size should now be changed...</span>\r\n      Debug.Print(<span style=\"color: #a31515;\">\"Here\"</span>);\r\n\r\n      dispatcher.Invoke((Action)<span style=\"color: blue;\">delegate</span>\r\n                        {\r\n                          chartPlotter.SizeChanged -= OnWaitingPlotterSizeChange;\r\n                          chartPlotter.Width = oldWidth;\r\n                          chartPlotter.Height = oldHeight;\r\n                          parent.Children.Add(chartPlotter);\r\n                        });\r\n\r\n    }\r\n\r\n    <span style=\"color: blue;\">void</span> OnWaitingPlotterSizeChange(<span style=\"color: blue;\">object</span> sender, SizeChangedEventArgs e)\r\n    {\r\n      _plotterSizeChangeMutex.ReleaseMutex();\r\n      Debug.Print(<span style=\"color: #a31515;\">\"Here2\"</span>);\r\n    }\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; width: 1px; height: 1px; overflow: hidden; top: 0px; left: -10000px;\">﻿</div>",
+    "PostedDate": "2011-03-31T05:45:29.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "590086",
+    "ThreadId": "62813",
+    "Html": "<p>I figured this out. Since somone else might come looking here for an answer, let me say the approach above is fairly close. The final working version is different in that:</p>\n<p>1. I create a <span style=\"color: #0000ff;\">Grid </span>in code to host the <span style=\"color: #0000ff;\">ChartPlotter</span>. I set the Width/Height of the <span style=\"color: #0000ff;\">Grid <span style=\"color: #000000;\">to the desired size (normally reflective of the printed page size, the 400/200 above is a nominal value for testing) </span></span>and call it's Measure/Arrange. The <span style=\"color: #0000ff;\">ChartPlotter </span>is already using Stretch ﻿alignment. I then make the <span style=\"color: #0000ff;\">ChartPlotter </span>a child of this <span style=\"color: #0000ff;\">Grid </span>and wait for the <span style=\"color: #0000ff;\">ChartPlotter </span>to fire it's SizeChanged, as above.</p>\n<p>2. That <span style=\"color: #0000ff;\">Mutex </span>should be a <span style=\"color: #0000ff;\">Semaphore <span style=\"color: #000000;\">(min 0, max 1)</span></span>, since this is cross-thread, and should be Release'd immediately after taking above<span style=\"color: #008000;\"> \"// Size should now be changed...\", </span>if you want this code to run more than once :)</p>\n<p>3.&nbsp;In case it's not clear enough, PrintThreadFn is running in a worker thread so it doesn't block the main (Dispatcher) thread. if you block the dispatcher, the SizeChanged can't fire.</p>",
+    "PostedDate": "2011-04-01T02:45:26.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892876",
+    "ThreadId": "62813",
+    "Html": "<p>Call UpdateLayout before printing the doc. You're welcome.</p>",
+    "PostedDate": "2012-07-29T22:25:27.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

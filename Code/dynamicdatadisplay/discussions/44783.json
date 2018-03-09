@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "149104",
+    "ThreadId": "44783",
+    "Html": "Hi, how do i remove one of the linegraphs that I have added through AddLineGraph?<br>\r\n<br>\r\nHow I do it now is by calling RemoveUserElements and then add back the other LineGraphs that i want to keep. Is there a simpler way that I have missed?<br>\r\n<br>\r\nCheers<br>\r\n",
+    "PostedDate": "2009-01-21T01:07:24.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149361",
+    "ThreadId": "44783",
+    "Html": "Hi!<br>\r\n<br>\r\nExtension method Plotter2D.AddLineGraph returns an added instance of LineGraph. You can use it later to remove it from Plotter by calling Plotter.Children.Remove(lineGraph) method.<br>\r\n<br>\r\nMikhail. \r\n",
+    "PostedDate": "2009-01-21T10:32:44.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "151791",
+    "ThreadId": "44783",
+    "Html": "Thanks, just missed the wpf way of calling it children<br>\r\n",
+    "PostedDate": "2009-01-28T07:13:43.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229915",
+    "ThreadId": "44783",
+    "Html": "<p>Hi Century,</p>\r\n<p>This isnt working for me.</p>\r\n<p>&nbsp;</p>\r\n<p>Calling &nbsp;Plotter.Children.Remove(lineGraph) will work if I do it right after adding the line graph. However, if I try to remove it later on it isnt working. Is there any action that would cause the linegraph to be cloned and change the reference?</p>\r\n<p>When I debug I can see that my plotter contains a child linegraph with the same description, but after calling plotter.remove that linegraph still appears in the list of children.</p>\r\n<p>&nbsp;</p>\r\n<p>By the way, thanks for all the hard work. D3 is working really great for me!</p>\r\n<p>Kelly</p>",
+    "PostedDate": "2009-09-01T14:54:14.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "230794",
+    "ThreadId": "44783",
+    "Html": "<p>Hi Kelly,</p>\r\n<p>can you please send me a reproduction of this case? My e-mail is <a href=\"mailto:thecentury+d3@gmail.com\">thecentury+d3@gmail.com</a>.</p>\r\n<p>Thanks,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-09-03T11:09:55.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247332",
+    "ThreadId": "44783",
+    "Html": "<p>Hello All,</p>\r\n<p>Having the same problem - can't clear ChartPlotter at runtime. Is there any solution?</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">d3</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">ChartPlotter</span> <span style=\"color:Red\">Name</span><span style=\"color:Blue\">=</span><span style=\"color:Blue\">&quot;plotter&quot; Grid.Row=&quot;1&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">private</span> LineGraph SourceTotalNetworkEnergyLine;\r\n\r\n<span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> buttonSimulate_Click(<span style=\"color:Blue\">object</span> sender, RoutedEventArgs e)\r\n        {\r\n            plotter.Children.Remove(SourceTotalNetworkEnergyLine);\r\n            <span style=\"color:Green\">// Create first source</span>\r\n            SourceTotalNetworkEnergy = <span style=\"color:Blue\">new</span> ObservableDataSource&lt;Point&gt;();\r\n            <span style=\"color:Green\">// Set identity mapping of point in collection to point on plot</span>\r\n            SourceTotalNetworkEnergy.SetXYMapping(p =&gt; p);\r\n\r\n            <span style=\"color:Green\">// Add all three graphs. Colors are not specified and chosen random</span>\r\n            SourceTotalNetworkEnergyLine = plotter.AddLineGraph(SourceTotalNetworkEnergy, System.Windows.Media.Colors.Red, 5, <span style=\"color:#A31515\">&quot;Total Network Energy&quot;</span>);\r\n\r\n            <span style=\"color:Green\">// Start computation process in second thread</span>\r\n            <span style=\"color:Blue\">var</span> simThread = <span style=\"color:Blue\">new</span> Thread(Simulation) {IsBackground = <span style=\"color:Blue\">true</span>};\r\n            simThread.Start();\r\n        }\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>Thank you.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; Misha</p>",
+    "PostedDate": "2009-10-19T09:21:57.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247349",
+    "ThreadId": "44783",
+    "Html": "<p>Hi Misha,</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;&nbsp; I worked around this problem by cycling through the plotters children and removing the line graph with matching properties. Using LINQ:</p>\r\n<p><span style=\"white-space:pre\"> </span>var lineToRemove = MainChart.Children.OfType&lt;LineGraph&gt;().Where(x =&gt; x.Description == &quot;Total Network Energy&quot;).Single();</p>\r\n<p>Not ideal, but it works for now.</p>",
+    "PostedDate": "2009-10-19T09:44:43.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247594",
+    "ThreadId": "44783",
+    "Html": "<p>Kells,</p>\r\n<p>thanks for suggestion, but it still works not as expected. Maybe I'm missing something?</p>\r\n<p>I need to restart simulation and show new chart. For this purpose I'm trying to clear chart and fill it again with new data.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>plotter.Children.Remove(SourceTotalNetworkEnergyLine);\r\n</pre>\r\n</div>\r\n<p>has the same effect as</p>\r\n<pre>var lineToRemove = plotter.Children.OfType().Where(x =&gt; (x.Description.Brief == &quot;Total Network Energy&quot;)).Single();\r\n</pre>\r\n<p>It really clears the chart.&nbsp; But when I run the simulation again - there is no chart displayed.</p>\r\n<p>Could you please provide some full example similar to &quot;Simulation&quot; example given in &quot;DynamicDataDisplay v0.3 Binaries &amp; Samples\\Samples\\v0.3\\&quot; but with simulation restarting?</p>\r\n<p>Thank you</p>",
+    "PostedDate": "2009-10-20T01:26:49.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "247781",
+    "ThreadId": "44783",
+    "Html": "<p>Sorry Misha,</p>\r\n<p>The code I posted was not complet, this code only&nbsp;gets a reference to the lineGraph that you want to remove. Next you need to remove it. The following should do the trick:</p>\r\n<p>var lineToRemove = plotter.Children.OfType&lt;LineGraph&gt;().Where(x =&gt; x.Description == &quot;Total Network Energy&quot;).Single();</p>\r\n<p>plotter.Children.Remove(lineToRemove);</p>\r\n<p>&nbsp;</p>\r\n<p>Kells</p>",
+    "PostedDate": "2009-10-20T10:02:37.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "Id": "216374",
+    "ThreadId": "63633",
+    "Html": "<p>Hi guys, I have a question regarding DataSource DP of a LineGraph object.</p>\r\n<p>I am working on a WPF project where I am using D3 line graph to display live data comming from a WCF service. I am receiving new data (an array of 1024 Uints) every second or so. I have implemeted DataSource as a CompositeDataSource of 2 EnumerableDataSources (xDataSource and yDataSource). When I receive a new array I simply copy it to yDataSource and fire RaiseDataChanged() event&nbsp; on yDataSource which updates my graph. It works quite nicely. However, I was looking for a way to databind line graph in XAML to a datasource property of the ViewModel, and let WPF binding framework notify the graph when datasource changes? Do you have an example of something similar to this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Andrey</p>",
+    "PostedDate": "2009-07-27T07:08:46.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216398",
+    "ThreadId": "63633",
+    "Html": "<p>Hi Andrey,</p>\r\n<p>Now we're creating new marker and line chart, where such tasks will be easier to implement. Please, wait a little for a new D3's version :)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-27T08:09:41.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216471",
+    "ThreadId": "63633",
+    "Html": "<p>Thanks a lot Mikhail, I'll be eagerly awaiting the new release.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Andrey</p>",
+    "PostedDate": "2009-07-27T10:49:21.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "216490",
+    "ThreadId": "63633",
+    "Html": "<p>Hi again Andrey,</p>\r\n<p>By the way - you can look at development version of what we are doing here at codeplex - its on 'Source code' page, at the latest changeset, at 'Nightly' dir. We are refreshing now its content from time to time, and there you are able to look at D3 during the process of its development.</p>\r\n<p>If after you look at our sources you have some suggestions, do not hesitate to post the here, they are very usefull for us.</p>\r\n<p>&nbsp;</p>\r\n<p>P.S. You can contact me if you want at my e-mail - thecentury+d3@gmail.com or at skype: mikhail.brinchuk.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-07-27T11:18:57.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217269",
+    "ThreadId": "63633",
+    "Html": "<p>Mikhail, I'll definitely take a look at the source code tonight. I also added you to my skype as well (my username: Andrey and Alena)</p>\r\n<p>&nbsp;</p>\r\n<p>Spasibo,</p>\r\n<p>Andrey</p>",
+    "PostedDate": "2009-07-29T10:19:47.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253872",
+    "ThreadId": "63633",
+    "Html": "<p>Hi&nbsp;Mikhail,</p>\r\n<p>Quoting Andrey: &quot;I was looking for a way to databind line graph in XAML to a datasource property of the ViewModel, and let WPF binding framework notify the graph when datasource changes? Do you have an example of something similar to this?&quot;</p>\r\n<p>I downloaded the nightly build code but couldn't find an example of that there. Is it ready?</p>\r\n<p>Best regards,</p>\r\n<p>Andr&eacute; Carlucci</p>",
+    "PostedDate": "2009-11-05T09:59:01.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "253876",
+    "ThreadId": "63633",
+    "Html": "<p>Hi Andr&eacute;,</p>\r\n<p>LineGraph has a dependency property DataSource, which you can use in WPF data binding. Also it has some other properties that can be taken by binding from ModelView. That is the way I'm understanding D3's contribution to MVVM. If you need more, please write here your requirements.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-11-05T10:06:43.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257985",
+    "ThreadId": "63633",
+    "Html": "<p>Great Mikhail, it worked :)</p>\r\n<p>Is there a way to use an ItemsControl or something like that to produce several LineGraphs? I tried to do something like this without success. Any thoughts?</p>\r\n<p>LoadedData is a List&lt;CompositeDataSource&gt;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>   &lt;d3:ChartPlotter Name=<span style=\"color:#A31515\">&quot;Chart&quot;</span>&gt;\r\n   \t&lt;d3:VerticalAxisTitle FontSize=<span style=\"color:#A31515\">&quot;12&quot;</span>&gt;Value&lt;/d3:VerticalAxisTitle&gt;\r\n         \t&lt;d3:HorizontalAxisTitle FontSize=<span style=\"color:#A31515\">&quot;12&quot;</span>&gt;Date Time&lt;/d3:HorizontalAxisTitle&gt;\r\n                    \r\n                    \r\n         &lt;ItemsControl ItemsSource=<span style=\"color:#A31515\">&quot;{Binding LoadedData}&quot;</span>&gt;\r\n         \t\t&lt;ItemsControl.ItemTemplate&gt;\r\n                  \t\t&lt;DataTemplate&gt;\r\n                                &lt;d3:LineGraph DataSource=<span style=\"color:#A31515\">&quot;{Binding}&quot;</span>&gt;&lt;/d3:LineGraph&gt;\r\n                            &lt;/DataTemplate&gt;\r\n                   &lt;/ItemsControl.ItemTemplate&gt;\r\n\t&lt;/ItemsControl&gt;                    </pre>\r\n<pre>   &lt;/d3:ChartPlotter&gt;\r\n</pre>\r\n</div>",
+    "PostedDate": "2009-11-17T09:45:58.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258102",
+    "ThreadId": "63633",
+    "Html": "<p>Hi,</p>\r\n<p>Use line graphs obeservable collection as dependency property like</p>\r\n<p>DependencyProperty LineGraphsProperty = DependencyProperty.Register(&quot;LineGraphs&quot;, typeof(ObservableCollection&lt;YourViewModel&gt;), typeof(ChartPlotter), new FrameworkPropertyMetadata(new PropertyChangedCallback(ChangeLineGraphs)));</p>\r\n<p>YourViewModel contains PointDataSource or CompositeDataSource etc.</p>\r\n<p>Bind ObservableCollection&lt;YourViewModel&gt; LineGraphs;</p>\r\n<p>If you do LineGraphs.Add(object of YourViewModel) thi will fire linegrphs change dependenccy property event arguments.</p>\r\n<p>in xaml use like</p>\r\n<p>&lt;ddd:ChartPlotter x:Name=&quot;plotter&quot; LineGraphs=&quot;{Binding Path=LineGraphs}&quot;/&gt;</p>\r\n<p>This will work</p>\r\n<p>Regards</p>\r\n<p>Ravi.</p>",
+    "PostedDate": "2009-11-17T19:00:34.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258318",
+    "ThreadId": "63633",
+    "Html": "<p>Hi Ravi,</p>\r\n<p>Thanks for your answer.</p>\r\n<p>I'm just a bit confused, sorry, I'm starting with WPF.</p>\r\n<p>Where the DependencyProperty declaration goes?</p>\r\n<p>And I'm getting this error in the XAML: Error&nbsp;2&nbsp;The property 'LineGraphs' was not found in type 'ChartPlotter'.</p>\r\n<p>Any thoughts?<br>Cheers,</p>\r\n<p>Andr&eacute;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-18T08:10:26.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258333",
+    "ThreadId": "63633",
+    "Html": "<p>Just to give more information:</p>\r\n<p>I'm creating a viewer to some timeseries (datetime / value). 60 values per second to be more precise.</p>\r\n<p>The user has a listbox with all timeseries and he/she selects as many as he/she wants and click &quot;show&quot;.</p>\r\n<p>The chart should show all selected series.&nbsp;If the&nbsp;user changes his mind, he can select other series and click show again.</p>\r\n<p>To achieve that, the show button fires a command handled by the viewmodel, that gets data from database and populates a private member of type List&lt;CompositeDataSource&gt; called LoadedData (exposed as a property). After doing it, it calls OnPropertyChanged(&quot;LoadedData&quot;). This method fires a PropertyChangedEventArgs(&quot;Loaded Data&quot;).</p>\r\n<p>The XAML is the way I posted before.</p>\r\n<p>When I debug the solution, the debugger shows me the property LoadedData being called (after the OnPropertyChanged) but the chart is never updated (no lines are shown).</p>\r\n<p>I see that this doesn't work (using ItemsControl), so would you be so nice to explain me better how to use DependencyProperty in this case?</p>\r\n<p>Thanks a lot in advance,</p>\r\n<p>Andr&eacute;</p>",
+    "PostedDate": "2009-11-18T08:41:45.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258505",
+    "ThreadId": "63633",
+    "Html": "<p>Hi Andre</p>\r\n<p>Refer this, this will give you some idea.</p>\r\n<p><a href=\"http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/.Documents/LineGraph.zip\">http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/.Documents/LineGraph.zip</a></p>\r\n<p>Regards</p>\r\n<p>Ravi</p>",
+    "PostedDate": "2009-11-18T19:20:00.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258607",
+    "ThreadId": "63633",
+    "Html": "<p>Hi Ravi,</p>\r\n<p>That was awesome!</p>\r\n<p>Now I get the idea, I wasn't thinking about extending the ChartPlotter class.</p>\r\n<p>You saved me a lot of time, I really appreciated your help.</p>\r\n<p>Best regards,</p>\r\n<p>Andr&eacute;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-19T03:31:21.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073760",
+    "ThreadId": "63633",
+    "Html": "Hi, <br />\n<br />\nI am trying to use d3 chart plotter in MVVM. I am trying to use the code given by Ravi in my project, but not quite sure how to use it properly. It says &quot;the property Linegraphs is not found in type ChartPlotter&quot;. What I did is add the LinegraphViewModel.cs to my project and make it the same namespace as my new project. Similarly ChartPlotter.cs was added as well.<br />\n<br />\nAnyone can advice me on what else need to be done in order to use the plotter successfully in my MVVM application?<br />\n<br />\n Thank you so much!<br />\n",
+    "PostedDate": "2013-07-26T22:35:04.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110571",
+    "ThreadId": "63633",
+    "Html": "<strong>akhomenko wrote:</strong><br />\n<blockquote>\nHi guys, I have a question regarding DataSource DP of a LineGraph object. I am working on a WPF project where I am using D3 line graph to display live data comming from a WCF service. I am receiving new data (an array of 1024 Uints) every second or so. I have implemeted DataSource as a CompositeDataSource of 2 EnumerableDataSources (xDataSource and yDataSource). When I receive a new array I simply copy it to yDataSource and fire RaiseDataChanged() event&nbsp; on yDataSource which updates my graph. It works quite nicely. However, I was looking for a way to databind line graph in XAML to a datasource property of the ViewModel, and let WPF binding framework notify the graph when datasource changes? Do you have an example of something similar to this? &nbsp; Thanks, Andrey<br />\n</blockquote>\nHi Andrey,\r<br />\n<br />\nIs it possible for you to share the code you did? i think i need such an example. Still could not get how to do this one what you have explained which works..\r<br />\n<br />\nRegards\r<br />\nEbru<br />\n",
+    "PostedDate": "2013-10-22T07:41:36.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1133459",
+    "ThreadId": "63633",
+    "Html": "Hi Ravi,\r<br />\n<br />\nYour solution here: <a href=\"http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/.Documents/LineGraph.zip\" rel=\"nofollow\">http://cid-996b1960e19fab56.skydrive.live.com/self.aspx/.Documents/LineGraph.zip</a> is really great.\r<br />\nI successfully applied it to my project. In my project, I have MyViewModel which contains CompositeDataSource with the size of 6,000.\r<br />\nThen it confuses me that it takes quite some time(about 10 seconds) before the visual is drawn(the extended ChartPlotter).\r<br />\nHowever the original built-in ChartPlotter would not take a single second to show. \r<br />\n<br />\nI'd appreciate it if you could help me with this issue.\r<br />\n<br />\nBest regards!\r<br />\nPeter<br />\n",
+    "PostedDate": "2013-12-10T00:30:02.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

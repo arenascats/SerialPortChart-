@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "454415",
+    "ThreadId": "215725",
+    "Html": "<p>Hello,</p>\r\n<p>I'd like to extend D3, like DynamicDataDisplay.Maps or DynamicDataDisplay.Coastline (meaning I don't want to directly modify DynamicDataDisplay.dll), to have a chart that goes from top to bottom. The X axis would be on the left and the Y axis on the top.</p>\r\n<p>What class do I have to extend (LineGraph ? ChartPlotter ?) ?<br>How can I achieve that ?</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2010-06-11T07:02:10.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454456",
+    "ThreadId": "215725",
+    "Html": "<p>Hello,</p>\r\n<p>To create a vertical line chart you need almost nothing to change. The only thing may be a FrequencyFilter (see Plotter2DExtensions file in D3's assembly - there are places where it is added to LineChart's Filters collection). The FrecuencyFilter is designed to work with horizontally aligned points.</p>\r\n<p>You can:</p>\r\n<p>not use AddLineChart extension methods and add LineChart with all necessary properties set manually. And here you can either don't use points filtering at all or create your filter that will filter vertical-aligned points.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-11T08:15:29.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454469",
+    "ThreadId": "215725",
+    "Html": "<p>I did not find the necessary properties in&nbsp;LineGraph. The only thing I see is doing a RotateTransform, is that what you meant ? Could you tell me what are the properties I should use ?</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2010-06-11T08:42:58.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454494",
+    "ThreadId": "215725",
+    "Html": "<p>I was speaking about Filters collection of LineGraph.</p>",
+    "PostedDate": "2010-06-11T09:51:36.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454513",
+    "ThreadId": "215725",
+    "Html": "<p>I thought Filters was only to filter what values to display ?</p>\r\n<p>What I'd like to do is something like this:&nbsp;<a href=\"http://img401.imageshack.us/img401/6939/stripcharttime.png\">http://img401.imageshack.us/img401/6939/stripcharttime.png</a>&nbsp;where the X axis is on the LEFT, the Y axis on the TOP.</p>",
+    "PostedDate": "2010-06-11T10:27:09.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454640",
+    "ThreadId": "215725",
+    "Html": "<p>If you need move Y axis on the top, than call ((Here you might have to change type to NumericAxis, I don't remember clearly)plotter.MainVerticalAxis).Placement = AxisPlacement.Top;</p>\r\n<p>If you want to have chart going from bottom to top, then clear LineChart's Filters collection (to remove any influence on chart) and try to paint it using your &quot;bottom-to-top&quot; data.</p>\r\n<p>Also you can use Plotter.Viewport.DataTransform (assign a new transform to it, if you have data going from left to right, and you want it to go from bottom to top.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-06-11T17:41:25.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454719",
+    "ThreadId": "215725",
+    "Html": "<p>Ok. Thank you very much.</p>",
+    "PostedDate": "2010-06-12T03:46:12.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

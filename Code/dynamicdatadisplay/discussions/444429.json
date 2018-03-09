@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1046523",
+    "ThreadId": "444429",
+    "Html": "Hi;<br />\n<br />\ni have 2 list in my Silverlight Project. First list holds datetime values for x axis and second list holds values for y axis. if i convert datetime values to double i can display chart but datetime values shows in double format. How can i display the datetime calues in right format? <br />\n<br />\nTnx.<br />\n<br />\n<br />\n// XAML //<br />\n<br />\n&lt;d3:Chart BottomTitle=&quot;Date&quot; LeftTitle=&quot;Value&quot; Width=&quot;800&quot; Height=&quot;600&quot;&gt;                \n<br />\n<pre><code>            &lt;d3:Chart.Title&gt;\n                &lt;TextBlock HorizontalAlignment=&quot;Center&quot; FontSize=&quot;14&quot; Margin=&quot;0,5,0,5&quot;&gt;My Project&lt;/TextBlock&gt;\n            &lt;/d3:Chart.Title&gt;\n            &lt;d3:LineGraph x:Name=&quot;linegraph&quot; Description=&quot;Values&quot; Stroke=&quot;Blue&quot; StrokeThickness=&quot;1&quot;/&gt;</code></pre>\n\n&lt;/d3:Chart&gt;<br />\n<br />\n//  C# //<br />\n<br />\nList&lt;double&gt; dates = new List&lt;double&gt;();<br />\nList&lt;double&gt; values = new List&lt;double&gt;();<br />\n<br />\n//fill lists<br />\n<br />\nlinegraph.Plot(dates, values);<br />\n",
+    "PostedDate": "2013-05-21T07:10:42.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

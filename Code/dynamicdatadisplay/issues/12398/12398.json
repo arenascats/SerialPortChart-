@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For several DevSamples (ie: BarChartSample) the following code in DynamicDataDisplay.Charts.Markers (line 272) throws InvalidCastException:\n \n((IPlotterElement)itemsPanel).OnPlotterAttached(plotter);\n \nSystem.InvalidCastException was unhandled\n  Message=\"Unable to cast object of type 'Microsoft.Research.DynamicDataDisplay.Charts.ViewportPanel' to type 'Microsoft.Research.DynamicDataDisplay.IPlotterElement'.\"\n  Source=\"DynamicDataDisplay\"\n  StackTrace:\n       at Microsoft.Research.DynamicDataDisplay.Charts.Markers.MarkerChart.OnPlotterAttached(Plotter plotter) in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Charts\\Markers\\MarkerChart.cs:line 272\n       at Microsoft.Research.DynamicDataDisplay.PlotterElement.Microsoft.Research.DynamicDataDisplay.IPlotterElement.OnPlotterAttached(Plotter plotter) in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Common\\PlotterElement.cs:line 77\n       at Microsoft.Research.DynamicDataDisplay.Plotter.OnChildAdded(IPlotterElement child) in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Common\\Plotter.cs:line 550\n       at Microsoft.Research.DynamicDataDisplay.Plotter.<>c__DisplayClassd.<OnChildrenCollectionChanged>b__a() in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Common\\Plotter.cs:line 486\n       at Microsoft.Research.DynamicDataDisplay.Plotter.ExecuteWaitingChildrenAdditions() in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Common\\Plotter.cs:line 153\n       at Microsoft.Research.DynamicDataDisplay.Plotter.Plotter_Loaded(Object sender, RoutedEventArgs e) in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DynamicDataDisplay\\Common\\Plotter.cs:line 144\n       at System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n       at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n       at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)\n       at System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)\n       at System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)\n       at System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)\n       at MS.Internal.LoadedOrUnloadedOperation.DoWork()\n       at System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()\n       at System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()\n       at System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)\n       at System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n       at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n       at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n       at System.Windows.Threading.DispatcherOperation.InvokeImpl()\n       at System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(Object state)\n       at System.Threading.ExecutionContext.runTryCode(Object userData)\n       at System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code, CleanupCode backoutCode, Object userData)\n       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n       at System.Windows.Threading.DispatcherOperation.Invoke()\n       at System.Windows.Threading.Dispatcher.ProcessQueue()\n       at System.Windows.Threading.Dispatcher.WndProcHook(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n       at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)\n       at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n       at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Boolean isSingleParameter)\n       at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n       at System.Windows.Threading.Dispatcher.WrappedInvoke(Delegate callback, Object args, Boolean isSingleParameter, Delegate catchHandler)\n       at System.Windows.Threading.Dispatcher.InvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Boolean isSingleParameter)\n       at System.Windows.Threading.Dispatcher.Invoke(DispatcherPriority priority, Delegate method, Object arg)\n       at MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\n       at MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)\n       at System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\n       at System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)\n       at System.Windows.Threading.Dispatcher.Run()\n       at System.Windows.Application.RunDispatcher(Object ignore)\n       at System.Windows.Application.RunInternal(Window window)\n       at System.Windows.Application.Run(Window window)\n       at System.Windows.Application.Run()\n       at BarChartSample.App.Main() in C:\\Documents and Settings\\***\\My Documents\\Downloads\\dynamicdatadisplay-31108\\Nightly\\DynamicDataDisplay Sources v0.3.4703.0\\src\\DevSamples\\BarChartSample\\obj\\Debug\\App.g.cs:line 0\n       at System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)\n       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\n       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\n       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)\n       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n       at System.Threading.ThreadHelper.ThreadStart()\n  InnerException:",
+    "LastUpdatedDate": "2013-02-21T17:36:54.177-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-03-31T14:13:17.963-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Invalid Cast ViewportPanel to IPlotterElement",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 12398
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "A fix is to change:\r\n\r\nprivate ViewportPanel itemsPanel = new ViewportPanel();\r\n\r\nto\r\n\r\nprivate ViewportHostPanel itemsPanel = new ViewportHostPanel();\r\n\r\nin MarkerChart.cs",
+      "PostedDate": "2010-12-24T00:05:59.903-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you.",
+      "PostedDate": "2010-12-27T02:48:19.947-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you.",
+      "PostedDate": "2010-12-27T02:48:41.28-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:54.177-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

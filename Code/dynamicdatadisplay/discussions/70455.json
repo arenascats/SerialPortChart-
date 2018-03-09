@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "239982",
+    "ThreadId": "70455",
+    "Html": "<p>We are using XAML in WPF, using a display of a &quot;map&quot; as a thumbnail.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">\r\n<p>&nbsp;</p>\r\n&lt;font size=&quot;2&quot; color=&quot;#a31515&quot;&gt;&lt;font size=&quot;2&quot; color=&quot;#a31515&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;&lt;/font&gt;</span>&lt;font size=&quot;2&quot; color=&quot;#a31515&quot;&gt;\r\n<p>&nbsp;</p>\r\n&lt;/font&gt;</span>\r\n<p><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">&lt;</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">ListBox</span></span><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#ff0000\"> Name</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">=&quot;DataThumbnailList&quot;</span></span><span style=\"font-size:x-small;color:#ff0000\"><span style=\"font-size:x-small;color:#ff0000\"> SelectionChanged</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">=&quot;DataThumbnailList_SelectionChanged&quot;&gt;</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">&nbsp;&nbsp;</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">&lt;/</span></span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">ListBox</span></span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">&gt;</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#0000ff\">The image is created using D3ColorMap, </span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"color:#0000ff\">As you can see we have set &quot;SelectionChanged&quot; to &quot;DataThumbnailList_SelectionChanged&quot;, the problem is that the image we are using is the D3ColorMap and not a static image so &quot;clicking&quot; on this &quot;image&quot; doesn't fire the SelectionChanged Event, only on the border area.&nbsp; I'm sure we could just use a static image in place of this, but we like the way this image truly represents what we are displaying on our main view.&nbsp; SO, is there a way to bubble up the selectionchanged event in the WPF so we can support this?</span></p>\r\n</p>",
+    "PostedDate": "2009-09-29T06:53:58.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245626",
+    "ThreadId": "70455",
+    "Html": "<p>Hi!</p>\r\n<p>Actually I didn't understand your question. Can you please write in more details how are you using D3ColorMap (are you speaking about NaiveColorMap?)? Maybe some more details or screenshots can help me. Also you can send me a part of your application that doesn't work as you like - my e-mail is thecentury+d3@gmail.com.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-10-14T08:13:17.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

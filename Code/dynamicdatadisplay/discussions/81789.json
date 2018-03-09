@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "280884",
+    "ThreadId": "81789",
+    "Html": "<p>Hi,</p>\r\n<p>I thought I could use your library for my project, but then i figured out, that when moving, it's cpu usage goes up to 100 %. And all real-time chart samples need approximately 60 %.</p>\r\n<p>Any idea how to reduce cpu load, if not, i have to write my own plotter.</p>\r\n<p>&nbsp;</p>\r\n<p>icetea</p>",
+    "PostedDate": "2010-01-23T05:59:01.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

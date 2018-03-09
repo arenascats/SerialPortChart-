@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "184341",
+    "ThreadId": "54665",
+    "Html": "Hi,<br>\r\n<br>\r\nHow can I translate this code from Xaml to C# to add DateTimeAxis?<br>\r\n<br>\r\nThanks,<br>\r\nKamel<br>\r\n<br>\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Window</span> <span style=\"color:red\">x:Class</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">CurrencyExchangeSample.Window1</span><span style=\"color:black\">&quot;</span>\r\n    <span style=\"color:red\">xmlns</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://schemas.microsoft.com/winfx/2006/xaml/presentation</span><span style=\"color:black\">&quot;</span>\r\n    <span style=\"color:red\">xmlns:x</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://schemas.microsoft.com/winfx/2006/xaml</span><span style=\"color:black\">&quot;</span>\r\n\t\t<span style=\"color:red\">xmlns:c</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">http://research.microsoft.com/DynamicDataDisplay/1.0</span><span style=\"color:black\">&quot;</span>\r\n    <span style=\"color:red\">Title</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Window1</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">WindowState</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Maximized</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">Grid</span><span style=\"color:blue\">&gt;</span>\r\n\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">plotter</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\t\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter.HorizontalAxis</span><span style=\"color:blue\">&gt;</span>\r\n\t\t\t\t<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">HorizontalDateTimeAxis</span> <span style=\"color:red\">Name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">dateAxis</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n\t\t\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter.HorizontalAxis</span><span style=\"color:blue\">&gt;</span>\r\n\t\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">c</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ChartPlotter</span><span style=\"color:blue\">&gt;</span>\r\n\t<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Grid</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">Window</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n",
+    "PostedDate": "2009-04-27T22:05:52.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184401",
+    "ThreadId": "54665",
+    "Html": "Hi, Kamel,<div><br></div><div>You should write the following C#-code:</div><div><br></div><div><div style=\"font-family:consolas;font-size:9pt;color:black;background-image:initial;background-repeat:initial;background-attachment:initial;background-color:white;background-position:initial initial\"><p style=\"margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px\">            <span style=\"color:rgb(43, 145, 175)\">HorizontalDateTimeAxis</span> dateAxis = <span style=\"color:blue\">new</span> <span style=\"color:rgb(43, 145, 175)\">HorizontalDateTimeAxis</span>();</p><p style=\"margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px\">            plotter.HorizontalAxis = dateAxis;</p></div></div><div><br></div><div>This code (both XAML and C#) doesn't actually <em>add</em> an axis, it <em>replaces </em>existing horizontal axis with that you've specified.</div><div>To add another axis without removing existing one, you should create an axis and then call </div><div><span style=\"white-space:pre\">\t</span>plotter.Children.Add(your_additional_axis);</div><div><br></div><div>Mikhail.</div>",
+    "PostedDate": "2009-04-28T01:57:04.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "185279",
+    "ThreadId": "54665",
+    "Html": "Thanks Mikhail, it's working great.<br>\r\n",
+    "PostedDate": "2009-04-29T19:13:11.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

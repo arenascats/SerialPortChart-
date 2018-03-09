@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "447270",
+    "ThreadId": "213814",
+    "Html": "<p>Hi,</p>\r\n<p><span style=\"white-space:pre\"> </span>It appears as though there is a memory leak in D3. I have an application that creates a few charts with very large data sets. It then drops all references to the charts and the data. Profiling the application shows that System.Windows.<strong>EffectiveValueEntry</strong>[] is still holding a reference to DynamicDataDisplay.DataSources.CompositeDataSource which holds a reference to the data. &nbsp;Thus the data cannot be GC'ed. Has anyone else noticed this behavior? Does anyone know what I can do to prevent it?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Kelly</p>",
+    "PostedDate": "2010-05-25T12:31:22.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447882",
+    "ThreadId": "213814",
+    "Html": "<p>This memory leak only occurs when rendering the chart on a new thread.</p>",
+    "PostedDate": "2010-05-26T14:56:53.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453023",
+    "ThreadId": "213814",
+    "Html": "<p>I have a small sample app that reproduces the problem. Who can I send this to?</p>",
+    "PostedDate": "2010-06-08T08:10:53.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453027",
+    "ThreadId": "213814",
+    "Html": "Hi,\r\n\r\nYou can send it to me - Mikhail - thecentury+d3@gmail.com.",
+    "PostedDate": "2010-06-08T08:14:40.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "453030",
+    "ThreadId": "213814",
+    "Html": "<p>Interesting, I already sent the sample application to thecentury+d3@gmail.com&nbsp;but I have not heard back. Did you&nbsp;receive&nbsp;my previous messages?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Kelly</p>",
+    "PostedDate": "2010-06-08T08:21:03.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456767",
+    "ThreadId": "213814",
+    "Html": "<p>I still&nbsp;haven't&nbsp;heard anything, did you&nbsp;receive&nbsp;my email with the sample application?</p>",
+    "PostedDate": "2010-06-17T08:28:37.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "456816",
+    "ThreadId": "213814",
+    "Html": "<div>I have received your message, but I am sorry - I'm unable to perform a bug search and fix procedure as I'm leaving this job.</div><div>I will forward it to somebody from remaining team.<br>\r\n<br>Отправлено с iPad</div><div><br>17.06.2010, в 19:28, kells &lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt; написал(а):<br><br></div><div></div><blockquote><div> <p>\r\nFrom: kells</p> <div id=ThreadNotificationPostBody><p>I still haven't heard anything, did you receive my email with the sample application?</p></div> \r\n  </div></blockquote>",
+    "PostedDate": "2010-06-17T09:33:54.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

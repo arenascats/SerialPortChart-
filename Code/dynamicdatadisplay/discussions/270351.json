@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "663139",
+    "ThreadId": "270351",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>I had a problem while changing ZIndex value in a MarkerElementPointGraph -&gt; It changes, but the visual appearance is the same.</p>\r\n<p>After some debugging, I found that the problem is that this Marker &quot;Element&quot; Point Graph is using a grid to create the items (elements), and adds this&nbsp;auxiliary&nbsp;grid to the main Plotter. Thus, their ZIndex value is not changed when the MarkerElementPointGraph\r\n is changed.</p>\r\n<p>To solve this, you should modify&nbsp;ViewportElement2D.cs:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">// change (at line 73):</span>\r\n<span style=\"color:blue\">public</span> <span style=\"color:blue\">int</span> ZIndex\r\n\r\n<span style=\"color:green\">// into:</span>\r\n<span style=\"color:blue\">public</span> <span style=\"color:blue\">virtual</span> <span style=\"color:blue\">int</span> ZIndex\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p>Create this override in MarkerElementPointGraph.cs:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">override</span> <span style=\"color:blue\">int</span> ZIndex\r\n{\r\n    <span style=\"color:blue\">get</span>\r\n    {\r\n        <span style=\"color:blue\">return</span> <span style=\"color:blue\">this</span>.grid != <span style=\"color:blue\">null</span> ? Panel.GetZIndex(<span style=\"color:blue\">this</span>.grid) : <span style=\"color:blue\">base</span>.ZIndex;\r\n    }\r\n    <span style=\"color:blue\">set</span>\r\n    {\r\n        <span style=\"color:blue\">base</span>.ZIndex = value;\r\n        <span style=\"color:blue\">if</span> (<span style=\"color:blue\">this</span>.grid != <span style=\"color:blue\">null</span>)\r\n        {\r\n            Panel.SetZIndex(<span style=\"color:blue\">this</span>.grid, value);\r\n        }\r\n    }\r\n}\r\n\r\n</pre>\r\n</div>\r\n<p>And finally, set the initial ZIndex value when creating the Grid, in&nbsp;MarkerElementPointGraph.cs:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">protected</span> <span style=\"color:blue\">override</span> <span style=\"color:blue\">void</span> OnPlotterAttached(Plotter plotter)\r\n{</pre>\r\n<pre>    &lt; existing code &gt;\r\n    <span style=\"color:green\">.... Add this to the bottom ....</span>\r\n    Panel.SetZIndex(grid, <span style=\"color:blue\">base</span>.ZIndex);\r\n}\r\n\r\n</pre>\r\n</div>\r\nI will send a patch and update this post later\r\n<p></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-08-25T04:02:36.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "663163",
+    "ThreadId": "270351",
+    "Html": "<p>I created the workitem and submitted a patch (<a href=\"http://dynamicdatadisplay.codeplex.com/workitem/16457\">http://dynamicdatadisplay.codeplex.com/workitem/16457</a>), just in case someone needs it.</p>",
+    "PostedDate": "2011-08-25T04:50:54.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

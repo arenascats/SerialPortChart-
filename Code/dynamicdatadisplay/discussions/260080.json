@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "622510",
+    "ThreadId": "260080",
+    "Html": "\r\n<p>Hi</p>\r\n<p>Could anyone tell me how to fix the scale of x and y axis to a predetermined range, please? I'm using a scatter plot and want to stop rescaling of the axes every time it updates with new data, even if this means that some points are not displayed.</p>\r\n<p>Thanks.</p>\r\n<p>M</p>\r\n",
+    "PostedDate": "2011-06-03T06:26:54.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "624835",
+    "ThreadId": "260080",
+    "Html": "<p>Me too. Anyone please help to fix this problem. Thanks very much.</p>\r\n<p>DTT.</p>",
+    "PostedDate": "2011-06-08T09:56:11.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "624975",
+    "ThreadId": "260080",
+    "Html": "<p>Assuming you are using an observabledatasource&lt;T&gt;, the range shown is dependent on the enumerator returned by</p>\r\n<p>public IPointEnumerator GetEnumerator(DependencyObject context)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new ObservableIterator(this);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>so. to fix a scale I made class FixedWindowSource &lt;T&gt; : observabledatasource&lt;T&gt;</p>\r\n<p>give it a few properties on how you want to limit your range (a min/max, etc.)&nbsp; I'm going to assume for the time being that you will use min/max fields.</p>\r\n<p>so finally make a new iterator class, the only changes here (between FixedWindowIterator and the observableiterator)&nbsp; are in the constructor</p>\r\n<p>public FixedWindowIterator(FixedWindowSource&lt;T&gt; dataSource)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.dataSource = dataSource;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (dataSource.collection.Count == 0) enumerator = dataSource.collection.GetEnumerator();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>\r\n<p>//obviously you may need to alter this if you're using xmapping etc.</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double max = dataSource.Max;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double min = dataSource.Min;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enumerator = (from c in dataSource.collection<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; where dataSource.xyMapping(c).X &gt;= min &amp;&amp; dataSource.xyMapping(c).X &lt;=max<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; select c).GetEnumerator();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>finally set the min and max as you want</p>",
+    "PostedDate": "2011-06-08T14:09:58.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "625210",
+    "ThreadId": "260080",
+    "Html": "<p>Thanks for your help, I'll give this a try.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-06-09T01:42:01.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "625290",
+    "ThreadId": "260080",
+    "Html": "<p>can't you just set the plotter's visible property each time the data is updated?</p>\r\n<p>i.e. plotter.Visible = new DataRect(minX, minY, Width, Height);</p>",
+    "PostedDate": "2011-06-09T04:47:46.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

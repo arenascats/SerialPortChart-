@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "236061",
+    "ThreadId": "69390",
+    "Html": "<p>All the samples are showing chart with the Y axis start from bottom and go up, but I need to make a log chart in which the Y axis start from top and go down, and also I need to show vertical scrollbar so user can scroll the chart if the curve is going out of boundry. Is it easy?</p>",
+    "PostedDate": "2009-09-18T07:59:11.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "238761",
+    "ThreadId": "69390",
+    "Html": "<p>Hi,</p>\r\n<p>as I think, the easies way to negate the direction of vertical axis is to apply a custom DataTransform to Viewport. This data transform should be a descendant of DataTransform class and can look like this:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">public</span> <span style=\"color:Blue\">class</span> NegativeYDataTransform : DataTransform\r\n{\r\n <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">override</span> Point DataToViewport(Point pt)\r\n {\r\n  <span style=\"color:Blue\">return</span> <span style=\"color:Blue\">new</span> Point(pt.X, -pt.Y);\r\n }\r\n\r\n <span style=\"color:Blue\">public</span> <span style=\"color:Blue\">override</span> Point ViewportToData(Point pt)\r\n {\r\n  <span style=\"color:Blue\">return</span> <span style=\"color:Blue\">new</span> Point(pt.X, -pt.Y);\r\n }\r\n}\r\n</pre>\r\n</div>\r\n<p>That you should create an instance of this class and assign it to plotter.DataTransform property: plotter.DataTransform = new NegativeYDataTransform();</p>\r\n<p>This will produce the following picture:</p>\r\n<p><img src=\"http://microsoft.cs.msu.su/personal/thecentury/Public Documents/Images/NegativeYAxis.PNG\" alt=\"\"></p>\r\n<p>Hope this helps.</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-25T05:53:54.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

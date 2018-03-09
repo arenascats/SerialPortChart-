@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "752495",
+    "ThreadId": "303288",
+    "Html": "\r\n<p>I can bind the whole Visible area of Viewports. But I need binding only by HorizontalAxes.</p>\r\n<p>I haven`r used it, but I thing one of approaches is to use InjectedPlotters of those Plotters , set ConjunctionMode= &quot;X&quot; . Then Bind visible areas of ChartPlotters and then make opeations within InjectionPlotters.&nbsp;</p>\r\n<p>But are there any properties of HorizontalAxes responsible for ticks and so on? May It would be better approach</p>\r\n<p>Looking forward to hearing from you....</p>\r\n",
+    "PostedDate": "2012-02-10T05:57:22.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "774861",
+    "ThreadId": "303288",
+    "Html": "<p>I want plotters to be binded in x direction navigation only. &nbsp; Consuming that in _pl2 plotter exist injected plotter with ConjunctionMode=\"X\",&nbsp;</p>\n<pre>&nbsp;_pl2.Viewport.SetBinding(<span>Viewport2D</span>.VisibleProperty,&nbsp;<span>new</span>&nbsp;<span>Binding</span>(<span>\"Visible\"</span>)\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mode&nbsp;=&nbsp;<span>BindingMode</span>.TwoWay,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source&nbsp;=&nbsp;_pl1.Viewport,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</pre>\n<pre> injectedPlotter.ViewPort.Visible = _pl2.Viewport.Visible; // may be it is not nessesary but, if I add data to injectedplotter</pre>\n<pre>// it would be not very presentable</pre>\n<pre>The main problem i sthat I don`t know how to bind Y axis of injected plotter to Y axis of its host</pre>\n<pre>And how can I bind plotters with different Y-scale, y-independently.  </pre>",
+    "PostedDate": "2012-02-17T06:05:34.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "509013",
+    "ThreadId": "231387",
+    "Html": "<p>Hello. Firstly, great job on the D3 project. Very impressive.</p>\r\n<p>However, the question I have is what are your plans for the next release: is there a roadmap for features and release dates? We haven't heard any updated news for a while.</p>\r\n<p>I would definitely use it for business applications if I could be convinced that it is still being actively supported and has a clear future.</p>\r\n<p>If you would like some help in getting the next release out, then just point out specifically what you would like the D3 user community to do (documentation?), and we can attempt to help.</p>\r\n<p>Even an intermediate code release on the source code page might help to reassure everyone: hint, hint!</p>\r\n<p>Thanks again,</p>\r\n<p>Brian</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-18T14:52:18.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509015",
+    "ThreadId": "231387",
+    "Html": "<p>I second this sentiment.&nbsp; And I would also like to reiterate the above which is:&nbsp; This is a great project.&nbsp; I am implementing it.&nbsp; But my superiors are kind of nervous that I have to use the nightly build to access functionality that we require.&nbsp; A release would be most welcome, and I would also volunteer to help facilitate this.</p>\r\n<p>Thanks,</p>\r\n<p>Larry</p>",
+    "PostedDate": "2010-10-18T14:58:42.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

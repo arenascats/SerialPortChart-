@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "194904",
+    "ThreadId": "57646",
+    "Html": "<p>I have a requirement for a line graph to highlight when the mouse is over it. This is done by simply changing StrokeThickness on MouseEnter/MouseLeave. However, the line shown in the legend doesn't update :-(</p>\r\n<p>The legend doesn't update because both LineGraph.Stroke &amp; StrokeThickness will generate a new pen if the existing pen is sealed (which is the correct thing to do). The result is that the legend and the line graph end up using 2 different pen instances.</p>\r\n<p>Here's how I've fixed this:</p>\r\n<ol>\r\n<li>Made <span style=\"font-size:x-small\">ViewportElement2D.<span style=\"font-size:x-small\">RaisePropertyChanged protected</span></span></li>\r\n<li><span style=\"font-size:x-small\"><span style=\"font-size:x-small\">Added '<span style=\"font-size:x-small\">RaisePropertyChanged(</span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">&quot;LinePen&quot;</span></span><span style=\"font-size:x-small\">);' to LineGraph.LinePen setter</span></span></span></li>\r\n<li><span style=\"font-size:x-small\"><span style=\"font-size:x-small\"><span style=\"font-size:x-small\">Added&nbsp;a <span style=\"font-size:x-small\">OnChartPropertyChanged method to </span>PenDescription (code below)</span></span></span></li>\r\n<li>Subscribed to LineGraph.PropertyChanged event in PenDescription.AttachCore</li>\r\n<li>Added <span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">protected</span></span><span style=\"font-size:x-small\"> </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">virtual</span></span><span style=\"font-size:x-small\"> </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">void</span></span><span style=\"font-size:x-small\"> DetachCore(</span><span style=\"font-size:x-small;color:#2b91af\"><span style=\"font-size:x-small;color:#2b91af\">UIElement</span></span><span style=\"font-size:x-small\"> element) { } to Description</span></li>\r\n<li><span style=\"font-size:x-small\">Overrode DetachCode in PenDescription to unsubscribe from LineGraph.PropertyChanged.</span></li>\r\n</ol>\r\n<p><span style=\"font-size:x-small\">So basically the PenDescription class listens for changes to LineGraph.LinePen and updates as appropriate. It'd be great if these changes could be incorporated into the next release.</span></p>\r\n<p><span style=\"font-size:x-small\">Here's the additional PenDescription methods:</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:x-small\">\r\n<p style=\"padding-left:30px\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">protected</span></span><span style=\"font-size:x-small\"> </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">override</span></span><span style=\"font-size:x-small\"> </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">void</span></span><span style=\"font-size:x-small\"> DetachCore(UIElement graph)\r\n<p style=\"padding-left:30px\">{</p>\r\n</span></p>\r\n</span></p>\r\n<p style=\"padding-left:60px\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">base</span></span><span style=\"font-size:x-small\">.DetachCore(graph); </span></p>\r\n<p style=\"padding-left:60px\">LineGraph g = graph <span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">as</span></span><span style=\"font-size:x-small\"> LineGraph;</span></p>\r\n<p style=\"padding-left:60px\">\r\n<p style=\"padding-left:60px\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">if</span></span><span style=\"font-size:x-small\"> (g != </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">null</span></span><span style=\"font-size:x-small\">) </span></p>\r\n</p>\r\n<p>\r\n<p style=\"padding-left:60px\">\r\n<p style=\"padding-left:60px\">{</p>\r\n</p>\r\n<p style=\"padding-left:60px\">\r\n<p style=\"padding-left:90px\">g.PropertyChanged -= OnChartPropertyChanged;</p>\r\n<p style=\"padding-left:60px\">}</p>\r\n<p style=\"padding-left:30px\">}</p>\r\n<p style=\"padding-left:30px\">&nbsp;<span style=\"font-size:x-small\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">private</span></span><span style=\"font-size:x-small\"> </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">void</span></span><span style=\"font-size:x-small\"> OnChartPropertyChanged(</span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">object</span></span><span style=\"font-size:x-small\"> sender, PropertyChangedEventArgs e) </span></span></p>\r\n<p>\r\n<p style=\"padding-left:30px\">\r\n<p style=\"padding-left:30px\">{</p>\r\n</p>\r\n<p style=\"padding-left:60px\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">if</span></span><span style=\"font-size:x-small\"> (e.PropertyName == </span><span style=\"font-size:x-small;color:#a31515\"><span style=\"font-size:x-small;color:#a31515\">&quot;LinePen&quot;</span></span><span style=\"font-size:x-small\">)\r\n<p style=\"padding-left:60px\">{</p>\r\n<p style=\"padding-left:90px\">LineGraph g = sender</p>\r\n</span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">as</span></span><span style=\"font-size:x-small\"> LineGraph;</span></p>\r\n<p style=\"padding-left:90px\"><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">if</span></span><span style=\"font-size:x-small\"> (g != </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">null</span></span><span style=\"font-size:x-small\">)\r\n<p style=\"padding-left:90px\">{</p>\r\n<p>&nbsp;<span style=\"font-size:x-small\">pen = g.LinePen;</span>\r\n<p style=\"padding-left:120px\"><span style=\"font-size:x-small;color:#008000\"><span style=\"font-size:x-small;color:#008000\">// This resets the content, causing the bindings to refire &amp; pick up the new pen.</span></span></p>\r\n<p style=\"padding-left:120px\"><span style=\"font-size:x-small\">Description d = LegendItem.Description;</span></p>\r\n<p style=\"padding-left:120px\"><span style=\"font-size:x-small\">LegendItem.Description = </span><span style=\"font-size:x-small;color:#0000ff\"><span style=\"font-size:x-small;color:#0000ff\">null</span></span><span style=\"font-size:x-small\">;</span></p>\r\n</p>\r\n<p>&nbsp;<span style=\"font-size:x-small\">LegendItem.Description = d;</span></p>\r\n<p>\r\n<p style=\"padding-left:90px\">}</p>\r\n<p style=\"padding-left:60px\">}</p>\r\n<p style=\"padding-left:30px\">}</p>\r\n</p>\r\n</span></p>\r\n</p>\r\n</p>\r\n</p>",
+    "PostedDate": "2009-05-27T12:29:10.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "205955",
+    "ThreadId": "57646",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your solution, I'm glad that you have reached what you wanted.</p>\r\n<p>I think we'll change legend system a little in future - probably, we'll use binding to bind legend items' properties to their sources in charts.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2009-06-26T09:26:56.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "226979",
+    "ThreadId": "57646",
+    "Html": "<p>Have you any update on this? I can change the line colour on the plotter but the legend item remains the same...</p>\r\n<p>It would be a nice feature to have.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>quinlivan</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T03:16:04.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227080",
+    "ThreadId": "57646",
+    "Html": "<p>Hi,</p>\r\n<p>of course, it would be a nice feature, but I have unfortunately only a couple of hands. I'm creating now a new Legend, that will use WPF's binding for being notified about such changes. But as this is not a primary goal of D3's improvement. this feature will appear a little later.</p>\r\n<p>Sorry for making you wait.</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T08:49:56.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227083",
+    "ThreadId": "57646",
+    "Html": "<p>Hi Mikhail</p>\r\n<p>I will look forward to seeing the new Legend when released.</p>\r\n<p>Thanks again for all your help</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T08:51:54.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227138",
+    "ThreadId": "57646",
+    "Html": "<p>Hi,</p>\r\n<p>well, it took not very much time to create a quick and dirty fix for this issue. Now LegendItem for LineGraph reflects changes of parent's Stroke and StrokeThickness property.</p>\r\n<p>Tomorrow I'll upload this code.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T10:26:00.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227368",
+    "ThreadId": "57646",
+    "Html": "<p>Hi,</p>\r\n<p>I've created a quick fix, so now legend item for line chart reflects changes of Stroke and StrokeThickness of LineChart.</p>\r\n<p>To demonstrate this feature, I've also created a small application with editing of these properties on-the-fly - it is called <strong>LineChartLegendBinding </strong>and its in the latest changeset, <strong>Nightly </strong>branch, <strong>DevSamples </strong>solution folder.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-25T01:17:48.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227405",
+    "ThreadId": "57646",
+    "Html": "<p>Excellent!</p>\r\n<p>&nbsp;</p>\r\n<p>Works perfectly. Thank you so much - I promise I wont post/annoy you with any more questions</p>",
+    "PostedDate": "2009-08-25T03:24:31.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

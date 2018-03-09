@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "512180",
+    "ThreadId": "232232",
+    "Html": "\r\n<p>I tried this topic before but I didn't explain it very well.</p>\r\n<p>I need the gridlines on the chart to remain stationary when panning.&nbsp; The data displayed on the chart will move and the values on the major ticklines will change.&nbsp; But the background gridlines need to stay put.&nbsp; I need to figure this out whether\r\n it is built in (which I'm sure it isn't) or not.&nbsp; So if anyone has some direction about how to alter the behavior of the gridlines and the major and minor ticks when panning, please direct me.&nbsp; Even minor suggestions or guesses would be helpful.</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2010-10-25T08:12:46.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512188",
+    "ThreadId": "232232",
+    "Html": "\r\n<div>One way you can handle this is to create your own grid and host inside the ChartPlotter. That way, it would ignore the panning and zooming altogether. Let me know if you need some guidance on how to accomplish that.</div>\r\n<div> </div>\r\n<div>Of course, you would want to hide the current grid from view, so you can set that like this: \"plotter.AxisGrid.Visibility = Visibility.Hidden;\"<br>\r\n<br>\r\n</div>\r\n<div>On Mon, Oct 25, 2010 at 10:12 AM, iguanamind <span dir=\"ltr\"><<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>></span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid; margin:0px 0px 0px 0.8ex; padding-left:1ex\">\r\n<div>\r\n<p>From: iguanamind</p>\r\n<div>\r\n<p>I tried this topic before but I didn't explain it very well.</p>\r\n<p>I need the gridlines on the chart to remain stationary when panning.  The data displayed on the chart will move and the values on the major ticklines will change.  But the background gridlines need to stay put.  I need to figure this out whether it is built\r\n in (which I'm sure it isn't) or not.  So if anyone has some direction about how to alter the behavior of the gridlines and the major and minor ticks when panning, please direct me.  Even minor suggestions or guesses would be helpful.</p>\r\n<p>Thanks.</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://dynamicdatadisplay.codeplex.com/Thread/View.aspx?ThreadId=232232&ANCHOR#Post512180\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com?subject=[dynamicdatadisplay:232232]\" target=\"_blank\">dynamicdatadisplay@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:dynamicdatadisplay@discussions.codeplex.com\" target=\"_blank\">\r\ndynamicdatadisplay@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://dynamicdatadisplay.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com/\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n<br clear=\"all\">\r\n<br>\r\n-- <br>\r\nJason Fox<br>\r\n",
+    "PostedDate": "2010-10-25T08:22:39.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512209",
+    "ThreadId": "232232",
+    "Html": "\r\n<p>Would I extend AxisGrid or something like that?&nbsp; Where do I start with creating my own grid?&nbsp; Thanks for replying.</p>\r\n",
+    "PostedDate": "2010-10-25T08:50:29.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "512708",
+    "ThreadId": "232232",
+    "Html": "\r\n<p>It depends on what you need that grid to do. If it&nbsp;is truly static, meaning that the grid line spacing and layout never changes, then you can simply create a standard WPF Grid object and populate it with lines and set it as a child of the ChartPlotter.</p>\r\n",
+    "PostedDate": "2010-10-26T06:50:39.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518316",
+    "ThreadId": "232232",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>My name is Mikhail Brinchuk, and I am a developer of DynamicDataDisplay.</p>\r\n<p>I'm searching now a remote job, so if you or your company can offer it to me, I will be very grateful.</p>\r\n<p>If you want to customize DynamicDataDisplay&nbsp;somehow, I can help you to do it.</p>\r\n<p>My CV is here -&nbsp;<a href=\"https://sites.google.com/site/thecentury/\">https://sites.google.com/site/thecentury/</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>\r\n",
+    "PostedDate": "2010-11-07T01:16:59.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

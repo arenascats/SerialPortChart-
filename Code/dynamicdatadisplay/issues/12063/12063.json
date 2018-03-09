@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, I noticed this bug where the DraggablePoint class is not using the ChartPlotter's DataTransform when calculating it's position. \n \nFor example, I have the Y-axis inverted and DraggablePoint moves the opposite Y direction that it should.",
+    "LastUpdatedDate": "2013-02-21T17:36:54.343-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "dynamicdatadisplay",
+    "ReportedDate": "2010-03-11T12:06:05.97-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DraggablePoint does not use DataTransform",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 12063
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "How did you invert the Y-axis?",
+      "PostedDate": "2010-10-08T08:51:05.873-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T17:36:54.343-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

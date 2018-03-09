@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "748269",
+    "ThreadId": "299527",
+    "Html": "\r\n<p>Hello !</p>\r\n<p>I want to put the legend item outside the graph; so it does not occlude part of the graph.</p>\r\n<p>&nbsp;</p>\r\n<p>So I see two possibilities to do that:</p>\r\n<ul>\r\n<li>Create a different legend\r\n<ul>\r\n<li>Create a new legend &quot;myLegend&quot; and place at the desired position in the xaml form.&nbsp;\r\n</li><li>Copy the data binding from the Legend of the Chartplotter.&nbsp; </li><li>Hide the Legend of the ChartPlotter.&nbsp; </li></ul>\r\n</li></ul>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>Move the legend from the ChartPlotter\r\n<ul>\r\n<li>Access the legend from the ChartPlotter and move its position outside of the graph, if possible.\r\n</li></ul>\r\n</li></ul>\r\n<p>I want to do that programmatically if possible. I could not achieve any of the presented solution due to the lack of documentation and examples of the d3 library .... even if I like it</p>\r\n<p>Best regards !</p>\r\n<p>Thanks in advance !</p>\r\n",
+    "PostedDate": "2012-02-09T03:03:16.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "948300",
+    "ThreadId": "299527",
+    "Html": "\r\n<p>did you have success?</p>\r\n",
+    "PostedDate": "2012-11-28T06:00:39.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "950755",
+    "ThreadId": "299527",
+    "Html": "\r\n<p>I'd like to know as well :)</p>\r\n",
+    "PostedDate": "2012-12-03T12:17:52.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954138",
+    "ThreadId": "299527",
+    "Html": "\r\n<p>Simple create a Legend control of your own.</p>\r\n<p>&nbsp;</p>\r\n<p>Let each item in the legend be a legenditem. Each legenditem will consist of a line and a piece of text. Hook it up so it updates when a line is added/removed from the chart. You can place this control anywhere within or outside the chart. It is quite easy\r\n to implement.</p>\r\n",
+    "PostedDate": "2012-12-10T11:56:53.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

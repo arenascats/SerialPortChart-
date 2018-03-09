@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "569986",
+    "ThreadId": "247012",
+    "Html": "in Animation Sample(http://dynamicdatadisplay.codeplex.com/wikipage?title=DynamicDataDisplay%20Silverlight).<br>\r\n<br>\r\nthe min value is data source may be -1;but in chart it's show as -0.9;<br>\r\nhow to fix it.<br>\r\n<br>\r\nthanks.",
+    "PostedDate": "2011-02-21T19:44:17.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

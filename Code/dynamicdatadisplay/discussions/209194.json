@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "430491",
+    "ThreadId": "209194",
+    "Html": "I see in this project, there are &quot;Mayor&quot;Lables and &quot;Mayor&quot; ticks. Could someone check whether they should be spelled as &quot;Major&quot;",
+    "PostedDate": "2010-04-13T08:15:56.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430507",
+    "ThreadId": "209194",
+    "Html": "<p>Hi!</p>\r\n<p>This issue is fixed in the most recent version of D3, which is in 'Source code' tab.</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail Brinchuk.</p>",
+    "PostedDate": "2010-04-13T08:31:12.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430554",
+    "ThreadId": "209194",
+    "Html": "Thanks for the great work!",
+    "PostedDate": "2010-04-13T10:10:42.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

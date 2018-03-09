@@ -1,0 +1,160 @@
+
+div#logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#footer_text a {
+  font-family: Verdana,sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-decoration: underline; white-space: nowrap;
+}
+
+    
+#logo {
+   background: url(resources/_wsb_logo.gif) no-repeat;
+}
+#key_visual {
+   background: url(resources/_wsb_keyvisual.jpg) no-repeat;
+}
+#slogan {
+  font-family: Arial,Verdana,sans-serif;
+  font-style: normal;
+  font-size: 26px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFA800;
+}
+a.main_nav_active_item {
+  background: url(images/dynamic/buttonset4/n1activeitem.gif) no-repeat;
+  font-family: Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #ffffff;
+  background-position: top right;
+}
+a.main_nav_item {
+  background: url(images/dynamic/buttonset4/n1.gif) no-repeat;
+  font-family: Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-position: top right;
+}
+a.main_nav_item:hover {
+  background: url(images/dynamic/buttonset4/n1hover.gif) no-repeat;
+  font-family: Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #ffffff;
+  background-position: top right;
+}
+a.sub_nav_active_item {
+  background: url(images/dynamic/buttonset4/subnav1active.gif) no-repeat;
+  font-family: Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #000000;
+}
+a.sub_nav_item {
+  background: url(images/dynamic/buttonset4/subnav1.gif) no-repeat;
+  font-family: Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+a.sub_nav_item:hover {
+  background: url(images/dynamic/buttonset4/subnav1hover.gif) no-repeat;
+  font-family: Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #000000;
+}
+.content h1 {
+  font-family: Verdana,Arial,sans-serif;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.content h2 {
+  font-family: Verdana,Arial,sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.content h3 {
+  font-family: Verdana,Arial,sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.content, .content p {
+  font-family: Verdana, Arial, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.content a:visited {
+  font-family: Verdana, Arial, sans-serif;
+  font-style: normal;
+  font-size: 100%;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+.content a:link {
+  font-family: Verdana, Arial, sans-serif;
+  font-style: normal;
+  font-size: 100%;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+.content a:hover {
+  font-family: Verdana, Arial, sans-serif;
+  font-style: normal;
+  font-size: 100%;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.content a:active {
+  font-family: Verdana, Arial, sans-serif;
+  font-style: normal;
+  font-size: 100%;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+#footer_text {
+  font-family: Verdana,sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1437126",
+    "ThreadId": "642295",
+    "Html": "Hi,\r<br />\n<br />\nI have a requirement wherein I need to store the zoom state of the plotter and then load it back when recreated. This doesn't seem to be straight forward. Has anyone attempted something like this before?\r<br />\n<br />\nThanks.\r<br />\n<br />\nCheers,\r<br />\nGanesh<br />\n",
+    "PostedDate": "2015-08-04T01:03:01.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437161",
+    "ThreadId": "642295",
+    "Html": "Hi Ganesh,\r<br />\n<br />\nYou can try using &quot;ViewportRestrictions&quot;. Not sure how far this works, I didn't try this.\r<br />\nActually zooms you can Mange with plotter.Viewport.Visible. This works perfectly. Zoom states, previous zoom data/state and current zoom data/state you have to manage in your code.\r<br />\n<br />\nRegards\r<br />\nRavi.<br />\n",
+    "PostedDate": "2015-08-04T04:50:19.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437337",
+    "ThreadId": "642295",
+    "Html": "Thanks Battula. I have seen the Zoom methods on the Visible and ViewPort. It requires a Point to and factor. I'm not sure how to calculate that each time chart is zoomed. Would be great if you could provide a code snippet to handle that.\r<br />\n<br />\nCheers,\r<br />\nGanesh<br />\n",
+    "PostedDate": "2015-08-05T03:21:00.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437482",
+    "ThreadId": "642295",
+    "Html": "Hi\r<br />\n<br />\nYou don't need to use zoom methods.\r<br />\nYou have Y axis. I guess you know what should Y axis min value and max value, say these are yMin and yMax.\r<br />\nYou have X axis, You will be knowing xMin and xMax. If your X axis is date time axis, then you have to convert date times to xMin and xMax. \r<br />\nThe conversion is also very simple.\r<br />\nIf your  x axis name is timeAxis !<br />\n<pre><code>xMin = timeAxis.ConvertToDouble(StartTime);\nxMax = timeAxis.ComverToDouble(endTime);\nyMin = 0; // your y axis minimum value\nyMax = 100; // your y axis maxmimum value\nplotter.ViewPort.Visible = new Rect(xMin, yMin, xMax-xMin, yMax-yMin); // you will get your desired zoom in chart.</code></pre>\n\nHope this will full fill your requirement. \r<br />\nCheck old desiscussions also, you will get more ideas. zooming also discussed earlier in the discussions.\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2015-08-05T23:36:23.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437488",
+    "ThreadId": "642295",
+    "Html": "Thanks battula. That helped. I'm able to store and restore the zoom state.<br />\n",
+    "PostedDate": "2015-08-06T00:29:18.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1437491",
+    "ThreadId": "642295",
+    "Html": "Nice to hear that and you are welcome.\r<br />\n<br />\nRegards\r<br />\nRavi<br />\n",
+    "PostedDate": "2015-08-06T00:43:43.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

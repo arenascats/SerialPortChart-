@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "819282",
+    "ThreadId": "351037",
+    "Html": "\r\n<p>Hello</p>\r\n<p>I am looking at using D3 for Contour plotting (using IsolineGraph).&nbsp; However, I am using another library for other plots (sorry!).&nbsp; Given both are to be in the same application, I am trying to make Zoom and Pan compatible with each other.</p>\r\n<p>E.g. for other charting solution, Zoom area is defined by pressing and holding the left mouse button, and dragging the region.&nbsp; This is similar to D3, but Shift Left Mouse button is required.</p>\r\n<p>Is it possible to customize this (i.e. by supplying a custom MouseNavigation object)?</p>\r\n<p>Regards</p>\r\n<p>Craig</p>\r\n",
+    "PostedDate": "2012-04-03T08:07:41.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

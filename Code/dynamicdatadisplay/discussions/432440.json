@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "998352",
+    "ThreadId": "432440",
+    "Html": "Good day! I'm plotting a dynamic exchange real-time charts. In particular &quot;candelstick chart&quot;. I use a marker's class inherited from ShapePointMarker, as the data source used EnumerableDataSource&lt;T&gt;. The problem is that the Render method is called only when the new item adds to collection .. When there is a change of item's properties (for example, candlestick charts - is changing the closing price, the high or low), this method is not called. So the candle on candelstick graphs generated within the specified timeframes, and I need to see the process of the formation of this candle. What to do?<br />\n",
+    "PostedDate": "2013-02-07T23:27:09.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039702",
+    "ThreadId": "432440",
+    "Html": "Hi\r<br />\n<br />\nEnumarableDataSource&lt;T&gt; has an event called RaiseDataChanged();\r<br />\nI am not sure whether you are looking for this or some sort of conversion based on limit changes. For limit changes check this=&gt; SetYMapping(....).\r<br />\n<br />\nRegards\r<br />\nRavi/<br />\n",
+    "PostedDate": "2013-05-05T23:25:26.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

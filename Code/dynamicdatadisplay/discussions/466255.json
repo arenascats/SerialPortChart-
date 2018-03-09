@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1118843",
+    "ThreadId": "466255",
+    "Html": "I am working on a project which demands the real time data display of co-ordinates(X,Y axis) when the mouse is hovered on a line graph. please let me know if this is supported in D3 and if so how to enable this? . currently XAML code looks something like this. <br />\n<pre><code>  &lt;d3:ChartPlotter  Name=&quot;chartPlot&quot; Grid.Row=&quot;0&quot; Grid.Column=&quot;1&quot;&gt;\n  &lt;d3:LineGraph x:Name=&quot;linegraph&quot; Stroke=&quot;Blue&quot;  StrokeThickness=&quot;5&quot;&gt;\n  &lt;/d3:LineGraph&gt;\n  &lt;/d3:ChartPlotter&gt;\n</code></pre>\n\nThe graph is plotted perfectly but when i place my mouse pointer on the graph(line graph) it wont show any co-ordinate data (x,y axis data).<br />\n",
+    "PostedDate": "2013-11-06T05:30:52.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298997",
+    "ThreadId": "466255",
+    "Html": "Hi,\r<br />\n<br />\nI also need the same requirement into our project. Also need to get the data source of the line.\r<br />\nIf anybody implement it, please advise me.\r<br />\n<br />\nRegards,\r<br />\nGeorge<br />\n",
+    "PostedDate": "2014-09-04T06:30:47.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432099",
+    "ThreadId": "466255",
+    "Html": "My code behind is C#, and I'm not using the Silverlight version, but sticking with the WPF original.  It's doing what I need.  I hope it will be the same for you.\r<br />\n<br />\nHere's what I've done for the cursor.  I cribbed it from the source code for the D3 samples.\r<br />\n<br />\nBelow is a fairly generic method for setting the coordinate cursor to display the X and Y values.  It takes in a standard formatting string.  In this case &quot;F3&quot; (for 3 decimals) is the default.<br />\n<pre><code>public CursorCoordinateGraph SetCoordCursor(string FormatString = &quot;F3&quot;)\n{\n    CursorCoordinateGraph graphCursor = new CursorCoordinateGraph();\n    graphCursor.XTextMapping = x =&gt; x.ToString(FormatString);\n    graphCursor.YTextMapping = y =&gt; y.ToString(FormatString);\n    return graphCursor;\n}</code></pre>\n\nThis can then be applied to any chart.\r<br />\n<br />\nGiven this fairly simple chart:<br />\n<pre><code>&lt;d3:ChartPlotter Name=&quot;chartTemperature&quot;&gt;\n&lt;/d3:ChartPlotter&gt;</code></pre>\n\nIn your code behind enter the following line attaching the coordinate graph to the chart.<br />\n<pre><code>chartTemperature.Children.Add(SetCoordCursor());</code></pre>\n\nBy default, this presents the X value adjacent to the bottom (X) axis and the Y value adjacent to the left (Y) axis, with dashed lines across the chart, crossing at the displayed coordinate.\r<br />\n<br />\nAnother option can make use of a HorizontalDateTimeAxis when you've got date data on the X-Axis.\r<br />\n<br />\nIn your XAML, set up the HorizontalDateTimeAxis:<br />\n<pre><code>&lt;d3:ChartPlotter Name=&quot;chartTemperature&quot;&gt;\n    &lt;d3:ChartPlotter.HorizontalAxis&gt;\n        &lt;d3:HorizontalDateTimeAxis Name=&quot;dateAxisTemp&quot;/&gt;\n    &lt;/d3:ChartPlotter.HorizontalAxis&gt;\n&lt;/d3:ChartPlotter&gt;</code></pre>\n\nThe 'SetCoordinateCusor' method looks like this:<br />\n<pre><code>public CursorCoordinateGraph SetCoordCursor(HorizontalDateTimeAxis DateAxis, string DateFormat =&quot;dd MMM yyyy hh:mm:ss&quot;) )\n{\n    CursorCoordinateGraph graphCursor = new CursorCoordinateGraph();\n    graphCursor.XTextMapping = x =&gt; DateAxis.ConvertFromDouble(x).ToString(DateFormat);\n    graphCursor.YTextMapping = y =&gt; y.ToString(&quot;F1&quot;);\n    return graphCursor;\n}</code></pre>\n\nSet the coordinate cursor like this:<br />\n<pre><code>chartTemperature.Children.Add(SetCoordCursor(dateAxisTemp));</code></pre>\n\nI hope this helps anyone who finds this topic.\r<br />\n<br />\nI'm currently trying to find a way of getting the X and Y values processing them and setting the result to the coordinate cursor.  It's proving troublesome.\r<br />\n<br />\nI'll probably post it separately, but I'm not getting much joy out of another post, so I'm starting to lose faith in this forum.<br />\n",
+    "PostedDate": "2015-06-26T21:00:47.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

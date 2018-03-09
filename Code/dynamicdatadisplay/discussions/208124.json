@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "426690",
+    "ThreadId": "208124",
+    "Html": "<p>Hi,</p>\r\n<p>I need to add a slider (like in MS Office) to zoom in / out the viewport, i wanna bind (in two way)&nbsp;the value of my slider to a zoom percentage of chart, how i can do this?</p>\r\n<p>Thanks.</p>\r\n<p>Tiago</p>",
+    "PostedDate": "2010-04-01T17:40:25.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426872",
+    "ThreadId": "208124",
+    "Html": "<p>Below is how I sent my Visible bounds based on what I want to show. &nbsp;So for you, do your zoom calculation to get your Region or Interest, and go from there.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">private</span> <span style=\"color:Blue\">void</span> setVisibleBounds(<span style=\"color:Blue\">double</span> minX, <span style=\"color:Blue\">double</span> minY, <span style=\"color:Blue\">double</span> width, <span style=\"color:Blue\">double</span> height, <span style=\"color:Blue\">bool</span> addRestriction) {\r\n            <span style=\"color:Blue\">if</span> ((width &gt; 0) &amp;&amp; (height &gt; 0)) {\r\n                DataRect v = plotter.Visible;\r\n                v.XMin = minX;\r\n                v.Width = width;\r\n                v.YMin = minY;\r\n                v.Height = height;\r\n\r\n                plotter.Visible = v;\r\n\r\n                <span style=\"color:Blue\">if</span> (addRestriction) {\r\n                    BoundViewport bvp = <span style=\"color:Blue\">new</span> BoundViewport();\r\n                    bvp.MinXValue = minX;\r\n                    bvp.MaxXValue = minX + width;\r\n                    bvp.MinYValue = minY;\r\n                    bvp.MaxYValue = minY + height;\r\n\r\n                    plotter.Viewport.Restrictions.Add(bvp);\r\n                }\r\n            }\r\n        }\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>E.</p>",
+    "PostedDate": "2010-04-02T09:56:09.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426974",
+    "ThreadId": "208124",
+    "Html": "<p>Hi Tiago!</p>\r\n<p>&nbsp;</p>\r\n<p>I've uploaded a sample showing the feature you want: <a href=\"http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/ZoomSliderSample.zip\">http://cid-eaf0a921258b5980.skydrive.live.com/self.aspx/.Public/D3/ZoomSliderSample.zip</a></p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2010-04-02T19:06:35.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491750",
+    "ThreadId": "208124",
+    "Html": "<p>Hi !</p>\r\n<p><span id=\"result_box\"><span>I wish to read somewhere the zoom value currently used by the plotter. </span><span>Does anyone knows which property to read? </span><span>Thanks!</span></span></p>\r\n<p>The compressed folder&nbsp; ZoomSliderSample.zip give me &quot;<span id=\"result_box\"><span>Error  in compressed file</span></span>&quot; when I  try to open it...</p>",
+    "PostedDate": "2010-09-10T05:47:46.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491785",
+    "ThreadId": "208124",
+    "Html": "<p>Here is the source code from the Zoom slider example (I can't remember if I changed anything but it is working and will show you what you need to know)</p>\r\n<p>As you can see it is just a matter of setting the ChartPlotter's Visible property to an appropriate DataRect</p>\r\n<p><strong>ZoomSlider.xaml</strong></p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>&lt;Window x:Class=<span style=\"color:#a31515\">&quot;ZoomSliderSample.Window1&quot;</span>\r\n    xmlns=<span style=\"color:#a31515\">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span>\r\n    xmlns:x=<span style=\"color:#a31515\">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>\r\n        xmlns:d3=<span style=\"color:#a31515\">&quot;http://research.microsoft.com/DynamicDataDisplay/1.0&quot;</span>\r\n    Title=<span style=\"color:#a31515\">&quot;Zoom Slider Sample&quot;</span>&gt;\r\n    &lt;Grid&gt;\r\n        &lt;d3:ChartPlotter Name=<span style=\"color:#a31515\">&quot;plotter&quot;</span>&gt;\r\n        &lt;/d3:ChartPlotter&gt;\r\n    &lt;/Grid&gt;\r\n&lt;/Window&gt;\r\n</pre>\r\n<pre><strong>ZoomSlider.xaml.cs</strong></pre>\r\n<pre>\r\n<div style=\"color:black;background-color:white\"><pre><span style=\"color:blue\">using</span> System.Windows;\r\n<span style=\"color:blue\">using</span> System.Windows.Controls;\r\n<span style=\"color:blue\">using</span> Microsoft.Research.DynamicDataDisplay;\r\n\r\n<span style=\"color:blue\">namespace</span> ZoomSliderSample\r\n{\r\n\t<span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;summary&gt;</span>\r\n\t<span style=\"color:gray\">///</span><span style=\"color:green\"> Interaction logic for Window1.xaml</span>\r\n\t<span style=\"color:gray\">///</span> <span style=\"color:gray\">&lt;/summary&gt;</span>\r\n\t<span style=\"color:blue\">public</span> <span style=\"color:blue\">partial</span> <span style=\"color:blue\">class</span> Window1 : Window\r\n\t{\r\n\t\t<span style=\"color:blue\">private</span> Slider zoomSlider = <span style=\"color:blue\">new</span> Slider\r\n\t\t{\r\n\t\t\tMargin = <span style=\"color:blue\">new</span> Thickness(20),\r\n\t\t\tOrientation = Orientation.Vertical,\r\n\t\t\tHeight = 200,\r\n\t\t\tMinimum = 1,\r\n\t\t\tMaximum = 3\r\n\t\t};\r\n\r\n\t\t<span style=\"color:blue\">public</span> Window1()\r\n\t\t{\r\n\t\t\tInitializeComponent();\r\n\r\n\t\t\tzoomSlider.ValueChanged += zoomSlider_ValueChanged;\r\n\t\t\tplotter.MainCanvas.Children.Add(zoomSlider);\r\n\t\t}\r\n\r\n\t\t<span style=\"color:blue\">void</span> zoomSlider_ValueChanged(<span style=\"color:blue\">object</span> sender, RoutedPropertyChangedEventArgs&lt;<span style=\"color:blue\">double</span>&gt; e)\r\n\t\t{\r\n\t\t\tDataRect visible = <span style=\"color:blue\">new</span> DataRect(0, 0, 1, 1).ZoomInToCenter(e.NewValue);\r\n\t\t\tplotter.Visible = visible;\r\n\t\t}\r\n\t}\r\n}\r\n\r\n</pre>\r\n</div>\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-09-10T06:35:54.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "560374",
+    "ThreadId": "208124",
+    "Html": "\r\n<p>I can not find ZoomInToCenter() function. Is there an alternative way?</p>\r\n<pre>\r\n</pre>\r\n",
+    "PostedDate": "2011-02-03T13:05:12.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "561028",
+    "ThreadId": "208124",
+    "Html": "\r\n<pre style=\"font-family:consolas\">ZoomInToCenter() is in the source, in DataRectExtensions.cs.</pre>\r\n",
+    "PostedDate": "2011-02-04T14:34:44.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

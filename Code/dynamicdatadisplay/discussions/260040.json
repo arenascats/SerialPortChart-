@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "622389",
+    "ThreadId": "260040",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I found a bug in the tooltip live. When resizing the window, the tooltip loses position.. it can be fixed just by adding</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>mousePosition = e.GetPosition(AdornedElement);\r\n\r\nArrangeTooltip();\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>at the beggining of&nbsp;adornedElement_MouseEnter method</p>\r\n<p>&nbsp;</p>\r\n<p>in LiveToolTipAdorner.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2011-06-03T01:16:31.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

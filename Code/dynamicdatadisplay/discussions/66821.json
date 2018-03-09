@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "227120",
+    "ThreadId": "66821",
+    "Html": "<p>Right now the line description always show on the top of right.</p>\r\n<p>In our case, the dynamica plot always happen in that corner.</p>\r\n<p>Is it possible that we can position the line descriptions in middle or left?</p>\r\n<p>So the real time plot will not cover by the line descriptions.</p>\r\n<p>thx!</p>\r\n<p>Jane</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-24T09:54:03.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227143",
+    "ThreadId": "66821",
+    "Html": "<p>Hi jane,</p>\r\n<p>Control that contains all descriptions is called Legend. Legend is placed on Canvas internally in Plotter.</p>\r\n<p>There are four properties of Legend - LegendLeft, LegendRight, LegendTop and LegendBottom that are simply wrappers of Canvas.Left etc attached properties.</p>\r\n<p>So you can place legend everywhere you want - just change those values. Do not forget that Canvas.Top and Canvas.Left have precedence over Canvas.Right and Canvas.Bottom, so you should clear ( == set to Double.NaN) Canvas.Left or Canvas.Top to make Canvas take Canvas.Bottom aтв Canvas.Right into respect.</p>\r\n<p>Tomorrow there will be a small sample about this.</p>\r\n<p>Also, one of our samples uses custom legend position - it is or CurrencyExchangeSample, or StockExchangeSample, I don't remember exactly without VisualStudio opened) Both these samples are in Samples directory.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-24T10:31:51.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227364",
+    "ThreadId": "66821",
+    "Html": "<p>Hi Jane,</p>\r\n<p>Please take a look at <strong>LineChartLegendBinding</strong>&nbsp;project at <strong>DevSamples </strong>at <strong>Nightly </strong>directory of the latest changeset <a id=\"ctl00_ctl00_MasterContent_Content_ChangeSetList_ctl01_ChangeSetLink\" style=\"text-decoration:underline;color:#3e62a6;font-weight:bold\" title=\"Browse change set 28547\" href=\"http://dynamicdatadisplay.codeplex.com/SourceControl/changeset/view/28547\">28547</a>.</p>\r\n<p>There is a button in the bottom, which changes Legend position, so you'll be able to look at the code that is doing this.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>Mikhail.</p>",
+    "PostedDate": "2009-08-25T00:58:29.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "227520",
+    "ThreadId": "66821",
+    "Html": "<p>Hi Mikhail,</p>\r\n<p>Thanks for showing us the example. First we thought that we only can put legend in each corner.</p>\r\n<p>When we see the example, you implement more flexable way.</p>\r\n<p>Now we can put graph legends in any position we want. That is a great feature!</p>\r\n<p>Jane</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-08-25T09:13:30.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
